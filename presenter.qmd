@@ -6,7 +6,7 @@ subtitle: "Running order, checkpoints, and the room-plus-Zoom plan."
 ## Before the day
 
 - [ ] Confirm with the organizer how remote questions reach the room, and who monitors the Zoom chat. Do not plan to read the chat while presenting.
-- [ ] Ask whether the published description (which mentions Britannica and bringing datasets) should be updated, or add the [Your own data](steps/07-your-data.qmd) handout to the session listing.
+- [ ] The published description invites participants to "bring messy historical datasets" and mentions Britannica. Either send the organizer the revised wording in `workshop-plan.md` (section "Decisions still to make") or open the session by saying that the hour works on the provided example and that [Your own data](steps/07-your-data.qmd) is the take-home for their own datasets.
 - [ ] Decide the agent, model and lookup configuration for the live steps, and record it on the [setup page](setup.qmd).
 - [ ] Test the WikidataMCP endpoint from a non-campus network. Tropical's notes record the public HTTP endpoint returning HTTP 429 after a few calls; the MCP endpoint ran at about 1.7 s per call.
 - [ ] Rehearse the hour against the clock with the saved checkpoints. Protect minutes 30–55.

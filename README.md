@@ -25,7 +25,7 @@ The session shows how historians can delegate substantial data work to models an
 quarto render
 ```
 
-Output goes to `docs/`. On GitHub, set Pages to serve from the `docs/` folder on the default branch.
+Output goes to `docs/`, which GitHub Pages serves at https://jimclifford.ca/trimen-workshop/ (branch `main`, folder `/docs`). Commit the rendered `docs/` with the source changes. The `docs/.nojekyll` file tells GitHub to serve the files as rendered.
 
 ## Rebuilding the data
 

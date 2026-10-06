@@ -191,10 +191,16 @@ The project review found two concrete issues: the merge could attach a QID to a 
 - How much live execution can the rehearsed workflow accommodate?
 - Which RA-reviewed results, if any, will be available for the workshop snapshot?
 - Who can monitor online questions, and how will participant decisions be discussed?
-- What repository name and publication URL should the workshop use? (Suggested: `jburnford/trimen-workshop`, served from `docs/`.)
+- Repository and URL: decided. `github.com/jburnford/trimen-workshop`, served by GitHub Pages from `docs/` at https://jimclifford.ca/trimen-workshop/ (first push 6 October 2026).
 - Whether the exercise should show the OCR as delivered (current choice) or the corrected transcription, and whether to add a live extraction in the room on top of the saved runs.
 
-The published session description mentions Britannica as background. The working plan now uses Tropical and `col_matching`; check with the organizer whether the description should be updated to reflect that choice.
+The published description (session 10) reads:
+
+> How to extract structured, linked open data from archival materials. Participants bring messy historical datasets — or work with provided examples — and practice cleaning source data, structuring it for reuse, and grounding entities in Wikidata so datasets can be interconnected across projects. Grounded in OCR and data-quality problems in historical archives, and new OCR tools built for a digital edition of the Encyclopaedia Britannica.
+
+How the hour maps onto it: "provided examples" are the Trimen passages; "cleaning source data" is the OCR-versus-scan check (R3) and the name-evidence rule; "structuring it for reuse" is steps 2 and 5; "grounding entities in Wikidata so datasets can be interconnected" is steps 3 and 6. Two gaps: participants' own datasets get only the step 7 handout, and Britannica is not used. Suggested wording to offer the organizer if the description can still change:
+
+> How to turn OCR text into structured, linked data without losing historical judgment. Working from provided examples (an 1883 dispute about a cinchona tree in *The Tropical Agriculturist*, connected to the *Colonial Office List*), participants watch a coding agent propose a structure, extract records, and retrieve candidate identities from Wikidata, then review the results against the page images, record decisions, and turn a correction into a rule. A browser exercise works in the room and on Zoom with no setup. Participants with their own messy datasets leave with a short guide to applying the same sequence.
 
 ## Reference materials
 

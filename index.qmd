@@ -4,7 +4,7 @@ subtitle: "AI and History Conference, Johns Hopkins University. Thursday 15 Octo
 ---
 
 ::: {.callout-note title="Draft"}
-These pages are a working draft prepared for Jim Clifford's review. Facts about the sources have been checked where a page says so; everything else is a proposal.
+These pages are a working draft prepared for Jim Clifford's review. Source and data: [github.com/jburnford/trimen-workshop](https://github.com/jburnford/trimen-workshop). Facts about the sources have been checked where a page says so; everything else is a proposal.
 :::
 
 ## The question
