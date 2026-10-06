@@ -77,6 +77,12 @@ cases = [
                         'Vector searches for both names (2026-10-06) return no plausible item for either.'],
       question='Accept the merge?'),
 ]
+PRINCIPLE = {'R3': 'Clean', 'R2': 'Structure', 'R1': 'Ground', 'R4': 'Ground', 'R5': 'Ground (extra)', 'R6': 'Ground (extra)'}
+ORDER = ['R3', 'R2', 'R1', 'R4', 'R5', 'R6']
+cases.sort(key=lambda c: ORDER.index(c['id']))
+for c in cases:
+    c['principle'] = PRINCIPLE[c['id']]
+    c['optional'] = c['id'] in ('R5', 'R6')
 payload = {'title': 'Trimen review exercise', 'built': '2026-10-06', 'cases': cases}
 digest = hashlib.sha256(json.dumps(cases, sort_keys=True, ensure_ascii=False).encode()).hexdigest()[:12]
 payload['fingerprint'] = digest

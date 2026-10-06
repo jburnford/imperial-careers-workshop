@@ -32,6 +32,13 @@ The [draft prompts](02-structure-extract.qmd#the-prompts) on step 2 are a starti
 - **Make the correction a test.** When a review finds a defect, the probe that found it becomes a regression test. Tropical's three name probes are now in its test suite.
 - **Report what the sample can support.** Handpicked cases explain failure modes. A stratified sample measures precision for one stratum. Neither measures recall.
 
-## Tools
+## Tools, and what they cost at scale
+
+Two different jobs need two different kinds of model.
+
+- **The agent that writes the pipeline** reads your sample, proposes the structure, writes and tests the script, and builds the review view. This is a few hours of a frontier model's time per project. The saved runs A and B used Claude Sonnet 5.5 and Claude Fable 5.1 in Claude Code.
+- **The model inside the pipeline** reads every chunk of the collection. At tens of thousands of articles the frontier models are too expensive. The Tropical project's extraction over 53,000 articles used Qwen3.8-27B-FP8 served by vLLM on a shared university GPU, and run C in `outputs/02-extract/` is the same model on the same two passages, so you can compare what the cheap model does with the same prompts.
+
+The agent can write the pipeline so that the cheap model does the reading and the agent is only called back when something fails. Which operation produced a given record should remain visible in the output.
 
 The presenter's environment uses Claude Code as the coding agent and the [WikidataMCP](https://wd-mcp.wmcloud.org/) server for lookups. Any coding agent that can run code, read files and call a lookup tool will do. See [Run it yourself](../setup.qmd) for the setup used here, and for what is still to be confirmed about costs.

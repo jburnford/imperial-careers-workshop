@@ -40,6 +40,16 @@ python3 scripts/build_review_cases.py      # cases.json for the exercise
 
 None of these touch the network.
 
+## Running the extraction with a local open model
+
+`outputs/02-extract/run-C/02_extract.py` sends the two prompts to any OpenAI-compatible server (the saved run used Qwen3.8-27B-FP8 under vLLM on the University of Saskatchewan's Plato cluster; `scripts/plato_qwen_extract.slurm` is the job). Point it at your own server:
+
+```bash
+python3 outputs/02-extract/run-C/02_extract.py --base-url http://127.0.0.1:8000/v1 --model <served-name> --sources source-pack --out /tmp/runC
+```
+
+The model in this mode is not an agent: it returns the records as JSON and the script saves them. That is the shape of a production pipeline, where the agent writes the script once and the cheap model runs inside it.
+
 ## Running the live steps with your own agent
 
 You need a coding agent that can read files, run Python and call a Wikidata lookup tool. The materials were prepared with [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and the [WikidataMCP](https://wd-mcp.wmcloud.org/) server (Streamable HTTP endpoint `https://wd-mcp.wmcloud.org/mcp`). Two things to know:
