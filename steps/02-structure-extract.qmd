@@ -29,12 +29,13 @@ Note what the prompts ask for beyond the records: two examples before the rest, 
 
 ## What came back
 
-Two cold runs, with different models, on S04 and the companion letter S03. Everything they produced is in [`outputs/02-extract/`](../outputs/02-extract/README.md), unedited.
+Three cold runs on S04 and the companion letter S03. Everything they produced is in [`outputs/02-extract/`](../outputs/02-extract/README.md), unedited.
 
-| Run | Model | Records | Failed | Uncertain |
+| Run | Model | How it ran | Records | Flagged uncertain |
 |---|---|---|---|---|
-| A | Claude Sonnet 5.5 | 85 | 0 | 8 |
-| B | Claude Fable 5.1 | 71 | 1 | 9 |
+| A | Claude Sonnet 5.5 | Coding agent: wrote and ran its own script | 85 | 8 |
+| B | Claude Fable 5.1 | Coding agent: wrote and ran its own script | 71 | 9 |
+| C | Qwen3.8-27B, on a shared university GPU | Model call inside a script; the model the Tropical project uses at scale | 13 | 0 of the two damaged sentences |
 
 Both proposed a flat table with typed local ids, a verbatim quote and line reference on every row, and separate fields for inferences and for outside identification ([proposals](../outputs/01-structure/README.md)). Both wrote a script that holds the records as data and checks every quoted span against the source text. Here is run A's record for the bark that was analysed:
 
@@ -57,7 +58,11 @@ Three things, in this order, before anything else is built on the records:
 2. **Invented details.** Did a name get a given name the text does not print? Did a relative date become an absolute one without saying so? Run B resolved "5th instant" to 5 June 1883 and said so in the inferred field. Run B also filled an `outside_identification` field for six people from its own memory, each marked UNVERIFIED. That is the behaviour the prompt asked for; the next step replaces memory with retrieval.
 3. **Changed meaning.** Did a careful statement become a flat one? The editor says Howard analysed "the bark" of the figured tree. Agar says bark from some trees went to Howard and the figured tree's bark is in his own drawer. Both runs kept these apart. Would a third?
 
-And one thing both runs could not do: two sentences of the OCR are damaged, and both runs said so and guessed at the intended wording. Every guess was wrong. See [step 5](05-revise.qmd).
+And one thing none of the runs could do: two sentences of the OCR are damaged. Runs A and B said so and guessed at the intended wording; every guess was wrong. Run C did not notice.
+
+## Run C is the one to look at
+
+Runs A and B are what a frontier model does on two passages, and they did well. Run C is the affordable model, the one the Tropical project uses across 53,000 articles, on the same passages ([notes](../outputs/02-extract/run-C/README.md)). It attributed the editor's headnote to Agar ("confirms the tree sketched for Dr. Trimen was an undoubted Ledgeriana"), reported the damaged OCR sentence as fact, and dropped the hedges ("I believe", "some of these trees"). Its output reads well. The review step in the next pages exists for run C.
 
 ## Agent versus model
 

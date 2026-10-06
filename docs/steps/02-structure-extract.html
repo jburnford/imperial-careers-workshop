@@ -177,6 +177,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#the-prompts" id="toc-the-prompts" class="nav-link" data-scroll-target="#the-prompts">The prompts</a></li>
   <li><a href="#what-came-back" id="toc-what-came-back" class="nav-link" data-scroll-target="#what-came-back">What came back</a></li>
   <li><a href="#what-to-inspect" id="toc-what-to-inspect" class="nav-link" data-scroll-target="#what-to-inspect">What to inspect</a></li>
+  <li><a href="#run-c-is-the-one-to-look-at" id="toc-run-c-is-the-one-to-look-at" class="nav-link" data-scroll-target="#run-c-is-the-one-to-look-at">Run C is the one to look at</a></li>
   <li><a href="#agent-versus-model" id="toc-agent-versus-model" class="nav-link" data-scroll-target="#agent-versus-model">Agent versus model</a></li>
   </ul>
 </nav>
@@ -242,31 +243,45 @@ WALTER AGAR.
 </section>
 <section id="what-came-back" class="level2">
 <h2 class="anchored" data-anchor-id="what-came-back">What came back</h2>
-<p>Two cold runs, with different models, on S04 and the companion letter S03. Everything they produced is in <a href="../outputs/02-extract/README.md"><code>outputs/02-extract/</code></a>, unedited.</p>
+<p>Three cold runs on S04 and the companion letter S03. Everything they produced is in <a href="../outputs/02-extract/README.md"><code>outputs/02-extract/</code></a>, unedited.</p>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Run</th>
 <th>Model</th>
+<th>How it ran</th>
 <th>Records</th>
-<th>Failed</th>
-<th>Uncertain</th>
+<th>Flagged uncertain</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>A</td>
 <td>Claude Sonnet 5.5</td>
+<td>Coding agent: wrote and ran its own script</td>
 <td>85</td>
-<td>0</td>
 <td>8</td>
 </tr>
 <tr class="even">
 <td>B</td>
 <td>Claude Fable 5.1</td>
+<td>Coding agent: wrote and ran its own script</td>
 <td>71</td>
-<td>1</td>
 <td>9</td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>Qwen3.8-27B, on a shared university GPU</td>
+<td>Model call inside a script; the model the Tropical project uses at scale</td>
+<td>13</td>
+<td>0 of the two damaged sentences</td>
 </tr>
 </tbody>
 </table>
@@ -319,7 +334,11 @@ WALTER AGAR.
 <li><strong>Invented details.</strong> Did a name get a given name the text does not print? Did a relative date become an absolute one without saying so? Run B resolved “5th instant” to 5 June 1883 and said so in the inferred field. Run B also filled an <code>outside_identification</code> field for six people from its own memory, each marked UNVERIFIED. That is the behaviour the prompt asked for; the next step replaces memory with retrieval.</li>
 <li><strong>Changed meaning.</strong> Did a careful statement become a flat one? The editor says Howard analysed “the bark” of the figured tree. Agar says bark from some trees went to Howard and the figured tree’s bark is in his own drawer. Both runs kept these apart. Would a third?</li>
 </ol>
-<p>And one thing both runs could not do: two sentences of the OCR are damaged, and both runs said so and guessed at the intended wording. Every guess was wrong. See <a href="../steps/05-revise.html">step 5</a>.</p>
+<p>And one thing none of the runs could do: two sentences of the OCR are damaged. Runs A and B said so and guessed at the intended wording; every guess was wrong. Run C did not notice.</p>
+</section>
+<section id="run-c-is-the-one-to-look-at" class="level2">
+<h2 class="anchored" data-anchor-id="run-c-is-the-one-to-look-at">Run C is the one to look at</h2>
+<p>Runs A and B are what a frontier model does on two passages, and they did well. Run C is the affordable model, the one the Tropical project uses across 53,000 articles, on the same passages (<a href="../outputs/02-extract/run-C/README.md">notes</a>). It attributed the editor’s headnote to Agar (“confirms the tree sketched for Dr.&nbsp;Trimen was an undoubted Ledgeriana”), reported the damaged OCR sentence as fact, and dropped the hedges (“I believe”, “some of these trees”). Its output reads well. The review step in the next pages exists for run C.</p>
 </section>
 <section id="agent-versus-model" class="level2">
 <h2 class="anchored" data-anchor-id="agent-versus-model">Agent versus model</h2>
