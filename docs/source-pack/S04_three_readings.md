@@ -35,7 +35,7 @@ The production corpus was not OCR'd from the JPEG scans but from archive.org's v
 
 > The trees were only about 4½ years old from the time the plants were put out, and were in a very abnormal situation at the time. I have no doubts from the sketch and the specimen trees as well as the other that Mr. Moens intended to be true Ledgerianas, so that it will be easy in the future to determine the question.
 
-Same page, same model, same sentences, a third reading, and again fluent. The difference between a correct reading and an invented one is the page image: the JBIG2-masked PDF render produces hallucinations where the JPEG scan does not. One page is one page, but the mechanism is now identified and testable on a sample.
+Same page, same model, same sentences, a third reading, and again fluent. Looking at the two images side by side (`images/p66-jpeg-detail.jpg`, `images/p66-pdf-render-detail.png`) shows why: in the PDF render the two lines are mostly gone. The JBIG2 mask kept the darker lines above and below and dropped most of the glyphs in these two, which are lightly inked on the scan. The model did not misread the lines; it wrote plausible prose across lines that were nearly blank, instead of reporting them as illegible. One page is one page, but the mechanism is identified: lossy PDF text masks drop faint lines, and a vision-language OCR model fills the gap with language.
 
 ## What this shows
 
