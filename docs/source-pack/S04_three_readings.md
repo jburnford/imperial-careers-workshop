@@ -27,11 +27,19 @@ On 6 October 2026 the same page was re-OCR'd with Chandra 2 three times (`script
 > … and were growing in a bad situation and not robust.
 > I have many plants from the seed of the specimen tree as well as the others that Mr. Moens declared to be true Ledgerianas …
 
-Full output: `S04_chandra_rerun_2026-10-06.md`. The production corpus was built from the volume PDF in batches of 28 pages with 16 concurrent sequences. The wrong sentences belong to that run's conditions (the page image it saw, or the decoding under load), not to the model's ability to read this page.
+Full output: `S04_chandra_rerun_2026-10-06.md`. The production corpus was built from the volume PDF in batches of 28 pages with 16 concurrent sequences. The wrong sentences belong to the page image that run saw (next section), not to the model's ability to read this page.
+
+## Chandra 2 on the production PDF page
+
+The production corpus was not OCR'd from the JPEG scans but from archive.org's volume PDFs. Those PDFs are MRC-compressed: page 84 of this volume is a 646 × 954 colour background, an 8 KB foreground layer, and a 1-bit JBIG2 text mask at 1940 × 2865. Rendering that page at 300 dpi and giving it to Chandra 2 (`S04_chandra_pdfrender_2026-10-06.md`) reproduced the failure with a different invented text:
+
+> The trees were only about 4½ years old from the time the plants were put out, and were in a very abnormal situation at the time. I have no doubts from the sketch and the specimen trees as well as the other that Mr. Moens intended to be true Ledgerianas, so that it will be easy in the future to determine the question.
+
+Same page, same model, same sentences, a third reading, and again fluent. The difference between a correct reading and an invented one is the page image: the JBIG2-masked PDF render produces hallucinations where the JPEG scan does not. One page is one page, but the mechanism is now identified and testable on a sample.
 
 ## What this shows
 
 - The older OCR is noisier character by character ("Triincu" for Trimen, "Moena", "Campliell", "w:is .si nt home") and its errors are visible as errors.
 - The vision-language OCR is cleaner almost everywhere on the page and, in two places, wrote fluent sentences with a different meaning. Nothing in its text signals the error. Two extraction models read the first sentence as plausible and only flagged the second as garbled.
 - The two OCRs disagree exactly where the newer one is wrong. A cheap sentence-level comparison between them would have flagged both places for a human, without re-OCR.
-- Chandra 2 was tested on this corpus and performs well overall, and it reads this page correctly when given the page image on its own. The lesson is not that it should not be used. It is that OCR output depends on the run as well as the model, that a fluent wrong sentence can come out of a good model, and that the page has to stay one click away. A cheap second pass on flagged pages fixes cases like this one.
+- Chandra 2 was tested on this corpus and performs well overall, and it reads this page correctly when given the page image on its own. The lesson is not that it should not be used. It is that OCR output depends on the page image as well as the model, that a fluent wrong sentence can come out of a good model on a page a person reads easily, and that the page has to stay one click away. For this corpus the practical question is whether to OCR from the JPEG scans rather than the compressed PDFs; a sample of pages compared both ways would answer it.

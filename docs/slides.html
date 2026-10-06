@@ -435,6 +435,19 @@ Jim Clifford, University of Saskatchewan
 </blockquote>
 </div>
 </section>
+<section id="what-the-model-saw" class="slide level2 smaller">
+<h2>What the model saw</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>archive.org JPEG scan</strong></p>
+<p><img data-src="images/p66-jpeg-detail.jpg"></p>
+<p>Chandra: <em>growing in a bad situation and not robust</em> (3 of 3)</p>
+</div><div class="column" style="width:50%;">
+<p><strong>Same page rendered from the archive.org PDF</strong> (JBIG2 text mask; what the corpus was OCR’d from)</p>
+<p><img data-src="images/p66-pdf-render-detail.png"></p>
+<p>Chandra: <em>now in a full condition and in flower</em> / <em>in a very abnormal situation at the time</em></p>
+</div></div>
+</section>
 <section id="ocr-is-better-and-not-perfect" class="slide level2 smaller">
 <h2>OCR is better, and not perfect</h2>
 <p>The old archive.org text layer, same sentences:</p>
@@ -446,7 +459,7 @@ Jim Clifford, University of Saskatchewan
 <li>The old OCR’s errors look like errors. The new OCR’s errors read like prose.</li>
 <li>The two frontier runs flagged the sentences, then guessed; every guess was wrong. The affordable model reported the sentence as fact.</li>
 <li>The two OCRs disagree exactly where the new one is wrong.</li>
-<li>Re-run on the page image alone, Chandra reads both sentences correctly, three times out of three. The error belongs to the production run, not the model. Nothing in the text tells you which you got.</li>
+<li>Given the JPEG scan, Chandra reads both sentences correctly, three times out of three. Given the same page rendered from the compressed PDF, it invents a third version. The error belongs to the page image. Nothing in the text tells you which you got.</li>
 </ul>
 <p><strong>A model can tell you a sentence reads oddly. Only the page tells you what it says.</strong></p>
 </div>
