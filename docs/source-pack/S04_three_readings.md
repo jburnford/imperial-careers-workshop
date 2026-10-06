@@ -20,9 +20,18 @@ The two sentences that differ. The scan was read by eye on 6 October 2026.
 
 **archive.org text layer:** I have many plants from the seed of the specimen^ tree as well as the oiheis that Mr. Moens declared to be true Ledgerianas, so that it will be easy in the future to determine the question.
 
+## Chandra 2 again, on the page image
+
+On 6 October 2026 the same page was re-OCR'd with Chandra 2 three times (`scripts/plato_chandra_page66.slurm`), feeding it the archive.org page image `n83.jpg` (1940 × 2865 px) one page at a time. All three runs read both sentences correctly:
+
+> … and were growing in a bad situation and not robust.
+> I have many plants from the seed of the specimen tree as well as the others that Mr. Moens declared to be true Ledgerianas …
+
+Full output: `S04_chandra_rerun_2026-10-06.md`. The production corpus was built from the volume PDF in batches of 28 pages with 16 concurrent sequences. The wrong sentences belong to that run's conditions (the page image it saw, or the decoding under load), not to the model's ability to read this page.
+
 ## What this shows
 
 - The older OCR is noisier character by character ("Triincu" for Trimen, "Moena", "Campliell", "w:is .si nt home") and its errors are visible as errors.
 - The vision-language OCR is cleaner almost everywhere on the page and, in two places, wrote fluent sentences with a different meaning. Nothing in its text signals the error. Two extraction models read the first sentence as plausible and only flagged the second as garbled.
 - The two OCRs disagree exactly where the newer one is wrong. A cheap sentence-level comparison between them would have flagged both places for a human, without re-OCR.
-- Chandra 2 was tested on this corpus and performs well overall. The lesson is not that it should not be used. It is that OCR is better than it was and not perfect, and that the page has to stay one click away.
+- Chandra 2 was tested on this corpus and performs well overall, and it reads this page correctly when given the page image on its own. The lesson is not that it should not be used. It is that OCR output depends on the run as well as the model, that a fluent wrong sentence can come out of a good model, and that the page has to stay one click away. A cheap second pass on flagged pages fixes cases like this one.
