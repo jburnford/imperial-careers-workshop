@@ -1,0 +1,37 @@
+---
+title: "7. Your own data"
+subtitle: "Minutes 55–60. A practical next step for another collection."
+---
+
+The published session description invited you to bring messy historical datasets. An hour is not enough to work on them together, but the sequence transfers. Here is how to start, in the order that worked for the Tropical and Imperial Careers projects.
+
+## Before you open a model
+
+1. **Pick one question and one small sample.** Twenty records you can check by hand beat two thousand you cannot. The sample should include at least one hard case.
+2. **Keep the source reachable.** Every record needs a reference that gets a reader back to the page: file, page, line or offset. If your text came from OCR, keep the page images available. You will need them.
+3. **Decide what a record is.** A person? A mention of a person? An event? The Tropical project's "863 records" for Trimen are chunk-level extractions, not occurrences, and that distinction mattered later.
+
+## The sequence
+
+| Step | Ask the model to | You |
+|---|---|---|
+| Structure | Read the sample and propose fields, with two example records | Decide what the question requires and what the source can support |
+| Extract | Process the sample, keep printed wording, put inferences in separate fields, save code and outputs, report failures | Inspect for omissions, invented details and changed meaning |
+| Candidates | Retrieve identities with a verifiable lookup, save the evidence and the date | Judge whether the identity fits the historical context |
+| Review | Build a side-by-side evidence table with accept / reject / unresolved and a reason field | Decide, and write the reason |
+| Revise | Find other records with the same problem, propose a fix, rerun the sample, show what changed | Check the fix and look for new errors before scaling up |
+
+The [draft prompts](02-structure-extract.qmd#the-prompts) on step 2 are a starting point. Adapt the nouns.
+
+## Rules that saved the research projects trouble
+
+- **Local identifiers first.** Give every record a stable local id before any external identifier. Add a Wikidata link only after retrieval and review support it. If nothing suitable exists, keep the local id; do not invent one.
+- **No identifiers from memory.** A model will offer plausible Q-numbers. Treat any identifier that was not retrieved by a tool as unverified. The [earlier workshop](https://jimclifford.ca/claude_code_workshop/hands-on.html) has a longer note on this.
+- **Separate structuring from grounding, and both from modern classification.** A plant name in 1883 is a historical usage; what Kew calls that plant today is a separate record.
+- **Model decisions and human decisions in different columns.** Never overwrite the one with the other. The Tropical review page exports the human decisions with a dataset fingerprint so they cannot be attached to the wrong version of the data.
+- **Make the correction a test.** When a review finds a defect, the probe that found it becomes a regression test. Tropical's three name probes are now in its test suite.
+- **Report what the sample can support.** Handpicked cases explain failure modes. A stratified sample measures precision for one stratum. Neither measures recall.
+
+## Tools
+
+The presenter's environment uses Claude Code as the coding agent and the [WikidataMCP](https://wd-mcp.wmcloud.org/) server for lookups. Any coding agent that can run code, read files and call a lookup tool will do. See [Run it yourself](../setup.qmd) for the setup used here, and for what is still to be confirmed about costs.

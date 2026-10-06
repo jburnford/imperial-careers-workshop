@@ -1,0 +1,805 @@
+{
+  "retrieved_at": "2026-10-06T17:17:54.223912+00:00",
+  "url": "https://www.wikidata.org/wiki/Special:EntityData/Q21520254.json",
+  "response": {
+    "entities": {
+      "Q21520254": {
+        "pageid": 23564796,
+        "ns": 0,
+        "title": "Q21520254",
+        "lastrevid": 2529618450,
+        "modified": "2026-08-10T13:25:36Z",
+        "type": "item",
+        "id": "Q21520254",
+        "labels": {
+          "de": {
+            "language": "de",
+            "value": "William Graham McIvor"
+          },
+          "en": {
+            "language": "en",
+            "value": "William Graham McIvor"
+          },
+          "fr": {
+            "language": "fr",
+            "value": "William Graham McIvor"
+          },
+          "nl": {
+            "language": "nl",
+            "value": "William Graham McIvor"
+          },
+          "es": {
+            "language": "es",
+            "value": "William Graham McIvor"
+          },
+          "ast": {
+            "language": "ast",
+            "value": "William Graham McIvor"
+          },
+          "sq": {
+            "language": "sq",
+            "value": "William Graham McIvor"
+          },
+          "mul": {
+            "language": "mul",
+            "value": "William Graham McIvor"
+          }
+        },
+        "descriptions": {
+          "en": {
+            "language": "en",
+            "value": "botanist (1824-1876)"
+          },
+          "nl": {
+            "language": "nl",
+            "value": "botanicus"
+          },
+          "bn": {
+            "language": "bn",
+            "value": "উদ্ভিদবিজ্ঞানী (১৮২৪-১৮৭৬)"
+          }
+        },
+        "aliases": {
+          "en": [
+            {
+              "language": "en",
+              "value": "McIvor"
+            }
+          ],
+          "bg": [
+            {
+              "language": "bg",
+              "value": "McIvor"
+            }
+          ],
+          "ru": [
+            {
+              "language": "ru",
+              "value": "McIvor"
+            }
+          ],
+          "it": [
+            {
+              "language": "it",
+              "value": "McIvor"
+            }
+          ],
+          "de": [
+            {
+              "language": "de",
+              "value": "McIvor"
+            }
+          ]
+        },
+        "claims": {
+          "P31": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P31",
+                "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 5,
+                    "id": "Q5"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q21520254$30C67B0E-63D7-4026-B2A3-0E7B6D3CD7E2",
+              "rank": "normal"
+            }
+          ],
+          "P428": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P428",
+                "hash": "2d321fc9008f33c74688bf1793677ca70764d3f3",
+                "datavalue": {
+                  "value": "McIvor",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q21520254$352F4B8F-FD0E-481C-83A7-260793C34351",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "0238c38230a08049f9e8ab9acaf7b988cde72335",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "3bac31ec58b8406d25da59abce49237aa8ea7e54",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 922063,
+                            "id": "Q922063"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ],
+                    "P586": [
+                      {
+                        "snaktype": "value",
+                        "property": "P586",
+                        "hash": "4c1f553a292b8d3c410cad39e252449465978bf6",
+                        "datavalue": {
+                          "value": "5932-1",
+                          "type": "string"
+                        },
+                        "datatype": "external-id"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248",
+                    "P586"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P570": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P570",
+                "hash": "8f71ebc0e620098dec8fcf4832739f15e6e15621",
+                "datavalue": {
+                  "value": {
+                    "time": "+1876-01-01T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              },
+              "type": "statement",
+              "id": "Q21520254$D0076D33-BD8A-4801-947B-4020B2808787",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "0238c38230a08049f9e8ab9acaf7b988cde72335",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "3bac31ec58b8406d25da59abce49237aa8ea7e54",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 922063,
+                            "id": "Q922063"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ],
+                    "P586": [
+                      {
+                        "snaktype": "value",
+                        "property": "P586",
+                        "hash": "4c1f553a292b8d3c410cad39e252449465978bf6",
+                        "datavalue": {
+                          "value": "5932-1",
+                          "type": "string"
+                        },
+                        "datatype": "external-id"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248",
+                    "P586"
+                  ]
+                },
+                {
+                  "hash": "43d0b2f5aa4fac7c686c6a0f4d7e0d750d293f4f",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "e4631df793ffbe3bc75a10bd0290f0eeb2ca930c",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 669585,
+                            "id": "Q669585"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ],
+                    "P428": [
+                      {
+                        "snaktype": "value",
+                        "property": "P428",
+                        "hash": "2d321fc9008f33c74688bf1793677ca70764d3f3",
+                        "datavalue": {
+                          "value": "McIvor",
+                          "type": "string"
+                        },
+                        "datatype": "external-id"
+                      }
+                    ],
+                    "P1810": [
+                      {
+                        "snaktype": "value",
+                        "property": "P1810",
+                        "hash": "9b20bdef56113ac98f0cb2b14c27907a70129278",
+                        "datavalue": {
+                          "value": "William Graham McIvor",
+                          "type": "string"
+                        },
+                        "datatype": "string"
+                      }
+                    ],
+                    "P813": [
+                      {
+                        "snaktype": "value",
+                        "property": "P813",
+                        "hash": "e5f60ab0b03700bb883efce38f8022d023bc49fb",
+                        "datavalue": {
+                          "value": {
+                            "time": "+2017-10-09T00:00:00Z",
+                            "timezone": 0,
+                            "before": 0,
+                            "after": 0,
+                            "precision": 11,
+                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                          },
+                          "type": "time"
+                        },
+                        "datatype": "time"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248",
+                    "P428",
+                    "P1810",
+                    "P813"
+                  ]
+                },
+                {
+                  "hash": "9d046d4426ad623d80117124e8d4414187a01f9f",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "a49941185f9dd61b6f782c872d0c2fa8736b61d0",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 59611233,
+                            "id": "Q59611233"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ],
+                    "P6264": [
+                      {
+                        "snaktype": "value",
+                        "property": "P6264",
+                        "hash": "e69a8fbfb23d074c4a991c52264c46127aee2585",
+                        "datavalue": {
+                          "value": "2906",
+                          "type": "string"
+                        },
+                        "datatype": "external-id"
+                      }
+                    ],
+                    "P1810": [
+                      {
+                        "snaktype": "value",
+                        "property": "P1810",
+                        "hash": "9b20bdef56113ac98f0cb2b14c27907a70129278",
+                        "datavalue": {
+                          "value": "William Graham McIvor",
+                          "type": "string"
+                        },
+                        "datatype": "string"
+                      }
+                    ],
+                    "P813": [
+                      {
+                        "snaktype": "value",
+                        "property": "P813",
+                        "hash": "e5f60ab0b03700bb883efce38f8022d023bc49fb",
+                        "datavalue": {
+                          "value": {
+                            "time": "+2017-10-09T00:00:00Z",
+                            "timezone": 0,
+                            "before": 0,
+                            "after": 0,
+                            "precision": 11,
+                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                          },
+                          "type": "time"
+                        },
+                        "datatype": "time"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248",
+                    "P6264",
+                    "P1810",
+                    "P813"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P735": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P735",
+                "hash": "820ea5eec164349d0b281cdc1ade5db9cf8e7565",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 12344159,
+                    "id": "Q12344159"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q21520254$7A9F5260-C93A-44E2-B6A1-992C905F230B",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P735",
+                "hash": "780a6be5d9001d4a1b96cf939a198e8f57211aba",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 642254,
+                    "id": "Q642254"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q21520254$16d0d129-461a-cc80-9652-388d0916d4ee",
+              "rank": "normal"
+            }
+          ],
+          "P586": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P586",
+                "hash": "4c1f553a292b8d3c410cad39e252449465978bf6",
+                "datavalue": {
+                  "value": "5932-1",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q21520254$88635BEE-FF85-4E8F-9A00-45EB5908ECD5",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "651a20ae090254b3a2b6c3d6a17a547c7865cb0f",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "3bac31ec58b8406d25da59abce49237aa8ea7e54",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 922063,
+                            "id": "Q922063"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ],
+                    "P813": [
+                      {
+                        "snaktype": "value",
+                        "property": "P813",
+                        "hash": "b5a1c722653f01998c840ae0f1ccd66646860565",
+                        "datavalue": {
+                          "value": {
+                            "time": "+2016-04-27T00:00:00Z",
+                            "timezone": 0,
+                            "before": 0,
+                            "after": 0,
+                            "precision": 11,
+                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                          },
+                          "type": "time"
+                        },
+                        "datatype": "time"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248",
+                    "P813"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P21": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P21",
+                "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 6581097,
+                    "id": "Q6581097"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q21520254$D6A2E54C-6B80-4BC8-BB10-F8E735EB6E6B",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "87d47cd6b4be7c2919b945ea4a0de22d5db134f7",
+                  "snaks": {
+                    "P356": [
+                      {
+                        "snaktype": "value",
+                        "property": "P356",
+                        "hash": "7bdcc2243afbe351380cf78687fab2fd8f4a8a1e",
+                        "datavalue": {
+                          "value": "10.5281/ZENODO.10080503",
+                          "type": "string"
+                        },
+                        "datatype": "external-id"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P356"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P569": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P569",
+                "hash": "d0c68f0ea31319e650b1f2839fdebc60d2956122",
+                "datavalue": {
+                  "value": {
+                    "time": "+1824-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              },
+              "type": "statement",
+              "id": "Q21520254$77fd2693-4fe2-cc1a-23a6-c2a9d069af52",
+              "rank": "normal"
+            }
+          ],
+          "P734": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P734",
+                "hash": "96751405526187c08b436eed62d5b23308f8072f",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 50414420,
+                    "id": "Q50414420"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q21520254$8dbbbd8e-4e92-f9fa-11ab-23dd1062d37c",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "ddb98e58393aea6527ab9f6c970194f8bebbc5c7",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "3bac31ec58b8406d25da59abce49237aa8ea7e54",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 922063,
+                            "id": "Q922063"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P1442": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P1442",
+                "hash": "3136ea4f84eb5bb1273eb667c97cb326afad4601",
+                "datavalue": {
+                  "value": "W G McIvor tomb.jpg",
+                  "type": "string"
+                },
+                "datatype": "commonsMedia"
+              },
+              "type": "statement",
+              "id": "Q21520254$22170E84-2F3B-4DCB-9B23-953C3A78AC01",
+              "rank": "normal"
+            }
+          ],
+          "P106": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P106",
+                "hash": "083212f3758220de2fc05c66cf6ec84468c55e40",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 2374149,
+                    "id": "Q2374149"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q21520254$0fcba932-25a2-4576-a5b9-a0f984aa6719",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+                  "snaks": {
+                    "P143": [
+                      {
+                        "snaktype": "value",
+                        "property": "P143",
+                        "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 328,
+                            "id": "Q328"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P143"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P1801": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P1801",
+                "hash": "e56014271261cf3c39149537facd5c4882496512",
+                "datavalue": {
+                  "value": "Anne McIvor Ooty.jpg",
+                  "type": "string"
+                },
+                "datatype": "commonsMedia"
+              },
+              "type": "statement",
+              "id": "Q21520254$950C3021-5ACA-4A23-80A9-A4967BF3B9DE",
+              "rank": "normal"
+            }
+          ],
+          "P2671": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P2671",
+                "hash": "f785e201d7b3dcc6c639d51435b8d6cdc0f03662",
+                "datavalue": {
+                  "value": "/g/11c1wxz_67",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q21520254$4AFD00CD-6BA3-48F9-90F1-158B753DDE30",
+              "rank": "normal"
+            }
+          ],
+          "P18": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P18",
+                "hash": "185b4962ae670864523265c3bd3b5dd33df9140d",
+                "datavalue": {
+                  "value": "Portrait of McIvor quinine specialist.jpg",
+                  "type": "string"
+                },
+                "datatype": "commonsMedia"
+              },
+              "type": "statement",
+              "id": "Q21520254$0a5e7760-4c79-3251-0e85-908c0d0da24f",
+              "rank": "normal"
+            }
+          ],
+          "P373": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P373",
+                "hash": "fe2de13a2bc458d5119b160f5cdac07532577661",
+                "datavalue": {
+                  "value": "William Graham McIvor",
+                  "type": "string"
+                },
+                "datatype": "string"
+              },
+              "type": "statement",
+              "id": "Q21520254$e9f9e5aa-4cb7-720b-f700-c587c3349bea",
+              "rank": "normal"
+            }
+          ],
+          "P6264": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P6264",
+                "hash": "e69a8fbfb23d074c4a991c52264c46127aee2585",
+                "datavalue": {
+                  "value": "2906",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q21520254$06F59D84-9A9B-405B-B4E2-C8AB59D3837F",
+              "rank": "normal"
+            }
+          ],
+          "P13951": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P13951",
+                "hash": "9d9369da20cf88c8c4211e7ec3d0dd45ab20d8ed",
+                "datavalue": {
+                  "value": "624786",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q21520254$60CD4A89-B5DA-4DED-ADC8-020ACEA3A90F",
+              "rank": "normal"
+            }
+          ],
+          "P535": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P535",
+                "hash": "bdf1a1e9dcab9d5acf10d57c629b6dfd962638f5",
+                "datavalue": {
+                  "value": "197568867",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q21520254$452cade8-4191-adf6-d874-8a91dc446c92",
+              "rank": "normal"
+            }
+          ]
+        },
+        "sitelinks": {
+          "enwiki": {
+            "site": "enwiki",
+            "title": "William Graham McIvor",
+            "badges": [],
+            "url": "https://en.wikipedia.org/wiki/William_Graham_McIvor"
+          },
+          "specieswiki": {
+            "site": "specieswiki",
+            "title": "William Graham McIvor",
+            "badges": [],
+            "url": "https://species.wikimedia.org/wiki/William_Graham_McIvor"
+          },
+          "commonswiki": {
+            "site": "commonswiki",
+            "title": "Category:William Graham McIvor",
+            "badges": [],
+            "url": "https://commons.wikimedia.org/wiki/Category:William_Graham_McIvor"
+          },
+          "frwiki": {
+            "site": "frwiki",
+            "title": "William Graham McIvor",
+            "badges": [],
+            "url": "https://fr.wikipedia.org/wiki/William_Graham_McIvor"
+          }
+        }
+      }
+    }
+  }
+}

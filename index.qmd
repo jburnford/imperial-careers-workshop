@@ -1,0 +1,50 @@
+---
+title: "Cleaning and Structuring Historical Data: A Working Session"
+subtitle: "AI and History Conference, Johns Hopkins University. Thursday 15 October 2026, 1:30–2:30 p.m., Room 110, SNF Agora Institute. Streamed on Zoom."
+---
+
+::: {.callout-note title="Draft"}
+These pages are a working draft prepared for Jim Clifford's review. Facts about the sources have been checked where a page says so; everything else is a proposal.
+:::
+
+## The question
+
+Henry Trimen was Director of the Royal Botanic Gardens at Peradeniya, Ceylon, from 1880. He appears in the *Colonial Office List* every year from 1883 to 1896, and in *The Tropical Agriculturist*, a Colombo planters' monthly, hundreds of times.
+
+**Who is Trimen connected to in *The Tropical Agriculturist*, and what evidence supports those connections?**
+
+In 1883 the journal printed a public quarrel between Trimen and the London quinine manufacturer John Eliot Howard about whether a cinchona tree Trimen had illustrated was a true *Cinchona ledgeriana*. The letters name planters, seed suppliers, botanical gardens, bark samples and chemical analyses. They are a small, dense example of what historians want from a text collection: people, things and actions, connected, with sources.
+
+## What we will do in the hour
+
+Models and coding agents will do most of the work: propose a record structure, extract records from the OCR text, write and save the code, retrieve candidate identities from Wikidata and from the Colonial Office List, and lay the evidence out for inspection. You will do the part that cannot be delegated: decide what a record means, check a consequential decision against the page, and direct a revision.
+
+| Minutes | Step | What happens |
+|---|---|---|
+| 0–5 | [1. The question](steps/01-question.qmd) | Trimen's career in the Colonial Office List; the question we take to the journal |
+| 5–20 | [2. Structure and extract](steps/02-structure-extract.qmd) | The model proposes a table, extracts records, saves a rerunnable script |
+| 20–30 | [3. Candidate identities](steps/03-candidates.qmd) | Wikidata and Colonial Office List lookups; a compact review view |
+| 30–45 | [4. Review](steps/04-review.qmd) | We inspect results together, find a consequential error, and direct a fix |
+| 45–55 | [Exercise](review/index.html) | You record decisions on five or six cases, in the room or on Zoom |
+| 55–60 | [7. Your own data](steps/07-your-data.qmd) | How to take this to another collection |
+
+Every live stage has a saved checkpoint in `outputs/`. If a live step stalls we switch to the saved result and keep going.
+
+## What you need
+
+A browser. The [exercise](review/index.html) runs from saved results and needs no account, model subscription or API key. If you have a coding agent configured you can also [run the example yourself](setup.qmd), during the session or afterwards.
+
+Remote participants have the same evidence and the same exercise as the room. Post questions in the Zoom chat; the exercise page has a button that copies a one-line summary of your decisions for pasting into the chat.
+
+## What you should be able to do afterwards
+
+- Describe a small extraction task to a model and inspect the records it returns against the source.
+- Tell a *candidate* identity from a *supported* match, and say what evidence made the difference.
+- Turn a correction to one result into a rule, a check or a review step for the rest of a collection.
+
+## Materials
+
+- [Source pack](source-pack/CITATIONS.md): the OCR text of six 1881–1883 items, the scan-checked transcription of the exercise letter, Trimen's Colonial Office List entries, and page links to the scans.
+- [Saved outputs](outputs/) for every stage, including the first attempts and the revised results.
+- [Research packet](packet.qmd): the wider Trimen network (49 entities, 14 attributed claims, 25 catalogued letters) for follow-up. Every human-review field in it is still pending.
+- [Worked answers](answers.qmd), including the cases where more than one reading remains possible.

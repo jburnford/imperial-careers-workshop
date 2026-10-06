@@ -1,0 +1,38 @@
+---
+title: "6. Connect collections"
+subtitle: "What the shared identifier makes possible, and what it does not settle."
+---
+
+With a supported identity for Henry Trimen, the small dataset from the 1883 dispute connects to the two larger structured collections. [`outputs/06-connect/henry-trimen-across-collections.json`](../outputs/06-connect/henry-trimen-across-collections.json) holds the records.
+
+| Collection | What it holds for Trimen | How the link was made |
+|---|---|---|
+| Colonial Office List graph | Person `kgp_col1889-p554b20`; three career events, 1867–1880 onward; seven editions | Built from the List itself |
+| Tropical Agriculturist profiles | Profile `P000001`: 863 extracted records in 779 articles, 1881–1944 | Rules: name form, dates, occupation words |
+| Wikidata | Q2462643, British botanist, 1843–1896 | Retrieved and read, 6 October 2026 |
+| This workshop's packet | Four attributed claims (C01, C02, C03, C05); 24 catalogued letters, 1893–1896 | Read from the passages; catalogue metadata only for the letters |
+
+Three things to say about this table in the room.
+
+**The links are automated.** The Tropical pipeline's link to Wikidata and to the Colonial Office List were made by rules. No human decision has been recorded for either. For Trimen the evidence is strong enough that the review will be quick. That is not the general case.
+
+**Agreement is not independence.** The Tropical pipeline also matches profiles to the Colonial Office List graph, and that graph carries its own Wikidata links for many people. When both agree on a QID it is reassuring, but the second source may have inherited the identifier from the first.
+
+**The count is not an occurrence count.** 863 is the number of chunk-level extracted records. The extraction asks for one representative mention per distinct person per chunk. The 1944 end date is a retrospective article, not a sign of life.
+
+## The namesakes
+
+The pipeline correctly keeps Henry apart from his brother Roland Trimen (profile `P001512`, Q932702, also in the Colonial Office List). It also produced two tiny profiles that no Trimen ever bore:
+
+| Profile | Printed form | What the scan actually says |
+|---|---|---|
+| `P010214` "J. L. Trimen" | "THE LETTER OF ALL THE BARK ALKALOIDS OF THE BURDEKIN DELTA BY J. L. TRIMEN, F.R.S." (August 1883, p. 88) | "THE EFFECT OF ALTITUDE ON THE ALKALOID OF RED BARK ... By J. E. HOWARD, F.R.S." |
+| `P010783` "L. J. L. Trimen" | "confirmed by Mr. L. J. L. Trimen, who certainly ought to be the best authority as to what is and what is not C. Ledyriana" (October 1883, p. 272) | "confirmed by Mr. Ledger himself, who certainly ought to be the best authority as to what is and what is not C. Ledgeriana" |
+
+Both were checked against the page images on 6 October 2026. They are OCR phantoms: the people are John Eliot Howard and Charles Ledger. The pipeline did the right thing in not merging them into Henry; it could not know they were not people at all. Rare, oddly formed names in a profile table are worth a look at the page before they are kept, linked or counted.
+
+## What the connection enables
+
+From Trimen's dispute the network opens outward: Howard and Moens; the planters Christie and Agar; McIvor and Ledger as sources of seed; Peradeniya, Kew and the Java plantations; Howards and Sons as the industrial consumer of the bark. The correspondence catalogue adds Thiselton-Dyer, Daniel Morris and Roland. The [research packet](../packet.qmd) holds these as candidate links with their evidence, all still awaiting review. None of it is required for the hour; all of it is where the question goes next.
+
+Next: [7. Your own data](07-your-data.qmd).

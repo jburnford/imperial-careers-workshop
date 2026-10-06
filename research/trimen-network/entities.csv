@@ -1,0 +1,50 @@
+entity_id,kind,historical_label,candidate_qid,authority_label,authority_status,human_review,sources,rationale,authority_url
+henry,person,Henry Trimen,Q2462643,Henry Trimen,record_checked,pending,S05;S06;letters,"Full signature, botany, Peradeniya; distinguish Roland.",https://www.wikidata.org/wiki/Q2462643
+howard,person,John Eliot Howard,Q3181423,John Eliot Howard,record_checked,pending,S01;S05;S06,Full signature in S01; quinology context. Initial/name variants still require mention review.,https://www.wikidata.org/wiki/Q3181423
+markham,person,Clements R. Markham,Q507802,Clements Markham,record_checked,pending,S01;S07,Full name and cinchona history; retrospective publication is not event date.,https://www.wikidata.org/wiki/Q507802
+moens,person,J. C. Bernelot Moens,Q21340893,Johan Carel Bernelot Moens,record_checked,pending,S02;S04;S06,Java cinchona context; authority given names disagree across languages. Preserve initials.,https://www.wikidata.org/wiki/Q21340893
+mcivor,person,McIvor,Q21520254,William Graham McIvor,record_checked,pending,S01;S03;S06,William Graham McIvor candidate from cinchona context; printed surname alone.,https://www.wikidata.org/wiki/Q21520254
+ledger,person,Ledger,Q963818,Charles Ledger,record_checked,pending,S03;S05;S06,Charles Ledger candidate from seed history; do not assign all collecting work to him.,https://www.wikidata.org/wiki/Q963818
+weddell,person,Weddell,Q983408,Hugh Algernon Weddell,record_checked,pending,S06,Hugh Algernon Weddell candidate; botanical publications and nomenclature.,https://www.wikidata.org/wiki/Q983408
+hooker,person,J. D. Hooker,Q157501,Joseph Dalton Hooker,record_checked,pending,S05;S06,Joseph Dalton Hooker; distinguish other Hookers.,https://www.wikidata.org/wiki/Q157501
+fitch,person,Fitch,Q1102060,Walter Hood Fitch,record_checked,pending,S06,Walter Hood Fitch candidate from botanical illustration context.,https://www.wikidata.org/wiki/Q1102060
+spruce,person,Dr. Spruce,Q1349394,Richard Spruce,record_checked,pending,S07,Richard Spruce candidate from cinchona collecting context.,https://www.wikidata.org/wiki/Q1349394
+roland,person,Roland Trimen,Q932702,Roland Trimen,record_checked,pending,letters,Explicit creator in supplied catalogue; distinct from Henry.,https://www.wikidata.org/wiki/Q932702
+dyer,person,Sir William Thiselton-Dyer,Q2065240,William Turner Thiselton-Dyer,record_checked,pending,letters,Catalogue recipient; name and dates compatible with botanist.,https://www.wikidata.org/wiki/Q2065240
+morris,person,Daniel Morris,Q20733957,Daniel Morris,record_checked,pending,letters,"Catalogue recipient; botanist candidate, not the American politician.",https://www.wikidata.org/wiki/Q20733957
+christie,person,Thomas North Christie,,,local_only,pending,S03;S06,Signature THOS. NORTH CHRISTIE; no suitable QID established. Distinguish Thomas Christy.,
+agar,person,Walter Agar,,,local_only,pending,S04,Full signature; no suitable QID established.,
+campbell,person,Mr. Campbell / J. A. Campbell,,,local_only,pending,S03;S04,Same-person link between initials and surname is provisional.,
+unnamed_assistant,person,Ledger’s unnamed servant,,,local_only,pending,S06,Source gives no personal name; preserve this participation without inventing an identity.,
+howards,organization,Howards and Sons,Q123413890,Howards and Sons,record_checked,pending,external:ACC/1037,User supplied; pharmaceutical firm. Archive catalogue connects firm to Stratford; not identical to Howard the person.,https://www.wikidata.org/wiki/Q123413890
+peradeniya_garden,place,"Royal Botanic Gardens, Peradeniya",Q3119056,"Royal Botanic Gardens, Peradeniya",record_checked,pending,S05,"Explicit address in Trimen cover letter, 21 November 1883.",https://www.wikidata.org/wiki/Q3119056
+peradeniya,place,Peradeniya,Q489744,Peradeniya,record_checked,pending,S06;letters,Town/locality; a bare place name does not by itself identify the garden.,https://www.wikidata.org/wiki/Q489744
+hakgala_garden,place,Hakgala Botanical Garden,Q5640444,Hakgala Botanical Garden,record_checked,pending,S07,Garden; bare Hakgala in correspondence needs separate locality record.,https://www.wikidata.org/wiki/Q5640444
+hakgala_locality,place,Hakgala,,,local_only,pending,letters,Catalogue origin 15 April 1894; garden identity is possible but not explicit.,
+kew_site,place,Kew Gardens,Q188617,Kew Gardens,record_checked,pending,S05,Garden site candidate for seed routing; distinguish institutional actor.,https://www.wikidata.org/wiki/Q188617
+kew_institution,organization,"Royal Botanic Gardens, Kew",Q18748726,"Royal Botanic Gardens, Kew",record_checked,pending,letters;S05,Institution candidate; catalogue herbarium code K and seed-routing role require scope review.,https://www.wikidata.org/wiki/Q18748726
+java,place,Java,Q3757,Java,record_checked,pending,S05;S06,Island; no modern administrative relations projected backwards.,https://www.wikidata.org/wiki/Q3757
+nilgiris,place,Neilgherry,Q10094,Nilgiri Mountains,record_checked,pending,S07,Nilgiri Mountains candidate for historical regional name.,https://www.wikidata.org/wiki/Q10094
+ceylon,place,Ceylon,,,local_only,pending,S06;S07;letters,Island and colonial polity are not interchangeable; scope unresolved per mention.,
+british_ceylon,historical_polity,British Ceylon,Q918153,British Ceylon,record_checked,pending,context,"Candidate only when source means colonial polity, not every Ceylon occurrence.",https://www.wikidata.org/wiki/Q918153
+stratford,place,Stratford,Q676136,Stratford,record_checked,pending,external:ACC/1037,District candidate for factory location. Modern Newham administrative claims are not imported.,https://www.wikidata.org/wiki/Q676136
+west_ham_borough,historical_polity,West Ham local government district,Q5177625,County Borough of West Ham,record_checked,pending,user-supplied;authority qualifiers,"Item explicitly includes local board of health, 1856–1886, as well as later borough forms. Retain QID with period-specific label. County-borough start qualifier says 1899: apparent discrepancy to investigate, not silently repair.",https://www.wikidata.org/wiki/Q5177625
+standrews,place,"St. Andrew’s estate, Maskeliya",,,local_only,pending,S03;S06,Local estate entity; no coordinates or QID established.,
+mahanillu,place,Mahanillu / Mahanilu estate,,,local_only,pending,S03;S04,Spelling variants provisionally grouped by tree narrative; check scans.,
+yarrow,place,Yarrow estate,,,local_only,pending,S03;S05;S06,Local estate entity; do not match unrelated modern Yarrow places.,
+lordsmeade,place,Lord’s Meade,,,local_only,pending,S01,Howard letter address; no exact location match established here.,
+lancaster,place,"5 Lancaster Street, [London]",,,local_only,pending,letters,Roland letter address as catalogued; exact building not grounded.,
+cinchona,taxon_name,Cinchona,Q160090,Cinchona,record_checked,pending,S01;S06,Genus; not bark product or chemical.,https://www.wikidata.org/wiki/Q160090
+ledgeriana,taxon_name,Cinchona ledgeriana,Q5120189,Cinchona ledgeriana,record_checked,pending,S03;S04;S06,Historical species/variety usage contested; name grounding does not identify specimen.,https://www.wikidata.org/wiki/Q5120189
+calisaya,taxon_name,Cinchona calisaya,Q15399753,Cinchona calisaya,record_checked,pending,S01;S06,Preserve variety names separately; no automatic historical specimen assignment.,https://www.wikidata.org/wiki/Q15399753
+micrantha,taxon_name,Cinchona micrantha,Q15400875,Cinchona micrantha,record_checked,pending,S06,Species-name authority; var. calisayoides is a narrower historical designation.,https://www.wikidata.org/wiki/Q15400875
+officinalis,taxon_name,Cinchona officinalis,Q3091779,Cinchona officinalis,record_checked,pending,S01;S06,Name-level candidate; retain OCR Officialis separately when transcribing.,https://www.wikidata.org/wiki/Q3091779
+succirubra,taxon_name,Cinchona succirubra,Q50830790,Cinchona succirubra,record_checked,pending,S01;S05;S07,Historical name retained even where current authority treats it as a synonym.,https://www.wikidata.org/wiki/Q50830790
+pubescens,taxon_name,Cinchona pubescens,Q164574,Cinchona pubescens,record_checked,pending,S01,Authority name; NOT automatic match for rejected C. pubescens How. usage.,https://www.wikidata.org/wiki/Q164574
+pubescens_how,historical_name_usage,C. pubescens How.,,,local_only,pending,S01,Howard explicitly disclaims new species; describes hybrid usage distinct from established C. pubescens.,
+micrantha_var,historical_name_usage,C. micrantha var. calisayoides,,,local_only,pending,S06,Preserve disputed infraspecific identification; no exact QID established.,
+bark,plant_product,Cinchona bark,Q3133417,Jesuit's bark,record_checked,pending,S01;S04;S06,Product; not taxon or purified quinine.,https://www.wikidata.org/wiki/Q3133417
+alkaloids,chemical_class,Cinchona alkaloids,Q21662767,Cinchona alkaloids,record_checked,pending,S04;S06,"Class, distinct from individual compounds.",https://www.wikidata.org/wiki/Q21662767
+quinine,chemical,quinine,Q189522,quinine,record_checked,pending,S04;S06,Pure quinine distinct from sulphate of quinine; reported percentages cannot be silently equated.,https://www.wikidata.org/wiki/Q189522
+illustrated_tree,specimen,Tree figured for Trimen’s description,,,local_only,pending,S03;S04;S06,Local individual tree; do not assert botanical type status. Dead by Agar letter date.,
+neighbour_trees,specimen_group,Other trees at Mahanillu,,,local_only,pending,S04;S06,Sampled bark from some neighbouring trees is not necessarily from the illustrated tree.,

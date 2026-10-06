@@ -1,0 +1,56 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - "*.qmd"
+    - "steps/*.qmd"
+  resources:
+    - review/
+    - outputs/
+    - source-pack/
+    - research/trimen-network/
+
+website:
+  title: "Cleaning and Structuring Historical Data"
+  description: "A working session on delegating data work to models while keeping historical judgment. AI and History Conference, Johns Hopkins University, 15 October 2026."
+  navbar:
+    left:
+      - href: index.qmd
+        text: Start
+      - text: "The hour"
+        menu:
+          - href: steps/01-question.qmd
+            text: "1. The question"
+          - href: steps/02-structure-extract.qmd
+            text: "2. Structure and extract"
+          - href: steps/03-candidates.qmd
+            text: "3. Candidate identities"
+          - href: steps/04-review.qmd
+            text: "4. Review (exercise)"
+          - href: steps/05-revise.qmd
+            text: "5. Revise the process"
+          - href: steps/06-connect.qmd
+            text: "6. Connect collections"
+          - href: steps/07-your-data.qmd
+            text: "7. Your own data"
+      - href: answers.qmd
+        text: Worked answers
+      - href: review/index.html
+        text: Exercise
+      - href: setup.qmd
+        text: Run it yourself
+      - href: presenter.qmd
+        text: Presenter notes
+      - href: packet.qmd
+        text: Research packet
+  page-footer:
+    left: "Jim Clifford, University of Saskatchewan. Draft materials; sources credited on each page."
+    right: "Source text: archive.org scans of The Tropical Agriculturist."
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+    code-copy: true
+    link-external-newwindow: true

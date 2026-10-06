@@ -1,0 +1,66 @@
+---
+title: "2. Structure and extract"
+subtitle: "Minutes 5–20. Demonstrate substantial delegation while keeping the source visible."
+---
+
+## The passage
+
+Walter Agar's letter, printed under the editor's headline "Dr. Trimen's Typical Ledgeriana Tree" on 2 July 1883, p. 66 ([scan](https://archive.org/details/tropicalagricult18831884colo/page/n83/mode/1up)). The OCR text, exactly as the collection delivers it:
+
+```{.text}
+{{< include ../source-pack/S04_ocr.txt >}}
+```
+
+Two hundred and thirty-four words. People, a tree, a group of trees, bark samples, an analysis, and a chain of hands. Also a headnote by the editor saying what the letter proves.
+
+## The prompts
+
+Two prompts, used verbatim in the saved runs. They are starting points, not tested final instructions.
+
+**Propose a structure**
+
+> Read these Tropical Agriculturist passages. Propose a small table for studying the people and activities mentioned. Show two example records before processing the rest. Preserve the printed wording and source references. Keep inferred information separate from what the text states. Use local record identifiers and do not add Wikidata identifiers yet.
+
+**Build and run the extraction**
+
+> Use the agreed fields to process this sample. Save the code, instructions, and output so we can inspect and rerun the work. Report failed records and uncertain readings. Do not expand a person's name unless the source provides the expansion; record any outside identification separately.
+
+Note what the prompts ask for beyond the records: two examples before the rest, so the structure can be corrected cheaply; saved code so the run can be repeated and inspected; a report of failures; and a wall between what the source prints and what the model knows.
+
+## What came back
+
+Two cold runs, with different models, on S04 and the companion letter S03. Everything they produced is in [`outputs/02-extract/`](../outputs/02-extract/README.md), unedited.
+
+| Run | Model | Records | Failed | Uncertain |
+|---|---|---|---|---|
+| A | Claude Sonnet 5.5 | 85 | 0 | 8 |
+| B | Claude Fable 5.1 | 71 | 1 | 9 |
+
+Both proposed a flat table with typed local ids, a verbatim quote and line reference on every row, and separate fields for inferences and for outside identification ([proposals](../outputs/01-structure/README.md)). Both wrote a script that holds the records as data and checks every quoted span against the source text. Here is run A's record for the bark that was analysed:
+
+| Field | Value |
+|---|---|
+| record_id | S04-B01 |
+| record_type | sample (bark) |
+| printed_text | The bark of some of these trees was sent home by Mr. Campbell for analysis to Mr. Howard, who pronounced it to be Ledgeriana bark, giving 7 per cent of pure quinine (equal I believe to 9 of sulphate) and only a trace of other alkaloids. |
+| stated_detail | Sent home by Mr. Campbell to Mr. Howard for analysis; pronounced Ledgeriana bark; "(equal I believe to 9 of sulphate)" is the writer's belief, not a measured value. |
+| asserted_by | S04-P02 (the letter writer, signed "WALTER AGAR") |
+| inferred_note | Which trees supplied the bark is not stated beyond "some of these trees"; whether it includes S04-T01 [the sketched tree] is not said. |
+
+That last line is the whole dispute in one field. Keep it in mind for [step 4](04-review.qmd).
+
+## What to inspect
+
+Three things, in this order, before anything else is built on the records:
+
+1. **Omissions.** Is everyone and everything in the passage in the table? Both runs have "Ed." as a person record, which is right: the editor makes claims.
+2. **Invented details.** Did a name get a given name the text does not print? Did a relative date become an absolute one without saying so? Run B resolved "5th instant" to 5 June 1883 and said so in the inferred field. Run B also filled an `outside_identification` field for six people from its own memory, each marked UNVERIFIED. That is the behaviour the prompt asked for; the next step replaces memory with retrieval.
+3. **Changed meaning.** Did a careful statement become a flat one? The editor says Howard analysed "the bark" of the figured tree. Agar says bark from some trees went to Howard and the figured tree's bark is in his own drawer. Both runs kept these apart. Would a third?
+
+And one thing both runs could not do: two sentences of the OCR are damaged, and both runs said so and guessed at the intended wording. Every guess was wrong. See [step 5](05-revise.qmd).
+
+## Agent versus model
+
+Two different things happened here. A *coding agent* read the files, wrote and ran a Python script, and saved outputs. An *extraction model* (the same model, in this case, reading the text) decided what the records were. In a larger project the script the agent writes will call a model for each chunk, apply ordinary code for the rest, and look things up in external services. When you inspect a result you should be able to tell which of those produced it.
+
+Next: [3. Candidate identities](03-candidates.qmd).

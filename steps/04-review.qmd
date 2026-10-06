@@ -1,0 +1,41 @@
+---
+title: "4. Review"
+subtitle: "Minutes 30–45 together, then 45–55 on your own. Accept, reject or defer, with a reason."
+---
+
+## The review view
+
+The prompt:
+
+> Make a review table showing each source passage, extracted record, candidate identities, and relevant evidence side by side. Provide accept, reject, and unresolved decisions with a place for the reviewer's reason. Preserve automated suggestions separately from human decisions.
+
+The result for this workshop is the [exercise page](../review/index.html): a static page that reads `cases.json`, shows the passage with a link to the scan, the proposal, the evidence for and against, and three buttons plus a reason box. Decisions stay in your browser, keyed to a fingerprint of the case file, so they cannot be attached to a different version of the cases. You can download them as a TSV, or copy a one-line summary into the Zoom chat.
+
+The research project's equivalent, Tropical's RA review page, works the same way at a larger scale: 100 profiles and 400 sampled records, a dataset fingerprint in every export, and a scoring script that refuses an export whose fingerprint does not match.
+
+## Together: the consequential problem
+
+We will look at two cases in the room before you work alone.
+
+**R2: the editor versus the letter.** The bracketed note above Agar's letter says Howard analysed "the bark" of the tree Trimen figured. Agar's letter says bark from *some of these trees* went to Howard and that the bark from *the tree itself* is in Agar's own possession. If the illustrated tree and the analysed bark are made one thing, the dataset asserts a chemical result for a specimen that was never analysed, and the whole dispute about whether *that* tree was a Ledgeriana rests on it.
+
+A model following the editor will make this error. Neither of the two rehearsal runs did: run A recorded the editor's statement as the editor's and wrote that which trees supplied the bark "is not stated beyond 'some of these trees'"; run B noted that Agar only says the figured tree was "one of several". That is the right answer. The question for the room is whether you would have noticed if the model had got it wrong, and what in the review view would have helped you notice.
+
+**R3: the reading.** The OCR says the trees "were now in a full condition and in flower". Both runs flagged the sentence as odd; run A guessed "in full bloom". Open the scan. The correction we direct here becomes a rule in [step 5](05-revise.qmd).
+
+## On your own: the exercise
+
+Open the [exercise](../review/index.html). Six cases:
+
+| Case | Decision | Why it is here |
+|---|---|---|
+| R1 | Is "Dr. Trimen" Q2462643? | A supported match, so you see what support looks like |
+| R2 | Did Howard analyse the illustrated tree's bark? | The editor's framing versus the letter |
+| R3 | Does the OCR reading stand? | Text versus page |
+| R4 | A Wikidata item for Walter Agar? | What "not found" should and should not mean |
+| R5 | Is "C. pubescens How." Q164574? | A name string versus what the source says about the name |
+| R6 | Are "T. Christy" and "Thos. North Christie" one person? | Spelling distance versus the text's own distinction |
+
+Do at least R1, R2 and R3. Write a reason for each; the reason is what turns a decision into a rule. When you are done, copy the summary line into the Zoom chat or hold up your hand when asked.
+
+Next: [5. Revise the process](05-revise.qmd).

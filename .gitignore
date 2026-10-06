@@ -1,0 +1,11 @@
+# Quarto build
+/.quarto/
+/_site/
+*_files/
+# Python
+__pycache__/
+*.pyc
+# Local only
+.DS_Store
+*.swp
+.claude/

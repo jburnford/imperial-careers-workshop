@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Review exercise: Trimen, Howard and the Ledgeriana tree</title>
+<style>
+  body { font-family: Georgia, "Times New Roman", serif; max-width: 60em; margin: 1.5em auto; padding: 0 1em; line-height: 1.45; color: #222; }
+  h1 { font-size: 1.6em; } h2 { font-size: 1.2em; margin-top: 2em; border-top: 1px solid #ccc; padding-top: 1em; }
+  .meta { color: #555; font-size: 0.9em; }
+  blockquote { background: #f7f5ef; border-left: 4px solid #b8a97a; margin: 0.6em 0; padding: 0.6em 1em; white-space: pre-wrap; }
+  .proposal { background: #eef3f8; padding: 0.6em 1em; border-left: 4px solid #6a8db5; }
+  .cols { display: flex; gap: 1.5em; flex-wrap: wrap; } .cols > div { flex: 1 1 18em; }
+  ul { margin: 0.3em 0 0.6em 1.2em; padding: 0; }
+  label.opt { margin-right: 1.2em; cursor: pointer; }
+  textarea { width: 100%; min-height: 3.5em; font-family: inherit; font-size: 0.95em; }
+  .toolbar { position: sticky; top: 0; background: #fff; border-bottom: 1px solid #ddd; padding: 0.5em 0; display: flex; gap: 0.6em; flex-wrap: wrap; align-items: center; }
+  button { font: inherit; padding: 0.3em 0.8em; cursor: pointer; }
+  input[type=text] { font: inherit; padding: 0.2em 0.4em; }
+  .status { font-size: 0.85em; color: #555; }
+  code { background: #f3f3f3; padding: 0 0.2em; }
+</style>
+</head>
+<body>
+<h1>Review exercise: who did what to which tree?</h1>
+<p class="meta">AI and History Conference, 15 October 2026. Six decisions drawn from the 1883 cinchona dispute in <em>The Tropical Agriculturist</em>. Do at least R1, R2 and R3. Your answers stay in this browser until you download or copy them; nothing is sent anywhere.</p>
+<p>For each case: read the passage (the scan is one click away), look at what the model or the pipeline proposed, weigh the evidence, and record a decision with a reason. "Unresolved" is a legitimate answer when the evidence does not settle it; say what would.</p>
+
+<div class="toolbar">
+  <label>Your name or initials: <input type="text" id="reviewer" placeholder="optional"></label>
+  <button id="copy">Copy summary for chat</button>
+  <button id="download">Download TSV</button>
+  <button id="clear">Clear my answers</button>
+  <span class="status" id="status"></span>
+</div>
+
+<div id="cases"></div>
+
+<h2>What the columns mean</h2>
+<p><strong>Accept</strong>: the proposal is supported by the evidence shown, for this mention. <strong>Reject</strong>: it is contradicted, or it changes the source's meaning. <strong>Unresolved</strong>: the evidence does not decide it; write what would. A decision is for this record only: accepting Trimen's identity in one letter does not accept every "Trimen" in the journal.</p>
+<p>Worked answers are on the <a href="../answers.html">answers page</a>. Read them after you have decided.</p>
+
+<script>
+(async function () {
+  const data = await (await fetch('cases.json')).json();
+  const KEY = 'trimen_review_' + data.fingerprint;
+  const state = JSON.parse(localStorage.getItem(KEY) || '{}');
+  const status = document.getElementById('status');
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const md = s => esc(s).replace(/`([^`]+)`/g, '<code>$1</code>');
+  const root = document.getElementById('cases');
+  for (const c of data.cases) {
+    const sec = document.createElement('section');
+    sec.innerHTML = `
+      <h2>${c.id}. ${esc(c.title)}</h2>
+      <p class="meta">${esc(c.source_label)}. <a href="${esc(c.source_url)}" target="_blank" rel="noopener">Open the scan</a></p>
+      <blockquote>${esc(c.source_quote)}</blockquote>
+      <p class="proposal"><strong>Proposed:</strong> ${md(c.proposal)}</p>
+      <div class="cols">
+        <div><strong>Supports</strong><ul>${c.evidence_for.map(e => '<li>' + md(e) + '</li>').join('')}</ul></div>
+        <div><strong>Conflicts or missing</strong><ul>${c.evidence_against.map(e => '<li>' + md(e) + '</li>').join('')}</ul></div>
+      </div>
+      <p><strong>${esc(c.question)}</strong><br>
+        ${['accept','reject','unresolved'].map(o => `<label class="opt"><input type="radio" name="d_${c.id}" value="${o}"> ${o}</label>`).join('')}
+      </p>
+      <textarea id="r_${c.id}" placeholder="Your reason, in a sentence. What evidence decided it, or what would?"></textarea>`;
+    root.appendChild(sec);
+    const s = state[c.id] || {};
+    if (s.decision) sec.querySelector(`input[value="${s.decision}"]`).checked = true;
+    sec.querySelector('textarea').value = s.reason || '';
+    sec.addEventListener('change', save); sec.addEventListener('input', save);
+  }
+  document.getElementById('reviewer').value = state._reviewer || '';
+  document.getElementById('reviewer').addEventListener('input', save);
+
+  function collect() {
+    const out = { _reviewer: document.getElementById('reviewer').value };
+    for (const c of data.cases) {
+      const d = document.querySelector(`input[name="d_${c.id}"]:checked`);
+      out[c.id] = { decision: d ? d.value : '', reason: document.getElementById('r_' + c.id).value,
+                    saved_at: (state[c.id] && state[c.id].saved_at) || '' };
+      if (d || out[c.id].reason) out[c.id].saved_at = new Date().toISOString();
+    }
+    return out;
+  }
+  function save() {
+    const out = collect(); Object.assign(state, out);
+    localStorage.setItem(KEY, JSON.stringify(state));
+    const n = data.cases.filter(c => state[c.id] && state[c.id].decision).length;
+    status.textContent = `${n} of ${data.cases.length} decided. Saved in this browser (dataset ${data.fingerprint}).`;
+  }
+  save();
+
+  document.getElementById('copy').onclick = async () => {
+    const who = state._reviewer ? state._reviewer + ': ' : '';
+    const line = who + data.cases.map(c => c.id + ' ' + ((state[c.id] && state[c.id].decision) || '-')).join('; ');
+    try { await navigator.clipboard.writeText(line); status.textContent = 'Copied: ' + line; }
+    catch (e) { prompt('Copy this line:', line); }
+  };
+  document.getElementById('download').onclick = () => {
+    const rows = [['fingerprint','reviewer','case_id','title','decision','reason','saved_at']];
+    for (const c of data.cases) {
+      const s = state[c.id] || {};
+      rows.push([data.fingerprint, state._reviewer || '', c.id, c.title, s.decision || '', (s.reason || '').replace(/[\t\n]+/g, ' '), s.saved_at || '']);
+    }
+    const blob = new Blob([rows.map(r => r.join('\t')).join('\n') + '\n'], { type: 'text/tab-separated-values' });
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+    a.download = `trimen_review_${(state._reviewer || 'anon').replace(/\W+/g, '_')}_${new Date().toISOString().slice(0,10)}.tsv`;
+    a.click();
+  };
+  document.getElementById('clear').onclick = () => {
+    if (confirm('Clear all your answers on this page?')) { localStorage.removeItem(KEY); location.reload(); }
+  };
+})();
+</script>
+</body>
+</html>

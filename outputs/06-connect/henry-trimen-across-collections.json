@@ -1,0 +1,38 @@
+{
+  "note": "Henry Trimen as he appears in three structured sources, with the links the research pipelines currently assert. Retrieved 6 October 2026 from local checkouts of the Tropical Agriculturist and col_matching projects. Pipeline links are automated; no human review decision has been recorded for them.",
+  "tropical_agriculturist_profile": {
+    "id": "TAP-P-000001", "pid": "P000001", "display": "Henry Trimen", "kind": "named",
+    "extracted_records": 863, "articles": 779, "first_year": 1881, "last_year": 1944,
+    "roles_sampled": "botanist | Director | author | Director of the Royal Botanic Gardens, Peradeniya",
+    "wikidata_qid": "Q2462643", "qid_source": "wd_auto", "qid_confidence": "high", "decided_by": "rule",
+    "colist_person_id": "kgp_col1889-p554b20", "colist_decision": "auto",
+    "caveats": [
+      "863 is the number of chunk-level extracted records, not printed occurrences.",
+      "The 1944 last year is a retrospective article, not evidence that Trimen (d. 1896) was active.",
+      "The link to Wikidata was made by rules (name, dates, occupation); the link to the Colonial Office List by surname, given names, career overlap and a Ceylon posting."
+    ]
+  },
+  "tropical_agriculturist_related_profiles": [
+    {"pid": "P001512", "display": "Roland Trimen", "records": 12, "wikidata_qid": "Q932702", "note": "Henry's brother; kept separate by the pipeline; also in the Colonial Office List (kgp_col1888-p550b18)."},
+    {"pid": "P010214", "display": "J. L. Trimen", "records": 2, "article": "vol003_tropicalagricult18831884colo#1883-08#012", "scan_check": "Page 88 (n105) reads 'THE EFFECT OF ALTITUDE ON THE ALKALOID OF RED BARK ... By J. E. HOWARD, F.R.S.' The OCR rendered the heading as 'THE LETTER OF ALL THE BARK ALKALOIDS OF THE BURDEKIN DELTA BY J. L. TRIMEN, F.R.S.' This profile is an OCR phantom; the person is John Eliot Howard.", "verified": "scan compared 2026-10-06"},
+    {"pid": "P010783", "display": "L. J. L. Trimen", "records": 2, "article": "vol003_tropicalagricult18831884colo#1883-10#059", "scan_check": "Page 272 (n289) reads 'confirmed by Mr. Ledger himself, who certainly ought to be the best authority as to what is and what is not C. Ledgeriana'. The OCR rendered this as 'Mr. L. J. L. Trimen'. The article title, OCR'd as 'THE GREAT CENOTAPH LID LIDANA CONTROVERSY', is 'THE GREAT CINCHONA LEDGERIANA CONTROVERSY'. This profile is an OCR phantom; the person is Charles Ledger.", "verified": "scan compared 2026-10-06"}
+  ],
+  "colonial_office_list_graph": {
+    "person_id": "kgp_col1889-p554b20", "surname": "TRIMEN", "given_names": "HENRY",
+    "editions": [1883, 1886, 1888, 1889, 1890, 1894, 1896], "n_attestations": 7,
+    "career_events": [
+      {"seq": 0, "position": "lecturer on botany", "place_raw": "London", "place_qid": "Q84", "year_start": 1867, "year_end": 1875},
+      {"seq": 1, "position": "senior assistant to department of botany", "place_raw": "British Museum", "place_qid": null, "year_start": 1869, "year_end": 1879},
+      {"seq": 2, "position": "director Royal Botanical Gardens", "place_raw": "Ceylon", "place_qid": "Q918153", "year_start": 1880, "year_end": null}
+    ],
+    "wikidata_qid_in_graph": null,
+    "note": "The graph's own Wikidata field for this person is empty; the link to Q2462643 is asserted by the Tropical pipeline, not by col_matching. Agreement between the two pipelines is therefore not independent confirmation."
+  },
+  "wikidata": {
+    "qid": "Q2462643", "label": "Henry Trimen", "description": "British botanist (1843-1896)",
+    "birth": "1843-10-26", "death": "1896-10-16", "retrieved_at": "2026-10-06",
+    "source": "research/trimen-network/raw/Q2462643.json"
+  },
+  "workshop_packet_claims_involving_henry": ["C01", "C02", "C03", "C05"],
+  "correspondence_catalogue": {"letters_attributed_to_henry": 24, "years": "1893-1896", "recipients": {"Thiselton-Dyer": 23, "Daniel Morris": 1}, "status": "catalogue metadata only; contents not read; see research/trimen-network/letters.csv"}
+}

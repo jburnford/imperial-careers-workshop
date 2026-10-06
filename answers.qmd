@@ -1,0 +1,52 @@
+---
+title: "Worked answers"
+subtitle: "Read after you have decided. Where more than one reading remains possible, it says so."
+---
+
+These are the preparer's answers with the evidence. They are not the research project's verdicts: every human-review field in the Tropical pipeline and in the research packet is still pending, and these pages do not change that.
+
+## R1. "Dr. Trimen" / "HENRY TRIMEN" is Q2462643
+
+**Accept, for the 1883 mentions signed from Peradeniya.** The December 1883 cover letter is signed in full and dated from the Royal Botanic Gardens, Peradeniya. The Colonial Office List has one Henry Trimen, director of the Royal Botanical Gardens, Ceylon, from February 1880. The Wikidata item, retrieved and read, is a botanist born 1843, died 1896. The name, post, place and dates agree.
+
+What the acceptance covers: these mentions. It does not by itself cover every "Trimen" in the journal. Roland Trimen, Henry's brother, is in both collections too, and the Tropical pipeline found two more "Trimens" who turned out to be OCR errors for Howard and Ledger ([step 6](steps/06-connect.qmd)). A supported identity is a decision about a mention, made on evidence that would not transfer to "Mr. Trimen" in a different year.
+
+## R2. Howard did not analyse the illustrated tree's bark
+
+**Reject the relationship as proposed.** Agar's letter is explicit twice over. The bark Howard analysed came from "some of these trees", the group at Mahanilu that Moens and Trimen saw in flower. The bark of "the tree itself" is in Agar's possession, "taken when it was dying", and no analysis of it is mentioned. The editor's headnote, which says Howard gave testimony "after having analyzed the bark" of the figured tree, is the editor's summary and it overstates the letter.
+
+The correct records are two: Howard analysed bark from the neighbouring trees (asserted by Agar); Agar holds bark from the illustrated tree (asserted by Agar). The research packet has them as claims C09, C10 and C11.
+
+Why it is consequential: the dispute was whether *that* tree was a true Ledgeriana. If the dataset says Howard's 7 per cent quinine result belongs to it, the dataset has settled the dispute on evidence that does not exist. Christie's letter (S03) makes a related but different claim: the figured tree and the analysed trees were raised from the same seed in the same nursery bed. That is an argument from provenance, and it is Christie's.
+
+What remains open: whether "some of these trees" included the figured tree is not stated. Agar's wording ("the bark from the tree itself" set against "the bark of some of these trees") implies not, but does not say so.
+
+## R3. The OCR reading does not stand
+
+**Reject the reading.** The scan of p. 66 reads: "The trees were only about 4½ years old from the time the plants were put out, and were growing in a bad situation and not robust." The OCR's "were now in a full condition and in flower" is an invention of the OCR model, not a misread of a few characters. The next sentence is also wrong in the OCR: the scan reads "I have many plants from the seed of the specimen tree as well as the others that Mr. Moens declared to be true Ledgerianas", not "prints of the leaves".
+
+Both extraction runs flagged these sentences as uncertain. Both guessed at the intended wording. All the guesses were wrong. The flag was the useful output; the page was the only way to resolve it.
+
+The corrected transcription is in the [source pack](source-pack/S04_scan_checked.txt) with the [list of differences](source-pack/S04_ocr_differences.md).
+
+## R4. Walter Agar: unresolved, keep the local record
+
+**Unresolved.** Two vector searches, one with the name alone and one with "Ceylon planter", returned nothing plausible: a politician named Sarger, the Agar family name, a zoologist born in 1882, a temple, a thickening agent. The right outcome is a local record `agar` with its evidence (the signature, the dateline "Lawrence", the role in the Mahanilu planting) and a note of the searches run and their date, so that the next person does not repeat them or read "no result" as "no such person".
+
+What would resolve it: a Ceylon directory or planters' register entry for an Agar at Lawrence or Mahanilu in the early 1880s. The research pipeline has a planters' registry match stage for exactly this.
+
+## R5. "C. pubescens How." is not simply Q164574
+
+**Reject the link as a plain identity; record a historical name usage.** Howard's 1881 letter says he is "credited with having created a new species of Cinchona, the 'C. pubescens How.'" and goes on to reject the attribution: the plants so named are, in his view, something else. Mapping the string to the accepted species *Cinchona pubescens* records the opposite of what the letter says. The research packet keeps a separate record, `pubescens_how`, for the rejected usage, alongside the taxon name record for the accepted species.
+
+Modern taxonomy is a separate layer again: Kew's Plants of the World Online currently treats *C. succirubra* as a synonym of *C. pubescens* and *C. ledgeriana* as a synonym of *C. calisaya*. Those treatments are recorded in the packet's taxonomy table with their date. They do not settle what Howard, Trimen or Moens meant by a name in 1883, nor which tree was which.
+
+## R6. "Mr. T. Christy" and "Thos. North Christie" are different people
+
+**Reject the merge.** The author writes about "Mr. T. Christy's Bolivian calisaya seedlings" in the third person and criticises Howard for identifying them as Ledgerianas. The author signs "THOS. NORTH CHRISTIE" from an estate in Maskeliya; the Christy seedlings are Bolivian and reach Howard in England. One letter of spelling distance is well within OCR error, which is why this case exists: spelling similarity would merge them, and the text keeps them apart.
+
+Both extraction runs kept them separate without being told to. Run B supplied, from memory and marked unverified, "Thomas Christy, London drug merchant" for Mr. T. Christy. That is a plausible candidate and it is not evidence; the searches run on 6 October found no Wikidata item for either man.
+
+## The pattern
+
+Across the six cases the decisive evidence was never the model's confidence and never the identifier's existence. It was the source's own distinctions (some trees versus the tree itself; Christy versus Christie; a name credited versus a name claimed), the page behind the OCR, and the dates and posts in a second collection. Those are what the review view has to put in front of you, and what the reason field is for.

@@ -1,0 +1,16 @@
+{
+  "built_from": "trimen-howard-search.json",
+  "source_sha256": "fa49597c001808a27e8a1c10c25357e07bb4cb40670af36adf0cf3eba0d3cef6",
+  "snapshot_note": "Frozen search extract from Tropical; not a census of verified relationships. Production repository may have changed since extraction.",
+  "counts": {
+    "entities": 49,
+    "claims": 14,
+    "letters": 25,
+    "articles": 7
+  },
+  "scan_checks": {
+    "S02": "Opening page n44 visually inspected; remaining text from OCR",
+    "S04": "Whole item compared with the scan of page n83 on 2026-10-06; see ocr_differences"
+  },
+  "review": "Assistant-curated draft; all human decisions pending. No Tropical RA data changed."
+}

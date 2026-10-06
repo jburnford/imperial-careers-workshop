@@ -1,0 +1,810 @@
+{
+  "retrieved_at": "2026-10-06T17:17:54.195660+00:00",
+  "url": "https://www.wikidata.org/wiki/Special:EntityData/Q21340893.json",
+  "response": {
+    "entities": {
+      "Q21340893": {
+        "pageid": 23387615,
+        "ns": 0,
+        "title": "Q21340893",
+        "lastrevid": 2514060264,
+        "modified": "2026-07-05T08:48:09Z",
+        "type": "item",
+        "id": "Q21340893",
+        "labels": {
+          "de": {
+            "language": "de",
+            "value": "Johan Carel Bernelot Moens"
+          },
+          "nl": {
+            "language": "nl",
+            "value": "Johan Carel Bernelot Moens"
+          },
+          "es": {
+            "language": "es",
+            "value": "Jacob Carel Bernelot Moens"
+          },
+          "ast": {
+            "language": "ast",
+            "value": "Jacob Carel Bernelot Moens"
+          },
+          "sq": {
+            "language": "sq",
+            "value": "Jacob Carel Bernelot Moens"
+          },
+          "mul": {
+            "language": "mul",
+            "value": "Johan Carel Bernelot Moens"
+          }
+        },
+        "descriptions": {
+          "en": {
+            "language": "en",
+            "value": "botanist (1837-1886)"
+          },
+          "nl": {
+            "language": "nl",
+            "value": "botanicus"
+          },
+          "bn": {
+            "language": "bn",
+            "value": "উদ্ভিদবিজ্ঞানী (১৮৩৭-১৮৮৬)"
+          }
+        },
+        "aliases": {
+          "en": [
+            {
+              "language": "en",
+              "value": "Bern.Moens"
+            },
+            {
+              "language": "en",
+              "value": "Jacob Carel Bernelot Moens"
+            }
+          ],
+          "bg": [
+            {
+              "language": "bg",
+              "value": "Bern.Moens"
+            }
+          ],
+          "ru": [
+            {
+              "language": "ru",
+              "value": "Bern.Moens"
+            }
+          ],
+          "it": [
+            {
+              "language": "it",
+              "value": "Bern.Moens"
+            }
+          ],
+          "de": [
+            {
+              "language": "de",
+              "value": "Bern.Moens"
+            },
+            {
+              "language": "de",
+              "value": "Jacob Carel Bernelot Moens"
+            }
+          ],
+          "mul": [
+            {
+              "language": "mul",
+              "value": "Jacob Carel Bernelot Moens"
+            }
+          ],
+          "nl": [
+            {
+              "language": "nl",
+              "value": "Jacob Carel Bernelot Moens"
+            }
+          ]
+        },
+        "claims": {
+          "P31": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P31",
+                "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 5,
+                    "id": "Q5"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q21340893$879AFD57-7442-49C7-8471-7060A9FCDD6B",
+              "rank": "normal"
+            }
+          ],
+          "P106": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P106",
+                "hash": "083212f3758220de2fc05c66cf6ec84468c55e40",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 2374149,
+                    "id": "Q2374149"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q21340893$FFBC69BF-154E-4D47-829F-283B774B753E",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "2e0c13df5b13edc9b3db9d8129e466c0894710ac",
+                  "snaks": {
+                    "P143": [
+                      {
+                        "snaktype": "value",
+                        "property": "P143",
+                        "hash": "2b1e96d67dc01973d72472f712fd98ce87c6f0d7",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 13679,
+                            "id": "Q13679"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P143"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P569": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P569",
+                "hash": "a38e31fe551d10615e86fec7e10db32aa790c603",
+                "datavalue": {
+                  "value": {
+                    "time": "+1837-01-01T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              },
+              "type": "statement",
+              "id": "Q21340893$094B65BC-38A1-4BBC-A7A4-4D0B1789777B",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "24a289e0386ab81d4cd9043ecf1c557f46ae1b3c",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "3bac31ec58b8406d25da59abce49237aa8ea7e54",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 922063,
+                            "id": "Q922063"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ],
+                    "P586": [
+                      {
+                        "snaktype": "value",
+                        "property": "P586",
+                        "hash": "24f7801f1c43f1eaa3c24670d9f33534aa8dd648",
+                        "datavalue": {
+                          "value": "711-1",
+                          "type": "string"
+                        },
+                        "datatype": "external-id"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248",
+                    "P586"
+                  ]
+                },
+                {
+                  "hash": "5dac26cb5ea3768b2dd57752de9f9c1d55a693ee",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "e4631df793ffbe3bc75a10bd0290f0eeb2ca930c",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 669585,
+                            "id": "Q669585"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ],
+                    "P428": [
+                      {
+                        "snaktype": "value",
+                        "property": "P428",
+                        "hash": "c3c251389441f4525be504881e5757e45bea4cf4",
+                        "datavalue": {
+                          "value": "Bern.Moens",
+                          "type": "string"
+                        },
+                        "datatype": "external-id"
+                      }
+                    ],
+                    "P1810": [
+                      {
+                        "snaktype": "value",
+                        "property": "P1810",
+                        "hash": "8d54849657033b5cbd69a12c8948f81ef72d7108",
+                        "datavalue": {
+                          "value": "Jacob Carel Bernelot Moens",
+                          "type": "string"
+                        },
+                        "datatype": "string"
+                      }
+                    ],
+                    "P813": [
+                      {
+                        "snaktype": "value",
+                        "property": "P813",
+                        "hash": "e5f60ab0b03700bb883efce38f8022d023bc49fb",
+                        "datavalue": {
+                          "value": {
+                            "time": "+2017-10-09T00:00:00Z",
+                            "timezone": 0,
+                            "before": 0,
+                            "after": 0,
+                            "precision": 11,
+                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                          },
+                          "type": "time"
+                        },
+                        "datatype": "time"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248",
+                    "P428",
+                    "P1810",
+                    "P813"
+                  ]
+                },
+                {
+                  "hash": "f51dfed00b6a88aeb58afd9518aa61c55a073291",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "a49941185f9dd61b6f782c872d0c2fa8736b61d0",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 59611233,
+                            "id": "Q59611233"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ],
+                    "P6264": [
+                      {
+                        "snaktype": "value",
+                        "property": "P6264",
+                        "hash": "d3b716f2346d0b8e994a4754a43fb7e403117542",
+                        "datavalue": {
+                          "value": "73635",
+                          "type": "string"
+                        },
+                        "datatype": "external-id"
+                      }
+                    ],
+                    "P1810": [
+                      {
+                        "snaktype": "value",
+                        "property": "P1810",
+                        "hash": "4d9b5075db0b17b86d5cab29bae026369a303d09",
+                        "datavalue": {
+                          "value": "Bern. Moens",
+                          "type": "string"
+                        },
+                        "datatype": "string"
+                      }
+                    ],
+                    "P813": [
+                      {
+                        "snaktype": "value",
+                        "property": "P813",
+                        "hash": "e5f60ab0b03700bb883efce38f8022d023bc49fb",
+                        "datavalue": {
+                          "value": {
+                            "time": "+2017-10-09T00:00:00Z",
+                            "timezone": 0,
+                            "before": 0,
+                            "after": 0,
+                            "precision": 11,
+                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                          },
+                          "type": "time"
+                        },
+                        "datatype": "time"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248",
+                    "P6264",
+                    "P1810",
+                    "P813"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P570": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P570",
+                "hash": "d0fc74b1328773775a8b3f6b91b795803f9cfe18",
+                "datavalue": {
+                  "value": {
+                    "time": "+1886-01-01T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              },
+              "type": "statement",
+              "id": "Q21340893$F0076663-0181-46BD-AD62-9A7457A80052",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "24a289e0386ab81d4cd9043ecf1c557f46ae1b3c",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "3bac31ec58b8406d25da59abce49237aa8ea7e54",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 922063,
+                            "id": "Q922063"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ],
+                    "P586": [
+                      {
+                        "snaktype": "value",
+                        "property": "P586",
+                        "hash": "24f7801f1c43f1eaa3c24670d9f33534aa8dd648",
+                        "datavalue": {
+                          "value": "711-1",
+                          "type": "string"
+                        },
+                        "datatype": "external-id"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248",
+                    "P586"
+                  ]
+                },
+                {
+                  "hash": "5dac26cb5ea3768b2dd57752de9f9c1d55a693ee",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "e4631df793ffbe3bc75a10bd0290f0eeb2ca930c",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 669585,
+                            "id": "Q669585"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ],
+                    "P428": [
+                      {
+                        "snaktype": "value",
+                        "property": "P428",
+                        "hash": "c3c251389441f4525be504881e5757e45bea4cf4",
+                        "datavalue": {
+                          "value": "Bern.Moens",
+                          "type": "string"
+                        },
+                        "datatype": "external-id"
+                      }
+                    ],
+                    "P1810": [
+                      {
+                        "snaktype": "value",
+                        "property": "P1810",
+                        "hash": "8d54849657033b5cbd69a12c8948f81ef72d7108",
+                        "datavalue": {
+                          "value": "Jacob Carel Bernelot Moens",
+                          "type": "string"
+                        },
+                        "datatype": "string"
+                      }
+                    ],
+                    "P813": [
+                      {
+                        "snaktype": "value",
+                        "property": "P813",
+                        "hash": "e5f60ab0b03700bb883efce38f8022d023bc49fb",
+                        "datavalue": {
+                          "value": {
+                            "time": "+2017-10-09T00:00:00Z",
+                            "timezone": 0,
+                            "before": 0,
+                            "after": 0,
+                            "precision": 11,
+                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                          },
+                          "type": "time"
+                        },
+                        "datatype": "time"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248",
+                    "P428",
+                    "P1810",
+                    "P813"
+                  ]
+                },
+                {
+                  "hash": "f51dfed00b6a88aeb58afd9518aa61c55a073291",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "a49941185f9dd61b6f782c872d0c2fa8736b61d0",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 59611233,
+                            "id": "Q59611233"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ],
+                    "P6264": [
+                      {
+                        "snaktype": "value",
+                        "property": "P6264",
+                        "hash": "d3b716f2346d0b8e994a4754a43fb7e403117542",
+                        "datavalue": {
+                          "value": "73635",
+                          "type": "string"
+                        },
+                        "datatype": "external-id"
+                      }
+                    ],
+                    "P1810": [
+                      {
+                        "snaktype": "value",
+                        "property": "P1810",
+                        "hash": "4d9b5075db0b17b86d5cab29bae026369a303d09",
+                        "datavalue": {
+                          "value": "Bern. Moens",
+                          "type": "string"
+                        },
+                        "datatype": "string"
+                      }
+                    ],
+                    "P813": [
+                      {
+                        "snaktype": "value",
+                        "property": "P813",
+                        "hash": "e5f60ab0b03700bb883efce38f8022d023bc49fb",
+                        "datavalue": {
+                          "value": {
+                            "time": "+2017-10-09T00:00:00Z",
+                            "timezone": 0,
+                            "before": 0,
+                            "after": 0,
+                            "precision": 11,
+                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                          },
+                          "type": "time"
+                        },
+                        "datatype": "time"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248",
+                    "P6264",
+                    "P1810",
+                    "P813"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P428": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P428",
+                "hash": "c3c251389441f4525be504881e5757e45bea4cf4",
+                "datavalue": {
+                  "value": "Bern.Moens",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q21340893$7DD4D3EA-9B33-4F9B-8B69-8D872408BB2E",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "24a289e0386ab81d4cd9043ecf1c557f46ae1b3c",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "3bac31ec58b8406d25da59abce49237aa8ea7e54",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 922063,
+                            "id": "Q922063"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ],
+                    "P586": [
+                      {
+                        "snaktype": "value",
+                        "property": "P586",
+                        "hash": "24f7801f1c43f1eaa3c24670d9f33534aa8dd648",
+                        "datavalue": {
+                          "value": "711-1",
+                          "type": "string"
+                        },
+                        "datatype": "external-id"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248",
+                    "P586"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P586": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P586",
+                "hash": "24f7801f1c43f1eaa3c24670d9f33534aa8dd648",
+                "datavalue": {
+                  "value": "711-1",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q21340893$1507F670-916C-4320-AAAB-0042F664159B",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "651a20ae090254b3a2b6c3d6a17a547c7865cb0f",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "3bac31ec58b8406d25da59abce49237aa8ea7e54",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 922063,
+                            "id": "Q922063"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ],
+                    "P813": [
+                      {
+                        "snaktype": "value",
+                        "property": "P813",
+                        "hash": "b5a1c722653f01998c840ae0f1ccd66646860565",
+                        "datavalue": {
+                          "value": {
+                            "time": "+2016-04-27T00:00:00Z",
+                            "timezone": 0,
+                            "before": 0,
+                            "after": 0,
+                            "precision": 11,
+                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                          },
+                          "type": "time"
+                        },
+                        "datatype": "time"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248",
+                    "P813"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P21": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P21",
+                "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 6581097,
+                    "id": "Q6581097"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q21340893$B2340154-5ADF-4428-A5EE-EE55AA7E47B6",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "87d47cd6b4be7c2919b945ea4a0de22d5db134f7",
+                  "snaks": {
+                    "P356": [
+                      {
+                        "snaktype": "value",
+                        "property": "P356",
+                        "hash": "7bdcc2243afbe351380cf78687fab2fd8f4a8a1e",
+                        "datavalue": {
+                          "value": "10.5281/ZENODO.10080503",
+                          "type": "string"
+                        },
+                        "datatype": "external-id"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P356"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P735": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P735",
+                "hash": "ac0650033a381725c615f12f25d2774a85997bcd",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 25999604,
+                    "id": "Q25999604"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q21340893$E44A67F1-30A7-4FA3-876E-3C0CB853FCBA",
+              "rank": "normal"
+            }
+          ],
+          "P6264": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P6264",
+                "hash": "d3b716f2346d0b8e994a4754a43fb7e403117542",
+                "datavalue": {
+                  "value": "73635",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q21340893$6A00AB20-04A8-4FBF-A632-408CFDAE18A4",
+              "rank": "normal"
+            }
+          ],
+          "P227": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P227",
+                "hash": "10c0128c23ae9a60d74e3326631d6f0e712148a8",
+                "datavalue": {
+                  "value": "1037221710",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q21340893$7744E328-4AB5-44C8-816E-60EC8AF4B010",
+              "rank": "normal"
+            }
+          ]
+        },
+        "sitelinks": {
+          "specieswiki": {
+            "site": "specieswiki",
+            "title": "Jacob Carel Bernelot Moens",
+            "badges": [],
+            "url": "https://species.wikimedia.org/wiki/Jacob_Carel_Bernelot_Moens"
+          }
+        }
+      }
+    }
+  }
+}

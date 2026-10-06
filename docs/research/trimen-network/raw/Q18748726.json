@@ -1,0 +1,3640 @@
+{
+  "retrieved_at": "2026-10-06T17:23:59.554017+00:00",
+  "url": "https://www.wikidata.org/wiki/Special:EntityData/Q18748726.json",
+  "response": {
+    "entities": {
+      "Q18748726": {
+        "pageid": 20277501,
+        "ns": 0,
+        "title": "Q18748726",
+        "lastrevid": 2515987000,
+        "modified": "2026-07-10T18:57:55Z",
+        "type": "item",
+        "id": "Q18748726",
+        "labels": {
+          "en": {
+            "language": "en",
+            "value": "Royal Botanic Gardens, Kew"
+          },
+          "mk": {
+            "language": "mk",
+            "value": "Кралски ботанички градини во Кју"
+          },
+          "zh-hant": {
+            "language": "zh-hant",
+            "value": "英國皇家植物園"
+          },
+          "zh-cn": {
+            "language": "zh-cn",
+            "value": "英国皇家植物园"
+          },
+          "ja": {
+            "language": "ja",
+            "value": "王立キュー植物園"
+          },
+          "gl": {
+            "language": "gl",
+            "value": "Reais Xardíns Botánicos de Kew"
+          },
+          "hi": {
+            "language": "hi",
+            "value": "रॉयल बोटेनिक गार्डन, क्यू"
+          },
+          "fa": {
+            "language": "fa",
+            "value": "باغ گیاه‌شناسی سلطنتی، کیو"
+          },
+          "hu": {
+            "language": "hu",
+            "value": "Királyi Botanikus Kertek"
+          },
+          "zh-hans": {
+            "language": "zh-hans",
+            "value": "英国皇家植物园"
+          },
+          "zh": {
+            "language": "zh",
+            "value": "英国皇家植物园"
+          },
+          "sr": {
+            "language": "sr",
+            "value": "Краљевске ботаничке баште, Кју"
+          },
+          "sv": {
+            "language": "sv",
+            "value": "Royal Botanic Gardens, Kew"
+          },
+          "ar": {
+            "language": "ar",
+            "value": "حدائق النباتات الملكية (كيو)"
+          },
+          "el": {
+            "language": "el",
+            "value": "Ρόγιαλ Βοτάνικ Γκάρντενς, Κιού"
+          },
+          "he": {
+            "language": "he",
+            "value": "הגנים הבוטניים המלכותיים שבקיו"
+          },
+          "fr": {
+            "language": "fr",
+            "value": "Royal Botanic Gardens, Kew"
+          },
+          "eu": {
+            "language": "eu",
+            "value": "Kewko Errege Lorategi Botanikoa"
+          },
+          "es": {
+            "language": "es",
+            "value": "Real Jardín Botánico de Kew"
+          },
+          "it": {
+            "language": "it",
+            "value": "Royal Botanic Gardens, Kew"
+          },
+          "da": {
+            "language": "da",
+            "value": "Royal Botanic Gardens, Kew"
+          },
+          "ca": {
+            "language": "ca",
+            "value": "Reial Jardí Botànic de Kew"
+          },
+          "ast": {
+            "language": "ast",
+            "value": "Real Xardín Botánicu de Kew"
+          },
+          "ta": {
+            "language": "ta",
+            "value": "ராயல் தாவரவியல் பூங்கா, கியூ"
+          },
+          "hr": {
+            "language": "hr",
+            "value": "Kew"
+          },
+          "cs": {
+            "language": "cs",
+            "value": "Královské botanické zahrady v Kew"
+          },
+          "sl": {
+            "language": "sl",
+            "value": "Kraljevi botanični vrtovi v Kewu"
+          },
+          "ga": {
+            "language": "ga",
+            "value": "Garraithe Ríoga na Lus, Kew"
+          },
+          "sh": {
+            "language": "sh",
+            "value": "Kraljevski botanički vrtovi u Londonu"
+          },
+          "uk": {
+            "language": "uk",
+            "value": "Royal Botanic Gardens, Kew"
+          },
+          "bn": {
+            "language": "bn",
+            "value": "রয়েল বোটানিক গার্ডেনস, কিউ"
+          },
+          "nn": {
+            "language": "nn",
+            "value": "Royal Botanic Gardens i Kew"
+          },
+          "ru": {
+            "language": "ru",
+            "value": "Королевские ботанические сады Кью"
+          },
+          "eo": {
+            "language": "eo",
+            "value": "Reĝa Botanika Ĝardeno de Londono"
+          },
+          "ceb": {
+            "language": "ceb",
+            "value": "Kew Royal Botanic Gardens"
+          },
+          "de": {
+            "language": "de",
+            "value": "Royal Botanic Gardens (Kew)"
+          },
+          "is": {
+            "language": "is",
+            "value": "Konunglegi grasagarðurinn í Kew"
+          },
+          "be": {
+            "language": "be",
+            "value": "Каралеўскія батанічныя сады К’ю"
+          },
+          "tr": {
+            "language": "tr",
+            "value": "Kraliyet Botanik Bahçeleri, Kew"
+          },
+          "bg": {
+            "language": "bg",
+            "value": "Кралска ботаническа градина (Лондон)"
+          },
+          "az": {
+            "language": "az",
+            "value": "Kyu kral botanika bağları"
+          },
+          "nb": {
+            "language": "nb",
+            "value": "Royal Botanic Gardens i Kew"
+          },
+          "af": {
+            "language": "af",
+            "value": "Kew Botaniese Tuin"
+          },
+          "ko": {
+            "language": "ko",
+            "value": "큐 왕립 식물원"
+          }
+        },
+        "descriptions": {
+          "en": {
+            "language": "en",
+            "value": "government botanical research institute in the UK"
+          },
+          "hu": {
+            "language": "hu",
+            "value": "nem kormányzati tudományos szervezet"
+          },
+          "sr": {
+            "language": "sr",
+            "value": "недепартментално јавно тело у УК"
+          },
+          "nl": {
+            "language": "nl",
+            "value": "erfgoedinstelling"
+          },
+          "el": {
+            "language": "el",
+            "value": "μη κυβερνητικός δημόσιος οργανισμός στο Ηνωμένο Βασίλειο"
+          },
+          "fr": {
+            "language": "fr",
+            "value": "organisme public non-départemental au Royaume-Uni"
+          },
+          "eu": {
+            "language": "eu",
+            "value": "ikerketa erakunde publikoa, Kewko lorategi botanikoan dagoena, Britainia Handia"
+          },
+          "it": {
+            "language": "it",
+            "value": "ente di gestione del Kew Gradens a Londra"
+          },
+          "zh": {
+            "language": "zh",
+            "value": "英国伦敦的非政府机构"
+          },
+          "sl": {
+            "language": "sl",
+            "value": "botanični raziskovalni inštitut v Združenem kraljestvu"
+          },
+          "sv": {
+            "language": "sv",
+            "value": "statligt botaniskt forskningsinstitut i Storbritannien"
+          },
+          "bn": {
+            "language": "bn",
+            "value": "যুক্তরাজ্যের সরকারি উদ্ভিদবিজ্ঞানগত গবেষণা প্রতিষ্ঠান"
+          },
+          "de": {
+            "language": "de",
+            "value": "Parkanlage im Vereinigten Königreich"
+          },
+          "ru": {
+            "language": "ru",
+            "value": "научная организация"
+          },
+          "ko": {
+            "language": "ko",
+            "value": "영국의 정부 식물 연구기관"
+          }
+        },
+        "aliases": {
+          "en": [
+            {
+              "language": "en",
+              "value": "Kew"
+            },
+            {
+              "language": "en",
+              "value": "Royal Botanic Gardens"
+            },
+            {
+              "language": "en",
+              "value": "Kew Royal Botanic Gardens"
+            },
+            {
+              "language": "en",
+              "value": "Kew Gardens"
+            }
+          ],
+          "hi": [
+            {
+              "language": "hi",
+              "value": "शाही वनस्पति उद्यान, क्यू"
+            }
+          ],
+          "sr": [
+            {
+              "language": "sr",
+              "value": "Кју"
+            },
+            {
+              "language": "sr",
+              "value": "Краљевске ботаничке баште"
+            },
+            {
+              "language": "sr",
+              "value": "Кјуске краљевске ботаничке баште"
+            }
+          ],
+          "ja": [
+            {
+              "language": "ja",
+              "value": "キュー王立植物園"
+            },
+            {
+              "language": "ja",
+              "value": "キュー・ガーデン"
+            }
+          ],
+          "zh": [
+            {
+              "language": "zh",
+              "value": "基尤皇家植物园"
+            },
+            {
+              "language": "zh",
+              "value": "基尤皇家植物園"
+            },
+            {
+              "language": "zh",
+              "value": "邱园皇家植物园"
+            }
+          ],
+          "fr": [
+            {
+              "language": "fr",
+              "value": "Jardins botaniques royaux"
+            },
+            {
+              "language": "fr",
+              "value": "Jardins de Kew"
+            },
+            {
+              "language": "fr",
+              "value": "Kew"
+            },
+            {
+              "language": "fr",
+              "value": "Royal Botanic Gardens"
+            },
+            {
+              "language": "fr",
+              "value": "Kew Royal Botanic Gardens"
+            },
+            {
+              "language": "fr",
+              "value": "Kew Gardens"
+            },
+            {
+              "language": "fr",
+              "value": "Royal Botanic Gardens, Kew"
+            }
+          ],
+          "zh-cn": [
+            {
+              "language": "zh-cn",
+              "value": "基尤皇家植物园"
+            }
+          ],
+          "zh-hant": [
+            {
+              "language": "zh-hant",
+              "value": "基尤皇家植物園"
+            }
+          ],
+          "zh-hans": [
+            {
+              "language": "zh-hans",
+              "value": "基尤皇家植物园"
+            }
+          ],
+          "sl": [
+            {
+              "language": "sl",
+              "value": "londonski vrtovi Kew"
+            },
+            {
+              "language": "sl",
+              "value": "Royal Botanic Gardens, Kew"
+            },
+            {
+              "language": "sl",
+              "value": "Royal Botanic Gardens"
+            },
+            {
+              "language": "sl",
+              "value": "Kew"
+            },
+            {
+              "language": "sl",
+              "value": "Kew Royal Botanic Gardens"
+            },
+            {
+              "language": "sl",
+              "value": "Kew Gardens"
+            }
+          ],
+          "bn": [
+            {
+              "language": "bn",
+              "value": "কিউ"
+            },
+            {
+              "language": "bn",
+              "value": "রয়েল বোটানিক গার্ডেনস"
+            },
+            {
+              "language": "bn",
+              "value": "কিউ রয়েল বোটানিক গার্ডেনস"
+            },
+            {
+              "language": "bn",
+              "value": "কিউ গার্ডেনস"
+            }
+          ]
+        },
+        "claims": {
+          "P31": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P31",
+                "hash": "5057894d0486ff7b226d4ae06c675545fc392a54",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 3343298,
+                    "id": "Q3343298"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q18748726$3077a16f-4019-4355-16a5-6a4b19bbba7e",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P31",
+                "hash": "c0cd71831ba6296830ffe5b2f9f8d6358cbfd830",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 31855,
+                    "id": "Q31855"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P1932": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1932",
+                    "hash": "614ea725164798e9aa610dbe32a9af4582611cb8",
+                    "datavalue": {
+                      "value": "research institution",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P1932"
+              ],
+              "id": "Q18748726$ec339595-4534-0872-8094-7e83874a51e9",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "0175120f72d5e77019a68ea536a5793fe65c4894",
+                  "snaks": {
+                    "P143": [
+                      {
+                        "snaktype": "value",
+                        "property": "P143",
+                        "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 328,
+                            "id": "Q328"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ],
+                    "P813": [
+                      {
+                        "snaktype": "value",
+                        "property": "P813",
+                        "hash": "62c19ae4c80870540794431d7670651c621de169",
+                        "datavalue": {
+                          "value": {
+                            "time": "+2023-12-08T00:00:00Z",
+                            "timezone": 0,
+                            "before": 0,
+                            "after": 0,
+                            "precision": 11,
+                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                          },
+                          "type": "time"
+                        },
+                        "datatype": "time"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P143",
+                    "P813"
+                  ]
+                }
+              ]
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P31",
+                "hash": "0344abdcdc8ee17ad668cc1b7f883083cadd117a",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 2385804,
+                    "id": "Q2385804"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q18748726$522cb4bc-4ac1-2449-eedd-7061577608df",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "0175120f72d5e77019a68ea536a5793fe65c4894",
+                  "snaks": {
+                    "P143": [
+                      {
+                        "snaktype": "value",
+                        "property": "P143",
+                        "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 328,
+                            "id": "Q328"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ],
+                    "P813": [
+                      {
+                        "snaktype": "value",
+                        "property": "P813",
+                        "hash": "62c19ae4c80870540794431d7670651c621de169",
+                        "datavalue": {
+                          "value": {
+                            "time": "+2023-12-08T00:00:00Z",
+                            "timezone": 0,
+                            "before": 0,
+                            "after": 0,
+                            "precision": 11,
+                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                          },
+                          "type": "time"
+                        },
+                        "datatype": "time"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P143",
+                    "P813"
+                  ]
+                }
+              ]
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P31",
+                "hash": "59a7b3ef18b7e39ef2c73e7b5e9afcdf83657241",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 167346,
+                    "id": "Q167346"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q18748726$3ea3a817-4b0b-4b85-6415-06a97a0d57c1",
+              "rank": "preferred"
+            }
+          ],
+          "P17": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P17",
+                "hash": "a44880420787fb348836dc51d3babc5227c4ef7e",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 145,
+                    "id": "Q145"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q18748726$84FE072E-2038-41FA-B256-7DC85EC2E879",
+              "rank": "normal"
+            }
+          ],
+          "P910": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P910",
+                "hash": "d44d69a78da9f51719bc420fc03d2e22f2cb686d",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 8684375,
+                    "id": "Q8684375"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q18748726$6A418A51-549C-4E33-AB65-347413BBCBE1",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+                  "snaks": {
+                    "P143": [
+                      {
+                        "snaktype": "value",
+                        "property": "P143",
+                        "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 328,
+                            "id": "Q328"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P143"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P856": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P856",
+                "hash": "bb374ad1d3d7f32395e190b2b6e6b4d6d8adb353",
+                "datavalue": {
+                  "value": "https://www.kew.org/",
+                  "type": "string"
+                },
+                "datatype": "url"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P407": [
+                  {
+                    "snaktype": "value",
+                    "property": "P407",
+                    "hash": "daf1c4fcb58181b02dff9cc89deb084004ddae4b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1860,
+                        "id": "Q1860"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P407"
+              ],
+              "id": "Q18748726$1cea7294-4bb8-fdad-81ee-2e0ec1c3a075",
+              "rank": "normal"
+            }
+          ],
+          "P488": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P488",
+                "hash": "a53dbee274630de91481eebc51dc13631570326c",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 1340480,
+                    "id": "Q1340480"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P580": [
+                  {
+                    "snaktype": "value",
+                    "property": "P580",
+                    "hash": "f40f7a3b9b28e53e1034a3e8568f93a60b52188e",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2010-00-00T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 9,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P582": [
+                  {
+                    "snaktype": "value",
+                    "property": "P582",
+                    "hash": "c9582fcdd0adc330e4c921177cb7e523de50720e",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2019-00-00T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 9,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P580",
+                "P582"
+              ],
+              "id": "Q18748726$07164cad-4424-8676-1cf0-341ea0dac802",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P488",
+                "hash": "bfe7c49f963555962f9bd4cb29e89124fe053237",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 4742255,
+                    "id": "Q4742255"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P580": [
+                  {
+                    "snaktype": "value",
+                    "property": "P580",
+                    "hash": "66d16d15afb9a5d83257061455cc790eddf2b9df",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2019-00-00T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 9,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P580"
+              ],
+              "id": "Q18748726$cc3b55c9-4fad-e1bc-bfc8-161de5c8663e",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P488",
+                "hash": "6f6ff8e4258423733fd125adbe7778f26b3cfeb3",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 1701316,
+                    "id": "Q1701316"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P580": [
+                  {
+                    "snaktype": "value",
+                    "property": "P580",
+                    "hash": "05038d5d0fd23c067a48301252f21993a10ee995",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2003-00-00T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 9,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P582": [
+                  {
+                    "snaktype": "value",
+                    "property": "P582",
+                    "hash": "f52cccf49da12dade7f191d0b8339eb57ccae88a",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2009-00-00T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 9,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P580",
+                "P582"
+              ],
+              "id": "Q18748726$46c0e0ea-4567-84ae-cf51-66629daee379",
+              "rank": "normal"
+            }
+          ],
+          "P18": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P18",
+                "hash": "cb8c3e5cc19af24132e00dbca5fdcf83bdd2cb8a",
+                "datavalue": {
+                  "value": "Flowers in front of the Palm House, Kew Gardens.jpg",
+                  "type": "string"
+                },
+                "datatype": "commonsMedia"
+              },
+              "type": "statement",
+              "id": "Q18748726$C082D46D-72BA-45F0-8A19-F61BC9F30D75",
+              "rank": "normal"
+            }
+          ],
+          "P227": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P227",
+                "hash": "b77cef1e832fba77aaf65a874ddec492e786ee2d",
+                "datavalue": {
+                  "value": "1018641-4",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q18748726$44e0a572-4ea2-6ed7-54ca-d93835ca83ae",
+              "rank": "normal"
+            }
+          ],
+          "P3267": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P3267",
+                "hash": "0b54a7eea2636854a9d78d79bccd9abc5ef32e45",
+                "datavalue": {
+                  "value": "34626423@N02",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q18748726$55575623-47fd-54dc-1dbd-20c722e931ad",
+              "rank": "normal"
+            }
+          ],
+          "P2002": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P2002",
+                "hash": "fc9c8376a24266235022a4a1d7b479f26875ac7d",
+                "datavalue": {
+                  "value": "kewgardens",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P3744": [
+                  {
+                    "snaktype": "value",
+                    "property": "P3744",
+                    "hash": "92915ff9e10def2c4db0a6a8911003f456524cf1",
+                    "datavalue": {
+                      "value": {
+                        "amount": "+131732",
+                        "unit": "1"
+                      },
+                      "type": "quantity"
+                    },
+                    "datatype": "quantity"
+                  }
+                ],
+                "P6552": [
+                  {
+                    "snaktype": "value",
+                    "property": "P6552",
+                    "hash": "751237826edc4af2be4cffdca43afdd836ac9ddf",
+                    "datavalue": {
+                      "value": "16543454",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P1552": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1552",
+                    "hash": "62f0039d240f7eeba6c6908a0d8807a6188324a1",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 28378282,
+                        "id": "Q28378282"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P585": [
+                  {
+                    "snaktype": "value",
+                    "property": "P585",
+                    "hash": "e21aee5b62a0397ca7e713c0d8b210130b250850",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2020-04-13T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P580": [
+                  {
+                    "snaktype": "value",
+                    "property": "P580",
+                    "hash": "c4dad98c193f0a3710da47b3f06f2af3c507eaa6",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2008-10-01T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P3744",
+                "P6552",
+                "P1552",
+                "P585",
+                "P580"
+              ],
+              "id": "Q18748726$f47db4c4-4dbb-c496-ab73-6fd1efd659ce",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "830e0d3d65e6b91e769889d7d1177706b5c1e0ca",
+                  "snaks": {
+                    "P813": [
+                      {
+                        "snaktype": "value",
+                        "property": "P813",
+                        "hash": "cd8210fc3215a6112ebad72d11663d1a56b14d67",
+                        "datavalue": {
+                          "value": {
+                            "time": "+2018-05-10T00:00:00Z",
+                            "timezone": 0,
+                            "before": 0,
+                            "after": 0,
+                            "precision": 11,
+                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                          },
+                          "type": "time"
+                        },
+                        "datatype": "time"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P813"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P2013": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P2013",
+                "hash": "e3c9bdfbc5e29fb0f7293d6a5f9ac591f567d9a5",
+                "datavalue": {
+                  "value": "kewgardens",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q18748726$35e28be5-449d-ea49-d8f7-e57505e0aea3",
+              "rank": "normal"
+            }
+          ],
+          "P2847": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P2847",
+                "hash": "eb5b30a6c1a8c913ce2fe9540aa3cac8f49a45eb",
+                "datavalue": {
+                  "value": "107947495788612130561",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q18748726$30b13be8-49b7-99a2-1a56-9997f797d4a5",
+              "rank": "normal"
+            }
+          ],
+          "P213": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P213",
+                "hash": "2a019277b66ad2f0d2e5fa41c7700523e5a01a78",
+                "datavalue": {
+                  "value": "0000000120974353",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q18748726$9446B17E-1588-49B8-A6A9-F59C2D4F61CE",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "5a761c7a986f4a5cf8cefbfc18e5a5ae5133d44b",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "2e92dfb9200a54eef9b44e474b97c4dd6dd90461",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 53705033,
+                            "id": "Q53705033"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P131": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P131",
+                "hash": "b8ddd24f6d77d0154c7014ee39b75cb384824fd5",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 84,
+                    "id": "Q84"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q18748726$C5F10B06-C7A8-483A-9DB6-CC8EC867F896",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "0e193a5543c1e5cec0faac6b34610a2a52f40c40",
+                  "snaks": {
+                    "P2427": [
+                      {
+                        "snaktype": "value",
+                        "property": "P2427",
+                        "hash": "50b25b6ee35703ef1b8d60854ca5a49a69ca236a",
+                        "datavalue": {
+                          "value": "grid.4903.e",
+                          "type": "string"
+                        },
+                        "datatype": "external-id"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P2427"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P3153": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P3153",
+                "hash": "38b3c329d44ebb2ac5c0f09715e1a1655b3447ae",
+                "datavalue": {
+                  "value": "501100001296",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q18748726$A7EED10C-4FD8-43C2-9F1E-3DC97B1FE846",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "5a761c7a986f4a5cf8cefbfc18e5a5ae5133d44b",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "2e92dfb9200a54eef9b44e474b97c4dd6dd90461",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 53705033,
+                            "id": "Q53705033"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P373": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P373",
+                "hash": "2f5ac4b1086e08480dacf164710638fc7a8dab7e",
+                "datavalue": {
+                  "value": "Royal Botanic Gardens, Kew",
+                  "type": "string"
+                },
+                "datatype": "string"
+              },
+              "type": "statement",
+              "id": "Q18748726$C5EC658F-B558-43D3-9361-13C675F1ABD0",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "1f8222fa4dafb5e7174a1eca0a7d1647a227ecc0",
+                  "snaks": {
+                    "P3452": [
+                      {
+                        "snaktype": "value",
+                        "property": "P3452",
+                        "hash": "3769005f7f4276be7a486d909304da0407d5a559",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 8684375,
+                            "id": "Q8684375"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P3452"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P2427": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P2427",
+                "hash": "50b25b6ee35703ef1b8d60854ca5a49a69ca236a",
+                "datavalue": {
+                  "value": "grid.4903.e",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q18748726$55B086EA-6CFC-4425-9063-5C8AB20062A7",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "40fdc7f3ce7f6771a8f285a1267bfc3f3de154d9",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "858e5db66e8139829fa8f88e7e16ea6af5213e4b",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 53869345,
+                            "id": "Q53869345"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248"
+                  ]
+                },
+                {
+                  "hash": "a1914c8952a5bc482eafeb26be4fda504fe701f9",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "31f77799b27e462a188007d80e9cae011a037bca",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 53705036,
+                            "id": "Q53705036"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P4081": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P4081",
+                "hash": "83d825e55b97564eb173feae465957f415472add",
+                "datavalue": {
+                  "value": "227523",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P1810": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1810",
+                    "hash": "40c17fab00eb89b51ce84dcb3255c7b45f951229",
+                    "datavalue": {
+                      "value": "Royal Gardens, Kew.",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P1810"
+              ],
+              "id": "Q18748726$639E295F-B809-45D9-9FE1-5792D1030725",
+              "rank": "normal"
+            }
+          ],
+          "P6366": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P6366",
+                "hash": "f05939fa565a73dd087a8c80d665dbe0a2b0c9cd",
+                "datavalue": {
+                  "value": "2799614521",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q18748726$B4C98C40-2BBE-47D3-B9EE-196A8CF44D48",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "b0429a9df70cefe3b27af79bb675d5d4b1ad412d",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "2995ad06d424d751f036cb92149fada89fe252d9",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 60683589,
+                            "id": "Q60683589"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ],
+                    "P2427": [
+                      {
+                        "snaktype": "value",
+                        "property": "P2427",
+                        "hash": "50b25b6ee35703ef1b8d60854ca5a49a69ca236a",
+                        "datavalue": {
+                          "value": "grid.4903.e",
+                          "type": "string"
+                        },
+                        "datatype": "external-id"
+                      }
+                    ],
+                    "P813": [
+                      {
+                        "snaktype": "value",
+                        "property": "P813",
+                        "hash": "74c664545729bbe3e2b6db4bfa3d58ebdeb8e9f0",
+                        "datavalue": {
+                          "value": {
+                            "time": "+2019-01-19T00:00:00Z",
+                            "timezone": 0,
+                            "before": 0,
+                            "after": 0,
+                            "precision": 11,
+                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                          },
+                          "type": "time"
+                        },
+                        "datatype": "time"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248",
+                    "P2427",
+                    "P813"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P159": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P159",
+                "hash": "eaaeac897ea7e4c29c26c0aad4a92a0dede6ea2f",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 1740301,
+                    "id": "Q1740301"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P625": [
+                  {
+                    "snaktype": "value",
+                    "property": "P625",
+                    "hash": "abfb7f8e54db6843ad3e3716d4a562b08acb5ebf",
+                    "datavalue": {
+                      "value": {
+                        "latitude": 51.4787,
+                        "longitude": -0.2956,
+                        "altitude": null,
+                        "precision": 0.0001,
+                        "globe": "http://www.wikidata.org/entity/Q2"
+                      },
+                      "type": "globecoordinate"
+                    },
+                    "datatype": "globe-coordinate"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P625"
+              ],
+              "id": "Q18748726$E995D462-0A73-42E7-9DB8-C2DFCE22F0B9",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "59c23447da7346f3b79ade0a34f896c78bf12946",
+                  "snaks": {
+                    "P143": [
+                      {
+                        "snaktype": "value",
+                        "property": "P143",
+                        "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 328,
+                            "id": "Q328"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ],
+                    "P4656": [
+                      {
+                        "snaktype": "value",
+                        "property": "P4656",
+                        "hash": "d3cce727a37d81a2c1dabc81c428e0ac330a212a",
+                        "datavalue": {
+                          "value": "https://en.wikipedia.org/w/index.php?title=Royal_Botanic_Gardens,_Kew&oldid=885160972",
+                          "type": "string"
+                        },
+                        "datatype": "url"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P143",
+                    "P4656"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P6782": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P6782",
+                "hash": "a21d3104e995ad23f97e1d1c1e025f498b86ea18",
+                "datavalue": {
+                  "value": "00ynnr806",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q18748726$5541933B-6A68-4B73-B7D8-A30B98825C3E",
+              "rank": "normal"
+            }
+          ],
+          "P214": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P214",
+                "hash": "dc97707c35629dd2f707e2726d1b3284d95f849e",
+                "datavalue": {
+                  "value": "122697989",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q18748726$F7A17EEA-52CA-4B94-918E-1FBF13A1E39B",
+              "rank": "normal"
+            }
+          ],
+          "P1343": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P1343",
+                "hash": "a5ccf2b856ef5e568206838540e70908ad8293ee",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 73357989,
+                    "id": "Q73357989"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P585": [
+                  {
+                    "snaktype": "value",
+                    "property": "P585",
+                    "hash": "5a3f2a7491006129e04514010a00e7810907eb5a",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2019-10-31T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  },
+                  {
+                    "snaktype": "value",
+                    "property": "P585",
+                    "hash": "c98efba799e1769013d5e0763a46d1af854063d9",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2020-04-30T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  },
+                  {
+                    "snaktype": "value",
+                    "property": "P585",
+                    "hash": "8c551a45665c151dbfe7cfb1a51049526a994b31",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2021-08-03T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  },
+                  {
+                    "snaktype": "value",
+                    "property": "P585",
+                    "hash": "cc204b5b4738cf214a068d626dc55342010de10f",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2022-03-01T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  },
+                  {
+                    "snaktype": "value",
+                    "property": "P585",
+                    "hash": "a950ae483cf1983c91258f423fff9ff548bf17c8",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2023-07-02T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  },
+                  {
+                    "snaktype": "value",
+                    "property": "P585",
+                    "hash": "4cdec145bbd2554305a3c937f1aab833dfdb3608",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2023-06-27T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  },
+                  {
+                    "snaktype": "value",
+                    "property": "P585",
+                    "hash": "e5dcc2ce337e0f4dfe71a248d375ddad670a4cc7",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2024-05-16T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P585"
+              ],
+              "id": "Q18748726$DEC9C16F-52FE-481C-902F-21149C300ED5",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "0e3b48ffd16176acaf88177cd865f1e389084c77",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "3d8fc8c97ae24fbb2ec80db137e7ae641395aa26",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 76889548,
+                            "id": "Q76889548"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ],
+                    "P854": [
+                      {
+                        "snaktype": "value",
+                        "property": "P854",
+                        "hash": "8c1eb401c82fe0167bafc1a85ef81683b2ebfb82",
+                        "datavalue": {
+                          "value": "https://archive.org/details/OpenGLAM_Survey_20191031",
+                          "type": "string"
+                        },
+                        "datatype": "url"
+                      }
+                    ],
+                    "P813": [
+                      {
+                        "snaktype": "value",
+                        "property": "P813",
+                        "hash": "aa1194ec38a8ad3dcf0baa6a642fcba401531639",
+                        "datavalue": {
+                          "value": {
+                            "time": "+2019-11-30T00:00:00Z",
+                            "timezone": 0,
+                            "before": 0,
+                            "after": 0,
+                            "precision": 11,
+                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                          },
+                          "type": "time"
+                        },
+                        "datatype": "time"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248",
+                    "P854",
+                    "P813"
+                  ]
+                },
+                {
+                  "hash": "1f94b9fc199ff31be06b906fd8ec1e9043866ba2",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "394a58554bd87ce384834b9bb1532fa99d53b4dc",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 97730483,
+                            "id": "Q97730483"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ],
+                    "P854": [
+                      {
+                        "snaktype": "value",
+                        "property": "P854",
+                        "hash": "629fa9d9a1abd9f9739ff796cd903e03159fed60",
+                        "datavalue": {
+                          "value": "https://archive.org/details/OpenGLAM_Survey_20200430",
+                          "type": "string"
+                        },
+                        "datatype": "url"
+                      }
+                    ],
+                    "P813": [
+                      {
+                        "snaktype": "value",
+                        "property": "P813",
+                        "hash": "b0f6bb067ff8b54402546beac8ba2c00020bd410",
+                        "datavalue": {
+                          "value": {
+                            "time": "+2020-07-27T00:00:00Z",
+                            "timezone": 0,
+                            "before": 0,
+                            "after": 0,
+                            "precision": 11,
+                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                          },
+                          "type": "time"
+                        },
+                        "datatype": "time"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248",
+                    "P854",
+                    "P813"
+                  ]
+                },
+                {
+                  "hash": "5119aea74673e8aa798b0743e236d70ba0a0e644",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "6948da10cd13c9b6c233c9a30ebcc9e38eff45a5",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 107866137,
+                            "id": "Q107866137"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ],
+                    "P854": [
+                      {
+                        "snaktype": "value",
+                        "property": "P854",
+                        "hash": "594d4a8c8fb7eed6756bd73ec1427a0cc6d53bad",
+                        "datavalue": {
+                          "value": "https://archive.org/details/OpenGLAM_Survey_20210803",
+                          "type": "string"
+                        },
+                        "datatype": "url"
+                      }
+                    ],
+                    "P813": [
+                      {
+                        "snaktype": "value",
+                        "property": "P813",
+                        "hash": "b1ddced2819c88072cc5f9c3e5cb044e1175bb63",
+                        "datavalue": {
+                          "value": {
+                            "time": "+2021-08-04T00:00:00Z",
+                            "timezone": 0,
+                            "before": 0,
+                            "after": 0,
+                            "precision": 11,
+                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                          },
+                          "type": "time"
+                        },
+                        "datatype": "time"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248",
+                    "P854",
+                    "P813"
+                  ]
+                },
+                {
+                  "hash": "1d34556840a0fe2beb0f2e4ec4660b1730dd78ff",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "4bc7dab1464d317397d34fbabd8cc81bf0f87e45",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 110951835,
+                            "id": "Q110951835"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ],
+                    "P854": [
+                      {
+                        "snaktype": "value",
+                        "property": "P854",
+                        "hash": "8fe7aeec210b62d5681170f00cf0c29b9cde76e8",
+                        "datavalue": {
+                          "value": "https://archive.org/details/OpenGLAM_Survey_20220217",
+                          "type": "string"
+                        },
+                        "datatype": "url"
+                      }
+                    ],
+                    "P813": [
+                      {
+                        "snaktype": "value",
+                        "property": "P813",
+                        "hash": "b2ad08910940cafbe24537b40cf2cd06bef73cac",
+                        "datavalue": {
+                          "value": {
+                            "time": "+2022-03-01T00:00:00Z",
+                            "timezone": 0,
+                            "before": 0,
+                            "after": 0,
+                            "precision": 11,
+                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                          },
+                          "type": "time"
+                        },
+                        "datatype": "time"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248",
+                    "P854",
+                    "P813"
+                  ]
+                },
+                {
+                  "hash": "13bdd17c55a0a13286b08735386b43ea90a43261",
+                  "snaks": {
+                    "P854": [
+                      {
+                        "snaktype": "value",
+                        "property": "P854",
+                        "hash": "060756ca7a2aa855d34ed7f61e39ed7623c90ca5",
+                        "datavalue": {
+                          "value": "https://docs.google.com/spreadsheets/d/1WPS-KJptUJ-o8SXtg00llcxq0IKJu8eO6Ege_GrLaNc",
+                          "type": "string"
+                        },
+                        "datatype": "url"
+                      }
+                    ],
+                    "P813": [
+                      {
+                        "snaktype": "value",
+                        "property": "P813",
+                        "hash": "d86d4a017b0eefe2db781afe2b6a69c9613c3e72",
+                        "datavalue": {
+                          "value": {
+                            "time": "+2023-07-02T00:00:00Z",
+                            "timezone": 0,
+                            "before": 0,
+                            "after": 0,
+                            "precision": 11,
+                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                          },
+                          "type": "time"
+                        },
+                        "datatype": "time"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P854",
+                    "P813"
+                  ]
+                },
+                {
+                  "hash": "142479aa7c3917dfb63e150b9a5b19dca9aad240",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "fa4def8cbd2ff185af4ecf8daad54c2f7c80dd55",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 120041313,
+                            "id": "Q120041313"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ],
+                    "P854": [
+                      {
+                        "snaktype": "value",
+                        "property": "P854",
+                        "hash": "073c073b85e3a834b020c5b880c1da2fffd3f76f",
+                        "datavalue": {
+                          "value": "https://archive.org/details/open-glam-survey-backup-20230627",
+                          "type": "string"
+                        },
+                        "datatype": "url"
+                      }
+                    ],
+                    "P813": [
+                      {
+                        "snaktype": "value",
+                        "property": "P813",
+                        "hash": "91bd86c290f31c8503829dfb580f4d39440e4daf",
+                        "datavalue": {
+                          "value": {
+                            "time": "+2023-06-27T00:00:00Z",
+                            "timezone": 0,
+                            "before": 0,
+                            "after": 0,
+                            "precision": 11,
+                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                          },
+                          "type": "time"
+                        },
+                        "datatype": "time"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248",
+                    "P854",
+                    "P813"
+                  ]
+                },
+                {
+                  "hash": "6c44b9d62586b93bda3b1e30b4d6af3421c76022",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "560d794f5f90caa1dcc537e17fbcfb7cdc023d93",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 125946211,
+                            "id": "Q125946211"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ],
+                    "P813": [
+                      {
+                        "snaktype": "value",
+                        "property": "P813",
+                        "hash": "4826ecbacd3f788f6914b9f03e620d972f12ac49",
+                        "datavalue": {
+                          "value": {
+                            "time": "+2024-05-16T00:00:00Z",
+                            "timezone": 0,
+                            "before": 0,
+                            "after": 0,
+                            "precision": 11,
+                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                          },
+                          "type": "time"
+                        },
+                        "datatype": "time"
+                      }
+                    ],
+                    "P854": [
+                      {
+                        "snaktype": "value",
+                        "property": "P854",
+                        "hash": "8419423faa682837198722e6907892b93e963892",
+                        "datavalue": {
+                          "value": "https://archive.org/details/open-glam-survey-backup-20240516",
+                          "type": "string"
+                        },
+                        "datatype": "url"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248",
+                    "P813",
+                    "P854"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P625": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P625",
+                "hash": "8751e99a021204bc457a5967da6e15789417b095",
+                "datavalue": {
+                  "value": {
+                    "latitude": 51.47869444444444,
+                    "longitude": -0.29561111111111116,
+                    "altitude": null,
+                    "precision": 2.777777777777778e-05,
+                    "globe": "http://www.wikidata.org/entity/Q2"
+                  },
+                  "type": "globecoordinate"
+                },
+                "datatype": "globe-coordinate"
+              },
+              "type": "statement",
+              "id": "Q18748726$D9D2253D-C079-4AE1-A2B2-A6DB3843BB43",
+              "rank": "normal"
+            }
+          ],
+          "P463": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P463",
+                "hash": "6290dc6730f924ec1edc608d570fcbfcf26a8357",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 5163385,
+                    "id": "Q5163385"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q18748726$643cc10b-4cc3-1752-1181-50b05f97f5ab",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "004718824ba1c541d52931b149989d54aa5de12e",
+                  "snaks": {
+                    "P854": [
+                      {
+                        "snaktype": "value",
+                        "property": "P854",
+                        "hash": "6bc51f9d21dedd841cb755c52274dbd76d8f5291",
+                        "datavalue": {
+                          "value": "https://cetaf.org/members/cetaf-members",
+                          "type": "string"
+                        },
+                        "datatype": "url"
+                      }
+                    ],
+                    "P1065": [
+                      {
+                        "snaktype": "value",
+                        "property": "P1065",
+                        "hash": "e6a5c1b08ea7aac55e02b36e9e0d04ee36364217",
+                        "datavalue": {
+                          "value": "https://web.archive.org/web/20210506191221/https://cetaf.org/members/cetaf-members",
+                          "type": "string"
+                        },
+                        "datatype": "url"
+                      }
+                    ],
+                    "P2960": [
+                      {
+                        "snaktype": "value",
+                        "property": "P2960",
+                        "hash": "39067d63b852a24255a64e63e1bf0c40dbd5d26b",
+                        "datavalue": {
+                          "value": {
+                            "time": "+2021-05-06T00:00:00Z",
+                            "timezone": 0,
+                            "before": 0,
+                            "after": 0,
+                            "precision": 11,
+                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                          },
+                          "type": "time"
+                        },
+                        "datatype": "time"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P854",
+                    "P1065",
+                    "P2960"
+                  ]
+                }
+              ]
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P463",
+                "hash": "a35843193beef2bd5f56c331a6b7e74399836213",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 4914768,
+                    "id": "Q4914768"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q18748726$4ddd17c6-41c8-0bd3-34fd-568635259b32",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "3693dee5af6ce7807b747a592c25c6c7d68c180d",
+                  "snaks": {
+                    "P854": [
+                      {
+                        "snaktype": "value",
+                        "property": "P854",
+                        "hash": "13ab76efed6b4d680f018230bf129d67a05c8bc6",
+                        "datavalue": {
+                          "value": "https://www.tdwg.org/about/membership/",
+                          "type": "string"
+                        },
+                        "datatype": "url"
+                      }
+                    ],
+                    "P813": [
+                      {
+                        "snaktype": "value",
+                        "property": "P813",
+                        "hash": "30369cf9be954d9aaf9be955d93d58adf2c1a251",
+                        "datavalue": {
+                          "value": {
+                            "time": "+2020-02-24T00:00:00Z",
+                            "timezone": 0,
+                            "before": 0,
+                            "after": 0,
+                            "precision": 11,
+                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                          },
+                          "type": "time"
+                        },
+                        "datatype": "time"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P854",
+                    "P813"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P5785": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P5785",
+                "hash": "cb4f71b9e08b39a6b14751d08e6dfc91b2579072",
+                "datavalue": {
+                  "value": "999481793",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q18748726$fc3a518d-4fb2-ddc4-c48e-8c8c57bea159",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "5baf9e661a088246f4c54d96d23bebd1b2642463",
+                  "snaks": {
+                    "P854": [
+                      {
+                        "snaktype": "value",
+                        "property": "P854",
+                        "hash": "025cff20a2b2d3cbc991e17b56937658d3a33e9f",
+                        "datavalue": {
+                          "value": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/how-to-participate/org-details/999481793",
+                          "type": "string"
+                        },
+                        "datatype": "url"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P854"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P527": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P527",
+                "hash": "f70e67bbb9c18afa140055bc38aa026eed11538f",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 80832822,
+                    "id": "Q80832822"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q18748726$94425887-44b7-84d3-c25e-3f6e81f3d287",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P527",
+                "hash": "ee073f78ea17149d4ef0a5b3df9c9a828e4db788",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 27082364,
+                    "id": "Q27082364"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q18748726$346647ec-4a93-2848-93f1-ab20b82156ce",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P527",
+                "hash": "fde2716a2d2430c281c522dba745fd2e40717dbe",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 7698324,
+                    "id": "Q7698324"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q18748726$0ca46ca0-4bea-4ade-f335-9d073d9f5227",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P527",
+                "hash": "3af315c98147c6b2a6cf0a8b8309f0b1b6bd680a",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 188617,
+                    "id": "Q188617"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q18748726$4030dd80-4e74-8765-981b-3472d67d15af",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P527",
+                "hash": "f07412dde37510aed7e34940affcec27fc762829",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 47110999,
+                    "id": "Q47110999"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q18748726$7c847f45-4cc9-8f81-c68b-2ec85a95bc0e",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P527",
+                "hash": "d689616784c0d9653e7c461d98a0b8800e394cdd",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 120260912,
+                    "id": "Q120260912"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q18748726$bad12e05-4816-960b-6c97-59a62a7f2a3a",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P527",
+                "hash": "4eb478c5d9a2211d242fb58d340b9422380051ec",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 26318487,
+                    "id": "Q26318487"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q18748726$86a51d9d-4152-956d-4529-d69bdba4bb8c",
+              "rank": "normal"
+            }
+          ],
+          "P1889": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P1889",
+                "hash": "6b78786f8c1ab43750e2f02ea06fccd0834f0615",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 188617,
+                    "id": "Q188617"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q18748726$08c8d11c-49b4-6fd7-6e41-b1fb93a94104",
+              "rank": "normal"
+            }
+          ],
+          "P7959": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P7959",
+                "hash": "5759c13ea4a0e90ff3a9c43c79d972c404ff581e",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 67443130,
+                    "id": "Q67443130"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q18748726$730e3446-9f61-4882-9a63-f0a6c0fcb813",
+              "rank": "normal"
+            }
+          ],
+          "P8167": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P8167",
+                "hash": "b6e592ba90eb819da26274abad1904d087f88600",
+                "datavalue": {
+                  "value": "royal_botanic_gardens_kew",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P1810": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1810",
+                    "hash": "f622672af4640c3387b2c5518e3fc6900f281c27",
+                    "datavalue": {
+                      "value": "Royal Botanic Gardens, Kew",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P1810"
+              ],
+              "id": "Q18748726$9DC16ED9-3F44-46DA-B87C-DD8B2450610E",
+              "rank": "normal"
+            }
+          ],
+          "P8687": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P8687",
+                "hash": "e113d7688cc7577427cc7b7d7ae8a3df0426a0ad",
+                "datavalue": {
+                  "value": {
+                    "amount": "+141562",
+                    "unit": "1"
+                  },
+                  "type": "quantity"
+                },
+                "datatype": "quantity"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P6552": [
+                  {
+                    "snaktype": "value",
+                    "property": "P6552",
+                    "hash": "751237826edc4af2be4cffdca43afdd836ac9ddf",
+                    "datavalue": {
+                      "value": "16543454",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P585": [
+                  {
+                    "snaktype": "value",
+                    "property": "P585",
+                    "hash": "054fdf1148b0638d8b9b1d04d0417fc0a51f0805",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2021-01-05T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P6552",
+                "P585"
+              ],
+              "id": "Q18748726$6c8412b7-b9b9-4235-b1ea-f551aa8ab0e5",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P8687",
+                "hash": "60f53c1d9a8f6eae71ff53866fed5488e20fc69f",
+                "datavalue": {
+                  "value": {
+                    "amount": "+131732",
+                    "unit": "1"
+                  },
+                  "type": "quantity"
+                },
+                "datatype": "quantity"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P6552": [
+                  {
+                    "snaktype": "value",
+                    "property": "P6552",
+                    "hash": "751237826edc4af2be4cffdca43afdd836ac9ddf",
+                    "datavalue": {
+                      "value": "16543454",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P585": [
+                  {
+                    "snaktype": "value",
+                    "property": "P585",
+                    "hash": "e21aee5b62a0397ca7e713c0d8b210130b250850",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2020-04-13T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P6552",
+                "P585"
+              ],
+              "id": "Q18748726$bb20184d-5e3a-4db0-9414-a171e7583f16",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P8687",
+                "hash": "ef1e4f34cc46921cf444faee148764696a027e04",
+                "datavalue": {
+                  "value": {
+                    "amount": "+152664",
+                    "unit": "1"
+                  },
+                  "type": "quantity"
+                },
+                "datatype": "quantity"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P6552": [
+                  {
+                    "snaktype": "value",
+                    "property": "P6552",
+                    "hash": "751237826edc4af2be4cffdca43afdd836ac9ddf",
+                    "datavalue": {
+                      "value": "16543454",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P585": [
+                  {
+                    "snaktype": "value",
+                    "property": "P585",
+                    "hash": "cc204b5b4738cf214a068d626dc55342010de10f",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2022-03-01T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P6552",
+                "P585"
+              ],
+              "id": "Q18748726$d35cc42a-8e3b-4c69-8702-9cde4ad57adb",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P8687",
+                "hash": "649680a864739b80596482a2754f5b9710862898",
+                "datavalue": {
+                  "value": {
+                    "amount": "+159066",
+                    "unit": "1"
+                  },
+                  "type": "quantity"
+                },
+                "datatype": "quantity"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P6552": [
+                  {
+                    "snaktype": "value",
+                    "property": "P6552",
+                    "hash": "751237826edc4af2be4cffdca43afdd836ac9ddf",
+                    "datavalue": {
+                      "value": "16543454",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P585": [
+                  {
+                    "snaktype": "value",
+                    "property": "P585",
+                    "hash": "d890d2e7540dc4da5043414ecfcedfc66a7e3ce1",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2023-02-08T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P6552",
+                "P585"
+              ],
+              "id": "Q18748726$aa90ada9-4a8d-4678-81a4-4389bdb4999c",
+              "rank": "preferred"
+            }
+          ],
+          "P646": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P646",
+                "hash": "3db31b6ee67deb46341da911effa0a09e8791361",
+                "datavalue": {
+                  "value": "/m/06k9r",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q18748726$6A6675DB-70AF-4E14-AF5C-2C2B050DDD4C",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 15241312,
+                            "id": "Q15241312"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ],
+                    "P577": [
+                      {
+                        "snaktype": "value",
+                        "property": "P577",
+                        "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                        "datavalue": {
+                          "value": {
+                            "time": "+2013-10-28T00:00:00Z",
+                            "timezone": 0,
+                            "before": 0,
+                            "after": 0,
+                            "precision": 11,
+                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                          },
+                          "type": "time"
+                        },
+                        "datatype": "time"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248",
+                    "P577"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P6698": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P6698",
+                "hash": "9e62246d4ba3b334d03a5715a7199f9f3255b4a7",
+                "datavalue": {
+                  "value": "キューガーデン",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q18748726$9D9BDBB9-8B87-4DD4-B0CD-9EA0F599C9DA",
+              "rank": "normal"
+            }
+          ],
+          "P7014": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P7014",
+                "hash": "de5e627f7270704c14a5beb69d5ca3e40c32c75a",
+                "datavalue": {
+                  "value": "http://apps.kew.org/herbcat/gotoConditions.do",
+                  "type": "string"
+                },
+                "datatype": "url"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P407": [
+                  {
+                    "snaktype": "value",
+                    "property": "P407",
+                    "hash": "daf1c4fcb58181b02dff9cc89deb084004ddae4b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1860,
+                        "id": "Q1860"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P407"
+              ],
+              "id": "Q18748726$3002B71A-DEB0-46A4-9F82-25512FF7BFEA",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "a73243e27f42de75ca85e1ac6b082e8f3c7e89f9",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "9b0d750098599d5676d3c353e484f2a99cb468f9",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 73357989,
+                            "id": "Q73357989"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ],
+                    "P854": [
+                      {
+                        "snaktype": "value",
+                        "property": "P854",
+                        "hash": "060756ca7a2aa855d34ed7f61e39ed7623c90ca5",
+                        "datavalue": {
+                          "value": "https://docs.google.com/spreadsheets/d/1WPS-KJptUJ-o8SXtg00llcxq0IKJu8eO6Ege_GrLaNc",
+                          "type": "string"
+                        },
+                        "datatype": "url"
+                      }
+                    ],
+                    "P813": [
+                      {
+                        "snaktype": "value",
+                        "property": "P813",
+                        "hash": "e4bc0a82e70f427616002c04018553bb3b3c9fad",
+                        "datavalue": {
+                          "value": {
+                            "time": "+2021-05-19T00:00:00Z",
+                            "timezone": 0,
+                            "before": 0,
+                            "after": 0,
+                            "precision": 11,
+                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                          },
+                          "type": "time"
+                        },
+                        "datatype": "time"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248",
+                    "P854",
+                    "P813"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P8826": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P8826",
+                "hash": "7fec2bbc351565b5764b1456f93843fee56b94b5",
+                "datavalue": {
+                  "value": "H0000559",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q18748726$C5D7EC29-ED78-46F8-947D-7EDDEEF8301F",
+              "rank": "normal"
+            }
+          ],
+          "P10283": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P10283",
+                "hash": "8e96ad3622446ec50f9733688dc2abe4d9c12e2d",
+                "datavalue": {
+                  "value": "I2799614521",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q18748726$CDC1E5A6-4B72-44F4-AA48-9905AECD74F5",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "decfbfa71977c9b0e5cec1f4a4dfb7dfafa59ea9",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "4a4f26a5361b5707266e48e425bf2be2f99fd2ab",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 107507571,
+                            "id": "Q107507571"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ],
+                    "P813": [
+                      {
+                        "snaktype": "value",
+                        "property": "P813",
+                        "hash": "08529d064baad71a9df22dc3308e931aca9bd537",
+                        "datavalue": {
+                          "value": {
+                            "time": "+2022-01-25T00:00:00Z",
+                            "timezone": 0,
+                            "before": 0,
+                            "after": 0,
+                            "precision": 11,
+                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                          },
+                          "type": "time"
+                        },
+                        "datatype": "time"
+                      }
+                    ],
+                    "P854": [
+                      {
+                        "snaktype": "value",
+                        "property": "P854",
+                        "hash": "a4a4bf53f22268815c51ec10fed608da703c9c7f",
+                        "datavalue": {
+                          "value": "https://docs.openalex.org/download-snapshot/snapshot-data-format",
+                          "type": "string"
+                        },
+                        "datatype": "url"
+                      }
+                    ],
+                    "P1065": [
+                      {
+                        "snaktype": "value",
+                        "property": "P1065",
+                        "hash": "3134281f51e2490f88272d53c56ee95d9cc24e2c",
+                        "datavalue": {
+                          "value": "https://web.archive.org/web/20220125070108/https://docs.openalex.org/download-snapshot/snapshot-data-format",
+                          "type": "string"
+                        },
+                        "datatype": "url"
+                      }
+                    ],
+                    "P2960": [
+                      {
+                        "snaktype": "value",
+                        "property": "P2960",
+                        "hash": "f7ff3a0de7f9571ecb5e0740cba4122c6703e1ec",
+                        "datavalue": {
+                          "value": {
+                            "time": "+2022-01-25T00:00:00Z",
+                            "timezone": 0,
+                            "before": 0,
+                            "after": 0,
+                            "precision": 11,
+                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                          },
+                          "type": "time"
+                        },
+                        "datatype": "time"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248",
+                    "P813",
+                    "P854",
+                    "P1065",
+                    "P2960"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P3065": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P3065",
+                "hash": "570abb893e5a785b5a08dda1e811326c20119ed2",
+                "datavalue": {
+                  "value": "A027039361",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "q18748726$32d03a35-40fa-d3b4-921c-508207c72fd6",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "1a77b9618cc497128508b41fe01f3bef6a0eba85",
+                  "snaks": {
+                    "P248": [
+                      {
+                        "snaktype": "value",
+                        "property": "P248",
+                        "hash": "6b7d4330c4aac4caec4ede9de0311ce273f88ecd",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 54919,
+                            "id": "Q54919"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ],
+                    "P214": [
+                      {
+                        "snaktype": "value",
+                        "property": "P214",
+                        "hash": "dc97707c35629dd2f707e2726d1b3284d95f849e",
+                        "datavalue": {
+                          "value": "122697989",
+                          "type": "string"
+                        },
+                        "datatype": "external-id"
+                      }
+                    ],
+                    "P813": [
+                      {
+                        "snaktype": "value",
+                        "property": "P813",
+                        "hash": "47dceef56a02aae13bc765672bd37c150651853b",
+                        "datavalue": {
+                          "value": {
+                            "time": "+2022-02-12T00:00:00Z",
+                            "timezone": 0,
+                            "before": 0,
+                            "after": 0,
+                            "precision": 11,
+                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                          },
+                          "type": "time"
+                        },
+                        "datatype": "time"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P248",
+                    "P214",
+                    "P813"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P3222": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P3222",
+                "hash": "0f31dbf2725f25eca6ee841e1e934a4da483ebaa",
+                "datavalue": {
+                  "value": "royal-botanic-gardens",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q18748726$51DB197F-7072-4972-95CC-E7F198A68851",
+              "rank": "normal"
+            }
+          ],
+          "P10565": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P10565",
+                "hash": "630bbef2bd9c1c91a4928d9c4555bccd0ac2a930",
+                "datavalue": {
+                  "value": "406304",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q18748726$4A02E035-1E7E-4124-91A8-638D4F4EA662",
+              "rank": "normal"
+            }
+          ],
+          "P4527": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P4527",
+                "hash": "b0761564276c9044568219e3ead8fb932f15f6c1",
+                "datavalue": {
+                  "value": "66951",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P1810": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1810",
+                    "hash": "533e5a90ad6660a02954bd5d6b3ee55234912f1f",
+                    "datavalue": {
+                      "value": "Royal Botanic Gardens Kew",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P1810"
+              ],
+              "id": "Q18748726$f6c1add6-4c39-6caa-0d01-dc75d0525172",
+              "rank": "normal"
+            }
+          ],
+          "P9964": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P9964",
+                "hash": "a63a0942c1f87f6881eedb2f02bcfcccba6dba7b",
+                "datavalue": {
+                  "value": "1018641-4",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q18748726$3862DCCA-C8B9-4E11-924C-717BA3D078AD",
+              "rank": "normal"
+            }
+          ],
+          "P154": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P154",
+                "hash": "344a52de0e9df073108226553e6c399f0b6d55c5",
+                "datavalue": {
+                  "value": "Kew Royal Botanic Gardens logo.png",
+                  "type": "string"
+                },
+                "datatype": "commonsMedia"
+              },
+              "type": "statement",
+              "id": "Q18748726$A0F8047B-2C53-42B7-911F-1EE5915E303C",
+              "rank": "normal"
+            }
+          ],
+          "P13591": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P13591",
+                "hash": "c4e0d2a4dc0be3f6edca177824d837fbb2b7c049",
+                "datavalue": {
+                  "value": "group/2a8ed886-afb4-4008-b017-80457b1cee9a",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q18748726$02E0B03F-4173-454C-B000-365CEEC4D814",
+              "rank": "normal"
+            }
+          ],
+          "P1128": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P1128",
+                "hash": "f4729c0e020813692aba48e646c54bdd3ceed66d",
+                "datavalue": {
+                  "value": {
+                    "amount": "+1100",
+                    "unit": "1"
+                  },
+                  "type": "quantity"
+                },
+                "datatype": "quantity"
+              },
+              "type": "statement",
+              "id": "Q18748726$f7f6f728-4eb5-20ab-a161-ae9f9604aaea",
+              "rank": "normal",
+              "references": [
+                {
+                  "hash": "bd490e0c7a08c78a482ce4f2cb4dd3db10fcc0d6",
+                  "snaks": {
+                    "P143": [
+                      {
+                        "snaktype": "value",
+                        "property": "P143",
+                        "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                        "datavalue": {
+                          "value": {
+                            "entity-type": "item",
+                            "numeric-id": 206855,
+                            "id": "Q206855"
+                          },
+                          "type": "wikibase-entityid"
+                        },
+                        "datatype": "wikibase-item"
+                      }
+                    ],
+                    "P4656": [
+                      {
+                        "snaktype": "value",
+                        "property": "P4656",
+                        "hash": "04a728316086c42e81b3d7917358b82d126692d8",
+                        "datavalue": {
+                          "value": "https://ru.wikipedia.org/?oldid=150899726",
+                          "type": "string"
+                        },
+                        "datatype": "url"
+                      }
+                    ]
+                  },
+                  "snaks-order": [
+                    "P143",
+                    "P4656"
+                  ]
+                }
+              ]
+            }
+          ],
+          "P1435": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P1435",
+                "hash": "d22546e8bf86b97293821ea8757787befdf35ca8",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 9259,
+                    "id": "Q9259"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q18748726$dce8de07-49ac-5cd8-33b3-9dd8e3eb50c7",
+              "rank": "normal"
+            }
+          ],
+          "P2614": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P2614",
+                "hash": "8a15757be66fb6392e3ea58d408565017dbb7532",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 23038976,
+                    "id": "Q23038976"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q18748726$a494fef2-4766-4473-6156-8a6bdf074ad5",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P2614",
+                "hash": "b93cf61b4cce497f573aa200ddc3f2a21f2c48d5",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 23038977,
+                    "id": "Q23038977"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q18748726$a9afc042-4ab3-1251-26f3-2ff112364877",
+              "rank": "normal"
+            },
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P2614",
+                "hash": "16b5f6994a5a2a152170b737b59af7d93b88c8fe",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 23038978,
+                    "id": "Q23038978"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              "type": "statement",
+              "id": "Q18748726$ede7285f-4781-0ed7-7104-10f9a15fec04",
+              "rank": "normal"
+            }
+          ],
+          "P757": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P757",
+                "hash": "3ff04c5cd7b4299e7779ffdfd49e35cd0240a367",
+                "datavalue": {
+                  "value": "1084",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q18748726$13fb02ca-4aba-ab6c-8542-7591e77e0cbc",
+              "rank": "normal"
+            }
+          ],
+          "P14075": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P14075",
+                "hash": "d0da4b7b1f32fb9dbd59662f9df3d8d0be5c2d39",
+                "datavalue": {
+                  "value": "174",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "id": "Q18748726$CD5EDEF3-0EAE-4786-A87D-BD33B83C36C0",
+              "rank": "normal"
+            }
+          ],
+          "P14541": [
+            {
+              "mainsnak": {
+                "snaktype": "value",
+                "property": "P14541",
+                "hash": "b570922f9ae1b0ec873887df9c69c3c3363172e2",
+                "datavalue": {
+                  "value": "2VimRU",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              },
+              "type": "statement",
+              "qualifiers": {
+                "P1810": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1810",
+                    "hash": "4da00003a225049fee01de31f122ac8e3a0b6eb6",
+                    "datavalue": {
+                      "value": "基尤皇家植物园",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ],
+                "P5017": [
+                  {
+                    "snaktype": "value",
+                    "property": "P5017",
+                    "hash": "0d49cc2a335e24dfab159863f6b02886e2ea851a",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2022-01-10T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "qualifiers-order": [
+                "P1810",
+                "P5017"
+              ],
+              "id": "Q18748726$F96643FC-69EA-40EE-8722-012F3DAB3D1B",
+              "rank": "normal"
+            }
+          ]
+        },
+        "sitelinks": {
+          "enwiki": {
+            "site": "enwiki",
+            "title": "Royal Botanic Gardens, Kew",
+            "badges": [],
+            "url": "https://en.wikipedia.org/wiki/Royal_Botanic_Gardens,_Kew"
+          },
+          "fawiki": {
+            "site": "fawiki",
+            "title": "باغ گیاه‌شناسی سلطنتی، کیو",
+            "badges": [],
+            "url": "https://fa.wikipedia.org/wiki/%D8%A8%D8%A7%D8%BA_%DA%AF%DB%8C%D8%A7%D9%87%E2%80%8C%D8%B4%D9%86%D8%A7%D8%B3%DB%8C_%D8%B3%D9%84%D8%B7%D9%86%D8%AA%DB%8C%D8%8C_%DA%A9%DB%8C%D9%88"
+          },
+          "arwiki": {
+            "site": "arwiki",
+            "title": "حدائق النباتات الملكية (كيو)",
+            "badges": [],
+            "url": "https://ar.wikipedia.org/wiki/%D8%AD%D8%AF%D8%A7%D8%A6%D9%82_%D8%A7%D9%84%D9%86%D8%A8%D8%A7%D8%AA%D8%A7%D8%AA_%D8%A7%D9%84%D9%85%D9%84%D9%83%D9%8A%D8%A9_(%D9%83%D9%8A%D9%88)"
+          },
+          "elwiki": {
+            "site": "elwiki",
+            "title": "Βασιλικοί Βοτανικοί Κήποι (Κιου)",
+            "badges": [],
+            "url": "https://el.wikipedia.org/wiki/%CE%92%CE%B1%CF%83%CE%B9%CE%BB%CE%B9%CE%BA%CE%BF%CE%AF_%CE%92%CE%BF%CF%84%CE%B1%CE%BD%CE%B9%CE%BA%CE%BF%CE%AF_%CE%9A%CE%AE%CF%80%CE%BF%CE%B9_(%CE%9A%CE%B9%CE%BF%CF%85)"
+          },
+          "glwiki": {
+            "site": "glwiki",
+            "title": "Xardíns botánicos reais de Kew",
+            "badges": [],
+            "url": "https://gl.wikipedia.org/wiki/Xard%C3%ADns_bot%C3%A1nicos_reais_de_Kew"
+          },
+          "itwiki": {
+            "site": "itwiki",
+            "title": "Royal Botanic Gardens, Kew",
+            "badges": [],
+            "url": "https://it.wikipedia.org/wiki/Royal_Botanic_Gardens,_Kew"
+          },
+          "dawiki": {
+            "site": "dawiki",
+            "title": "Royal Botanic Gardens, Kew",
+            "badges": [],
+            "url": "https://da.wikipedia.org/wiki/Royal_Botanic_Gardens,_Kew"
+          },
+          "tawiki": {
+            "site": "tawiki",
+            "title": "அரச கழக தாவரவியல் பூங்கா, கியூ",
+            "badges": [],
+            "url": "https://ta.wikipedia.org/wiki/%E0%AE%85%E0%AE%B0%E0%AE%9A_%E0%AE%95%E0%AE%B4%E0%AE%95_%E0%AE%A4%E0%AE%BE%E0%AE%B5%E0%AE%B0%E0%AE%B5%E0%AE%BF%E0%AE%AF%E0%AE%B2%E0%AF%8D_%E0%AE%AA%E0%AF%82%E0%AE%99%E0%AF%8D%E0%AE%95%E0%AE%BE,_%E0%AE%95%E0%AE%BF%E0%AE%AF%E0%AF%82"
+          },
+          "hrwiki": {
+            "site": "hrwiki",
+            "title": "Kraljevski botanički vrtovi u Kewu",
+            "badges": [],
+            "url": "https://hr.wikipedia.org/wiki/Kraljevski_botani%C4%8Dki_vrtovi_u_Kewu"
+          },
+          "shwiki": {
+            "site": "shwiki",
+            "title": "Kraljevski botanički vrtovi u Londonu",
+            "badges": [],
+            "url": "https://sh.wikipedia.org/wiki/Kraljevski_botani%C4%8Dki_vrtovi_u_Londonu"
+          },
+          "ukwiki": {
+            "site": "ukwiki",
+            "title": "Royal Botanic Gardens, Kew",
+            "badges": [
+              "Q70893996"
+            ],
+            "url": "https://uk.wikipedia.org/wiki/Royal_Botanic_Gardens,_Kew"
+          },
+          "bnwiki": {
+            "site": "bnwiki",
+            "title": "রয়েল বোটানিক গার্ডেনস, কিউ",
+            "badges": [],
+            "url": "https://bn.wikipedia.org/wiki/%E0%A6%B0%E0%A6%AF%E0%A6%BC%E0%A7%87%E0%A6%B2_%E0%A6%AC%E0%A7%8B%E0%A6%9F%E0%A6%BE%E0%A6%A8%E0%A6%BF%E0%A6%95_%E0%A6%97%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%A1%E0%A7%87%E0%A6%A8%E0%A6%B8,_%E0%A6%95%E0%A6%BF%E0%A6%89"
+          },
+          "trwiki": {
+            "site": "trwiki",
+            "title": "Kraliyet Botanik Bahçeleri, Kew",
+            "badges": [],
+            "url": "https://tr.wikipedia.org/wiki/Kraliyet_Botanik_Bah%C3%A7eleri,_Kew"
+          },
+          "astwiki": {
+            "site": "astwiki",
+            "title": "Real Xardín Botánicu de Kew",
+            "badges": [],
+            "url": "https://ast.wikipedia.org/wiki/Real_Xard%C3%ADn_Bot%C3%A1nicu_de_Kew"
+          },
+          "bgwiki": {
+            "site": "bgwiki",
+            "title": "Кралска ботаническа градина (Лондон)",
+            "badges": [],
+            "url": "https://bg.wikipedia.org/wiki/%D0%9A%D1%80%D0%B0%D0%BB%D1%81%D0%BA%D0%B0_%D0%B1%D0%BE%D1%82%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0_%D0%B3%D1%80%D0%B0%D0%B4%D0%B8%D0%BD%D0%B0_(%D0%9B%D0%BE%D0%BD%D0%B4%D0%BE%D0%BD)"
+          },
+          "cswiki": {
+            "site": "cswiki",
+            "title": "Královské botanické zahrady (Kew)",
+            "badges": [],
+            "url": "https://cs.wikipedia.org/wiki/Kr%C3%A1lovsk%C3%A9_botanick%C3%A9_zahrady_(Kew)"
+          },
+          "cebwiki": {
+            "site": "cebwiki",
+            "title": "Kew Royal Botanic Gardens",
+            "badges": [],
+            "url": "https://ceb.wikipedia.org/wiki/Kew_Royal_Botanic_Gardens"
+          },
+          "eowiki": {
+            "site": "eowiki",
+            "title": "Reĝa Botanika Ĝardeno de Londono",
+            "badges": [],
+            "url": "https://eo.wikipedia.org/wiki/Re%C4%9Da_Botanika_%C4%9Cardeno_de_Londono"
+          },
+          "cawiki": {
+            "site": "cawiki",
+            "title": "Reial Jardí Botànic de Kew",
+            "badges": [],
+            "url": "https://ca.wikipedia.org/wiki/Reial_Jard%C3%AD_Bot%C3%A0nic_de_Kew"
+          },
+          "mkwiki": {
+            "site": "mkwiki",
+            "title": "Кралски ботанички градини во Кју",
+            "badges": [],
+            "url": "https://mk.wikipedia.org/wiki/%D0%9A%D1%80%D0%B0%D0%BB%D1%81%D0%BA%D0%B8_%D0%B1%D0%BE%D1%82%D0%B0%D0%BD%D0%B8%D1%87%D0%BA%D0%B8_%D0%B3%D1%80%D0%B0%D0%B4%D0%B8%D0%BD%D0%B8_%D0%B2%D0%BE_%D0%9A%D1%98%D1%83"
+          },
+          "nnwiki": {
+            "site": "nnwiki",
+            "title": "Royal Botanic Gardens i Kew",
+            "badges": [],
+            "url": "https://nn.wikipedia.org/wiki/Royal_Botanic_Gardens_i_Kew"
+          },
+          "svwiki": {
+            "site": "svwiki",
+            "title": "Royal Botanic Gardens, Kew",
+            "badges": [],
+            "url": "https://sv.wikipedia.org/wiki/Royal_Botanic_Gardens,_Kew"
+          },
+          "nowiki": {
+            "site": "nowiki",
+            "title": "Royal Botanic Gardens i Kew",
+            "badges": [],
+            "url": "https://no.wikipedia.org/wiki/Royal_Botanic_Gardens_i_Kew"
+          },
+          "iswiki": {
+            "site": "iswiki",
+            "title": "Konunglegi grasagarðurinn í Kew",
+            "badges": [],
+            "url": "https://is.wikipedia.org/wiki/Konunglegi_grasagar%C3%B0urinn_%C3%AD_Kew"
+          },
+          "azwiki": {
+            "site": "azwiki",
+            "title": "Kyu kral botanika bağları",
+            "badges": [],
+            "url": "https://az.wikipedia.org/wiki/Kyu_kral_botanika_ba%C4%9Flar%C4%B1"
+          },
+          "dewiki": {
+            "site": "dewiki",
+            "title": "Royal Botanic Gardens (Kew)",
+            "badges": [],
+            "url": "https://de.wikipedia.org/wiki/Royal_Botanic_Gardens_(Kew)"
+          },
+          "eswiki": {
+            "site": "eswiki",
+            "title": "Real Jardín Botánico de Kew",
+            "badges": [],
+            "url": "https://es.wikipedia.org/wiki/Real_Jard%C3%ADn_Bot%C3%A1nico_de_Kew"
+          },
+          "afwiki": {
+            "site": "afwiki",
+            "title": "Kew Botaniese Tuin",
+            "badges": [],
+            "url": "https://af.wikipedia.org/wiki/Kew_Botaniese_Tuin"
+          },
+          "ruwiki": {
+            "site": "ruwiki",
+            "title": "Royal Botanic Gardens, Kew",
+            "badges": [],
+            "url": "https://ru.wikipedia.org/wiki/Royal_Botanic_Gardens,_Kew"
+          },
+          "frwiki": {
+            "site": "frwiki",
+            "title": "Royal Botanic Gardens, Kew",
+            "badges": [
+              "Q70893996"
+            ],
+            "url": "https://fr.wikipedia.org/wiki/Royal_Botanic_Gardens,_Kew"
+          }
+        }
+      }
+    }
+  }
+}

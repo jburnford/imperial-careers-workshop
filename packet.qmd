@@ -1,0 +1,8 @@
+---
+title: "Research packet: the Trimen network"
+subtitle: "Follow-up material. Candidate links, attributed claims and catalogue records, all awaiting human review."
+---
+
+The tables below live in `research/trimen-network/`: [entities.csv](research/trimen-network/entities.csv), [claims.csv](research/trimen-network/claims.csv), [letters.csv](research/trimen-network/letters.csv), [taxonomy.csv](research/trimen-network/taxonomy.csv), [archival-leads.csv](research/trimen-network/archival-leads.csv), with JSON equivalents, the seven frozen article records in `sources/`, and the cached Wikidata responses in `raw/`. The packet's own description follows.
+
+{{< include research/trimen-network/README.md >}}

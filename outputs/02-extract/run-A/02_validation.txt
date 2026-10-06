@@ -1,0 +1,9 @@
+{
+  "records_ok": 85,
+  "records_failed": 0,
+  "person": 16,
+  "plant": 20,
+  "sample": 4,
+  "action": 45,
+  "uncertain_readings": 8
+}

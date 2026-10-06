@@ -1,0 +1,32 @@
+---
+title: "5. Revise the process"
+subtitle: "Minutes 30–45, second half. A judgment about one record becomes a rule for the collection."
+---
+
+The review has produced a decision with a reason. The reason is the valuable part: it tells the model what class of error to look for. The prompt:
+
+> This example is wrong for the following historical reason: [explain]. Find other records that might have the same problem. Propose a correction and show which records it would affect. After we review the change, rerun a small batch and show both corrected cases and previously accepted cases that changed.
+
+## Two revisions that actually happened
+
+Both are in [`outputs/05-revise/README.md`](../outputs/05-revise/README.md). They were not staged for the workshop; they are what the research projects did on 6 October 2026.
+
+**A safeguard that validated invented names.** Tropical's profile builder accepted a printed initial as proof that a full given name was "in the article". Three probes against the old code accepted `James Watt` for `Mr. J. Watt`, `Henry Trimen` for `Mr. H. Trimen`, and `John Smith` for `Mr. John Smithson`. The historian's reason: a model that knows who "F. von Mueller" probably is has added outside knowledge to the record, and that must be kept apart from what the source prints. The fix returns a status instead of a yes: `full`, `initials` or `none`. Across the corpus, 889 expansions moved from "verified" to "hypothesis". The three probes became regression tests.
+
+**A mixed profile is not one person.** The merge that built the authority table was supposed to leave the identifier empty when a model judged a profile MIXED. A fallback filled it anyway from the Colonial Office List. Two profiles that the model had explicitly called two people left the pipeline with one identifier each at "high" confidence. The fix is a single identity gate that says what a profile may *assert* and what remains a *candidate*, with tests that name the two cases.
+
+**And one from this packet.** The exercise letter's OCR was wrong in two sentences. The extraction model flagged both as uncertain and then guessed at the intended wording. Both guesses were wrong. The rule that follows: an uncertain reading is not data until someone has looked at the page, and a model's guess is not a reading.
+
+## What to check after a revision
+
+- The cases the change was meant to fix.
+- The previously accepted cases that changed. In the Tropical v2 rebuild this was the larger group.
+- Whether the new rule is now a test, so the error cannot come back when the code is next edited.
+
+A model can do all three of these checks. Deciding that the original result was wrong, and why, was the historian's work.
+
+## What a second model can and cannot do
+
+A second model can review the first model's output and find problems. Its agreement is not historical confirmation: two models reading the editor's headnote will agree with the editor. Review a mixture of uncertain cases and apparently successful ones. Handpicked workshop cases explain failure modes; they do not establish an accuracy rate.
+
+Next: [6. Connect collections](06-connect.qmd).

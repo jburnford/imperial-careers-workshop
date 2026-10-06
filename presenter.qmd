@@ -1,0 +1,46 @@
+---
+title: "Presenter notes"
+subtitle: "Running order, checkpoints, and the room-plus-Zoom plan."
+---
+
+## Before the day
+
+- [ ] Confirm with the organizer how remote questions reach the room, and who monitors the Zoom chat. Do not plan to read the chat while presenting.
+- [ ] Ask whether the published description (which mentions Britannica and bringing datasets) should be updated, or add the [Your own data](steps/07-your-data.qmd) handout to the session listing.
+- [ ] Decide the agent, model and lookup configuration for the live steps, and record it on the [setup page](setup.qmd).
+- [ ] Test the WikidataMCP endpoint from a non-campus network. Tropical's notes record the public HTTP endpoint returning HTTP 429 after a few calls; the MCP endpoint ran at about 1.7 s per call.
+- [ ] Rehearse the hour against the clock with the saved checkpoints. Protect minutes 30–55.
+- [ ] Check the RA review status in Tropical. The gold set was frozen on 6 October (fingerprint `14a933f83ec5`); the rating scale changed to 1–5 after that freeze. Confirm which version the RA has.
+- [ ] Put the site URL and the exercise URL on the first slide. Someone posts both in the Zoom chat at the start.
+
+## Running order
+
+| Min | Step | Live or saved | Checkpoint if behind |
+|---|---|---|---|
+| 0–5 | [1. The question](steps/01-question.qmd) | One prepared Imperial Careers view; Trimen's Colonial Office List entries | Skip the atlas; show the table |
+| 5–20 | [2. Structure and extract](steps/02-structure-extract.qmd) | Live: the structure prompt, then the extraction prompt, on S04 and S03 | `outputs/01-structure/` and `outputs/02-extract/` from the rehearsal runs |
+| 20–30 | [3. Candidates](steps/03-candidates.qmd) | Live: the retrieval prompt for Trimen, Agar and Christie only | `outputs/03-candidates/candidates.md` |
+| 30–45 | [4. Review](steps/04-review.qmd) | Together: the editor's headnote versus Agar's letter; then the OCR check against the scan; direct the revision | The worked answers |
+| 45–55 | [Exercise](review/index.html) | Participants work through cases R1–R6; ask for show of hands and chat summaries on R2 and R3 | Reduce to R1–R3 |
+| 55–60 | [7. Your own data](steps/07-your-data.qmd) and questions | | |
+
+If the live extraction at 5–20 runs long, cut to the saved run at minute 15 regardless. The review discussion is the point of the hour.
+
+## The consequential problem to find together
+
+The editor's bracketed note above Agar's letter says that Howard "analyzed the bark" of the tree Trimen figured. Agar's letter says that bark from *some of these trees* went to Howard, and that the bark from *the tree itself* is in Agar's own possession. A model that follows the editor conflates the two. Neither rehearsal run did: run A recorded the editor's claim as the editor's and noted that which trees supplied the bark "is not stated beyond 'some of these trees'"; run B noted on the editor's affirmation that Agar only says the figured tree was "one of several". Show run A's bark record and ask the room whether they would have caught it if the model had not. If a live run in the room does conflate them, better still.
+
+Then the OCR check: both runs flagged the two damaged sentences and guessed at the wording (run A "in full bloom"; both runs "by me"). The scan says "growing in a bad situation and not robust" and "many plants from the seed of the specimen tree". The models were right to flag and wrong to guess.
+
+## Online participation
+
+- Remote participants see the same pages and the same exercise. Nothing requires a login.
+- The exercise page's **Copy summary** button produces one line (`R1 accept; R2 reject; ...`) for pasting into the Zoom chat, so the chat monitor can read decisions out.
+- Participants can **Download TSV** of their decisions with reasons. If the organizers want them collected, say where to send the file.
+- Recording is the conference's arrangement. The materials stay online afterwards.
+
+## What not to claim
+
+- The research pipeline's links for Trimen are automated. Say so.
+- The handpicked cases are failure modes, not an accuracy rate.
+- The RA's evaluation of Tropical is pending. The workshop uses a separate frozen packet and does not touch it.

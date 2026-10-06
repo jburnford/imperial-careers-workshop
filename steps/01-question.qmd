@@ -1,0 +1,53 @@
+---
+title: "1. The question"
+subtitle: "Minutes 0–5. Establish the research payoff and the task."
+---
+
+## Start from a structured collection
+
+The [Imperial Careers](https://github.com/jburnford/col_matching) project turned the *Colonial Office List* into a graph of people and career events. Here is what it holds for Henry Trimen, taken from the project's stage-3 graph (person `kgp_col1889-p554b20`, attested in seven editions, 1883–1896):
+
+| Seq | Position (as printed) | Place | Years |
+|---|---|---|---|
+| 0 | lecturer on botany | London (St. Mary's Hospital) | 1867–1875 |
+| 1 | senior assistant to department of botany | British Museum | 1869–1879 |
+| 2 | director Royal Botanical Gardens | Ceylon | 1880– |
+
+The 1889 entry reads:
+
+> TRIMEN, HENRY, M.B. (Lond.), F.R.S., F.L.S. —Formerly lecturer on botany at St. Mary's Hospital, London, 1867 to 1875; was senior assistant to department of botany, British Museum, 1869 to 1879; director Royal Botanical Gardens, Ceylon, Feb., 1880; author of numerous works and papers on pure and applied botany.
+
+All seven editions are in the [source pack](../source-pack/colonial-office-list-henry-trimen.md). Notice what the List gives us: a name, a sequence of posts with dates and places, and a stable identity across editions. Notice what it does not give us: anything about what Trimen did, argued, or whom he worked with.
+
+**Presenter:** show one view from the Imperial Careers atlas here, chosen in advance. Keep it under two minutes.
+
+## Take the question to an unstructured collection
+
+*The Tropical Agriculturist* (Colombo, from 1881) printed reports, letters and reprints for the planting community. The [Tropical Agriculturist project](https://github.com/jburnford/tropical-agriculturist) has OCR text for about 53,500 articles. A search for articles mentioning both "Trimen" and "Howard" returns 72 of them. That is a discovery set, not 72 relationships.
+
+Our question for the hour:
+
+> **Who is Henry Trimen connected to in *The Tropical Agriculturist*, and what evidence supports those connections?**
+
+We will work with a handful of items from 1883, when the journal ran a dispute it headlined "The Wars of the Quinologists":
+
+| Id | Item | Why it is here |
+|---|---|---|
+| S02 | ["The Wars of the Quinologists", July 1883, pp. 27–28](https://archive.org/details/tropicalagricult18831884colo/page/n44/mode/1up) | The editor frames a dispute among Howard, Trimen and Moens |
+| S03 | ["Dr. Trimen's Ledgeriana: Mr. T. N. Christie to the Rescue", July 1883, p. 37](https://archive.org/details/tropicalagricult18831884colo/page/n54/mode/1up) | A planter traces the illustrated tree's seed and nursery |
+| **S04** | **["Dr. Trimen's Typical Ledgeriana Tree", July 1883, p. 66](https://archive.org/details/tropicalagricult18831884colo/page/n83/mode/1up)** | **Walter Agar's 234-word letter. The exercise passage.** |
+| S05, S06 | ["The Cinchona Calisaya (or Ledgeriana) Discussion" and "The Botany of Cinchona Ledgeriana", December 1883, pp. 453–455](https://archive.org/details/tropicalagricult18831884colo/page/n470/mode/1up) | Trimen's reply, signed from Peradeniya, with the competing identifications |
+| S01 | ["Mr. Eliot Howard Extinguishing C. Pubescentis How.", July 1881, pp. 114–115](https://archive.org/details/tropicalagricult1188ceyl/page/n139/mode/1up) | Optional: Howard rejects a species name credited to him |
+
+We begin after OCR. Other sessions cover OCR production. The page images stay one click away, and you will need them.
+
+## Why this example
+
+The dispute is small enough to read in the hour and rich enough to contain every kind of decision the workflow needs:
+
+- a person with a strong identity (Trimen) and people with none in any authority file (Agar, Christie);
+- a relationship the source states carefully and the journal's own editor states loosely;
+- plant names that a modern authority treats differently from the 1883 participants;
+- an OCR error that reverses a sentence's meaning.
+
+Next: [2. Structure and extract](02-structure-extract.qmd).
