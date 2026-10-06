@@ -62,7 +62,7 @@ And one thing none of the runs could do: two sentences of the OCR are damaged. R
 
 ## Run C is the one to look at
 
-Runs A and B are what a frontier model does on two passages, and they did well. Run C is the affordable model, the one the Tropical project uses across 53,000 articles, on the same passages ([notes](../outputs/02-extract/run-C/README.md)). It attributed the editor's headnote to Agar ("confirms the tree sketched for Dr. Trimen was an undoubted Ledgeriana"), reported the damaged OCR sentence as fact, and dropped the hedges ("I believe", "some of these trees"). Its output reads well. The review step in the next pages exists for run C.
+Runs A and B are what a frontier model does on two passages, and they did well. Run C is the affordable model, the one the Tropical project uses across 53,000 articles, on the same passages ([notes](../outputs/02-extract/run-C/README.md)). It attributed the editor's headnote to Agar ("confirms the tree sketched for Dr. Trimen was an undoubted Ledgeriana"), reported the damaged OCR sentence as fact, and dropped the hedges ("I believe", "some of these trees"). Its output reads well. The review step in the next pages exists for run C. (The same model with its reasoning mode on spent sixteen minutes and 24,000 tokens deliberating about the format and produced no records at all.)
 
 ## Agent versus model
 

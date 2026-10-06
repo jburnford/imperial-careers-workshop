@@ -501,7 +501,7 @@
     "href": "steps/02-structure-extract.html#run-c-is-the-one-to-look-at",
     "title": "Structure",
     "section": "Run C is the one to look at",
-    "text": "Run C is the one to look at\nRuns A and B are what a frontier model does on two passages, and they did well. Run C is the affordable model, the one the Tropical project uses across 53,000 articles, on the same passages (notes). It attributed the editor’s headnote to Agar (“confirms the tree sketched for Dr. Trimen was an undoubted Ledgeriana”), reported the damaged OCR sentence as fact, and dropped the hedges (“I believe”, “some of these trees”). Its output reads well. The review step in the next pages exists for run C."
+    "text": "Run C is the one to look at\nRuns A and B are what a frontier model does on two passages, and they did well. Run C is the affordable model, the one the Tropical project uses across 53,000 articles, on the same passages (notes). It attributed the editor’s headnote to Agar (“confirms the tree sketched for Dr. Trimen was an undoubted Ledgeriana”), reported the damaged OCR sentence as fact, and dropped the hedges (“I believe”, “some of these trees”). Its output reads well. The review step in the next pages exists for run C. (The same model with its reasoning mode on spent sixteen minutes and 24,000 tokens deliberating about the format and produced no records at all.)"
   },
   {
     "objectID": "steps/02-structure-extract.html#agent-versus-model",

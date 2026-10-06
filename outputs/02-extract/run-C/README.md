@@ -10,7 +10,11 @@ Two differences from runs A and B, both recorded in `02_extract.py`:
 | Variant | Records | Tokens out (turn 1 + 2) | Time |
 |---|---|---|---|
 | nothink | 13: 8 people, 5 activities | 1,473 + 3,304 | 57 s + 129 s |
-| think | see `think/run.json` | | |
+| think | none: output cut off at the 24,000-token cap, all of it reasoning | 6,477 + 24,000 | 249 s + 955 s |
+
+## The reasoning-mode run produced nothing
+
+With reasoning on, the first turn (the structure proposal) took 6,477 output tokens and four minutes. The second turn spent the whole 24,000-token budget, sixteen minutes on the GPU slice, deliberating about the output format, whether the notes section might also contain code, and whether a letter signed "WALTER AGAR" allows "Mr. Agar" to be expanded, and never reached the records. The transcript is in `think/02_response.md` and `think/02_reasoning.txt`. That is why production runs turn reasoning off, and it is a fair warning about asking a mid-sized model to follow a long instruction and reason at the same time: the budget goes on the instruction.
 
 ## What the no-thinking run did (read against the page)
 
