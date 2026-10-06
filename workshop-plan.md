@@ -200,7 +200,9 @@ The published description (session 10) reads:
 
 How the hour maps onto it: "provided examples" are the Trimen passages; "cleaning source data" is the OCR-versus-scan check (R3) and the name-evidence rule; "structuring it for reuse" is steps 2 and 5; "grounding entities in Wikidata so datasets can be interconnected" is steps 3 and 6. Two gaps: participants' own datasets get only the step 7 handout, and Britannica is not used. Suggested wording to offer the organizer if the description can still change:
 
-> How to turn OCR text into structured, linked data without losing historical judgment. Working from provided examples (an 1883 dispute about a cinchona tree in *The Tropical Agriculturist*, connected to the *Colonial Office List*), participants watch a coding agent propose a structure, extract records, and retrieve candidate identities from Wikidata, then review the results against the page images, record decisions, and turn a correction into a rule. A browser exercise works in the room and on Zoom with no setup. Participants with their own messy datasets leave with a short guide to applying the same sequence.
+> Cleaning, structuring and grounding historical data with a coding agent, without losing historical judgment. Working from a provided example (an 1883 dispute about a cinchona tree in *The Tropical Agriculturist*, connected to the *Colonial Office List*), participants watch a model clean and structure OCR text into records, retrieve candidate identities from Wikidata, and lay out the evidence; then they review the results against the page images, record decisions, and see a correction become a rule. A browser exercise works in the room and on Zoom with no setup. A short guide covers applying the same sequence to your own data afterwards.
+
+Jim's decision (6 October): the session focuses on cleaning, structuring and grounding. Participants' own datasets are not worked on in the hour.
 
 ## Reference materials
 

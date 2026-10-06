@@ -17,15 +17,17 @@ In 1883 the journal printed a public quarrel between Trimen and the London quini
 
 ## What we will do in the hour
 
+Three things, in order: **clean** the source text (OCR against the page, printed wording kept apart from inference), **structure** it (records with local identifiers, saved code, reported failures), and **ground** it (candidate identities retrieved from Wikidata and the Colonial Office List, reviewed against evidence, so the records can connect to other collections).
+
 Models and coding agents will do most of the work: propose a record structure, extract records from the OCR text, write and save the code, retrieve candidate identities from Wikidata and from the Colonial Office List, and lay the evidence out for inspection. You will do the part that cannot be delegated: decide what a record means, check a consequential decision against the page, and direct a revision.
 
 | Minutes | Step | What happens |
 |---|---|---|
 | 0–5 | [1. The question](steps/01-question.qmd) | Trimen's career in the Colonial Office List; the question we take to the journal |
-| 5–20 | [2. Structure and extract](steps/02-structure-extract.qmd) | The model proposes a table, extracts records, saves a rerunnable script |
-| 20–30 | [3. Candidate identities](steps/03-candidates.qmd) | Wikidata and Colonial Office List lookups; a compact review view |
-| 30–45 | [4. Review](steps/04-review.qmd) | We inspect results together, find a consequential error, and direct a fix |
-| 45–55 | [Exercise](review/index.html) | You record decisions on five or six cases, in the room or on Zoom |
+| 5–20 | [2. Structure and extract](steps/02-structure-extract.qmd) | Structuring: the model proposes a table, extracts records, saves a rerunnable script |
+| 20–30 | [3. Candidate identities](steps/03-candidates.qmd) | Grounding: Wikidata and Colonial Office List lookups; a compact review view |
+| 30–45 | [4. Review](steps/04-review.qmd) | Cleaning and checking: we inspect results together, find a consequential error, and direct a fix |
+| 45–55 | [Exercise](review/index.html) | You record decisions on six cases, in the room or on Zoom |
 | 55–60 | [7. Your own data](steps/07-your-data.qmd) | How to take this to another collection |
 
 Every live stage has a saved checkpoint in `outputs/`. If a live step stalls we switch to the saved result and keep going.
