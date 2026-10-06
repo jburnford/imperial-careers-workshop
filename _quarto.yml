@@ -5,6 +5,7 @@ project:
     - "*.qmd"
     - "steps/*.qmd"
   resources:
+    - images/
     - review/
     - outputs/
     - source-pack/
@@ -37,6 +38,8 @@ website:
         text: Worked answers
       - href: review/index.html
         text: Exercise
+      - href: slides.qmd
+        text: Slides
       - href: setup.qmd
         text: Run it yourself
       - href: presenter.qmd

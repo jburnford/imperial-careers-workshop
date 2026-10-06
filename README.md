@@ -11,6 +11,8 @@ The session shows how historians can delegate substantial data work to models an
 | Path | What it is |
 |---|---|
 | `index.qmd`, `steps/*.qmd`, `answers.qmd`, `presenter.qmd`, `setup.qmd`, `packet.qmd` | The participant site (Quarto). Rendered to `docs/` for GitHub Pages |
+| `slides.qmd` | The slide deck (reveal.js), rendered to `docs/slides.html`; speaker notes in the source |
+| `images/` | Scan crops used on the slides (archive.org, public domain) |
 | `review/` | The browser exercise: `index.html` + `cases.json`. Static; no account or API key needed |
 | `source-pack/` | OCR text of the six passages, the scan-checked transcription of the exercise letter, Trimen's Colonial Office List entries, citations with page links |
 | `outputs/` | Saved outputs for every stage: structure proposals, extraction runs, candidate evidence, the two real revisions, Trimen across collections |

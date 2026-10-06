@@ -126,88 +126,88 @@
     "text": "Why this example\nThe dispute is small enough to read in the hour and rich enough to contain every kind of decision the workflow needs:\n\na person with a strong identity (Trimen) and people with none in any authority file (Agar, Christie);\na relationship the source states carefully and the journal’s own editor states loosely;\nplant names that a modern authority treats differently from the 1883 participants;\nan OCR error that reverses a sentence’s meaning.\n\nNext: 2. Structure and extract."
   },
   {
-    "objectID": "presenter.html",
-    "href": "presenter.html",
-    "title": "Presenter notes",
+    "objectID": "setup.html",
+    "href": "setup.html",
+    "title": "Run it yourself",
     "section": "",
-    "text": "Confirm with the organizer how remote questions reach the room, and who monitors the Zoom chat. Do not plan to read the chat while presenting.\nThe published description invites participants to “bring messy historical datasets” and mentions Britannica. Either send the organizer the revised wording in workshop-plan.md (section “Decisions still to make”) or open the session by saying that the hour works on the provided example and that Your own data is the take-home for their own datasets.\nDecide the agent, model and lookup configuration for the live steps, and record it on the setup page.\nTest the WikidataMCP endpoint from a non-campus network. Tropical’s notes record the public HTTP endpoint returning HTTP 429 after a few calls; the MCP endpoint ran at about 1.7 s per call.\nRehearse the hour against the clock with the saved checkpoints. Protect minutes 30–55.\nCheck the RA review status in Tropical. The gold set was frozen on 6 October (fingerprint 14a933f83ec5); the rating scale changed to 1–5 after that freeze. Confirm which version the RA has.\nPut the site URL and the exercise URL on the first slide. Someone posts both in the Zoom chat at the start."
+    "text": "To be confirmed before the session\n\n\n\nThe exact agent, model and lookup configuration to be demonstrated has not been fixed yet, and the costs of running the example with a personal account have not been measured. This page describes the configuration used to prepare the materials."
   },
   {
-    "objectID": "presenter.html#before-the-day",
-    "href": "presenter.html#before-the-day",
-    "title": "Presenter notes",
+    "objectID": "setup.html#what-is-in-the-repository",
+    "href": "setup.html#what-is-in-the-repository",
+    "title": "Run it yourself",
+    "section": "What is in the repository",
+    "text": "What is in the repository\nsource-pack/          OCR text, scan-checked transcription, Colonial Office List entries, citations\noutputs/01-structure/ model proposals for the record structure (one folder per run)\noutputs/02-extract/   extraction scripts, records and notes (one folder per run)\noutputs/03-candidates/ candidate identities with retrieved evidence\noutputs/05-revise/    the two real revisions, with before and after\noutputs/06-connect/   Trimen across the three collections\nreview/               the browser exercise (static HTML + cases.json)\nresearch/trimen-network/  the wider research packet and the cached Wikidata responses\nscripts/              build scripts (no network needed except ground_trimen.py)"
+  },
+  {
+    "objectID": "setup.html#rerunning-the-saved-extraction",
+    "href": "setup.html#rerunning-the-saved-extraction",
+    "title": "Run it yourself",
+    "section": "Rerunning the saved extraction",
+    "text": "Rerunning the saved extraction\nEach extraction run saved a script that regenerates its records from the OCR text, offline:\npython3 outputs/02-extract/run-A/02_extract.py source-pack"
+  },
+  {
+    "objectID": "setup.html#rebuilding-the-tables",
+    "href": "setup.html#rebuilding-the-tables",
+    "title": "Run it yourself",
+    "section": "Rebuilding the tables",
+    "text": "Rebuilding the tables\npython3 scripts/build_trimen_workshop.py   # research packet CSV/JSON from the frozen search extract\npython3 scripts/build_candidates.py        # candidate evidence from the cached Wikidata responses\npython3 scripts/build_source_pack.py       # participant source pack\npython3 scripts/build_review_cases.py      # cases.json for the exercise\nNone of these touch the network."
+  },
+  {
+    "objectID": "setup.html#running-the-live-steps-with-your-own-agent",
+    "href": "setup.html#running-the-live-steps-with-your-own-agent",
+    "title": "Run it yourself",
+    "section": "Running the live steps with your own agent",
+    "text": "Running the live steps with your own agent\nYou need a coding agent that can read files, run Python and call a Wikidata lookup tool. The materials were prepared with Claude Code and the WikidataMCP server (Streamable HTTP endpoint https://wd-mcp.wmcloud.org/mcp). Two things to know:\n\nUse the vector search, not the string search. Wikidata’s ordinary search API matches labels by string similarity. “Walpole Island” returns an island in New Caledonia. The MCP server’s search_items uses semantic embeddings. It is rate limited; cache what you retrieve.\nNo identifiers from memory. Tell the agent, and check its output. The research packet’s scripts/ground_trimen.py shows one way to cache full entity responses with retrieval timestamps.\n\nTo fetch fresh evidence for an entity:\npython3 scripts/ground_trimen.py entities Q2462643\npython3 scripts/ground_trimen.py search \"Walter Agar Ceylon planter\""
+  },
+  {
+    "objectID": "setup.html#credentials",
+    "href": "setup.html#credentials",
+    "title": "Run it yourself",
+    "section": "Credentials",
+    "text": "Credentials\nNo file in this repository contains a credential, and none is needed for the exercise. If you configure an agent with an API key, keep it out of the repository."
+  },
+  {
+    "objectID": "packet.html",
+    "href": "packet.html",
+    "title": "Research packet: the Trimen network",
     "section": "",
-    "text": "Confirm with the organizer how remote questions reach the room, and who monitors the Zoom chat. Do not plan to read the chat while presenting.\nThe published description invites participants to “bring messy historical datasets” and mentions Britannica. Either send the organizer the revised wording in workshop-plan.md (section “Decisions still to make”) or open the session by saying that the hour works on the provided example and that Your own data is the take-home for their own datasets.\nDecide the agent, model and lookup configuration for the live steps, and record it on the setup page.\nTest the WikidataMCP endpoint from a non-campus network. Tropical’s notes record the public HTTP endpoint returning HTTP 429 after a few calls; the MCP endpoint ran at about 1.7 s per call.\nRehearse the hour against the clock with the saved checkpoints. Protect minutes 30–55.\nCheck the RA review status in Tropical. The gold set was frozen on 6 October (fingerprint 14a933f83ec5); the rating scale changed to 1–5 after that freeze. Confirm which version the RA has.\nPut the site URL and the exercise URL on the first slide. Someone posts both in the Zoom chat at the start."
+    "text": "The tables below live in research/trimen-network/: entities.csv, claims.csv, letters.csv, taxonomy.csv, archival-leads.csv, with JSON equivalents, the seven frozen article records in sources/, and the cached Wikidata responses in raw/. The packet’s own description follows."
   },
   {
-    "objectID": "presenter.html#running-order",
-    "href": "presenter.html#running-order",
-    "title": "Presenter notes",
-    "section": "Running order",
-    "text": "Running order\n\n\n\nMin\nStep\nLive or saved\nCheckpoint if behind\n\n\n\n\n0–5\n1. The question\nOne prepared Imperial Careers view; Trimen’s Colonial Office List entries\nSkip the atlas; show the table\n\n\n5–20\n2. Structure and extract\nLive: the structure prompt, then the extraction prompt, on S04 and S03\noutputs/01-structure/ and outputs/02-extract/ from the rehearsal runs\n\n\n20–30\n3. Candidates\nLive: the retrieval prompt for Trimen, Agar and Christie only\noutputs/03-candidates/candidates.md\n\n\n30–45\n4. Review\nTogether: the editor’s headnote versus Agar’s letter; then the OCR check against the scan; direct the revision\nThe worked answers\n\n\n45–55\nExercise\nParticipants work through cases R1–R6; ask for show of hands and chat summaries on R2 and R3\nReduce to R1–R3\n\n\n55–60\n7. Your own data and questions\n\n\n\n\n\nIf the live extraction at 5–20 runs long, cut to the saved run at minute 15 regardless. The review discussion is the point of the hour."
+    "objectID": "packet.html#the-passages-to-use",
+    "href": "packet.html#the-passages-to-use",
+    "title": "Research packet: the Trimen network",
+    "section": "The passages to use",
+    "text": "The passages to use\nSeven frozen article records are in sources/. Each retains the Tropical article ID, OCR text, page links, and source segments. The July 1883 opening on scan n44 has been visually inspected. Other passages have been read in OCR and still need comparison with their scans before presenting a final transcription. The parent search file contains 72 articles with both surnames; that is a discovery set, not 72 verified relationships between Henry Trimen and John Eliot Howard.\n\n\n\nSource\nPassage\nWhy it matters\n\n\n\n\nS01\n“Mr. Eliot Howard Extinguishing C. Pubescentis How.”, July 1881, pp. 114–115\nHoward disclaims having created a species under this name. The editorial also criticizes Clements Markham’s account of hybrid parentage.\n\n\nS02\n“The Wars of the Quinologists”, July 1883, pp. 27–28\nThe journal explicitly presents a dispute among Howard, Trimen, and Moens. A short opening for the workshop.\n\n\nS03\n“Dr. Trimen’s Ledgeriana: Mr. T. N. Christie to the Rescue”, p. 37\nChristie’s letter of 7 June 1883 traces the illustrated plant through McIvor’s seed, his nursery, and Agar’s planting. This is Christie’s asserted provenance.\n\n\nS04\n“Dr. Trimen’s Typical Ledgeriana Tree”, p. 66\nAgar’s letter of 22 June 1883 distinguishes the illustrated tree from other trees whose bark Campbell sent to Howard. Excellent material for checking a model’s proposed relationship.\n\n\nS05\n“The Cinchona Calisaya (or Ledgeriana) Discussion”, December 1883, p. 453\nHoward’s quoted letter and Trimen’s cover letter connect people, publications and places. Trimen writes from Royal Botanic Gardens, Peradeniya on 21 November.\n\n\nS06\n“The Botany of Cinchona Ledgeriana”, December 1883, pp. 453–455\nTrimen’s argument, dated 29 October, reports competing identifications and distinguishes botanical characters from chemical yield.\n\n\nS07\n“History of Cinchona Culture in Ceylon”, April–June 1943, beginning p. 91\nA retrospective account brings in Markham, Spruce, plant movements, Peradeniya and Hakgala. Publication date must remain separate from the events described.\n\n\n\nThe direct Trimen–Howard connection is a published disagreement, not merely article co-occurrence. Trimen’s reply goes to the editor of the Pharmaceutical Journal and is forwarded for publication in Ceylon; it should not be recoded as a private letter addressed to Howard."
   },
   {
-    "objectID": "presenter.html#the-consequential-problem-to-find-together",
-    "href": "presenter.html#the-consequential-problem-to-find-together",
-    "title": "Presenter notes",
-    "section": "The consequential problem to find together",
-    "text": "The consequential problem to find together\nThe editor’s bracketed note above Agar’s letter says that Howard “analyzed the bark” of the tree Trimen figured. Agar’s letter says that bark from some of these trees went to Howard, and that the bark from the tree itself is in Agar’s own possession. A model that follows the editor conflates the two. Neither rehearsal run did: run A recorded the editor’s claim as the editor’s and noted that which trees supplied the bark “is not stated beyond ‘some of these trees’”; run B noted on the editor’s affirmation that Agar only says the figured tree was “one of several”. Show run A’s bark record and ask the room whether they would have caught it if the model had not. If a live run in the room does conflate them, better still.\nThen the OCR check: both runs flagged the two damaged sentences and guessed at the wording (run A “in full bloom”; both runs “by me”). The scan says “growing in a bad situation and not robust” and “many plants from the seed of the specimen tree”. The models were right to flag and wrong to guess."
+    "objectID": "packet.html#grounding-people-plants-and-places",
+    "href": "packet.html#grounding-people-plants-and-places",
+    "title": "Research packet: the Trimen network",
+    "section": "Grounding people, plants and places",
+    "text": "Grounding people, plants and places\nentities.csv and entities.json contain 49 local entities, with candidate QIDs where authority records have been checked. record_checked means that the Wikidata item was retrieved and examined. It does not mean that every historical occurrence of that name has been matched, that every statement on the item is trustworthy, or that a human has approved the proposal. Every human-review field remains pending.\nThe people include Henry Trimen (Q2462643), John Eliot Howard (Q3181423), Clements Markham (Q507802), Moens (Q21340893), McIvor (Q21520254), Charles Ledger (Q963818), Weddell (Q983408), Joseph Dalton Hooker (Q157501), Fitch (Q1102060), and Richard Spruce (Q1349394). The correspondence adds Roland Trimen (Q932702), Thiselton-Dyer (Q2065240), and Daniel Morris (Q20733957). Surname-only assignments remain proposals supported by context.\nThomas North Christie and Walter Agar retain local identifiers. No suitable Wikidata match was established in the searches performed. Absence from those results does not demonstrate that an item does not exist. Christie must not be merged with Thomas Christy on spelling similarity. Moens’s cached authority labels and aliases disagree about his given name, so the packet retains initials. Trimen’s account also mentions an unnamed servant of Ledger; keeping a local record prevents that person’s involvement from disappearing merely because the source supplies no personal name.\nRoyal Botanic Gardens, Peradeniya (Q3119056) is explicit in the 1883 cover letter. Peradeniya as a locality has a separate candidate, Q489744. Likewise, Kew’s garden site and the research institution have distinct items. The bare word Hakgala in a catalogue address does not establish that the sender was inside the botanical garden. Estates such as St. Andrew’s, Mahanillu and Yarrow remain local records without invented coordinates.\nHowards and Sons (Q123413890) provides a possible industrial branch. The archive catalogue for collection ACC/1037 describes the firm’s pharmaceutical business and its Stratford headquarters before the move to Ilford. This is external contextual evidence, kept distinct from the Tropical passages. Howards and Sons archive catalogue\nWest Ham is a useful correction to a model’s reasoning. The label “County Borough of West Ham” initially suggested that Q5177625 would be too late for the 1883 setting. Jim pointed out that the item includes the local board of health. Its statements explicitly cover that form from 1856 to 1886. The packet therefore retains the QID for West Ham local government, with the appropriate period and label. The county-borough start qualifier currently says 1 April 1899, while the municipal-borough end says 31 March 1889; these unreferenced statements require investigation. Accepting an identity link does not require accepting all attached dates. Wikidata record"
   },
   {
-    "objectID": "presenter.html#online-participation",
-    "href": "presenter.html#online-participation",
-    "title": "Presenter notes",
-    "section": "Online participation",
-    "text": "Online participation\n\nRemote participants see the same pages and the same exercise. Nothing requires a login.\nThe exercise page’s Copy summary button produces one line (R1 accept; R2 reject; ...) for pasting into the Zoom chat, so the chat monitor can read decisions out.\nParticipants can Download TSV of their decisions with reasons. If the organizers want them collected, say where to send the file.\nRecording is the conference’s arrangement. The materials stay online afterwards."
+    "objectID": "packet.html#historical-classification-is-part-of-the-evidence",
+    "href": "packet.html#historical-classification-is-part-of-the-evidence",
+    "title": "Research packet: the Trimen network",
+    "section": "Historical classification is part of the evidence",
+    "text": "Historical classification is part of the evidence\nSome historical identifications may have been wrong. The data must preserve enough detail to examine that question: who identified which plant, under what name, when, and on what evidence? Trimen’s claim that several differently named plants were botanically identical belongs in the dataset as his argument, rather than as an automatic correction to all earlier records.\nclaims.csv and claims.json contain 14 proposed relationships with exact OCR evidence, attribution and review notes. The illustrated tree and its neighbouring trees have separate local IDs. Agar says that bark from some trees went to Howard, while bark from the illustrated tree remained in his possession. An extraction that says Howard analysed the illustrated tree would overstate the evidence. The source’s word “typical” also does not by itself establish nomenclatural type status.\nThere are three separate questions to retain:\n\nWhich name did a historical actor use?\nWhich specimen or group of plants did that actor identify with that name?\nHow does a current authority treat the name?\n\nKew’s Plants of the World Online currently treats Cinchona ledgeriana as a synonym of C. calisaya, and C. succirubra as a synonym of C. pubescens. These treatments are recorded separately in taxonomy.csv; they do not settle whether Howard or Trimen correctly identified a particular historical tree. Ledgeriana record, succirubra record\nThe 1881 Howard letter makes an especially useful case. It distinguishes a hybrid that people were calling “C. pubescens How.” from an already established species with different characters. Mapping both occurrences directly to Q164574 would erase the issue the letter discusses. A separate local historical-name record preserves it.\nBark, cinchona alkaloids and quinine also have separate records. Pure quinine and sulphate of quinine are not interchangeable measurements. The packet includes only a selection of the plant names Jim supplied; unexamined species, categories and taxonomy templates have not been inserted as if they were all participants in this dispute."
   },
   {
-    "objectID": "presenter.html#what-not-to-claim",
-    "href": "presenter.html#what-not-to-claim",
-    "title": "Presenter notes",
-    "section": "What not to claim",
-    "text": "What not to claim\n\nThe research pipeline’s links for Trimen are automated. Say so.\nThe handpicked cases are failure modes, not an accuracy rate.\nThe RA’s evaluation of Tropical is pending. The workshop uses a separate frozen packet and does not touch it."
+    "objectID": "packet.html#correspondence-as-the-next-research-branch",
+    "href": "packet.html#correspondence-as-the-next-research-branch",
+    "title": "Research packet: the Trimen network",
+    "section": "Correspondence as the next research branch",
+    "text": "Correspondence as the next research branch\nletters.csv and letters.json transcribe 25 distinct catalogue entries supplied by Jim, spanning 1893–1896. Repeated display titles in the pasted list have been collapsed. There are 24 letters attributed to Henry: 23 to Thiselton-Dyer and one to Daniel Morris. One is attributed to Roland Trimen, writing to Thiselton-Dyer from 5 Lancaster Street on 31 December 1896.\nThese records establish catalogue-described correspondence, dates, origins, folios, and page/image counts. They do not establish what the letters discuss. The list is a selection, not a complete correspondence census. Repository URLs for individual entries have not yet been matched.\nJim also supplied kdcas1413 and kdcas1411. These are retained separately in archival-leads.csv. The records could not be retrieved during this check; their subjects and correspondence dates remain unverified. No association has been inferred from their sequential identifiers.\nFor the workshop, show this branch briefly as the next question opened by the research. Reading a whole correspondence collection belongs in the follow-up materials, not the hour’s core exercise."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Cleaning and Structuring Historical Data: A Working Session",
-    "section": "",
-    "text": "Draft\n\n\n\nThese pages are a working draft prepared for Jim Clifford’s review. Source and data: github.com/jburnford/trimen-workshop. Facts about the sources have been checked where a page says so; everything else is a proposal."
-  },
-  {
-    "objectID": "index.html#the-question",
-    "href": "index.html#the-question",
-    "title": "Cleaning and Structuring Historical Data: A Working Session",
-    "section": "The question",
-    "text": "The question\nHenry Trimen was Director of the Royal Botanic Gardens at Peradeniya, Ceylon, from 1880. He appears in the Colonial Office List every year from 1883 to 1896, and in The Tropical Agriculturist, a Colombo planters’ monthly, hundreds of times.\nWho is Trimen connected to in The Tropical Agriculturist, and what evidence supports those connections?\nIn 1883 the journal printed a public quarrel between Trimen and the London quinine manufacturer John Eliot Howard about whether a cinchona tree Trimen had illustrated was a true Cinchona ledgeriana. The letters name planters, seed suppliers, botanical gardens, bark samples and chemical analyses. They are a small, dense example of what historians want from a text collection: people, things and actions, connected, with sources."
-  },
-  {
-    "objectID": "index.html#what-we-will-do-in-the-hour",
-    "href": "index.html#what-we-will-do-in-the-hour",
-    "title": "Cleaning and Structuring Historical Data: A Working Session",
-    "section": "What we will do in the hour",
-    "text": "What we will do in the hour\nThree things, in order: clean the source text (OCR against the page, printed wording kept apart from inference), structure it (records with local identifiers, saved code, reported failures), and ground it (candidate identities retrieved from Wikidata and the Colonial Office List, reviewed against evidence, so the records can connect to other collections).\nModels and coding agents will do most of the work: propose a record structure, extract records from the OCR text, write and save the code, retrieve candidate identities from Wikidata and from the Colonial Office List, and lay the evidence out for inspection. You will do the part that cannot be delegated: decide what a record means, check a consequential decision against the page, and direct a revision.\n\n\n\nMinutes\nStep\nWhat happens\n\n\n\n\n0–5\n1. The question\nTrimen’s career in the Colonial Office List; the question we take to the journal\n\n\n5–20\n2. Structure and extract\nStructuring: the model proposes a table, extracts records, saves a rerunnable script\n\n\n20–30\n3. Candidate identities\nGrounding: Wikidata and Colonial Office List lookups; a compact review view\n\n\n30–45\n4. Review\nCleaning and checking: we inspect results together, find a consequential error, and direct a fix\n\n\n45–55\nExercise\nYou record decisions on six cases, in the room or on Zoom\n\n\n55–60\n7. Your own data\nHow to take this to another collection\n\n\n\nEvery live stage has a saved checkpoint in outputs/. If a live step stalls we switch to the saved result and keep going."
-  },
-  {
-    "objectID": "index.html#what-you-need",
-    "href": "index.html#what-you-need",
-    "title": "Cleaning and Structuring Historical Data: A Working Session",
-    "section": "What you need",
-    "text": "What you need\nA browser. The exercise runs from saved results and needs no account, model subscription or API key. If you have a coding agent configured you can also run the example yourself, during the session or afterwards.\nRemote participants have the same evidence and the same exercise as the room. Post questions in the Zoom chat; the exercise page has a button that copies a one-line summary of your decisions for pasting into the chat."
-  },
-  {
-    "objectID": "index.html#what-you-should-be-able-to-do-afterwards",
-    "href": "index.html#what-you-should-be-able-to-do-afterwards",
-    "title": "Cleaning and Structuring Historical Data: A Working Session",
-    "section": "What you should be able to do afterwards",
-    "text": "What you should be able to do afterwards\n\nDescribe a small extraction task to a model and inspect the records it returns against the source.\nTell a candidate identity from a supported match, and say what evidence made the difference.\nTurn a correction to one result into a rule, a check or a review step for the rest of a collection."
-  },
-  {
-    "objectID": "index.html#materials",
-    "href": "index.html#materials",
-    "title": "Cleaning and Structuring Historical Data: A Working Session",
-    "section": "Materials",
-    "text": "Materials\n\nSource pack: the OCR text of six 1881–1883 items, the scan-checked transcription of the exercise letter, Trimen’s Colonial Office List entries, and page links to the scans.\nSaved outputs for every stage, including the first attempts and the revised results.\nResearch packet: the wider Trimen network (49 entities, 14 attributed claims, 25 catalogued letters) for follow-up. Every human-review field in it is still pending.\nWorked answers, including the cases where more than one reading remains possible."
+    "objectID": "packet.html#reuse-and-remaining-preparation",
+    "href": "packet.html#reuse-and-remaining-preparation",
+    "title": "Research packet: the Trimen network",
+    "section": "Reuse and remaining preparation",
+    "text": "Reuse and remaining preparation\nRun python3 scripts/build_trimen_workshop.py from the workshop repository to rebuild the CSV and JSON files. It validates exact evidence strings, referenced local entities, unique correspondence IDs, and the presence of cached candidate authority records. manifest.json records the hash of the frozen search input. The public retrieval helper, scripts/ground_trimen.py, caches full Wikidata responses under raw/, including qualifiers, references and retrieval timestamps.\nBefore presenting, compare the selected exercise passage with its scan, review the proposed identities and claims, and attach a small Colonial Office List excerpt for Henry’s career. Keep the broader research packet available on GitHub, but limit the participant exercise to a short passage and a few decisions. The packet is saved locally; this workspace is not yet a Git repository and nothing has been published."
   },
   {
     "objectID": "answers.html",
@@ -266,88 +266,263 @@
     "text": "The pattern\nAcross the six cases the decisive evidence was never the model’s confidence and never the identifier’s existence. It was the source’s own distinctions (some trees versus the tree itself; Christy versus Christie; a name credited versus a name claimed), the page behind the OCR, and the dates and posts in a second collection. Those are what the review view has to put in front of you, and what the reason field is for."
   },
   {
-    "objectID": "packet.html",
-    "href": "packet.html",
-    "title": "Research packet: the Trimen network",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Cleaning and Structuring Historical Data: A Working Session",
     "section": "",
-    "text": "The tables below live in research/trimen-network/: entities.csv, claims.csv, letters.csv, taxonomy.csv, archival-leads.csv, with JSON equivalents, the seven frozen article records in sources/, and the cached Wikidata responses in raw/. The packet’s own description follows."
+    "text": "Draft\n\n\n\nThese pages are a working draft prepared for Jim Clifford’s review. Source and data: github.com/jburnford/trimen-workshop. Facts about the sources have been checked where a page says so; everything else is a proposal."
   },
   {
-    "objectID": "packet.html#the-passages-to-use",
-    "href": "packet.html#the-passages-to-use",
-    "title": "Research packet: the Trimen network",
-    "section": "The passages to use",
-    "text": "The passages to use\nSeven frozen article records are in sources/. Each retains the Tropical article ID, OCR text, page links, and source segments. The July 1883 opening on scan n44 has been visually inspected. Other passages have been read in OCR and still need comparison with their scans before presenting a final transcription. The parent search file contains 72 articles with both surnames; that is a discovery set, not 72 verified relationships between Henry Trimen and John Eliot Howard.\n\n\n\nSource\nPassage\nWhy it matters\n\n\n\n\nS01\n“Mr. Eliot Howard Extinguishing C. Pubescentis How.”, July 1881, pp. 114–115\nHoward disclaims having created a species under this name. The editorial also criticizes Clements Markham’s account of hybrid parentage.\n\n\nS02\n“The Wars of the Quinologists”, July 1883, pp. 27–28\nThe journal explicitly presents a dispute among Howard, Trimen, and Moens. A short opening for the workshop.\n\n\nS03\n“Dr. Trimen’s Ledgeriana: Mr. T. N. Christie to the Rescue”, p. 37\nChristie’s letter of 7 June 1883 traces the illustrated plant through McIvor’s seed, his nursery, and Agar’s planting. This is Christie’s asserted provenance.\n\n\nS04\n“Dr. Trimen’s Typical Ledgeriana Tree”, p. 66\nAgar’s letter of 22 June 1883 distinguishes the illustrated tree from other trees whose bark Campbell sent to Howard. Excellent material for checking a model’s proposed relationship.\n\n\nS05\n“The Cinchona Calisaya (or Ledgeriana) Discussion”, December 1883, p. 453\nHoward’s quoted letter and Trimen’s cover letter connect people, publications and places. Trimen writes from Royal Botanic Gardens, Peradeniya on 21 November.\n\n\nS06\n“The Botany of Cinchona Ledgeriana”, December 1883, pp. 453–455\nTrimen’s argument, dated 29 October, reports competing identifications and distinguishes botanical characters from chemical yield.\n\n\nS07\n“History of Cinchona Culture in Ceylon”, April–June 1943, beginning p. 91\nA retrospective account brings in Markham, Spruce, plant movements, Peradeniya and Hakgala. Publication date must remain separate from the events described.\n\n\n\nThe direct Trimen–Howard connection is a published disagreement, not merely article co-occurrence. Trimen’s reply goes to the editor of the Pharmaceutical Journal and is forwarded for publication in Ceylon; it should not be recoded as a private letter addressed to Howard."
+    "objectID": "index.html#the-question",
+    "href": "index.html#the-question",
+    "title": "Cleaning and Structuring Historical Data: A Working Session",
+    "section": "The question",
+    "text": "The question\nHenry Trimen was Director of the Royal Botanic Gardens at Peradeniya, Ceylon, from 1880. He appears in the Colonial Office List every year from 1883 to 1896, and in The Tropical Agriculturist, a Colombo planters’ monthly, hundreds of times.\nWho is Trimen connected to in The Tropical Agriculturist, and what evidence supports those connections?\nIn 1883 the journal printed a public quarrel between Trimen and the London quinine manufacturer John Eliot Howard about whether a cinchona tree Trimen had illustrated was a true Cinchona ledgeriana. The letters name planters, seed suppliers, botanical gardens, bark samples and chemical analyses. They are a small, dense example of what historians want from a text collection: people, things and actions, connected, with sources."
   },
   {
-    "objectID": "packet.html#grounding-people-plants-and-places",
-    "href": "packet.html#grounding-people-plants-and-places",
-    "title": "Research packet: the Trimen network",
-    "section": "Grounding people, plants and places",
-    "text": "Grounding people, plants and places\nentities.csv and entities.json contain 49 local entities, with candidate QIDs where authority records have been checked. record_checked means that the Wikidata item was retrieved and examined. It does not mean that every historical occurrence of that name has been matched, that every statement on the item is trustworthy, or that a human has approved the proposal. Every human-review field remains pending.\nThe people include Henry Trimen (Q2462643), John Eliot Howard (Q3181423), Clements Markham (Q507802), Moens (Q21340893), McIvor (Q21520254), Charles Ledger (Q963818), Weddell (Q983408), Joseph Dalton Hooker (Q157501), Fitch (Q1102060), and Richard Spruce (Q1349394). The correspondence adds Roland Trimen (Q932702), Thiselton-Dyer (Q2065240), and Daniel Morris (Q20733957). Surname-only assignments remain proposals supported by context.\nThomas North Christie and Walter Agar retain local identifiers. No suitable Wikidata match was established in the searches performed. Absence from those results does not demonstrate that an item does not exist. Christie must not be merged with Thomas Christy on spelling similarity. Moens’s cached authority labels and aliases disagree about his given name, so the packet retains initials. Trimen’s account also mentions an unnamed servant of Ledger; keeping a local record prevents that person’s involvement from disappearing merely because the source supplies no personal name.\nRoyal Botanic Gardens, Peradeniya (Q3119056) is explicit in the 1883 cover letter. Peradeniya as a locality has a separate candidate, Q489744. Likewise, Kew’s garden site and the research institution have distinct items. The bare word Hakgala in a catalogue address does not establish that the sender was inside the botanical garden. Estates such as St. Andrew’s, Mahanillu and Yarrow remain local records without invented coordinates.\nHowards and Sons (Q123413890) provides a possible industrial branch. The archive catalogue for collection ACC/1037 describes the firm’s pharmaceutical business and its Stratford headquarters before the move to Ilford. This is external contextual evidence, kept distinct from the Tropical passages. Howards and Sons archive catalogue\nWest Ham is a useful correction to a model’s reasoning. The label “County Borough of West Ham” initially suggested that Q5177625 would be too late for the 1883 setting. Jim pointed out that the item includes the local board of health. Its statements explicitly cover that form from 1856 to 1886. The packet therefore retains the QID for West Ham local government, with the appropriate period and label. The county-borough start qualifier currently says 1 April 1899, while the municipal-borough end says 31 March 1889; these unreferenced statements require investigation. Accepting an identity link does not require accepting all attached dates. Wikidata record"
+    "objectID": "index.html#what-we-will-do-in-the-hour",
+    "href": "index.html#what-we-will-do-in-the-hour",
+    "title": "Cleaning and Structuring Historical Data: A Working Session",
+    "section": "What we will do in the hour",
+    "text": "What we will do in the hour\nThree things, in order: clean the source text (OCR against the page, printed wording kept apart from inference), structure it (records with local identifiers, saved code, reported failures), and ground it (candidate identities retrieved from Wikidata and the Colonial Office List, reviewed against evidence, so the records can connect to other collections).\nModels and coding agents will do most of the work: propose a record structure, extract records from the OCR text, write and save the code, retrieve candidate identities from Wikidata and from the Colonial Office List, and lay the evidence out for inspection. You will do the part that cannot be delegated: decide what a record means, check a consequential decision against the page, and direct a revision.\n\n\n\nMinutes\nStep\nWhat happens\n\n\n\n\n0–5\n1. The question\nTrimen’s career in the Colonial Office List; the question we take to the journal\n\n\n5–20\n2. Structure and extract\nStructuring: the model proposes a table, extracts records, saves a rerunnable script\n\n\n20–30\n3. Candidate identities\nGrounding: Wikidata and Colonial Office List lookups; a compact review view\n\n\n30–45\n4. Review\nCleaning and checking: we inspect results together, find a consequential error, and direct a fix\n\n\n45–55\nExercise\nYou record decisions on six cases, in the room or on Zoom\n\n\n55–60\n7. Your own data\nHow to take this to another collection\n\n\n\nEvery live stage has a saved checkpoint in outputs/. If a live step stalls we switch to the saved result and keep going."
   },
   {
-    "objectID": "packet.html#historical-classification-is-part-of-the-evidence",
-    "href": "packet.html#historical-classification-is-part-of-the-evidence",
-    "title": "Research packet: the Trimen network",
-    "section": "Historical classification is part of the evidence",
-    "text": "Historical classification is part of the evidence\nSome historical identifications may have been wrong. The data must preserve enough detail to examine that question: who identified which plant, under what name, when, and on what evidence? Trimen’s claim that several differently named plants were botanically identical belongs in the dataset as his argument, rather than as an automatic correction to all earlier records.\nclaims.csv and claims.json contain 14 proposed relationships with exact OCR evidence, attribution and review notes. The illustrated tree and its neighbouring trees have separate local IDs. Agar says that bark from some trees went to Howard, while bark from the illustrated tree remained in his possession. An extraction that says Howard analysed the illustrated tree would overstate the evidence. The source’s word “typical” also does not by itself establish nomenclatural type status.\nThere are three separate questions to retain:\n\nWhich name did a historical actor use?\nWhich specimen or group of plants did that actor identify with that name?\nHow does a current authority treat the name?\n\nKew’s Plants of the World Online currently treats Cinchona ledgeriana as a synonym of C. calisaya, and C. succirubra as a synonym of C. pubescens. These treatments are recorded separately in taxonomy.csv; they do not settle whether Howard or Trimen correctly identified a particular historical tree. Ledgeriana record, succirubra record\nThe 1881 Howard letter makes an especially useful case. It distinguishes a hybrid that people were calling “C. pubescens How.” from an already established species with different characters. Mapping both occurrences directly to Q164574 would erase the issue the letter discusses. A separate local historical-name record preserves it.\nBark, cinchona alkaloids and quinine also have separate records. Pure quinine and sulphate of quinine are not interchangeable measurements. The packet includes only a selection of the plant names Jim supplied; unexamined species, categories and taxonomy templates have not been inserted as if they were all participants in this dispute."
+    "objectID": "index.html#what-you-need",
+    "href": "index.html#what-you-need",
+    "title": "Cleaning and Structuring Historical Data: A Working Session",
+    "section": "What you need",
+    "text": "What you need\nA browser. The exercise runs from saved results and needs no account, model subscription or API key. If you have a coding agent configured you can also run the example yourself, during the session or afterwards.\nRemote participants have the same evidence and the same exercise as the room. Post questions in the Zoom chat; the exercise page has a button that copies a one-line summary of your decisions for pasting into the chat."
   },
   {
-    "objectID": "packet.html#correspondence-as-the-next-research-branch",
-    "href": "packet.html#correspondence-as-the-next-research-branch",
-    "title": "Research packet: the Trimen network",
-    "section": "Correspondence as the next research branch",
-    "text": "Correspondence as the next research branch\nletters.csv and letters.json transcribe 25 distinct catalogue entries supplied by Jim, spanning 1893–1896. Repeated display titles in the pasted list have been collapsed. There are 24 letters attributed to Henry: 23 to Thiselton-Dyer and one to Daniel Morris. One is attributed to Roland Trimen, writing to Thiselton-Dyer from 5 Lancaster Street on 31 December 1896.\nThese records establish catalogue-described correspondence, dates, origins, folios, and page/image counts. They do not establish what the letters discuss. The list is a selection, not a complete correspondence census. Repository URLs for individual entries have not yet been matched.\nJim also supplied kdcas1413 and kdcas1411. These are retained separately in archival-leads.csv. The records could not be retrieved during this check; their subjects and correspondence dates remain unverified. No association has been inferred from their sequential identifiers.\nFor the workshop, show this branch briefly as the next question opened by the research. Reading a whole correspondence collection belongs in the follow-up materials, not the hour’s core exercise."
+    "objectID": "index.html#what-you-should-be-able-to-do-afterwards",
+    "href": "index.html#what-you-should-be-able-to-do-afterwards",
+    "title": "Cleaning and Structuring Historical Data: A Working Session",
+    "section": "What you should be able to do afterwards",
+    "text": "What you should be able to do afterwards\n\nDescribe a small extraction task to a model and inspect the records it returns against the source.\nTell a candidate identity from a supported match, and say what evidence made the difference.\nTurn a correction to one result into a rule, a check or a review step for the rest of a collection."
   },
   {
-    "objectID": "packet.html#reuse-and-remaining-preparation",
-    "href": "packet.html#reuse-and-remaining-preparation",
-    "title": "Research packet: the Trimen network",
-    "section": "Reuse and remaining preparation",
-    "text": "Reuse and remaining preparation\nRun python3 scripts/build_trimen_workshop.py from the workshop repository to rebuild the CSV and JSON files. It validates exact evidence strings, referenced local entities, unique correspondence IDs, and the presence of cached candidate authority records. manifest.json records the hash of the frozen search input. The public retrieval helper, scripts/ground_trimen.py, caches full Wikidata responses under raw/, including qualifiers, references and retrieval timestamps.\nBefore presenting, compare the selected exercise passage with its scan, review the proposed identities and claims, and attach a small Colonial Office List excerpt for Henry’s career. Keep the broader research packet available on GitHub, but limit the participant exercise to a short passage and a few decisions. The packet is saved locally; this workspace is not yet a Git repository and nothing has been published."
+    "objectID": "index.html#materials",
+    "href": "index.html#materials",
+    "title": "Cleaning and Structuring Historical Data: A Working Session",
+    "section": "Materials",
+    "text": "Materials\n\nSource pack: the OCR text of six 1881–1883 items, the scan-checked transcription of the exercise letter, Trimen’s Colonial Office List entries, and page links to the scans.\nSaved outputs for every stage, including the first attempts and the revised results.\nResearch packet: the wider Trimen network (49 entities, 14 attributed claims, 25 catalogued letters) for follow-up. Every human-review field in it is still pending.\nWorked answers, including the cases where more than one reading remains possible."
   },
   {
-    "objectID": "setup.html",
-    "href": "setup.html",
-    "title": "Run it yourself",
+    "objectID": "presenter.html",
+    "href": "presenter.html",
+    "title": "Presenter notes",
     "section": "",
-    "text": "To be confirmed before the session\n\n\n\nThe exact agent, model and lookup configuration to be demonstrated has not been fixed yet, and the costs of running the example with a personal account have not been measured. This page describes the configuration used to prepare the materials."
+    "text": "Confirm with the organizer how remote questions reach the room, and who monitors the Zoom chat. Do not plan to read the chat while presenting.\nThe published description invites participants to “bring messy historical datasets” and mentions Britannica. Either send the organizer the revised wording in workshop-plan.md (section “Decisions still to make”) or open the session by saying that the hour works on the provided example and that Your own data is the take-home for their own datasets.\nDecide the agent, model and lookup configuration for the live steps, and record it on the setup page.\nTest the WikidataMCP endpoint from a non-campus network. Tropical’s notes record the public HTTP endpoint returning HTTP 429 after a few calls; the MCP endpoint ran at about 1.7 s per call.\nRehearse the hour against the clock with the saved checkpoints. Protect minutes 30–55.\nCheck the RA review status in Tropical. The gold set was frozen on 6 October (fingerprint 14a933f83ec5); the rating scale changed to 1–5 after that freeze. Confirm which version the RA has.\nPut the site URL and the exercise URL on the first slide. Someone posts both in the Zoom chat at the start."
   },
   {
-    "objectID": "setup.html#what-is-in-the-repository",
-    "href": "setup.html#what-is-in-the-repository",
-    "title": "Run it yourself",
-    "section": "What is in the repository",
-    "text": "What is in the repository\nsource-pack/          OCR text, scan-checked transcription, Colonial Office List entries, citations\noutputs/01-structure/ model proposals for the record structure (one folder per run)\noutputs/02-extract/   extraction scripts, records and notes (one folder per run)\noutputs/03-candidates/ candidate identities with retrieved evidence\noutputs/05-revise/    the two real revisions, with before and after\noutputs/06-connect/   Trimen across the three collections\nreview/               the browser exercise (static HTML + cases.json)\nresearch/trimen-network/  the wider research packet and the cached Wikidata responses\nscripts/              build scripts (no network needed except ground_trimen.py)"
+    "objectID": "presenter.html#before-the-day",
+    "href": "presenter.html#before-the-day",
+    "title": "Presenter notes",
+    "section": "",
+    "text": "Confirm with the organizer how remote questions reach the room, and who monitors the Zoom chat. Do not plan to read the chat while presenting.\nThe published description invites participants to “bring messy historical datasets” and mentions Britannica. Either send the organizer the revised wording in workshop-plan.md (section “Decisions still to make”) or open the session by saying that the hour works on the provided example and that Your own data is the take-home for their own datasets.\nDecide the agent, model and lookup configuration for the live steps, and record it on the setup page.\nTest the WikidataMCP endpoint from a non-campus network. Tropical’s notes record the public HTTP endpoint returning HTTP 429 after a few calls; the MCP endpoint ran at about 1.7 s per call.\nRehearse the hour against the clock with the saved checkpoints. Protect minutes 30–55.\nCheck the RA review status in Tropical. The gold set was frozen on 6 October (fingerprint 14a933f83ec5); the rating scale changed to 1–5 after that freeze. Confirm which version the RA has.\nPut the site URL and the exercise URL on the first slide. Someone posts both in the Zoom chat at the start."
   },
   {
-    "objectID": "setup.html#rerunning-the-saved-extraction",
-    "href": "setup.html#rerunning-the-saved-extraction",
-    "title": "Run it yourself",
-    "section": "Rerunning the saved extraction",
-    "text": "Rerunning the saved extraction\nEach extraction run saved a script that regenerates its records from the OCR text, offline:\npython3 outputs/02-extract/run-A/02_extract.py source-pack"
+    "objectID": "presenter.html#running-order",
+    "href": "presenter.html#running-order",
+    "title": "Presenter notes",
+    "section": "Running order",
+    "text": "Running order\n\n\n\nMin\nStep\nLive or saved\nCheckpoint if behind\n\n\n\n\n0–5\n1. The question\nOne prepared Imperial Careers view; Trimen’s Colonial Office List entries\nSkip the atlas; show the table\n\n\n5–20\n2. Structure and extract\nLive: the structure prompt, then the extraction prompt, on S04 and S03\noutputs/01-structure/ and outputs/02-extract/ from the rehearsal runs\n\n\n20–30\n3. Candidates\nLive: the retrieval prompt for Trimen, Agar and Christie only\noutputs/03-candidates/candidates.md\n\n\n30–45\n4. Review\nTogether: the editor’s headnote versus Agar’s letter; then the OCR check against the scan; direct the revision\nThe worked answers\n\n\n45–55\nExercise\nParticipants work through cases R1–R6; ask for show of hands and chat summaries on R2 and R3\nReduce to R1–R3\n\n\n55–60\n7. Your own data and questions\n\n\n\n\n\nIf the live extraction at 5–20 runs long, cut to the saved run at minute 15 regardless. The review discussion is the point of the hour."
   },
   {
-    "objectID": "setup.html#rebuilding-the-tables",
-    "href": "setup.html#rebuilding-the-tables",
-    "title": "Run it yourself",
-    "section": "Rebuilding the tables",
-    "text": "Rebuilding the tables\npython3 scripts/build_trimen_workshop.py   # research packet CSV/JSON from the frozen search extract\npython3 scripts/build_candidates.py        # candidate evidence from the cached Wikidata responses\npython3 scripts/build_source_pack.py       # participant source pack\npython3 scripts/build_review_cases.py      # cases.json for the exercise\nNone of these touch the network."
+    "objectID": "presenter.html#the-consequential-problem-to-find-together",
+    "href": "presenter.html#the-consequential-problem-to-find-together",
+    "title": "Presenter notes",
+    "section": "The consequential problem to find together",
+    "text": "The consequential problem to find together\nThe editor’s bracketed note above Agar’s letter says that Howard “analyzed the bark” of the tree Trimen figured. Agar’s letter says that bark from some of these trees went to Howard, and that the bark from the tree itself is in Agar’s own possession. A model that follows the editor conflates the two. Neither rehearsal run did: run A recorded the editor’s claim as the editor’s and noted that which trees supplied the bark “is not stated beyond ‘some of these trees’”; run B noted on the editor’s affirmation that Agar only says the figured tree was “one of several”. Show run A’s bark record and ask the room whether they would have caught it if the model had not. If a live run in the room does conflate them, better still.\nThen the OCR check: both runs flagged the two damaged sentences and guessed at the wording (run A “in full bloom”; both runs “by me”). The scan says “growing in a bad situation and not robust” and “many plants from the seed of the specimen tree”. The models were right to flag and wrong to guess."
   },
   {
-    "objectID": "setup.html#running-the-live-steps-with-your-own-agent",
-    "href": "setup.html#running-the-live-steps-with-your-own-agent",
-    "title": "Run it yourself",
-    "section": "Running the live steps with your own agent",
-    "text": "Running the live steps with your own agent\nYou need a coding agent that can read files, run Python and call a Wikidata lookup tool. The materials were prepared with Claude Code and the WikidataMCP server (Streamable HTTP endpoint https://wd-mcp.wmcloud.org/mcp). Two things to know:\n\nUse the vector search, not the string search. Wikidata’s ordinary search API matches labels by string similarity. “Walpole Island” returns an island in New Caledonia. The MCP server’s search_items uses semantic embeddings. It is rate limited; cache what you retrieve.\nNo identifiers from memory. Tell the agent, and check its output. The research packet’s scripts/ground_trimen.py shows one way to cache full entity responses with retrieval timestamps.\n\nTo fetch fresh evidence for an entity:\npython3 scripts/ground_trimen.py entities Q2462643\npython3 scripts/ground_trimen.py search \"Walter Agar Ceylon planter\""
+    "objectID": "presenter.html#online-participation",
+    "href": "presenter.html#online-participation",
+    "title": "Presenter notes",
+    "section": "Online participation",
+    "text": "Online participation\n\nRemote participants see the same pages and the same exercise. Nothing requires a login.\nThe exercise page’s Copy summary button produces one line (R1 accept; R2 reject; ...) for pasting into the Zoom chat, so the chat monitor can read decisions out.\nParticipants can Download TSV of their decisions with reasons. If the organizers want them collected, say where to send the file.\nRecording is the conference’s arrangement. The materials stay online afterwards."
   },
   {
-    "objectID": "setup.html#credentials",
-    "href": "setup.html#credentials",
-    "title": "Run it yourself",
-    "section": "Credentials",
-    "text": "Credentials\nNo file in this repository contains a credential, and none is needed for the exercise. If you configure an agent with an API key, keep it out of the repository."
+    "objectID": "presenter.html#what-not-to-claim",
+    "href": "presenter.html#what-not-to-claim",
+    "title": "Presenter notes",
+    "section": "What not to claim",
+    "text": "What not to claim\n\nThe research pipeline’s links for Trimen are automated. Say so.\nThe handpicked cases are failure modes, not an accuracy rate.\nThe RA’s evaluation of Tropical is pending. The workshop uses a separate frozen packet and does not touch it."
+  },
+  {
+    "objectID": "slides.html#the-question",
+    "href": "slides.html#the-question",
+    "title": "Cleaning, Structuring and Grounding Historical Data",
+    "section": "The question",
+    "text": "The question\nHenry Trimen, Director of the Royal Botanic Gardens, Peradeniya, Ceylon, from 1880.\nIn the Colonial Office List every year, 1883–1896. In The Tropical Agriculturist, a Colombo planters’ monthly, hundreds of times.\n\n\nWho is Trimen connected to in The Tropical Agriculturist, and what evidence supports those connections?\n\n\n\nIn 1883 the journal ran a public quarrel between Trimen and the London quinine maker John Eliot Howard over one cinchona tree. Planters, seed, gardens, bark samples, chemical analyses. People, things and actions, with sources.\n\nOpen with the Imperial Careers atlas view prepared in advance (under two minutes), then this slide. The question is the whole hour; everything else is method."
+  },
+  {
+    "objectID": "slides.html#ten-years-ago",
+    "href": "slides.html#ten-years-ago",
+    "title": "Cleaning, Structuring and Grounding Historical Data",
+    "section": "Ten years ago",
+    "text": "Ten years ago\nTrading Consequences, 2012–13: 10.5 million scanned pages, 7 billion tokens. Historians, computational linguists, a database team, a visualisation team, five institutions.\n\n\n\n\n\n\n\n\n2013\n\n\n\n\nCleaning\n“lime” read as “time” and “line”; long-s “salt” as “fait”; trade tables collapsed into 210-word “sentences”. 14.9% of gold-standard locations had OCR errors\n\n\nStructuring\nSix-stage pipeline adapted from the Edinburgh Geoparser; relation = same sentence; commodity lexicon bootstrapped from customs records and Wikipedia\n\n\nGrounding\nGeoNames string matching: “Saharunpore” not found, every “Italy” placed in a Texan town. F-scores 0.62 / 0.61\n\n\nReview\nErrors seen in the visualisations got fixed. Missed entities were invisible\n\n\n\n\nClifford, Alex, Coates, Klein and Watson, Historical Methods 49:3 (2016).\n\n\nSame three problems. What changed is who writes the pipeline and how fast the error-to-fix loop runs. What did not change is where judgment is needed."
+  },
+  {
+    "objectID": "slides.html#what-changed-what-did-not",
+    "href": "slides.html#what-changed-what-did-not",
+    "title": "Cleaning, Structuring and Grounding Historical Data",
+    "section": "What changed, what did not",
+    "text": "What changed, what did not\n\n\nChanged\n\nThe agent writes the pipeline\nSemantic search instead of a string gazetteer\nModels read in context: “grease the machine” is not a commodity\nThe loop from error to fix runs in minutes\n\n\nDid not change\n\nOCR lies, and only the page settles it\nPeople absent from every authority file\nPlausible wrong matches\nA corrected error has to become a rule\nErrors you cannot see need a sample"
+  },
+  {
+    "objectID": "slides.html#the-hour",
+    "href": "slides.html#the-hour",
+    "title": "Cleaning, Structuring and Grounding Historical Data",
+    "section": "The hour",
+    "text": "The hour\n\n\n\n\n\n\n\n\nMin\n\n\n\n\n\n\n0–5\nThe question\nTrimen in the Colonial Office List\n\n\n5–20\nStructure\nThe model proposes a table, extracts records, saves a script\n\n\n20–30\nGround\nWikidata and Colonial Office List lookups; a review view\n\n\n30–45\nClean and check\nA consequential error, found together; a revision directed\n\n\n45–55\nExercise\nSix decisions, in the room and on Zoom\n\n\n55–60\nYour own data\n\n\n\n\nEverything is saved. If a live step stalls, we switch to the checkpoint.\njimclifford.ca/trimen-workshop — same pages and exercise for everyone."
+  },
+  {
+    "objectID": "slides.html#trimen-in-the-colonial-office-list",
+    "href": "slides.html#trimen-in-the-colonial-office-list",
+    "title": "Cleaning, Structuring and Grounding Historical Data",
+    "section": "Trimen in the Colonial Office List",
+    "text": "Trimen in the Colonial Office List\n\nTRIMEN, HENRY, M.B. (Lond.), F.R.S., F.L.S. —Formerly lecturer on botany at St. Mary’s Hospital, London, 1867 to 1875; was senior assistant to department of botany, British Museum, 1869 to 1879; director Royal Botanical Gardens, Ceylon, Feb., 1880; author of numerous works and papers on pure and applied botany. (1889 edition)\n\nThe Imperial Careers graph (kgp_col1889-p554b20, seven editions):\n\n\n\nPosition\nPlace\nYears\n\n\n\n\nlecturer on botany\nLondon\n1867–1875\n\n\nsenior assistant, department of botany\nBritish Museum\n1869–1879\n\n\ndirector, Royal Botanical Gardens\nCeylon\n1880–\n\n\n\nA name, posts, dates, a stable identity across editions. Nothing about what he did or with whom."
+  },
+  {
+    "objectID": "slides.html#the-wars-of-the-quinologists-1883",
+    "href": "slides.html#the-wars-of-the-quinologists-1883",
+    "title": "Cleaning, Structuring and Grounding Historical Data",
+    "section": "The Wars of the Quinologists, 1883",
+    "text": "The Wars of the Quinologists, 1883\n\n\n\n\n\n\n\n\n\nItem\n\n\n\n\n\nS02\n“The Wars of the Quinologists”, July, pp. 27–28\nThe editor frames the dispute\n\n\nS03\n“Dr. Trimen’s Ledgeriana: Mr. T. N. Christie to the Rescue”, p. 37\nA planter traces the tree’s seed\n\n\nS04\n“Dr. Trimen’s Typical Ledgeriana Tree”, p. 66\nWalter Agar, 234 words. The exercise\n\n\nS05–06\nTrimen’s reply, December, pp. 453–455\nThe competing identifications\n\n\nS01\nHoward on “C. pubescens How.”, July 1881\nA rejected name\n\n\n\nSeventy-two articles mention both Trimen and Howard. That is a discovery set, not 72 relationships."
+  },
+  {
+    "objectID": "slides.html#the-passage",
+    "href": "slides.html#the-passage",
+    "title": "Cleaning, Structuring and Grounding Historical Data",
+    "section": "The passage",
+    "text": "The passage\n\n\n\n\n[We publish below a letter from Mr. Agar, which places beyond question the fact that the tree figured by Dr. Trimen was an undoubted Ledgeriana, Mr. Howard himself having given testimony to that effect after having analyzed the bark.—Ed.]\n. . .\n“The bark of some of these trees was sent home by Mr. Campbell for analysis to Mr. Howard …”\n“I have also in my possession the bark from the tree itself …”\n\n\nDo not point out the discrepancy yet. Let the room read it. The editor says one thing; Agar says another. We come back to it at minute 30."
+  },
+  {
+    "objectID": "slides.html#prompt-propose-a-structure",
+    "href": "slides.html#prompt-propose-a-structure",
+    "title": "Cleaning, Structuring and Grounding Historical Data",
+    "section": "Prompt: propose a structure",
+    "text": "Prompt: propose a structure\n\nRead these Tropical Agriculturist passages. Propose a small table for studying the people and activities mentioned. Show two example records before processing the rest. Preserve the printed wording and source references. Keep inferred information separate from what the text states. Use local record identifiers and do not add Wikidata identifiers yet.\n\n\nLive: run this on S04 and S03. Two examples first, so the structure is cheap to correct. If it runs past minute 12, switch to the saved run."
+  },
+  {
+    "objectID": "slides.html#prompt-build-and-run-the-extraction",
+    "href": "slides.html#prompt-build-and-run-the-extraction",
+    "title": "Cleaning, Structuring and Grounding Historical Data",
+    "section": "Prompt: build and run the extraction",
+    "text": "Prompt: build and run the extraction\n\nUse the agreed fields to process this sample. Save the code, instructions, and output so we can inspect and rerun the work. Report failed records and uncertain readings. Do not expand a person’s name unless the source provides the expansion; record any outside identification separately.\n\n\nWhat the prompt asks for beyond records: saved code, reported failures, and a wall between what the source prints and what the model knows."
+  },
+  {
+    "objectID": "slides.html#what-came-back",
+    "href": "slides.html#what-came-back",
+    "title": "Cleaning, Structuring and Grounding Historical Data",
+    "section": "What came back",
+    "text": "What came back\nTwo cold runs, 6 October, different models, nothing edited.\n\n\n\nRun\nModel\nRecords\nFailed\nUncertain\n\n\n\n\nA\nClaude Sonnet 5.5\n85\n0\n8\n\n\nB\nClaude Fable 5.1\n71\n1\n9\n\n\n\nRun A, the bark that was analysed:\n\n\n\n\n\n\n\nprinted_text\nThe bark of some of these trees was sent home by Mr. Campbell for analysis to Mr. Howard, who pronounced it to be Ledgeriana bark …\n\n\nasserted_by\nS04-P02 (signed “WALTER AGAR”)\n\n\ninferred_note\nWhich trees supplied the bark is not stated beyond “some of these trees”; whether it includes S04-T01 [the sketched tree] is not said.\n\n\n\n\nThat last field is the whole dispute. Both runs kept the editor’s claim apart from Agar’s. The question for the room later: would you have noticed if they had not?"
+  },
+  {
+    "objectID": "slides.html#three-things-to-inspect",
+    "href": "slides.html#three-things-to-inspect",
+    "title": "Cleaning, Structuring and Grounding Historical Data",
+    "section": "Three things to inspect",
+    "text": "Three things to inspect\n\nOmissions. Is everyone and everything in the table? Both runs made the editor a person record. Right: the editor makes claims.\nInvented details. A given name the text does not print? A relative date made absolute without saying so? Run B filled “outside identification” for six people from memory, each marked UNVERIFIED.\nChanged meaning. Did a careful statement become a flat one?\n\n\nAnd one thing neither run could do: two sentences of the OCR are damaged. Both said so. Both guessed. Every guess was wrong."
+  },
+  {
+    "objectID": "slides.html#three-questions-kept-separate",
+    "href": "slides.html#three-questions-kept-separate",
+    "title": "Cleaning, Structuring and Grounding Historical Data",
+    "section": "Three questions, kept separate",
+    "text": "Three questions, kept separate\n\nDoes the identifier resolve to the retrieved entity? We show only QIDs we fetched. A Q-number from a model’s memory is not a lookup.\nIs that entity the one in this source? Name, type, dates, place, activity. A real item can be the wrong person.\nWhat does the connection assert? This mention refers to that man. Not that every statement on the item is true. Not that 1883 “Ceylon” is the modern state."
+  },
+  {
+    "objectID": "slides.html#prompt-retrieve-candidates",
+    "href": "slides.html#prompt-retrieve-candidates",
+    "title": "Cleaning, Structuring and Grounding Historical Data",
+    "section": "Prompt: retrieve candidates",
+    "text": "Prompt: retrieve candidates\n\nLook up candidate identities for these people using the configured Wikidata tools and the supplied Colonial Office List records. Save the retrieved evidence and lookup date. For each candidate, show what supports the match, what conflicts, and what is missing. Leave unresolved cases unresolved. Do not generate QIDs from memory.\n\nSemantic search (WikidataMCP), then statement reading. Not the string search: “Walpole Island” returns an island in New Caledonia."
+  },
+  {
+    "objectID": "slides.html#candidates",
+    "href": "slides.html#candidates",
+    "title": "Cleaning, Structuring and Grounding Historical Data",
+    "section": "Candidates",
+    "text": "Candidates\n\n\n\n\n\n\n\n\n\nPrinted\nCandidate\nSupports\nConflicts or missing\n\n\n\n\n“HENRY TRIMEN”, Peradeniya\nQ2462643, botanist 1843–1896\nSignature; address; CO List career\nBrother Roland in both collections\n\n\n“JOHN ELIOT HOWARD”\nQ3181423, chemist 1807–1883\nFull signature 1881\nDies November 1883, mid-dispute\n\n\n“Mr. Moens”\nQ21340893, botanist 1837–1886\nJava cinchona context\nSurname only\n\n\n“WALTER AGAR”, Lawrence\nnone\n\nTwo searches: a politician, a zoologist b. 1882, a temple, a thickening agent\n\n\n“THOS. NORTH CHRISTIE”\nnone\n\nNot the “Mr. T. Christy” he criticises\n\n\n\n“Not found” is a recorded search with a date, not a proof of absence."
+  },
+  {
+    "objectID": "slides.html#the-editor-versus-the-letter",
+    "href": "slides.html#the-editor-versus-the-letter",
+    "title": "Cleaning, Structuring and Grounding Historical Data",
+    "section": "The editor versus the letter",
+    "text": "The editor versus the letter\n\n\nEditor: the tree figured by Dr. Trimen was an undoubted Ledgeriana, Mr. Howard himself having given testimony to that effect after having analyzed the bark.\nAgar: The bark of some of these trees was sent home by Mr. Campbell for analysis to Mr. Howard …\nAgar: I have also in my possession the bark from the tree itself, but taken when it was dying.\n\nIf the illustrated tree and the analysed bark become one thing, the dataset asserts a chemical result for a specimen that was never analysed.\nThe whole dispute, whether that tree was a Ledgeriana, would rest on it.\n. . .\nA model following the editor makes this error. Neither rehearsal run did.\nWould you have noticed if it had?"
+  },
+  {
+    "objectID": "slides.html#the-reading",
+    "href": "slides.html#the-reading",
+    "title": "Cleaning, Structuring and Grounding Historical Data",
+    "section": "The reading",
+    "text": "The reading\nOCR, as delivered:\n\nThe trees were only about 4½ years old from the time the plants were put out, and were now in a full condition and in flower.\n\n\nI have by my prints of the leaves of some of the trees as well as the other that Mr. Moens had sent to be true Ledgerianas …\n\n\nThe page:\n\n… and were growing in a bad situation and not robust.\n\n\nI have many plants from the seed of the specimen tree as well as the others that Mr. Moens declared to be true Ledgerianas …\n\n\n\nBoth runs flagged these. Run A guessed “in full bloom”. Run B guessed “the others that Moens had said”. A model can detect damaged OCR. It cannot repair it from the text."
+  },
+  {
+    "objectID": "slides.html#exercise-4555",
+    "href": "slides.html#exercise-4555",
+    "title": "Cleaning, Structuring and Grounding Historical Data",
+    "section": "Exercise: 45–55",
+    "text": "Exercise: 45–55\njimclifford.ca/trimen-workshop/review/\n\n\n\n\n\n\n\n\n\nDecision\n\n\n\n\n\nR1\nIs “Dr. Trimen” Q2462643?\nWhat support looks like\n\n\nR2\nDid Howard analyse the illustrated tree’s bark?\nThe editor versus the letter\n\n\nR3\nDoes the OCR reading stand?\nText versus page\n\n\nR4\nA Wikidata item for Walter Agar?\nWhat “not found” means\n\n\nR5\nIs “C. pubescens How.” Q164574?\nA name string versus what the source says about it\n\n\nR6\nAre “T. Christy” and “Thos. North Christie” one person?\nSpelling distance versus the text\n\n\n\nDo at least R1–R3. Write the reason; the reason becomes the rule. Zoom: use Copy summary for chat. Room: hands up when asked."
+  },
+  {
+    "objectID": "slides.html#from-a-decision-to-a-rule",
+    "href": "slides.html#from-a-decision-to-a-rule",
+    "title": "Cleaning, Structuring and Grounding Historical Data",
+    "section": "From a decision to a rule",
+    "text": "From a decision to a rule\n\nThis example is wrong for the following historical reason: [explain]. Find other records that might have the same problem. Propose a correction and show which records it would affect. After we review the change, rerun a small batch and show both corrected cases and previously accepted cases that changed."
+  },
+  {
+    "objectID": "slides.html#a-safeguard-that-validated-invented-names",
+    "href": "slides.html#a-safeguard-that-validated-invented-names",
+    "title": "Cleaning, Structuring and Grounding Historical Data",
+    "section": "A safeguard that validated invented names",
+    "text": "A safeguard that validated invented names\nTropical’s profile builder checked that a model-supplied given name was “printed in the article”. It accepted an initial as proof of a full name.\n\n\n\n\n\n\n\n\n\nProposed\nSource text\nBefore (v1)\nAfter (v2)\n\n\n\n\nJames Watt\nMr. J. Watt writes about tea.\nprinted\ninitials\n\n\nHenry Trimen\nMr. H. Trimen writes about tea.\nprinted\ninitials\n\n\nJohn Smith\nMr. John Smithson writes about tea.\nprinted\nnone\n\n\nHenry Trimen\n… HENRY TRIMEN. Royal Botanic Gardens\nprinted\nfull\n\n\n\nAcross the corpus: 889 “verified” expansions became hypotheses. The three probes are now tests.\nThe historian’s reason: a model that knows who “F. von Mueller” is has added outside knowledge to the record."
+  },
+  {
+    "objectID": "slides.html#a-mixed-profile-is-not-one-person",
+    "href": "slides.html#a-mixed-profile-is-not-one-person",
+    "title": "Cleaning, Structuring and Grounding Historical Data",
+    "section": "A mixed profile is not one person",
+    "text": "A mixed profile is not one person\nThe merge said a MIXED verdict leaves the identifier empty. A fallback filled it from the Colonial Office List anyway.\nTwo profiles the model had explicitly called two people left the pipeline with one identifier each, “high” confidence.\n\nFix: one identity gate. MIXED asserts nothing and is flagged for splitting. NONE and UNSURE keep the identifier as a candidate. Tests name both cases.\nA valid identifier does not make a mixed profile valid."
+  },
+  {
+    "objectID": "slides.html#after-a-revision-check-three-things",
+    "href": "slides.html#after-a-revision-check-three-things",
+    "title": "Cleaning, Structuring and Grounding Historical Data",
+    "section": "After a revision, check three things",
+    "text": "After a revision, check three things\n\nThe cases the change was meant to fix.\nThe previously accepted cases that changed. In the Tropical rebuild this was the larger group.\nWhether the rule is now a test.\n\nA model can do all three. Deciding the original was wrong, and why, was the historian’s work."
+  },
+  {
+    "objectID": "slides.html#trimen-across-three-collections",
+    "href": "slides.html#trimen-across-three-collections",
+    "title": "Cleaning, Structuring and Grounding Historical Data",
+    "section": "Trimen across three collections",
+    "text": "Trimen across three collections\n\n\n\n\n\n\n\n\nCollection\nHolds\nLink made by\n\n\n\n\nColonial Office List graph\nThree career events, seven editions\nBuilt from the List\n\n\nTropical Agriculturist profiles\nP000001: 863 records, 779 articles, 1881–1944\nRules: name, dates, occupation words\n\n\nWikidata\nQ2462643, 1843–1896\nRetrieved and read\n\n\nThis packet\nFour attributed claims; 24 catalogued letters\nRead from the passages\n\n\n\n\n\nThe links are automated. No human decision recorded.\nAgreement is not independence: the CO List graph carries Wikidata links the Tropical matcher can inherit.\n863 is not an occurrence count. 1944 is a retrospective article."
+  },
+  {
+    "objectID": "slides.html#the-trimens-who-never-existed",
+    "href": "slides.html#the-trimens-who-never-existed",
+    "title": "Cleaning, Structuring and Grounding Historical Data",
+    "section": "The Trimens who never existed",
+    "text": "The Trimens who never existed\n\n\nOCR: “BY J. L. TRIMEN, F.R.S.”\n\n\nOCR: “confirmed by Mr. L. J. L. Trimen, who certainly ought to be the best authority …”\n\n\nTwo profiles, two records each. The pipeline rightly did not merge them into Henry. It could not know they were not people. Rare, odd name forms: look at the page before you count or link them."
+  },
+  {
+    "objectID": "slides.html#rules-that-saved-the-research-projects-trouble",
+    "href": "slides.html#rules-that-saved-the-research-projects-trouble",
+    "title": "Cleaning, Structuring and Grounding Historical Data",
+    "section": "Rules that saved the research projects trouble",
+    "text": "Rules that saved the research projects trouble\n\nLocal identifiers first. External ones only after retrieval and review. No suitable item? Keep the local id.\nNo identifiers from memory. Anything not retrieved by a tool is unverified.\nSeparate structuring from grounding, and both from modern classification. An 1883 plant name is a historical usage; what Kew calls it today is another record.\nModel decisions and human decisions in different columns. Fingerprint the data the decisions were made on.\nMake the correction a test.\nReport what the sample supports. Handpicked cases explain failure modes. They are not an accuracy rate."
+  },
+  {
+    "objectID": "slides.html#what-to-take-away",
+    "href": "slides.html#what-to-take-away",
+    "title": "Cleaning, Structuring and Grounding Historical Data",
+    "section": "What to take away",
+    "text": "What to take away\nDescribe a small extraction task to a model, and inspect what comes back against the source.\nTell a candidate identity from a supported match, and say what evidence made the difference.\nTurn one correction into a rule, a check or a review step for the rest of the collection.\n\njimclifford.ca/trimen-workshop — pages, saved outputs, the exercise, worked answers, a guide for your own data. Source and code on GitHub.\n\nQuestions. Chat monitor reads out the Zoom summaries on R2 and R3."
   },
   {
     "objectID": "steps/02-structure-extract.html",
@@ -439,5 +614,12 @@
     "title": "6. Connect collections",
     "section": "What the connection enables",
     "text": "What the connection enables\nFrom Trimen’s dispute the network opens outward: Howard and Moens; the planters Christie and Agar; McIvor and Ledger as sources of seed; Peradeniya, Kew and the Java plantations; Howards and Sons as the industrial consumer of the bark. The correspondence catalogue adds Thiselton-Dyer, Daniel Morris and Roland. The research packet holds these as candidate links with their evidence, all still awaiting review. None of it is required for the hour; all of it is where the question goes next.\nNext: 7. Your own data."
+  },
+  {
+    "objectID": "presenter.html#slides",
+    "href": "presenter.html#slides",
+    "title": "Presenter notes",
+    "section": "Slides",
+    "text": "Slides\nslides.html is the deck, with speaker notes (press S in the browser for the notes view). It follows the running order below; section headers mark the stage changes. The exercise URL is on the exercise slide and the closing slide."
   }
 ]

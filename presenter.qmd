@@ -13,6 +13,10 @@ subtitle: "Running order, checkpoints, and the room-plus-Zoom plan."
 - [ ] Check the RA review status in Tropical. The gold set was frozen on 6 October (fingerprint `14a933f83ec5`); the rating scale changed to 1–5 after that freeze. Confirm which version the RA has.
 - [ ] Put the site URL and the exercise URL on the first slide. Someone posts both in the Zoom chat at the start.
 
+## Slides
+
+[slides.html](slides.html) is the deck, with speaker notes (press `S` in the browser for the notes view). It follows the running order below; section headers mark the stage changes. The exercise URL is on the exercise slide and the closing slide.
+
 ## Running order
 
 | Min | Step | Live or saved | Checkpoint if behind |
