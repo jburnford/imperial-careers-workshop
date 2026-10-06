@@ -21,16 +21,16 @@ subtitle: "Running order, checkpoints, and the room-plus-Zoom plan."
 
 | Min | Step | Live or saved | Checkpoint if behind |
 |---|---|---|---|
-| 0–5 | [1. The question](steps/01-question.qmd) | One prepared Imperial Careers view; Trimen's Colonial Office List entries | Skip the atlas; show the table |
-| 5–20 | [2. Structure and extract](steps/02-structure-extract.qmd) | Live: the structure prompt, then the extraction prompt, on S04 and S03 | `outputs/01-structure/` and `outputs/02-extract/` from the rehearsal runs |
-| 20–30 | [3. Candidates](steps/03-candidates.qmd) | Live: the retrieval prompt for Trimen, Agar and Christie only | `outputs/03-candidates/candidates.md` |
-| 30–45 | [4. Review](steps/04-review.qmd) | Together: the editor's headnote versus Agar's letter; then the OCR check against the scan; direct the revision | The worked answers |
-| 45–55 | [Exercise](review/index.html) | Participants work through cases R1–R6; ask for show of hands and chat summaries on R2 and R3 | Reduce to R1–R3 |
-| 55–60 | [7. Your own data](steps/07-your-data.qmd) and questions | | |
+| 0–5 | [The page](steps/01-question.qmd) | Trimen's Colonial Office List entry; the letter on screen | Skip the atlas |
+| 5–20 | [Structure](steps/02-structure-extract.qmd) | Live: structure prompt, then extraction prompt, on S04 | `outputs/02-extract/` from the rehearsal runs; cut to it at minute 15 regardless |
+| 20–30 | [Ground](steps/03-candidates.qmd) | Live: retrieval for Trimen and Agar only | `outputs/03-candidates/candidates.md` |
+| 30–45 | [Clean, together](steps/04-review.qmd) | The editor versus the letter (structure decision), then the OCR against the scan (clean decision), then what the correction becomes | The worked answers |
+| 45–55 | [Exercise](review/index.html) | R3, R2, R1, R4; show of hands and chat summaries on R3 and R2 | Reduce to R3 and R2 |
+| 55–60 | [Your own data](steps/07-your-data.qmd) and questions | | |
 
-If the live extraction at 5–20 runs long, cut to the saved run at minute 15 regardless. The review discussion is the point of the hour.
+The deck follows this order; section headers mark Structure, Ground, Clean.
 
-## The consequential problem to find together
+## The two decisions to make together
 
 The editor's bracketed note above Agar's letter says that Howard "analyzed the bark" of the tree Trimen figured. Agar's letter says that bark from *some of these trees* went to Howard, and that the bark from *the tree itself* is in Agar's own possession. A model that follows the editor conflates the two. Neither rehearsal run did: run A recorded the editor's claim as the editor's and noted that which trees supplied the bark "is not stated beyond 'some of these trees'"; run B noted on the editor's affirmation that Agar only says the figured tree was "one of several". Show run A's bark record and ask the room whether they would have caught it if the model had not. If a live run in the room does conflate them, better still.
 

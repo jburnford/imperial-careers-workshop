@@ -1,0 +1,29 @@
+{
+  "model": "Qwen/Qwen3.8-27B-FP8",
+  "thinking": false,
+  "temperature": 0,
+  "turns": [
+    {
+      "prompt": "PROMPT_1 verbatim + passages",
+      "usage": {
+        "prompt_tokens": 1809,
+        "total_tokens": 3282,
+        "completion_tokens": 1473,
+        "prompt_tokens_details": null
+      },
+      "seconds": 57.3
+    },
+    {
+      "prompt": "PROMPT_2 verbatim + PROMPT_2_ADDITION",
+      "usage": {
+        "prompt_tokens": 3403,
+        "total_tokens": 6707,
+        "completion_tokens": 3304,
+        "prompt_tokens_details": null
+      },
+      "seconds": 128.7
+    }
+  ],
+  "records": 13,
+  "parse_error": ""
+}

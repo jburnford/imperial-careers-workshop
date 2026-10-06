@@ -1,6 +1,6 @@
 ---
-title: "3. Candidate identities"
-subtitle: "Minutes 20–30. Make the evidence behind a proposed link inspectable."
+title: "Ground"
+subtitle: "Minutes 20–30. Who is this? The model retrieves candidates with evidence; you decide supported, unresolved, or wrong."
 ---
 
 Records now have local identifiers (`henry`, `agar`, `illustrated_tree`). The next step proposes external identities for the people, so that this small dataset can connect to the Colonial Office List graph and to anything else that uses Wikidata identifiers.
@@ -37,4 +37,4 @@ Two sources of candidates:
 
 Keep the evidence for each match. Record unresolved cases as unresolved, with the searches that were run, so that nobody repeats them or mistakes "not found" for "does not exist".
 
-Next: [4. Review](04-review.qmd).
+Next: [Clean, together](04-review.qmd).

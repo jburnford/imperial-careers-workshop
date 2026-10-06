@@ -2,128 +2,128 @@
   {
     "objectID": "steps/07-your-data.html",
     "href": "steps/07-your-data.html",
-    "title": "7. Your own data",
+    "title": "Your own data",
     "section": "",
     "text": "The published session description invited you to bring messy historical datasets. An hour is not enough to work on them together, but the sequence transfers. Here is how to start, in the order that worked for the Tropical and Imperial Careers projects."
   },
   {
     "objectID": "steps/07-your-data.html#before-you-open-a-model",
     "href": "steps/07-your-data.html#before-you-open-a-model",
-    "title": "7. Your own data",
+    "title": "Your own data",
     "section": "Before you open a model",
     "text": "Before you open a model\n\nPick one question and one small sample. Twenty records you can check by hand beat two thousand you cannot. The sample should include at least one hard case.\nKeep the source reachable. Every record needs a reference that gets a reader back to the page: file, page, line or offset. If your text came from OCR, keep the page images available. You will need them.\nDecide what a record is. A person? A mention of a person? An event? The Tropical project’s “863 records” for Trimen are chunk-level extractions, not occurrences, and that distinction mattered later."
   },
   {
     "objectID": "steps/07-your-data.html#the-sequence",
     "href": "steps/07-your-data.html#the-sequence",
-    "title": "7. Your own data",
+    "title": "Your own data",
     "section": "The sequence",
     "text": "The sequence\n\n\n\n\n\n\n\n\nStep\nAsk the model to\nYou\n\n\n\n\nStructure\nRead the sample and propose fields, with two example records\nDecide what the question requires and what the source can support\n\n\nExtract\nProcess the sample, keep printed wording, put inferences in separate fields, save code and outputs, report failures\nInspect for omissions, invented details and changed meaning\n\n\nCandidates\nRetrieve identities with a verifiable lookup, save the evidence and the date\nJudge whether the identity fits the historical context\n\n\nReview\nBuild a side-by-side evidence table with accept / reject / unresolved and a reason field\nDecide, and write the reason\n\n\nRevise\nFind other records with the same problem, propose a fix, rerun the sample, show what changed\nCheck the fix and look for new errors before scaling up\n\n\n\nThe draft prompts on step 2 are a starting point. Adapt the nouns."
   },
   {
     "objectID": "steps/07-your-data.html#rules-that-saved-the-research-projects-trouble",
     "href": "steps/07-your-data.html#rules-that-saved-the-research-projects-trouble",
-    "title": "7. Your own data",
+    "title": "Your own data",
     "section": "Rules that saved the research projects trouble",
     "text": "Rules that saved the research projects trouble\n\nLocal identifiers first. Give every record a stable local id before any external identifier. Add a Wikidata link only after retrieval and review support it. If nothing suitable exists, keep the local id; do not invent one.\nNo identifiers from memory. A model will offer plausible Q-numbers. Treat any identifier that was not retrieved by a tool as unverified. The earlier workshop has a longer note on this.\nSeparate structuring from grounding, and both from modern classification. A plant name in 1883 is a historical usage; what Kew calls that plant today is a separate record.\nModel decisions and human decisions in different columns. Never overwrite the one with the other. The Tropical review page exports the human decisions with a dataset fingerprint so they cannot be attached to the wrong version of the data.\nMake the correction a test. When a review finds a defect, the probe that found it becomes a regression test. Tropical’s three name probes are now in its test suite.\nReport what the sample can support. Handpicked cases explain failure modes. A stratified sample measures precision for one stratum. Neither measures recall."
   },
   {
-    "objectID": "steps/07-your-data.html#tools",
-    "href": "steps/07-your-data.html#tools",
-    "title": "7. Your own data",
-    "section": "Tools",
-    "text": "Tools\nThe presenter’s environment uses Claude Code as the coding agent and the WikidataMCP server for lookups. Any coding agent that can run code, read files and call a lookup tool will do. See Run it yourself for the setup used here, and for what is still to be confirmed about costs."
+    "objectID": "steps/07-your-data.html#tools-and-what-they-cost-at-scale",
+    "href": "steps/07-your-data.html#tools-and-what-they-cost-at-scale",
+    "title": "Your own data",
+    "section": "Tools, and what they cost at scale",
+    "text": "Tools, and what they cost at scale\nTwo different jobs need two different kinds of model.\n\nThe agent that writes the pipeline reads your sample, proposes the structure, writes and tests the script, and builds the review view. This is a few hours of a frontier model’s time per project. The saved runs A and B used Claude Sonnet 5.5 and Claude Fable 5.1 in Claude Code.\nThe model inside the pipeline reads every chunk of the collection. At tens of thousands of articles the frontier models are too expensive. The Tropical project’s extraction over 53,000 articles used Qwen3.8-27B-FP8 served by vLLM on a shared university GPU, and run C in outputs/02-extract/ is the same model on the same two passages, so you can compare what the cheap model does with the same prompts.\n\nThe agent can write the pipeline so that the cheap model does the reading and the agent is only called back when something fails. Which operation produced a given record should remain visible in the output.\nThe presenter’s environment uses Claude Code as the coding agent and the WikidataMCP server for lookups. Any coding agent that can run code, read files and call a lookup tool will do. See Run it yourself for the setup used here, and for what is still to be confirmed about costs."
   },
   {
     "objectID": "steps/05-revise.html",
     "href": "steps/05-revise.html",
-    "title": "5. Revise the process",
+    "title": "Further: what a correction becomes",
     "section": "",
     "text": "The review has produced a decision with a reason. The reason is the valuable part: it tells the model what class of error to look for. The prompt:"
   },
   {
     "objectID": "steps/05-revise.html#two-revisions-that-actually-happened",
     "href": "steps/05-revise.html#two-revisions-that-actually-happened",
-    "title": "5. Revise the process",
+    "title": "Further: what a correction becomes",
     "section": "Two revisions that actually happened",
     "text": "Two revisions that actually happened\nBoth are in outputs/05-revise/README.md. They were not staged for the workshop; they are what the research projects did on 6 October 2026.\nA safeguard that validated invented names. Tropical’s profile builder accepted a printed initial as proof that a full given name was “in the article”. Three probes against the old code accepted James Watt for Mr. J. Watt, Henry Trimen for Mr. H. Trimen, and John Smith for Mr. John Smithson. The historian’s reason: a model that knows who “F. von Mueller” probably is has added outside knowledge to the record, and that must be kept apart from what the source prints. The fix returns a status instead of a yes: full, initials or none. Across the corpus, 889 expansions moved from “verified” to “hypothesis”. The three probes became regression tests.\nA mixed profile is not one person. The merge that built the authority table was supposed to leave the identifier empty when a model judged a profile MIXED. A fallback filled it anyway from the Colonial Office List. Two profiles that the model had explicitly called two people left the pipeline with one identifier each at “high” confidence. The fix is a single identity gate that says what a profile may assert and what remains a candidate, with tests that name the two cases.\nAnd one from this packet. The exercise letter’s OCR was wrong in two sentences. The extraction model flagged both as uncertain and then guessed at the intended wording. Both guesses were wrong. The rule that follows: an uncertain reading is not data until someone has looked at the page, and a model’s guess is not a reading."
   },
   {
     "objectID": "steps/05-revise.html#what-to-check-after-a-revision",
     "href": "steps/05-revise.html#what-to-check-after-a-revision",
-    "title": "5. Revise the process",
+    "title": "Further: what a correction becomes",
     "section": "What to check after a revision",
     "text": "What to check after a revision\n\nThe cases the change was meant to fix.\nThe previously accepted cases that changed. In the Tropical v2 rebuild this was the larger group.\nWhether the new rule is now a test, so the error cannot come back when the code is next edited.\n\nA model can do all three of these checks. Deciding that the original result was wrong, and why, was the historian’s work."
   },
   {
     "objectID": "steps/05-revise.html#what-a-second-model-can-and-cannot-do",
     "href": "steps/05-revise.html#what-a-second-model-can-and-cannot-do",
-    "title": "5. Revise the process",
+    "title": "Further: what a correction becomes",
     "section": "What a second model can and cannot do",
-    "text": "What a second model can and cannot do\nA second model can review the first model’s output and find problems. Its agreement is not historical confirmation: two models reading the editor’s headnote will agree with the editor. Review a mixture of uncertain cases and apparently successful ones. Handpicked workshop cases explain failure modes; they do not establish an accuracy rate.\nNext: 6. Connect collections."
+    "text": "What a second model can and cannot do\nA second model can review the first model’s output and find problems. Its agreement is not historical confirmation: two models reading the editor’s headnote will agree with the editor. Review a mixture of uncertain cases and apparently successful ones. Handpicked workshop cases explain failure modes; they do not establish an accuracy rate.\nNext: Connecting collections."
   },
   {
     "objectID": "steps/03-candidates.html",
     "href": "steps/03-candidates.html",
-    "title": "3. Candidate identities",
+    "title": "Ground",
     "section": "",
     "text": "Records now have local identifiers (henry, agar, illustrated_tree). The next step proposes external identities for the people, so that this small dataset can connect to the Colonial Office List graph and to anything else that uses Wikidata identifiers.\nTwo sources of candidates:"
   },
   {
     "objectID": "steps/03-candidates.html#the-prompt",
     "href": "steps/03-candidates.html#the-prompt",
-    "title": "3. Candidate identities",
+    "title": "Ground",
     "section": "The prompt",
     "text": "The prompt\n\nLook up candidate identities for these people using the configured Wikidata tools and the supplied Colonial Office List records. Save the retrieved evidence and lookup date. For each candidate, show what supports the match, what conflicts, and what is missing. Leave unresolved cases unresolved. Do not generate QIDs from memory."
   },
   {
     "objectID": "steps/03-candidates.html#saved-output",
     "href": "steps/03-candidates.html#saved-output",
-    "title": "3. Candidate identities",
+    "title": "Ground",
     "section": "Saved output",
     "text": "Saved output\noutputs/03-candidates/candidates.md (also CSV and JSON) was generated by scripts/build_candidates.py from the full Wikidata responses cached in the research packet. Every QID on it was retrieved on 6 October 2026, with the timestamp recorded. A summary:\n\n\n\nPrinted in the source\nCandidate\nSupports\nConflicts or missing\n\n\n\n\n“Dr. Trimen”; signed “HENRY TRIMEN”, Royal Botanic Gardens, Peradeniya\nQ2462643 Henry Trimen, British botanist, 1843–1896\nFull signature; Peradeniya address; Colonial Office List: director, Royal Botanical Gardens, Ceylon, 1880\nA brother, Roland Trimen (Q932702), also appears in both collections\n\n\n“Mr. Howard”, “Mr. J. E. Howard”; signed “JOHN ELIOT HOWARD” in 1881\nQ3181423 John Eliot Howard, British chemist, 1807–1883\nFull signature in 1881; quinology context\nDies in November 1883, within the dispute. Later “Howard” mentions need checking\n\n\n“Mr. Moens”\nQ21340893 Bernelot Moens, botanist, 1837–1886\nJava cinchona context; “Director of the Government Cinchona Plantations in Java” elsewhere in the journal\nOnly a surname is printed; the item’s given names differ between languages\n\n\n“McIvor’s seed”\nQ21520254 William Graham McIvor, 1824–1876\nNilgiri cinchona context\nSurname only; dead by 1883 (the seed is historical)\n\n\n“Ledger’s original seed”\nQ963818 Charles Ledger\nCinchona seed history\nSurname only\n\n\nSigned “WALTER AGAR”, Lawrence, June 22nd, 1883\nnone\n\nSearches for “Walter Agar” and “Walter Agar Ceylon planter” return no plausible item\n\n\nSigned “THOS. NORTH CHRISTIE”, St. Andrew’s, Maskeliya\nnone\n\nThree searches return no plausible item. Not the “Mr. T. Christy” whose seedlings he criticises\n\n\n“Mr. Campbell”\nnone\n\nSurname only; S03 has a “J. A. Campbell”. Same person? Not established"
   },
   {
     "objectID": "steps/03-candidates.html#three-questions-to-keep-separate",
     "href": "steps/03-candidates.html#three-questions-to-keep-separate",
-    "title": "3. Candidate identities",
+    "title": "Ground",
     "section": "Three questions to keep separate",
-    "text": "Three questions to keep separate\n\nDoes the identifier resolve to the retrieved entity? We only show QIDs we fetched. A Q-number supplied from a model’s memory is not a lookup.\nIs that entity the one described in this source? Name, type, dates, geography, activity. A real item can still be the wrong person.\nWhat does the connection assert? Linking “Dr. Trimen” in S04 to Q2462643 asserts that this mention refers to that man. It does not assert that every statement on the Wikidata item is true, or that the 1883 “Ceylon” is the modern state.\n\nKeep the evidence for each match. Record unresolved cases as unresolved, with the searches that were run, so that nobody repeats them or mistakes “not found” for “does not exist”.\nNext: 4. Review."
+    "text": "Three questions to keep separate\n\nDoes the identifier resolve to the retrieved entity? We only show QIDs we fetched. A Q-number supplied from a model’s memory is not a lookup.\nIs that entity the one described in this source? Name, type, dates, geography, activity. A real item can still be the wrong person.\nWhat does the connection assert? Linking “Dr. Trimen” in S04 to Q2462643 asserts that this mention refers to that man. It does not assert that every statement on the Wikidata item is true, or that the 1883 “Ceylon” is the modern state.\n\nKeep the evidence for each match. Record unresolved cases as unresolved, with the searches that were run, so that nobody repeats them or mistakes “not found” for “does not exist”.\nNext: Clean, together."
   },
   {
     "objectID": "steps/01-question.html",
     "href": "steps/01-question.html",
-    "title": "1. The question",
+    "title": "The page",
     "section": "",
     "text": "The Imperial Careers project turned the Colonial Office List into a graph of people and career events. Here is what it holds for Henry Trimen, taken from the project’s stage-3 graph (person kgp_col1889-p554b20, attested in seven editions, 1883–1896):\n\n\n\n\n\n\n\n\n\nSeq\nPosition (as printed)\nPlace\nYears\n\n\n\n\n0\nlecturer on botany\nLondon (St. Mary’s Hospital)\n1867–1875\n\n\n1\nsenior assistant to department of botany\nBritish Museum\n1869–1879\n\n\n2\ndirector Royal Botanical Gardens\nCeylon\n1880–\n\n\n\nThe 1889 entry reads:\n\nTRIMEN, HENRY, M.B. (Lond.), F.R.S., F.L.S. —Formerly lecturer on botany at St. Mary’s Hospital, London, 1867 to 1875; was senior assistant to department of botany, British Museum, 1869 to 1879; director Royal Botanical Gardens, Ceylon, Feb., 1880; author of numerous works and papers on pure and applied botany.\n\nAll seven editions are in the source pack. Notice what the List gives us: a name, a sequence of posts with dates and places, and a stable identity across editions. Notice what it does not give us: anything about what Trimen did, argued, or whom he worked with.\nPresenter: show one view from the Imperial Careers atlas here, chosen in advance. Keep it under two minutes."
   },
   {
     "objectID": "steps/01-question.html#start-from-a-structured-collection",
     "href": "steps/01-question.html#start-from-a-structured-collection",
-    "title": "1. The question",
+    "title": "The page",
     "section": "",
     "text": "The Imperial Careers project turned the Colonial Office List into a graph of people and career events. Here is what it holds for Henry Trimen, taken from the project’s stage-3 graph (person kgp_col1889-p554b20, attested in seven editions, 1883–1896):\n\n\n\n\n\n\n\n\n\nSeq\nPosition (as printed)\nPlace\nYears\n\n\n\n\n0\nlecturer on botany\nLondon (St. Mary’s Hospital)\n1867–1875\n\n\n1\nsenior assistant to department of botany\nBritish Museum\n1869–1879\n\n\n2\ndirector Royal Botanical Gardens\nCeylon\n1880–\n\n\n\nThe 1889 entry reads:\n\nTRIMEN, HENRY, M.B. (Lond.), F.R.S., F.L.S. —Formerly lecturer on botany at St. Mary’s Hospital, London, 1867 to 1875; was senior assistant to department of botany, British Museum, 1869 to 1879; director Royal Botanical Gardens, Ceylon, Feb., 1880; author of numerous works and papers on pure and applied botany.\n\nAll seven editions are in the source pack. Notice what the List gives us: a name, a sequence of posts with dates and places, and a stable identity across editions. Notice what it does not give us: anything about what Trimen did, argued, or whom he worked with.\nPresenter: show one view from the Imperial Careers atlas here, chosen in advance. Keep it under two minutes."
   },
   {
     "objectID": "steps/01-question.html#take-the-question-to-an-unstructured-collection",
     "href": "steps/01-question.html#take-the-question-to-an-unstructured-collection",
-    "title": "1. The question",
+    "title": "The page",
     "section": "Take the question to an unstructured collection",
     "text": "Take the question to an unstructured collection\nThe Tropical Agriculturist (Colombo, from 1881) printed reports, letters and reprints for the planting community. The Tropical Agriculturist project has OCR text for about 53,500 articles. A search for articles mentioning both “Trimen” and “Howard” returns 72 of them. That is a discovery set, not 72 relationships.\nOur question for the hour:\n\nWho is Henry Trimen connected to in The Tropical Agriculturist, and what evidence supports those connections?\n\nWe will work with a handful of items from 1883, when the journal ran a dispute it headlined “The Wars of the Quinologists”:\n\n\n\nId\nItem\nWhy it is here\n\n\n\n\nS02\n“The Wars of the Quinologists”, July 1883, pp. 27–28\nThe editor frames a dispute among Howard, Trimen and Moens\n\n\nS03\n“Dr. Trimen’s Ledgeriana: Mr. T. N. Christie to the Rescue”, July 1883, p. 37\nA planter traces the illustrated tree’s seed and nursery\n\n\nS04\n“Dr. Trimen’s Typical Ledgeriana Tree”, July 1883, p. 66\nWalter Agar’s 234-word letter. The exercise passage.\n\n\nS05, S06\n“The Cinchona Calisaya (or Ledgeriana) Discussion” and “The Botany of Cinchona Ledgeriana”, December 1883, pp. 453–455\nTrimen’s reply, signed from Peradeniya, with the competing identifications\n\n\nS01\n“Mr. Eliot Howard Extinguishing C. Pubescentis How.”, July 1881, pp. 114–115\nOptional: Howard rejects a species name credited to him\n\n\n\nWe begin after OCR. Other sessions cover OCR production. The page images stay one click away, and you will need them."
   },
   {
     "objectID": "steps/01-question.html#ten-years-ago",
     "href": "steps/01-question.html#ten-years-ago",
-    "title": "1. The question",
+    "title": "The page",
     "section": "Ten years ago",
     "text": "Ten years ago\nThe problems in this hour are not new. Trading Consequences (2012–2013) text-mined 10.5 million scanned pages of nineteenth-century British sources for commodities, places and dates: historians at Saskatchewan and York, computational linguists at Edinburgh, a database team at EDINA, visualisation at St Andrews, funded by Digging into Data. The write-up is Clifford, Alex, Coates, Klein and Watson, “Geoparsing history: Locating commodities in ten million pages of nineteenth-century sources”, Historical Methods 49:3 (2016), 115–131, doi:10.1080/01615440.2015.1116419. Its difficulties are the same three we will work on, at a scale and cost that is worth remembering:\n\n\n\n\n\n\n\n\n\nTrading Consequences, 2013\nThis hour\n\n\n\n\nCleaning\nOCR turned “lime” into “time” and “line”, long-s “salt” into “fait”; tables collapsed into 210-word “sentences” that linked “glass, glue and gelatine” to every country in a trade return. Fixes were hand-built: a hyphenation joiner, an f-to-s lexicon, a filter for table-heavy documents. 14.9% of locations in the gold standard contained OCR errors.\nTwo sentences of a 234-word letter are wrong in the OCR, in ways that reverse the meaning. The model flags them; the page settles them (case R3).\n\n\nStructuring\nA six-stage pipeline (format conversion, OCR post-correction, linguistic pre-processing, named-entity recognition, attribute recognition, relation extraction), adapted from the Edinburgh Geoparser by computational linguists. A relation was “same sentence”. A commodity lexicon had to be bootstrapped from customs records and Wikipedia because no expert list existed.\nThe coding agent proposes the fields, writes the script and reports failures in minutes (step 2). The historian still decides what a record is.\n\n\nGrounding\nGeoNames string matching with geographic coherence scoring. “Saharunpore” was not found because the gazetteer only knew “Saharanpur”; “British West India Islands” grounded to West India; a bug placed every “Italy” in a Texan town. Final F-scores: 0.62 for commodities, 0.61 for locations. Two trained annotators agreed on what counted as a commodity only 72% of the time.\nSemantic search over Wikidata plus statement reading, cached with timestamps (step 3). Walter Agar still is not there (case R4). Entities absent from the authority, and plausible wrong matches, are the same problem with a better search box.\n\n\nReview\nHistorians spotted false positives through the visualisations (“Saumur” as a place in a wine list); false negatives were invisible. A gold standard of double-annotated documents measured precision and recall.\nSame two lessons: errors you can see get fixed, errors you cannot see need a sample; and a corrected error should become a rule (step 5).\n\n\n\nWhat changed is who writes the pipeline and how fast the loop from error to fix runs. What did not change is where historical judgment is needed. The paper’s closing advice to historians, that they should build the lexicons, gazetteers and structured data that software developers will not, is the premise of the exercise."
   },
   {
     "objectID": "steps/01-question.html#why-this-example",
     "href": "steps/01-question.html#why-this-example",
-    "title": "1. The question",
+    "title": "The page",
     "section": "Why this example",
-    "text": "Why this example\nThe dispute is small enough to read in the hour and rich enough to contain every kind of decision the workflow needs:\n\na person with a strong identity (Trimen) and people with none in any authority file (Agar, Christie);\na relationship the source states carefully and the journal’s own editor states loosely;\nplant names that a modern authority treats differently from the 1883 participants;\nan OCR error that reverses a sentence’s meaning.\n\nNext: 2. Structure and extract."
+    "text": "Why this example\nThe dispute is small enough to read in the hour and rich enough to contain every kind of decision the workflow needs:\n\na person with a strong identity (Trimen) and people with none in any authority file (Agar, Christie);\na relationship the source states carefully and the journal’s own editor states loosely;\nplant names that a modern authority treats differently from the 1883 participants;\nan OCR error that reverses a sentence’s meaning.\n\nNext: Structure."
   },
   {
     "objectID": "setup.html",
@@ -152,6 +152,13 @@
     "title": "Run it yourself",
     "section": "Rebuilding the tables",
     "text": "Rebuilding the tables\npython3 scripts/build_trimen_workshop.py   # research packet CSV/JSON from the frozen search extract\npython3 scripts/build_candidates.py        # candidate evidence from the cached Wikidata responses\npython3 scripts/build_source_pack.py       # participant source pack\npython3 scripts/build_review_cases.py      # cases.json for the exercise\nNone of these touch the network."
+  },
+  {
+    "objectID": "setup.html#running-the-extraction-with-a-local-open-model",
+    "href": "setup.html#running-the-extraction-with-a-local-open-model",
+    "title": "Run it yourself",
+    "section": "Running the extraction with a local open model",
+    "text": "Running the extraction with a local open model\noutputs/02-extract/run-C/02_extract.py sends the two prompts to any OpenAI-compatible server (the saved run used Qwen3.8-27B-FP8 under vLLM on the University of Saskatchewan’s Plato cluster; scripts/plato_qwen_extract.slurm is the job). Point it at your own server:\npython3 outputs/02-extract/run-C/02_extract.py --base-url http://127.0.0.1:8000/v1 --model &lt;served-name&gt; --sources source-pack --out /tmp/runC\nThe model in this mode is not an agent: it returns the records as JSON and the script saves them. That is the shape of a production pipeline, where the agent writes the script once and the cheap model runs inside it."
   },
   {
     "objectID": "setup.html#running-the-live-steps-with-your-own-agent",
@@ -217,46 +224,46 @@
     "text": "These are the preparer’s answers with the evidence. They are not the research project’s verdicts: every human-review field in the Tropical pipeline and in the research packet is still pending, and these pages do not change that."
   },
   {
-    "objectID": "answers.html#r1.-dr.-trimen-henry-trimen-is-q2462643",
-    "href": "answers.html#r1.-dr.-trimen-henry-trimen-is-q2462643",
+    "objectID": "answers.html#r3-clean.-the-ocr-reading-does-not-stand",
+    "href": "answers.html#r3-clean.-the-ocr-reading-does-not-stand",
     "title": "Worked answers",
-    "section": "R1. “Dr. Trimen” / “HENRY TRIMEN” is Q2462643",
-    "text": "R1. “Dr. Trimen” / “HENRY TRIMEN” is Q2462643\nAccept, for the 1883 mentions signed from Peradeniya. The December 1883 cover letter is signed in full and dated from the Royal Botanic Gardens, Peradeniya. The Colonial Office List has one Henry Trimen, director of the Royal Botanical Gardens, Ceylon, from February 1880. The Wikidata item, retrieved and read, is a botanist born 1843, died 1896. The name, post, place and dates agree.\nWhat the acceptance covers: these mentions. It does not by itself cover every “Trimen” in the journal. Roland Trimen, Henry’s brother, is in both collections too, and the Tropical pipeline found two more “Trimens” who turned out to be OCR errors for Howard and Ledger (step 6). A supported identity is a decision about a mention, made on evidence that would not transfer to “Mr. Trimen” in a different year."
+    "section": "R3 (Clean). The OCR reading does not stand",
+    "text": "R3 (Clean). The OCR reading does not stand\nReject the reading. The scan of p. 66 reads: “The trees were only about 4½ years old from the time the plants were put out, and were growing in a bad situation and not robust.” The OCR’s “were now in a full condition and in flower” is an invention of the OCR model, not a misread of a few characters. The next sentence is also wrong in the OCR: the scan reads “I have many plants from the seed of the specimen tree as well as the others that Mr. Moens declared to be true Ledgerianas”, not “prints of the leaves”.\nBoth extraction runs flagged these sentences as uncertain. Both guessed at the intended wording. All the guesses were wrong. The flag was the useful output; the page was the only way to resolve it.\nThe corrected transcription is in the source pack with the list of differences."
   },
   {
-    "objectID": "answers.html#r2.-howard-did-not-analyse-the-illustrated-trees-bark",
-    "href": "answers.html#r2.-howard-did-not-analyse-the-illustrated-trees-bark",
+    "objectID": "answers.html#r2-structure.-howard-did-not-analyse-the-illustrated-trees-bark",
+    "href": "answers.html#r2-structure.-howard-did-not-analyse-the-illustrated-trees-bark",
     "title": "Worked answers",
-    "section": "R2. Howard did not analyse the illustrated tree’s bark",
-    "text": "R2. Howard did not analyse the illustrated tree’s bark\nReject the relationship as proposed. Agar’s letter is explicit twice over. The bark Howard analysed came from “some of these trees”, the group at Mahanilu that Moens and Trimen saw in flower. The bark of “the tree itself” is in Agar’s possession, “taken when it was dying”, and no analysis of it is mentioned. The editor’s headnote, which says Howard gave testimony “after having analyzed the bark” of the figured tree, is the editor’s summary and it overstates the letter.\nThe correct records are two: Howard analysed bark from the neighbouring trees (asserted by Agar); Agar holds bark from the illustrated tree (asserted by Agar). The research packet has them as claims C09, C10 and C11.\nWhy it is consequential: the dispute was whether that tree was a true Ledgeriana. If the dataset says Howard’s 7 per cent quinine result belongs to it, the dataset has settled the dispute on evidence that does not exist. Christie’s letter (S03) makes a related but different claim: the figured tree and the analysed trees were raised from the same seed in the same nursery bed. That is an argument from provenance, and it is Christie’s.\nWhat remains open: whether “some of these trees” included the figured tree is not stated. Agar’s wording (“the bark from the tree itself” set against “the bark of some of these trees”) implies not, but does not say so."
+    "section": "R2 (Structure). Howard did not analyse the illustrated tree’s bark",
+    "text": "R2 (Structure). Howard did not analyse the illustrated tree’s bark\nReject the relationship as proposed. Agar’s letter is explicit twice over. The bark Howard analysed came from “some of these trees”, the group at Mahanilu that Moens and Trimen saw in flower. The bark of “the tree itself” is in Agar’s possession, “taken when it was dying”, and no analysis of it is mentioned. The editor’s headnote, which says Howard gave testimony “after having analyzed the bark” of the figured tree, is the editor’s summary and it overstates the letter.\nThe correct records are two: Howard analysed bark from the neighbouring trees (asserted by Agar); Agar holds bark from the illustrated tree (asserted by Agar). The research packet has them as claims C09, C10 and C11.\nWhy it is consequential: the dispute was whether that tree was a true Ledgeriana. If the dataset says Howard’s 7 per cent quinine result belongs to it, the dataset has settled the dispute on evidence that does not exist. Christie’s letter (S03) makes a related but different claim: the figured tree and the analysed trees were raised from the same seed in the same nursery bed. That is an argument from provenance, and it is Christie’s.\nWhat remains open: whether “some of these trees” included the figured tree is not stated. Agar’s wording (“the bark from the tree itself” set against “the bark of some of these trees”) implies not, but does not say so."
   },
   {
-    "objectID": "answers.html#r3.-the-ocr-reading-does-not-stand",
-    "href": "answers.html#r3.-the-ocr-reading-does-not-stand",
+    "objectID": "answers.html#r1-ground.-dr.-trimen-henry-trimen-is-q2462643",
+    "href": "answers.html#r1-ground.-dr.-trimen-henry-trimen-is-q2462643",
     "title": "Worked answers",
-    "section": "R3. The OCR reading does not stand",
-    "text": "R3. The OCR reading does not stand\nReject the reading. The scan of p. 66 reads: “The trees were only about 4½ years old from the time the plants were put out, and were growing in a bad situation and not robust.” The OCR’s “were now in a full condition and in flower” is an invention of the OCR model, not a misread of a few characters. The next sentence is also wrong in the OCR: the scan reads “I have many plants from the seed of the specimen tree as well as the others that Mr. Moens declared to be true Ledgerianas”, not “prints of the leaves”.\nBoth extraction runs flagged these sentences as uncertain. Both guessed at the intended wording. All the guesses were wrong. The flag was the useful output; the page was the only way to resolve it.\nThe corrected transcription is in the source pack with the list of differences."
+    "section": "R1 (Ground). “Dr. Trimen” / “HENRY TRIMEN” is Q2462643",
+    "text": "R1 (Ground). “Dr. Trimen” / “HENRY TRIMEN” is Q2462643\nAccept, for the 1883 mentions signed from Peradeniya. The December 1883 cover letter is signed in full and dated from the Royal Botanic Gardens, Peradeniya. The Colonial Office List has one Henry Trimen, director of the Royal Botanical Gardens, Ceylon, from February 1880. The Wikidata item, retrieved and read, is a botanist born 1843, died 1896. The name, post, place and dates agree.\nWhat the acceptance covers: these mentions. It does not by itself cover every “Trimen” in the journal. Roland Trimen, Henry’s brother, is in both collections too, and the Tropical pipeline found two more “Trimens” who turned out to be OCR errors for Howard and Ledger (step 6). A supported identity is a decision about a mention, made on evidence that would not transfer to “Mr. Trimen” in a different year."
   },
   {
-    "objectID": "answers.html#r4.-walter-agar-unresolved-keep-the-local-record",
-    "href": "answers.html#r4.-walter-agar-unresolved-keep-the-local-record",
+    "objectID": "answers.html#r4-ground.-walter-agar-unresolved-keep-the-local-record",
+    "href": "answers.html#r4-ground.-walter-agar-unresolved-keep-the-local-record",
     "title": "Worked answers",
-    "section": "R4. Walter Agar: unresolved, keep the local record",
-    "text": "R4. Walter Agar: unresolved, keep the local record\nUnresolved. Two vector searches, one with the name alone and one with “Ceylon planter”, returned nothing plausible: a politician named Sarger, the Agar family name, a zoologist born in 1882, a temple, a thickening agent. The right outcome is a local record agar with its evidence (the signature, the dateline “Lawrence”, the role in the Mahanilu planting) and a note of the searches run and their date, so that the next person does not repeat them or read “no result” as “no such person”.\nWhat would resolve it: a Ceylon directory or planters’ register entry for an Agar at Lawrence or Mahanilu in the early 1880s. The research pipeline has a planters’ registry match stage for exactly this."
+    "section": "R4 (Ground). Walter Agar: unresolved, keep the local record",
+    "text": "R4 (Ground). Walter Agar: unresolved, keep the local record\nUnresolved. Two vector searches, one with the name alone and one with “Ceylon planter”, returned nothing plausible: a politician named Sarger, the Agar family name, a zoologist born in 1882, a temple, a thickening agent. The right outcome is a local record agar with its evidence (the signature, the dateline “Lawrence”, the role in the Mahanilu planting) and a note of the searches run and their date, so that the next person does not repeat them or read “no result” as “no such person”.\nWhat would resolve it: a Ceylon directory or planters’ register entry for an Agar at Lawrence or Mahanilu in the early 1880s. The research pipeline has a planters’ registry match stage for exactly this."
   },
   {
-    "objectID": "answers.html#r5.-c.-pubescens-how.-is-not-simply-q164574",
-    "href": "answers.html#r5.-c.-pubescens-how.-is-not-simply-q164574",
+    "objectID": "answers.html#r5-ground-extra.-c.-pubescens-how.-is-not-simply-q164574",
+    "href": "answers.html#r5-ground-extra.-c.-pubescens-how.-is-not-simply-q164574",
     "title": "Worked answers",
-    "section": "R5. “C. pubescens How.” is not simply Q164574",
-    "text": "R5. “C. pubescens How.” is not simply Q164574\nReject the link as a plain identity; record a historical name usage. Howard’s 1881 letter says he is “credited with having created a new species of Cinchona, the ‘C. pubescens How.’” and goes on to reject the attribution: the plants so named are, in his view, something else. Mapping the string to the accepted species Cinchona pubescens records the opposite of what the letter says. The research packet keeps a separate record, pubescens_how, for the rejected usage, alongside the taxon name record for the accepted species.\nModern taxonomy is a separate layer again: Kew’s Plants of the World Online currently treats C. succirubra as a synonym of C. pubescens and C. ledgeriana as a synonym of C. calisaya. Those treatments are recorded in the packet’s taxonomy table with their date. They do not settle what Howard, Trimen or Moens meant by a name in 1883, nor which tree was which."
+    "section": "R5 (Ground, extra). “C. pubescens How.” is not simply Q164574",
+    "text": "R5 (Ground, extra). “C. pubescens How.” is not simply Q164574\nReject the link as a plain identity; record a historical name usage. Howard’s 1881 letter says he is “credited with having created a new species of Cinchona, the ‘C. pubescens How.’” and goes on to reject the attribution: the plants so named are, in his view, something else. Mapping the string to the accepted species Cinchona pubescens records the opposite of what the letter says. The research packet keeps a separate record, pubescens_how, for the rejected usage, alongside the taxon name record for the accepted species.\nModern taxonomy is a separate layer again: Kew’s Plants of the World Online currently treats C. succirubra as a synonym of C. pubescens and C. ledgeriana as a synonym of C. calisaya. Those treatments are recorded in the packet’s taxonomy table with their date. They do not settle what Howard, Trimen or Moens meant by a name in 1883, nor which tree was which."
   },
   {
-    "objectID": "answers.html#r6.-mr.-t.-christy-and-thos.-north-christie-are-different-people",
-    "href": "answers.html#r6.-mr.-t.-christy-and-thos.-north-christie-are-different-people",
+    "objectID": "answers.html#r6-ground-extra.-mr.-t.-christy-and-thos.-north-christie-are-different-people",
+    "href": "answers.html#r6-ground-extra.-mr.-t.-christy-and-thos.-north-christie-are-different-people",
     "title": "Worked answers",
-    "section": "R6. “Mr. T. Christy” and “Thos. North Christie” are different people",
-    "text": "R6. “Mr. T. Christy” and “Thos. North Christie” are different people\nReject the merge. The author writes about “Mr. T. Christy’s Bolivian calisaya seedlings” in the third person and criticises Howard for identifying them as Ledgerianas. The author signs “THOS. NORTH CHRISTIE” from an estate in Maskeliya; the Christy seedlings are Bolivian and reach Howard in England. One letter of spelling distance is well within OCR error, which is why this case exists: spelling similarity would merge them, and the text keeps them apart.\nBoth extraction runs kept them separate without being told to. Run B supplied, from memory and marked unverified, “Thomas Christy, London drug merchant” for Mr. T. Christy. That is a plausible candidate and it is not evidence; the searches run on 6 October found no Wikidata item for either man."
+    "section": "R6 (Ground, extra). “Mr. T. Christy” and “Thos. North Christie” are different people",
+    "text": "R6 (Ground, extra). “Mr. T. Christy” and “Thos. North Christie” are different people\nReject the merge. The author writes about “Mr. T. Christy’s Bolivian calisaya seedlings” in the third person and criticises Howard for identifying them as Ledgerianas. The author signs “THOS. NORTH CHRISTIE” from an estate in Maskeliya; the Christy seedlings are Bolivian and reach Howard in England. One letter of spelling distance is well within OCR error, which is why this case exists: spelling similarity would merge them, and the text keeps them apart.\nBoth extraction runs kept them separate without being told to. Run B supplied, from memory and marked unverified, “Thomas Christy, London drug merchant” for Mr. T. Christy. That is a plausible candidate and it is not evidence; the searches run on 6 October found no Wikidata item for either man."
   },
   {
     "objectID": "answers.html#the-pattern",
@@ -270,42 +277,42 @@
     "href": "index.html",
     "title": "Cleaning and Structuring Historical Data: A Working Session",
     "section": "",
-    "text": "Draft\n\n\n\nThese pages are a working draft prepared for Jim Clifford’s review. Source and data: github.com/jburnford/trimen-workshop. Facts about the sources have been checked where a page says so; everything else is a proposal."
+    "text": "Draft\n\n\n\nWorking draft for Jim Clifford’s review. Source and data: github.com/jburnford/trimen-workshop. Facts about the sources have been checked where a page says so; everything else is a proposal."
   },
   {
-    "objectID": "index.html#the-question",
-    "href": "index.html#the-question",
+    "objectID": "index.html#three-questions",
+    "href": "index.html#three-questions",
     "title": "Cleaning and Structuring Historical Data: A Working Session",
-    "section": "The question",
-    "text": "The question\nHenry Trimen was Director of the Royal Botanic Gardens at Peradeniya, Ceylon, from 1880. He appears in the Colonial Office List every year from 1883 to 1896, and in The Tropical Agriculturist, a Colombo planters’ monthly, hundreds of times.\nWho is Trimen connected to in The Tropical Agriculturist, and what evidence supports those connections?\nIn 1883 the journal printed a public quarrel between Trimen and the London quinine manufacturer John Eliot Howard about whether a cinchona tree Trimen had illustrated was a true Cinchona ledgeriana. The letters name planters, seed suppliers, botanical gardens, bark samples and chemical analyses. They are a small, dense example of what historians want from a text collection: people, things and actions, connected, with sources."
+    "section": "Three questions",
+    "text": "Three questions\nA historian turning a text into data asks three questions of it, and each has one decision only the historian can make. A model can do everything around that decision.\n\n\n\n\n\n\n\n\n\n\nThe question\nThe model does\nYou decide\n\n\n\n\nClean\nIs this what the page says?\nFlags what reads oddly\nRead the page and rule\n\n\nStructure\nWhat is a record here?\nProposes fields, fills them, keeps the quotes\nWhat counts, and whether the record changed the meaning\n\n\nGround\nWho is this?\nRetrieves candidates with evidence\nSupported, unresolved, or wrong\n\n\n\nThat is the whole lesson. The hour illustrates it with one page."
   },
   {
-    "objectID": "index.html#what-we-will-do-in-the-hour",
-    "href": "index.html#what-we-will-do-in-the-hour",
+    "objectID": "index.html#one-page",
+    "href": "index.html#one-page",
     "title": "Cleaning and Structuring Historical Data: A Working Session",
-    "section": "What we will do in the hour",
-    "text": "What we will do in the hour\nThree things, in order: clean the source text (OCR against the page, printed wording kept apart from inference), structure it (records with local identifiers, saved code, reported failures), and ground it (candidate identities retrieved from Wikidata and the Colonial Office List, reviewed against evidence, so the records can connect to other collections).\nModels and coding agents will do most of the work: propose a record structure, extract records from the OCR text, write and save the code, retrieve candidate identities from Wikidata and from the Colonial Office List, and lay the evidence out for inspection. You will do the part that cannot be delegated: decide what a record means, check a consequential decision against the page, and direct a revision.\n\n\n\nMinutes\nStep\nWhat happens\n\n\n\n\n0–5\n1. The question\nTrimen’s career in the Colonial Office List; the question we take to the journal\n\n\n5–20\n2. Structure and extract\nStructuring: the model proposes a table, extracts records, saves a rerunnable script\n\n\n20–30\n3. Candidate identities\nGrounding: Wikidata and Colonial Office List lookups; a compact review view\n\n\n30–45\n4. Review\nCleaning and checking: we inspect results together, find a consequential error, and direct a fix\n\n\n45–55\nExercise\nYou record decisions on six cases, in the room or on Zoom\n\n\n55–60\n7. Your own data\nHow to take this to another collection\n\n\n\nEvery live stage has a saved checkpoint in outputs/. If a live step stalls we switch to the saved result and keep going."
+    "section": "One page",
+    "text": "One page\nWalter Agar’s letter, The Tropical Agriculturist, 2 July 1883, p. 66 (scan). Two hundred and thirty-four words from a planters’ quarrel about one cinchona tree. It contains:\n\na sentence the OCR got wrong in a way that reverses its meaning (clean);\na relationship the journal’s editor states loosely and Agar states carefully (structure);\na person with a strong identity, Henry Trimen, Director of the Royal Botanic Gardens at Peradeniya, and a person with none in any authority file, Agar himself (ground).\n\nYou do not need to know anything about cinchona. The dispute is context for thirty seconds."
+  },
+  {
+    "objectID": "index.html#the-hour",
+    "href": "index.html#the-hour",
+    "title": "Cleaning and Structuring Historical Data: A Working Session",
+    "section": "The hour",
+    "text": "The hour\n\n\n\nMinutes\n\n\n\n\n\n\n0–5\nThe page\nWhere Trimen comes from, and the letter\n\n\n5–20\nStructure\nThe model proposes a table and extracts records. Then you: did a careful statement become a flat one?\n\n\n20–30\nGround\nThe model retrieves candidates. Then you: supported, unresolved, or wrong?\n\n\n30–45\nClean, together\nThe OCR against the page, and what the correction becomes\n\n\n45–55\nExercise\nThree decisions, in the room or on Zoom\n\n\n55–60\nYour own data\nTaking the three questions to another collection\n\n\n\nEvery live stage has a saved checkpoint in outputs/."
   },
   {
     "objectID": "index.html#what-you-need",
     "href": "index.html#what-you-need",
     "title": "Cleaning and Structuring Historical Data: A Working Session",
     "section": "What you need",
-    "text": "What you need\nA browser. The exercise runs from saved results and needs no account, model subscription or API key. If you have a coding agent configured you can also run the example yourself, during the session or afterwards.\nRemote participants have the same evidence and the same exercise as the room. Post questions in the Zoom chat; the exercise page has a button that copies a one-line summary of your decisions for pasting into the chat."
+    "text": "What you need\nA browser. The exercise runs from saved results and needs no account or key. Remote participants have the same pages and the same exercise; the exercise page has a button that copies a one-line summary of your decisions for the Zoom chat."
   },
   {
-    "objectID": "index.html#what-you-should-be-able-to-do-afterwards",
-    "href": "index.html#what-you-should-be-able-to-do-afterwards",
+    "objectID": "index.html#further",
+    "href": "index.html#further",
     "title": "Cleaning and Structuring Historical Data: A Working Session",
-    "section": "What you should be able to do afterwards",
-    "text": "What you should be able to do afterwards\n\nDescribe a small extraction task to a model and inspect the records it returns against the source.\nTell a candidate identity from a supported match, and say what evidence made the difference.\nTurn a correction to one result into a rule, a check or a review step for the rest of a collection."
-  },
-  {
-    "objectID": "index.html#materials",
-    "href": "index.html#materials",
-    "title": "Cleaning and Structuring Historical Data: A Working Session",
-    "section": "Materials",
-    "text": "Materials\n\nSource pack: the OCR text of six 1881–1883 items, the scan-checked transcription of the exercise letter, Trimen’s Colonial Office List entries, and page links to the scans.\nSaved outputs for every stage, including the first attempts and the revised results.\nResearch packet: the wider Trimen network (49 entities, 14 attributed claims, 25 catalogued letters) for follow-up. Every human-review field in it is still pending.\nWorked answers, including the cases where more than one reading remains possible."
+    "section": "Further",
+    "text": "Further\nFor those who want to go on: what a correction becomes in a working pipeline, connecting collections through a shared identifier, worked answers, running it yourself, and the research packet for the wider network around Trimen. None of it is needed for the hour."
   },
   {
     "objectID": "presenter.html",
@@ -322,18 +329,25 @@
     "text": "Confirm with the organizer how remote questions reach the room, and who monitors the Zoom chat. Do not plan to read the chat while presenting.\nThe published description invites participants to “bring messy historical datasets” and mentions Britannica. Either send the organizer the revised wording in workshop-plan.md (section “Decisions still to make”) or open the session by saying that the hour works on the provided example and that Your own data is the take-home for their own datasets.\nDecide the agent, model and lookup configuration for the live steps, and record it on the setup page.\nTest the WikidataMCP endpoint from a non-campus network. Tropical’s notes record the public HTTP endpoint returning HTTP 429 after a few calls; the MCP endpoint ran at about 1.7 s per call.\nRehearse the hour against the clock with the saved checkpoints. Protect minutes 30–55.\nCheck the RA review status in Tropical. The gold set was frozen on 6 October (fingerprint 14a933f83ec5); the rating scale changed to 1–5 after that freeze. Confirm which version the RA has.\nPut the site URL and the exercise URL on the first slide. Someone posts both in the Zoom chat at the start."
   },
   {
+    "objectID": "presenter.html#slides",
+    "href": "presenter.html#slides",
+    "title": "Presenter notes",
+    "section": "Slides",
+    "text": "Slides\nslides.html is the deck, with speaker notes (press S in the browser for the notes view). It follows the running order below; section headers mark the stage changes. The exercise URL is on the exercise slide and the closing slide."
+  },
+  {
     "objectID": "presenter.html#running-order",
     "href": "presenter.html#running-order",
     "title": "Presenter notes",
     "section": "Running order",
-    "text": "Running order\n\n\n\nMin\nStep\nLive or saved\nCheckpoint if behind\n\n\n\n\n0–5\n1. The question\nOne prepared Imperial Careers view; Trimen’s Colonial Office List entries\nSkip the atlas; show the table\n\n\n5–20\n2. Structure and extract\nLive: the structure prompt, then the extraction prompt, on S04 and S03\noutputs/01-structure/ and outputs/02-extract/ from the rehearsal runs\n\n\n20–30\n3. Candidates\nLive: the retrieval prompt for Trimen, Agar and Christie only\noutputs/03-candidates/candidates.md\n\n\n30–45\n4. Review\nTogether: the editor’s headnote versus Agar’s letter; then the OCR check against the scan; direct the revision\nThe worked answers\n\n\n45–55\nExercise\nParticipants work through cases R1–R6; ask for show of hands and chat summaries on R2 and R3\nReduce to R1–R3\n\n\n55–60\n7. Your own data and questions\n\n\n\n\n\nIf the live extraction at 5–20 runs long, cut to the saved run at minute 15 regardless. The review discussion is the point of the hour."
+    "text": "Running order\n\n\n\nMin\nStep\nLive or saved\nCheckpoint if behind\n\n\n\n\n0–5\nThe page\nTrimen’s Colonial Office List entry; the letter on screen\nSkip the atlas\n\n\n5–20\nStructure\nLive: structure prompt, then extraction prompt, on S04\noutputs/02-extract/ from the rehearsal runs; cut to it at minute 15 regardless\n\n\n20–30\nGround\nLive: retrieval for Trimen and Agar only\noutputs/03-candidates/candidates.md\n\n\n30–45\nClean, together\nThe editor versus the letter (structure decision), then the OCR against the scan (clean decision), then what the correction becomes\nThe worked answers\n\n\n45–55\nExercise\nR3, R2, R1, R4; show of hands and chat summaries on R3 and R2\nReduce to R3 and R2\n\n\n55–60\nYour own data and questions\n\n\n\n\n\nThe deck follows this order; section headers mark Structure, Ground, Clean."
   },
   {
-    "objectID": "presenter.html#the-consequential-problem-to-find-together",
-    "href": "presenter.html#the-consequential-problem-to-find-together",
+    "objectID": "presenter.html#the-two-decisions-to-make-together",
+    "href": "presenter.html#the-two-decisions-to-make-together",
     "title": "Presenter notes",
-    "section": "The consequential problem to find together",
-    "text": "The consequential problem to find together\nThe editor’s bracketed note above Agar’s letter says that Howard “analyzed the bark” of the tree Trimen figured. Agar’s letter says that bark from some of these trees went to Howard, and that the bark from the tree itself is in Agar’s own possession. A model that follows the editor conflates the two. Neither rehearsal run did: run A recorded the editor’s claim as the editor’s and noted that which trees supplied the bark “is not stated beyond ‘some of these trees’”; run B noted on the editor’s affirmation that Agar only says the figured tree was “one of several”. Show run A’s bark record and ask the room whether they would have caught it if the model had not. If a live run in the room does conflate them, better still.\nThen the OCR check: both runs flagged the two damaged sentences and guessed at the wording (run A “in full bloom”; both runs “by me”). The scan says “growing in a bad situation and not robust” and “many plants from the seed of the specimen tree”. The models were right to flag and wrong to guess."
+    "section": "The two decisions to make together",
+    "text": "The two decisions to make together\nThe editor’s bracketed note above Agar’s letter says that Howard “analyzed the bark” of the tree Trimen figured. Agar’s letter says that bark from some of these trees went to Howard, and that the bark from the tree itself is in Agar’s own possession. A model that follows the editor conflates the two. Neither rehearsal run did: run A recorded the editor’s claim as the editor’s and noted that which trees supplied the bark “is not stated beyond ‘some of these trees’”; run B noted on the editor’s affirmation that Agar only says the figured tree was “one of several”. Show run A’s bark record and ask the room whether they would have caught it if the model had not. If a live run in the room does conflate them, better still.\nThen the OCR check: both runs flagged the two damaged sentences and guessed at the wording (run A “in full bloom”; both runs “by me”). The scan says “growing in a bad situation and not robust” and “many plants from the seed of the specimen tree”. The models were right to flag and wrong to guess."
   },
   {
     "objectID": "presenter.html#online-participation",
@@ -350,276 +364,199 @@
     "text": "What not to claim\n\nThe research pipeline’s links for Trimen are automated. Say so.\nThe handpicked cases are failure modes, not an accuracy rate.\nThe RA’s evaluation of Tropical is pending. The workshop uses a separate frozen packet and does not touch it."
   },
   {
-    "objectID": "slides.html#the-question",
-    "href": "slides.html#the-question",
+    "objectID": "slides.html#three-questions",
+    "href": "slides.html#three-questions",
     "title": "Cleaning, Structuring and Grounding Historical Data",
-    "section": "The question",
-    "text": "The question\nHenry Trimen, Director of the Royal Botanic Gardens, Peradeniya, Ceylon, from 1880.\nIn the Colonial Office List every year, 1883–1896. In The Tropical Agriculturist, a Colombo planters’ monthly, hundreds of times.\n\n\nWho is Trimen connected to in The Tropical Agriculturist, and what evidence supports those connections?\n\n\n\nIn 1883 the journal ran a public quarrel between Trimen and the London quinine maker John Eliot Howard over one cinchona tree. Planters, seed, gardens, bark samples, chemical analyses. People, things and actions, with sources.\n\nOpen with the Imperial Careers atlas view prepared in advance (under two minutes), then this slide. The question is the whole hour; everything else is method."
+    "section": "Three questions",
+    "text": "Three questions\n\n\n\n\n\n\n\n\n\n\nThe question\nThe model does\nYou decide\n\n\n\n\nClean\nIs this what the page says?\nFlags what reads oddly\nRead the page and rule\n\n\nStructure\nWhat is a record here?\nProposes fields, fills them, keeps the quotes\nWhat counts; did the meaning change?\n\n\nGround\nWho is this?\nRetrieves candidates with evidence\nSupported, unresolved, or wrong\n\n\n\n\nTen years ago the same three questions took five institutions and a text-mining pipeline, and scored F 0.6. What changed is who writes the pipeline and how fast the loop runs. What did not change is the right-hand column.\n\nTrading Consequences (Clifford et al. 2016): 10.5 million pages, Edinburgh Geoparser, GeoNames, “Italy” in Texas. One sentence, then move on."
   },
   {
-    "objectID": "slides.html#ten-years-ago",
-    "href": "slides.html#ten-years-ago",
+    "objectID": "slides.html#one-page",
+    "href": "slides.html#one-page",
     "title": "Cleaning, Structuring and Grounding Historical Data",
-    "section": "Ten years ago",
-    "text": "Ten years ago\nTrading Consequences, 2012–13: 10.5 million scanned pages, 7 billion tokens. Historians, computational linguists, a database team, a visualisation team, five institutions.\n\n\n\n\n\n\n\n\n2013\n\n\n\n\nCleaning\n“lime” read as “time” and “line”; long-s “salt” as “fait”; trade tables collapsed into 210-word “sentences”. 14.9% of gold-standard locations had OCR errors\n\n\nStructuring\nSix-stage pipeline adapted from the Edinburgh Geoparser; relation = same sentence; commodity lexicon bootstrapped from customs records and Wikipedia\n\n\nGrounding\nGeoNames string matching: “Saharunpore” not found, every “Italy” placed in a Texan town. F-scores 0.62 / 0.61\n\n\nReview\nErrors seen in the visualisations got fixed. Missed entities were invisible\n\n\n\n\nClifford, Alex, Coates, Klein and Watson, Historical Methods 49:3 (2016).\n\n\nSame three problems. What changed is who writes the pipeline and how fast the error-to-fix loop runs. What did not change is where judgment is needed."
-  },
-  {
-    "objectID": "slides.html#what-changed-what-did-not",
-    "href": "slides.html#what-changed-what-did-not",
-    "title": "Cleaning, Structuring and Grounding Historical Data",
-    "section": "What changed, what did not",
-    "text": "What changed, what did not\n\n\nChanged\n\nThe agent writes the pipeline\nSemantic search instead of a string gazetteer\nModels read in context: “grease the machine” is not a commodity\nThe loop from error to fix runs in minutes\n\n\nDid not change\n\nOCR lies, and only the page settles it\nPeople absent from every authority file\nPlausible wrong matches\nA corrected error has to become a rule\nErrors you cannot see need a sample"
+    "section": "One page",
+    "text": "One page\n\n\n\n\nWalter Agar, The Tropical Agriculturist, 2 July 1883, p. 66. 234 words.\nHenry Trimen, Director of the Royal Botanic Gardens, Ceylon, had illustrated a cinchona tree. A London quinine maker said it was the wrong species. Planters wrote in.\n. . .\nYou need to know nothing about cinchona.\nThe page contains one decision of each kind."
   },
   {
     "objectID": "slides.html#the-hour",
     "href": "slides.html#the-hour",
     "title": "Cleaning, Structuring and Grounding Historical Data",
     "section": "The hour",
-    "text": "The hour\n\n\n\n\n\n\n\n\nMin\n\n\n\n\n\n\n0–5\nThe question\nTrimen in the Colonial Office List\n\n\n5–20\nStructure\nThe model proposes a table, extracts records, saves a script\n\n\n20–30\nGround\nWikidata and Colonial Office List lookups; a review view\n\n\n30–45\nClean and check\nA consequential error, found together; a revision directed\n\n\n45–55\nExercise\nSix decisions, in the room and on Zoom\n\n\n55–60\nYour own data\n\n\n\n\nEverything is saved. If a live step stalls, we switch to the checkpoint.\njimclifford.ca/trimen-workshop — same pages and exercise for everyone."
+    "text": "The hour\n\n\n\n\n\n\n\n\nMin\n\n\n\n\n\n\n0–5\nThe page\nTrimen in the Colonial Office List; the letter\n\n\n5–20\nStructure\nModel: propose a table, extract records. You: did the meaning change?\n\n\n20–30\nGround\nModel: retrieve candidates. You: supported, unresolved, wrong?\n\n\n30–45\nClean\nTogether: the OCR against the page; what the correction becomes\n\n\n45–55\nExercise\nThree decisions. jimclifford.ca/trimen-workshop/review/\n\n\n55–60\nYour data"
   },
   {
-    "objectID": "slides.html#trimen-in-the-colonial-office-list",
-    "href": "slides.html#trimen-in-the-colonial-office-list",
+    "objectID": "slides.html#model-propose-then-extract",
+    "href": "slides.html#model-propose-then-extract",
     "title": "Cleaning, Structuring and Grounding Historical Data",
-    "section": "Trimen in the Colonial Office List",
-    "text": "Trimen in the Colonial Office List\n\nTRIMEN, HENRY, M.B. (Lond.), F.R.S., F.L.S. —Formerly lecturer on botany at St. Mary’s Hospital, London, 1867 to 1875; was senior assistant to department of botany, British Museum, 1869 to 1879; director Royal Botanical Gardens, Ceylon, Feb., 1880; author of numerous works and papers on pure and applied botany. (1889 edition)\n\nThe Imperial Careers graph (kgp_col1889-p554b20, seven editions):\n\n\n\nPosition\nPlace\nYears\n\n\n\n\nlecturer on botany\nLondon\n1867–1875\n\n\nsenior assistant, department of botany\nBritish Museum\n1869–1879\n\n\ndirector, Royal Botanical Gardens\nCeylon\n1880–\n\n\n\nA name, posts, dates, a stable identity across editions. Nothing about what he did or with whom."
-  },
-  {
-    "objectID": "slides.html#the-wars-of-the-quinologists-1883",
-    "href": "slides.html#the-wars-of-the-quinologists-1883",
-    "title": "Cleaning, Structuring and Grounding Historical Data",
-    "section": "The Wars of the Quinologists, 1883",
-    "text": "The Wars of the Quinologists, 1883\n\n\n\n\n\n\n\n\n\nItem\n\n\n\n\n\nS02\n“The Wars of the Quinologists”, July, pp. 27–28\nThe editor frames the dispute\n\n\nS03\n“Dr. Trimen’s Ledgeriana: Mr. T. N. Christie to the Rescue”, p. 37\nA planter traces the tree’s seed\n\n\nS04\n“Dr. Trimen’s Typical Ledgeriana Tree”, p. 66\nWalter Agar, 234 words. The exercise\n\n\nS05–06\nTrimen’s reply, December, pp. 453–455\nThe competing identifications\n\n\nS01\nHoward on “C. pubescens How.”, July 1881\nA rejected name\n\n\n\nSeventy-two articles mention both Trimen and Howard. That is a discovery set, not 72 relationships."
-  },
-  {
-    "objectID": "slides.html#the-passage",
-    "href": "slides.html#the-passage",
-    "title": "Cleaning, Structuring and Grounding Historical Data",
-    "section": "The passage",
-    "text": "The passage\n\n\n\n\n[We publish below a letter from Mr. Agar, which places beyond question the fact that the tree figured by Dr. Trimen was an undoubted Ledgeriana, Mr. Howard himself having given testimony to that effect after having analyzed the bark.—Ed.]\n. . .\n“The bark of some of these trees was sent home by Mr. Campbell for analysis to Mr. Howard …”\n“I have also in my possession the bark from the tree itself …”\n\n\nDo not point out the discrepancy yet. Let the room read it. The editor says one thing; Agar says another. We come back to it at minute 30."
-  },
-  {
-    "objectID": "slides.html#prompt-propose-a-structure",
-    "href": "slides.html#prompt-propose-a-structure",
-    "title": "Cleaning, Structuring and Grounding Historical Data",
-    "section": "Prompt: propose a structure",
-    "text": "Prompt: propose a structure\n\nRead these Tropical Agriculturist passages. Propose a small table for studying the people and activities mentioned. Show two example records before processing the rest. Preserve the printed wording and source references. Keep inferred information separate from what the text states. Use local record identifiers and do not add Wikidata identifiers yet.\n\n\nLive: run this on S04 and S03. Two examples first, so the structure is cheap to correct. If it runs past minute 12, switch to the saved run."
-  },
-  {
-    "objectID": "slides.html#prompt-build-and-run-the-extraction",
-    "href": "slides.html#prompt-build-and-run-the-extraction",
-    "title": "Cleaning, Structuring and Grounding Historical Data",
-    "section": "Prompt: build and run the extraction",
-    "text": "Prompt: build and run the extraction\n\nUse the agreed fields to process this sample. Save the code, instructions, and output so we can inspect and rerun the work. Report failed records and uncertain readings. Do not expand a person’s name unless the source provides the expansion; record any outside identification separately.\n\n\nWhat the prompt asks for beyond records: saved code, reported failures, and a wall between what the source prints and what the model knows."
+    "section": "Model: propose, then extract",
+    "text": "Model: propose, then extract\n\nRead these passages. Propose a small table for studying the people and activities mentioned. Show two example records before processing the rest. Preserve the printed wording and source references. Keep inferred information separate from what the text states. Use local record identifiers and do not add Wikidata identifiers yet.\n\n\nUse the agreed fields to process this sample. Save the code, instructions, and output. Report failed records and uncertain readings. Do not expand a person’s name unless the source provides the expansion; record any outside identification separately.\n\n\nLive on S04 if time allows; saved runs otherwise. Two examples first so the structure is cheap to correct."
   },
   {
     "objectID": "slides.html#what-came-back",
     "href": "slides.html#what-came-back",
     "title": "Cleaning, Structuring and Grounding Historical Data",
     "section": "What came back",
-    "text": "What came back\nTwo cold runs, 6 October, different models, nothing edited.\n\n\n\nRun\nModel\nRecords\nFailed\nUncertain\n\n\n\n\nA\nClaude Sonnet 5.5\n85\n0\n8\n\n\nB\nClaude Fable 5.1\n71\n1\n9\n\n\n\nRun A, the bark that was analysed:\n\n\n\n\n\n\n\nprinted_text\nThe bark of some of these trees was sent home by Mr. Campbell for analysis to Mr. Howard, who pronounced it to be Ledgeriana bark …\n\n\nasserted_by\nS04-P02 (signed “WALTER AGAR”)\n\n\ninferred_note\nWhich trees supplied the bark is not stated beyond “some of these trees”; whether it includes S04-T01 [the sketched tree] is not said.\n\n\n\n\nThat last field is the whole dispute. Both runs kept the editor’s claim apart from Agar’s. The question for the room later: would you have noticed if they had not?"
+    "text": "What came back\n\n\n\nRun\nModel\nRecords\nFlagged uncertain\n\n\n\n\nA\nClaude Sonnet 5.5, as coding agent\n85\n8\n\n\nB\nClaude Fable 5.1, as coding agent\n71\n9\n\n\nC\nQwen3.8-27B, local, inside a script\n13\nsee notes\n\n\n\nRun A, the bark that was analysed:\n\n\n\n\n\n\n\nprinted_text\nThe bark of some of these trees was sent home by Mr. Campbell for analysis to Mr. Howard, who pronounced it to be Ledgeriana bark …\n\n\nasserted_by\nS04-P02 (signed “WALTER AGAR”)\n\n\ninferred_note\nWhich trees supplied the bark is not stated beyond “some of these trees”"
   },
   {
-    "objectID": "slides.html#three-things-to-inspect",
-    "href": "slides.html#three-things-to-inspect",
+    "objectID": "slides.html#you-did-the-meaning-change",
+    "href": "slides.html#you-did-the-meaning-change",
     "title": "Cleaning, Structuring and Grounding Historical Data",
-    "section": "Three things to inspect",
-    "text": "Three things to inspect\n\nOmissions. Is everyone and everything in the table? Both runs made the editor a person record. Right: the editor makes claims.\nInvented details. A given name the text does not print? A relative date made absolute without saying so? Run B filled “outside identification” for six people from memory, each marked UNVERIFIED.\nChanged meaning. Did a careful statement become a flat one?\n\n\nAnd one thing neither run could do: two sentences of the OCR are damaged. Both said so. Both guessed. Every guess was wrong."
+    "section": "You: did the meaning change?",
+    "text": "You: did the meaning change?\n\n\nThe editor’s headnote: the tree figured by Dr. Trimen was an undoubted Ledgeriana, Mr. Howard himself having given testimony to that effect after having analyzed the bark.\nAgar: The bark of some of these trees was sent home … to Mr. Howard.\nI have also in my possession the bark from the tree itself.\n\nA record saying Howard analysed the illustrated tree asserts a chemical result for a specimen never analysed. The whole quarrel rests on it.\n. . .\nThe models kept them apart. The editor did not.\nWould you have noticed if the model had followed the editor?"
   },
   {
-    "objectID": "slides.html#three-questions-kept-separate",
-    "href": "slides.html#three-questions-kept-separate",
+    "objectID": "slides.html#model-retrieve-candidates",
+    "href": "slides.html#model-retrieve-candidates",
     "title": "Cleaning, Structuring and Grounding Historical Data",
-    "section": "Three questions, kept separate",
-    "text": "Three questions, kept separate\n\nDoes the identifier resolve to the retrieved entity? We show only QIDs we fetched. A Q-number from a model’s memory is not a lookup.\nIs that entity the one in this source? Name, type, dates, place, activity. A real item can be the wrong person.\nWhat does the connection assert? This mention refers to that man. Not that every statement on the item is true. Not that 1883 “Ceylon” is the modern state."
+    "section": "Model: retrieve candidates",
+    "text": "Model: retrieve candidates\n\nLook up candidate identities using the configured Wikidata tools and the Colonial Office List records. Save the retrieved evidence and lookup date. Show what supports the match, what conflicts, what is missing. Leave unresolved cases unresolved. Do not generate QIDs from memory.\n\n\n\n\n\n\n\n\n\n\nPrinted\nCandidate\nSupports\nConflicts or missing\n\n\n\n\n“HENRY TRIMEN”, Peradeniya\nQ2462643, botanist 1843–1896\nSignature, address; CO List: director, Ceylon, 1880\nA brother, Roland, in both collections\n\n\n“WALTER AGAR”, Lawrence\nnone\n\nTwo searches: a politician, a zoologist b. 1882, a temple, a thickening agent"
   },
   {
-    "objectID": "slides.html#prompt-retrieve-candidates",
-    "href": "slides.html#prompt-retrieve-candidates",
+    "objectID": "slides.html#you-supported-unresolved-or-wrong",
+    "href": "slides.html#you-supported-unresolved-or-wrong",
     "title": "Cleaning, Structuring and Grounding Historical Data",
-    "section": "Prompt: retrieve candidates",
-    "text": "Prompt: retrieve candidates\n\nLook up candidate identities for these people using the configured Wikidata tools and the supplied Colonial Office List records. Save the retrieved evidence and lookup date. For each candidate, show what supports the match, what conflicts, and what is missing. Leave unresolved cases unresolved. Do not generate QIDs from memory.\n\nSemantic search (WikidataMCP), then statement reading. Not the string search: “Walpole Island” returns an island in New Caledonia."
+    "section": "You: supported, unresolved, or wrong",
+    "text": "You: supported, unresolved, or wrong\n\nDoes the identifier resolve to what was retrieved? A Q-number from a model’s memory is not a lookup.\nIs that entity the one in this source? Name, type, dates, place, activity. A real item can be the wrong person.\nWhat does the link assert? This mention is that man. Not every statement on the item. Not that 1883 “Ceylon” is the modern state.\n\n\nTrimen: supported, for these mentions. Agar: unresolved; keep the local record and the searches that were run. “Not found” is not “does not exist”."
   },
   {
-    "objectID": "slides.html#candidates",
-    "href": "slides.html#candidates",
+    "objectID": "slides.html#the-ocr",
+    "href": "slides.html#the-ocr",
     "title": "Cleaning, Structuring and Grounding Historical Data",
-    "section": "Candidates",
-    "text": "Candidates\n\n\n\n\n\n\n\n\n\nPrinted\nCandidate\nSupports\nConflicts or missing\n\n\n\n\n“HENRY TRIMEN”, Peradeniya\nQ2462643, botanist 1843–1896\nSignature; address; CO List career\nBrother Roland in both collections\n\n\n“JOHN ELIOT HOWARD”\nQ3181423, chemist 1807–1883\nFull signature 1881\nDies November 1883, mid-dispute\n\n\n“Mr. Moens”\nQ21340893, botanist 1837–1886\nJava cinchona context\nSurname only\n\n\n“WALTER AGAR”, Lawrence\nnone\n\nTwo searches: a politician, a zoologist b. 1882, a temple, a thickening agent\n\n\n“THOS. NORTH CHRISTIE”\nnone\n\nNot the “Mr. T. Christy” he criticises\n\n\n\n“Not found” is a recorded search with a date, not a proof of absence."
+    "section": "The OCR",
+    "text": "The OCR\nChandra 2, a vision-language OCR model. Tested on this corpus; good results. On this page:\n\n… were put out, and were now in a full condition and in flower.\n\n\nI have by my prints of the leaves of some of the trees …\n\n\nThe page:\n\n… and were growing in a bad situation and not robust.\n\n\nI have many plants from the seed of the specimen tree …"
   },
   {
-    "objectID": "slides.html#the-editor-versus-the-letter",
-    "href": "slides.html#the-editor-versus-the-letter",
+    "objectID": "slides.html#ocr-is-better-and-not-perfect",
+    "href": "slides.html#ocr-is-better-and-not-perfect",
     "title": "Cleaning, Structuring and Grounding Historical Data",
-    "section": "The editor versus the letter",
-    "text": "The editor versus the letter\n\n\nEditor: the tree figured by Dr. Trimen was an undoubted Ledgeriana, Mr. Howard himself having given testimony to that effect after having analyzed the bark.\nAgar: The bark of some of these trees was sent home by Mr. Campbell for analysis to Mr. Howard …\nAgar: I have also in my possession the bark from the tree itself, but taken when it was dying.\n\nIf the illustrated tree and the analysed bark become one thing, the dataset asserts a chemical result for a specimen that was never analysed.\nThe whole dispute, whether that tree was a Ledgeriana, would rest on it.\n. . .\nA model following the editor makes this error. Neither rehearsal run did.\nWould you have noticed if it had?"
+    "section": "OCR is better, and not perfect",
+    "text": "OCR is better, and not perfect\nThe old archive.org text layer, same sentences:\n\n… ami were growing; in a bad situation and not robust. I have many plants from the seed of the specimen^ tree as well as the oiheis that Mr. Moens declared …\n\n\n\nThe old OCR’s errors look like errors. The new OCR’s errors read like prose.\nThe two models that extracted this page both flagged the sentences, then guessed. Every guess was wrong.\nThe two OCRs disagree exactly where the new one is wrong.\n\nA model can tell you a sentence reads oddly. Only the page tells you what it says."
   },
   {
-    "objectID": "slides.html#the-reading",
-    "href": "slides.html#the-reading",
+    "objectID": "slides.html#what-the-correction-becomes",
+    "href": "slides.html#what-the-correction-becomes",
     "title": "Cleaning, Structuring and Grounding Historical Data",
-    "section": "The reading",
-    "text": "The reading\nOCR, as delivered:\n\nThe trees were only about 4½ years old from the time the plants were put out, and were now in a full condition and in flower.\n\n\nI have by my prints of the leaves of some of the trees as well as the other that Mr. Moens had sent to be true Ledgerianas …\n\n\nThe page:\n\n… and were growing in a bad situation and not robust.\n\n\nI have many plants from the seed of the specimen tree as well as the others that Mr. Moens declared to be true Ledgerianas …\n\n\n\nBoth runs flagged these. Run A guessed “in full bloom”. Run B guessed “the others that Moens had said”. A model can detect damaged OCR. It cannot repair it from the text."
+    "section": "What the correction becomes",
+    "text": "What the correction becomes\n\nThis example is wrong for the following reason: [explain]. Find other records that might have the same problem. Propose a correction and show which records it would affect. Rerun a small batch and show both corrected cases and previously accepted cases that changed.\n\n\n\nAn uncertain reading is not data until someone has looked at the page.\nA model’s guess at the wording is not a reading.\nWhere two OCRs disagree, send the sentence to a human.\nThe probe that found the error becomes a test.\n\n\nIf there is time: the Tropical name-evidence fix (initial accepted as full name; 889 “verified” expansions became hypotheses; three probes now tests). Otherwise point to the Further pages."
   },
   {
     "objectID": "slides.html#exercise-4555",
     "href": "slides.html#exercise-4555",
     "title": "Cleaning, Structuring and Grounding Historical Data",
     "section": "Exercise: 45–55",
-    "text": "Exercise: 45–55\njimclifford.ca/trimen-workshop/review/\n\n\n\n\n\n\n\n\n\nDecision\n\n\n\n\n\nR1\nIs “Dr. Trimen” Q2462643?\nWhat support looks like\n\n\nR2\nDid Howard analyse the illustrated tree’s bark?\nThe editor versus the letter\n\n\nR3\nDoes the OCR reading stand?\nText versus page\n\n\nR4\nA Wikidata item for Walter Agar?\nWhat “not found” means\n\n\nR5\nIs “C. pubescens How.” Q164574?\nA name string versus what the source says about it\n\n\nR6\nAre “T. Christy” and “Thos. North Christie” one person?\nSpelling distance versus the text\n\n\n\nDo at least R1–R3. Write the reason; the reason becomes the rule. Zoom: use Copy summary for chat. Room: hands up when asked."
+    "text": "Exercise: 45–55\njimclifford.ca/trimen-workshop/review/\n\n\n\n\n\n\n\n\nClean\nR3\nDoes the OCR reading stand? Open the scan\n\n\nStructure\nR2\nDid Howard analyse the illustrated tree’s bark?\n\n\nGround\nR1, R4\nIs “Dr. Trimen” Q2462643? Is there an item for Walter Agar?\n\n\nextra\nR5, R6\nA plant name string; two men one letter apart\n\n\n\nWrite the reason. The reason is what becomes the rule. Zoom: Copy summary for chat. Room: hands up when asked."
   },
   {
-    "objectID": "slides.html#from-a-decision-to-a-rule",
-    "href": "slides.html#from-a-decision-to-a-rule",
+    "objectID": "slides.html#your-own-data",
+    "href": "slides.html#your-own-data",
     "title": "Cleaning, Structuring and Grounding Historical Data",
-    "section": "From a decision to a rule",
-    "text": "From a decision to a rule\n\nThis example is wrong for the following historical reason: [explain]. Find other records that might have the same problem. Propose a correction and show which records it would affect. After we review the change, rerun a small batch and show both corrected cases and previously accepted cases that changed."
+    "section": "Your own data",
+    "text": "Your own data\n\nOne question, one small sample, the page reachable. Twenty records you can check beat two thousand you cannot.\nLocal identifiers first. External ones only after retrieval and review. None suitable? Keep the local id.\nNo identifiers from memory.\nModel decisions and human decisions in different columns. Fingerprint the data the decisions were made on.\nMake the correction a test.\nTwo kinds of model. A frontier model writes the pipeline once. A local open model (Qwen on a shared GPU) reads the collection inside it."
   },
   {
-    "objectID": "slides.html#a-safeguard-that-validated-invented-names",
-    "href": "slides.html#a-safeguard-that-validated-invented-names",
+    "objectID": "slides.html#three-questions-1",
+    "href": "slides.html#three-questions-1",
     "title": "Cleaning, Structuring and Grounding Historical Data",
-    "section": "A safeguard that validated invented names",
-    "text": "A safeguard that validated invented names\nTropical’s profile builder checked that a model-supplied given name was “printed in the article”. It accepted an initial as proof of a full name.\n\n\n\n\n\n\n\n\n\nProposed\nSource text\nBefore (v1)\nAfter (v2)\n\n\n\n\nJames Watt\nMr. J. Watt writes about tea.\nprinted\ninitials\n\n\nHenry Trimen\nMr. H. Trimen writes about tea.\nprinted\ninitials\n\n\nJohn Smith\nMr. John Smithson writes about tea.\nprinted\nnone\n\n\nHenry Trimen\n… HENRY TRIMEN. Royal Botanic Gardens\nprinted\nfull\n\n\n\nAcross the corpus: 889 “verified” expansions became hypotheses. The three probes are now tests.\nThe historian’s reason: a model that knows who “F. von Mueller” is has added outside knowledge to the record."
-  },
-  {
-    "objectID": "slides.html#a-mixed-profile-is-not-one-person",
-    "href": "slides.html#a-mixed-profile-is-not-one-person",
-    "title": "Cleaning, Structuring and Grounding Historical Data",
-    "section": "A mixed profile is not one person",
-    "text": "A mixed profile is not one person\nThe merge said a MIXED verdict leaves the identifier empty. A fallback filled it from the Colonial Office List anyway.\nTwo profiles the model had explicitly called two people left the pipeline with one identifier each, “high” confidence.\n\nFix: one identity gate. MIXED asserts nothing and is flagged for splitting. NONE and UNSURE keep the identifier as a candidate. Tests name both cases.\nA valid identifier does not make a mixed profile valid."
-  },
-  {
-    "objectID": "slides.html#after-a-revision-check-three-things",
-    "href": "slides.html#after-a-revision-check-three-things",
-    "title": "Cleaning, Structuring and Grounding Historical Data",
-    "section": "After a revision, check three things",
-    "text": "After a revision, check three things\n\nThe cases the change was meant to fix.\nThe previously accepted cases that changed. In the Tropical rebuild this was the larger group.\nWhether the rule is now a test.\n\nA model can do all three. Deciding the original was wrong, and why, was the historian’s work."
-  },
-  {
-    "objectID": "slides.html#trimen-across-three-collections",
-    "href": "slides.html#trimen-across-three-collections",
-    "title": "Cleaning, Structuring and Grounding Historical Data",
-    "section": "Trimen across three collections",
-    "text": "Trimen across three collections\n\n\n\n\n\n\n\n\nCollection\nHolds\nLink made by\n\n\n\n\nColonial Office List graph\nThree career events, seven editions\nBuilt from the List\n\n\nTropical Agriculturist profiles\nP000001: 863 records, 779 articles, 1881–1944\nRules: name, dates, occupation words\n\n\nWikidata\nQ2462643, 1843–1896\nRetrieved and read\n\n\nThis packet\nFour attributed claims; 24 catalogued letters\nRead from the passages\n\n\n\n\n\nThe links are automated. No human decision recorded.\nAgreement is not independence: the CO List graph carries Wikidata links the Tropical matcher can inherit.\n863 is not an occurrence count. 1944 is a retrospective article."
-  },
-  {
-    "objectID": "slides.html#the-trimens-who-never-existed",
-    "href": "slides.html#the-trimens-who-never-existed",
-    "title": "Cleaning, Structuring and Grounding Historical Data",
-    "section": "The Trimens who never existed",
-    "text": "The Trimens who never existed\n\n\nOCR: “BY J. L. TRIMEN, F.R.S.”\n\n\nOCR: “confirmed by Mr. L. J. L. Trimen, who certainly ought to be the best authority …”\n\n\nTwo profiles, two records each. The pipeline rightly did not merge them into Henry. It could not know they were not people. Rare, odd name forms: look at the page before you count or link them."
-  },
-  {
-    "objectID": "slides.html#rules-that-saved-the-research-projects-trouble",
-    "href": "slides.html#rules-that-saved-the-research-projects-trouble",
-    "title": "Cleaning, Structuring and Grounding Historical Data",
-    "section": "Rules that saved the research projects trouble",
-    "text": "Rules that saved the research projects trouble\n\nLocal identifiers first. External ones only after retrieval and review. No suitable item? Keep the local id.\nNo identifiers from memory. Anything not retrieved by a tool is unverified.\nSeparate structuring from grounding, and both from modern classification. An 1883 plant name is a historical usage; what Kew calls it today is another record.\nModel decisions and human decisions in different columns. Fingerprint the data the decisions were made on.\nMake the correction a test.\nReport what the sample supports. Handpicked cases explain failure modes. They are not an accuracy rate."
-  },
-  {
-    "objectID": "slides.html#what-to-take-away",
-    "href": "slides.html#what-to-take-away",
-    "title": "Cleaning, Structuring and Grounding Historical Data",
-    "section": "What to take away",
-    "text": "What to take away\nDescribe a small extraction task to a model, and inspect what comes back against the source.\nTell a candidate identity from a supported match, and say what evidence made the difference.\nTurn one correction into a rule, a check or a review step for the rest of the collection.\n\njimclifford.ca/trimen-workshop — pages, saved outputs, the exercise, worked answers, a guide for your own data. Source and code on GitHub.\n\nQuestions. Chat monitor reads out the Zoom summaries on R2 and R3."
+    "section": "Three questions",
+    "text": "Three questions\n\n\n\n\n\n\n\n\n\n\nYou decide\n\n\n\n\nClean\nIs this what the page says?\nRead the page and rule\n\n\nStructure\nWhat is a record here?\nWhat counts; did the meaning change?\n\n\nGround\nWho is this?\nSupported, unresolved, or wrong\n\n\n\njimclifford.ca/trimen-workshop — pages, saved outputs, exercise, worked answers, the wider research packet."
   },
   {
     "objectID": "steps/02-structure-extract.html",
     "href": "steps/02-structure-extract.html",
-    "title": "2. Structure and extract",
+    "title": "Structure",
     "section": "",
     "text": "Walter Agar’s letter, printed under the editor’s headline “Dr. Trimen’s Typical Ledgeriana Tree” on 2 July 1883, p. 66 (scan). The OCR text, exactly as the collection delivers it:\nDR. TRIMEN'S TYPICAL LEDGERIANA TREE.\n\n[We publish below a letter from Mr. Agar, which places beyond question the fact that the tree figured by Dr. Trimen was an undoubted Ledgeriana, Mr. Howard himself having given testimony to that effect after having analyzed the bark.—Ed.]\n\nLawrence, June 22nd, 1883.\n\nDEAR SIR,—I have little to add to what Mr. Christie has written on the subject of Ledgerianas, but that little is, I think, important.\n\nThe tree, which was sketched for Dr. Trimen's work, is dead.\n\nIt was one of several Mr. Moens saw in flower at Mahanillu estate, Dr. Trimen was with Mr. Moens, and both agreed the trees were true Ledgerianas. The bark of some of these trees was sent home by Mr. Campbell for analysis to Mr. Howard, who pronounced it to be Ledgeriana bark, giving 7 per cent of pure quinine (equal I believe to 9 of sulphate) and only a trace of other alkaloids. The trees were only about 4½ years old from the time the plants were put out, and were now in a full condition and in flower.\n\nI have by my prints of the leaves of some of the trees as well as the other that Mr. Moens had sent to be true Ledgerianas, so that it will be easy in the future to determine the question.\n\nI have also in my possession the bark from the tree itself, but taken when it was dying.—Yours truly,\n\nWALTER AGAR.\n\nTwo hundred and thirty-four words. People, a tree, a group of trees, bark samples, an analysis, and a chain of hands. Also a headnote by the editor saying what the letter proves."
   },
   {
     "objectID": "steps/02-structure-extract.html#the-passage",
     "href": "steps/02-structure-extract.html#the-passage",
-    "title": "2. Structure and extract",
+    "title": "Structure",
     "section": "",
     "text": "Walter Agar’s letter, printed under the editor’s headline “Dr. Trimen’s Typical Ledgeriana Tree” on 2 July 1883, p. 66 (scan). The OCR text, exactly as the collection delivers it:\nDR. TRIMEN'S TYPICAL LEDGERIANA TREE.\n\n[We publish below a letter from Mr. Agar, which places beyond question the fact that the tree figured by Dr. Trimen was an undoubted Ledgeriana, Mr. Howard himself having given testimony to that effect after having analyzed the bark.—Ed.]\n\nLawrence, June 22nd, 1883.\n\nDEAR SIR,—I have little to add to what Mr. Christie has written on the subject of Ledgerianas, but that little is, I think, important.\n\nThe tree, which was sketched for Dr. Trimen's work, is dead.\n\nIt was one of several Mr. Moens saw in flower at Mahanillu estate, Dr. Trimen was with Mr. Moens, and both agreed the trees were true Ledgerianas. The bark of some of these trees was sent home by Mr. Campbell for analysis to Mr. Howard, who pronounced it to be Ledgeriana bark, giving 7 per cent of pure quinine (equal I believe to 9 of sulphate) and only a trace of other alkaloids. The trees were only about 4½ years old from the time the plants were put out, and were now in a full condition and in flower.\n\nI have by my prints of the leaves of some of the trees as well as the other that Mr. Moens had sent to be true Ledgerianas, so that it will be easy in the future to determine the question.\n\nI have also in my possession the bark from the tree itself, but taken when it was dying.—Yours truly,\n\nWALTER AGAR.\n\nTwo hundred and thirty-four words. People, a tree, a group of trees, bark samples, an analysis, and a chain of hands. Also a headnote by the editor saying what the letter proves."
   },
   {
     "objectID": "steps/02-structure-extract.html#the-prompts",
     "href": "steps/02-structure-extract.html#the-prompts",
-    "title": "2. Structure and extract",
+    "title": "Structure",
     "section": "The prompts",
     "text": "The prompts\nTwo prompts, used verbatim in the saved runs. They are starting points, not tested final instructions.\nPropose a structure\n\nRead these Tropical Agriculturist passages. Propose a small table for studying the people and activities mentioned. Show two example records before processing the rest. Preserve the printed wording and source references. Keep inferred information separate from what the text states. Use local record identifiers and do not add Wikidata identifiers yet.\n\nBuild and run the extraction\n\nUse the agreed fields to process this sample. Save the code, instructions, and output so we can inspect and rerun the work. Report failed records and uncertain readings. Do not expand a person’s name unless the source provides the expansion; record any outside identification separately.\n\nNote what the prompts ask for beyond the records: two examples before the rest, so the structure can be corrected cheaply; saved code so the run can be repeated and inspected; a report of failures; and a wall between what the source prints and what the model knows."
   },
   {
     "objectID": "steps/02-structure-extract.html#what-came-back",
     "href": "steps/02-structure-extract.html#what-came-back",
-    "title": "2. Structure and extract",
+    "title": "Structure",
     "section": "What came back",
     "text": "What came back\nTwo cold runs, with different models, on S04 and the companion letter S03. Everything they produced is in outputs/02-extract/, unedited.\n\n\n\nRun\nModel\nRecords\nFailed\nUncertain\n\n\n\n\nA\nClaude Sonnet 5.5\n85\n0\n8\n\n\nB\nClaude Fable 5.1\n71\n1\n9\n\n\n\nBoth proposed a flat table with typed local ids, a verbatim quote and line reference on every row, and separate fields for inferences and for outside identification (proposals). Both wrote a script that holds the records as data and checks every quoted span against the source text. Here is run A’s record for the bark that was analysed:\n\n\n\n\n\n\n\nField\nValue\n\n\n\n\nrecord_id\nS04-B01\n\n\nrecord_type\nsample (bark)\n\n\nprinted_text\nThe bark of some of these trees was sent home by Mr. Campbell for analysis to Mr. Howard, who pronounced it to be Ledgeriana bark, giving 7 per cent of pure quinine (equal I believe to 9 of sulphate) and only a trace of other alkaloids.\n\n\nstated_detail\nSent home by Mr. Campbell to Mr. Howard for analysis; pronounced Ledgeriana bark; “(equal I believe to 9 of sulphate)” is the writer’s belief, not a measured value.\n\n\nasserted_by\nS04-P02 (the letter writer, signed “WALTER AGAR”)\n\n\ninferred_note\nWhich trees supplied the bark is not stated beyond “some of these trees”; whether it includes S04-T01 [the sketched tree] is not said.\n\n\n\nThat last line is the whole dispute in one field. Keep it in mind for step 4."
   },
   {
     "objectID": "steps/02-structure-extract.html#what-to-inspect",
     "href": "steps/02-structure-extract.html#what-to-inspect",
-    "title": "2. Structure and extract",
+    "title": "Structure",
     "section": "What to inspect",
     "text": "What to inspect\nThree things, in this order, before anything else is built on the records:\n\nOmissions. Is everyone and everything in the passage in the table? Both runs have “Ed.” as a person record, which is right: the editor makes claims.\nInvented details. Did a name get a given name the text does not print? Did a relative date become an absolute one without saying so? Run B resolved “5th instant” to 5 June 1883 and said so in the inferred field. Run B also filled an outside_identification field for six people from its own memory, each marked UNVERIFIED. That is the behaviour the prompt asked for; the next step replaces memory with retrieval.\nChanged meaning. Did a careful statement become a flat one? The editor says Howard analysed “the bark” of the figured tree. Agar says bark from some trees went to Howard and the figured tree’s bark is in his own drawer. Both runs kept these apart. Would a third?\n\nAnd one thing both runs could not do: two sentences of the OCR are damaged, and both runs said so and guessed at the intended wording. Every guess was wrong. See step 5."
   },
   {
     "objectID": "steps/02-structure-extract.html#agent-versus-model",
     "href": "steps/02-structure-extract.html#agent-versus-model",
-    "title": "2. Structure and extract",
+    "title": "Structure",
     "section": "Agent versus model",
-    "text": "Agent versus model\nTwo different things happened here. A coding agent read the files, wrote and ran a Python script, and saved outputs. An extraction model (the same model, in this case, reading the text) decided what the records were. In a larger project the script the agent writes will call a model for each chunk, apply ordinary code for the rest, and look things up in external services. When you inspect a result you should be able to tell which of those produced it.\nNext: 3. Candidate identities."
+    "text": "Agent versus model\nTwo different things happened here. A coding agent read the files, wrote and ran a Python script, and saved outputs. An extraction model (the same model, in this case, reading the text) decided what the records were. In a larger project the script the agent writes will call a model for each chunk, apply ordinary code for the rest, and look things up in external services. When you inspect a result you should be able to tell which of those produced it.\nNext: Ground."
   },
   {
     "objectID": "steps/04-review.html",
     "href": "steps/04-review.html",
-    "title": "4. Review",
+    "title": "Clean, together",
     "section": "",
-    "text": "The prompt:\n\nMake a review table showing each source passage, extracted record, candidate identities, and relevant evidence side by side. Provide accept, reject, and unresolved decisions with a place for the reviewer’s reason. Preserve automated suggestions separately from human decisions.\n\nThe result for this workshop is the exercise page: a static page that reads cases.json, shows the passage with a link to the scan, the proposal, the evidence for and against, and three buttons plus a reason box. Decisions stay in your browser, keyed to a fingerprint of the case file, so they cannot be attached to a different version of the cases. You can download them as a TSV, or copy a one-line summary into the Zoom chat.\nThe research project’s equivalent, Tropical’s RA review page, works the same way at a larger scale: 100 profiles and 400 sampled records, a dataset fingerprint in every export, and a scoring script that refuses an export whose fingerprint does not match."
+    "text": "The OCR for this corpus is Chandra 2, a vision-language model. It was tested on the collection and performs well. Here is what it wrote for the last paragraphs of Agar’s letter, and what the page says:\n\n\n\n\n\n\n\nChandra 2\nThe page\n\n\n\n\n… and were now in a full condition and in flower.\n… and were growing in a bad situation and not robust.\n\n\nI have by my prints of the leaves of some of the trees as well as the other that Mr. Moens had sent to be true Ledgerianas …\nI have many plants from the seed of the specimen tree as well as the others that Mr. Moens declared to be true Ledgerianas …\n\n\n\nOpen the scan, right-hand column, last three paragraphs. The three readings side by side, including the old archive.org text layer, are in the source pack.\nThree things to say about this in the room:\n\nThe page is clean and easy to read. This is not a recognition failure. The language model inside the OCR model wrote a different sentence, and because it is a language model, the sentence reads well.\nThe old OCR got it right, noisily. “ami were growing; in a bad situation and not robust.” Its errors look like errors. The new OCR’s errors read like prose. OCR is better than it was, and not perfect.\nThe extraction models noticed and could not fix it. Both runs flagged these sentences as uncertain. One guessed “in full bloom”, one guessed “the others that Moens had said”. Every guess was wrong. A model can tell you a sentence reads oddly. Only the page tells you what it says."
   },
   {
-    "objectID": "steps/04-review.html#the-review-view",
-    "href": "steps/04-review.html#the-review-view",
-    "title": "4. Review",
+    "objectID": "steps/04-review.html#the-reading",
+    "href": "steps/04-review.html#the-reading",
+    "title": "Clean, together",
     "section": "",
-    "text": "The prompt:\n\nMake a review table showing each source passage, extracted record, candidate identities, and relevant evidence side by side. Provide accept, reject, and unresolved decisions with a place for the reviewer’s reason. Preserve automated suggestions separately from human decisions.\n\nThe result for this workshop is the exercise page: a static page that reads cases.json, shows the passage with a link to the scan, the proposal, the evidence for and against, and three buttons plus a reason box. Decisions stay in your browser, keyed to a fingerprint of the case file, so they cannot be attached to a different version of the cases. You can download them as a TSV, or copy a one-line summary into the Zoom chat.\nThe research project’s equivalent, Tropical’s RA review page, works the same way at a larger scale: 100 profiles and 400 sampled records, a dataset fingerprint in every export, and a scoring script that refuses an export whose fingerprint does not match."
+    "text": "The OCR for this corpus is Chandra 2, a vision-language model. It was tested on the collection and performs well. Here is what it wrote for the last paragraphs of Agar’s letter, and what the page says:\n\n\n\n\n\n\n\nChandra 2\nThe page\n\n\n\n\n… and were now in a full condition and in flower.\n… and were growing in a bad situation and not robust.\n\n\nI have by my prints of the leaves of some of the trees as well as the other that Mr. Moens had sent to be true Ledgerianas …\nI have many plants from the seed of the specimen tree as well as the others that Mr. Moens declared to be true Ledgerianas …\n\n\n\nOpen the scan, right-hand column, last three paragraphs. The three readings side by side, including the old archive.org text layer, are in the source pack.\nThree things to say about this in the room:\n\nThe page is clean and easy to read. This is not a recognition failure. The language model inside the OCR model wrote a different sentence, and because it is a language model, the sentence reads well.\nThe old OCR got it right, noisily. “ami were growing; in a bad situation and not robust.” Its errors look like errors. The new OCR’s errors read like prose. OCR is better than it was, and not perfect.\nThe extraction models noticed and could not fix it. Both runs flagged these sentences as uncertain. One guessed “in full bloom”, one guessed “the others that Moens had said”. Every guess was wrong. A model can tell you a sentence reads oddly. Only the page tells you what it says."
   },
   {
-    "objectID": "steps/04-review.html#together-the-consequential-problem",
-    "href": "steps/04-review.html#together-the-consequential-problem",
-    "title": "4. Review",
-    "section": "Together: the consequential problem",
-    "text": "Together: the consequential problem\nWe will look at two cases in the room before you work alone.\nR2: the editor versus the letter. The bracketed note above Agar’s letter says Howard analysed “the bark” of the tree Trimen figured. Agar’s letter says bark from some of these trees went to Howard and that the bark from the tree itself is in Agar’s own possession. If the illustrated tree and the analysed bark are made one thing, the dataset asserts a chemical result for a specimen that was never analysed, and the whole dispute about whether that tree was a Ledgeriana rests on it.\nA model following the editor will make this error. Neither of the two rehearsal runs did: run A recorded the editor’s statement as the editor’s and wrote that which trees supplied the bark “is not stated beyond ‘some of these trees’”; run B noted that Agar only says the figured tree was “one of several”. That is the right answer. The question for the room is whether you would have noticed if the model had got it wrong, and what in the review view would have helped you notice.\nR3: the reading. The OCR says the trees “were now in a full condition and in flower”. Both runs flagged the sentence as odd; run A guessed “in full bloom”. Open the scan. The correction we direct here becomes a rule in step 5."
+    "objectID": "steps/04-review.html#the-decision",
+    "href": "steps/04-review.html#the-decision",
+    "title": "Clean, together",
+    "section": "The decision",
+    "text": "The decision\nReject the reading. Record the corrected transcription with the scan as its source. Keep the OCR as delivered beside it, so the two can be compared, and so the record of what the model saw is honest.\nThat is case R3 in the exercise."
   },
   {
-    "objectID": "steps/04-review.html#on-your-own-the-exercise",
-    "href": "steps/04-review.html#on-your-own-the-exercise",
-    "title": "4. Review",
-    "section": "On your own: the exercise",
-    "text": "On your own: the exercise\nOpen the exercise. Six cases:\n\n\n\n\n\n\n\n\nCase\nDecision\nWhy it is here\n\n\n\n\nR1\nIs “Dr. Trimen” Q2462643?\nA supported match, so you see what support looks like\n\n\nR2\nDid Howard analyse the illustrated tree’s bark?\nThe editor’s framing versus the letter\n\n\nR3\nDoes the OCR reading stand?\nText versus page\n\n\nR4\nA Wikidata item for Walter Agar?\nWhat “not found” should and should not mean\n\n\nR5\nIs “C. pubescens How.” Q164574?\nA name string versus what the source says about the name\n\n\nR6\nAre “T. Christy” and “Thos. North Christie” one person?\nSpelling distance versus the text’s own distinction\n\n\n\nDo at least R1, R2 and R3. Write a reason for each; the reason is what turns a decision into a rule. When you are done, copy the summary line into the Zoom chat or hold up your hand when asked.\nNext: 5. Revise the process."
+    "objectID": "steps/04-review.html#what-the-correction-becomes",
+    "href": "steps/04-review.html#what-the-correction-becomes",
+    "title": "Clean, together",
+    "section": "What the correction becomes",
+    "text": "What the correction becomes\nOne corrected sentence is worth little. The reason for the correction is worth a lot, because it tells the model what to look for across the collection. The prompt:\n\nThis example is wrong for the following historical reason: [explain]. Find other records that might have the same problem. Propose a correction and show which records it would affect. After we review the change, rerun a small batch and show both corrected cases and previously accepted cases that changed.\n\nFrom this page, three rules follow:\n\nAn uncertain reading is not data until someone has looked at the page.\nA model’s guess at the intended wording is not a reading.\nWhere two OCRs disagree on a sentence, send it to a human. The archive.org text layer and Chandra disagree exactly where Chandra is wrong, so a cheap comparison would flag these places across 63,000 pages without re-OCR.\n\nTwo larger examples of a correction becoming a rule, from the Tropical pipeline, are in What a correction becomes. They are for afterwards."
+  },
+  {
+    "objectID": "steps/04-review.html#then-the-exercise",
+    "href": "steps/04-review.html#then-the-exercise",
+    "title": "Clean, together",
+    "section": "Then: the exercise",
+    "text": "Then: the exercise\nOpen the exercise. One case for each question, and two extras:\n\n\n\n\nCase\n\n\n\n\n\nClean\nR3\nDoes the OCR reading stand?\n\n\nStructure\nR2\nDid Howard analyse the illustrated tree’s bark?\n\n\nGround\nR1\nIs “Dr. Trimen” Q2462643?\n\n\nGround\nR4\nIs there a Wikidata item for Walter Agar?\n\n\nextra\nR5, R6\nA plant-name string; two men one letter apart\n\n\n\nWrite a reason for each. When you are done, copy the summary line into the Zoom chat or hold up your hand when asked."
   },
   {
     "objectID": "steps/06-connect.html",
     "href": "steps/06-connect.html",
-    "title": "6. Connect collections",
+    "title": "Further: connecting collections",
     "section": "",
     "text": "With a supported identity for Henry Trimen, the small dataset from the 1883 dispute connects to the two larger structured collections. outputs/06-connect/henry-trimen-across-collections.json holds the records.\nThree things to say about this table in the room.\nThe links are automated. The Tropical pipeline’s link to Wikidata and to the Colonial Office List were made by rules. No human decision has been recorded for either. For Trimen the evidence is strong enough that the review will be quick. That is not the general case.\nAgreement is not independence. The Tropical pipeline also matches profiles to the Colonial Office List graph, and that graph carries its own Wikidata links for many people. When both agree on a QID it is reassuring, but the second source may have inherited the identifier from the first.\nThe count is not an occurrence count. 863 is the number of chunk-level extracted records. The extraction asks for one representative mention per distinct person per chunk. The 1944 end date is a retrospective article, not a sign of life."
   },
   {
     "objectID": "steps/06-connect.html#the-namesakes",
     "href": "steps/06-connect.html#the-namesakes",
-    "title": "6. Connect collections",
+    "title": "Further: connecting collections",
     "section": "The namesakes",
     "text": "The namesakes\nThe pipeline correctly keeps Henry apart from his brother Roland Trimen (profile P001512, Q932702, also in the Colonial Office List). It also produced two tiny profiles that no Trimen ever bore:\n\n\n\n\n\n\n\n\nProfile\nPrinted form\nWhat the scan actually says\n\n\n\n\nP010214 “J. L. Trimen”\n“THE LETTER OF ALL THE BARK ALKALOIDS OF THE BURDEKIN DELTA BY J. L. TRIMEN, F.R.S.” (August 1883, p. 88)\n“THE EFFECT OF ALTITUDE ON THE ALKALOID OF RED BARK … By J. E. HOWARD, F.R.S.”\n\n\nP010783 “L. J. L. Trimen”\n“confirmed by Mr. L. J. L. Trimen, who certainly ought to be the best authority as to what is and what is not C. Ledyriana” (October 1883, p. 272)\n“confirmed by Mr. Ledger himself, who certainly ought to be the best authority as to what is and what is not C. Ledgeriana”\n\n\n\nBoth were checked against the page images on 6 October 2026. They are OCR phantoms: the people are John Eliot Howard and Charles Ledger. The pipeline did the right thing in not merging them into Henry; it could not know they were not people at all. Rare, oddly formed names in a profile table are worth a look at the page before they are kept, linked or counted."
   },
   {
     "objectID": "steps/06-connect.html#what-the-connection-enables",
     "href": "steps/06-connect.html#what-the-connection-enables",
-    "title": "6. Connect collections",
+    "title": "Further: connecting collections",
     "section": "What the connection enables",
-    "text": "What the connection enables\nFrom Trimen’s dispute the network opens outward: Howard and Moens; the planters Christie and Agar; McIvor and Ledger as sources of seed; Peradeniya, Kew and the Java plantations; Howards and Sons as the industrial consumer of the bark. The correspondence catalogue adds Thiselton-Dyer, Daniel Morris and Roland. The research packet holds these as candidate links with their evidence, all still awaiting review. None of it is required for the hour; all of it is where the question goes next.\nNext: 7. Your own data."
-  },
-  {
-    "objectID": "presenter.html#slides",
-    "href": "presenter.html#slides",
-    "title": "Presenter notes",
-    "section": "Slides",
-    "text": "Slides\nslides.html is the deck, with speaker notes (press S in the browser for the notes view). It follows the running order below; section headers mark the stage changes. The exercise URL is on the exercise slide and the closing slide."
+    "text": "What the connection enables\nFrom Trimen’s dispute the network opens outward: Howard and Moens; the planters Christie and Agar; McIvor and Ledger as sources of seed; Peradeniya, Kew and the Java plantations; Howards and Sons as the industrial consumer of the bark. The correspondence catalogue adds Thiselton-Dyer, Daniel Morris and Roland. The research packet holds these as candidate links with their evidence, all still awaiting review. None of it is required for the hour; all of it is where the question goes next.\nNext: Your own data."
   }
 ]

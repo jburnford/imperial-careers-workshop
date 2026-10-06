@@ -1,6 +1,6 @@
 ---
-title: "5. Revise the process"
-subtitle: "Minutes 30–45, second half. A judgment about one record becomes a rule for the collection."
+title: "Further: what a correction becomes"
+subtitle: "A judgment about one record becomes a rule for the collection. Two real examples from the Tropical pipeline."
 ---
 
 The review has produced a decision with a reason. The reason is the valuable part: it tells the model what class of error to look for. The prompt:
@@ -29,4 +29,4 @@ A model can do all three of these checks. Deciding that the original result was 
 
 A second model can review the first model's output and find problems. Its agreement is not historical confirmation: two models reading the editor's headnote will agree with the editor. Review a mixture of uncertain cases and apparently successful ones. Handpicked workshop cases explain failure modes; they do not establish an accuracy rate.
 
-Next: [6. Connect collections](06-connect.qmd).
+Next: [Connecting collections](06-connect.qmd).

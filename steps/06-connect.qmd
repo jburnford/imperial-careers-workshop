@@ -1,5 +1,5 @@
 ---
-title: "6. Connect collections"
+title: "Further: connecting collections"
 subtitle: "What the shared identifier makes possible, and what it does not settle."
 ---
 
@@ -35,4 +35,4 @@ Both were checked against the page images on 6 October 2026. They are OCR phanto
 
 From Trimen's dispute the network opens outward: Howard and Moens; the planters Christie and Agar; McIvor and Ledger as sources of seed; Peradeniya, Kew and the Java plantations; Howards and Sons as the industrial consumer of the bark. The correspondence catalogue adds Thiselton-Dyer, Daniel Morris and Roland. The [research packet](../packet.qmd) holds these as candidate links with their evidence, all still awaiting review. None of it is required for the hour; all of it is where the question goes next.
 
-Next: [7. Your own data](07-your-data.qmd).
+Next: [Your own data](07-your-data.qmd).

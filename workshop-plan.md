@@ -12,6 +12,10 @@ The published session is **Cleaning and Structuring Historical Data: A Working S
 
 The workshop must fit one hour and work for people with different levels of technical experience. The common activity will be inspecting evidence and making a decision. Participants who arrive with a working coding agent can also run the example. Following the session should not depend on completing software installation during it.
 
+## Reframed, 6 October (evening)
+
+Jim's direction after reviewing the first build: back up to first principles. The hour is three questions a historian asks of a text, each with one decision only the historian makes: **clean** (is this what the page says?), **structure** (what is a record here?), **ground** (who is this?). One page, Agar's letter, carries one decision of each kind. The cinchona dispute is context for thirty seconds. The exercise is three cases plus two extras; the deck is fourteen slides; the research packet, the Tropical defect story, the phantom profiles and Trading Consequences are follow-up material, not content for the hour. The OCR lesson stays: Chandra 2 tested well on this corpus, and still wrote two fluent wrong sentences on a clean page that the old archive.org OCR read correctly. OCR is better than it was and not perfect.
+
 ## Agreed scope
 
 - Begin with existing OCR text. Other sessions cover OCR production. Page images remain available when participants need to check a reading.

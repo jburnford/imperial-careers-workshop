@@ -1,6 +1,6 @@
 ---
-title: "2. Structure and extract"
-subtitle: "Minutes 5–20. Demonstrate substantial delegation while keeping the source visible."
+title: "Structure"
+subtitle: "Minutes 5–20. What is a record here? The model proposes and extracts; you decide what counts and whether the meaning changed."
 ---
 
 ## The passage
@@ -63,4 +63,4 @@ And one thing both runs could not do: two sentences of the OCR are damaged, and 
 
 Two different things happened here. A *coding agent* read the files, wrote and ran a Python script, and saved outputs. An *extraction model* (the same model, in this case, reading the text) decided what the records were. In a larger project the script the agent writes will call a model for each chunk, apply ordinary code for the rest, and look things up in external services. When you inspect a result you should be able to tell which of those produced it.
 
-Next: [3. Candidate identities](03-candidates.qmd).
+Next: [Ground](03-candidates.qmd).

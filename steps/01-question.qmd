@@ -1,6 +1,6 @@
 ---
-title: "1. The question"
-subtitle: "Minutes 0–5. Establish the research payoff and the task."
+title: "The page"
+subtitle: "Minutes 0–5. Where Trimen comes from, and the one page we will work on."
 ---
 
 ## Start from a structured collection
@@ -63,4 +63,4 @@ The dispute is small enough to read in the hour and rich enough to contain every
 - plant names that a modern authority treats differently from the 1883 participants;
 - an OCR error that reverses a sentence's meaning.
 
-Next: [2. Structure and extract](02-structure-extract.qmd).
+Next: [Structure](02-structure-extract.qmd).

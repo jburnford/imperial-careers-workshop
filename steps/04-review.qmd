@@ -1,41 +1,55 @@
 ---
-title: "4. Review"
-subtitle: "Minutes 30–45 together, then 45–55 on your own. Accept, reject or defer, with a reason."
+title: "Clean, together"
+subtitle: "Minutes 30–45. Is this what the page says? Then: what the correction becomes."
 ---
 
-## The review view
+## The reading
 
-The prompt:
+The OCR for this corpus is Chandra 2, a vision-language model. It was tested on the collection and performs well. Here is what it wrote for the last paragraphs of Agar's letter, and what the page says:
 
-> Make a review table showing each source passage, extracted record, candidate identities, and relevant evidence side by side. Provide accept, reject, and unresolved decisions with a place for the reviewer's reason. Preserve automated suggestions separately from human decisions.
+| Chandra 2 | The page |
+|---|---|
+| … and were now in a full condition and in flower. | … and were growing in a bad situation and not robust. |
+| I have by my prints of the leaves of some of the trees as well as the other that Mr. Moens had sent to be true Ledgerianas … | I have many plants from the seed of the specimen tree as well as the others that Mr. Moens declared to be true Ledgerianas … |
 
-The result for this workshop is the [exercise page](../review/index.html): a static page that reads `cases.json`, shows the passage with a link to the scan, the proposal, the evidence for and against, and three buttons plus a reason box. Decisions stay in your browser, keyed to a fingerprint of the case file, so they cannot be attached to a different version of the cases. You can download them as a TSV, or copy a one-line summary into the Zoom chat.
+Open the [scan](https://archive.org/details/tropicalagricult18831884colo/page/n83/mode/1up), right-hand column, last three paragraphs. The three readings side by side, including the old archive.org text layer, are in the [source pack](../source-pack/S04_three_readings.md).
 
-The research project's equivalent, Tropical's RA review page, works the same way at a larger scale: 100 profiles and 400 sampled records, a dataset fingerprint in every export, and a scoring script that refuses an export whose fingerprint does not match.
+Three things to say about this in the room:
 
-## Together: the consequential problem
+- **The page is clean and easy to read.** This is not a recognition failure. The language model inside the OCR model wrote a different sentence, and because it is a language model, the sentence reads well.
+- **The old OCR got it right, noisily.** "ami were growing; in a bad situation and not robust." Its errors look like errors. The new OCR's errors read like prose. OCR is better than it was, and not perfect.
+- **The extraction models noticed and could not fix it.** Both runs flagged these sentences as uncertain. One guessed "in full bloom", one guessed "the others that Moens had said". Every guess was wrong. A model can tell you a sentence reads oddly. Only the page tells you what it says.
 
-We will look at two cases in the room before you work alone.
+## The decision
 
-**R2: the editor versus the letter.** The bracketed note above Agar's letter says Howard analysed "the bark" of the tree Trimen figured. Agar's letter says bark from *some of these trees* went to Howard and that the bark from *the tree itself* is in Agar's own possession. If the illustrated tree and the analysed bark are made one thing, the dataset asserts a chemical result for a specimen that was never analysed, and the whole dispute about whether *that* tree was a Ledgeriana rests on it.
+Reject the reading. Record the corrected transcription with the scan as its source. Keep the OCR as delivered beside it, so the two can be compared, and so the record of what the model saw is honest.
 
-A model following the editor will make this error. Neither of the two rehearsal runs did: run A recorded the editor's statement as the editor's and wrote that which trees supplied the bark "is not stated beyond 'some of these trees'"; run B noted that Agar only says the figured tree was "one of several". That is the right answer. The question for the room is whether you would have noticed if the model had got it wrong, and what in the review view would have helped you notice.
+That is case R3 in the [exercise](../review/index.html).
 
-**R3: the reading.** The OCR says the trees "were now in a full condition and in flower". Both runs flagged the sentence as odd; run A guessed "in full bloom". Open the scan. The correction we direct here becomes a rule in [step 5](05-revise.qmd).
+## What the correction becomes
 
-## On your own: the exercise
+One corrected sentence is worth little. The reason for the correction is worth a lot, because it tells the model what to look for across the collection. The prompt:
 
-Open the [exercise](../review/index.html). Six cases:
+> This example is wrong for the following historical reason: [explain]. Find other records that might have the same problem. Propose a correction and show which records it would affect. After we review the change, rerun a small batch and show both corrected cases and previously accepted cases that changed.
 
-| Case | Decision | Why it is here |
+From this page, three rules follow:
+
+1. An uncertain reading is not data until someone has looked at the page.
+2. A model's guess at the intended wording is not a reading.
+3. Where two OCRs disagree on a sentence, send it to a human. The archive.org text layer and Chandra disagree exactly where Chandra is wrong, so a cheap comparison would flag these places across 63,000 pages without re-OCR.
+
+Two larger examples of a correction becoming a rule, from the Tropical pipeline, are in [What a correction becomes](05-revise.qmd). They are for afterwards.
+
+## Then: the exercise
+
+Open the [exercise](../review/index.html). One case for each question, and two extras:
+
+| | Case | |
 |---|---|---|
-| R1 | Is "Dr. Trimen" Q2462643? | A supported match, so you see what support looks like |
-| R2 | Did Howard analyse the illustrated tree's bark? | The editor's framing versus the letter |
-| R3 | Does the OCR reading stand? | Text versus page |
-| R4 | A Wikidata item for Walter Agar? | What "not found" should and should not mean |
-| R5 | Is "C. pubescens How." Q164574? | A name string versus what the source says about the name |
-| R6 | Are "T. Christy" and "Thos. North Christie" one person? | Spelling distance versus the text's own distinction |
+| Clean | R3 | Does the OCR reading stand? |
+| Structure | R2 | Did Howard analyse the illustrated tree's bark? |
+| Ground | R1 | Is "Dr. Trimen" Q2462643? |
+| Ground | R4 | Is there a Wikidata item for Walter Agar? |
+| extra | R5, R6 | A plant-name string; two men one letter apart |
 
-Do at least R1, R2 and R3. Write a reason for each; the reason is what turns a decision into a rule. When you are done, copy the summary line into the Zoom chat or hold up your hand when asked.
-
-Next: [5. Revise the process](05-revise.qmd).
+Write a reason for each. When you are done, copy the summary line into the Zoom chat or hold up your hand when asked.

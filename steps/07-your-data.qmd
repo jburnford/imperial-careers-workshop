@@ -1,5 +1,5 @@
 ---
-title: "7. Your own data"
+title: "Your own data"
 subtitle: "Minutes 55–60. A practical next step for another collection."
 ---
 

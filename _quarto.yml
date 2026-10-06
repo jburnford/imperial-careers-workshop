@@ -21,31 +21,33 @@ website:
       - text: "The hour"
         menu:
           - href: steps/01-question.qmd
-            text: "1. The question"
+            text: "The page"
           - href: steps/02-structure-extract.qmd
-            text: "2. Structure and extract"
+            text: "Structure"
           - href: steps/03-candidates.qmd
-            text: "3. Candidate identities"
+            text: "Ground"
           - href: steps/04-review.qmd
-            text: "4. Review (exercise)"
-          - href: steps/05-revise.qmd
-            text: "5. Revise the process"
-          - href: steps/06-connect.qmd
-            text: "6. Connect collections"
+            text: "Clean, together"
+          - href: review/index.html
+            text: "Exercise"
           - href: steps/07-your-data.qmd
-            text: "7. Your own data"
-      - href: answers.qmd
-        text: Worked answers
-      - href: review/index.html
-        text: Exercise
+            text: "Your own data"
       - href: slides.qmd
         text: Slides
-      - href: setup.qmd
-        text: Run it yourself
-      - href: presenter.qmd
-        text: Presenter notes
-      - href: packet.qmd
-        text: Research packet
+      - href: answers.qmd
+        text: Worked answers
+      - text: "Further"
+        menu:
+          - href: steps/05-revise.qmd
+            text: "What a correction becomes"
+          - href: steps/06-connect.qmd
+            text: "Connecting collections"
+          - href: setup.qmd
+            text: "Run it yourself"
+          - href: packet.qmd
+            text: "Research packet"
+          - href: presenter.qmd
+            text: "Presenter notes"
   page-footer:
     left: "Jim Clifford, University of Saskatchewan. Draft materials; sources credited on each page."
     right: "Source text: archive.org scans of The Tropical Agriculturist."

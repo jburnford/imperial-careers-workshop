@@ -3,23 +3,23 @@
   "built": "2026-10-06",
   "cases": [
     {
-      "id": "R1",
-      "kind": "identity",
-      "title": "Is \"Dr. Trimen\" / \"HENRY TRIMEN\" the Wikidata item Q2462643?",
-      "source_label": "S05, December 1883, p. 453 (Trimen's cover letter)",
-      "source_quote": "Royal Botanic Gardens, Peradeniya, 21st Nov. 1883.",
-      "source_url": "https://archive.org/details/tropicalagricult18831884colo/page/n470/mode/1up",
-      "proposal": "Link the local record `henry` to Wikidata Q2462643 (Henry Trimen, British botanist, 1843–1896) and to Colonial Office List person kgp_col1889-p554b20.",
+      "id": "R3",
+      "kind": "reading",
+      "title": "Does the OCR reading of the trees' condition stand?",
+      "source_label": "S04, July 1883, p. 66 (OCR text as delivered)",
+      "source_quote": "The trees were only about 4½ years old from the time the plants were put out, and were now in a full condition and in flower.",
+      "source_url": "https://archive.org/details/tropicalagricult18831884colo/page/n83/mode/1up",
+      "proposal": "Extracted record: the trees at Mahanilu were \"in a full condition and in flower\" in June 1883.",
       "evidence_for": [
-        "Signed in full \"HENRY TRIMEN\" with the Peradeniya address (S06).",
-        "Colonial Office List 1883–1896: \"director Royal Botanical Gardens, Ceylon, Feb., 1880\".",
-        "Wikidata item retrieved 2026-10-06: born 1843, died 1896, occupations include botanist."
+        "That is what the OCR text says.",
+        "Extraction run A kept it as printed but flagged it as an uncertain reading and guessed \"in full bloom\"."
       ],
       "evidence_against": [
-        "A brother, Roland Trimen (Q932702), appears in both collections; \"Dr. Trimen\" alone does not distinguish them.",
-        "The research pipeline made this link by rule; no human has recorded a decision."
+        "Open the scan (link above, right-hand column, last paragraph) and read the sentence."
       ],
-      "question": "Accept the identity for the 1883 mentions signed from Peradeniya?"
+      "question": "Accept the reading as data?",
+      "principle": "Clean",
+      "optional": false
     },
     {
       "id": "R2",
@@ -37,24 +37,30 @@
         "Agar says the bark from \"the tree itself\" is in his own possession, taken when it was dying.",
         "The headnote is the editor's gloss; the letter is the evidence."
       ],
-      "question": "Accept the relationship as extracted?"
+      "question": "Accept the relationship as extracted?",
+      "principle": "Structure",
+      "optional": false
     },
     {
-      "id": "R3",
-      "kind": "reading",
-      "title": "Does the OCR reading of the trees' condition stand?",
-      "source_label": "S04, July 1883, p. 66 (OCR text as delivered)",
-      "source_quote": "The trees were only about 4½ years old from the time the plants were put out, and were now in a full condition and in flower.",
-      "source_url": "https://archive.org/details/tropicalagricult18831884colo/page/n83/mode/1up",
-      "proposal": "Extracted record: the trees at Mahanilu were \"in a full condition and in flower\" in June 1883.",
+      "id": "R1",
+      "kind": "identity",
+      "title": "Is \"Dr. Trimen\" / \"HENRY TRIMEN\" the Wikidata item Q2462643?",
+      "source_label": "S05, December 1883, p. 453 (Trimen's cover letter)",
+      "source_quote": "Royal Botanic Gardens, Peradeniya, 21st Nov. 1883.",
+      "source_url": "https://archive.org/details/tropicalagricult18831884colo/page/n470/mode/1up",
+      "proposal": "Link the local record `henry` to Wikidata Q2462643 (Henry Trimen, British botanist, 1843–1896) and to Colonial Office List person kgp_col1889-p554b20.",
       "evidence_for": [
-        "That is what the OCR text says.",
-        "Extraction run A kept it as printed but flagged it as an uncertain reading and guessed \"in full bloom\"."
+        "Signed in full \"HENRY TRIMEN\" with the Peradeniya address (S06).",
+        "Colonial Office List 1883–1896: \"director Royal Botanical Gardens, Ceylon, Feb., 1880\".",
+        "Wikidata item retrieved 2026-10-06: born 1843, died 1896, occupations include botanist."
       ],
       "evidence_against": [
-        "Open the scan (link above, right-hand column, last paragraph) and read the sentence."
+        "A brother, Roland Trimen (Q932702), appears in both collections; \"Dr. Trimen\" alone does not distinguish them.",
+        "The research pipeline made this link by rule; no human has recorded a decision."
       ],
-      "question": "Accept the reading as data?"
+      "question": "Accept the identity for the 1883 mentions signed from Peradeniya?",
+      "principle": "Ground",
+      "optional": false
     },
     {
       "id": "R4",
@@ -72,7 +78,9 @@
         "No hit is a Ceylon planter alive in 1883.",
         "Absence from these searches does not prove no item exists."
       ],
-      "question": "What should happen to the record `agar`?"
+      "question": "What should happen to the record `agar`?",
+      "principle": "Ground",
+      "optional": false
     },
     {
       "id": "R5",
@@ -90,7 +98,9 @@
         "Howard's letter is a disclaimer: he says he did not create a species under this name and that the plants so called are something else.",
         "Mapping the rejected usage to the accepted species erases what the letter is about."
       ],
-      "question": "Accept the link for this usage?"
+      "question": "Accept the link for this usage?",
+      "principle": "Ground (extra)",
+      "optional": true
     },
     {
       "id": "R6",
@@ -108,8 +118,10 @@
         "The signature reads \"THOS. NORTH CHRISTIE\" and the dateline is a Ceylon estate; the Christy seedlings are \"Bolivian\" and come via Howard in England.",
         "Vector searches for both names (2026-10-06) return no plausible item for either."
       ],
-      "question": "Accept the merge?"
+      "question": "Accept the merge?",
+      "principle": "Ground (extra)",
+      "optional": true
     }
   ],
-  "fingerprint": "f5f171b4f5d9"
+  "fingerprint": "7f4c8705f13f"
 }

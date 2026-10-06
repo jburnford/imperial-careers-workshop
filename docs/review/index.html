@@ -23,7 +23,7 @@
 </head>
 <body>
 <h1>Review exercise: who did what to which tree?</h1>
-<p class="meta">AI and History Conference, 15 October 2026. Six decisions drawn from the 1883 cinchona dispute in <em>The Tropical Agriculturist</em>. Do at least R1, R2 and R3. Your answers stay in this browser until you download or copy them; nothing is sent anywhere.</p>
+<p class="meta">AI and History Conference, 15 October 2026. One page of <em>The Tropical Agriculturist</em> (Walter Agar's letter, 2 July 1883, p. 66) and three decisions: one about cleaning, one about structuring, one about grounding. Two extra grounding cases follow if you have time. Your answers stay in this browser until you download or copy them; nothing is sent anywhere.</p>
 <p>For each case: read the passage (the scan is one click away), look at what the model or the pipeline proposed, weigh the evidence, and record a decision with a reason. "Unresolved" is a legitimate answer when the evidence does not settle it; say what would.</p>
 
 <div class="toolbar">
@@ -49,10 +49,12 @@
   const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
   const md = s => esc(s).replace(/`([^`]+)`/g, '<code>$1</code>');
   const root = document.getElementById('cases');
+  let extrasShown = false;
   for (const c of data.cases) {
+    if (c.optional && !extrasShown) { extrasShown = true; const h = document.createElement('h2'); h.textContent = 'If you have time'; h.style.marginTop = '2.5em'; root.appendChild(h); }
     const sec = document.createElement('section');
     sec.innerHTML = `
-      <h2>${c.id}. ${esc(c.title)}</h2>
+      <h2>${c.id}. ${esc(c.title)} <span style="font-weight:normal;color:#777;font-size:0.8em">${esc(c.principle || '')}</span></h2>
       <p class="meta">${esc(c.source_label)}. <a href="${esc(c.source_url)}" target="_blank" rel="noopener">Open the scan</a></p>
       <blockquote>${esc(c.source_quote)}</blockquote>
       <p class="proposal"><strong>Proposed:</strong> ${md(c.proposal)}</p>
