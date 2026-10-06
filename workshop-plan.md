@@ -38,6 +38,7 @@ The practical output is a small CSV or JSON dataset with source references, prop
 | `col_matching` person and career records | An existing dataset to search and connect to Tropical | Export only the relevant candidate records and career evidence |
 | Imperial Careers atlas | A brief demonstration of what structured and connected data enables | Select one relevant view or career; keep the opening demonstration short |
 | Empire Evolution paper | Methodological background on verifying QIDs, historical scope, and using visualizations for review | Select one concise example if needed to explain a grounding problem |
+| Trading Consequences paper (Clifford et al. 2016) | Opening context: the same three problems at ten million pages with a purpose-built pipeline, F-scores of 0.6, and a five-institution team | Done: then-and-now table on the step 1 page |
 | Earlier Claude Code workshop | Reusable grounding instructions and verification lessons | Adapt only the relevant material and check any setup instructions before reuse |
 
 Tropical already has code for matching person profiles against the Colonial Office List graph (`ner/persons/colist/match_colist.py` in the Tropical repository). The workshop can therefore demonstrate a connection that exists in the research workflow. It does not need a new linkage project built for the event. For Henry Trimen the pipeline's current output is profile P000001 (863 extracted records, 779 articles), linked by rule to Q2462643 and to Colonial Office List person `kgp_col1889-p554b20`; see `outputs/06-connect/`.
@@ -212,4 +213,5 @@ Jim's decision (6 October): the session focuses on cleaning, structuring and gro
 - [Tropical Agriculturist repository](https://github.com/jburnford/tropical-agriculturist)
 - [Tropical article viewer](https://jimclifford.ca/tropical-agriculturist/viewer/)
 - [Empire Evolution paper](https://working-papers-in-critical-search.github.io/paper-002-empire-evolution/)
+- Clifford, Alex, Coates, Klein and Watson, "Geoparsing history: Locating commodities in ten million pages of nineteenth-century sources", *Historical Methods* 49:3 (2016), [doi:10.1080/01615440.2015.1116419](https://doi.org/10.1080/01615440.2015.1116419). Context for how difficult cleaning, structuring and grounding were ten years ago; used in step 1 as the opening comparison.
 - [Earlier workshop](https://jimclifford.ca/claude_code_workshop/workshop-event.html), for grounding and verification material only

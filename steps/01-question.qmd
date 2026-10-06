@@ -41,6 +41,19 @@ We will work with a handful of items from 1883, when the journal ran a dispute i
 
 We begin after OCR. Other sessions cover OCR production. The page images stay one click away, and you will need them.
 
+## Ten years ago
+
+The problems in this hour are not new. *Trading Consequences* (2012–2013) text-mined 10.5 million scanned pages of nineteenth-century British sources for commodities, places and dates: historians at Saskatchewan and York, computational linguists at Edinburgh, a database team at EDINA, visualisation at St Andrews, funded by Digging into Data. The write-up is Clifford, Alex, Coates, Klein and Watson, "Geoparsing history: Locating commodities in ten million pages of nineteenth-century sources", *Historical Methods* 49:3 (2016), 115–131, [doi:10.1080/01615440.2015.1116419](https://doi.org/10.1080/01615440.2015.1116419). Its difficulties are the same three we will work on, at a scale and cost that is worth remembering:
+
+| | Trading Consequences, 2013 | This hour |
+|---|---|---|
+| **Cleaning** | OCR turned "lime" into "time" and "line", long-s "salt" into "fait"; tables collapsed into 210-word "sentences" that linked "glass, glue and gelatine" to every country in a trade return. Fixes were hand-built: a hyphenation joiner, an f-to-s lexicon, a filter for table-heavy documents. 14.9% of locations in the gold standard contained OCR errors. | Two sentences of a 234-word letter are wrong in the OCR, in ways that reverse the meaning. The model flags them; the page settles them (case R3). |
+| **Structuring** | A six-stage pipeline (format conversion, OCR post-correction, linguistic pre-processing, named-entity recognition, attribute recognition, relation extraction), adapted from the Edinburgh Geoparser by computational linguists. A relation was "same sentence". A commodity lexicon had to be bootstrapped from customs records and Wikipedia because no expert list existed. | The coding agent proposes the fields, writes the script and reports failures in minutes (step 2). The historian still decides what a record is. |
+| **Grounding** | GeoNames string matching with geographic coherence scoring. "Saharunpore" was not found because the gazetteer only knew "Saharanpur"; "British West India Islands" grounded to West India; a bug placed every "Italy" in a Texan town. Final F-scores: 0.62 for commodities, 0.61 for locations. Two trained annotators agreed on what counted as a commodity only 72% of the time. | Semantic search over Wikidata plus statement reading, cached with timestamps (step 3). Walter Agar still is not there (case R4). Entities absent from the authority, and plausible wrong matches, are the same problem with a better search box. |
+| **Review** | Historians spotted false positives through the visualisations ("Saumur" as a place in a wine list); false negatives were invisible. A gold standard of double-annotated documents measured precision and recall. | Same two lessons: errors you can see get fixed, errors you cannot see need a sample; and a corrected error should become a rule (step 5). |
+
+What changed is who writes the pipeline and how fast the loop from error to fix runs. What did not change is where historical judgment is needed. The paper's closing advice to historians, that they should build the lexicons, gazetteers and structured data that software developers will not, is the premise of the exercise.
+
 ## Why this example
 
 The dispute is small enough to read in the hour and rich enough to contain every kind of decision the workflow needs:

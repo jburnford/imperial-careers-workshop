@@ -164,6 +164,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#start-from-a-structured-collection" id="toc-start-from-a-structured-collection" class="nav-link active" data-scroll-target="#start-from-a-structured-collection">Start from a structured collection</a></li>
   <li><a href="#take-the-question-to-an-unstructured-collection" id="toc-take-the-question-to-an-unstructured-collection" class="nav-link" data-scroll-target="#take-the-question-to-an-unstructured-collection">Take the question to an unstructured collection</a></li>
+  <li><a href="#ten-years-ago" id="toc-ten-years-ago" class="nav-link" data-scroll-target="#ten-years-ago">Ten years ago</a></li>
   <li><a href="#why-this-example" id="toc-why-this-example" class="nav-link" data-scroll-target="#why-this-example">Why this example</a></li>
   </ul>
 </nav>
@@ -282,6 +283,47 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 <p>We begin after OCR. Other sessions cover OCR production. The page images stay one click away, and you will need them.</p>
+</section>
+<section id="ten-years-ago" class="level2">
+<h2 class="anchored" data-anchor-id="ten-years-ago">Ten years ago</h2>
+<p>The problems in this hour are not new. <em>Trading Consequences</em> (2012–2013) text-mined 10.5 million scanned pages of nineteenth-century British sources for commodities, places and dates: historians at Saskatchewan and York, computational linguists at Edinburgh, a database team at EDINA, visualisation at St Andrews, funded by Digging into Data. The write-up is Clifford, Alex, Coates, Klein and Watson, “Geoparsing history: Locating commodities in ten million pages of nineteenth-century sources”, <em>Historical Methods</em> 49:3 (2016), 115–131, <a href="https://doi.org/10.1080/01615440.2015.1116419">doi:10.1080/01615440.2015.1116419</a>. Its difficulties are the same three we will work on, at a scale and cost that is worth remembering:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Trading Consequences, 2013</th>
+<th>This hour</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Cleaning</strong></td>
+<td>OCR turned “lime” into “time” and “line”, long-s “salt” into “fait”; tables collapsed into 210-word “sentences” that linked “glass, glue and gelatine” to every country in a trade return. Fixes were hand-built: a hyphenation joiner, an f-to-s lexicon, a filter for table-heavy documents. 14.9% of locations in the gold standard contained OCR errors.</td>
+<td>Two sentences of a 234-word letter are wrong in the OCR, in ways that reverse the meaning. The model flags them; the page settles them (case R3).</td>
+</tr>
+<tr class="even">
+<td><strong>Structuring</strong></td>
+<td>A six-stage pipeline (format conversion, OCR post-correction, linguistic pre-processing, named-entity recognition, attribute recognition, relation extraction), adapted from the Edinburgh Geoparser by computational linguists. A relation was “same sentence”. A commodity lexicon had to be bootstrapped from customs records and Wikipedia because no expert list existed.</td>
+<td>The coding agent proposes the fields, writes the script and reports failures in minutes (step 2). The historian still decides what a record is.</td>
+</tr>
+<tr class="odd">
+<td><strong>Grounding</strong></td>
+<td>GeoNames string matching with geographic coherence scoring. “Saharunpore” was not found because the gazetteer only knew “Saharanpur”; “British West India Islands” grounded to West India; a bug placed every “Italy” in a Texan town. Final F-scores: 0.62 for commodities, 0.61 for locations. Two trained annotators agreed on what counted as a commodity only 72% of the time.</td>
+<td>Semantic search over Wikidata plus statement reading, cached with timestamps (step 3). Walter Agar still is not there (case R4). Entities absent from the authority, and plausible wrong matches, are the same problem with a better search box.</td>
+</tr>
+<tr class="even">
+<td><strong>Review</strong></td>
+<td>Historians spotted false positives through the visualisations (“Saumur” as a place in a wine list); false negatives were invisible. A gold standard of double-annotated documents measured precision and recall.</td>
+<td>Same two lessons: errors you can see get fixed, errors you cannot see need a sample; and a corrected error should become a rule (step 5).</td>
+</tr>
+</tbody>
+</table>
+<p>What changed is who writes the pipeline and how fast the loop from error to fix runs. What did not change is where historical judgment is needed. The paper’s closing advice to historians, that they should build the lexicons, gazetteers and structured data that software developers will not, is the premise of the exercise.</p>
 </section>
 <section id="why-this-example" class="level2">
 <h2 class="anchored" data-anchor-id="why-this-example">Why this example</h2>
