@@ -443,6 +443,54 @@ Jim Clifford, University of Saskatchewan
 <p><strong>It knew who. It did not know the number.</strong> Nothing in the text tells you which ones resolve.</p>
 </div>
 </section>
+<section id="three-ways-to-get-the-number" class="slide level2 smaller">
+<h2>Three ways to get the number</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Gemini 3.8 Flash, no tools</th>
+<th>Pipeline: vector search + gates</th>
+<th>Opus 5.5 with retrieval</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Person identifiers correct</td>
+<td><strong>0</strong> of 16</td>
+<td>12 of 12 given; 8 ungrounded, 4 of them have items</td>
+<td><strong>16</strong> of 16 given</td>
+</tr>
+<tr class="even">
+<td>Declined</td>
+<td>4</td>
+<td>8</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>Found what the others missed</td>
+<td></td>
+<td></td>
+<td>Prince; two Wikidata items for Gorges</td>
+</tr>
+<tr class="even">
+<td>Cost per entry</td>
+<td>lowest</td>
+<td>low; scales</td>
+<td>highest; out of tool calls before the places</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<p>Both chatbots read the entry right. The difference is where the number came from. Even the best column needs you: which Gorges? Is Harris b. 1858 the Harris b. 1855?</p>
+</div>
+</section>
 <section id="six-victorias" class="slide level2 smaller">
 <h2>Six Victorias</h2>
 <p>The Australian colony. The capital of British Columbia. An electoral district. A gaol in Hong Kong. A district in the Cape. A county in Mauritius. A town in the Seychelles.</p>

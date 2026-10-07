@@ -1,0 +1,211 @@
+{
+ "subjects": {
+  "1": "Q459640",
+  "2": "Q7287329",
+  "3": "Q123279571",
+  "4": "Q5534618",
+  "6": "Q121494224",
+  "7": "Q19059378",
+  "8": "Q4120852",
+  "9": "Q47891631",
+  "10": "Q336040",
+  "12": "Q5075044",
+  "13": "Q20036709",
+  "15": "Q20725021",
+  "17": "Q16933745",
+  "18": "Q1292947",
+  "19": "Q5077823",
+  "20": "Q839225"
+ },
+ "others": {
+  "Joseph Chamberlain": "Q315999",
+  "Winston Churchill": "Q8016",
+  "H. H. Asquith": "Q166714",
+  "Alfred Lyttelton": "Q3395941",
+  "Sydney Buxton": "Q1645717",
+  "2nd Earl of Selborne": "Q3643409",
+  "9th Duke of Devonshire": "Q2411883",
+  "J. H. Thomas": "Q338294"
+ },
+ "schools": {
+  "Rossall School": "Q5493652",
+  "Queens' College, Cambridge": "Q765642",
+  "Trinity College, Cambridge": "Q332342",
+  "Harrow School": "Q1247373",
+  "Christ's College, Cambridge": "Q714717",
+  "Lincoln's Inn": "Q69482",
+  "Gray's Inn": "Q157412"
+ },
+ "labels": {
+  "Q116445705": [
+   "Edmond Howard Lacam Gorges",
+   "colonial administrator in South West Africa (1872-1924)",
+   "1872\u20131924"
+  ],
+  "Q121494224": [
+   "Edmond Gorges",
+   "South African politician (1872\u20131924)",
+   "1872\u20131924"
+  ],
+  "Q123279571": [
+   "Ferdinando Hamblyn Price",
+   "",
+   "1855\u20131942"
+  ],
+  "Q1247373": [
+   "Harrow School",
+   "school in Harrow, UK",
+   "\u2013"
+  ],
+  "Q1292947": [
+   "Edward Marsh",
+   "British polymath (1872\u20131953)",
+   "1872\u20131953"
+  ],
+  "Q157412": [
+   "Gray's Inn",
+   "one of the four Inns of Court in London, England, UK",
+   "\u2013"
+  ],
+  "Q1645717": [
+   "Sydney Buxton, 1st Earl Buxton",
+   "British politician (1853-1934)",
+   "1853\u20131934"
+  ],
+  "Q166714": [
+   "H. H. Asquith",
+   "British politician; Prime Minister of the United Kingdom from 1908 to 1916 (1852\u20131928)",
+   "1852\u20131928"
+  ],
+  "Q16933745": [
+   "T. J. Alldridge",
+   "British colonial administrator",
+   "1847\u20131916"
+  ],
+  "Q19059378": [
+   "George Chardin Denton",
+   "British military officer and governor of Gambia",
+   "1851\u20131928"
+  ],
+  "Q20036709": [
+   "Robert Norman Bland",
+   "British colonial administrator",
+   "1859\u20131948"
+  ],
+  "Q20725021": [
+   "Henry Francis Wilson",
+   "British barrister-at-law (1859-1937)",
+   "1859\u20131937"
+  ],
+  "Q2411883": [
+   "Victor Cavendish, 9th Duke of Devonshire",
+   "British politician (1868-1938)",
+   "1868\u20131938"
+  ],
+  "Q315999": [
+   "Joseph Chamberlain",
+   "British politician (1836-1914)",
+   "1836\u20131914"
+  ],
+  "Q332342": [
+   "Trinity College",
+   "constituent college of the University of Cambridge in England",
+   "\u2013"
+  ],
+  "Q336040": [
+   "Herbert Plumer, 1st Viscount Plumer",
+   "British Army general and High Commissioner of the British Mandate for Palestine (1857-1932)",
+   "1857\u20131932"
+  ],
+  "Q338294": [
+   "James Henry Thomas",
+   "Welsh trade unionist and politician (1874-1949)",
+   "1874\u20131949"
+  ],
+  "Q3395941": [
+   "Alfred Lyttelton",
+   "English cricketer and politician (1857-1913)",
+   "1857\u20131913"
+  ],
+  "Q3643409": [
+   "William Palmer, 2nd Earl of Selborne",
+   "British politician (1859-1942)",
+   "1859\u20131942"
+  ],
+  "Q4120852": [
+   "Richard James Wilkinson",
+   "British colonial governor (1867-1941)",
+   "1867\u20131941"
+  ],
+  "Q459640": [
+   "Alfred Sharpe",
+   "Commissioner and Consul-General for the British Central Africa Protectorate and first Governor of Nyasaland (1853-1935)",
+   "1853\u20131935"
+  ],
+  "Q47891631": [
+   "Edward Ernest Prince",
+   "Canadian fisheries biologist",
+   "1858\u20131936"
+  ],
+  "Q5056012": [
+   "Cecil Clementi Smith",
+   "British colonial administrator",
+   "1840\u20131916"
+  ],
+  "Q5075044": [
+   "Charles Alexander Harris",
+   "British colonial administrator",
+   "1855\u20131947"
+  ],
+  "Q5077823": [
+   "Charles Frederic Belcher",
+   "Australian lawyer, author and amateur ornithologist",
+   "1876\u20131970"
+  ],
+  "Q5493652": [
+   "Rossall School",
+   "independent school in Lancashire, UK",
+   "\u2013"
+  ],
+  "Q5534618": [
+   "Geoffrey Francis Archer",
+   "British ornithologist and colonial official (1882\u20131964)",
+   "1882\u20131964"
+  ],
+  "Q5586263": [
+   "Gorges Edmond Howard",
+   "Irish lawyer",
+   "1715\u20131786"
+  ],
+  "Q69482": [
+   "Lincoln's Inn",
+   "one of the four Inns of Court in London, England",
+   "\u2013"
+  ],
+  "Q714717": [
+   "Christ's College",
+   "college of the University of Cambridge",
+   "\u2013"
+  ],
+  "Q7287329": [
+   "Ralph Champneys Williams",
+   "Lieutenant Governor of Newfoundland (1848\u20131927)",
+   "1848\u20131927"
+  ],
+  "Q765642": [
+   "Queens' College",
+   "college of the University of Cambridge",
+   "\u2013"
+  ],
+  "Q8016": [
+   "Winston Churchill",
+   "British statesman, soldier and writer (1874\u20131965)",
+   "1874\u20131965"
+  ],
+  "Q839225": [
+   "Cecil Clementi",
+   "British colonial administrator (1875\u20131947)",
+   "1875\u20131947"
+  ]
+ }
+}

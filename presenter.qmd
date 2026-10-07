@@ -37,7 +37,7 @@ Three searches, in this order, with the statements read aloud for the first two:
 
 ## The control
 
-Jim's Gemini 3.8 Flash run of 7 October is scored in `outputs/ground-test/gemini-scoring.md`: zero of sixteen person identifiers, six not even people, seven near-miss numbers. If running a chatbot live, use entry 4 (Archer) or 18 (Marsh): both produced a near-miss number, which makes the point better than a wild one.
+Jim's Gemini 3.8 Flash run of 7 October is scored in `outputs/ground-test/gemini-scoring.md`: zero of sixteen person identifiers, six not even people, seven near-miss numbers. Jim's Opus 5.5 run with web retrieval, same day, is scored in `outputs/ground-test/opus-scoring.md`: sixteen of sixteen, Prince found, the Gorges duplicate found, out of tool calls before any place. Show the three-column slide. If running a chatbot live, use entry 4 (Archer) or 18 (Marsh): both produced a near-miss number in Gemini, which makes the point better than a wild one.
 
 ## Online participation
 

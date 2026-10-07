@@ -42,6 +42,15 @@ And the control. On 7 October Jim pasted the twenty entries into Gemini 3.8 Flas
 
 The matches are the famous, low-numbered items: Paris, Canada, Singapore, Churchill. Nyasaland resolved to a disambiguation page, the Straits Settlements to a Danish triathlete, the Cape Colony to an Austrian goalkeeper, Joseph Chamberlain to a Swiss footballer. The model knew who; it did not know the number. A Q-number from memory is a string the model has seen near a name, and nothing in the response tells you which ones resolve.
 
+The same day, the same twenty entries went to Claude Opus 5.5 in a chat with web search, told to report only identifiers it had seen on a page ([response](../outputs/ground-test/opus-response.md), [scoring](../outputs/ground-test/opus-scoring.md)). Sixteen identifiers given, sixteen right, the same four declined. It found Prince, whom the vector search had missed, and it found that Gorges has two Wikidata items for one man. It also stopped at its tool limit before reaching a single place name.
+
+| | Gemini, no tools | Pipeline: vector search + gates | Opus, with retrieval |
+|---|---|---|---|
+| Person identifiers correct | 0 of 16 | 12 of 12 given; 8 ungrounded, of which 4 have items | 16 of 16 given |
+| Cost per entry | lowest | low; scales to 100,000 | highest; ran out of tool calls before the places |
+
+Both chatbots read the biographies correctly. The difference is where the number came from. And even the best column needs the historian: someone has to pick between the two Gorges items, and someone decided Harris was Harris when the printed birth year disagreed with the item.
+
 ## Three questions to keep separate
 
 1. **Does the identifier resolve to what was retrieved?** A Q-number from a model's memory is not a lookup.
