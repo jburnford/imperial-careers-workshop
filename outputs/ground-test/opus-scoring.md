@@ -1,6 +1,6 @@
 # Scoring Claude Opus 5.5 with retrieval on the twenty entries
 
-Jim Clifford gave the same twenty entries to Claude Opus 5.5 in a chat with web search, 7 October 2026. The model fetched Wikidata item pages (and one Wikisource author page) and reported only identifiers it had seen on a page. It stopped at its tool limit after the twenty subjects, eight other people and seven schools; places were not attempted. Its response is in `opus-response.md`. Every identifier was resolved with `wbgetentities` on 7 October 2026 (`opus-scoring-raw.json`).
+Jim Clifford gave the same twenty entries to Claude Opus 5.5 in a chat with web search, 7 October 2026, with the same prompt as the Gemini run: "Parse these bios and ground the places, schools and people to Wikidata ids where possible." The model fetched Wikidata item pages (and one Wikisource author page) and reported only identifiers it had seen on a page. It stopped at its tool limit after the twenty subjects, eight other people and seven schools; places were not attempted. Its response is in `opus-response.md`. Every identifier was resolved with `wbgetentities` on 7 October 2026 (`opus-scoring-raw.json`).
 
 ## The subjects
 
