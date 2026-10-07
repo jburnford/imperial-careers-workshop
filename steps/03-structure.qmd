@@ -3,6 +3,22 @@ title: "Structure"
 subtitle: "Minutes 12–22. What is a record here? Python takes the regular entries, a cheap model takes the rest overnight, Python checks the result; you decide what counts as an event."
 ---
 
+::: {.callout-note collapse="true" title="Terms on this page"}
+- **JSON**: a plain-text format for a record: named fields in braces, lists in brackets (see the glossary for Trimen's).
+- **prompt**: the written instructions sent to the model with each entry.
+- **regex grammar**: pattern rules that match text by its shape, written in Python; the deterministic first tier.
+- **validator**: Python that checks every place and year the model wrote against the source and drops what is not there.
+- **post-normaliser**: Python that applies the systematic fixes found by the audit, logging each change.
+- **vLLM**: an open-source server that runs an open model on a GPU and answers like a commercial API.
+- **GPU**: the graphics card the model runs on; the model has to fit in its memory.
+- **token**: the unit a model reads and writes in, roughly three-quarters of a word.
+- **reasoning mode**: a setting where the model writes out its thinking before answering; off here, because it spent the budget and returned nothing.
+- **frontier model / open model**: a commercial model such as Claude or Gemini, run by its maker; an open model such as Qwen, whose weights you can download and run yourself.
+- **deterministic**: done by fixed rules, so the same input always gives the same output; no model involved.
+
+All terms: [glossary](../glossary.qmd).
+:::
+
 ## The shape of it
 
 Structuring the biographies was never "send them to a model". It was a hybrid, in three parts, and the same three parts ran twice: once for the Colonial Office List in June 2026, once for the India Office List a week later.

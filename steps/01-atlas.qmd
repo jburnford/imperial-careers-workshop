@@ -3,6 +3,19 @@ title: "The atlas"
 subtitle: "Minutes 0–5. What the finished data does, and the loop that made it."
 ---
 
+::: {.callout-note collapse="true" title="Terms on this page"}
+- **coding agent**: a model that can read files, write and run code, and call tools, rather than only answer in chat.
+- **pipeline**: the chain of scripts that turns the OCR text into the graph; run again when a rule changes.
+- **arc**: one line on the atlas: one official moving from one posting to another.
+- **Wikidata item, QID**: a shared identifier (Q plus a number) for a person or place, with its own facts attached.
+- **F-score**: one number for how much a system found (recall) and how much of that was right (precision); 0.6 means about six in ten on both.
+- **gazetteer**: a list of place names with coordinates.
+- **cache**: the saved results of earlier lookups, so they are not repeated and can be corrected in one place.
+- **re-emit**: write the graph out again after a rule changes.
+
+All terms: [glossary](../glossary.qmd).
+:::
+
 ## Watch
 
 {{< video https://jimclifford.ca/col_matching/combined_mobility.mp4 >}}

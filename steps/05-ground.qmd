@@ -3,6 +3,19 @@ title: "Ground"
 subtitle: "Minutes 30–40. Which place, which person, in the shared vocabulary? A live lookup, and a chatbot asked to do the same from memory."
 ---
 
+::: {.callout-note collapse="true" title="Terms on this page"}
+- **grounding**: linking a name in the source to a shared identifier for the thing it names.
+- **QID**: a Wikidata identifier: Q plus a number, such as Q1800510.
+- **vector search**: search by meaning rather than by matching letters; the WikidataMCP server offers it over Wikidata.
+- **MCP**: a standard way of giving a model a tool it can call, so answers come from retrieval rather than memory.
+- **gate**: a rule that accepts a link only when the evidence leaves no plausible alternative, and otherwise leaves it unlinked.
+- **surface**: a place name exactly as printed, before any decision about what it refers to.
+- **cache**: the saved results of earlier lookups, keyed by the printed name.
+- **API**: a way for a program to send a request to a service and get an answer back; here, to a model or to Wikidata.
+
+All terms: [glossary](../glossary.qmd).
+:::
+
 ## Why ground at all
 
 Every arc on the atlas needs a latitude and longitude for a place named in a Victorian reference book: the Colony of Victoria, the Central Provinces, British Guiana, a princely state. Modern gazetteers do not have them or mislocate them. Wikidata has an item for each, with coordinates or a link to the capital that has them. Once every place surface in the corpus was grounded to a Wikidata item, one query returned coordinates for all of them. Weeks of gazetteer work did not happen.

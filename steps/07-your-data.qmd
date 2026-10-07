@@ -3,6 +3,15 @@ title: "Your own data"
 subtitle: "Minutes 55–60. A practical next step for another collection."
 ---
 
+::: {.callout-note collapse="true" title="Terms on this page"}
+- **fingerprint**: a short code computed from the data, stored with each decision so it cannot be attached to a different version.
+- **precision and recall**: of what you found, how much was right; of what was there, how much you found.
+- **stratified sample**: a sample built slice by slice so the hard cases are represented.
+- **frontier model**: a commercial model run by its maker; expensive per entry, used to write the pipeline.
+
+All terms: [glossary](../glossary.qmd).
+:::
+
 The published session description invited you to bring messy historical datasets. An hour is not enough to work on them together, but the sequence transfers. Here is how to start, in the order that worked for Imperial Careers.
 
 ## Before you open a model

@@ -3,6 +3,19 @@ title: "The map finds the errors"
 subtitle: "Minutes 40–47. Three errors seen in the atlas, what caused them, and what fixing them changed."
 ---
 
+::: {.callout-note collapse="true" title="Terms on this page"}
+- **cache row**: one saved lookup: a printed place name and the identifier it was matched to.
+- **surface**: a place name exactly as printed.
+- **manifest join**: matching printed names against a prepared table of historical polities.
+- **containment match**: accepting a match because one name occurs inside another; the cause of the South Africa error.
+- **canonical**: the one agreed entry for a thing, to which duplicates are folded.
+- **re-emit**: write the graph out again after the fix.
+- **stratum**: one slice of a sample, chosen to oversample the risky cases.
+- **false negative**: a link or merge that should have been made and was not; invisible on a map.
+
+All terms: [glossary](../glossary.qmd).
+:::
+
 A wrong grounding is invisible in a table of 180,000 rows. On a map it is a dot in the wrong hemisphere. The project keeps a [running list](../outputs/audit/kg-fixes-running-list.md) of defects surfaced while building the atlas, and a [review of 3 September 2026](../outputs/audit/project-review-2026-09-03.md) that re-fetched every QID in the graph and loaded the atlas headlessly to look for more. Three from those lists.
 
 ## A premier of British Columbia in Australia

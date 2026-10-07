@@ -3,6 +3,14 @@ title: "The source"
 subtitle: "Minutes 5–12. One printed entry, and what you would extract from it."
 ---
 
+::: {.callout-note collapse="true" title="Terms on this page"}
+- **OCR**: optical character recognition: software that turns a scanned page into text; its mistakes are the "garbles".
+- **entry**: one printed biography in the Record of Services; the same person has one in each edition.
+- **schema**: the agreed set of fields a record has.
+
+All terms: [glossary](../glossary.qmd).
+:::
+
 ## The Record of Services
 
 From 1883 every *Colonial Office List* carries a section headed, in most years, "Record of the Public Services of Officers": between 1,400 and 2,900 entries per edition, cumulative, each a compressed career. Here is the 1889 entry for the director of the botanic gardens at Peradeniya:

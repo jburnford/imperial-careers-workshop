@@ -3,6 +3,14 @@ title: "Worked answers"
 subtitle: "Read after you have decided. Where more than one reading remains possible, it says so."
 ---
 
+::: {.callout-note collapse="true" title="Terms on this page"}
+- **cache row**: one saved lookup: a printed place name and the identifier it was matched to.
+- **manifest join, containment**: matching printed names against a table of historical polities; accepting a match because one name occurs inside another.
+- **ledger, dossier**: the file of merge decisions with reasons; the evidence laid out for one cluster.
+
+All terms: [glossary](../glossary.qmd).
+:::
+
 These are the preparer's answers with the evidence, drawn from the Imperial Careers project's own audits. Each decision is for the record in front of you.
 
 ## R1 (Structure). Blakely's record does not stand

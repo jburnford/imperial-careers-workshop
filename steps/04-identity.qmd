@@ -3,6 +3,17 @@ title: "Clean: one person or two?"
 subtitle: "Minutes 22–30. Forty editions, OCR garbles, and the cases that need a historian."
 ---
 
+::: {.callout-note collapse="true" title="Terms on this page"}
+- **deterministic pass**: a merge rule with no model: same name and birth year, or same name and a shared dated event.
+- **cluster**: a small group of biographies that might be one person, assembled by a loose key so OCR variants meet.
+- **dossier**: everything the project holds on the biographies in a cluster, laid out for one decision.
+- **ledger**: an append-only file of decisions with reasons, so each can be revisited.
+- **silver standard**: cases labelled by hand afterwards to measure what the automated passes did.
+- **OCR garble**: a name misread by the scanning software: ABERY for CARBERY.
+
+All terms: [glossary](../glossary.qmd).
+:::
+
 ## The problem
 
 Trimen has an entry in seven editions. A long-serving official has one in forty. Across 85 volumes the Record of Services yields on the order of 100,000 entry instances that have to be resolved into 27,526 people. Most of that is easy: the same surname, the same given names, the same career a line longer each year. The rest is where the OCR has rewritten a surname, a man has changed his title, or two men share a name.

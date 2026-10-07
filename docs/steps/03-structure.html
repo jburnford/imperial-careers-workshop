@@ -215,6 +215,35 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<div class="callout callout-style-default callout-note callout-titled" title="Terms on this page">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Terms on this page
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>JSON</strong>: a plain-text format for a record: named fields in braces, lists in brackets (see the glossary for Trimen’s).</li>
+<li><strong>prompt</strong>: the written instructions sent to the model with each entry.</li>
+<li><strong>regex grammar</strong>: pattern rules that match text by its shape, written in Python; the deterministic first tier.</li>
+<li><strong>validator</strong>: Python that checks every place and year the model wrote against the source and drops what is not there.</li>
+<li><strong>post-normaliser</strong>: Python that applies the systematic fixes found by the audit, logging each change.</li>
+<li><strong>vLLM</strong>: an open-source server that runs an open model on a GPU and answers like a commercial API.</li>
+<li><strong>GPU</strong>: the graphics card the model runs on; the model has to fit in its memory.</li>
+<li><strong>token</strong>: the unit a model reads and writes in, roughly three-quarters of a word.</li>
+<li><strong>reasoning mode</strong>: a setting where the model writes out its thinking before answering; off here, because it spent the budget and returned nothing.</li>
+<li><strong>frontier model / open model</strong>: a commercial model such as Claude or Gemini, run by its maker; an open model such as Qwen, whose weights you can download and run yourself.</li>
+<li><strong>deterministic</strong>: done by fixed rules, so the same input always gives the same output; no model involved.</li>
+</ul>
+<p>All terms: <a href="../glossary.html">glossary</a>.</p>
+</div>
+</div>
+</div>
 <section id="the-shape-of-it" class="level2">
 <h2 class="anchored" data-anchor-id="the-shape-of-it">The shape of it</h2>
 <p>Structuring the biographies was never “send them to a model”. It was a hybrid, in three parts, and the same three parts ran twice: once for the Colonial Office List in June 2026, once for the India Office List a week later.</p>

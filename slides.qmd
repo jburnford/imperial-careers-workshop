@@ -108,7 +108,7 @@ What is a record here?
 | | | |
 |---|---|---|
 | **1. Python** | a grammar for the entry shape | refuses anything it cannot fully parse |
-| **2. Qwen3.6-35B** | one entry in, one JSON object out | run-on, ditto and concurrent clauses |
+| **2. Qwen3.6-35B** | one entry in, one structured record (JSON) out | run-on, ditto and concurrent clauses |
 | **3. Python** | every place and year checked against the source | systematic errors fixed by rule |
 
 <br>
@@ -315,4 +315,4 @@ Zoom: **Copy summary for chat**.
 
 <br>
 
-**jimclifford.ca/imperial-careers-workshop** · data **jimclifford.ca/col_matching**
+**jimclifford.ca/imperial-careers-workshop** · glossary, answers, both exercises · data **jimclifford.ca/col_matching**

@@ -23,6 +23,8 @@ The hour is about how, and about where in that process a historian has to decide
 
 ## Three questions
 
+Technical terms are explained where they first appear on each page, and in the [glossary](glossary.qmd).
+
 A historian turning a text into data asks three questions of it, and each has one decision only the historian can make. A model can do everything around that decision, at scale.
 
 | | The question | The model does | You decide |
