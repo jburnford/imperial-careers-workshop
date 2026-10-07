@@ -54,4 +54,4 @@ A browser. The [decision exercise](review/index.html) and the [mark-up exercise]
 
 ## Further
 
-[Worked answers](answers.qmd), [running it yourself](setup.qmd), and the saved outputs in [`outputs/`](outputs/): the extraction prompt, the audit of a structured sample, the duplicate-resolution rules and a sample of clusters, the place-grounding cache rows behind the errors, and the project review that found them.
+[Worked answers](answers.qmd), a [glossary](glossary.qmd) of the terms used, [running it yourself](setup.qmd), and the saved outputs in [`outputs/`](outputs/): the extraction prompt, the audit of a structured sample, the duplicate-resolution rules and a sample of clusters, the place-grounding cache rows behind the errors, and the project review that found them.

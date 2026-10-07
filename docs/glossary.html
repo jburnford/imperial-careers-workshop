@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Ground – Cleaning and Structuring Historical Data</title>
+<title>Glossary – Cleaning and Structuring Historical Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,25 +20,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-d82805d261e7428e2a59e220d25781bb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-d82805d261e7428e2a59e220d25781bb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -77,7 +111,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Cleaning and Structuring Historical Data</span>
     </a>
   </div>
@@ -88,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Start</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -97,53 +131,53 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-the-hour">    
         <li>
-    <a class="dropdown-item" href="../steps/01-atlas.html">
+    <a class="dropdown-item" href="./steps/01-atlas.html">
  <span class="dropdown-text">1. The atlas</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../steps/02-source.html">
+    <a class="dropdown-item" href="./steps/02-source.html">
  <span class="dropdown-text">2. The source</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../steps/03-structure.html">
+    <a class="dropdown-item" href="./steps/03-structure.html">
  <span class="dropdown-text">3. Structure</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../steps/04-identity.html">
+    <a class="dropdown-item" href="./steps/04-identity.html">
  <span class="dropdown-text">4. Clean: one person or two?</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../steps/05-ground.html">
+    <a class="dropdown-item" href="./steps/05-ground.html">
  <span class="dropdown-text">5. Ground</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../steps/06-loop.html">
+    <a class="dropdown-item" href="./steps/06-loop.html">
  <span class="dropdown-text">6. The map finds the errors</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../review/index.html">
+    <a class="dropdown-item" href="./review/index.html">
  <span class="dropdown-text">Exercise: decide</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../annotate/index.html">
+    <a class="dropdown-item" href="./annotate/index.html">
  <span class="dropdown-text">Exercise: mark up an entry</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../steps/07-your-data.html">
+    <a class="dropdown-item" href="./steps/07-your-data.html">
  <span class="dropdown-text">7. Your own data</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../slides.html"> 
+    <a class="nav-link" href="./slides.html"> 
 <span class="menu-text">Slides</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../answers.html"> 
+    <a class="nav-link" href="./answers.html"> 
 <span class="menu-text">Worked answers</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../glossary.html"> 
+    <a class="nav-link active" href="./glossary.html" aria-current="page"> 
 <span class="menu-text">Glossary</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -152,15 +186,15 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-more">    
         <li>
-    <a class="dropdown-item" href="../handout.html">
+    <a class="dropdown-item" href="./handout.html">
  <span class="dropdown-text">Printable handout</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../setup.html">
+    <a class="dropdown-item" href="./setup.html">
  <span class="dropdown-text">Run it yourself</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../presenter.html">
+    <a class="dropdown-item" href="./presenter.html">
  <span class="dropdown-text">Presenter notes</span></a>
   </li>  
     </ul>
@@ -181,12 +215,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#why-ground-at-all" id="toc-why-ground-at-all" class="nav-link active" data-scroll-target="#why-ground-at-all">Why ground at all</a></li>
-  <li><a href="#two-ways-to-get-a-qid" id="toc-two-ways-to-get-a-qid" class="nav-link" data-scroll-target="#two-ways-to-get-a-qid">Two ways to get a QID</a></li>
-  <li><a href="#live-the-lookup" id="toc-live-the-lookup" class="nav-link" data-scroll-target="#live-the-lookup">Live: the lookup</a></li>
-  <li><a href="#live-or-saved-the-chatbot" id="toc-live-or-saved-the-chatbot" class="nav-link" data-scroll-target="#live-or-saved-the-chatbot">Live, or saved: the chatbot</a></li>
-  <li><a href="#three-questions-to-keep-separate" id="toc-three-questions-to-keep-separate" class="nav-link" data-scroll-target="#three-questions-to-keep-separate">Three questions to keep separate</a></li>
-  <li><a href="#places-are-harder-than-people" id="toc-places-are-harder-than-people" class="nav-link" data-scroll-target="#places-are-harder-than-people">Places are harder than people</a></li>
+  <li><a href="#json" id="toc-json" class="nav-link active" data-scroll-target="#json">JSON</a></li>
+  <li><a href="#the-model-qwen3.6-35b-a3b" id="toc-the-model-qwen3.6-35b-a3b" class="nav-link" data-scroll-target="#the-model-qwen3.6-35b-a3b">The model: Qwen3.6-35B-A3B</a></li>
+  <li><a href="#other-terms" id="toc-other-terms" class="nav-link" data-scroll-target="#other-terms">Other terms</a></li>
   </ul>
 </nav>
     </div>
@@ -195,8 +226,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Ground</h1>
-<p class="subtitle lead">Minutes 30–40. Which place, which person, in the shared vocabulary? A live lookup, and a chatbot asked to do the same from memory.</p>
+<h1 class="title">Glossary</h1>
+<p class="subtitle lead">The terms the pages use, in plain words, with what the project actually ran.</p>
 </div>
 
 
@@ -213,121 +244,55 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="why-ground-at-all" class="level2">
-<h2 class="anchored" data-anchor-id="why-ground-at-all">Why ground at all</h2>
-<p>Every arc on the atlas needs a latitude and longitude for a place named in a Victorian reference book: the Colony of Victoria, the Central Provinces, British Guiana, a princely state. Modern gazetteers do not have them or mislocate them. Wikidata has an item for each, with coordinates or a link to the capital that has them. Once every place surface in the corpus was grounded to a Wikidata item, one query returned coordinates for all of them. Weeks of gazetteer work did not happen.</p>
-<p>The second reason is composition. A historian of the Cape and a historian of Bombay who both ground to <a href="https://www.wikidata.org/wiki/Q1800510">Q1800510</a> have joined their datasets without meeting. The <a href="../outputs/atlas/why-historians-need-wikidata.md">longer argument</a> is Jim’s; the short version is: ground to Wikidata, do not host your scholarship there.</p>
+<section id="json" class="level2">
+<h2 class="anchored" data-anchor-id="json">JSON</h2>
+<p>A plain-text way of writing a record so that every programming language can read it. A record is a list of named fields inside braces; a list is inside square brackets; text is in quotes; numbers and <code>null</code> (meaning “not given”) stand alone. Trimen’s entry, structured:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"surname"</span><span class="fu">:</span> <span class="st">"TRIMEN"</span><span class="fu">,</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"given_names"</span><span class="fu">:</span> <span class="st">"HENRY"</span><span class="fu">,</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"birth_year"</span><span class="fu">:</span> <span class="kw">null</span><span class="fu">,</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"education"</span><span class="fu">:</span> <span class="st">"M.B. (Lond.)"</span><span class="fu">,</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"honours"</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span><span class="dt">"award"</span><span class="fu">:</span> <span class="st">"F.R.S."</span><span class="fu">,</span> <span class="dt">"year"</span><span class="fu">:</span> <span class="kw">null</span><span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span><span class="dt">"award"</span><span class="fu">:</span> <span class="st">"F.L.S."</span><span class="fu">,</span> <span class="dt">"year"</span><span class="fu">:</span> <span class="kw">null</span><span class="fu">}</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"events"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span><span class="dt">"position"</span><span class="fu">:</span> <span class="st">"lecturer on botany"</span><span class="fu">,</span> <span class="dt">"place"</span><span class="fu">:</span> <span class="st">"London"</span><span class="fu">,</span> <span class="dt">"year_start"</span><span class="fu">:</span> <span class="dv">1867</span><span class="fu">,</span> <span class="dt">"year_end"</span><span class="fu">:</span> <span class="dv">1875</span><span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span><span class="dt">"position"</span><span class="fu">:</span> <span class="st">"senior assistant to department of botany"</span><span class="fu">,</span> <span class="dt">"place"</span><span class="fu">:</span> <span class="st">"British Museum"</span><span class="fu">,</span> <span class="dt">"year_start"</span><span class="fu">:</span> <span class="dv">1869</span><span class="fu">,</span> <span class="dt">"year_end"</span><span class="fu">:</span> <span class="dv">1879</span><span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span><span class="dt">"position"</span><span class="fu">:</span> <span class="st">"director Royal Botanical Gardens"</span><span class="fu">,</span> <span class="dt">"place"</span><span class="fu">:</span> <span class="st">"Ceylon"</span><span class="fu">,</span> <span class="dt">"year_start"</span><span class="fu">:</span> <span class="dv">1880</span><span class="fu">,</span> <span class="dt">"year_end"</span><span class="fu">:</span> <span class="kw">null</span><span class="fu">}</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"terminal"</span><span class="fu">:</span> <span class="kw">null</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>That is what the model is asked to return for each entry, what the Python validator checks against the source, and what the graph is built from. One object per line in a file is a corpus; a spreadsheet can be made from it in one command, and the reverse.</p>
 </section>
-<section id="two-ways-to-get-a-qid" class="level2">
-<h2 class="anchored" data-anchor-id="two-ways-to-get-a-qid">Two ways to get a QID</h2>
-<p><strong>Retrieve it.</strong> The pipeline uses the <a href="https://wd-mcp.wmcloud.org/">WikidataMCP</a> server’s vector search, which matches meaning rather than strings, then reads the item’s statements, then applies verification gates (type, dates, place) before accepting. Every accepted link has the retrieved evidence and the lookup date beside it. The Colonial Office List graph has 1,066 people grounded this way with a zero-false-positive gate, and 131,343 events grounded to a place.</p>
-<p><strong>Ask a chatbot.</strong> Paste the biography into a model with no tools and ask for the QID. It will give one. Sometimes it is right.</p>
-</section>
-<section id="live-the-lookup" class="level2">
-<h2 class="anchored" data-anchor-id="live-the-lookup">Live: the lookup</h2>
-<p>The presenter runs the MCP search in the room. Suggested script:</p>
+<section id="the-model-qwen3.6-35b-a3b" class="level2">
+<h2 class="anchored" data-anchor-id="the-model-qwen3.6-35b-a3b">The model: Qwen3.6-35B-A3B</h2>
+<p>An open-weights language model released by Alibaba’s Qwen team (<a href="https://qwen.ai/blog?id=qwen3.6-35b-a3b">announcement</a>). The name says what it is: 35 billion parameters in total, of which about 3 billion are active for any one token (“A3B”), because it is a mixture-of-experts model: 256 small specialist sub-networks, of which eight plus one shared one are consulted per token. The effect is that it reads and writes at the speed and cost of a 3-billion-parameter model while carrying the knowledge of a 35-billion one. It can run in a “thinking” mode that reasons at length before answering; the project turned that off, because on long entries the reasoning ate the token budget and returned nothing.</p>
+<p><strong>What it takes to run.</strong> The whole model has to sit in GPU memory. At full precision that is about 70 GB, which means one datacentre card (an 80 GB A100 or H100) or four 24 GB consumer cards (<a href="https://apxml.com/models/qwen36-35b-a3b">specifications and memory figures</a>). The project served it with vLLM, an open-source server that exposes the model through the same interface as the commercial APIs, so the same Python client talks to either. The overnight run used a university GPU box; the matching jobs used one H100 on a Compute Canada cluster, with vLLM started inside the batch job and the model’s name on the server set to <code>qwen3-30b-a3b</code> (<a href="https://github.com/jburnford/col_matching/blob/main/nibi/qwen_b1_full.slurm">job script</a>).</p>
+<p><strong>If you do not have a cluster.</strong> In rough order of effort:</p>
 <ol type="1">
-<li>Search “Henry Trimen botanist Ceylon Peradeniya”. Read the top hit’s statements: born 1843, died 1896, botanist. Compare with the entry: director from 1880, M.B., F.R.S. <strong>Supported.</strong></li>
-<li>Search “Ferdinando Hamlyn Price” with the career words. The top hit is <a href="https://www.wikidata.org/wiki/Q123279571">Q123279571</a>, “Ferdinando Hamblyn Price”, alias Hamlyn, born 1855, died 1942, described only in Tamil as a Sri Lankan politician, no career statements at all. The entry says mayor of Colombo three times. <strong>Supported, on the name, the dates and Colombo</strong>, and the pipeline’s gate had rejected it because the spelling differed.</li>
-<li>Search “Elwood D’Arcy Tibbits Antigua”. Nothing plausible in the top fifty. <strong>Unresolved.</strong> Keep the local record and the search that was run.</li>
+<li><strong>Rent the model by the token.</strong> OpenRouter and similar brokers serve Qwen models through the same interface; you change one line, the server address, and pay per million tokens. The project’s own bake-off script does exactly this (<a href="https://github.com/jburnford/col_matching/blob/main/kg_bench_openrouter.py"><code>kg_bench_openrouter.py</code></a>), pointing the same client at <code>https://openrouter.ai/api/v1</code>. For 30,000 entries at a few hundred tokens each, the whole run is in the tens of millions of tokens, which at the prices such models list is dollars to tens of dollars; check the current price before you start. Free tiers exist and the script defaults to one, with the warning that free models drift on field names, which is why the prompt pins the keys.</li>
+<li><strong>Rent a GPU by the hour.</strong> Cloud GPU services rent an 80 GB card by the hour. An eight-hour run with the same vLLM command costs an evening’s worth of hours; price it on the day.</li>
+<li><strong>Run a compressed copy locally.</strong> A 4-bit quantised version of the same model needs about 19 GB of memory, which fits a single 24 GB consumer card or a Mac with 32 GB of unified memory, under llama.cpp, Ollama or LM Studio. It is slower, perhaps an entry every 15 to 40 seconds rather than one a second, so a 30,000-entry corpus is days rather than a night, but the runner is resumable and it costs nothing after the hardware.</li>
+<li><strong>Use a smaller sibling.</strong> Qwen’s 4 and 8 billion parameter dense models run on a laptop. Expect worse structuring; measure it against a reference set of 200 entries before trusting it, exactly as the project measured the 35B model against the in-session reference set.</li>
+<li><strong>Use a commercial batch API.</strong> The project’s first fallback tier sent the entries the Python grammar refused to Gemini’s batch endpoint at half the interactive price, overnight. Any provider’s batch tier works the same way.</li>
+<li><strong>Ask for an allocation.</strong> Canadian researchers get Compute Canada (the Digital Research Alliance) time by application; in the United States, campus research computing or NSF ACCESS. The job script above is what an allocation lets you run.</li>
 </ol>
+<p>Whichever route: keep the prompt, the validator and the post-normaliser the same, and run the 200-entry reference set first. The model is the swappable part.</p>
 </section>
-<section id="live-or-saved-the-chatbot" class="level2">
-<h2 class="anchored" data-anchor-id="live-or-saved-the-chatbot">Live, or saved: the chatbot</h2>
-<p><a href="../outputs/ground-test/bios.md">Twenty long entries</a> were chosen on 7 October 2026: twelve for people the pipeline grounded, eight it did not. Paste one into a chatbot with no tools: “Who is this? Give the Wikidata QID.” Then look the answer up. Score it: right, wrong item, invented identifier, or declined. The <a href="../outputs/ground-test/answer-key.md">answer key</a> has the pipeline’s QID and the MCP lookups.</p>
-<p>What the lookups already show: of the eight the pipeline left ungrounded, three have a plausible item the vector search finds at once (Price, Henry Francis Wilson, T. J. Alldridge) and five have nothing in the top fifty. “Not grounded” means the gate did not accept; it never means “no such item”.</p>
-<p>And the control. On 7 October Jim pasted the twenty entries into Gemini 3.8 Flash with no tools: “Parse these bios and ground the places, schools and people to Wikidata ids where possible.” The <a href="../outputs/ground-test/gemini-response.md">response</a> is fluent and well organised, names every person and place correctly, and gives identifiers for everything. <a href="../outputs/ground-test/gemini-scoring.md">Scored</a> against Wikidata:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>Person identifiers given</td>
-<td>16 (4 entries declined)</td>
-</tr>
-<tr class="even">
-<td>Correct</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td>Resolve to something that is not a person (a plant, a patent, Thoth, an Iranian village, an archive series, a reptile)</td>
-<td>6</td>
-</tr>
-<tr class="even">
-<td>Within a few thousand of the right number</td>
-<td>7</td>
-</tr>
-<tr class="odd">
-<td>Place, school and other-person identifiers given</td>
-<td>142</td>
-</tr>
-<tr class="even">
-<td>Whose Wikidata label matches the name</td>
-<td>43</td>
-</tr>
-</tbody>
-</table>
-<p>The matches are the famous, low-numbered items: Paris, Canada, Singapore, Churchill. Nyasaland resolved to a disambiguation page, the Straits Settlements to a Danish triathlete, the Cape Colony to an Austrian goalkeeper, Joseph Chamberlain to a Swiss footballer. The model knew who; it did not know the number. A Q-number from memory is a string the model has seen near a name, and nothing in the response tells you which ones resolve.</p>
-<p>The same day, the same twenty entries went to Claude Opus 5.5 in a chat with web search, told to report only identifiers it had seen on a page (<a href="../outputs/ground-test/opus-response.md">response</a>, <a href="../outputs/ground-test/opus-scoring.md">scoring</a>). Sixteen identifiers given, sixteen right, the same four declined. It found Prince, whom the vector search had missed, and it found that Gorges has two Wikidata items for one man. It also stopped at its tool limit before reaching a single place name; a second pass finished the schools and the other people and reached 17 of 138 places (<a href="../outputs/ground-test/opus-grounding.csv">CSV</a>, 75 identifiers, all verified). Its first memory guess for George V was Q269, which is Tashkent; it caught that itself by reading the page.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-<th>Gemini, no tools</th>
-<th>Pipeline: vector search + gates</th>
-<th>Opus, with retrieval</th>
-<th>Astra, with retrieval</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Person identifiers correct</td>
-<td>0 of 16</td>
-<td>12 of 12 given; 8 ungrounded, of which 4 have items</td>
-<td>16 of 16 given</td>
-<td>16 of 16 given</td>
-</tr>
-<tr class="even">
-<td>Places</td>
-<td>38 of 104 labels match; modern items</td>
-<td>3,207 surfaces across the corpus; modern-collapse errors found on the map</td>
-<td>17 of 138, then stopped</td>
-<td>104 grounded to period entities; 9 modern proxies labelled as such</td>
-</tr>
-<tr class="odd">
-<td>Time</td>
-<td>under 5 minutes</td>
-<td>overnight, for the whole corpus</td>
-<td>about 20 minutes, two passes</td>
-<td>about 27 minutes</td>
-</tr>
-</tbody>
-</table>
-<p>A third run, Astra medium with web retrieval, took 27 minutes and produced a <a href="../outputs/ground-test/astra-grounding.json">structured file</a> of 180 entities with offsets, confidence, a relation type, rejected candidates with reasons and dated evidence (<a href="../outputs/ground-test/astra-scoring.md">scoring</a>). All 155 identifiers resolve consistently. It grounded Ceylon, the Straits Settlements, the Union of South Africa and the rest to the period polities, and it recorded Penang Q188096, the item the pipeline had wrongly matched, as a modern proxy only. It is the dataset a historian would want, at about 80 seconds an entry, which over 27,526 people is 25 days of model time before the India Office List.</p>
-<p>All three chatbots read the biographies correctly. The difference is where the number came from, and what it cost. And even the best column needs the historian: someone has to pick between the two Gorges items, and someone decided Harris was Harris when the printed birth year disagreed with the item.</p>
-</section>
-<section id="three-questions-to-keep-separate" class="level2">
-<h2 class="anchored" data-anchor-id="three-questions-to-keep-separate">Three questions to keep separate</h2>
-<ol type="1">
-<li><strong>Does the identifier resolve to what was retrieved?</strong> A Q-number from a model’s memory is not a lookup.</li>
-<li><strong>Is that entity the one in this source?</strong> Name, type, dates, place, activity. A real item can be the wrong person. Price’s item has the right dates and no career; the match rests on a rare name and Colombo.</li>
-<li><strong>What does the link assert?</strong> That this entry is that man. Not every statement on the item. Not that “Ceylon” in 1880 is the modern state.</li>
-</ol>
-</section>
-<section id="places-are-harder-than-people" class="level2">
-<h2 class="anchored" data-anchor-id="places-are-harder-than-people">Places are harder than people</h2>
-<p>The surface “Victoria” occurs in the corpus as the Australian colony, the capital of British Columbia, an electoral district, a gaol in Hong Kong, a district in the Cape, a county in Mauritius, and a town in the Seychelles. The grounding cache (<a href="../outputs/ground/places-grounding-examples.json">rows</a>) shows what that took: the bare surface grounded to the colony by default, context rules for officials whose other postings are in British Columbia, manual re-grounding for the Cape and Seychelles variants, and six surfaces deliberately left ungrounded because one QID would be wrong for someone.</p>
-<p><strong>You decide:</strong> supported, unresolved, or wrong, for each link that matters, and the gate that decides the rest. The cases the gate gets wrong are the subject of the next step.</p>
-<p>Next: <a href="../steps/06-loop.html">The map finds the errors</a>.</p>
+<section id="other-terms" class="level2">
+<h2 class="anchored" data-anchor-id="other-terms">Other terms</h2>
+<p><strong>F-score.</strong> One number summarising two: precision (of what the system found, how much was right) and recall (of what was there, how much the system found). An F-score of 0.6 means both are around six in ten. Trading Consequences scored 0.62 on commodities and 0.61 on places.</p>
+<p><strong>QID.</strong> A Wikidata identifier: the letter Q and a number, such as Q1800510 for Philip Wodehouse. Stable, language-neutral, and shared by everyone who grounds to Wikidata. A model’s memory of one is not a lookup.</p>
+<p><strong>Grounding.</strong> Linking a name in your source to a shared identifier for the thing it names. The pages distinguish retrieving a candidate, reading its statements, and deciding the match.</p>
+<p><strong>Vector search.</strong> Search by meaning rather than by matching letters: the query and every item are turned into lists of numbers that place similar meanings near each other. “Walpole Island” by string finds an island in New Caledonia; by vector it finds the Ontario reserve. The WikidataMCP server offers this over Wikidata.</p>
+<p><strong>MCP.</strong> Model Context Protocol, a standard way of giving a model a tool, such as a search endpoint, that it can call and whose results come back as evidence rather than memory.</p>
+<p><strong>vLLM.</strong> An open-source server that runs an open model on a GPU and answers requests in the same format as the commercial APIs.</p>
+<p><strong>Mixture of experts.</strong> A model built from many small specialist networks, only a few of which run for each token, so it is cheap to run for its size.</p>
+<p><strong>Quantisation.</strong> Storing a model’s numbers at lower precision (4 bits instead of 16) so it needs a quarter of the memory, at a small cost in quality.</p>
+<p><strong>Reasoning mode.</strong> A setting where the model writes out a chain of thought before answering. Helpful for hard questions; on this task it spent the whole budget thinking and produced no record.</p>
+<p><strong>Regex.</strong> A pattern language for matching text by shape (“capital letters, comma, names, a dash, then clauses ending in a year”). The project’s first tier.</p>
+<p><strong>Validator.</strong> Python code that checks the model’s output against the source and drops anything the source does not contain.</p>
+<p><strong>Ledger.</strong> An append-only file of decisions with reasons, such as the 917 merge groups, so that every decision can be revisited.</p>
+<p><strong>Silver standard.</strong> A set of cases labelled by hand after the fact, used to measure what the automated passes did. “Silver” because it is smaller and less exhaustively checked than a gold standard built in advance.</p>
+<p><strong>Zero-false-positive gate.</strong> A rule that accepts a link only when the evidence leaves no plausible alternative, and otherwise leaves it unlinked. It trades recall for precision, which is why a review queue exists.</p>
 
 
 </section>
