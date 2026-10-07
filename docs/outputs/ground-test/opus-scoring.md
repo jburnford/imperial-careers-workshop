@@ -45,3 +45,20 @@ All eight other people (Chamberlain, Churchill, Asquith, Lyttelton, Buxton, Selb
 - The difference between zero and sixteen is not the model's reading of the biography. Both named the people correctly. It is whether the identifier came from a page or from memory.
 - Retrieval with a strong model and a human-style search is the most accurate and the most expensive. The pipeline's gate is conservative by design (ties resolve to no link) and misses real items (Price, Wilson, Alldridge, Prince); those are what a review queue is for.
 - Even retrieval needs the historian: Gorges has two items, and someone has to decide which to use and whether to merge them on Wikidata. Harris's birth year disagrees between the source and the item, and someone decided the match on the college and the colony.
+
+## The finished file
+
+Opus then completed the schools, the other named people and the main colonial jurisdictions and packaged everything as `opus-grounding.csv`: 202 mention rows keyed by entry id, with mention text, resolved label, QID, status and a note. Every one of the 75 identifiers in the file was resolved with `wbgetentities` on 7 October 2026 (`opus-grounding-check.json`), and every one has a label or alias consistent with the name it was attached to.
+
+| Entity type | Verified | Probable | Not found | Not searched |
+|---|---|---|---|---|
+| subject | 16 | 0 | 4 | 0 |
+| person | 15 | 1 | 0 | 0 |
+| place | 17 | 0 | 0 | 121 |
+| school | 26 | 0 | 0 | 2 |
+
+Two details from the file worth saying in the room:
+
+- Its first guess for George V, from memory, was Q269. Q269 is Tashkent. It checked the page, replaced it with Q269412, and left the note "Not Q269" in the file. That is the whole argument in one row.
+- It recorded the near-miss items beside the right ones (Cecil Clementi Smith Q5056012; the 18th-century Gorges Edmond Howard Q5586263; a St Paul's School disambiguation page Q7595173; Robert Gordon University Q1788342 carrying the college's name as an alias). Those are the wrong answers a no-tools model is likely to produce, and they belong in the test as distractors.
+- Places are where it stopped: 17 grounded, 121 normalised for lookup but not searched, because each search grounded about one entity. That is the cost line. The pipeline's vector search resolves a normalised label in about a second and runs over 3,207 distinct place surfaces in the Colonial Office List graph without anyone watching.

@@ -1,0 +1,472 @@
+{
+ "labels": {
+  "Q1066441": [
+   "Charles Gwynn",
+   "British Army officer (1870-1962)",
+   []
+  ],
+  "Q1142179": [
+   "Orange River Colony",
+   "British colony in South Africa (1902-1910)",
+   []
+  ],
+  "Q1143281": [
+   "Rugby School",
+   "private school in Rugby, Warwickshire, England",
+   []
+  ],
+  "Q1187978": [
+   "Transvaal Colony",
+   "British colony from 1877 to 1881 and 1902 to 1910",
+   [
+    "Transvaal"
+   ]
+  ],
+  "Q121494224": [
+   "Edmond Gorges",
+   "South African politician (1872\u20131924)",
+   [
+    "Edmond Howard Lacam Gorges"
+   ]
+  ],
+  "Q1227526": [
+   "St Paul's School",
+   "school in Richmond upon Thames, UK",
+   [
+    "St Paul's School, London",
+    "St. Paul's School"
+   ]
+  ],
+  "Q123279571": [
+   "Ferdinando Hamblyn Price",
+   "",
+   [
+    "Ferdinando Hamlyn Price"
+   ]
+  ],
+  "Q1247373": [
+   "Harrow School",
+   "school in Harrow, UK",
+   [
+    "Harrow"
+   ]
+  ],
+  "Q1292947": [
+   "Edward Marsh",
+   "British polymath (1872\u20131953)",
+   [
+    "Sir Edward Howard Marsh"
+   ]
+  ],
+  "Q1341516": [
+   "Westminster School",
+   "public school in Westminster, London, England",
+   [
+    "The Royal College of St. Peter in Westminster"
+   ]
+  ],
+  "Q148524": [
+   "Zewditu I of Ethiopia",
+   "Empress of Ethiopia (1876-1930)",
+   [
+    "Zewditu",
+    "Askala Maryam",
+    "Askala Mariam",
+    "Zewditu Menilek",
+    "Zewditu Menelik"
+   ]
+  ],
+  "Q15568": [
+   "University of Hong Kong",
+   "public research university in Hong Kong established in 1911",
+   [
+    "Hong Kong University",
+    "HKU",
+    "The University of Hong Kong"
+   ]
+  ],
+  "Q157412": [
+   "Gray's Inn",
+   "one of the four Inns of Court in London, England, UK",
+   [
+    "The Honourable Society of Gray's Inn"
+   ]
+  ],
+  "Q160302": [
+   "University of Edinburgh",
+   "public university in Edinburgh, Scotland, United Kingdom",
+   [
+    "Edinburgh University",
+    "The University of Edinburgh",
+    "University of Edinburgh, Scotland"
+   ]
+  ],
+  "Q1645717": [
+   "Sydney Buxton, 1st Earl Buxton",
+   "British politician (1853-1934)",
+   [
+    "Earl Buxton"
+   ]
+  ],
+  "Q1649306": [
+   "Nyasaland",
+   "a British protectorate in Africa that was established in 1907 when the former British Central Africa Protectorate changed its name",
+   [
+    "Nyasaland Protectorate"
+   ]
+  ],
+  "Q166714": [
+   "H. H. Asquith",
+   "British politician; Prime Minister of the United Kingdom from 1908 to 1916 (1852\u20131928)",
+   [
+    "Herbert Asquith",
+    "Herbert Henry Asquith, 1st Earl of Oxford and Asquith"
+   ]
+  ],
+  "Q16933745": [
+   "T. J. Alldridge",
+   "British colonial administrator",
+   [
+    "Thomas Joshua Alldridge"
+   ]
+  ],
+  "Q19059378": [
+   "George Chardin Denton",
+   "British military officer and governor of Gambia",
+   [
+    "Sir George Chardin Denton"
+   ]
+  ],
+  "Q20036709": [
+   "Robert Norman Bland",
+   "British colonial administrator",
+   [
+    "Captain Robert Norman Bland",
+    "R. N. Bland"
+   ]
+  ],
+  "Q20725021": [
+   "Henry Francis Wilson",
+   "British barrister-at-law (1859-1937)",
+   [
+    "H. F. Wilson",
+    "Harry Wilson",
+    "Sir Henry Francis Wilson",
+    "Henry Wilson"
+   ]
+  ],
+  "Q20875": [
+   "Edward VII",
+   "King of the United Kingdom from 1901 to 1910",
+   [
+    "Albert Edward Saxe-Coburg-Gotha",
+    "King Edward VII",
+    "Bertie",
+    "Albert Saxe-Coburg-Gotha",
+    "Edward VII, King of the United Kingdom of Great Britain and Ireland and of the British Dominions and Emperor of India",
+    "Edward, Prince of Wales",
+    "Albert Edward, Prince of Wales",
+    "Albert Edward"
+   ]
+  ],
+  "Q216273": [
+   "University of St Andrews",
+   "university in St Andrews, Fife, Scotland, UK",
+   [
+    "St Andrews University",
+    "University of Saint Andrews"
+   ]
+  ],
+  "Q2411883": [
+   "Victor Cavendish, 9th Duke of Devonshire",
+   "British politician (1868-1938)",
+   [
+    "Victor Cavendish",
+    "Victor Christian William Cavendish"
+   ]
+  ],
+  "Q258464": [
+   "Trinity College, Dublin",
+   "constituent college of the University of Dublin in Ireland",
+   [
+    "College of the Holy and Undivided Trinity of Queen Elizabeth near Dublin",
+    "Trinity College, Dublin",
+    "Trinity College University of Dublin",
+    "Trinity College, University of Dublin",
+    "Col\u00e1iste na Tr\u00edon\u00f3ide",
+    "University of Dublin",
+    "TCD",
+    "University of Dublin Trinity College"
+   ]
+  ],
+  "Q2642989": [
+   "British Central Africa Protectorate",
+   "British protectorate from 1893 to 1907",
+   []
+  ],
+  "Q269": [
+   "Tashkent",
+   "capital of Uzbekistan",
+   [
+    "Toshkent",
+    "Chach",
+    "Choch",
+    "Shosh",
+    "Shash",
+    "Binkath",
+    "Tashkand"
+   ]
+  ],
+  "Q269412": [
+   "George V",
+   "King of the United Kingdom from 1910 to 1936",
+   [
+    "George V of the United Kingdom",
+    "George Saxe-Coburg-Gotha",
+    "George Frederick Ernest Albert Windsor",
+    "King George V",
+    "George V (King of Great Britain)",
+    "George Frederick Ernest Albert Saxe-Coburg-Gotha",
+    "George Windsor",
+    "George Frederick Ernest Albert"
+   ]
+  ],
+  "Q315999": [
+   "Joseph Chamberlain",
+   "British politician (1836-1914)",
+   [
+    "Joe Chamberlain",
+    "Right Hon. Joseph Chamberlain"
+   ]
+  ],
+  "Q332342": [
+   "Trinity College",
+   "constituent college of the University of Cambridge in England",
+   [
+    "Trinity College, Cambridge",
+    "College of the Holy and Undivided Trinity",
+    "University of Cambridge Trinity College"
+   ]
+  ],
+  "Q336040": [
+   "Herbert Plumer, 1st Viscount Plumer",
+   "British Army general and High Commissioner of the British Mandate for Palestine (1857-1932)",
+   [
+    "Field Marshal Herbert Charles Onslow Plumer, 1st Viscount Plumer",
+    "Herbert Charles Onslow Plumer, 1st Viscount Plumer"
+   ]
+  ],
+  "Q338294": [
+   "James Henry Thomas",
+   "Welsh trade unionist and politician (1874-1949)",
+   [
+    "J. H. Thomas",
+    "Jimmy Thomas"
+   ]
+  ],
+  "Q3395941": [
+   "Alfred Lyttelton",
+   "English cricketer and politician (1857-1913)",
+   []
+  ],
+  "Q35794": [
+   "University of Cambridge",
+   "collegiate public research university in Cambridge, England, United Kingdom",
+   [
+    "Cambridge University",
+    "Cambridge",
+    "Universitas Cantabrigiensis",
+    "The Chancellor, Masters, and Scholars of the University of Cambridge",
+    "The University of Cambridge"
+   ]
+  ],
+  "Q3643409": [
+   "William Palmer, 2nd Earl of Selborne",
+   "British politician (1859-1942)",
+   []
+  ],
+  "Q376178": [
+   "Straits Settlements",
+   "former group of British territories located in the Far East, with its capital in Singapore",
+   []
+  ],
+  "Q4120852": [
+   "Richard James Wilkinson",
+   "British colonial governor (1867-1941)",
+   [
+    "R. J. Wilkinson"
+   ]
+  ],
+  "Q459640": [
+   "Alfred Sharpe",
+   "Commissioner and Consul-General for the British Central Africa Protectorate and first Governor of Nyasaland (1853-1935)",
+   [
+    "Sir Alfred Sharpe"
+   ]
+  ],
+  "Q467269": [
+   "Cheltenham College",
+   "independent school in Cheltenham, Gloucestershire, England, UK",
+   []
+  ],
+  "Q47891631": [
+   "Edward Ernest Prince",
+   "Canadian fisheries biologist",
+   [
+    "E. E. Prince",
+    "Edward E. Prince"
+   ]
+  ],
+  "Q5075044": [
+   "Charles Alexander Harris",
+   "British colonial administrator",
+   [
+    "Sir Charles Alexander Harris"
+   ]
+  ],
+  "Q5077823": [
+   "Charles Frederic Belcher",
+   "Australian lawyer, author and amateur ornithologist",
+   [
+    "Sir Charles Frederic Belcher"
+   ]
+  ],
+  "Q5493652": [
+   "Rossall School",
+   "independent school in Lancashire, UK",
+   []
+  ],
+  "Q5534618": [
+   "Geoffrey Francis Archer",
+   "British ornithologist and colonial official (1882\u20131964)",
+   [
+    "Sir Geoffrey Francis Archer",
+    "Geoffrey Archer"
+   ]
+  ],
+  "Q557341": [
+   "Muhammad \u02bfAbdallah Hasan",
+   "emir of Diiriye Guure and his Dervish Kingdom (1856-1920)",
+   [
+    "Muhammad `Abd All\u0101h al-Hasan",
+    "Sayid Maxamed Cabdille Xasan",
+    "Sayyid Hassan",
+    "Sayid Maxamed Cabdulle Xasan",
+    "Sayid Mohamed Abdullah Hassan",
+    "Sayid Mohsmed Abdullah Hassan",
+    "Sayid Mohamed Abdullahi Hassan"
+   ]
+  ],
+  "Q633448": [
+   "Geelong Grammar School",
+   "boarding school in Victoria, Australia",
+   [
+    "Geelong School",
+    "Geelong Church of England Grammar School",
+    "Geelong CEGS"
+   ]
+  ],
+  "Q662653": [
+   "British Somaliland",
+   "former British protectorate",
+   [
+    "Somaliland"
+   ]
+  ],
+  "Q69482": [
+   "Lincoln's Inn",
+   "one of the four Inns of Court in London, England",
+   [
+    "Lincolns Inn",
+    "The Honourable Society of Lincoln's Inn",
+    "Honourable Society of Lincoln's Inn"
+   ]
+  ],
+  "Q714717": [
+   "Christ's College",
+   "college of the University of Cambridge",
+   [
+    "Christ's College, Cambridge",
+    "Christ's College, Cambridge University"
+   ]
+  ],
+  "Q7287329": [
+   "Ralph Champneys Williams",
+   "Lieutenant Governor of Newfoundland (1848\u20131927)",
+   [
+    "Sir Ralph Champneys Williams"
+   ]
+  ],
+  "Q7344852": [
+   "Robert Gordon's College",
+   "secondary school in Aberdeen City, Scotland, UK",
+   [
+    "Gordon's College"
+   ]
+  ],
+  "Q7621163": [
+   "Straits Settlement of Malacca",
+   "former British Crown colony",
+   [
+    "Malacca"
+   ]
+  ],
+  "Q765642": [
+   "Queens' College",
+   "college of the University of Cambridge",
+   [
+    "Queens College",
+    "Queens' College, Cambridge",
+    "Queen's College"
+   ]
+  ],
+  "Q7842696": [
+   "Trinity College",
+   "college of the University of Melbourne, Victoria, Australia",
+   []
+  ],
+  "Q8016": [
+   "Winston Churchill",
+   "British statesman, soldier and writer (1874\u20131965)",
+   [
+    "The Right Honourable Sir Winston Churchill",
+    "Colonel Warden",
+    "Mr Green",
+    "The Honourable Sir Winston Spencer Churchill",
+    "Winston Spencer Churchill",
+    "Sir Leonard Spencer",
+    "Charles Maurin",
+    "David Winter",
+    "The Right Honourable Sir Winston Spencer Churchill",
+    "The Right Honourable Sir Winston Leonard Spencer Churchill"
+   ]
+  ],
+  "Q81162": [
+   "Magdalen College",
+   "constituent college of the University of Oxford in England",
+   [
+    "The President and Fellows of the College of St Mary Magdalen in the University of Oxford",
+    "Magdalen College, Oxford"
+   ]
+  ],
+  "Q839225": [
+   "Cecil Clementi",
+   "British colonial administrator (1875\u20131947)",
+   [
+    "Sir Cecil Clementi"
+   ]
+  ],
+  "Q85681760": [
+   "Frederic Cardew",
+   "(1839-1921)",
+   []
+  ],
+  "Q918153": [
+   "British Ceylon",
+   "Sri Lankan British Crown colony",
+   [
+    "Ceylon"
+   ]
+  ]
+ }
+}
