@@ -269,10 +269,11 @@ ul.task-list li input[type="checkbox"] {
 <p>The same day, the same twenty entries went to Claude Opus 5.5 in a chat with web search, told to report only identifiers it had seen on a page (<a href="../outputs/ground-test/opus-response.md">response</a>, <a href="../outputs/ground-test/opus-scoring.md">scoring</a>). Sixteen identifiers given, sixteen right, the same four declined. It found Prince, whom the vector search had missed, and it found that Gorges has two Wikidata items for one man. It also stopped at its tool limit before reaching a single place name; a second pass finished the schools and the other people and reached 17 of 138 places (<a href="../outputs/ground-test/opus-grounding.csv">CSV</a>, 75 identifiers, all verified). Its first memory guess for George V was Q269, which is Tashkent; it caught that itself by reading the page.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -280,6 +281,7 @@ ul.task-list li input[type="checkbox"] {
 <th>Gemini, no tools</th>
 <th>Pipeline: vector search + gates</th>
 <th>Opus, with retrieval</th>
+<th>Astra, with retrieval</th>
 </tr>
 </thead>
 <tbody>
@@ -288,16 +290,26 @@ ul.task-list li input[type="checkbox"] {
 <td>0 of 16</td>
 <td>12 of 12 given; 8 ungrounded, of which 4 have items</td>
 <td>16 of 16 given</td>
+<td>16 of 16 given</td>
 </tr>
 <tr class="even">
-<td>Cost per entry</td>
-<td>lowest</td>
-<td>low; scales to 100,000</td>
-<td>highest; ran out of tool calls before the places</td>
+<td>Places</td>
+<td>38 of 104 labels match; modern items</td>
+<td>3,207 surfaces across the corpus; modern-collapse errors found on the map</td>
+<td>17 of 138, then stopped</td>
+<td>104 grounded to period entities; 9 modern proxies labelled as such</td>
+</tr>
+<tr class="odd">
+<td>Time</td>
+<td>under 5 minutes</td>
+<td>overnight, for the whole corpus</td>
+<td>about 20 minutes, two passes</td>
+<td>about 27 minutes</td>
 </tr>
 </tbody>
 </table>
-<p>Both chatbots read the biographies correctly. The difference is where the number came from. And even the best column needs the historian: someone has to pick between the two Gorges items, and someone decided Harris was Harris when the printed birth year disagreed with the item.</p>
+<p>A third run, Astra medium with web retrieval, took 27 minutes and produced a <a href="../outputs/ground-test/astra-grounding.json">structured file</a> of 180 entities with offsets, confidence, a relation type, rejected candidates with reasons and dated evidence (<a href="../outputs/ground-test/astra-scoring.md">scoring</a>). All 155 identifiers resolve consistently. It grounded Ceylon, the Straits Settlements, the Union of South Africa and the rest to the period polities, and it recorded Penang Q188096, the item the pipeline had wrongly matched, as a modern proxy only. It is the dataset a historian would want, at about 80 seconds an entry, which over 27,526 people is 25 days of model time before the India Office List.</p>
+<p>All three chatbots read the biographies correctly. The difference is where the number came from, and what it cost. And even the best column needs the historian: someone has to pick between the two Gorges items, and someone decided Harris was Harris when the printed birth year disagreed with the item.</p>
 </section>
 <section id="three-questions-to-keep-separate" class="level2">
 <h2 class="anchored" data-anchor-id="three-questions-to-keep-separate">Three questions to keep separate</h2>

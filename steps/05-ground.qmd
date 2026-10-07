@@ -44,12 +44,15 @@ The matches are the famous, low-numbered items: Paris, Canada, Singapore, Church
 
 The same day, the same twenty entries went to Claude Opus 5.5 in a chat with web search, told to report only identifiers it had seen on a page ([response](../outputs/ground-test/opus-response.md), [scoring](../outputs/ground-test/opus-scoring.md)). Sixteen identifiers given, sixteen right, the same four declined. It found Prince, whom the vector search had missed, and it found that Gorges has two Wikidata items for one man. It also stopped at its tool limit before reaching a single place name; a second pass finished the schools and the other people and reached 17 of 138 places ([CSV](../outputs/ground-test/opus-grounding.csv), 75 identifiers, all verified). Its first memory guess for George V was Q269, which is Tashkent; it caught that itself by reading the page.
 
-| | Gemini, no tools | Pipeline: vector search + gates | Opus, with retrieval |
-|---|---|---|---|
-| Person identifiers correct | 0 of 16 | 12 of 12 given; 8 ungrounded, of which 4 have items | 16 of 16 given |
-| Cost per entry | lowest | low; scales to 100,000 | highest; ran out of tool calls before the places |
+| | Gemini, no tools | Pipeline: vector search + gates | Opus, with retrieval | Astra, with retrieval |
+|---|---|---|---|---|
+| Person identifiers correct | 0 of 16 | 12 of 12 given; 8 ungrounded, of which 4 have items | 16 of 16 given | 16 of 16 given |
+| Places | 38 of 104 labels match; modern items | 3,207 surfaces across the corpus; modern-collapse errors found on the map | 17 of 138, then stopped | 104 grounded to period entities; 9 modern proxies labelled as such |
+| Time | under 5 minutes | overnight, for the whole corpus | about 20 minutes, two passes | about 27 minutes |
 
-Both chatbots read the biographies correctly. The difference is where the number came from. And even the best column needs the historian: someone has to pick between the two Gorges items, and someone decided Harris was Harris when the printed birth year disagreed with the item.
+A third run, Astra medium with web retrieval, took 27 minutes and produced a [structured file](../outputs/ground-test/astra-grounding.json) of 180 entities with offsets, confidence, a relation type, rejected candidates with reasons and dated evidence ([scoring](../outputs/ground-test/astra-scoring.md)). All 155 identifiers resolve consistently. It grounded Ceylon, the Straits Settlements, the Union of South Africa and the rest to the period polities, and it recorded Penang Q188096, the item the pipeline had wrongly matched, as a modern proxy only. It is the dataset a historian would want, at about 80 seconds an entry, which over 27,526 people is 25 days of model time before the India Office List.
+
+All three chatbots read the biographies correctly. The difference is where the number came from, and what it cost. And even the best column needs the historian: someone has to pick between the two Gorges items, and someone decided Harris was Harris when the printed birth year disagreed with the item.
 
 ## Three questions to keep separate
 

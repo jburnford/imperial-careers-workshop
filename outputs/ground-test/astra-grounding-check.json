@@ -1,0 +1,2188 @@
+{
+ "labels": {
+  "Q1046126": [
+   "Eastern Province",
+   "province of Sri Lanka",
+   [
+    "Eastern Province, Sri Lanka"
+   ],
+   [
+    "Q861559"
+   ]
+  ],
+  "Q1054923": [
+   "British Hong Kong",
+   "British colony and dependent territory from 1841 to 1997",
+   [
+    "colonial Hong Kong",
+    "Hongkong",
+    "Hong Kong",
+    "British Administration",
+    "British HK",
+    "Hong-Kong",
+    "British colonial Hong Kong",
+    "HK (British)",
+    "HK (British colony)",
+    "HK (colonial)",
+    "colonial HK",
+    "colonial Hongkong"
+   ],
+   [
+    "Q1351282",
+    "Q15379753",
+    "Q19953632"
+   ]
+  ],
+  "Q1057124": [
+   "North Central Province",
+   "province of Sri Lanka",
+   [
+    "North Central Province, Sri Lanka"
+   ],
+   [
+    "Q861559"
+   ]
+  ],
+  "Q1066441": [
+   "Charles Gwynn",
+   "British Army officer (1870-1962)",
+   [],
+   [
+    "Q5"
+   ]
+  ],
+  "Q1097943": [
+   "Uganda Protectorate",
+   "former British protectorate",
+   [
+    "Uganda",
+    "Protectorate of Uganda"
+   ],
+   [
+    "Q21479969"
+   ]
+  ],
+  "Q1142179": [
+   "Orange River Colony",
+   "British colony in South Africa (1902-1910)",
+   [],
+   [
+    "Q3024240",
+    "Q1351282"
+   ]
+  ],
+  "Q1143281": [
+   "Rugby School",
+   "private school in Rugby, Warwickshire, England",
+   [],
+   [
+    "Q1972829",
+    "Q2418495",
+    "Q269770"
+   ]
+  ],
+  "Q1156": [
+   "Mumbai",
+   "capital city in Maharashtra, India",
+   [
+    "Bombay"
+   ],
+   [
+    "Q174844",
+    "Q11271835",
+    "Q515",
+    "Q3257686",
+    "Q200250",
+    "Q745456",
+    "Q51929311"
+   ]
+  ],
+  "Q1187978": [
+   "Transvaal Colony",
+   "British colony from 1877 to 1881 and 1902 to 1910",
+   [
+    "Transvaal"
+   ],
+   [
+    "Q133156",
+    "Q19953632"
+   ]
+  ],
+  "Q1191330": [
+   "Vavuniya",
+   "human settlement",
+   [],
+   [
+    "Q486972"
+   ]
+  ],
+  "Q121494224": [
+   "Edmond Gorges",
+   "South African politician (1872\u20131924)",
+   [
+    "Edmond Howard Lacam Gorges"
+   ],
+   [
+    "Q5"
+   ]
+  ],
+  "Q1227526": [
+   "St Paul's School",
+   "school in Richmond upon Thames, UK",
+   [
+    "St Paul's School, London",
+    "St. Paul's School"
+   ],
+   [
+    "Q2418495",
+    "Q269770",
+    "Q1713379"
+   ]
+  ],
+  "Q123279571": [
+   "Ferdinando Hamblyn Price",
+   "",
+   [
+    "Ferdinando Hamlyn Price"
+   ],
+   [
+    "Q5"
+   ]
+  ],
+  "Q1247373": [
+   "Harrow School",
+   "school in Harrow, UK",
+   [
+    "Harrow"
+   ],
+   [
+    "Q1972829",
+    "Q269770",
+    "Q2418495",
+    "Q1713379",
+    "Q163740"
+   ]
+  ],
+  "Q128323": [
+   "Trinidad",
+   "larger of the two major islands which make up Trinidad and Tobago",
+   [],
+   [
+    "Q23442"
+   ]
+  ],
+  "Q129286": [
+   "British Raj",
+   "British colonial rule on the Indian subcontinent (1858\u20131947)",
+   [
+    "Indian Empire",
+    "Crown rule in India",
+    "Direct rule in India",
+    "British Indian Empire",
+    "the Raj",
+    "Hindustan",
+    "Hindoostan",
+    "Indian Raj",
+    "Raj India",
+    "India, British",
+    "the British Raj"
+   ],
+   [
+    "Q133156",
+    "Q3024240",
+    "Q1351282"
+   ]
+  ],
+  "Q1292947": [
+   "Edward Marsh",
+   "British polymath (1872\u20131953)",
+   [
+    "Sir Edward Howard Marsh"
+   ],
+   [
+    "Q5"
+   ]
+  ],
+  "Q1340579": [
+   "Nuwara Eliya",
+   "human settlement",
+   [],
+   [
+    "Q515"
+   ]
+  ],
+  "Q1341516": [
+   "Westminster School",
+   "public school in Westminster, London, England",
+   [
+    "The Royal College of St. Peter in Westminster"
+   ],
+   [
+    "Q269770",
+    "Q1972829",
+    "Q2418495"
+   ]
+  ],
+  "Q1400154": [
+   "Federated Malay States",
+   "country & part of British Malaya",
+   [],
+   [
+    "Q3024240",
+    "Q43702"
+   ]
+  ],
+  "Q1410": [
+   "Gibraltar",
+   "British overseas territory on the southern end of the Iberian Peninsula",
+   [
+    "gi",
+    "Gib"
+   ],
+   [
+    "Q46395",
+    "Q2264924",
+    "Q900119",
+    "Q15239622",
+    "Q902814",
+    "Q51576574",
+    "Q1200957",
+    "Q515"
+   ]
+  ],
+  "Q142": [
+   "France",
+   "country in Western Europe and other continents (through its overseas territories in America, Africa and Oceania)",
+   [
+    "French Republic"
+   ],
+   [
+    "Q3624078",
+    "Q20181813",
+    "Q51576574",
+    "Q7270",
+    "Q6256"
+   ]
+  ],
+  "Q148524": [
+   "Zewditu I of Ethiopia",
+   "Empress of Ethiopia (1876-1930)",
+   [
+    "Zewditu",
+    "Askala Maryam",
+    "Askala Mariam",
+    "Zewditu Menilek",
+    "Zewditu Menelik"
+   ],
+   [
+    "Q5"
+   ]
+  ],
+  "Q1507": [
+   "Patagonia",
+   "region located at the southern end of South America",
+   [],
+   [
+    "Q82794"
+   ]
+  ],
+  "Q15176": [
+   "Guangxi",
+   "Provincial area of China organized in 1958 as an autonomous region for the Zhuang people",
+   [
+    "Kwangsi",
+    "Guangxi Province",
+    "Guangxi Zhuang Autonomous Region",
+    "Kwanghsi",
+    "Province of Guangxi",
+    "Guangxi Autonomous Region",
+    "Guangxi Autonomous Area",
+    "Kwang-si",
+    "Kuang-hsi",
+    "Kuanghsi",
+    "Kwang-hsi",
+    "Quang-si",
+    "Quangsi",
+    "Guangxi Region"
+   ],
+   [
+    "Q57362"
+   ]
+  ],
+  "Q15240466": [
+   "British Cyprus",
+   "British colony from 1878\u20131960",
+   [],
+   [
+    "Q1351282",
+    "Q164142",
+    "Q19953632"
+   ]
+  ],
+  "Q15242189": [
+   "Leeds Modern School",
+   "state grammar school in Leeds, West Yorkshire, England",
+   [],
+   [
+    "Q967098"
+   ]
+  ],
+  "Q153665": [
+   "German South-West Africa",
+   "former colony of the German Empire",
+   [
+    "Deutsch-S\u00fcdwestafrika",
+    "DSWA"
+   ],
+   [
+    "Q133156",
+    "Q3024240"
+   ]
+  ],
+  "Q155": [
+   "Brazil",
+   "country in South America",
+   [
+    "Federative Republic of Brazil"
+   ],
+   [
+    "Q3624078",
+    "Q859563",
+    "Q6256"
+   ]
+  ],
+  "Q15568": [
+   "University of Hong Kong",
+   "public research university in Hong Kong established in 1911",
+   [
+    "Hong Kong University",
+    "HKU",
+    "The University of Hong Kong"
+   ],
+   [
+    "Q62078547"
+   ]
+  ],
+  "Q157412": [
+   "Gray's Inn",
+   "one of the four Inns of Court in London, England, UK",
+   [
+    "The Honourable Society of Gray's Inn"
+   ],
+   [
+    "Q278697"
+   ]
+  ],
+  "Q157904": [
+   "Sultanate of Zanzibar",
+   "1856\u20131964 monarchy in the Indian Ocean",
+   [
+    "Zanzibar Sultanate"
+   ],
+   [
+    "Q3024240",
+    "Q12759805",
+    "Q48349"
+   ]
+  ],
+  "Q16": [
+   "Canada",
+   "country in North America",
+   [
+    "CA",
+    "CAN"
+   ],
+   [
+    "Q223832",
+    "Q202686",
+    "Q3624078",
+    "Q6256",
+    "Q43702"
+   ]
+  ],
+  "Q160302": [
+   "University of Edinburgh",
+   "public university in Edinburgh, Scotland, United Kingdom",
+   [
+    "Edinburgh University",
+    "The University of Edinburgh",
+    "University of Edinburgh, Scotland"
+   ],
+   [
+    "Q875538",
+    "Q45400320",
+    "Q2667285",
+    "Q163740"
+   ]
+  ],
+  "Q1645717": [
+   "Sydney Buxton, 1st Earl Buxton",
+   "British politician (1853-1934)",
+   [
+    "Earl Buxton"
+   ],
+   [
+    "Q5"
+   ]
+  ],
+  "Q1649306": [
+   "Nyasaland",
+   "a British protectorate in Africa that was established in 1907 when the former British Central Africa Protectorate changed its name",
+   [
+    "Nyasaland Protectorate"
+   ],
+   [
+    "Q21479969"
+   ]
+  ],
+  "Q166714": [
+   "H. H. Asquith",
+   "British politician; Prime Minister of the United Kingdom from 1908 to 1916 (1852\u20131928)",
+   [
+    "Herbert Asquith",
+    "Herbert Henry Asquith, 1st Earl of Oxford and Asquith"
+   ],
+   [
+    "Q5"
+   ]
+  ],
+  "Q16933745": [
+   "T. J. Alldridge",
+   "British colonial administrator",
+   [
+    "Thomas Joshua Alldridge"
+   ],
+   [
+    "Q5"
+   ]
+  ],
+  "Q1761": [
+   "Dublin",
+   "capital and largest city of Ireland",
+   [
+    "Dublin city",
+    "City of Dublin",
+    "Dublin, Ireland"
+   ],
+   [
+    "Q1549591",
+    "Q51929311",
+    "Q2264924",
+    "Q15284"
+   ]
+  ],
+  "Q181857": [
+   "Bay of Fundy",
+   "bay on the Atlantic coast of Canada noted for high tides",
+   [
+    "Fundy Bay",
+    "Baie de Fundy"
+   ],
+   [
+    "Q39594"
+   ]
+  ],
+  "Q185221": [
+   "Malacca",
+   "state of Malaysia",
+   [
+    "Melaka",
+    "Melaka Negeri Bersejarah",
+    "Historic State of Malacca"
+   ],
+   [
+    "Q15063586"
+   ]
+  ],
+  "Q1861984": [
+   "Seberang Perai",
+   "city in the Malaysian state of Penang",
+   [
+    "Province Wellesley",
+    "Wellesley"
+   ],
+   [
+    "Q56061",
+    "Q1048835",
+    "Q486972"
+   ]
+  ],
+  "Q188096": [
+   "Penang",
+   "Malaysian state",
+   [
+    "Pinang",
+    "Pulau Pinang"
+   ],
+   [
+    "Q15063586"
+   ]
+  ],
+  "Q18819392": [
+   "Cuthbert Peek",
+   "English astronomer and meteorologist (1855-1901)",
+   [
+    "Sir Cuthbert Peek",
+    "Sir Cuthbert Peek, 2nd Baronet",
+    "Cuthbert Edgar Peek",
+    "Sir Cuthbert Edgar Peek",
+    "Sir Cuthbert Edgar Peek, 2nd Baronet",
+    "Sir Cuthbert Edgar Peek, 2nd Bt."
+   ],
+   [
+    "Q5"
+   ]
+  ],
+  "Q188953": [
+   "Perak",
+   "state of Malaysia",
+   [
+    "Peghok",
+    "Perak Darul Ridzuan"
+   ],
+   [
+    "Q15063586"
+   ]
+  ],
+  "Q19059378": [
+   "George Chardin Denton",
+   "British military officer and governor of Gambia",
+   [
+    "Sir George Chardin Denton"
+   ],
+   [
+    "Q5"
+   ]
+  ],
+  "Q190716": [
+   "Central Province",
+   "province of Sri Lanka",
+   [
+    "Central Province, Sri Lanka"
+   ],
+   [
+    "Q861559"
+   ]
+  ],
+  "Q193619": [
+   "Union of South Africa",
+   "state in southern Africa from 1910 to 1961, predecessor to the Republic of South Africa",
+   [
+    "South Africa"
+   ],
+   [
+    "Q223832",
+    "Q3024240"
+   ]
+  ],
+  "Q193714": [
+   "Mandatory Palestine",
+   "League of Nations Mandate in the Middle East under British administration (1920\u20131948)",
+   [
+    "British Mandate of Palestine",
+    "Palestine",
+    "British Palestine",
+    "Mandate Palestine",
+    "Mandate of Palestine",
+    "Mandatory of Palestine"
+   ],
+   [
+    "Q4835091",
+    "Q2577883",
+    "Q426759"
+   ]
+  ],
+  "Q1938723": [
+   "Batang Padang",
+   "district of Malaysia in Perak",
+   [
+    "Batang Padang District"
+   ],
+   [
+    "Q1994931"
+   ]
+  ],
+  "Q1948": [
+   "Manitoba",
+   "province of Canada",
+   [
+    "Manitoba, Canada",
+    "Man.",
+    "Province of Manitoba",
+    "CA-MB",
+    "The Keystone Province"
+   ],
+   [
+    "Q11828004"
+   ]
+  ],
+  "Q1951": [
+   "Alberta",
+   "province of Canada",
+   [
+    "AB",
+    "Province of Alberta",
+    "Alta.",
+    "CA-AB",
+    "Wild Rose Country"
+   ],
+   [
+    "Q11828004"
+   ]
+  ],
+  "Q1968268": [
+   "Kegalle",
+   "town in Sabaragamuwa Province, Sri Lanka",
+   [],
+   [
+    "Q515"
+   ]
+  ],
+  "Q1989": [
+   "Saskatchewan",
+   "province of Canada",
+   [
+    "Province of Saskatchewan",
+    "CA-SK",
+    "Canada's Breadbasket",
+    "The Land of the Living Skies"
+   ],
+   [
+    "Q11828004"
+   ]
+  ],
+  "Q20036709": [
+   "Robert Norman Bland",
+   "British colonial administrator",
+   [
+    "Captain Robert Norman Bland",
+    "R. N. Bland"
+   ],
+   [
+    "Q5"
+   ]
+  ],
+  "Q203197": [
+   "Kandy",
+   "capital city in Central Province, Sri Lanka",
+   [
+    "Mahanuwara"
+   ],
+   [
+    "Q515",
+    "Q486972"
+   ]
+  ],
+  "Q20725021": [
+   "Henry Francis Wilson",
+   "British barrister-at-law (1859-1937)",
+   [
+    "H. F. Wilson",
+    "Harry Wilson",
+    "Sir Henry Francis Wilson",
+    "Henry Wilson"
+   ],
+   [
+    "Q5"
+   ]
+  ],
+  "Q207521": [
+   "Ethiopian Empire",
+   "1270\u20131974 state in the Horn of Africa",
+   [
+    "Kingdom of Abyssinia",
+    "Abyssinia",
+    "Abisinia",
+    "Abissinia",
+    "Abyssinian Empire",
+    "Empire of Abyssinia"
+   ],
+   [
+    "Q3024240",
+    "Q48349",
+    "Q6256"
+   ]
+  ],
+  "Q207736": [
+   "St Andrews",
+   "town on the east coast of Fife in Scotland, UK",
+   [],
+   [
+    "Q3957",
+    "Q2928458",
+    "Q7543008"
+   ]
+  ],
+  "Q20875": [
+   "Edward VII",
+   "King of the United Kingdom from 1901 to 1910",
+   [
+    "Albert Edward Saxe-Coburg-Gotha",
+    "King Edward VII",
+    "Bertie",
+    "Albert Saxe-Coburg-Gotha",
+    "Edward VII, King of the United Kingdom of Great Britain and Ireland and of the British Dominions and Emperor of India",
+    "Edward, Prince of Wales",
+    "Albert Edward, Prince of Wales",
+    "Albert Edward"
+   ],
+   [
+    "Q5"
+   ]
+  ],
+  "Q213893": [
+   "Negeri Sembilan",
+   "state of Malaysia",
+   [
+    "Nogori Sombilan",
+    "Negeri Sembilan Darul Khusus",
+    "Negri Sembilan"
+   ],
+   [
+    "Q15063586",
+    "Q43702"
+   ]
+  ],
+  "Q2158697": [
+   "Bukit Mertajam",
+   "suburb of Seberang Perai, Penang, Malaysia",
+   [],
+   [
+    "Q188509"
+   ]
+  ],
+  "Q216273": [
+   "University of St Andrews",
+   "university in St Andrews, Fife, Scotland, UK",
+   [
+    "St Andrews University",
+    "University of Saint Andrews"
+   ],
+   [
+    "Q875538",
+    "Q3998530",
+    "Q45400320",
+    "Q163740"
+   ]
+  ],
+  "Q219117": [
+   "Zomba",
+   "city in the southern parts of Malawi",
+   [],
+   [
+    "Q515",
+    "Q1549591"
+   ]
+  ],
+  "Q22": [
+   "Scotland",
+   "country in north-west Europe, part of the United Kingdom",
+   [
+    "Alba",
+    "Scotland, United Kingdom",
+    "Caledonia",
+    "Scot"
+   ],
+   [
+    "Q3336843",
+    "Q6266",
+    "Q6256"
+   ]
+  ],
+  "Q220": [
+   "Rome",
+   "capital and largest city of Italy",
+   [
+    "The Eternal City",
+    "Rome, Italy",
+    "City of Seven Hills",
+    "Eternal City",
+    "The City of Marble",
+    "City of Marble",
+    "The Capital of the World",
+    "Capital of the World"
+   ],
+   [
+    "Q902814",
+    "Q3685476",
+    "Q1200957",
+    "Q200250",
+    "Q51929311",
+    "Q1187811",
+    "Q1549591",
+    "Q747074",
+    "Q108178728"
+   ]
+  ],
+  "Q22890": [
+   "Ireland",
+   "island in the North Atlantic Ocean",
+   [
+    "Airlan",
+    "Irland",
+    "Irlanda",
+    "Irlandia",
+    "Auld Sod",
+    "Irlande",
+    "Airlann",
+    "Mikra Britannia",
+    "Ireland (island)",
+    "\u00c9ire",
+    "Banba",
+    "F\u00f3dhla",
+    "Emerald Isle",
+    "Erin",
+    "Britannia Minor",
+    "Ivernia",
+    "Ierne",
+    "Island of Saints",
+    "Hibernia",
+    "Island of Ireland",
+    "isle of Ireland",
+    "Eire",
+    "Scotia Major"
+   ],
+   [
+    "Q23442",
+    "Q3502482"
+   ]
+  ],
+  "Q2302576": [
+   "Manjung",
+   "district of Malaysia in Perak",
+   [
+    "Dindings",
+    "Manjung District"
+   ],
+   [
+    "Q1994931"
+   ]
+  ],
+  "Q231765": [
+   "Geelong",
+   "city in Victoria, Australia",
+   [
+    "Geelong, Victoria",
+    "Geelong, Australia"
+   ],
+   [
+    "Q515",
+    "Q1549591"
+   ]
+  ],
+  "Q23436": [
+   "Edinburgh",
+   "capital city of Scotland, UK",
+   [
+    "Edinburgh, Scotland",
+    "City of Edinburgh",
+    "Edina",
+    "Modern Athens",
+    "Auld Reekie",
+    "Athens of the North"
+   ],
+   [
+    "Q515",
+    "Q1187811",
+    "Q202435",
+    "Q104630835",
+    "Q1549591"
+   ]
+  ],
+  "Q2411883": [
+   "Victor Cavendish, 9th Duke of Devonshire",
+   "British politician (1868-1938)",
+   [
+    "Victor Cavendish",
+    "Victor Christian William Cavendish"
+   ],
+   [
+    "Q5"
+   ]
+  ],
+  "Q244": [
+   "Barbados",
+   "island nation in the Caribbean",
+   [
+    "bb",
+    "BAR",
+    "Barbadoes"
+   ],
+   [
+    "Q202686",
+    "Q3624078",
+    "Q112099",
+    "Q6256"
+   ]
+  ],
+  "Q258464": [
+   "Trinity College, Dublin",
+   "constituent college of the University of Dublin in Ireland",
+   [
+    "College of the Holy and Undivided Trinity of Queen Elizabeth near Dublin",
+    "Trinity College, Dublin",
+    "Trinity College University of Dublin",
+    "Trinity College, University of Dublin",
+    "Col\u00e1iste na Tr\u00edon\u00f3ide",
+    "University of Dublin",
+    "TCD",
+    "University of Dublin Trinity College"
+   ],
+   [
+    "Q3354859",
+    "Q163740"
+   ]
+  ],
+  "Q2642989": [
+   "British Central Africa Protectorate",
+   "British protectorate from 1893 to 1907",
+   [],
+   [
+    "Q21479969"
+   ]
+  ],
+  "Q2658454": [
+   "Monarchies of Malaysia",
+   "constitutional monarchy",
+   [],
+   [
+    "Q3024240"
+   ]
+  ],
+  "Q2660774": [
+   "British Windward Islands",
+   "former British colony (1833\u20131959)",
+   [],
+   [
+    "Q1048835",
+    "Q133156"
+   ]
+  ],
+  "Q269412": [
+   "George V",
+   "King of the United Kingdom from 1910 to 1936",
+   [
+    "George V of the United Kingdom",
+    "George Saxe-Coburg-Gotha",
+    "George Frederick Ernest Albert Windsor",
+    "King George V",
+    "George V (King of Great Britain)",
+    "George Frederick Ernest Albert Saxe-Coburg-Gotha",
+    "George Windsor",
+    "George Frederick Ernest Albert"
+   ],
+   [
+    "Q5"
+   ]
+  ],
+  "Q27394": [
+   "Southern Africa",
+   "southernmost region of Africa",
+   [],
+   [
+    "Q3502482",
+    "Q82794"
+   ]
+  ],
+  "Q27407": [
+   "East Africa",
+   "easterly region of the African continent",
+   [
+    "Eastern Africa",
+    "Africa, Eastern"
+   ],
+   [
+    "Q82794",
+    "Q3502482"
+   ]
+  ],
+  "Q27433": [
+   "Central Africa",
+   "core region of the African continent",
+   [
+    "Middle Africa"
+   ],
+   [
+    "Q82794",
+    "Q3502482",
+    "Q7631958"
+   ]
+  ],
+  "Q30": [
+   "United States",
+   "country located primarily in North America",
+   [
+    "the States",
+    "the United States of America",
+    "US of America",
+    "the US",
+    "the U.S.",
+    "the US of A",
+    "U.S. of America",
+    "the US of America",
+    "the USA",
+    "the U.S.A.",
+    "the U.S. of A",
+    "US of A",
+    "the U.S. of America",
+    "the United States",
+    "Merica",
+    "Murica",
+    "U. S.",
+    "U. S. A.",
+    "United States of America"
+   ],
+   [
+    "Q3624078",
+    "Q1489259",
+    "Q6256",
+    "Q99541706",
+    "Q1520223",
+    "Q5035794"
+   ]
+  ],
+  "Q30059027": [
+   "Sierra Leone Colony and Protectorate",
+   "British colony and protectorate in Africa from 1808 until 1961",
+   [
+    "Sierra Leone"
+   ],
+   [
+    "Q1351282",
+    "Q164142"
+   ]
+  ],
+  "Q31": [
+   "Belgium",
+   "country in western Europe",
+   [
+    "Kingdom of Belgium"
+   ],
+   [
+    "Q3624078",
+    "Q6256",
+    "Q20181813",
+    "Q1250464"
+   ]
+  ],
+  "Q3132595": [
+   "Seri Menanti",
+   "town in Malaysia",
+   [],
+   [
+    "Q7311182",
+    "Q67925073"
+   ]
+  ],
+  "Q3141": [
+   "Melbourne",
+   "capital city of Victoria, Australia",
+   [
+    "Melbourne, Victoria",
+    "Melbourne, Australia",
+    "Greater Melbourne",
+    "Melbourne, AUS",
+    "Naarm",
+    "Melbourne, Victoria, Australia",
+    "Melbourne, VIC",
+    "Melbourne, VIC, Australia",
+    "Narrm",
+    "Melbs"
+   ],
+   [
+    "Q515",
+    "Q7309306",
+    "Q1549591",
+    "Q1907114",
+    "Q11271835",
+    "Q1066984",
+    "Q200250"
+   ]
+  ],
+  "Q315999": [
+   "Joseph Chamberlain",
+   "British politician (1836-1914)",
+   [
+    "Joe Chamberlain",
+    "Right Hon. Joseph Chamberlain"
+   ],
+   [
+    "Q5"
+   ]
+  ],
+  "Q316390": [
+   "Antigua",
+   "island in Antigua and Barbuda",
+   [
+    "Wadadli"
+   ],
+   [
+    "Q23442"
+   ]
+  ],
+  "Q319366": [
+   "Galle",
+   "city in Southern Province, Sri Lanka",
+   [
+    "Point de Galle"
+   ],
+   [
+    "Q515",
+    "Q486972"
+   ]
+  ],
+  "Q323873": [
+   "Trincomalee",
+   "city in Sri Lanka",
+   [],
+   [
+    "Q515",
+    "Q486972"
+   ]
+  ],
+  "Q332342": [
+   "Trinity College",
+   "constituent college of the University of Cambridge in England",
+   [
+    "Trinity College, Cambridge",
+    "College of the Holy and Undivided Trinity",
+    "University of Cambridge Trinity College"
+   ],
+   [
+    "Q1055028",
+    "Q1244442",
+    "Q19844914",
+    "Q2385804",
+    "Q2467461",
+    "Q3918",
+    "Q708676"
+   ]
+  ],
+  "Q334": [
+   "Singapore",
+   "sovereign island country and city-state in maritime Southeast Asia",
+   [
+    "Republic of Singapore",
+    "sg",
+    "Singapore City",
+    "Lion City",
+    "Garden City",
+    "S'pore"
+   ],
+   [
+    "Q3624078",
+    "Q133442",
+    "Q112099",
+    "Q515",
+    "Q2264924",
+    "Q1549591",
+    "Q902814",
+    "Q6256",
+    "Q208511",
+    "Q108178728"
+   ]
+  ],
+  "Q336040": [
+   "Herbert Plumer, 1st Viscount Plumer",
+   "British Army general and High Commissioner of the British Mandate for Palestine (1857-1932)",
+   [
+    "Field Marshal Herbert Charles Onslow Plumer, 1st Viscount Plumer",
+    "Herbert Charles Onslow Plumer, 1st Viscount Plumer"
+   ],
+   [
+    "Q5"
+   ]
+  ],
+  "Q338294": [
+   "James Henry Thomas",
+   "Welsh trade unionist and politician (1874-1949)",
+   [
+    "J. H. Thomas",
+    "Jimmy Thomas"
+   ],
+   [
+    "Q5"
+   ]
+  ],
+  "Q3395941": [
+   "Alfred Lyttelton",
+   "English cricketer and politician (1857-1913)",
+   [],
+   [
+    "Q5"
+   ]
+  ],
+  "Q34217": [
+   "Oxford",
+   "city in Oxfordshire, England",
+   [
+    "Oxford, England"
+   ],
+   [
+    "Q1357964",
+    "Q1187811",
+    "Q7897276",
+    "Q515"
+   ]
+  ],
+  "Q34647": [
+   "Johannesburg",
+   "largest city in South Africa",
+   [
+    "Jo'burg",
+    "eGoli",
+    "Johannesburg, Gauteng",
+    "Johannesburg, South Africa",
+    "Johannesburg, Gauteng, South Africa",
+    "ZAJNB",
+    "joburg"
+   ],
+   [
+    "Q515",
+    "Q1549591",
+    "Q51929311",
+    "Q11271835",
+    "Q208511",
+    "Q1066984"
+   ]
+  ],
+  "Q350": [
+   "Cambridge",
+   "city in Cambridgeshire, England",
+   [],
+   [
+    "Q1187811",
+    "Q515",
+    "Q1357964",
+    "Q1549591",
+    "Q110390579",
+    "Q1115575"
+   ]
+  ],
+  "Q35381": [
+   "Colombo",
+   "largest city and de facto capital of Sri Lanka",
+   [],
+   [
+    "Q515",
+    "Q1549591",
+    "Q51929311",
+    "Q129319205",
+    "Q129268952",
+    "Q125684839",
+    "Q11418818"
+   ]
+  ],
+  "Q3557236": [
+   "Gambia Colony and Protectorate",
+   "British colony and protectorate in Africa from 1821 until 1965",
+   [],
+   [
+    "Q133156",
+    "Q164142"
+   ]
+  ],
+  "Q35794": [
+   "University of Cambridge",
+   "collegiate public research university in Cambridge, England, United Kingdom",
+   [
+    "Cambridge University",
+    "Cambridge",
+    "Universitas Cantabrigiensis",
+    "The Chancellor, Masters, and Scholars of the University of Cambridge",
+    "The University of Cambridge"
+   ],
+   [
+    "Q3354859",
+    "Q62078547",
+    "Q5341295"
+   ]
+  ],
+  "Q36405": [
+   "Aberdeen",
+   "city in Scotland, United Kingdom",
+   [
+    "Aiberdeen",
+    "Granite City",
+    "The Silver City",
+    "Aiberdein",
+    "Aberdeen, Scotland",
+    "Obar Dheathain"
+   ],
+   [
+    "Q515",
+    "Q1549591",
+    "Q486972"
+   ]
+  ],
+  "Q3643409": [
+   "William Palmer, 2nd Earl of Selborne",
+   "British politician (1859-1942)",
+   [],
+   [
+    "Q5"
+   ]
+  ],
+  "Q36687": [
+   "Victoria",
+   "state of Australia",
+   [
+    "VIC",
+    "Victoria, Australia",
+    "State of Victoria",
+    "State of VIC",
+    "Vic.",
+    "AU-VIC"
+   ],
+   [
+    "Q5852411",
+    "Q1351282"
+   ]
+  ],
+  "Q370736": [
+   "Cape Colony",
+   "Dutch and British colony in Southern Africa",
+   [
+    "Cape of Good Hope"
+   ],
+   [
+    "Q3024240",
+    "Q133156",
+    "Q1351282"
+   ]
+  ],
+  "Q376178": [
+   "Straits Settlements",
+   "former group of British territories located in the Far East, with its capital in Singapore",
+   [],
+   [
+    "Q1351282"
+   ]
+  ],
+  "Q379656": [
+   "Saint Vincent",
+   "island of Saint Vincent and the Grenadines",
+   [
+    "St Vincent",
+    "St. Vincent",
+    "Youloumain",
+    "Hairouna"
+   ],
+   [
+    "Q23442"
+   ]
+  ],
+  "Q38": [
+   "Italy",
+   "country in southern Europe",
+   [
+    "Italian Republic",
+    "Republic of Italy"
+   ],
+   [
+    "Q6256",
+    "Q3624078",
+    "Q619610",
+    "Q179164",
+    "Q7270",
+    "Q51576574"
+   ]
+  ],
+  "Q3851721": [
+   "Sudanian savanna",
+   "broad belt of tropical savanna",
+   [
+    "Sudan region"
+   ],
+   [
+    "Q295469"
+   ]
+  ],
+  "Q38610": [
+   "Dominion of Newfoundland",
+   "UK possession in North America between 1907 and 1949",
+   [
+    "Newfoundland"
+   ],
+   [
+    "Q223832",
+    "Q3024240"
+   ]
+  ],
+  "Q39121": [
+   "Leeds",
+   "city in West Yorkshire, England, United Kingdom",
+   [],
+   [
+    "Q515",
+    "Q7897276",
+    "Q1549591",
+    "Q1187811"
+   ]
+  ],
+  "Q4093": [
+   "Glasgow",
+   "city in Scotland, United Kingdom",
+   [
+    "Glasgow, Scotland",
+    "Glasgow, UK"
+   ],
+   [
+    "Q515",
+    "Q1549591",
+    "Q51929311",
+    "Q202435"
+   ]
+  ],
+  "Q4120852": [
+   "Richard James Wilkinson",
+   "British colonial governor (1867-1941)",
+   [
+    "R. J. Wilkinson"
+   ],
+   [
+    "Q5"
+   ]
+  ],
+  "Q43106": [
+   "Zambezi River",
+   "fourth-longest river in Africa",
+   [
+    "Zambezi",
+    "Zambeze",
+    "Zambesi"
+   ],
+   [
+    "Q573344"
+   ]
+  ],
+  "Q459640": [
+   "Alfred Sharpe",
+   "Commissioner and Consul-General for the British Central Africa Protectorate and first Governor of Nyasaland (1853-1935)",
+   [
+    "Sir Alfred Sharpe"
+   ],
+   [
+    "Q5"
+   ]
+  ],
+  "Q467269": [
+   "Cheltenham College",
+   "independent school in Cheltenham, Gloucestershire, England, UK",
+   [],
+   [
+    "Q1972829",
+    "Q2418495",
+    "Q269770"
+   ]
+  ],
+  "Q472146": [
+   "Lagos Colony",
+   "1862-1906 UK possession in Western Africa",
+   [],
+   [
+    "Q133156"
+   ]
+  ],
+  "Q47891631": [
+   "Edward Ernest Prince",
+   "Canadian fisheries biologist",
+   [
+    "E. E. Prince",
+    "Edward E. Prince"
+   ],
+   [
+    "Q5"
+   ]
+  ],
+  "Q4857417": [
+   "Sungai Ujong",
+   "",
+   [],
+   [
+    "Q3024240",
+    "Q118594136"
+   ]
+  ],
+  "Q507144": [
+   "Mullaitivu(\u0db8\u0dd6\u0dbd\u0daf\u0dd3\u0db4\u0dba)",
+   "city",
+   [],
+   [
+    "Q515",
+    "Q486972"
+   ]
+  ],
+  "Q5075044": [
+   "Charles Alexander Harris",
+   "British colonial administrator",
+   [
+    "Sir Charles Alexander Harris"
+   ],
+   [
+    "Q5"
+   ]
+  ],
+  "Q5077823": [
+   "Charles Frederic Belcher",
+   "Australian lawyer, author and amateur ornithologist",
+   [
+    "Sir Charles Frederic Belcher"
+   ],
+   [
+    "Q5"
+   ]
+  ],
+  "Q508753": [
+   "Ratnapura",
+   "city in Sabaragamuwa, Sri Lanka",
+   [],
+   [
+    "Q486972"
+   ]
+  ],
+  "Q541455": [
+   "Anglo-Egyptian Sudan",
+   "Joint British and Egyptian rule between 1899-1956",
+   [
+    "Anglo-Egyptian occupation of Sudan"
+   ],
+   [
+    "Q3024240",
+    "Q734818"
+   ]
+  ],
+  "Q5493652": [
+   "Rossall School",
+   "independent school in Lancashire, UK",
+   [],
+   [
+    "Q2418495",
+    "Q269770",
+    "Q708676"
+   ]
+  ],
+  "Q550374": [
+   "South African Republic",
+   "independent Boer-ruled country in Southern Africa between 1856\u20131902",
+   [
+    "ZAR",
+    "Transvaal Republic",
+    "Zuid-Afrikaansche Republiek",
+    "The Transvaal",
+    "Republic of Transvaal"
+   ],
+   [
+    "Q3624078",
+    "Q3024240",
+    "Q1010624"
+   ]
+  ],
+  "Q5534618": [
+   "Geoffrey Francis Archer",
+   "British ornithologist and colonial official (1882\u20131964)",
+   [
+    "Sir Geoffrey Francis Archer",
+    "Geoffrey Archer"
+   ],
+   [
+    "Q5"
+   ]
+  ],
+  "Q55643233": [
+   "Northern Frontier district",
+   "territory of British Kenya",
+   [],
+   []
+  ],
+  "Q5566905": [
+   "Glasgow Royal Infirmary",
+   "hospital in Glasgow, Scotland, UK",
+   [
+    "GRI"
+   ],
+   [
+    "Q1813474"
+   ]
+  ],
+  "Q557341": [
+   "Muhammad \u02bfAbdallah Hasan",
+   "emir of Diiriye Guure and his Dervish Kingdom (1856-1920)",
+   [
+    "Muhammad `Abd All\u0101h al-Hasan",
+    "Sayid Maxamed Cabdille Xasan",
+    "Sayyid Hassan",
+    "Sayid Maxamed Cabdulle Xasan",
+    "Sayid Mohamed Abdullah Hassan",
+    "Sayid Mohsmed Abdullah Hassan",
+    "Sayid Mohamed Abdullahi Hassan"
+   ],
+   [
+    "Q5"
+   ]
+  ],
+  "Q596660": [
+   "New Territories",
+   "region in Hong Kong",
+   [],
+   [
+    "Q82794"
+   ]
+  ],
+  "Q598745": [
+   "Northern Province",
+   "province of Sri Lanka",
+   [
+    "Northern Province, Sri Lanka"
+   ],
+   [
+    "Q861559"
+   ]
+  ],
+  "Q61": [
+   "Washington, D.C.",
+   "capital city of the United States of America",
+   [
+    "Washington, District of Columbia",
+    "D.C. Washington",
+    "The District",
+    "District of Columbia",
+    "City of Washington, D.C.",
+    "Washington City, D.C.",
+    "Nation's Capital (D.C.)",
+    "Federal City (D.C.)",
+    "D.C."
+   ],
+   [
+    "Q1093829",
+    "Q1549591",
+    "Q486972",
+    "Q15840617",
+    "Q114496982",
+    "Q257391"
+   ]
+  ],
+  "Q633448": [
+   "Geelong Grammar School",
+   "boarding school in Victoria, Australia",
+   [
+    "Geelong School",
+    "Geelong Church of England Grammar School",
+    "Geelong CEGS"
+   ],
+   [
+    "Q269770",
+    "Q163740"
+   ]
+  ],
+  "Q649162": [
+   "Shimbiris",
+   "mountain in Waqooyibari",
+   [
+    "Mount Shimbiris"
+   ],
+   [
+    "Q8502"
+   ]
+  ],
+  "Q656": [
+   "Saint Petersburg",
+   "federal city and former capital of Russia",
+   [
+    "Petersburg",
+    "Sankt-Peterburg",
+    "St Petersburg",
+    "St.Petersburg"
+   ],
+   [
+    "Q183342",
+    "Q1549591",
+    "Q4442912",
+    "Q129268952",
+    "Q51929311",
+    "Q7930989",
+    "Q43263",
+    "Q1637706",
+    "Q1637706",
+    "Q105742499",
+    "Q200250",
+    "Q134445478",
+    "Q2264924"
+   ]
+  ],
+  "Q662653": [
+   "British Somaliland",
+   "former British protectorate",
+   [
+    "Somaliland"
+   ],
+   [
+    "Q3024240",
+    "Q164142"
+   ]
+  ],
+  "Q668616": [
+   "Negombo",
+   "city in Sri Lanka",
+   [],
+   [
+    "Q515",
+    "Q1549591",
+    "Q486972"
+   ]
+  ],
+  "Q669037": [
+   "West Indies",
+   "island region in the Caribbean",
+   [
+    "Caribbean Basin"
+   ],
+   [
+    "Q82794"
+   ]
+  ],
+  "Q6744657": [
+   "Crown Colony of Malta",
+   "crown colony of the British Empire (1813-1964)",
+   [
+    "British Malta"
+   ],
+   [
+    "Q1351282"
+   ]
+  ],
+  "Q69482": [
+   "Lincoln's Inn",
+   "one of the four Inns of Court in London, England",
+   [
+    "Lincolns Inn",
+    "The Honourable Society of Lincoln's Inn",
+    "Honourable Society of Lincoln's Inn"
+   ],
+   [
+    "Q278697",
+    "Q2385804"
+   ]
+  ],
+  "Q714717": [
+   "Christ's College",
+   "college of the University of Cambridge",
+   [
+    "Christ's College, Cambridge",
+    "Christ's College, Cambridge University"
+   ],
+   [
+    "Q1055028"
+   ]
+  ],
+  "Q717": [
+   "Venezuela",
+   "country in South America",
+   [
+    "Bolivarian Republic of Venezuela",
+    "BR Venezuela",
+    "Republic of Venezuela"
+   ],
+   [
+    "Q3624078",
+    "Q6256"
+   ]
+  ],
+  "Q7287329": [
+   "Ralph Champneys Williams",
+   "Lieutenant Governor of Newfoundland (1848\u20131927)",
+   [
+    "Sir Ralph Champneys Williams"
+   ],
+   [
+    "Q5"
+   ]
+  ],
+  "Q7344852": [
+   "Robert Gordon's College",
+   "secondary school in Aberdeen City, Scotland, UK",
+   [
+    "Gordon's College"
+   ],
+   [
+    "Q159334",
+    "Q163740"
+   ]
+  ],
+  "Q747314": [
+   "Bechuanaland Protectorate",
+   "British protectorate in southern Africa, became Botswana in 1966",
+   [
+    "Bechuana-land"
+   ],
+   [
+    "Q6256",
+    "Q3024240"
+   ]
+  ],
+  "Q760": [
+   "Saint Lucia",
+   "island sovereign state in the Caribbean Sea",
+   [
+    "lc",
+    "St. Lucia",
+    "St Lucia",
+    "Iyonola",
+    "Hewanorra",
+    "lca"
+   ],
+   [
+    "Q202686",
+    "Q112099",
+    "Q3624078",
+    "Q6256"
+   ]
+  ],
+  "Q765642": [
+   "Queens' College",
+   "college of the University of Cambridge",
+   [
+    "Queens College",
+    "Queens' College, Cambridge",
+    "Queen's College"
+   ],
+   [
+    "Q1055028",
+    "Q19844914"
+   ]
+  ],
+  "Q769": [
+   "Grenada",
+   "island sovereign state in the Caribbean Sea",
+   [
+    "gd",
+    "GRN"
+   ],
+   [
+    "Q202686",
+    "Q112099",
+    "Q3624078",
+    "Q6256",
+    "Q11815167"
+   ]
+  ],
+  "Q776887": [
+   "Kurunegala",
+   "human settlement",
+   [],
+   [
+    "Q515",
+    "Q486972"
+   ]
+  ],
+  "Q784": [
+   "Dominica",
+   "island sovereign state in the Caribbean Sea",
+   [
+    "Commonwealth of Dominica",
+    "The Commonwealth of Dominica",
+    "dm",
+    "DOM",
+    "Wai\u2018tu kubuli",
+    "Wai'tu kubuli",
+    "Island of Dominica"
+   ],
+   [
+    "Q3624078",
+    "Q112099",
+    "Q6256"
+   ]
+  ],
+  "Q7842696": [
+   "Trinity College",
+   "college of the University of Melbourne, Victoria, Australia",
+   [],
+   [
+    "Q2680291",
+    "Q163740"
+   ]
+  ],
+  "Q795647": [
+   "Carriacou Island",
+   "island in Grenada",
+   [],
+   [
+    "Q23442"
+   ]
+  ],
+  "Q8016": [
+   "Winston Churchill",
+   "British statesman, soldier and writer (1874\u20131965)",
+   [
+    "The Right Honourable Sir Winston Churchill",
+    "Colonel Warden",
+    "Mr Green",
+    "The Honourable Sir Winston Spencer Churchill",
+    "Winston Spencer Churchill",
+    "Sir Leonard Spencer",
+    "Charles Maurin",
+    "David Winter",
+    "The Right Honourable Sir Winston Spencer Churchill",
+    "The Right Honourable Sir Winston Leonard Spencer Churchill"
+   ],
+   [
+    "Q5"
+   ]
+  ],
+  "Q810963": [
+   "Batticaloa",
+   "city in Eastern Province, Sri Lanka",
+   [],
+   [
+    "Q486972"
+   ]
+  ],
+  "Q81162": [
+   "Magdalen College",
+   "constituent college of the University of Oxford in England",
+   [
+    "The President and Fellows of the College of St Mary Magdalen in the University of Oxford",
+    "Magdalen College, Oxford"
+   ],
+   [
+    "Q2581649",
+    "Q708676"
+   ]
+  ],
+  "Q82601": [
+   "Tierra del Fuego",
+   "archipelago off the south of South America",
+   [
+    "Land of Fire"
+   ],
+   [
+    "Q1402592"
+   ]
+  ],
+  "Q839225": [
+   "Cecil Clementi",
+   "British colonial administrator (1875\u20131947)",
+   [
+    "Sir Cecil Clementi"
+   ],
+   [
+    "Q5"
+   ]
+  ],
+  "Q84": [
+   "London",
+   "capital and largest city of England and the United Kingdom",
+   [
+    "London, UK",
+    "London, United Kingdom",
+    "London, England",
+    "London UK",
+    "London U.K.",
+    "Londinium",
+    "Lo\u00f1",
+    "Lundenwic",
+    "Londinio",
+    "Londini",
+    "Londiniensium",
+    "Augusta",
+    "Trinovantum",
+    "Kaerlud",
+    "Karelundein",
+    "Lunden",
+    "Big Smoke",
+    "the Big Smoke",
+    "Lundenburh",
+    "Lundenburgh",
+    "Llyn Dain",
+    "Llan Dian",
+    "Londinion",
+    "Loniniensi",
+    "Lon.",
+    "Lo\u00f1.",
+    "Lond.",
+    "LDN"
+   ],
+   [
+    "Q200250",
+    "Q1066984",
+    "Q515",
+    "Q208511",
+    "Q174844",
+    "Q51929311",
+    "Q108178728",
+    "Q1048835"
+   ]
+  ],
+  "Q847610": [
+   "Seremban",
+   "city and state capital in Negeri Sembilan, Malaysia",
+   [
+    "Seremban City"
+   ],
+   [
+    "Q34986717",
+    "Q1549591"
+   ]
+  ],
+  "Q848853": [
+   "Nibong Tebal",
+   "suburb of Seberang Perai, Penang, Malaysia",
+   [],
+   [
+    "Q188509"
+   ]
+  ],
+  "Q853272": [
+   "Sabaragamuwa Province",
+   "province of Sri Lanka",
+   [
+    "Sabaragamuwa Province, Sri Lanka"
+   ],
+   [
+    "Q861559"
+   ]
+  ],
+  "Q856686": [
+   "Western Province",
+   "province of Sri Lanka",
+   [
+    "Western Province, Sri Lanka"
+   ],
+   [
+    "Q861559"
+   ]
+  ],
+  "Q85681760": [
+   "Frederic Cardew",
+   "(1839-1921)",
+   [],
+   [
+    "Q5"
+   ]
+  ],
+  "Q8686": [
+   "Shanghai",
+   "provincial-level municipality in China",
+   [
+    "Hu",
+    "Shang Hai",
+    "Shanghai, China",
+    "Shanghae",
+    "Zanghae",
+    "Shang-hai",
+    "Shen",
+    "Pearl of the Orient",
+    "Xanghae",
+    "Shanghai Municipality",
+    "Municipality of Shanghai",
+    "Shanghai City",
+    "Shang Hai Shi"
+   ],
+   [
+    "Q1208802",
+    "Q1066538",
+    "Q1549591",
+    "Q2264924",
+    "Q208511",
+    "Q174844",
+    "Q200250",
+    "Q51929311",
+    "Q1073535"
+   ]
+  ],
+  "Q876185": [
+   "East Africa Protectorate",
+   "former British colony in Africa",
+   [
+    "British East Africa"
+   ],
+   [
+    "Q164142",
+    "Q133156"
+   ]
+  ],
+  "Q876293": [
+   "Uva Province",
+   "province of Sri Lanka",
+   [
+    "Uva Province, Sri Lanka"
+   ],
+   [
+    "Q861559"
+   ]
+  ],
+  "Q90": [
+   "Paris",
+   "capital and most populous city in France",
+   [
+    "City of Light",
+    "City of Love",
+    "Lutetia"
+   ],
+   [
+    "Q484170",
+    "Q22923920",
+    "Q200250",
+    "Q1200957",
+    "Q208511",
+    "Q174844",
+    "Q51929311",
+    "Q1187811",
+    "Q1549591",
+    "Q1422929",
+    "Q108178728",
+    "Q1066984",
+    "Q11418818",
+    "Q134445478",
+    "Q2240381"
+   ]
+  ],
+  "Q918126": [
+   "British Guiana",
+   "British possession in the Guianas region between 1814\u20131966",
+   [
+    "Colonial Guyana"
+   ],
+   [
+    "Q1351282"
+   ]
+  ],
+  "Q918153": [
+   "British Ceylon",
+   "Sri Lankan British Crown colony",
+   [
+    "Ceylon"
+   ],
+   [
+    "Q1351282",
+    "Q56061",
+    "Q15893266"
+   ]
+  ],
+  "Q98": [
+   "Pacific Ocean",
+   "ocean between Asia, Australia and the Americas",
+   [
+    "Pacific",
+    "Pacific Sea",
+    "the Pacific",
+    "Pacifick",
+    "Pacifick Ocean",
+    "Pacifick Sea",
+    "the Pacifick",
+    "Southern Ocean",
+    "Southern Sea",
+    "the Southern Ocean",
+    "the Southern Sea",
+    "Great Southern Ocean",
+    "the Great Southern Ocean",
+    "Great Southern Sea",
+    "the Great Southern Sea",
+    "the Pacific Ocean"
+   ],
+   [
+    "Q9430"
+   ]
+  ]
+ }
+}

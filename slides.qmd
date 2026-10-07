@@ -160,18 +160,18 @@ Nyasaland → a disambiguation page. Straits Settlements → a Danish triathlete
 
 **It knew who. It did not know the number.** Nothing in the text tells you which ones resolve.
 
-## Three ways to get the number {.smaller}
+## Four ways to get the number {.smaller}
 
-| | Gemini 3.8 Flash, no tools | Pipeline: vector search + gates | Opus 5.5 with retrieval |
-|---|---|---|---|
-| Person identifiers correct | **0** of 16 | 12 of 12 given; 8 ungrounded, 4 of them have items | **16** of 16 given |
-| Declined | 4 | 8 | 4 |
-| Found what the others missed | | | Prince; two Wikidata items for Gorges |
-| Cost per entry | lowest | low; scales | highest; out of tool calls before the places |
+| | Gemini Flash, no tools | Pipeline: vector search + gates | Opus, retrieval | Astra, retrieval |
+|---|---|---|---|---|
+| Person identifiers correct | **0** of 16 | 12 of 12 given; 8 ungrounded, 4 have items | **16** of 16 | **16** of 16 |
+| Places | 38 of 104 labels match; modern | 3,207 surfaces; modern-collapse errors found on the map | 17 of 138, then stopped | 104 period entities; 9 modern proxies labelled |
+| Time | < 5 min | overnight, whole corpus | ~20 min | ~27 min |
 
 . . .
 
-Both chatbots read the entry right. The difference is where the number came from.
+All three chatbots read the entry right. The difference is where the number came from, and the cost.
+27 minutes for 20 entries is 25 days for the Colonial Office List. The retrieval columns are the review queue, not the corpus.
 Even the best column needs you: which Gorges? Is Harris b. 1858 the Harris b. 1855?
 
 ## Six Victorias {.smaller}

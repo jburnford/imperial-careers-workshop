@@ -26,4 +26,4 @@
 | 20 | CLEMENTI, SIR CECIL, K.C.M.G. (1926), C.M.G. (1916) | `kgp_col1931-p982b10` | grounded | Q839225 |  | |
 
 
-Gemini 3.8 Flash, given the same twenty entries without tools, is scored in `gemini-scoring.md`: none of its sixteen person identifiers was correct. Claude Opus 5.5 with web retrieval is scored in `opus-scoring.md`: all sixteen correct, plus Prince.
+Gemini 3.8 Flash, given the same twenty entries without tools, is scored in `gemini-scoring.md`: none of its sixteen person identifiers was correct. Claude Opus 5.5 with web retrieval is scored in `opus-scoring.md`: all sixteen correct, plus Prince. Astra medium with web retrieval is scored in `astra-scoring.md`: all sixteen correct, 104 places grounded to period entities.
