@@ -1,6 +1,6 @@
-# Scoring "Astra medium" with web retrieval on the twenty entries
+# Scoring GPT Astra 6 (medium) with web retrieval on the twenty entries
 
-Jim Clifford gave the twenty entries (`bios.md`) to Astra medium on 7 October 2026, starting about 08:35; the output file `bios-grounded.json` was downloaded at 09:02, so about 27 minutes. Prompt, the same as for the other two runs: "Parse these bios and ground the places, schools and people to Wikidata ids where possible." The file's own methodology block says: public web search, Wikipedia sitelinks and web-retrieved Wikidata pages, not the API or a vector search; the answer key was not consulted; birth years only where printed. The file is saved as `astra-grounding.json`; every identifier in it was resolved with `wbgetentities` on 7 October (`astra-grounding-check.json`).
+Jim Clifford gave the twenty entries (`bios.md`) to OpenAI's GPT Astra 6, a frontier model released in late summer 2026, at the medium setting, on 7 October 2026, starting about 08:35; the output file `bios-grounded.json` was downloaded at 09:02, so about 27 minutes. Prompt, the same as for the other two runs: "Parse these bios and ground the places, schools and people to Wikidata ids where possible." The file's own methodology block says: public web search, Wikipedia sitelinks and web-retrieved Wikidata pages, not the API or a vector search; the answer key was not consulted; birth years only where printed. The file is saved as `astra-grounding.json`; every identifier in it was resolved with `wbgetentities` on 7 October (`astra-grounding-check.json`).
 
 ## What it produced
 
@@ -36,7 +36,7 @@ One modern collapse remains: "Victoria, Australia" for Belcher's postings → Q3
 
 Four runs, one table:
 
-| | Gemini 3.8 Flash, no tools | Pipeline: vector search + gates | Opus 5.5, retrieval | Astra medium, retrieval |
+| | Gemini 3.8 Flash, no tools | Pipeline: vector search + gates | Claude Opus 5.5, retrieval | GPT Astra 6 (medium), retrieval |
 |---|---|---|---|---|
 | Person identifiers correct | 0 of 16 | 12 of 12 given; 8 ungrounded, 4 have items | 16 of 16 | 16 of 16 |
 | Places | 38 of 104 labels match; modern items | 3,207 surfaces over the corpus; modern-collapse errors fixed later from the map | 17 of 138, then stopped | 104, period entities, 9 modern proxies labelled |

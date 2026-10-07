@@ -1,6 +1,6 @@
 # Timing of the grounding-test runs, 7 October 2026 (CST)
 
-Times for the three chatbot runs are reconstructed from file modification times on Jim's machine, except the Astra start, which is Jim's estimate. Pasted results were saved within about a minute of arriving.
+Times for the three chatbot runs are reconstructed from file modification times on Jim's machine, except the GPT Astra 6 start, which is Jim's estimate. Pasted results were saved within about a minute of arriving.
 
 | Event | Time | Source |
 |---|---|---|

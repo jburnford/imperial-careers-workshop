@@ -60,6 +60,8 @@ Whichever route: keep the prompt, the validator and the post-normaliser the same
 
 **Quantisation.** Storing a model's numbers at lower precision (4 bits instead of 16) so it needs a quarter of the memory, at a small cost in quality.
 
+**The three chatbots in the grounding test.** Gemini 3.8 Flash (Google's fast, inexpensive tier), Claude Opus 5.5 (Anthropic's frontier model) and GPT Astra 6 (OpenAI's frontier model, released in late summer 2026). All three were given the same prompt and the same twenty entries on 7 October 2026; Gemini without tools, the other two with web search.
+
 **Reasoning mode.** A setting where the model writes out a chain of thought before answering. Helpful for hard questions; on this task it spent the whole budget thinking and produced no record.
 
 **Regex.** A pattern language for matching text by shape ("capital letters, comma, names, a dash, then clauses ending in a year"). The project's first tier.

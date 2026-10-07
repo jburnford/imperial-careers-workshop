@@ -310,8 +310,8 @@ Terms on this page
 <th></th>
 <th>Gemini, no tools</th>
 <th>Pipeline: vector search + gates</th>
-<th>Opus, with retrieval</th>
-<th>Astra, with retrieval</th>
+<th>Claude Opus 5.5, with retrieval</th>
+<th>GPT Astra 6, with retrieval</th>
 </tr>
 </thead>
 <tbody>
@@ -338,7 +338,7 @@ Terms on this page
 </tr>
 </tbody>
 </table>
-<p>A third run, Astra medium with web retrieval, took 27 minutes and produced a <a href="../outputs/ground-test/astra-grounding.json">structured file</a> of 180 entities with offsets, confidence, a relation type, rejected candidates with reasons and dated evidence (<a href="../outputs/ground-test/astra-scoring.md">scoring</a>). All 155 identifiers resolve consistently. It grounded Ceylon, the Straits Settlements, the Union of South Africa and the rest to the period polities, and it recorded Penang Q188096, the item the pipeline had wrongly matched, as a modern proxy only. It is the dataset a historian would want, at about 80 seconds an entry, which over 27,526 people is 25 days of model time before the India Office List.</p>
+<p>A third run, OpenAI’s GPT Astra 6 (its frontier model, released in late summer 2026) at the medium setting with web retrieval, took 27 minutes and produced a <a href="../outputs/ground-test/astra-grounding.json">structured file</a> of 180 entities with offsets, confidence, a relation type, rejected candidates with reasons and dated evidence (<a href="../outputs/ground-test/astra-scoring.md">scoring</a>). All 155 identifiers resolve consistently. It grounded Ceylon, the Straits Settlements, the Union of South Africa and the rest to the period polities, and it recorded Penang Q188096, the item the pipeline had wrongly matched, as a modern proxy only. It is the dataset a historian would want, at about 80 seconds an entry, which over 27,526 people is 25 days of model time before the India Office List.</p>
 <p>All three chatbots read the biographies correctly. The difference is where the number came from, and what it cost. And even the best column needs the historian: someone has to pick between the two Gorges items, and someone decided Harris was Harris when the printed birth year disagreed with the item.</p>
 </section>
 <section id="three-questions-to-keep-separate" class="level2">

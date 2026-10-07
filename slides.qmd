@@ -291,7 +291,7 @@ Nyasaland → a disambiguation page. Joseph Chamberlain → a Swiss footballer.
 
 ## Four ways to get the number
 
-| | No tools | Pipeline | Opus, retrieval | Astra, retrieval |
+| | Gemini, no tools | Pipeline | Claude Opus, retrieval | GPT Astra 6, retrieval |
 |---|---|---|---|---|
 | People right | [0]{.gold} of 16 | 12 given; Opus confirms all 12 | [16]{.gold} of 16 | [16]{.gold} of 16 |
 | Places | 38 of 104, modern | 3,207 surfaces | 17 of 138, stopped | 104, period entities |
