@@ -5,235 +5,320 @@ author: "Jim Clifford, University of Saskatchewan"
 date: "15 October 2026"
 format:
   revealjs:
-    theme: simple
+    theme: [default, slides.scss]
     slide-number: true
     footer: "jimclifford.ca/imperial-careers-workshop"
     width: 1280
     height: 720
+    margin: 0.08
     link-external-newwindow: true
+    transition: fade
+    background-transition: fade
+    title-slide-attributes:
+      data-background-image: images/atlas-screenshot.png
+      data-background-opacity: "0.35"
 ---
 
-## {background-video="https://jimclifford.ca/col_matching/combined_mobility.mp4" background-video-loop="false" background-video-muted="true"}
+## {background-video="https://jimclifford.ca/col_matching/combined_mobility.mp4" background-video-muted="true" background-image="images/combined-mobility-frame.jpg" background-size="cover"}
 
 ::: notes
-Let it run. 56 seconds. Every arc is one official moving between colonies, 1815–1966, from the Colonial Office List and the India Office List. Say nothing until the arcs reach Africa.
+Let it run. 56 seconds. Every arc is one official moving between colonies, 1815 to 1966. Say nothing until the arcs reach Africa. If the network is down, play the downloaded mp4 instead; the still behind this slide is a frame from it.
 :::
 
 ## What that was
 
-| | Colonial Office List | India Office List |
-|---|---|---|
-| People | 27,526 | 19,400 |
-| Dated career events | 180,470 | 124,694 |
-| Events located to a Wikidata place | 131,343 | 80,238 |
+::: {.big}
+[46,926]{.gold} officials  
+[305,164]{.gold} career events  
+[211,581]{.gold} of them on the map
+:::
 
-36,431 arcs. 186 people who served in both services.
+<br>
 
-. . .
-
-One historian, a coding agent, a few months. Ten years ago: five institutions, a grant, F-scores of 0.6.
+Two printed reference books. One historian, a coding agent, a few months.
 
 ::: notes
-Trading Consequences one sentence. Then: the hour is how, and where I had to decide something.
+CO 27,526 people / 180,470 events / 131,343 placed. IOL 19,400 / 124,694 / 80,238. 36,431 arcs. 186 people in both services; Wodehouse.
+:::
+
+## Ten years ago
+
+:::: {.columns}
+::: {.column width="50%"}
+**Trading Consequences, 2013**
+
+Five institutions. A grant.
+A pipeline built by computational linguists.
+F-scores of 0.6.
+:::
+::: {.column width="50%"}
+**Imperial Careers, 2026**
+
+One historian. A coding agent.
+A cheap model reading overnight.
+The same three problems.
+:::
+::::
+
+::: notes
+Clifford, Alex, Coates, Klein, Watson, Historical Methods 2016. "Italy" in Texas. What changed is who writes the pipeline and how fast the loop runs.
 :::
 
 ## Three questions
 
-| | The question | The model does | You decide |
-|---|---|---|---|
-| **Structure** | What is a record here? | Proposes the fields, fills them for 100,000 entries | What counts as an event |
-| **Clean** | One person or two? | Clusters, argues each case, keeps the evidence | Merge, keep apart, review |
-| **Ground** | Which place, which person? | Retrieves candidates with evidence | Supported, unresolved, wrong |
+| | The question | You decide |
+|---|---|---|
+| [Structure]{.gold} | What is a record here? | What counts as an event |
+| [Clean]{.gold} | One person or two? | Merge, keep apart, review |
+| [Ground]{.gold} | Which place, which person? | Supported, unresolved, wrong |
 
-. . .
+<br>
 
-**And the second half:** build, extract, **visualise, see, fix**, rerun.
+The model does everything around the decision, a hundred thousand times.
 
-## The source {.smaller}
+## The second half of the method
 
-> TRIMEN, HENRY, M.B. (Lond.), F.R.S., F.L.S. —Formerly lecturer on botany at St. Mary's Hospital, London, 1867 to 1875; was senior assistant to department of botany, British Museum, 1869 to 1879; director Royal Botanical Gardens, Ceylon, Feb., 1880; author of numerous works and papers on pure and applied botany.
+::: {.big}
+Build. Extract. [Visualise.]{.gold} [See.]{.gold} Fix. Rerun.
+:::
 
-> BALMER, F. E.—Dep. chief acctnt., G.P.O., E. Africa Prot., Mar., 1919; ch. acctnt., G.P.O., Kenya, Oct., 1919; ch. acctnt., Kenya-Uganda-Tanganyika post and tel. service, 1933; senr. dep. P.M.G., do., 1935.
+<br>
 
-85 volumes. 1,400–2,900 entries per edition. The same man in forty of them.
+The atlas was built to answer a question.
+It turned out to be the best error detector the project had.
 
-. . .
+## The source {background-color="#1d1e23"}
 
-**Mark one up.** jimclifford.ca/imperial-careers-workshop/annotate/ (or the paper).
-Every position, place, year, honour. Three minutes.
+> BALMER, F. E.—Dep. chief acctnt., G.P.O., E. Africa Prot., Mar., 1919; ch. acctnt., G.P.O., Kenya, Oct., 1919; ch. acctnt., Kenya-Uganda-Tanganyika post and tel. service, 1933; senr. dep. P.M.G., <mark>do.</mark>, 1935.
 
-# Structure
+85 volumes, 1883 to 1966.
+1,400 to 2,900 entries in each.
+The same man in forty of them.
 
-## The prompt is the decisions {.smaller}
+::: notes
+Record of the Public Services of Officers. Cumulative. OCR'd with olmOCR; we begin after OCR.
+:::
+
+## Mark one up
+
+![](images/annotate-screenshot.png){height="520"}
+
+**jimclifford.ca/imperial-careers-workshop/annotate/** or the paper. Three minutes.
+
+# Structure {background-color="#1d1e23"}
+
+What is a record here?
+
+## Python, a cheap model, Python
+
+| | | |
+|---|---|---|
+| **1. Python** | a grammar for the entry shape | refuses anything it cannot fully parse |
+| **2. Qwen3.6-35B** | one entry in, one JSON object out | run-on, ditto and concurrent clauses |
+| **3. Python** | every place and year checked against the source | systematic errors fixed by rule |
+
+<br>
+
+::: {.big}
+[30,496]{.gold} entries · [8.2]{.gold} hours · [1]{.gold} a second · [55]{.gold} failures
+:::
+
+::: notes
+IOL run, overnight 25–26 June, 16 workers, reasoning off, temp 0. Reasoning on: 67% failures. COL: 34,743, about a day including setup.
+:::
+
+## The prompt is the decisions
 
 > Extract ONLY what is printed; never invent or infer facts.
-> **events:** one object per distinct posting. EXPLODE compound clauses into separate events.
-> **place:** as printed. If the clause names no place, carry over the previous clause's place and set place_inherited=true.
-> **birth_year:** only if explicitly printed. NEVER infer from the earliest career date.
-> **honours:** with their award year if printed in parentheses; award-years are NOT career events.
 
-Every rule exists because a run broke it.
+> **events:** one object per distinct posting. EXPLODE compound clauses.
 
-Python grammar first; refuses what it cannot fully parse. Then Qwen3.6-35B-A3B on a university GPU, reasoning off, temp 0: **30,496 entries in 8.24 hours, one a second, 55 failures.** Then a Python validator and a post-normaliser.
+> **place:** as printed. No place in the clause? Carry the previous one and say so.
 
-## Every tenth record, read against the source {.smaller}
+> **birth_year:** only if printed. NEVER infer from the earliest career date.
 
-| | |
-|---|---|
-| Sampled | 186 |
-| Fully clean | 129 (69%) |
-| Major error | 8 (about 3%) |
+Every rule is there because a run broke it.
 
-. . .
+## Every tenth record, read against the source
+
+::: {.big}
+[186]{.gold} sampled · [69%]{.gold} clean · [3%]{.gold} major
+:::
 
 | Source | Record |
 |---|---|
 | "senr. dep. P.M.G., **do.**, 1935" | place: "do." |
-| "BLAKELY, DONALD QUENTIN.—Clk., atty.-gen.'s off., B. Honduras, **Apl., 1898**." | birth_year: **1898**; event year: null; "officer" |
-| "**KT. BACH.** (1920)" | honours: KT; BACH (1920) |
+| "BLAKELY … atty.-gen.'s off., B. Honduras, **Apl., 1898**." | birth_year: **1898** |
+| "**KT. BACH.** (1920)" | two honours: KT; BACH |
 
-. . .
+## Not a bigger model
 
-Systematic, not random. An expansion table, a forward-fill, a merge rule. **Not a bigger model.**
+The errors are systematic, so the fixes are rules:
 
-# Clean
+- merge `KT` + `BACH` into Knight Bachelor
+- forward-fill a "do." place, and say it was inherited
+- "officer in chief" back to "officer in charge"
+- stop pre-expanding "off." at all
 
-## Forty editions, one person {.smaller}
+Every change logged on the record. Zero cost per entry.
 
-> A missed link is recoverable; a false merge silently corrupts the record. **Ties resolve to no merge.**
+# Clean {background-color="#1d1e23"}
 
-1. Deterministic passes: 0 false merges on 543 hand-verified careers
-2. Cluster the residue: shared forename + surname suffix, so OCR variants meet
-3. A model argues each cluster from a dossier; the reason goes in a ledger (917 so far)
-4. A 200-case silver standard, afterwards, to measure it
+One person or two?
 
-## Four clusters {.smaller}
+## Forty editions, one person
 
-| | | |
-|---|---|---|
-| ABERY, Joseph / CARBERY, Joseph | both M.B.C.M., both "1867 Ceylon asst. colonial surgeon" | **merge** |
-| A'BECKETT, Thomas b. 1836 / BECKETT, Thomas Rumbold b. 1898 | a Victorian judge; a Nigerian telegraph engineer | keep apart |
-| ABRAHAM, Henry Charles / GRAHAM, Charles Drummond | suffix "aham", forename Charles | keep apart |
-| ABBOTT, Myles John / IBBOTT, John Thomas | Hong Kong 1936; Demerara 1860 | keep apart |
+::: {.big}
+A missed link is recoverable.
+A false merge is not.
+[Ties resolve to no merge.]{.gold}
+:::
 
-. . .
+<br>
 
-Easy with the dossier in front of you. The model's job was the dossier and the argument. **You decide** the one-shared-event cases.
+Deterministic passes first: zero false merges on 543 hand-checked careers.
+Then a model argues each leftover cluster from a dossier. 917 so far, each with its reason.
 
-# Ground
+## Two clusters
 
-## Why {.smaller}
+:::: {.columns}
+::: {.column width="50%"}
+**ABERY, Joseph**\
+M.B.C.M. · 1867 Ceylon, asst. colonial surgeon · one edition
 
-Every arc needs coordinates for "the Central Provinces", "British Guiana", "Jodhpur". Wikidata has the item, the coordinates, or the capital that has them. One query.
+**CARBERY, Joseph**\
+M.B.C.M. · 1867 Ceylon, asst. colonial surgeon · six editions
 
-And: a historian of the Cape and a historian of Bombay who both ground to Q1800510 have joined their data without meeting.
+[Merge.]{.gold} An OCR garble with one identical event.
+:::
+::: {.column width="50%"}
+**A'BECKETT, Thomas, b. 1836**\
+Lincoln's Inn · Victorian puisne judge · knighted 1909
 
-. . .
+**BECKETT, Thomas Rumbold, b. 1898**\
+Judd School · Nigeria, telegraph engineer
 
-**Two ways to get a QID.** Retrieve it, read the item, gate it. Or ask a chatbot.
+[Keep apart.]{.gold} Sixty-two years and nothing shared.
+:::
+::::
+
+# Ground {background-color="#1d1e23"}
+
+Which place, which person?
+
+## Why ground
+
+Every arc needs coordinates for "the Central Provinces", "British Guiana", "Jodhpur".
+
+Wikidata has the item, or the capital that has the coordinates. One query.
+
+<br>
+
+And: a historian of the Cape and a historian of Bombay who both ground to **Q1800510** have joined their data without meeting.
 
 ## Live: the lookup
 
-1. "Henry Trimen botanist Ceylon Peradeniya" → read the statements → **supported**
-2. "Ferdinando Hamlyn Price" → Q123279571, alias Hamlyn, b. 1855, d. 1942, Tamil description only → **supported**, and the pipeline's gate had rejected it
-3. "Elwood D'Arcy Tibbits Antigua" → nothing → **unresolved**, record the search
+1. "Henry Trimen botanist Ceylon Peradeniya" → read the statements → [supported]{.gold}
+2. "Ferdinando Hamlyn Price" → Q123279571, b. 1855, Tamil description only → [supported]{.gold}, and the pipeline's gate had rejected it
+3. "Elwood D'Arcy Tibbits Antigua" → nothing → [unresolved]{.gold}, record the search
 
 ::: notes
 WikidataMCP vector search. Saved results in outputs/ground-test/ if the network fails.
 :::
 
-## The control: Gemini 3.8 Flash, no tools {.smaller}
+## Ask a chatbot instead
 
-"Parse these bios and ground the places, schools and people to Wikidata ids where possible." Twenty entries.
+::: {.big}
+[0]{.gold} of 16
+:::
 
-| | |
-|---|---|
-| Person identifiers given | 16 |
-| Correct | **0** |
-| Not even a person (a plant, a patent, Thoth, a village, a reptile) | 6 |
-| Within a few thousand of the right number | 7 |
-| Place and school identifiers whose label matches | 43 of 142 |
+Gemini 3.8 Flash, no tools, the same twenty entries.
 
-. . .
+Alfred Sharpe → a species of orchid. Richard Wilkinson → Thoth.
+Nyasaland → a disambiguation page. Joseph Chamberlain → a Swiss footballer.
 
-Nyasaland → a disambiguation page. Straits Settlements → a Danish triathlete. Joseph Chamberlain → a Swiss footballer.
+<br>
 
-**It knew who. It did not know the number.** Nothing in the text tells you which ones resolve.
+**It knew who. It did not know the number.**
 
-## Four ways to get the number {.smaller}
+## Four ways to get the number
 
-| | Gemini Flash, no tools | Pipeline: vector search + gates | Opus, retrieval | Astra, retrieval |
+| | No tools | Pipeline | Opus, retrieval | Astra, retrieval |
 |---|---|---|---|---|
-| Person identifiers correct | **0** of 16 | 12 of 12 given; 8 ungrounded, 4 have items | **16** of 16 | **16** of 16 |
-| Places | 38 of 104 labels match; modern | 3,207 surfaces; modern-collapse errors found on the map | 17 of 138, then stopped | 104 period entities; 9 modern proxies labelled |
-| Time | < 5 min | overnight, whole corpus | ~20 min | ~27 min |
+| People right | [0]{.gold} of 16 | 12 of 12 given | [16]{.gold} of 16 | [16]{.gold} of 16 |
+| Places | 38 of 104, modern | 3,207 surfaces | 17 of 138, stopped | 104, period entities |
+| Time | 5 min | overnight, corpus | 20 min | 27 min |
 
-. . .
+<br>
 
-All three chatbots read the entry right. The difference is where the number came from, and the cost.
-27 minutes for 20 entries is 25 days for the Colonial Office List. The retrieval columns are the review queue, not the corpus.
-Even the best column needs you: which Gorges? Is Harris b. 1858 the Harris b. 1855?
+27 minutes for 20 entries is 25 days for one List.
+The retrieval columns are the review queue, not the corpus.
 
-## Six Victorias {.smaller}
+::: notes
+George V from memory: Q269 is Tashkent; Opus caught it by reading the page. Gorges has two items. Harris b. 1858 vs item 1855.
+:::
 
-The Australian colony. The capital of British Columbia. An electoral district. A gaol in Hong Kong. A district in the Cape. A county in Mauritius. A town in the Seychelles.
+# The map finds the errors {background-image="images/atlas-screenshot.png" background-opacity="0.3"}
 
-. . .
+## Three errors
 
-Surface-keyed cache → one QID for everyone. Context resolver → per person. Six surfaces left ungrounded on purpose.
-
-# The map finds the errors
-
-## Three errors {.smaller}
-
-| Seen | Cause | Fix |
+| Seen on the map | Cause | Fix |
 |---|---|---|
-| A premier of British Columbia with a seat in Melbourne | "Victoria" grounded once, by string | Per-person context resolver; also found the overrides had never applied |
-| Union of South Africa at Harare: 960 events, 572 arcs | Containment match: "South Africa" ⊂ British South Africa Company | Five cache rows patched; containment guard; 100 pre-1910 events still ambiguous |
-| Two Baluchistans | Colony under Q843 (Pakistan) and a second QID | One canonical row; duplicate folded |
+| A premier of British Columbia with a seat in Melbourne | "Victoria" grounded once, by string | Resolve per person |
+| The Union of South Africa at Harare: 960 events | "South Africa" matched inside "British South Africa Company" | Five cache rows; a guard on the join |
+| Two Baluchistans | One under Q843, Pakistan | One canonical row |
 
-. . .
+<br>
 
-Fix the **rule**, re-emit **both corpora**, rebuild the atlas, look at **everyone the rule touched**.
+Fix the **rule**, re-emit **both corpora**, look at **everyone the rule touched**.
 
 ## What the map cannot find
 
-False negatives. An ungrounded "Victoria" has no arc. A missed merge is two plausible short careers.
+::: {.big}
+[76%]{.gold}
+:::
 
-For those: silver standards. 200 hand-labelled cases, risky strata oversampled.
-Rare surname + overlapping era: the judge's "different" verdicts were wrong **76%** of the time.
+of the judge's "different" verdicts were wrong in the rare-surname, overlapping-era stratum.
 
-## Exercise: 47–55 {.smaller}
+No map shows a missed merge. For that: 200 hand-labelled cases, risky strata oversampled.
 
+## Exercise
+
+:::: {.columns}
+::: {.column width="55%"}
+![](images/review-screenshot.png)
+:::
+::: {.column width="45%"}
 **jimclifford.ca/imperial-careers-workshop/review/**
 
-| | | |
-|---|---|---|
-| **Structure** | R1, R2 | Blakely's birth year; Balmer's "do." |
-| **Clean** | R3, R4 | Abery and Carbery; A'Beckett and Beckett |
-| **Ground** | R5, R6 | South Africa at Harare; Brewster's Victoria |
-| extra | R7 | Price and the item with no career |
+[Structure]{.gold} Blakely, Balmer\
+[Clean]{.gold} Abery, A'Beckett\
+[Ground]{.gold} South Africa, Brewster\
+[Extra]{.gold} Price
 
-Write the reason. The reason is what becomes the rule.
-Zoom: **Copy summary for chat**. Room: hands up when asked.
+Write the reason.\
+Zoom: **Copy summary for chat**.
+:::
+::::
 
-## Your own data {.smaller}
+## Your own data
 
-- **One question, one small sample, the page reachable.**
-- **Build the view early.** It is your error detector.
-- **Local identifiers first.** External ones after retrieval and review. **None from memory.**
-- **Ground to the historical entity.** Resolve per person, not per string.
-- **Ties resolve to no merge.**
-- **Fix the rule, not the record; make the correction a test.**
-- **Two kinds of model.** A frontier model writes the pipeline; a cheap one reads the collection inside it.
+- One question, one small sample, the page reachable
+- Build the view early. It is your error detector
+- Local identifiers first. None from memory
+- Ground to the historical entity, per person
+- Ties resolve to no merge
+- Fix the rule, not the record. Make the correction a test
+- A frontier model writes the pipeline; a cheap one reads the collection
 
-## Three questions
+## Three questions {background-image="images/atlas-screenshot.png" background-opacity="0.25"}
 
 | | | You decide |
 |---|---|---|
-| **Structure** | What is a record here? | What counts as an event |
-| **Clean** | One person or two? | Merge, keep apart, review |
-| **Ground** | Which place, which person? | Supported, unresolved, wrong |
+| [Structure]{.gold} | What is a record here? | What counts as an event |
+| [Clean]{.gold} | One person or two? | Merge, keep apart, review |
+| [Ground]{.gold} | Which place, which person? | Supported, unresolved, wrong |
 
-**jimclifford.ca/imperial-careers-workshop** — pages, saved outputs, both exercises, worked answers.
-Data: **jimclifford.ca/col_matching** (CC0).
+<br>
+
+**jimclifford.ca/imperial-careers-workshop** · data **jimclifford.ca/col_matching**

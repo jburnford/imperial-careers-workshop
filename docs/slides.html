@@ -6,7 +6,7 @@
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.42">
 
   <meta name="author" content="Jim Clifford, University of Saskatchewan">
@@ -30,7 +30,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-8f3eebe07241f08526c91a7e9cbef8fd.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-fce7b56457248726800e019ab7ffd611.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -123,11 +123,11 @@
     }
   </style>
 </head>
-<body class="quarto-light">
+<body class="quarto-dark">
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
+<section id="title-slide" data-background-image="images/atlas-screenshot.png" data-background-opacity="0.35" class="quarto-title-block center">
   <h1 class="title">Cleaning, Structuring and Grounding Historical Data</h1>
   <p class="subtitle">One dataset, start to finish, with a coding agent</p>
 
@@ -141,10 +141,10 @@ Jim Clifford, University of Saskatchewan
 
   <p class="date">2026-10-15</p>
 </section>
-<section id="section" class="slide level2" data-background-video="https://jimclifford.ca/col_matching/combined_mobility.mp4" data-background-video-loop="false" data-background-video-muted="true">
+<section id="section" class="slide level2" data-background-video="https://jimclifford.ca/col_matching/combined_mobility.mp4" data-background-video-muted="true" data-background-image="images/combined-mobility-frame.jpg" data-background-size="cover">
 <h2></h2>
 <aside class="notes">
-<p>Let it run. 56 seconds. Every arc is one official moving between colonies, 1815–1966, from the Colonial Office List and the India Office List. Say nothing until the arcs reach Africa.</p>
+<p>Let it run. 56 seconds. Every arc is one official moving between colonies, 1815 to 1966. Say nothing until the arcs reach Africa. If the network is down, play the downloaded mp4 instead; the still behind this slide is a frame from it.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -159,37 +159,15 @@ Jim Clifford, University of Saskatchewan
 </section>
 <section id="what-that-was" class="slide level2">
 <h2>What that was</h2>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th></th>
-<th>Colonial Office List</th>
-<th>India Office List</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>People</td>
-<td>27,526</td>
-<td>19,400</td>
-</tr>
-<tr class="even">
-<td>Dated career events</td>
-<td>180,470</td>
-<td>124,694</td>
-</tr>
-<tr class="odd">
-<td>Events located to a Wikidata place</td>
-<td>131,343</td>
-<td>80,238</td>
-</tr>
-</tbody>
-</table>
-<p>36,431 arcs. 186 people who served in both services.</p>
-<div class="fragment">
-<p>One historian, a coding agent, a few months. Ten years ago: five institutions, a grant, F-scores of 0.6.</p>
+<div class="big">
+<p><span class="gold">46,926</span> officials<br>
+<span class="gold">305,164</span> career events<br>
+<span class="gold">211,581</span> of them on the map</p>
+</div>
+<p><br></p>
+<p>Two printed reference books. One historian, a coding agent, a few months.</p>
 <aside class="notes">
-<p>Trading Consequences one sentence. Then: the hour is how, and where I had to decide something.</p>
+<p>CO 27,526 people / 180,470 events / 131,343 placed. IOL 19,400 / 124,694 / 80,238. 36,431 arcs. 186 people in both services; Wodehouse.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -201,95 +179,170 @@ Jim Clifford, University of Saskatchewan
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</div>
+</section>
+<section id="ten-years-ago" class="slide level2">
+<h2>Ten years ago</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Trading Consequences, 2013</strong></p>
+<p>Five institutions. A grant. A pipeline built by computational linguists. F-scores of 0.6.</p>
+</div><div class="column" style="width:50%;">
+<p><strong>Imperial Careers, 2026</strong></p>
+<p>One historian. A coding agent. A cheap model reading overnight. The same three problems.</p>
+</div></div>
+<aside class="notes">
+<p>Clifford, Alex, Coates, Klein, Watson, Historical Methods 2016. “Italy” in Texas. What changed is who writes the pipeline and how fast the loop runs.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="three-questions" class="slide level2">
 <h2>Three questions</h2>
 <table class="caption-top">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
 <th></th>
 <th>The question</th>
-<th>The model does</th>
 <th>You decide</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Structure</strong></td>
+<td><span class="gold">Structure</span></td>
 <td>What is a record here?</td>
-<td>Proposes the fields, fills them for 100,000 entries</td>
 <td>What counts as an event</td>
 </tr>
 <tr class="even">
-<td><strong>Clean</strong></td>
+<td><span class="gold">Clean</span></td>
 <td>One person or two?</td>
-<td>Clusters, argues each case, keeps the evidence</td>
 <td>Merge, keep apart, review</td>
 </tr>
 <tr class="odd">
-<td><strong>Ground</strong></td>
+<td><span class="gold">Ground</span></td>
 <td>Which place, which person?</td>
-<td>Retrieves candidates with evidence</td>
 <td>Supported, unresolved, wrong</td>
 </tr>
 </tbody>
 </table>
-<div class="fragment">
-<p><strong>And the second half:</strong> build, extract, <strong>visualise, see, fix</strong>, rerun.</p>
-</div>
+<p><br></p>
+<p>The model does everything around the decision, a hundred thousand times.</p>
 </section>
-<section id="the-source" class="slide level2 smaller">
+<section id="the-second-half-of-the-method" class="slide level2">
+<h2>The second half of the method</h2>
+<div class="big">
+<p>Build. Extract. <span class="gold">Visualise.</span> <span class="gold">See.</span> Fix. Rerun.</p>
+</div>
+<p><br></p>
+<p>The atlas was built to answer a question. It turned out to be the best error detector the project had.</p>
+</section>
+<section id="the-source" class="slide level2" data-background-color="#1d1e23">
 <h2>The source</h2>
 <blockquote>
-<p>TRIMEN, HENRY, M.B. (Lond.), F.R.S., F.L.S. —Formerly lecturer on botany at St.&nbsp;Mary’s Hospital, London, 1867 to 1875; was senior assistant to department of botany, British Museum, 1869 to 1879; director Royal Botanical Gardens, Ceylon, Feb., 1880; author of numerous works and papers on pure and applied botany.</p>
+<p>BALMER, F. E.—Dep. chief acctnt., G.P.O., E. Africa Prot., Mar., 1919; ch.&nbsp;acctnt., G.P.O., Kenya, Oct., 1919; ch.&nbsp;acctnt., Kenya-Uganda-Tanganyika post and tel. service, 1933; senr. dep. P.M.G., <mark>do.</mark>, 1935.</p>
 </blockquote>
-<blockquote>
-<p>BALMER, F. E.—Dep. chief acctnt., G.P.O., E. Africa Prot., Mar., 1919; ch.&nbsp;acctnt., G.P.O., Kenya, Oct., 1919; ch.&nbsp;acctnt., Kenya-Uganda-Tanganyika post and tel. service, 1933; senr. dep. P.M.G., do., 1935.</p>
-</blockquote>
-<p>85 volumes. 1,400–2,900 entries per edition. The same man in forty of them.</p>
-<div class="fragment">
-<p><strong>Mark one up.</strong> jimclifford.ca/imperial-careers-workshop/annotate/ (or the paper). Every position, place, year, honour. Three minutes.</p>
-</div>
+<p>85 volumes, 1883 to 1966. 1,400 to 2,900 entries in each. The same man in forty of them.</p>
+<aside class="notes">
+<p>Record of the Public Services of Officers. Cumulative. OCR’d with olmOCR; we begin after OCR.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="mark-one-up" class="slide level2">
+<h2>Mark one up</h2>
+<p><img data-src="images/annotate-screenshot.png" height="520"></p>
+<p><strong>jimclifford.ca/imperial-careers-workshop/annotate/</strong> or the paper. Three minutes.</p>
 </section>
 <section>
-<section id="structure" class="title-slide slide level1 center">
+<section id="structure" class="title-slide slide level1 center" data-background-color="#1d1e23">
 <h1>Structure</h1>
-
+<p>What is a record here?</p>
 </section>
-<section id="the-prompt-is-the-decisions" class="slide level2 smaller">
-<h2>The prompt is the decisions</h2>
-<blockquote>
-<p>Extract ONLY what is printed; never invent or infer facts. <strong>events:</strong> one object per distinct posting. EXPLODE compound clauses into separate events. <strong>place:</strong> as printed. If the clause names no place, carry over the previous clause’s place and set place_inherited=true. <strong>birth_year:</strong> only if explicitly printed. NEVER infer from the earliest career date. <strong>honours:</strong> with their award year if printed in parentheses; award-years are NOT career events.</p>
-</blockquote>
-<p>Every rule exists because a run broke it.</p>
-<p>Python grammar first; refuses what it cannot fully parse. Then Qwen3.6-35B-A3B on a university GPU, reasoning off, temp 0: <strong>30,496 entries in 8.24 hours, one a second, 55 failures.</strong> Then a Python validator and a post-normaliser.</p>
-</section>
-<section id="every-tenth-record-read-against-the-source" class="slide level2 smaller">
-<h2>Every tenth record, read against the source</h2>
+<section id="python-a-cheap-model-python" class="slide level2">
+<h2>Python, a cheap model, Python</h2>
 <table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td>Sampled</td>
-<td>186</td>
+<td><strong>1. Python</strong></td>
+<td>a grammar for the entry shape</td>
+<td>refuses anything it cannot fully parse</td>
 </tr>
 <tr class="even">
-<td>Fully clean</td>
-<td>129 (69%)</td>
+<td><strong>2. Qwen3.6-35B</strong></td>
+<td>one entry in, one JSON object out</td>
+<td>run-on, ditto and concurrent clauses</td>
 </tr>
 <tr class="odd">
-<td>Major error</td>
-<td>8 (about 3%)</td>
+<td><strong>3. Python</strong></td>
+<td>every place and year checked against the source</td>
+<td>systematic errors fixed by rule</td>
 </tr>
 </tbody>
 </table>
-<div class="fragment">
+<p><br></p>
+<div class="big">
+<p><span class="gold">30,496</span> entries · <span class="gold">8.2</span> hours · <span class="gold">1</span> a second · <span class="gold">55</span> failures</p>
+</div>
+<aside class="notes">
+<p>IOL run, overnight 25–26 June, 16 workers, reasoning off, temp 0. Reasoning on: 67% failures. COL: 34,743, about a day including setup.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-prompt-is-the-decisions" class="slide level2">
+<h2>The prompt is the decisions</h2>
+<blockquote>
+<p>Extract ONLY what is printed; never invent or infer facts.</p>
+</blockquote>
+<blockquote>
+<p><strong>events:</strong> one object per distinct posting. EXPLODE compound clauses.</p>
+</blockquote>
+<blockquote>
+<p><strong>place:</strong> as printed. No place in the clause? Carry the previous one and say so.</p>
+</blockquote>
+<blockquote>
+<p><strong>birth_year:</strong> only if printed. NEVER infer from the earliest career date.</p>
+</blockquote>
+<p>Every rule is there because a run broke it.</p>
+</section>
+<section id="every-tenth-record-read-against-the-source" class="slide level2">
+<h2>Every tenth record, read against the source</h2>
+<div class="big">
+<p><span class="gold">186</span> sampled · <span class="gold">69%</span> clean · <span class="gold">3%</span> major</p>
+</div>
 <table class="caption-top">
 <colgroup>
 <col style="width: 50%">
@@ -307,91 +360,75 @@ Jim Clifford, University of Saskatchewan
 <td>place: “do.”</td>
 </tr>
 <tr class="even">
-<td>“BLAKELY, DONALD QUENTIN.—Clk., atty.-gen.’s off., B. Honduras, <strong>Apl., 1898</strong>.”</td>
-<td>birth_year: <strong>1898</strong>; event year: null; “officer”</td>
+<td>“BLAKELY … atty.-gen.’s off., B. Honduras, <strong>Apl., 1898</strong>.”</td>
+<td>birth_year: <strong>1898</strong></td>
 </tr>
 <tr class="odd">
 <td>“<strong>KT. BACH.</strong> (1920)”</td>
-<td>honours: KT; BACH (1920)</td>
+<td>two honours: KT; BACH</td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="fragment">
-<p>Systematic, not random. An expansion table, a forward-fill, a merge rule. <strong>Not a bigger model.</strong></p>
-</div>
+</section>
+<section id="not-a-bigger-model" class="slide level2">
+<h2>Not a bigger model</h2>
+<p>The errors are systematic, so the fixes are rules:</p>
+<ul>
+<li>merge <code>KT</code> + <code>BACH</code> into Knight Bachelor</li>
+<li>forward-fill a “do.” place, and say it was inherited</li>
+<li>“officer in chief” back to “officer in charge”</li>
+<li>stop pre-expanding “off.” at all</li>
+</ul>
+<p>Every change logged on the record. Zero cost per entry.</p>
 </section></section>
 <section>
-<section id="clean" class="title-slide slide level1 center">
+<section id="clean" class="title-slide slide level1 center" data-background-color="#1d1e23">
 <h1>Clean</h1>
-
+<p>One person or two?</p>
 </section>
-<section id="forty-editions-one-person" class="slide level2 smaller">
+<section id="forty-editions-one-person" class="slide level2">
 <h2>Forty editions, one person</h2>
-<blockquote>
-<p>A missed link is recoverable; a false merge silently corrupts the record. <strong>Ties resolve to no merge.</strong></p>
-</blockquote>
-<ol type="1">
-<li>Deterministic passes: 0 false merges on 543 hand-verified careers</li>
-<li>Cluster the residue: shared forename + surname suffix, so OCR variants meet</li>
-<li>A model argues each cluster from a dossier; the reason goes in a ledger (917 so far)</li>
-<li>A 200-case silver standard, afterwards, to measure it</li>
-</ol>
-</section>
-<section id="four-clusters" class="slide level2 smaller">
-<h2>Four clusters</h2>
-<table class="caption-top">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>ABERY, Joseph / CARBERY, Joseph</td>
-<td>both M.B.C.M., both “1867 Ceylon asst. colonial surgeon”</td>
-<td><strong>merge</strong></td>
-</tr>
-<tr class="even">
-<td>A’BECKETT, Thomas b. 1836 / BECKETT, Thomas Rumbold b. 1898</td>
-<td>a Victorian judge; a Nigerian telegraph engineer</td>
-<td>keep apart</td>
-</tr>
-<tr class="odd">
-<td>ABRAHAM, Henry Charles / GRAHAM, Charles Drummond</td>
-<td>suffix “aham”, forename Charles</td>
-<td>keep apart</td>
-</tr>
-<tr class="even">
-<td>ABBOTT, Myles John / IBBOTT, John Thomas</td>
-<td>Hong Kong 1936; Demerara 1860</td>
-<td>keep apart</td>
-</tr>
-</tbody>
-</table>
-<div class="fragment">
-<p>Easy with the dossier in front of you. The model’s job was the dossier and the argument. <strong>You decide</strong> the one-shared-event cases.</p>
+<div class="big">
+<p>A missed link is recoverable. A false merge is not. <span class="gold">Ties resolve to no merge.</span></p>
 </div>
+<p><br></p>
+<p>Deterministic passes first: zero false merges on 543 hand-checked careers. Then a model argues each leftover cluster from a dossier. 917 so far, each with its reason.</p>
+</section>
+<section id="two-clusters" class="slide level2">
+<h2>Two clusters</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>ABERY, Joseph</strong><br>
+M.B.C.M. · 1867 Ceylon, asst. colonial surgeon · one edition</p>
+<p><strong>CARBERY, Joseph</strong><br>
+M.B.C.M. · 1867 Ceylon, asst. colonial surgeon · six editions</p>
+<p><span class="gold">Merge.</span> An OCR garble with one identical event.</p>
+</div><div class="column" style="width:50%;">
+<p><strong>A’BECKETT, Thomas, b. 1836</strong><br>
+Lincoln’s Inn · Victorian puisne judge · knighted 1909</p>
+<p><strong>BECKETT, Thomas Rumbold, b. 1898</strong><br>
+Judd School · Nigeria, telegraph engineer</p>
+<p><span class="gold">Keep apart.</span> Sixty-two years and nothing shared.</p>
+</div></div>
 </section></section>
 <section>
-<section id="ground" class="title-slide slide level1 center">
+<section id="ground" class="title-slide slide level1 center" data-background-color="#1d1e23">
 <h1>Ground</h1>
-
+<p>Which place, which person?</p>
 </section>
-<section id="why" class="slide level2 smaller">
-<h2>Why</h2>
-<p>Every arc needs coordinates for “the Central Provinces”, “British Guiana”, “Jodhpur”. Wikidata has the item, the coordinates, or the capital that has them. One query.</p>
-<p>And: a historian of the Cape and a historian of Bombay who both ground to Q1800510 have joined their data without meeting.</p>
-<div class="fragment">
-<p><strong>Two ways to get a QID.</strong> Retrieve it, read the item, gate it. Or ask a chatbot.</p>
-</div>
+<section id="why-ground" class="slide level2">
+<h2>Why ground</h2>
+<p>Every arc needs coordinates for “the Central Provinces”, “British Guiana”, “Jodhpur”.</p>
+<p>Wikidata has the item, or the capital that has the coordinates. One query.</p>
+<p><br></p>
+<p>And: a historian of the Cape and a historian of Bombay who both ground to <strong>Q1800510</strong> have joined their data without meeting.</p>
 </section>
 <section id="live-the-lookup" class="slide level2">
 <h2>Live: the lookup</h2>
 <ol type="1">
-<li>“Henry Trimen botanist Ceylon Peradeniya” → read the statements → <strong>supported</strong></li>
-<li>“Ferdinando Hamlyn Price” → Q123279571, alias Hamlyn, b. 1855, d.&nbsp;1942, Tamil description only → <strong>supported</strong>, and the pipeline’s gate had rejected it</li>
-<li>“Elwood D’Arcy Tibbits Antigua” → nothing → <strong>unresolved</strong>, record the search</li>
+<li>“Henry Trimen botanist Ceylon Peradeniya” → read the statements → <span class="gold">supported</span></li>
+<li>“Ferdinando Hamlyn Price” → Q123279571, b. 1855, Tamil description only → <span class="gold">supported</span>, and the pipeline’s gate had rejected it</li>
+<li>“Elwood D’Arcy Tibbits Antigua” → nothing → <span class="gold">unresolved</span>, record the search</li>
 </ol>
 <aside class="notes">
 <p>WikidataMCP vector search. Saved results in outputs/ground-test/ if the network fails.</p>
@@ -407,43 +444,17 @@ Jim Clifford, University of Saskatchewan
           display:block!important;
       }</style></aside>
 </section>
-<section id="the-control-gemini-3.8-flash-no-tools" class="slide level2 smaller">
-<h2>The control: Gemini 3.8 Flash, no tools</h2>
-<p>“Parse these bios and ground the places, schools and people to Wikidata ids where possible.” Twenty entries.</p>
-<table class="caption-top">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>Person identifiers given</td>
-<td>16</td>
-</tr>
-<tr class="even">
-<td>Correct</td>
-<td><strong>0</strong></td>
-</tr>
-<tr class="odd">
-<td>Not even a person (a plant, a patent, Thoth, a village, a reptile)</td>
-<td>6</td>
-</tr>
-<tr class="even">
-<td>Within a few thousand of the right number</td>
-<td>7</td>
-</tr>
-<tr class="odd">
-<td>Place and school identifiers whose label matches</td>
-<td>43 of 142</td>
-</tr>
-</tbody>
-</table>
-<div class="fragment">
-<p>Nyasaland → a disambiguation page. Straits Settlements → a Danish triathlete. Joseph Chamberlain → a Swiss footballer.</p>
-<p><strong>It knew who. It did not know the number.</strong> Nothing in the text tells you which ones resolve.</p>
+<section id="ask-a-chatbot-instead" class="slide level2">
+<h2>Ask a chatbot instead</h2>
+<div class="big">
+<p><span class="gold">0</span> of 16</p>
 </div>
+<p>Gemini 3.8 Flash, no tools, the same twenty entries.</p>
+<p>Alfred Sharpe → a species of orchid. Richard Wilkinson → Thoth. Nyasaland → a disambiguation page. Joseph Chamberlain → a Swiss footballer.</p>
+<p><br></p>
+<p><strong>It knew who. It did not know the number.</strong></p>
 </section>
-<section id="four-ways-to-get-the-number" class="slide level2 smaller">
+<section id="four-ways-to-get-the-number" class="slide level2">
 <h2>Four ways to get the number</h2>
 <table class="caption-top">
 <colgroup>
@@ -456,53 +467,58 @@ Jim Clifford, University of Saskatchewan
 <thead>
 <tr class="header">
 <th></th>
-<th>Gemini Flash, no tools</th>
-<th>Pipeline: vector search + gates</th>
+<th>No tools</th>
+<th>Pipeline</th>
 <th>Opus, retrieval</th>
 <th>Astra, retrieval</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Person identifiers correct</td>
-<td><strong>0</strong> of 16</td>
-<td>12 of 12 given; 8 ungrounded, 4 have items</td>
-<td><strong>16</strong> of 16</td>
-<td><strong>16</strong> of 16</td>
+<td>People right</td>
+<td><span class="gold">0</span> of 16</td>
+<td>12 of 12 given</td>
+<td><span class="gold">16</span> of 16</td>
+<td><span class="gold">16</span> of 16</td>
 </tr>
 <tr class="even">
 <td>Places</td>
-<td>38 of 104 labels match; modern</td>
-<td>3,207 surfaces; modern-collapse errors found on the map</td>
-<td>17 of 138, then stopped</td>
-<td>104 period entities; 9 modern proxies labelled</td>
+<td>38 of 104, modern</td>
+<td>3,207 surfaces</td>
+<td>17 of 138, stopped</td>
+<td>104, period entities</td>
 </tr>
 <tr class="odd">
 <td>Time</td>
-<td>&lt; 5 min</td>
-<td>overnight, whole corpus</td>
-<td>~20 min</td>
-<td>~27 min</td>
+<td>5 min</td>
+<td>overnight, corpus</td>
+<td>20 min</td>
+<td>27 min</td>
 </tr>
 </tbody>
 </table>
-<div class="fragment">
-<p>All three chatbots read the entry right. The difference is where the number came from, and the cost. 27 minutes for 20 entries is 25 days for the Colonial Office List. The retrieval columns are the review queue, not the corpus. Even the best column needs you: which Gorges? Is Harris b. 1858 the Harris b. 1855?</p>
-</div>
-</section>
-<section id="six-victorias" class="slide level2 smaller">
-<h2>Six Victorias</h2>
-<p>The Australian colony. The capital of British Columbia. An electoral district. A gaol in Hong Kong. A district in the Cape. A county in Mauritius. A town in the Seychelles.</p>
-<div class="fragment">
-<p>Surface-keyed cache → one QID for everyone. Context resolver → per person. Six surfaces left ungrounded on purpose.</p>
-</div>
+<p><br></p>
+<p>27 minutes for 20 entries is 25 days for one List. The retrieval columns are the review queue, not the corpus.</p>
+<aside class="notes">
+<p>George V from memory: Q269 is Tashkent; Opus caught it by reading the page. Gorges has two items. Harris b. 1858 vs item 1855.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section></section>
 <section>
-<section id="the-map-finds-the-errors" class="title-slide slide level1 center">
+<section id="the-map-finds-the-errors" class="title-slide slide level1 center" data-background-image="images/atlas-screenshot.png" data-background-opacity="0.3">
 <h1>The map finds the errors</h1>
 
 </section>
-<section id="three-errors" class="slide level2 smaller">
+<section id="three-errors" class="slide level2">
 <h2>Three errors</h2>
 <table class="caption-top">
 <colgroup>
@@ -512,7 +528,7 @@ Jim Clifford, University of Saskatchewan
 </colgroup>
 <thead>
 <tr class="header">
-<th>Seen</th>
+<th>Seen on the map</th>
 <th>Cause</th>
 <th>Fix</th>
 </tr>
@@ -521,71 +537,59 @@ Jim Clifford, University of Saskatchewan
 <tr class="odd">
 <td>A premier of British Columbia with a seat in Melbourne</td>
 <td>“Victoria” grounded once, by string</td>
-<td>Per-person context resolver; also found the overrides had never applied</td>
+<td>Resolve per person</td>
 </tr>
 <tr class="even">
-<td>Union of South Africa at Harare: 960 events, 572 arcs</td>
-<td>Containment match: “South Africa” ⊂ British South Africa Company</td>
-<td>Five cache rows patched; containment guard; 100 pre-1910 events still ambiguous</td>
+<td>The Union of South Africa at Harare: 960 events</td>
+<td>“South Africa” matched inside “British South Africa Company”</td>
+<td>Five cache rows; a guard on the join</td>
 </tr>
 <tr class="odd">
 <td>Two Baluchistans</td>
-<td>Colony under Q843 (Pakistan) and a second QID</td>
-<td>One canonical row; duplicate folded</td>
+<td>One under Q843, Pakistan</td>
+<td>One canonical row</td>
 </tr>
 </tbody>
 </table>
-<div class="fragment">
-<p>Fix the <strong>rule</strong>, re-emit <strong>both corpora</strong>, rebuild the atlas, look at <strong>everyone the rule touched</strong>.</p>
-</div>
+<p><br></p>
+<p>Fix the <strong>rule</strong>, re-emit <strong>both corpora</strong>, look at <strong>everyone the rule touched</strong>.</p>
 </section>
 <section id="what-the-map-cannot-find" class="slide level2">
 <h2>What the map cannot find</h2>
-<p>False negatives. An ungrounded “Victoria” has no arc. A missed merge is two plausible short careers.</p>
-<p>For those: silver standards. 200 hand-labelled cases, risky strata oversampled. Rare surname + overlapping era: the judge’s “different” verdicts were wrong <strong>76%</strong> of the time.</p>
+<div class="big">
+<p><span class="gold">76%</span></p>
+</div>
+<p>of the judge’s “different” verdicts were wrong in the rare-surname, overlapping-era stratum.</p>
+<p>No map shows a missed merge. For that: 200 hand-labelled cases, risky strata oversampled.</p>
 </section>
-<section id="exercise-4755" class="slide level2 smaller">
-<h2>Exercise: 47–55</h2>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><img data-src="images/review-screenshot.png"></p>
+</div><div class="column" style="width:45%;">
 <p><strong>jimclifford.ca/imperial-careers-workshop/review/</strong></p>
-<table class="caption-top">
-<tbody>
-<tr class="odd">
-<td><strong>Structure</strong></td>
-<td>R1, R2</td>
-<td>Blakely’s birth year; Balmer’s “do.”</td>
-</tr>
-<tr class="even">
-<td><strong>Clean</strong></td>
-<td>R3, R4</td>
-<td>Abery and Carbery; A’Beckett and Beckett</td>
-</tr>
-<tr class="odd">
-<td><strong>Ground</strong></td>
-<td>R5, R6</td>
-<td>South Africa at Harare; Brewster’s Victoria</td>
-</tr>
-<tr class="even">
-<td>extra</td>
-<td>R7</td>
-<td>Price and the item with no career</td>
-</tr>
-</tbody>
-</table>
-<p>Write the reason. The reason is what becomes the rule. Zoom: <strong>Copy summary for chat</strong>. Room: hands up when asked.</p>
+<p><span class="gold">Structure</span> Blakely, Balmer<br>
+<span class="gold">Clean</span> Abery, A’Beckett<br>
+<span class="gold">Ground</span> South Africa, Brewster<br>
+<span class="gold">Extra</span> Price</p>
+<p>Write the reason.<br>
+Zoom: <strong>Copy summary for chat</strong>.</p>
+</div></div>
 </section>
-<section id="your-own-data" class="slide level2 smaller">
+<section id="your-own-data" class="slide level2">
 <h2>Your own data</h2>
 <ul>
-<li><strong>One question, one small sample, the page reachable.</strong></li>
-<li><strong>Build the view early.</strong> It is your error detector.</li>
-<li><strong>Local identifiers first.</strong> External ones after retrieval and review. <strong>None from memory.</strong></li>
-<li><strong>Ground to the historical entity.</strong> Resolve per person, not per string.</li>
-<li><strong>Ties resolve to no merge.</strong></li>
-<li><strong>Fix the rule, not the record; make the correction a test.</strong></li>
-<li><strong>Two kinds of model.</strong> A frontier model writes the pipeline; a cheap one reads the collection inside it.</li>
+<li>One question, one small sample, the page reachable</li>
+<li>Build the view early. It is your error detector</li>
+<li>Local identifiers first. None from memory</li>
+<li>Ground to the historical entity, per person</li>
+<li>Ties resolve to no merge</li>
+<li>Fix the rule, not the record. Make the correction a test</li>
+<li>A frontier model writes the pipeline; a cheap one reads the collection</li>
 </ul>
 </section>
-<section id="three-questions-1" class="slide level2">
+<section id="three-questions-1" class="slide level2" data-background-image="images/atlas-screenshot.png" data-background-opacity="0.25">
 <h2>Three questions</h2>
 <table class="caption-top">
 <colgroup>
@@ -602,23 +606,24 @@ Jim Clifford, University of Saskatchewan
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Structure</strong></td>
+<td><span class="gold">Structure</span></td>
 <td>What is a record here?</td>
 <td>What counts as an event</td>
 </tr>
 <tr class="even">
-<td><strong>Clean</strong></td>
+<td><span class="gold">Clean</span></td>
 <td>One person or two?</td>
 <td>Merge, keep apart, review</td>
 </tr>
 <tr class="odd">
-<td><strong>Ground</strong></td>
+<td><span class="gold">Ground</span></td>
 <td>Which place, which person?</td>
 <td>Supported, unresolved, wrong</td>
 </tr>
 </tbody>
 </table>
-<p><strong>jimclifford.ca/imperial-careers-workshop</strong> — pages, saved outputs, both exercises, worked answers. Data: <strong>jimclifford.ca/col_matching</strong> (CC0).</p>
+<p><br></p>
+<p><strong>jimclifford.ca/imperial-careers-workshop</strong> · data <strong>jimclifford.ca/col_matching</strong></p>
 
 
 </section></section>
@@ -783,14 +788,14 @@ Jim Clifford, University of Saskatchewan
         previewLinks: false,
 
         // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'none',
+        transition: 'fade',
 
         // Transition speed (default/fast/slow)
         transitionSpeed: 'default',
 
         // Transition style for full page slide backgrounds
         // (none/fade/slide/convex/concave/zoom)
-        backgroundTransition: 'none',
+        backgroundTransition: 'fade',
 
         // Number of slides away from the current that are visible
         viewDistance: 3,
@@ -808,7 +813,7 @@ Jim Clifford, University of Saskatchewan
         height: 720,
 
         // Factor of the display size that should remain empty around the content
-        margin: 0.1,
+        margin: 8.0e-2,
 
         math: {
           mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',

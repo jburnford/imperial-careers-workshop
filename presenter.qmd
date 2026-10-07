@@ -16,7 +16,7 @@ subtitle: "Running order, checkpoints, and the room-plus-Zoom plan."
 
 ## Slides
 
-[slides.html](slides.html) is the deck, with speaker notes (press `S` in the browser). The first slide is the video as a full-screen background; let it run.
+[slides.html](slides.html) is the deck, with speaker notes (press `S` in the browser). The second slide streams the mobility video as a full-screen background with a still frame behind it; let it run. A rough PowerPoint export of the same source is at [slides-export.pptx](slides-export.pptx) for editing in PowerPoint or Google Slides; it loses the video, the dark theme and the column layouts.
 
 ## Running order
 

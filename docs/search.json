@@ -375,7 +375,7 @@
     "href": "presenter.html#slides",
     "title": "Presenter notes",
     "section": "Slides",
-    "text": "Slides\nslides.html is the deck, with speaker notes (press S in the browser). The first slide is the video as a full-screen background; let it run."
+    "text": "Slides\nslides.html is the deck, with speaker notes (press S in the browser). The second slide streams the mobility video as a full-screen background with a still frame behind it; let it run. A rough PowerPoint export of the same source is at slides-export.pptx for editing in PowerPoint or Google Slides; it loses the video, the dark theme and the column layouts."
   },
   {
     "objectID": "presenter.html#running-order",
@@ -417,126 +417,154 @@
     "href": "slides.html#section",
     "title": "Cleaning, Structuring and Grounding Historical Data",
     "section": "",
-    "text": "Let it run. 56 seconds. Every arc is one official moving between colonies, 1815–1966, from the Colonial Office List and the India Office List. Say nothing until the arcs reach Africa."
+    "text": "Let it run. 56 seconds. Every arc is one official moving between colonies, 1815 to 1966. Say nothing until the arcs reach Africa. If the network is down, play the downloaded mp4 instead; the still behind this slide is a frame from it."
   },
   {
     "objectID": "slides.html#what-that-was",
     "href": "slides.html#what-that-was",
     "title": "Cleaning, Structuring and Grounding Historical Data",
     "section": "What that was",
-    "text": "What that was\n\n\n\n\nColonial Office List\nIndia Office List\n\n\n\n\nPeople\n27,526\n19,400\n\n\nDated career events\n180,470\n124,694\n\n\nEvents located to a Wikidata place\n131,343\n80,238\n\n\n\n36,431 arcs. 186 people who served in both services.\n\nOne historian, a coding agent, a few months. Ten years ago: five institutions, a grant, F-scores of 0.6.\n\nTrading Consequences one sentence. Then: the hour is how, and where I had to decide something."
+    "text": "What that was\n\n46,926 officials\n305,164 career events\n211,581 of them on the map\n\n\nTwo printed reference books. One historian, a coding agent, a few months.\n\nCO 27,526 people / 180,470 events / 131,343 placed. IOL 19,400 / 124,694 / 80,238. 36,431 arcs. 186 people in both services; Wodehouse."
+  },
+  {
+    "objectID": "slides.html#ten-years-ago",
+    "href": "slides.html#ten-years-ago",
+    "title": "Cleaning, Structuring and Grounding Historical Data",
+    "section": "Ten years ago",
+    "text": "Ten years ago\n\n\nTrading Consequences, 2013\nFive institutions. A grant. A pipeline built by computational linguists. F-scores of 0.6.\n\nImperial Careers, 2026\nOne historian. A coding agent. A cheap model reading overnight. The same three problems.\n\n\nClifford, Alex, Coates, Klein, Watson, Historical Methods 2016. “Italy” in Texas. What changed is who writes the pipeline and how fast the loop runs."
   },
   {
     "objectID": "slides.html#three-questions",
     "href": "slides.html#three-questions",
     "title": "Cleaning, Structuring and Grounding Historical Data",
     "section": "Three questions",
-    "text": "Three questions\n\n\n\n\n\n\n\n\n\n\nThe question\nThe model does\nYou decide\n\n\n\n\nStructure\nWhat is a record here?\nProposes the fields, fills them for 100,000 entries\nWhat counts as an event\n\n\nClean\nOne person or two?\nClusters, argues each case, keeps the evidence\nMerge, keep apart, review\n\n\nGround\nWhich place, which person?\nRetrieves candidates with evidence\nSupported, unresolved, wrong\n\n\n\n\nAnd the second half: build, extract, visualise, see, fix, rerun."
+    "text": "Three questions\n\n\n\n\n\n\n\n\n\nThe question\nYou decide\n\n\n\n\nStructure\nWhat is a record here?\nWhat counts as an event\n\n\nClean\nOne person or two?\nMerge, keep apart, review\n\n\nGround\nWhich place, which person?\nSupported, unresolved, wrong\n\n\n\n\nThe model does everything around the decision, a hundred thousand times."
+  },
+  {
+    "objectID": "slides.html#the-second-half-of-the-method",
+    "href": "slides.html#the-second-half-of-the-method",
+    "title": "Cleaning, Structuring and Grounding Historical Data",
+    "section": "The second half of the method",
+    "text": "The second half of the method\n\nBuild. Extract. Visualise. See. Fix. Rerun.\n\n\nThe atlas was built to answer a question. It turned out to be the best error detector the project had."
   },
   {
     "objectID": "slides.html#the-source",
     "href": "slides.html#the-source",
     "title": "Cleaning, Structuring and Grounding Historical Data",
     "section": "The source",
-    "text": "The source\n\nTRIMEN, HENRY, M.B. (Lond.), F.R.S., F.L.S. —Formerly lecturer on botany at St. Mary’s Hospital, London, 1867 to 1875; was senior assistant to department of botany, British Museum, 1869 to 1879; director Royal Botanical Gardens, Ceylon, Feb., 1880; author of numerous works and papers on pure and applied botany.\n\n\nBALMER, F. E.—Dep. chief acctnt., G.P.O., E. Africa Prot., Mar., 1919; ch. acctnt., G.P.O., Kenya, Oct., 1919; ch. acctnt., Kenya-Uganda-Tanganyika post and tel. service, 1933; senr. dep. P.M.G., do., 1935.\n\n85 volumes. 1,400–2,900 entries per edition. The same man in forty of them.\n\nMark one up. jimclifford.ca/imperial-careers-workshop/annotate/ (or the paper). Every position, place, year, honour. Three minutes."
+    "text": "The source\n\nBALMER, F. E.—Dep. chief acctnt., G.P.O., E. Africa Prot., Mar., 1919; ch. acctnt., G.P.O., Kenya, Oct., 1919; ch. acctnt., Kenya-Uganda-Tanganyika post and tel. service, 1933; senr. dep. P.M.G., do., 1935.\n\n85 volumes, 1883 to 1966. 1,400 to 2,900 entries in each. The same man in forty of them.\n\nRecord of the Public Services of Officers. Cumulative. OCR’d with olmOCR; we begin after OCR."
+  },
+  {
+    "objectID": "slides.html#mark-one-up",
+    "href": "slides.html#mark-one-up",
+    "title": "Cleaning, Structuring and Grounding Historical Data",
+    "section": "Mark one up",
+    "text": "Mark one up\n\njimclifford.ca/imperial-careers-workshop/annotate/ or the paper. Three minutes."
+  },
+  {
+    "objectID": "slides.html#python-a-cheap-model-python",
+    "href": "slides.html#python-a-cheap-model-python",
+    "title": "Cleaning, Structuring and Grounding Historical Data",
+    "section": "Python, a cheap model, Python",
+    "text": "Python, a cheap model, Python\n\n\n\n\n\n\n\n\n1. Python\na grammar for the entry shape\nrefuses anything it cannot fully parse\n\n\n2. Qwen3.6-35B\none entry in, one JSON object out\nrun-on, ditto and concurrent clauses\n\n\n3. Python\nevery place and year checked against the source\nsystematic errors fixed by rule\n\n\n\n\n\n30,496 entries · 8.2 hours · 1 a second · 55 failures\n\n\nIOL run, overnight 25–26 June, 16 workers, reasoning off, temp 0. Reasoning on: 67% failures. COL: 34,743, about a day including setup."
   },
   {
     "objectID": "slides.html#the-prompt-is-the-decisions",
     "href": "slides.html#the-prompt-is-the-decisions",
     "title": "Cleaning, Structuring and Grounding Historical Data",
     "section": "The prompt is the decisions",
-    "text": "The prompt is the decisions\n\nExtract ONLY what is printed; never invent or infer facts. events: one object per distinct posting. EXPLODE compound clauses into separate events. place: as printed. If the clause names no place, carry over the previous clause’s place and set place_inherited=true. birth_year: only if explicitly printed. NEVER infer from the earliest career date. honours: with their award year if printed in parentheses; award-years are NOT career events.\n\nEvery rule exists because a run broke it.\nPython grammar first; refuses what it cannot fully parse. Then Qwen3.6-35B-A3B on a university GPU, reasoning off, temp 0: 30,496 entries in 8.24 hours, one a second, 55 failures. Then a Python validator and a post-normaliser."
+    "text": "The prompt is the decisions\n\nExtract ONLY what is printed; never invent or infer facts.\n\n\nevents: one object per distinct posting. EXPLODE compound clauses.\n\n\nplace: as printed. No place in the clause? Carry the previous one and say so.\n\n\nbirth_year: only if printed. NEVER infer from the earliest career date.\n\nEvery rule is there because a run broke it."
   },
   {
     "objectID": "slides.html#every-tenth-record-read-against-the-source",
     "href": "slides.html#every-tenth-record-read-against-the-source",
     "title": "Cleaning, Structuring and Grounding Historical Data",
     "section": "Every tenth record, read against the source",
-    "text": "Every tenth record, read against the source\n\n\n\nSampled\n186\n\n\nFully clean\n129 (69%)\n\n\nMajor error\n8 (about 3%)\n\n\n\n\n\n\n\n\n\n\n\nSource\nRecord\n\n\n\n\n“senr. dep. P.M.G., do., 1935”\nplace: “do.”\n\n\n“BLAKELY, DONALD QUENTIN.—Clk., atty.-gen.’s off., B. Honduras, Apl., 1898.”\nbirth_year: 1898; event year: null; “officer”\n\n\n“KT. BACH. (1920)”\nhonours: KT; BACH (1920)\n\n\n\n\n\nSystematic, not random. An expansion table, a forward-fill, a merge rule. Not a bigger model."
+    "text": "Every tenth record, read against the source\n\n186 sampled · 69% clean · 3% major\n\n\n\n\n\n\n\n\nSource\nRecord\n\n\n\n\n“senr. dep. P.M.G., do., 1935”\nplace: “do.”\n\n\n“BLAKELY … atty.-gen.’s off., B. Honduras, Apl., 1898.”\nbirth_year: 1898\n\n\n“KT. BACH. (1920)”\ntwo honours: KT; BACH"
+  },
+  {
+    "objectID": "slides.html#not-a-bigger-model",
+    "href": "slides.html#not-a-bigger-model",
+    "title": "Cleaning, Structuring and Grounding Historical Data",
+    "section": "Not a bigger model",
+    "text": "Not a bigger model\nThe errors are systematic, so the fixes are rules:\n\nmerge KT + BACH into Knight Bachelor\nforward-fill a “do.” place, and say it was inherited\n“officer in chief” back to “officer in charge”\nstop pre-expanding “off.” at all\n\nEvery change logged on the record. Zero cost per entry."
   },
   {
     "objectID": "slides.html#forty-editions-one-person",
     "href": "slides.html#forty-editions-one-person",
     "title": "Cleaning, Structuring and Grounding Historical Data",
     "section": "Forty editions, one person",
-    "text": "Forty editions, one person\n\nA missed link is recoverable; a false merge silently corrupts the record. Ties resolve to no merge.\n\n\nDeterministic passes: 0 false merges on 543 hand-verified careers\nCluster the residue: shared forename + surname suffix, so OCR variants meet\nA model argues each cluster from a dossier; the reason goes in a ledger (917 so far)\nA 200-case silver standard, afterwards, to measure it"
+    "text": "Forty editions, one person\n\nA missed link is recoverable. A false merge is not. Ties resolve to no merge.\n\n\nDeterministic passes first: zero false merges on 543 hand-checked careers. Then a model argues each leftover cluster from a dossier. 917 so far, each with its reason."
   },
   {
-    "objectID": "slides.html#four-clusters",
-    "href": "slides.html#four-clusters",
+    "objectID": "slides.html#two-clusters",
+    "href": "slides.html#two-clusters",
     "title": "Cleaning, Structuring and Grounding Historical Data",
-    "section": "Four clusters",
-    "text": "Four clusters\n\n\n\n\n\n\n\n\nABERY, Joseph / CARBERY, Joseph\nboth M.B.C.M., both “1867 Ceylon asst. colonial surgeon”\nmerge\n\n\nA’BECKETT, Thomas b. 1836 / BECKETT, Thomas Rumbold b. 1898\na Victorian judge; a Nigerian telegraph engineer\nkeep apart\n\n\nABRAHAM, Henry Charles / GRAHAM, Charles Drummond\nsuffix “aham”, forename Charles\nkeep apart\n\n\nABBOTT, Myles John / IBBOTT, John Thomas\nHong Kong 1936; Demerara 1860\nkeep apart\n\n\n\n\nEasy with the dossier in front of you. The model’s job was the dossier and the argument. You decide the one-shared-event cases."
+    "section": "Two clusters",
+    "text": "Two clusters\n\n\nABERY, Joseph\nM.B.C.M. · 1867 Ceylon, asst. colonial surgeon · one edition\nCARBERY, Joseph\nM.B.C.M. · 1867 Ceylon, asst. colonial surgeon · six editions\nMerge. An OCR garble with one identical event.\n\nA’BECKETT, Thomas, b. 1836\nLincoln’s Inn · Victorian puisne judge · knighted 1909\nBECKETT, Thomas Rumbold, b. 1898\nJudd School · Nigeria, telegraph engineer\nKeep apart. Sixty-two years and nothing shared."
   },
   {
-    "objectID": "slides.html#why",
-    "href": "slides.html#why",
+    "objectID": "slides.html#why-ground",
+    "href": "slides.html#why-ground",
     "title": "Cleaning, Structuring and Grounding Historical Data",
-    "section": "Why",
-    "text": "Why\nEvery arc needs coordinates for “the Central Provinces”, “British Guiana”, “Jodhpur”. Wikidata has the item, the coordinates, or the capital that has them. One query.\nAnd: a historian of the Cape and a historian of Bombay who both ground to Q1800510 have joined their data without meeting.\n\nTwo ways to get a QID. Retrieve it, read the item, gate it. Or ask a chatbot."
+    "section": "Why ground",
+    "text": "Why ground\nEvery arc needs coordinates for “the Central Provinces”, “British Guiana”, “Jodhpur”.\nWikidata has the item, or the capital that has the coordinates. One query.\n\nAnd: a historian of the Cape and a historian of Bombay who both ground to Q1800510 have joined their data without meeting."
   },
   {
     "objectID": "slides.html#live-the-lookup",
     "href": "slides.html#live-the-lookup",
     "title": "Cleaning, Structuring and Grounding Historical Data",
     "section": "Live: the lookup",
-    "text": "Live: the lookup\n\n“Henry Trimen botanist Ceylon Peradeniya” → read the statements → supported\n“Ferdinando Hamlyn Price” → Q123279571, alias Hamlyn, b. 1855, d. 1942, Tamil description only → supported, and the pipeline’s gate had rejected it\n“Elwood D’Arcy Tibbits Antigua” → nothing → unresolved, record the search\n\n\nWikidataMCP vector search. Saved results in outputs/ground-test/ if the network fails."
+    "text": "Live: the lookup\n\n“Henry Trimen botanist Ceylon Peradeniya” → read the statements → supported\n“Ferdinando Hamlyn Price” → Q123279571, b. 1855, Tamil description only → supported, and the pipeline’s gate had rejected it\n“Elwood D’Arcy Tibbits Antigua” → nothing → unresolved, record the search\n\n\nWikidataMCP vector search. Saved results in outputs/ground-test/ if the network fails."
   },
   {
-    "objectID": "slides.html#the-control-gemini-3.8-flash-no-tools",
-    "href": "slides.html#the-control-gemini-3.8-flash-no-tools",
+    "objectID": "slides.html#ask-a-chatbot-instead",
+    "href": "slides.html#ask-a-chatbot-instead",
     "title": "Cleaning, Structuring and Grounding Historical Data",
-    "section": "The control: Gemini 3.8 Flash, no tools",
-    "text": "The control: Gemini 3.8 Flash, no tools\n“Parse these bios and ground the places, schools and people to Wikidata ids where possible.” Twenty entries.\n\n\n\n\n\n\n\nPerson identifiers given\n16\n\n\nCorrect\n0\n\n\nNot even a person (a plant, a patent, Thoth, a village, a reptile)\n6\n\n\nWithin a few thousand of the right number\n7\n\n\nPlace and school identifiers whose label matches\n43 of 142\n\n\n\n\nNyasaland → a disambiguation page. Straits Settlements → a Danish triathlete. Joseph Chamberlain → a Swiss footballer.\nIt knew who. It did not know the number. Nothing in the text tells you which ones resolve."
+    "section": "Ask a chatbot instead",
+    "text": "Ask a chatbot instead\n\n0 of 16\n\nGemini 3.8 Flash, no tools, the same twenty entries.\nAlfred Sharpe → a species of orchid. Richard Wilkinson → Thoth. Nyasaland → a disambiguation page. Joseph Chamberlain → a Swiss footballer.\n\nIt knew who. It did not know the number."
   },
   {
     "objectID": "slides.html#four-ways-to-get-the-number",
     "href": "slides.html#four-ways-to-get-the-number",
     "title": "Cleaning, Structuring and Grounding Historical Data",
     "section": "Four ways to get the number",
-    "text": "Four ways to get the number\n\n\n\n\n\n\n\n\n\n\n\nGemini Flash, no tools\nPipeline: vector search + gates\nOpus, retrieval\nAstra, retrieval\n\n\n\n\nPerson identifiers correct\n0 of 16\n12 of 12 given; 8 ungrounded, 4 have items\n16 of 16\n16 of 16\n\n\nPlaces\n38 of 104 labels match; modern\n3,207 surfaces; modern-collapse errors found on the map\n17 of 138, then stopped\n104 period entities; 9 modern proxies labelled\n\n\nTime\n&lt; 5 min\novernight, whole corpus\n~20 min\n~27 min\n\n\n\n\nAll three chatbots read the entry right. The difference is where the number came from, and the cost. 27 minutes for 20 entries is 25 days for the Colonial Office List. The retrieval columns are the review queue, not the corpus. Even the best column needs you: which Gorges? Is Harris b. 1858 the Harris b. 1855?"
-  },
-  {
-    "objectID": "slides.html#six-victorias",
-    "href": "slides.html#six-victorias",
-    "title": "Cleaning, Structuring and Grounding Historical Data",
-    "section": "Six Victorias",
-    "text": "Six Victorias\nThe Australian colony. The capital of British Columbia. An electoral district. A gaol in Hong Kong. A district in the Cape. A county in Mauritius. A town in the Seychelles.\n\nSurface-keyed cache → one QID for everyone. Context resolver → per person. Six surfaces left ungrounded on purpose."
+    "text": "Four ways to get the number\n\n\n\n\n\n\n\n\n\n\n\nNo tools\nPipeline\nOpus, retrieval\nAstra, retrieval\n\n\n\n\nPeople right\n0 of 16\n12 of 12 given\n16 of 16\n16 of 16\n\n\nPlaces\n38 of 104, modern\n3,207 surfaces\n17 of 138, stopped\n104, period entities\n\n\nTime\n5 min\novernight, corpus\n20 min\n27 min\n\n\n\n\n27 minutes for 20 entries is 25 days for one List. The retrieval columns are the review queue, not the corpus.\n\nGeorge V from memory: Q269 is Tashkent; Opus caught it by reading the page. Gorges has two items. Harris b. 1858 vs item 1855."
   },
   {
     "objectID": "slides.html#three-errors",
     "href": "slides.html#three-errors",
     "title": "Cleaning, Structuring and Grounding Historical Data",
     "section": "Three errors",
-    "text": "Three errors\n\n\n\n\n\n\n\n\nSeen\nCause\nFix\n\n\n\n\nA premier of British Columbia with a seat in Melbourne\n“Victoria” grounded once, by string\nPer-person context resolver; also found the overrides had never applied\n\n\nUnion of South Africa at Harare: 960 events, 572 arcs\nContainment match: “South Africa” ⊂ British South Africa Company\nFive cache rows patched; containment guard; 100 pre-1910 events still ambiguous\n\n\nTwo Baluchistans\nColony under Q843 (Pakistan) and a second QID\nOne canonical row; duplicate folded\n\n\n\n\nFix the rule, re-emit both corpora, rebuild the atlas, look at everyone the rule touched."
+    "text": "Three errors\n\n\n\n\n\n\n\n\nSeen on the map\nCause\nFix\n\n\n\n\nA premier of British Columbia with a seat in Melbourne\n“Victoria” grounded once, by string\nResolve per person\n\n\nThe Union of South Africa at Harare: 960 events\n“South Africa” matched inside “British South Africa Company”\nFive cache rows; a guard on the join\n\n\nTwo Baluchistans\nOne under Q843, Pakistan\nOne canonical row\n\n\n\n\nFix the rule, re-emit both corpora, look at everyone the rule touched."
   },
   {
     "objectID": "slides.html#what-the-map-cannot-find",
     "href": "slides.html#what-the-map-cannot-find",
     "title": "Cleaning, Structuring and Grounding Historical Data",
     "section": "What the map cannot find",
-    "text": "What the map cannot find\nFalse negatives. An ungrounded “Victoria” has no arc. A missed merge is two plausible short careers.\nFor those: silver standards. 200 hand-labelled cases, risky strata oversampled. Rare surname + overlapping era: the judge’s “different” verdicts were wrong 76% of the time."
+    "text": "What the map cannot find\n\n76%\n\nof the judge’s “different” verdicts were wrong in the rare-surname, overlapping-era stratum.\nNo map shows a missed merge. For that: 200 hand-labelled cases, risky strata oversampled."
   },
   {
-    "objectID": "slides.html#exercise-4755",
-    "href": "slides.html#exercise-4755",
+    "objectID": "slides.html#exercise",
+    "href": "slides.html#exercise",
     "title": "Cleaning, Structuring and Grounding Historical Data",
-    "section": "Exercise: 47–55",
-    "text": "Exercise: 47–55\njimclifford.ca/imperial-careers-workshop/review/\n\n\n\nStructure\nR1, R2\nBlakely’s birth year; Balmer’s “do.”\n\n\nClean\nR3, R4\nAbery and Carbery; A’Beckett and Beckett\n\n\nGround\nR5, R6\nSouth Africa at Harare; Brewster’s Victoria\n\n\nextra\nR7\nPrice and the item with no career\n\n\n\nWrite the reason. The reason is what becomes the rule. Zoom: Copy summary for chat. Room: hands up when asked."
+    "section": "Exercise",
+    "text": "Exercise\n\n\n\n\njimclifford.ca/imperial-careers-workshop/review/\nStructure Blakely, Balmer\nClean Abery, A’Beckett\nGround South Africa, Brewster\nExtra Price\nWrite the reason.\nZoom: Copy summary for chat."
   },
   {
     "objectID": "slides.html#your-own-data",
     "href": "slides.html#your-own-data",
     "title": "Cleaning, Structuring and Grounding Historical Data",
     "section": "Your own data",
-    "text": "Your own data\n\nOne question, one small sample, the page reachable.\nBuild the view early. It is your error detector.\nLocal identifiers first. External ones after retrieval and review. None from memory.\nGround to the historical entity. Resolve per person, not per string.\nTies resolve to no merge.\nFix the rule, not the record; make the correction a test.\nTwo kinds of model. A frontier model writes the pipeline; a cheap one reads the collection inside it."
+    "text": "Your own data\n\nOne question, one small sample, the page reachable\nBuild the view early. It is your error detector\nLocal identifiers first. None from memory\nGround to the historical entity, per person\nTies resolve to no merge\nFix the rule, not the record. Make the correction a test\nA frontier model writes the pipeline; a cheap one reads the collection"
   },
   {
     "objectID": "slides.html#three-questions-1",
     "href": "slides.html#three-questions-1",
     "title": "Cleaning, Structuring and Grounding Historical Data",
     "section": "Three questions",
-    "text": "Three questions\n\n\n\n\n\n\n\n\n\n\nYou decide\n\n\n\n\nStructure\nWhat is a record here?\nWhat counts as an event\n\n\nClean\nOne person or two?\nMerge, keep apart, review\n\n\nGround\nWhich place, which person?\nSupported, unresolved, wrong\n\n\n\njimclifford.ca/imperial-careers-workshop — pages, saved outputs, both exercises, worked answers. Data: jimclifford.ca/col_matching (CC0)."
+    "text": "Three questions\n\n\n\n\n\n\n\n\n\n\nYou decide\n\n\n\n\nStructure\nWhat is a record here?\nWhat counts as an event\n\n\nClean\nOne person or two?\nMerge, keep apart, review\n\n\nGround\nWhich place, which person?\nSupported, unresolved, wrong\n\n\n\n\njimclifford.ca/imperial-careers-workshop · data jimclifford.ca/col_matching"
   },
   {
     "objectID": "steps/02-source.html",
