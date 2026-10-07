@@ -1,0 +1,49 @@
+---
+title: "The source"
+subtitle: "Minutes 5–12. One printed entry, and what you would extract from it."
+---
+
+## The Record of Services
+
+From 1883 every *Colonial Office List* carries a section headed, in most years, "Record of the Public Services of Officers": between 1,400 and 2,900 entries per edition, cumulative, each a compressed career. Here is the 1889 entry for the director of the botanic gardens at Peradeniya:
+
+> TRIMEN, HENRY, M.B. (Lond.), F.R.S., F.L.S. —Formerly lecturer on botany at St. Mary's Hospital, London, 1867 to 1875; was senior assistant to department of botany, British Museum, 1869 to 1879; director Royal Botanical Gardens, Ceylon, Feb., 1880; author of numerous works and papers on pure and applied botany.
+
+The same man has an entry in seven editions, 1883 to 1896, and they differ ([all seven](../source-pack/colonial-office-list-henry-trimen.md)). Later entries are denser:
+
+> BALMER, F. E.—Dep. chief acctnt., G.P.O., E. Africa Prot., Mar., 1919; ch. acctnt., G.P.O., Kenya, Oct., 1919; ch. acctnt., Kenya-Uganda-Tanganyika post and tel. service, 1933; senr. dep. P.M.G., do., 1935.
+
+> CONNOLLY, HON. SIR JAMES DANIEL, KT. BACH. (1920). —B. 1870; ed. Warwick Pub. Schl. and Catholic Schl.; M.L.C., Western Australia, 1902; col. sec. and min. of com. and lab., 1906; col. sec. and min. of pub. health, 1910; leader of leg. coun. from 1906 to 1911; M.L.A. for Perth, 1914; agt. genl. in London for Western Australia, 1917-23; agt. gen. in London for Malta, 1930.
+
+## Mark it up yourself
+
+Before the model does it, do it by hand. Open the [mark-up exercise](../annotate/index.html) (or the paper [handout](../handout.qmd) in the room) and tag, in one entry, every **position**, **place**, **year**, **honour**, and the **education** and **birth** fields. Three minutes. Then press *Compare* to see what the pipeline extracted for the same entry.
+
+Three things come up every time, and they are the structuring decisions of the next step:
+
+- "do." and a clause with no place: does the posting inherit the previous one's place?
+- "col. sec. and min. of com. and lab., 1906": one event or two?
+- "KT. BACH. (1920)": one honour with a year, two honours, or a title?
+
+## The scale
+
+| | |
+|---|---|
+| Volumes OCR'd (Colonial Office List family, 1867–1966) | 85 |
+| Editions with a Record of Services | every one from 1883, except the slim 1946 restart |
+| Entries per edition | 1,400–2,900 |
+| Resolved people (Colonial Office List) | 27,526 |
+| Dated career events | 180,470 |
+
+The India Office List is the same shape and was processed by the same scripts, rerooted to a second corpus: 19,400 people, 124,694 events.
+
+We begin after OCR. The volumes were OCR'd with olmOCR on a Compute Canada cluster; other sessions cover that. What matters here is that OCR output is the input, with its garbles ("ABERY" for CARBERY, "ACARLTHUR" for McARTHUR), and that the page is one click away when a reading has to be checked.
+
+## Why this example
+
+- The entries are formulaic enough that a schema is obvious, and irregular enough that every tenth one breaks it.
+- The same person recurs across editions, so identity has to be resolved before anything can be counted.
+- The places are nineteenth-century polities, not modern cities, so grounding is a historical decision, not a lookup.
+- There is a payoff at the end that depends on all three being right.
+
+Next: [Structure](03-structure.qmd).

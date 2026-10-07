@@ -1,0 +1,142 @@
+{
+ "structured": {
+  "surname": "TRIMEN",
+  "given_names": "HENRY",
+  "birth_year": null,
+  "education": "M.B. (Lond.)",
+  "honours": [
+   {
+    "award": "F.R.S.",
+    "year": null
+   },
+   {
+    "award": "F.L.S.",
+    "year": null
+   }
+  ],
+  "events": [
+   {
+    "position": "lecturer on botany",
+    "place": "London",
+    "year_start": 1867,
+    "year_end": 1875,
+    "is_acting": false,
+    "org_type": "civil"
+   },
+   {
+    "position": "senior assistant to department of botany",
+    "place": "British Museum",
+    "year_start": 1869,
+    "year_end": 1879,
+    "is_acting": false,
+    "org_type": "civil"
+   },
+   {
+    "position": "director Royal Botanical Gardens",
+    "place": "Ceylon",
+    "year_start": 1880,
+    "year_end": null,
+    "is_acting": false,
+    "org_type": "civil"
+   }
+  ],
+  "terminal": null,
+  "person_id": "kgp_col1889-p554b20"
+ },
+ "career_facts": [
+  {
+   "person_id": "kgp_col1889-p554b20",
+   "seq": 0,
+   "role_id": "Q1569495",
+   "role_label": "lecturer",
+   "role_modifiers": [],
+   "is_acting": false,
+   "org_id": null,
+   "org_label": null,
+   "org_type": "civil",
+   "place_qid": "Q84",
+   "place_label": "London",
+   "colony_qid": "Q84",
+   "colony_label": "United Kingdom (metropole)",
+   "year_start": 1867,
+   "year_end": 1875,
+   "position_raw": "lecturer on botany",
+   "role_source": "reuse",
+   "org_source": null
+  },
+  {
+   "person_id": "kgp_col1889-p554b20",
+   "seq": 1,
+   "role_id": "colkg:to_department_of_botany",
+   "role_label": "to department of botany",
+   "role_modifiers": [
+    "assistant",
+    "senior"
+   ],
+   "is_acting": false,
+   "org_id": null,
+   "org_label": null,
+   "org_type": "civil",
+   "place_qid": null,
+   "place_label": null,
+   "colony_qid": null,
+   "colony_label": null,
+   "year_start": 1869,
+   "year_end": 1879,
+   "position_raw": "senior assistant to department of botany",
+   "role_source": "internal",
+   "org_source": null
+  },
+  {
+   "person_id": "kgp_col1889-p554b20",
+   "seq": 2,
+   "role_id": "Q1162163",
+   "role_label": "director",
+   "role_modifiers": [],
+   "is_acting": false,
+   "org_id": null,
+   "org_label": null,
+   "org_type": "civil",
+   "place_qid": "Q918153",
+   "place_label": "Ceylon",
+   "colony_qid": "Q918153",
+   "colony_label": "Ceylon",
+   "year_start": 1880,
+   "year_end": null,
+   "position_raw": "director Royal Botanical Gardens",
+   "role_source": "reuse",
+   "org_source": null
+  }
+ ],
+ "person": {
+  "person_id": "kgp_col1889-p554b20",
+  "surname": "TRIMEN",
+  "given_names": "HENRY",
+  "birth_year": null,
+  "editions": [
+   1883,
+   1886,
+   1888,
+   1889,
+   1890,
+   1894,
+   1896
+  ],
+  "n_attestations": 7,
+  "attestations": [
+   "col1883-p452b4",
+   "col1886-p508b5",
+   "col1888-p550b17",
+   "col1889-p554b20",
+   "col1890-p558b21",
+   "col1894-p552b4",
+   "col1896-p658b4"
+  ],
+  "flags": [],
+  "wikidata_qid": null,
+  "wikidata_label": null,
+  "wikidata_tier": null,
+  "wikidata_has_more": false,
+  "wikidata_extra_count": 0
+ }
+}

@@ -3,42 +3,44 @@ title: "Your own data"
 subtitle: "Minutes 55–60. A practical next step for another collection."
 ---
 
-The published session description invited you to bring messy historical datasets. An hour is not enough to work on them together, but the sequence transfers. Here is how to start, in the order that worked for the Tropical and Imperial Careers projects.
+The published session description invited you to bring messy historical datasets. An hour is not enough to work on them together, but the sequence transfers. Here is how to start, in the order that worked for Imperial Careers.
 
 ## Before you open a model
 
-1. **Pick one question and one small sample.** Twenty records you can check by hand beat two thousand you cannot. The sample should include at least one hard case.
-2. **Keep the source reachable.** Every record needs a reference that gets a reader back to the page: file, page, line or offset. If your text came from OCR, keep the page images available. You will need them.
-3. **Decide what a record is.** A person? A mention of a person? An event? The Tropical project's "863 records" for Trimen are chunk-level extractions, not occurrences, and that distinction mattered later.
+1. **Pick one question and one small sample.** Twenty records you can check by hand beat two thousand you cannot. Include at least one hard case.
+2. **Keep the source reachable.** Every record needs a reference that gets a reader back to the page: volume, page, line or offset. If your text came from OCR, keep the page images available. You will need them.
+3. **Decide what a record is.** A person? A posting? A mention? Imperial Careers has one person per resolved biography and one event per posting, and the difference between "entry instances" and "people" is the whole of step 4.
+4. **Decide what the output looks like.** A map, a timeline, a network. Build it early, from the first sample. It is your error detector.
 
 ## The sequence
 
 | Step | Ask the model to | You |
 |---|---|---|
-| Structure | Read the sample and propose fields, with two example records | Decide what the question requires and what the source can support |
-| Extract | Process the sample, keep printed wording, put inferences in separate fields, save code and outputs, report failures | Inspect for omissions, invented details and changed meaning |
-| Candidates | Retrieve identities with a verifiable lookup, save the evidence and the date | Judge whether the identity fits the historical context |
-| Review | Build a side-by-side evidence table with accept / reject / unresolved and a reason field | Decide, and write the reason |
-| Revise | Find other records with the same problem, propose a fix, rerun the sample, show what changed | Check the fix and look for new errors before scaling up |
+| Structure | Read the sample and propose fields, with two example records; write the prompt rules down | Decide what the question requires and what the source can support |
+| Extract | Process the sample inside a script, keep printed wording, put inferences in separate fields, report failures | Audit every tenth record against the source; sort the findings into patterns |
+| Clean | Cluster candidate duplicates and argue each case from a dossier | Set the merge rules; decide the hard cases; keep the reasons |
+| Ground | Retrieve identities with a verifiable lookup, save the evidence and the date, gate on type and dates | Judge the links that matter; set the gate for the rest |
+| Visualise | Build the view the question needs | Look for what is in the wrong place |
+| Fix | Find other records with the same cause, change the rule, rerun, show what changed | Check the fix and the previously accepted cases that moved |
 
-The [draft prompts](02-structure-extract.qmd#the-prompts) on step 2 are a starting point. Adapt the nouns.
+## Rules that saved the project trouble
 
-## Rules that saved the research projects trouble
-
-- **Local identifiers first.** Give every record a stable local id before any external identifier. Add a Wikidata link only after retrieval and review support it. If nothing suitable exists, keep the local id; do not invent one.
-- **No identifiers from memory.** A model will offer plausible Q-numbers. Treat any identifier that was not retrieved by a tool as unverified. The [earlier workshop](https://jimclifford.ca/claude_code_workshop/hands-on.html) has a longer note on this.
-- **Separate structuring from grounding, and both from modern classification.** A plant name in 1883 is a historical usage; what Kew calls that plant today is a separate record.
-- **Model decisions and human decisions in different columns.** Never overwrite the one with the other. The Tropical review page exports the human decisions with a dataset fingerprint so they cannot be attached to the wrong version of the data.
-- **Make the correction a test.** When a review finds a defect, the probe that found it becomes a regression test. Tropical's three name probes are now in its test suite.
-- **Report what the sample can support.** Handpicked cases explain failure modes. A stratified sample measures precision for one stratum. Neither measures recall.
+- **Local identifiers first.** Every record gets a stable local id before any external one. Add a Wikidata link only after retrieval and review support it. Nothing suitable? Keep the local id.
+- **No identifiers from memory.** A model will offer plausible Q-numbers. Treat any identifier that was not retrieved by a tool as unverified.
+- **Ground to the historical entity, not the modern one.** The Colony of Victoria, not the state; British Raj, not India. Where a surface means different places for different people, resolve per person, not per string.
+- **Ties resolve to no merge.** A missed link is recoverable. A false merge is not.
+- **Model decisions and human decisions in different columns.** Never overwrite one with the other. Export human decisions with a fingerprint of the data they were made on.
+- **Fix the rule, not the record.** Then look at everyone the rule touched.
+- **Make the correction a test.** The probe that found the defect goes into the test suite.
+- **Report what the sample can support.** Handpicked cases explain failure modes. A stratified sample measures precision for one stratum. Neither measures recall; for that you need the silver standard.
 
 ## Tools, and what they cost at scale
 
 Two different jobs need two different kinds of model.
 
-- **The agent that writes the pipeline** reads your sample, proposes the structure, writes and tests the script, and builds the review view. This is a few hours of a frontier model's time per project. The saved runs A and B used Claude Sonnet 5.5 and Claude Fable 5.1 in Claude Code.
-- **The model inside the pipeline** reads every chunk of the collection. At tens of thousands of articles the frontier models are too expensive. The Tropical project's extraction over 53,000 articles used Qwen3.8-27B-FP8 served by vLLM on a shared university GPU, and run C in `outputs/02-extract/` is the same model on the same two passages, so you can compare what the cheap model does with the same prompts.
+- **The agent that writes the pipeline** reads your sample, proposes the structure, writes and tests the scripts, builds the review views and the atlas. This is hours of a frontier model's time per project, in a coding agent. Imperial Careers used Claude in Claude Code.
+- **The model inside the pipeline** reads every entry and judges every cluster. At 100,000 entries the frontier models are too expensive. Imperial Careers used Qwen on shared university GPUs for structuring and for the never-biographied matching, with the frontier model's in-session work as the reference set to measure it against.
 
 The agent can write the pipeline so that the cheap model does the reading and the agent is only called back when something fails. Which operation produced a given record should remain visible in the output.
 
-The presenter's environment uses Claude Code as the coding agent and the [WikidataMCP](https://wd-mcp.wmcloud.org/) server for lookups. Any coding agent that can run code, read files and call a lookup tool will do. See [Run it yourself](../setup.qmd) for the setup used here, and for what is still to be confirmed about costs.
+The presenter's environment uses Claude Code as the coding agent and the [WikidataMCP](https://wd-mcp.wmcloud.org/) server for lookups. Any coding agent that can run code, read files and call a lookup tool will do. See [Run it yourself](../setup.qmd).

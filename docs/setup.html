@@ -131,28 +131,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-the-hour">    
         <li>
-    <a class="dropdown-item" href="./steps/01-question.html">
- <span class="dropdown-text">The page</span></a>
+    <a class="dropdown-item" href="./steps/01-atlas.html">
+ <span class="dropdown-text">1. The atlas</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./steps/02-structure-extract.html">
- <span class="dropdown-text">Structure</span></a>
+    <a class="dropdown-item" href="./steps/02-source.html">
+ <span class="dropdown-text">2. The source</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./steps/03-candidates.html">
- <span class="dropdown-text">Ground</span></a>
+    <a class="dropdown-item" href="./steps/03-structure.html">
+ <span class="dropdown-text">3. Structure</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./steps/04-review.html">
- <span class="dropdown-text">Clean, together</span></a>
+    <a class="dropdown-item" href="./steps/04-identity.html">
+ <span class="dropdown-text">4. Clean: one person or two?</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./steps/05-ground.html">
+ <span class="dropdown-text">5. Ground</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./steps/06-loop.html">
+ <span class="dropdown-text">6. The map finds the errors</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./review/index.html">
- <span class="dropdown-text">Exercise</span></a>
+ <span class="dropdown-text">Exercise: decide</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./annotate/index.html">
+ <span class="dropdown-text">Exercise: mark up an entry</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./steps/07-your-data.html">
- <span class="dropdown-text">Your own data</span></a>
+ <span class="dropdown-text">7. Your own data</span></a>
   </li>  
     </ul>
   </li>
@@ -165,25 +177,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Worked answers</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-further" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Further</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-more" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">More</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-further">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-more">    
         <li>
-    <a class="dropdown-item" href="./steps/05-revise.html">
- <span class="dropdown-text">What a correction becomes</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./steps/06-connect.html">
- <span class="dropdown-text">Connecting collections</span></a>
+    <a class="dropdown-item" href="./handout.html">
+ <span class="dropdown-text">Printable handout</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./setup.html">
  <span class="dropdown-text">Run it yourself</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./packet.html">
- <span class="dropdown-text">Research packet</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./presenter.html">
@@ -207,11 +211,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-is-in-the-repository" id="toc-what-is-in-the-repository" class="nav-link active" data-scroll-target="#what-is-in-the-repository">What is in the repository</a></li>
-  <li><a href="#rerunning-the-saved-extraction" id="toc-rerunning-the-saved-extraction" class="nav-link" data-scroll-target="#rerunning-the-saved-extraction">Rerunning the saved extraction</a></li>
-  <li><a href="#rebuilding-the-tables" id="toc-rebuilding-the-tables" class="nav-link" data-scroll-target="#rebuilding-the-tables">Rebuilding the tables</a></li>
-  <li><a href="#running-the-extraction-with-a-local-open-model" id="toc-running-the-extraction-with-a-local-open-model" class="nav-link" data-scroll-target="#running-the-extraction-with-a-local-open-model">Running the extraction with a local open model</a></li>
-  <li><a href="#running-the-live-steps-with-your-own-agent" id="toc-running-the-live-steps-with-your-own-agent" class="nav-link" data-scroll-target="#running-the-live-steps-with-your-own-agent">Running the live steps with your own agent</a></li>
+  <li><a href="#what-is-in-this-repository" id="toc-what-is-in-this-repository" class="nav-link active" data-scroll-target="#what-is-in-this-repository">What is in this repository</a></li>
+  <li><a href="#the-dataset" id="toc-the-dataset" class="nav-link" data-scroll-target="#the-dataset">The dataset</a></li>
+  <li><a href="#rebuilding-the-exercise" id="toc-rebuilding-the-exercise" class="nav-link" data-scroll-target="#rebuilding-the-exercise">Rebuilding the exercise</a></li>
+  <li><a href="#running-the-grounding-test" id="toc-running-the-grounding-test" class="nav-link" data-scroll-target="#running-the-grounding-test">Running the grounding test</a></li>
+  <li><a href="#running-the-structuring-prompt" id="toc-running-the-structuring-prompt" class="nav-link" data-scroll-target="#running-the-structuring-prompt">Running the structuring prompt</a></li>
   <li><a href="#credentials" id="toc-credentials" class="nav-link" data-scroll-target="#credentials">Credentials</a></li>
   </ul>
 </nav>
@@ -222,7 +226,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Run it yourself</h1>
-<p class="subtitle lead">Optional. The shared exercise needs only a browser; this page is for rerunning or extending the example.</p>
+<p class="subtitle lead">Optional. The exercises need only a browser; this page is for rerunning or extending the example.</p>
 </div>
 
 
@@ -239,64 +243,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="callout callout-style-default callout-warning callout-titled" title="To be confirmed before the session">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-To be confirmed before the session
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The exact agent, model and lookup configuration to be demonstrated has not been fixed yet, and the costs of running the example with a personal account have not been measured. This page describes the configuration used to prepare the materials.</p>
-</div>
-</div>
-<section id="what-is-in-the-repository" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-in-the-repository">What is in the repository</h2>
-<pre><code>source-pack/          OCR text, scan-checked transcription, Colonial Office List entries, citations
-outputs/01-structure/ model proposals for the record structure (one folder per run)
-outputs/02-extract/   extraction scripts, records and notes (one folder per run)
-outputs/03-candidates/ candidate identities with retrieved evidence
-outputs/05-revise/    the two real revisions, with before and after
-outputs/06-connect/   Trimen across the three collections
-review/               the browser exercise (static HTML + cases.json)
-research/trimen-network/  the wider research packet and the cached Wikidata responses
-scripts/              build scripts (no network needed except ground_trimen.py)</code></pre>
+<section id="what-is-in-this-repository" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-in-this-repository">What is in this repository</h2>
+<pre><code>outputs/structure/   the extraction prompt, Trimen's structured record, three audit examples, the structuring runbook
+outputs/identity/    the merge rules and loop, the approach document, a sample of twelve clusters, the first 25 ledger entries
+outputs/ground/      place-grounding cache rows for Victoria, South Africa, Penang, Perth; Brewster's record
+outputs/ground-test/ twenty entries for the grounding test, the answer key with MCP lookups, the Gemini run and its scoring
+outputs/audit/       the structuring error catalogue, the every-tenth reviewed pairs, the September 2026 project review, the running fixes list
+outputs/atlas/       kg_stats for both corpora, the atlas meta.json, the Wodehouse bridge records, the essay on grounding
+annotate/            the mark-up exercise (static HTML + bios.json)
+review/              the decision exercise (static HTML + cases.json)
+source-pack/         Trimen's seven Colonial Office List entries
+archive/tropical/    the earlier draft built on The Tropical Agriculturist, kept for reference</code></pre>
 </section>
-<section id="rerunning-the-saved-extraction" class="level2">
-<h2 class="anchored" data-anchor-id="rerunning-the-saved-extraction">Rerunning the saved extraction</h2>
-<p>Each extraction run saved a script that regenerates its records from the OCR text, offline:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> outputs/02-extract/run-A/02_extract.py source-pack</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="the-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="the-dataset">The dataset</h2>
+<p>Everything here is drawn from <a href="https://github.com/jburnford/col_matching">Imperial Careers</a> (data CC0, code MIT, <a href="https://doi.org/10.5281/zenodo.21079938">DOI 10.5281/zenodo.21079938</a>). The finished graph is committed there as JSONL under <code>data/kg/graph_stage3/</code> and <code>data/iol/graph_stage3/</code>; the README shows how to load it into LadybugDB or Neo4j in two commands. The pipeline code, the grounding caches and the method documents are in the same repository.</p>
 </section>
-<section id="rebuilding-the-tables" class="level2">
-<h2 class="anchored" data-anchor-id="rebuilding-the-tables">Rebuilding the tables</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> scripts/build_trimen_workshop.py   <span class="co"># research packet CSV/JSON from the frozen search extract</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> scripts/build_candidates.py        <span class="co"># candidate evidence from the cached Wikidata responses</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> scripts/build_source_pack.py       <span class="co"># participant source pack</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> scripts/build_review_cases.py      <span class="co"># cases.json for the exercise</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>None of these touch the network.</p>
+<section id="rebuilding-the-exercise" class="level2">
+<h2 class="anchored" data-anchor-id="rebuilding-the-exercise">Rebuilding the exercise</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> scripts/build_review_cases.py      <span class="co"># cases.json for the decision exercise</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>No network needed.</p>
 </section>
-<section id="running-the-extraction-with-a-local-open-model" class="level2">
-<h2 class="anchored" data-anchor-id="running-the-extraction-with-a-local-open-model">Running the extraction with a local open model</h2>
-<p><code>outputs/02-extract/run-C/02_extract.py</code> sends the two prompts to any OpenAI-compatible server (the saved run used Qwen3.8-27B-FP8 under vLLM on the University of Saskatchewan’s Plato cluster; <code>scripts/plato_qwen_extract.slurm</code> is the job). Point it at your own server:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> outputs/02-extract/run-C/02_extract.py <span class="at">--base-url</span> http://127.0.0.1:8000/v1 <span class="at">--model</span> <span class="op">&lt;</span>served-name<span class="op">&gt;</span> --sources source-pack <span class="at">--out</span> /tmp/runC</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The model in this mode is not an agent: it returns the records as JSON and the script saves them. That is the shape of a production pipeline, where the agent writes the script once and the cheap model runs inside it.</p>
-</section>
-<section id="running-the-live-steps-with-your-own-agent" class="level2">
-<h2 class="anchored" data-anchor-id="running-the-live-steps-with-your-own-agent">Running the live steps with your own agent</h2>
-<p>You need a coding agent that can read files, run Python and call a Wikidata lookup tool. The materials were prepared with <a href="https://docs.anthropic.com/en/docs/claude-code">Claude Code</a> and the <a href="https://wd-mcp.wmcloud.org/">WikidataMCP</a> server (Streamable HTTP endpoint <code>https://wd-mcp.wmcloud.org/mcp</code>). Two things to know:</p>
+<section id="running-the-grounding-test" class="level2">
+<h2 class="anchored" data-anchor-id="running-the-grounding-test">Running the grounding test</h2>
+<p><code>outputs/ground-test/bios.md</code> has the twenty entries. For the chatbot column, paste them into any model without tools. For the retrieval column, use the <a href="https://wd-mcp.wmcloud.org/">WikidataMCP</a> server (Streamable HTTP endpoint <code>https://wd-mcp.wmcloud.org/mcp</code>) from a coding agent, or its public search endpoint. Two things to know:</p>
 <ul>
-<li><strong>Use the vector search, not the string search.</strong> Wikidata’s ordinary search API matches labels by string similarity. “Walpole Island” returns an island in New Caledonia. The MCP server’s <code>search_items</code> uses semantic embeddings. It is rate limited; cache what you retrieve.</li>
-<li><strong>No identifiers from memory.</strong> Tell the agent, and check its output. The research packet’s <code>scripts/ground_trimen.py</code> shows one way to cache full entity responses with retrieval timestamps.</li>
+<li><strong>Use the vector search, not the string search.</strong> Wikidata’s ordinary search API matches labels by string similarity. The MCP server’s <code>search_items</code> uses semantic embeddings. It is rate limited; cache what you retrieve.</li>
+<li><strong>No identifiers from memory.</strong> Tell the agent, and check its output. Resolve every identifier you are given before you keep it; <code>wbgetentities</code> with a list of ids is enough to see what they are.</li>
 </ul>
-<p>To fetch fresh evidence for an entity:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> scripts/ground_trimen.py entities Q2462643</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> scripts/ground_trimen.py search <span class="st">"Walter Agar Ceylon planter"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="running-the-structuring-prompt" class="level2">
+<h2 class="anchored" data-anchor-id="running-the-structuring-prompt">Running the structuring prompt</h2>
+<p><code>outputs/structure/extraction-prompt.txt</code> is the system prompt. Send it with one entry as the user message to any OpenAI-compatible endpoint and ask for JSON. The Imperial Careers repository’s <code>col_match/kg/extract.py</code> is the production version, with the validator that drops any place or year not present in the source.</p>
 </section>
 <section id="credentials" class="level2">
 <h2 class="anchored" data-anchor-id="credentials">Credentials</h2>
-<p>No file in this repository contains a credential, and none is needed for the exercise. If you configure an agent with an API key, keep it out of the repository.</p>
+<p>No file in this repository contains a credential, and none is needed for the exercises. If you configure an agent with an API key, keep it out of the repository.</p>
 
 
 </section>
@@ -734,7 +717,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>Source text: archive.org scans of The Tropical Agriculturist.</p>
+<p>Data: Imperial Careers (CC0), jimclifford.ca/col_matching</p>
 </div>
   </div>
 </footer>

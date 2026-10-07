@@ -1,0 +1,326 @@
+[
+ {
+  "versions": [
+   "col1915-L44759.v",
+   "col1898-L31850.v"
+  ],
+  "bios": [
+   "aberdeen_1st-marquess",
+   "aberdeen_7th-earl"
+  ],
+  "reason": "7th Earl (1898) and 1st Marquess 'creat.1915' (1915): same b.1847, identical career (succeeded brother 1870, gov-gen Canada 1893, lord-lieut Ireland 1886/1905) - same peer, title upgraded",
+  "confidence": "high"
+ },
+ {
+  "versions": [
+   "col1897-L31192.v",
+   "col1886-L32542.v"
+  ],
+  "bios": [
+   "abery_joseph",
+   "carbery_joseph"
+  ],
+  "reason": "both Joseph + M.B.C.M + identical single event '1867 Ceylon Assistant col(onial) surgeon'; ABERY is OCR garble of CARBERY",
+  "confidence": "high"
+ },
+ {
+  "versions": [
+   "col1897-L33128.v",
+   "col1906-L46700.v",
+   "col1923-L56228.v",
+   "col1898-L34555.v"
+  ],
+  "bios": [
+   "acarlthur_malcolm-stewart",
+   "mcarthur_malcolm-stewart-hannibal"
+  ],
+  "reason": "ACARLTHUR = OCR garble of MACARTHUR; both Malcolm Stewart; careers align (1895 cadet, 1896 Penang ag. dep. registrar of deeds)",
+  "confidence": "high"
+ },
+ {
+  "versions": [
+   "col1883-L26129.v",
+   "col1899-L33336.v",
+   "col1898-L31854.v"
+  ],
+  "bios": [
+   "ackroyd_edward-james_e1853",
+   "ackroyd_edward-james_eNone"
+  ],
+  "reason": "two 'Edward James Ackroyd' both KT.BACH 1898; the second is a careerless 1898-edition fragment of the Mauritius clerk (1853-1895). Holroyd Edward Dundas is a DIFFERENT person (not merged).",
+  "confidence": "high"
+ },
+ {
+  "versions": [
+   "col1922-L50213.v",
+   "col1932-L57887.v"
+  ],
+  "bios": [
+   "adams_theodore-samuel_b1885",
+   "adams_thoroder-samuel_b1885"
+  ],
+  "reason": "THORODER = OCR of THEODORE; both b.1885, identical education (King's Canterbury + All Souls Oxford) and FMS/Kelantan cadet career",
+  "confidence": "high"
+ },
+ {
+  "versions": [
+   "col1886-L31826.v",
+   "col1888-L31734.v"
+  ],
+  "bios": [
+   "adams_george-p_e1876",
+   "adams_george-p_e1876-2"
+  ],
+  "reason": "two 'George P Adams' both '1876 Tasmania Recorder of titles' (prefix-extension fragment); same person",
+  "confidence": "high"
+ },
+ {
+  "versions": [
+   "col1886-L31849.v",
+   "col1898-L31881.v"
+  ],
+  "bios": [
+   "aitken_c-colquhoun_e1878",
+   "attken_c-colquhoun_e1878"
+  ],
+  "reason": "ATTKEN = OCR of AITKEN; both C. Colquhoun, identical Jamaica clerk career (1878 3rd class, 1880 1st class). Eric Colquhoun Aitken (b.1884) is a DIFFERENT person.",
+  "confidence": "high"
+ },
+ {
+  "versions": [
+   "col1936-L58354.v",
+   "col1948-L30728.v"
+  ],
+  "bios": [
+   "adshead_percy-williams_b1892",
+   "adshead_percy-willetts_e1914"
+  ],
+  "reason": "both Percy + Tettenhall/Tettenham Coll (OCR variant); identical events 1926 Uganda ch. acctnt. PWD, 1929 Uganda cotton enquiry, 1937 Palestine senr. asst. treas.; Williams/Willetts OCR middle-name variant",
+  "confidence": "high"
+ },
+ {
+  "versions": [
+   "col1912-L42141.v",
+   "col1908-L42842.v",
+   "col1913-L43331.v"
+  ],
+  "bios": [
+   "agbebi_ephemiah-michael-ekundayo_b1884",
+   "agebebi_ephraim-michael-ekundayo_b1884"
+  ],
+  "reason": "AGEBEBI = OCR of AGBEBI; both Michael Ekundayo b.1884, identical education (Fourah Bay Coll) and identical career (1899-1908 S.Leone/Lagos); Ephemiah/Ephraim OCR variant",
+  "confidence": "high"
+ },
+ {
+  "versions": [
+   "col1897-L32340.v",
+   "col1910-L46234.v",
+   "col1894-L31915.v"
+  ],
+  "bios": [
+   "aggart_john-g_e1888",
+   "haggart_john-g_e1872"
+  ],
+  "reason": "AGGART = OCR of HAGGART (dropped H); both John G, identical events 1888 Canada postmaster-general and 1892 minister of railways",
+  "confidence": "high"
+ },
+ {
+  "versions": [
+   "col1928-L63697.v",
+   "dol1935-L56469.v",
+   "col1923-L52045.v",
+   "col1932-L57910.v",
+   "col1924-L51922.v",
+   "col1922-L50236.v"
+  ],
+  "bios": [
+   "aharne_christopher-dominic_b1886",
+   "ahearne_christopher-domingo_b1886"
+  ],
+  "reason": "AHEARNE = OCR of AHARNE; both Christopher b.1886, identical education (Trinity Coll Dublin scholar 1907) and identical Straits Settlements cadet career; Dominic/Domingo OCR variant",
+  "confidence": "high"
+ },
+ {
+  "versions": [
+   "col1931-L61935.v",
+   "col1948-L30748.v",
+   "col1949-L29991.v"
+  ],
+  "bios": [
+   "alabaster_chaloner-grinnell_b1880",
+   "alabaster_chaloner-grenville_b1880"
+  ],
+  "reason": "both Chaloner b.1880, same honours K.C./1922 + O.B.E./1918, identical career (1904 barrister, 1911 HK ag. atty.-gen., 1931 confirmed, 1934 Colonial Office legal advisory, 1937 ag. ch.-just.); Grinnell/Grenville OCR variant",
+  "confidence": "high"
+ },
+ {
+  "versions": [
+   "col1897-L32346.v",
+   "col1889-L33514.v",
+   "col1911-L45238.v"
+  ],
+  "bios": [
+   "alcomb_fred-m-a-wadham-college_e1870",
+   "halcomb_fred_b1836"
+  ],
+  "reason": "ALCOMB = OCR of HALCOMB (dropped H); both Fred, identical events 1870 South Australia parliamentary librarian, 1874 clerk/sergeant-at-arms, 1887 clerk house of assembly",
+  "confidence": "high"
+ },
+ {
+  "versions": [
+   "col1886-L31865.v",
+   "col1888-L31777.v"
+  ],
+  "bios": [
+   "allan_gordon_e1885",
+   "allan_gordon_e1885-2"
+  ],
+  "reason": "both ALLAN GORDON, identical event 1885 British Honduras Assistant surveyor-general; second is prefix-extension fragment (adds 1886 surveyor-general)",
+  "confidence": "high"
+ },
+ {
+  "versions": [
+   "col1934-L56201.v",
+   "col1951-L35640.v"
+  ],
+  "bios": [
+   "allnutt_richard-buswell_e1907",
+   "allnutt_richard-buwell_b1907"
+  ],
+  "reason": "both Richard B*well Allnutt b/ed.1907, identical education (Malvern Coll + SE Agric Coll Wye) and Tanganyika agric. officer career (1930 T.T.); Buswell/Buwell OCR variant",
+  "confidence": "high"
+ },
+ {
+  "versions": [
+   "col1932-L57971.v",
+   "col1936-L58437.v",
+   "col1930-L62182.v",
+   "col1934-L56207.v"
+  ],
+  "bios": [
+   "alvapillai_kovindapillai_b1905",
+   "alvappillai_kovindapillai_b1908"
+  ],
+  "reason": "ALVAPPILLAI = spelling/OCR variant of ALVAPILLAI; both Kovindapillai, identical career 1929 Ceylon civ. serv. cadet + 1930 attd. office asst. Puttalam kachcheri; birth 1905/1908 OCR-noisy",
+  "confidence": "high"
+ },
+ {
+  "versions": [
+   "col1925-L60020.v",
+   "col1917-L53777.v"
+  ],
+  "bios": [
+   "an-buren_van-robert-harris_e1913",
+   "van-buren_van-robert-harris_b1871"
+  ],
+  "reason": "AN BUREN = OCR of VAN BUREN (dropped V); distinctive identical full name Van Robert Harris, both Trinidad civ. serv. (1913)",
+  "confidence": "high"
+ },
+ {
+  "versions": [
+   "col1925-L60030.v",
+   "col1914-L50622.v",
+   "dol1935-L62893.v",
+   "col1908-L47966.v"
+  ],
+  "bios": [
+   "an-de-velde_marcel-arthur-maurice_e1900",
+   "van-de-velde_macbeth-arthur-maurice_e1900"
+  ],
+  "reason": "AN DE VELDE = OCR of VAN DE VELDE (dropped V); both Arthur Maurice, same education (Mt St Mary's Coll Derbyshire), identical 1900 audit branch + 1903/04 East Africa asst. auditor career; Marcel/Macbeth OCR variant",
+  "confidence": "high"
+ },
+ {
+  "versions": [
+   "col1925-L60022.v",
+   "col1922-L56757.v",
+   "col1924-L58526.v"
+  ],
+  "bios": [
+   "anderkoen_susaipiillai-mudaliyar-j-p_b1864",
+   "vanderkoen_subaipillai-mudaliyar-philip_b1864"
+  ],
+  "reason": "ANDERKOEN = OCR of VANDERKOEN (dropped V); both Susaipillai Mudaliyar b.1864, identical 1921 Ceylon cls. V civ. serv.",
+  "confidence": "high"
+ },
+ {
+  "versions": [
+   "col1931-L61999.v",
+   "col1920-L51405.v",
+   "col1948-L34589.v",
+   "dol1935-L60774.v"
+  ],
+  "bios": [
+   "anderson_maxwell-hendry_e1893",
+   "maxwell-anderson_maxwell-hendry_b1879"
+  ],
+  "reason": "same Maxwell Hendry; surname recorded as ANDERSON in one edn, MAXWELL-ANDERSON in another; identical career (1893 Royal Navy, 1909/10 bar Middle Temple, 1919 Gibraltar atty-gen, 1929 Fiji ch. just, 1930 W. Pacific) and identical honours C.B.E.(mil)/1919, K.C./1919, O.B.E./1918",
+  "confidence": "high"
+ },
+ {
+  "versions": [
+   "col1897-L31560.v",
+   "col1894-L31090.v"
+  ],
+  "bios": [
+   "andolo_charles-a_e1883",
+   "dandolo_charles-a_e1883"
+  ],
+  "reason": "ANDOLO = OCR of DANDOLO (dropped D); both Charles A, identical 1883 Cyprus clerk dist. ct. + 1886 asst. registrar/interpreter",
+  "confidence": "high"
+ },
+ {
+  "versions": [
+   "col1925-L53789.v",
+   "col1948-L30808.v"
+  ],
+  "bios": [
+   "andre_wilfrid-joseph_b1890",
+   "andre_wilfred-joseph_b1890"
+  ],
+  "reason": "both ANDRE Wilfrid/Wilfred Joseph b.1890, both Gray's Inn barrister 1912 + Trinidad magistrate (1923); Wilfrid/Wilfred OCR variant",
+  "confidence": "high"
+ },
+ {
+  "versions": [
+   "col1939-L64319.v",
+   "col1930-L62211.v",
+   "col1936-L58467.v",
+   "col1948-L30812.v",
+   "col1950-L33231.v",
+   "col1931-L62014.v",
+   "col1933-L57445.v"
+  ],
+  "bios": [
+   "andrewes_lancaster-ruggles_e1924",
+   "andrewes_lancelot-ruggles_b1897"
+  ],
+  "reason": "both ANDREWES ... Ruggles, same education (Fort Street, Sydney), identical HK legal career (1924 admitted solr London, 1928 HK asst crown solr, 1931 JP, 1932 ag dep registrar, 1935 dep registrar); Lancaster/Lancelot OCR variant",
+  "confidence": "high"
+ },
+ {
+  "versions": [
+   "col1913-L43411.v",
+   "col1894-L30030.v",
+   "col1889-L31529.v"
+  ],
+  "bios": [
+   "angers_auguste-real_e1874",
+   "angers_auguste-r-al_e1887"
+  ],
+  "reason": "both Auguste Real Angers (distinctive), shared event 1887 Quebec lieutenant-governor",
+  "confidence": "high"
+ },
+ {
+  "versions": [
+   "col1906-L44005.v",
+   "col1907-L42780.v"
+  ],
+  "bios": [
+   "angus_wm_e1904",
+   "angus_wm_e1904-2"
+  ],
+  "reason": "both ANGUS WM, identical 1904 South Australia B.Sc. Prof. of agric. & sec.; second is prefix-extension fragment",
+  "confidence": "high"
+ }
+]

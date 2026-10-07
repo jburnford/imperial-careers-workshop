@@ -1,0 +1,57 @@
+---
+title: "Ground"
+subtitle: "Minutes 30–40. Which place, which person, in the shared vocabulary? A live lookup, and a chatbot asked to do the same from memory."
+---
+
+## Why ground at all
+
+Every arc on the atlas needs a latitude and longitude for a place named in a Victorian reference book: the Colony of Victoria, the Central Provinces, British Guiana, a princely state. Modern gazetteers do not have them or mislocate them. Wikidata has an item for each, with coordinates or a link to the capital that has them. Once every place surface in the corpus was grounded to a Wikidata item, one query returned coordinates for all of them. Weeks of gazetteer work did not happen.
+
+The second reason is composition. A historian of the Cape and a historian of Bombay who both ground to [Q1800510](https://www.wikidata.org/wiki/Q1800510) have joined their datasets without meeting. The [longer argument](../outputs/atlas/why-historians-need-wikidata.md) is Jim's; the short version is: ground to Wikidata, do not host your scholarship there.
+
+## Two ways to get a QID
+
+**Retrieve it.** The pipeline uses the [WikidataMCP](https://wd-mcp.wmcloud.org/) server's vector search, which matches meaning rather than strings, then reads the item's statements, then applies verification gates (type, dates, place) before accepting. Every accepted link has the retrieved evidence and the lookup date beside it. The Colonial Office List graph has 1,066 people grounded this way with a zero-false-positive gate, and 131,343 events grounded to a place.
+
+**Ask a chatbot.** Paste the biography into a model with no tools and ask for the QID. It will give one. Sometimes it is right.
+
+## Live: the lookup
+
+The presenter runs the MCP search in the room. Suggested script:
+
+1. Search "Henry Trimen botanist Ceylon Peradeniya". Read the top hit's statements: born 1843, died 1896, botanist. Compare with the entry: director from 1880, M.B., F.R.S. **Supported.**
+2. Search "Ferdinando Hamlyn Price" with the career words. The top hit is [Q123279571](https://www.wikidata.org/wiki/Q123279571), "Ferdinando Hamblyn Price", alias Hamlyn, born 1855, died 1942, described only in Tamil as a Sri Lankan politician, no career statements at all. The entry says mayor of Colombo three times. **Supported, on the name, the dates and Colombo**, and the pipeline's gate had rejected it because the spelling differed.
+3. Search "Elwood D'Arcy Tibbits Antigua". Nothing plausible in the top fifty. **Unresolved.** Keep the local record and the search that was run.
+
+## Live, or saved: the chatbot
+
+[Twenty long entries](../outputs/ground-test/bios.md) were chosen on 7 October 2026: twelve for people the pipeline grounded, eight it did not. Paste one into a chatbot with no tools: "Who is this? Give the Wikidata QID." Then look the answer up. Score it: right, wrong item, invented identifier, or declined. The [answer key](../outputs/ground-test/answer-key.md) has the pipeline's QID and the MCP lookups.
+
+What the lookups already show: of the eight the pipeline left ungrounded, three have a plausible item the vector search finds at once (Price, Henry Francis Wilson, T. J. Alldridge) and five have nothing in the top fifty. "Not grounded" means the gate did not accept; it never means "no such item".
+
+And the control. On 7 October Jim pasted the twenty entries into Gemini 3.8 Flash with no tools: "Parse these bios and ground the places, schools and people to Wikidata ids where possible." The [response](../outputs/ground-test/gemini-response.md) is fluent and well organised, names every person and place correctly, and gives identifiers for everything. [Scored](../outputs/ground-test/gemini-scoring.md) against Wikidata:
+
+| | |
+|---|---|
+| Person identifiers given | 16 (4 entries declined) |
+| Correct | 0 |
+| Resolve to something that is not a person (a plant, a patent, Thoth, an Iranian village, an archive series, a reptile) | 6 |
+| Within a few thousand of the right number | 7 |
+| Place, school and other-person identifiers given | 142 |
+| Whose Wikidata label matches the name | 43 |
+
+The matches are the famous, low-numbered items: Paris, Canada, Singapore, Churchill. Nyasaland resolved to a disambiguation page, the Straits Settlements to a Danish triathlete, the Cape Colony to an Austrian goalkeeper, Joseph Chamberlain to a Swiss footballer. The model knew who; it did not know the number. A Q-number from memory is a string the model has seen near a name, and nothing in the response tells you which ones resolve.
+
+## Three questions to keep separate
+
+1. **Does the identifier resolve to what was retrieved?** A Q-number from a model's memory is not a lookup.
+2. **Is that entity the one in this source?** Name, type, dates, place, activity. A real item can be the wrong person. Price's item has the right dates and no career; the match rests on a rare name and Colombo.
+3. **What does the link assert?** That this entry is that man. Not every statement on the item. Not that "Ceylon" in 1880 is the modern state.
+
+## Places are harder than people
+
+The surface "Victoria" occurs in the corpus as the Australian colony, the capital of British Columbia, an electoral district, a gaol in Hong Kong, a district in the Cape, a county in Mauritius, and a town in the Seychelles. The grounding cache ([rows](../outputs/ground/places-grounding-examples.json)) shows what that took: the bare surface grounded to the colony by default, context rules for officials whose other postings are in British Columbia, manual re-grounding for the Cape and Seychelles variants, and six surfaces deliberately left ungrounded because one QID would be wrong for someone.
+
+**You decide:** supported, unresolved, or wrong, for each link that matters, and the gate that decides the rest. The cases the gate gets wrong are the subject of the next step.
+
+Next: [The map finds the errors](06-loop.qmd).

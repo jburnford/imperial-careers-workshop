@@ -1,0 +1,62 @@
+---
+title: "Structure"
+subtitle: "Minutes 12–22. What is a record here? The model proposes and fills the fields; you decide what counts as an event."
+---
+
+## The schema
+
+A biography becomes one JSON object: name, birth year, education string, honours with award years, a list of career events, and how the career ended. Each event has a position, a place as printed, start and end years, an acting flag and a civil or military tag. The agent and the historian settled the schema on a sample of entries before any batch ran.
+
+## The prompt
+
+The system prompt the pipeline sends with every entry ([full text](../outputs/structure/extraction-prompt.txt)). The rules are the historian's decisions, written down:
+
+> Extract ONLY what is printed; never invent or infer facts.
+> **events:** one object per distinct posting. EXPLODE compound/concurrent clauses into separate events (e.g. 'reg.-gen., 1887, and M.L.C., 1889' = two events).
+> **place:** the colony, territory, OR locality named in the clause, AS PRINTED. If the clause names no place, carry over the previous clause's place and set place_inherited=true; do NOT guess or upgrade a locality to its parent colony.
+> **birth_year:** only if explicitly printed ('B. 1872'); else null. NEVER infer from the earliest career date.
+> **honours:** decorations/orders with their AWARD year if printed in parentheses; these award-years are NOT career events.
+
+Every one of those rules exists because an earlier run broke it.
+
+## What came back
+
+Trimen's 1889 entry, structured ([saved](../outputs/structure/trimen-structured.json)):
+
+| position | place | years | |
+|---|---|---|---|
+| lecturer on botany | London | 1867–1875 | |
+| senior assistant to department of botany | British Museum | 1869–1879 | overlaps the first: two concurrent posts, two events |
+| director Royal Botanical Gardens | Ceylon | 1880– | |
+
+Plus `education: "M.B. (Lond.)"`, two honours without years, no birth year, no terminal event. In the published graph the first and third events are placed (London Q84, Ceylon Q918153); "British Museum" is an institution, not a place, and stays unplaced.
+
+## Two kinds of model
+
+The reference set was structured in session by a frontier model acting as the coding agent: about 200 entries, each checked. The corpus was structured by Qwen on a shared university GPU inside the script the agent wrote, at a cost the frontier model could not match for 100,000 entries. The runbook for the loop is [saved](../outputs/structure/structuring-loop-runbook.md). Every record says which path produced it.
+
+## The audit
+
+Every tenth structured record was read against its source by a reviewer model and the findings were categorised ([catalogue](../outputs/audit/struct-error-catalog.md), [reviewed pairs](../outputs/audit/every10-reviewed-pairs.json)). Of the first 186 sampled:
+
+| | |
+|---|---|
+| Fully clean | 129 (69%) |
+| Records with a finding | 56 |
+| Findings judged major | 8 (about 3% of records) |
+
+Three of the findings, with the source beside the record ([saved](../outputs/structure/audit-examples.json)):
+
+**The ditto that was not resolved.** Balmer's last clause, "senr. dep. P.M.G., do., 1935", came back with `place: "do."`. The rule says inherit; the model copied the abbreviation.
+
+**The appointment date that became a birth year.** "BLAKELY, DONALD QUENTIN.—Clk., atty.-gen.'s off., B. Honduras, Apl., 1898." came back with `birth_year: 1898` and an event with no year. The prompt forbids exactly this. The same record expanded "off." to "officer" instead of "office".
+
+**The knighthood split in two.** "KT. BACH. (1920)" came back as two honours, `KT` and `BACH (1920)`. Three records in the sample did the same.
+
+## Why the fix was not a bigger model
+
+The errors are not random. They are a handful of systematic patterns: a short list of abbreviations mis-expanded the same way every time ("off.", "col.", "govt.", "offr. in ch."), ditto marks left literal, one compound honour split, "mentioned in despatches" dropped. Each has a deterministic fix: an expansion table, a forward-fill pass, a merge rule, a sweep of the source for a phrase. The fixes run after the model and cost nothing per record. A frontier model on every entry would have cost more and would still have needed the audit.
+
+**You decide:** what is an event. Whether an acting appointment is a posting. Whether "called to the bar, 1879" belongs in the career. Whether "leader of leg. coun. from 1906 to 1911" is a position or a description. The prompt records those decisions; the audit checks whether the model kept them.
+
+Next: [Clean: one person or two?](04-identity.qmd)

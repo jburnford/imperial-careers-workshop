@@ -1,0 +1,556 @@
+[
+ {
+  "place": "Union of S. Africa",
+  "qid": "Q193619",
+  "label": "Union of South Africa",
+  "country_qid": "Q258",
+  "p131_qid": null,
+  "instance_of": [
+   "Company Territory"
+  ],
+  "match_type": "curated_patch",
+  "query": "South Africa",
+  "count": 1062,
+  "patched_from": "Q5155572",
+  "patch_reason": "B5: 'Union of S. Africa'/'S. Africa'/'S.A.' manifest-joined by containment to the BSAC (Rhodesia) territory; 960 CO events plotted at Harare",
+  "has_coords": true
+ },
+ {
+  "place": "S. Africa",
+  "qid": "Q193619",
+  "label": "Union of South Africa",
+  "country_qid": "Q258",
+  "p131_qid": null,
+  "instance_of": [
+   "Company Territory"
+  ],
+  "match_type": "curated_patch",
+  "query": "South Africa",
+  "count": 1062,
+  "patched_from": "Q5155572",
+  "patch_reason": "B5: 'Union of S. Africa'/'S. Africa'/'S.A.' manifest-joined by containment to the BSAC (Rhodesia) territory; 960 CO events plotted at Harare",
+  "has_coords": true
+ },
+ {
+  "place": "South Africa",
+  "qid": "Q193619",
+  "label": "Union of South Africa",
+  "country_qid": "Q258",
+  "p131_qid": null,
+  "instance_of": [
+   "Company Territory"
+  ],
+  "match_type": "curated_patch",
+  "query": "South Africa",
+  "count": 38,
+  "patched_from": "Q5155572",
+  "patch_reason": "B5: 'Union of S. Africa'/'S. Africa'/'S.A.' manifest-joined by containment to the BSAC (Rhodesia) territory; 960 CO events plotted at Harare",
+  "has_coords": true
+ },
+ {
+  "place": "Union of S.A.",
+  "qid": "Q193619",
+  "label": "Union of South Africa",
+  "country_qid": "Q258",
+  "p131_qid": null,
+  "instance_of": [
+   "Company Territory"
+  ],
+  "match_type": "curated_patch",
+  "query": "South Africa",
+  "count": 1062,
+  "patched_from": "Q5155572",
+  "patch_reason": "B5: 'Union of S. Africa'/'S. Africa'/'S.A.' manifest-joined by containment to the BSAC (Rhodesia) territory; 960 CO events plotted at Harare",
+  "has_coords": true
+ },
+ {
+  "place": "Union of S. Africa.",
+  "qid": "Q193619",
+  "label": "Union of South Africa",
+  "country_qid": "Q258",
+  "p131_qid": null,
+  "instance_of": [
+   "Company Territory"
+  ],
+  "match_type": "curated_patch",
+  "query": "South Africa",
+  "count": 1062,
+  "patched_from": "Q5155572",
+  "patch_reason": "B5: 'Union of S. Africa'/'S. Africa'/'S.A.' manifest-joined by containment to the BSAC (Rhodesia) territory; 960 CO events plotted at Harare",
+  "has_coords": true
+ },
+ {
+  "place": "Penang",
+  "qid": "Q1150673",
+  "label": "Penang",
+  "country_qid": "Q833",
+  "p131_qid": null,
+  "instance_of": [
+   "state"
+  ],
+  "match_type": "curated_patch",
+  "query": "Penang",
+  "count": 1425,
+  "has_coords": true,
+  "note": "modern-equivalent QID for accurate George Town geography; colonial Penang = a settlement of the Straits Settlements (1826-1946)",
+  "patched_from": "Q188096",
+  "patch_reason": "B6: Q188096 is the post-1957 Malaysian state; Q1150673 = Penang Island (Prince of Wales Island), colony via crosswalk -> Straits Settlements"
+ },
+ {
+  "place": "Penang.",
+  "qid": "Q1150673",
+  "label": "Penang",
+  "country_qid": "Q833",
+  "p131_qid": null,
+  "instance_of": [
+   "state"
+  ],
+  "match_type": "curated_patch",
+  "query": "Penang",
+  "count": 1425,
+  "has_coords": true,
+  "note": "modern-equivalent QID for accurate George Town geography; colonial Penang = a settlement of the Straits Settlements (1826-1946)",
+  "patched_from": "Q188096",
+  "patch_reason": "B6: Q188096 is the post-1957 Malaysian state; Q1150673 = Penang Island (Prince of Wales Island), colony via crosswalk -> Straits Settlements"
+ },
+ {
+  "place": "Victoria gaol",
+  "qid": "Q10930180",
+  "label": "Victoria Prison",
+  "country_qid": null,
+  "p131_qid": null,
+  "instance_of": [
+   "former prison"
+  ],
+  "match_type": "mcp_unverified",
+  "query": "Victoria gaol",
+  "count": 37,
+  "has_coords": true
+ },
+ {
+  "place": "Perth",
+  "qid": "Q203000",
+  "label": "Perth",
+  "country_qid": "Q22",
+  "p131_qid": null,
+  "instance_of": [
+   "city"
+  ],
+  "match_type": "mcp_unverified",
+  "query": "Perth",
+  "count": 35,
+  "has_coords": true
+ },
+ {
+  "place": "Victoria West",
+  "qid": "Q3642193",
+  "label": "Victoria West",
+  "country_qid": null,
+  "p131_qid": null,
+  "instance_of": [
+   "human settlement"
+  ],
+  "match_type": "mcp_unverified",
+  "query": "Victoria West",
+  "count": 8,
+  "has_coords": true
+ },
+ {
+  "place": "Victoria, West",
+  "qid": "Q3642193",
+  "label": "Victoria West",
+  "country_qid": null,
+  "p131_qid": null,
+  "instance_of": [
+   "human settlement"
+  ],
+  "match_type": "mcp_unverified",
+  "query": "Victoria West",
+  "count": 8,
+  "has_coords": true
+ },
+ {
+  "place": "Victoria Inst.",
+  "qid": null,
+  "label": null,
+  "country_qid": null,
+  "p131_qid": null,
+  "instance_of": [],
+  "match_type": "ungrounded",
+  "query": "Victoria Inst.",
+  "count": 7,
+  "has_coords": null
+ },
+ {
+  "place": "Victoria, Australia",
+  "qid": "Q56850459",
+  "label": "Victoria (Colony)",
+  "country_qid": "Q408",
+  "p131_qid": null,
+  "instance_of": [
+   "state"
+  ],
+  "match_type": "context_fix",
+  "query": "Victoria Australia",
+  "count": 6,
+  "has_coords": true
+ },
+ {
+  "place": "Victoria, B.C.",
+  "qid": "Q2132",
+  "label": "Victoria",
+  "country_qid": "Q16",
+  "p131_qid": null,
+  "instance_of": [
+   "city"
+  ],
+  "match_type": "mcp_unverified",
+  "query": "Victoria British Columbia",
+  "count": 6,
+  "has_coords": true
+ },
+ {
+  "place": "Victoria, B. Columbia",
+  "qid": "Q2132",
+  "label": "Victoria",
+  "country_qid": "Q16",
+  "p131_qid": null,
+  "instance_of": [
+   "city"
+  ],
+  "match_type": "mcp_unverified",
+  "query": "Victoria British Columbia",
+  "count": 6,
+  "has_coords": true
+ },
+ {
+  "place": "Victoria East",
+  "qid": null,
+  "label": null,
+  "country_qid": null,
+  "p131_qid": null,
+  "instance_of": [],
+  "match_type": "ungrounded",
+  "query": "Victoria East",
+  "count": 5,
+  "has_coords": null
+ },
+ {
+  "place": "Victoria, East",
+  "qid": null,
+  "label": null,
+  "country_qid": null,
+  "p131_qid": null,
+  "instance_of": [],
+  "match_type": "ungrounded",
+  "query": "Victoria East",
+  "count": 5,
+  "has_coords": null
+ },
+ {
+  "place": "Victoria district",
+  "qid": null,
+  "label": null,
+  "country_qid": null,
+  "p131_qid": null,
+  "instance_of": [],
+  "match_type": "ungrounded",
+  "query": "Victoria district",
+  "count": 3,
+  "has_coords": false
+ },
+ {
+  "place": "Victoria Gaol, Hong Kong",
+  "qid": null,
+  "label": null,
+  "country_qid": null,
+  "p131_qid": null,
+  "instance_of": [],
+  "match_type": "ungrounded",
+  "query": "Victoria Gaol Hong Kong",
+  "count": 3,
+  "has_coords": false
+ },
+ {
+  "place": "Victoria W.",
+  "qid": null,
+  "label": null,
+  "country_qid": null,
+  "p131_qid": null,
+  "instance_of": [],
+  "match_type": "ungrounded",
+  "query": "Victoria W.",
+  "count": 3,
+  "has_coords": false
+ },
+ {
+  "place": "Victoria (B. C.)",
+  "qid": "Q2132",
+  "label": "Victoria",
+  "country_qid": null,
+  "p131_qid": null,
+  "instance_of": [
+   "reuse_variant"
+  ],
+  "match_type": "mcp_reuse_variant",
+  "query": "Victoria (B. C.)",
+  "count": 1,
+  "has_coords": true
+ },
+ {
+  "place": "Victoria, N.S. Wales, Queensland, S. Australia, N. Zealand, and Tasmania",
+  "qid": null,
+  "label": null,
+  "country_qid": null,
+  "p131_qid": null,
+  "instance_of": [],
+  "match_type": "ungrounded",
+  "query": "Victoria New South Wales Queensland South Australia New Zealand and Tasmania",
+  "count": 3,
+  "has_coords": false
+ },
+ {
+  "place": "Victoria, New South Wales, Queensland, South Australia, New Zealand, and Tasmania",
+  "qid": null,
+  "label": null,
+  "country_qid": null,
+  "p131_qid": null,
+  "instance_of": [],
+  "match_type": "ungrounded",
+  "query": "Victoria New South Wales Queensland South Australia New Zealand and Tasmania",
+  "count": 3,
+  "has_coords": false
+ },
+ {
+  "place": "Victoria and N.S.W.",
+  "qid": null,
+  "label": null,
+  "country_qid": null,
+  "p131_qid": null,
+  "instance_of": [],
+  "match_type": "ungrounded",
+  "query": "Victoria and N.S.W.",
+  "count": 2,
+  "has_coords": false
+ },
+ {
+  "place": "Victoria East, Cape Colony",
+  "qid": null,
+  "label": null,
+  "country_qid": null,
+  "p131_qid": null,
+  "instance_of": [],
+  "match_type": "ungrounded",
+  "query": "Victoria East Cape Colony",
+  "count": 2,
+  "has_coords": false
+ },
+ {
+  "place": "Victoria E., Cape colonial",
+  "qid": null,
+  "label": null,
+  "country_qid": null,
+  "p131_qid": null,
+  "instance_of": [],
+  "match_type": "ungrounded",
+  "query": "Victoria E. Cape colonial",
+  "count": 2,
+  "has_coords": false
+ },
+ {
+  "place": "Victoria county",
+  "qid": null,
+  "label": null,
+  "country_qid": null,
+  "p131_qid": null,
+  "instance_of": [],
+  "match_type": "ungrounded",
+  "query": "Victoria county",
+  "count": 2,
+  "has_coords": false
+ },
+ {
+  "place": "Victoria, Cape",
+  "qid": null,
+  "label": null,
+  "country_qid": null,
+  "p131_qid": null,
+  "instance_of": [],
+  "match_type": "ungrounded",
+  "query": "Victoria Cape Colony",
+  "count": 2,
+  "has_coords": false
+ },
+ {
+  "place": "Victoria Inst., K. Lumpur",
+  "qid": null,
+  "label": null,
+  "country_qid": null,
+  "p131_qid": null,
+  "instance_of": [],
+  "match_type": "ungrounded",
+  "query": "Victoria Inst. Kuala Lumpur",
+  "count": 2,
+  "has_coords": false
+ },
+ {
+  "place": "Victoria, Seychelles, and outlying islands",
+  "qid": null,
+  "label": null,
+  "country_qid": null,
+  "p131_qid": null,
+  "instance_of": [],
+  "match_type": "ungrounded",
+  "query": "Victoria Seychelles and outlying islands",
+  "count": 2,
+  "has_coords": false
+ },
+ {
+  "place": "Victoria West, Cape of Good Hope",
+  "qid": "Q3642193",
+  "label": "Victoria West",
+  "country_qid": null,
+  "p131_qid": null,
+  "instance_of": [],
+  "match_type": "mcp_unverified",
+  "query": "Victoria West Cape of Good Hope",
+  "count": 2,
+  "has_coords": true
+ },
+ {
+  "place": "Victoria West, C. of Good Hope",
+  "qid": "Q3642193",
+  "label": "Victoria West",
+  "country_qid": null,
+  "p131_qid": null,
+  "instance_of": [],
+  "match_type": "mcp_unverified",
+  "query": "Victoria West Cape of Good Hope",
+  "count": 2,
+  "has_coords": true
+ },
+ {
+  "place": "Victoria, British Columbia",
+  "qid": "Q1973",
+  "label": "British Columbia",
+  "country_qid": "Q16",
+  "p131_qid": null,
+  "instance_of": [
+   "province of Canada"
+  ],
+  "has_coords": true,
+  "match_type": "context_fix"
+ },
+ {
+  "place": "Victoria, Seychelles, and outlying islands",
+  "qid": "Q3940",
+  "label": "Victoria, Seychelles",
+  "country_qid": "Q1042",
+  "p131_qid": null,
+  "instance_of": [
+   "manual_victoria_reground"
+  ],
+  "match_type": "manual_verified",
+  "query": "Victoria, Seychelles, and outlying islands",
+  "count": 1,
+  "has_coords": true
+ },
+ {
+  "place": "Victoria Gaol, Hong Kong",
+  "qid": "Q10930180",
+  "label": "Victoria Prison",
+  "country_qid": "Q8646",
+  "p131_qid": null,
+  "instance_of": [
+   "manual_victoria_reground"
+  ],
+  "match_type": "manual_verified",
+  "query": "Victoria Gaol, Hong Kong",
+  "count": 1,
+  "has_coords": true
+ },
+ {
+  "place": "Victoria Inst., K. Lumpur",
+  "qid": "Q1865",
+  "label": "Kuala Lumpur",
+  "country_qid": "Q833",
+  "p131_qid": null,
+  "instance_of": [
+   "manual_victoria_reground"
+  ],
+  "match_type": "manual_verified",
+  "query": "Victoria Inst., K. Lumpur",
+  "count": 1,
+  "has_coords": true
+ },
+ {
+  "place": "Victoria Inst.",
+  "qid": "Q1865",
+  "label": "Kuala Lumpur",
+  "country_qid": "Q833",
+  "p131_qid": null,
+  "instance_of": [
+   "manual_victoria_reground"
+  ],
+  "match_type": "manual_verified",
+  "query": "Victoria Inst.",
+  "count": 1,
+  "has_coords": true
+ },
+ {
+  "place": "Victoria East, Cape Colony",
+  "qid": "Q20618539",
+  "label": "Victoria-Oos",
+  "country_qid": "Q258",
+  "p131_qid": null,
+  "instance_of": [
+   "manual_victoria_reground"
+  ],
+  "match_type": "manual_verified",
+  "query": "Victoria East, Cape Colony",
+  "count": 1,
+  "has_coords": true
+ },
+ {
+  "place": "Victoria E., Cape colonial",
+  "qid": "Q20618539",
+  "label": "Victoria-Oos",
+  "country_qid": "Q258",
+  "p131_qid": null,
+  "instance_of": [
+   "manual_victoria_reground"
+  ],
+  "match_type": "manual_verified",
+  "query": "Victoria E., Cape colonial",
+  "count": 1,
+  "has_coords": true
+ },
+ {
+  "place": "Victoria East",
+  "qid": "Q20618539",
+  "label": "Victoria-Oos",
+  "country_qid": "Q258",
+  "p131_qid": null,
+  "instance_of": [
+   "manual_victoria_reground"
+  ],
+  "match_type": "manual_verified",
+  "query": "Victoria East",
+  "count": 1,
+  "has_coords": true
+ },
+ {
+  "place": "Victoria, East",
+  "qid": "Q20618539",
+  "label": "Victoria-Oos",
+  "country_qid": "Q258",
+  "p131_qid": null,
+  "instance_of": [
+   "manual_victoria_reground"
+  ],
+  "match_type": "manual_verified",
+  "query": "Victoria, East",
+  "count": 1,
+  "has_coords": true
+ }
+]

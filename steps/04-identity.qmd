@@ -1,0 +1,40 @@
+---
+title: "Clean: one person or two?"
+subtitle: "Minutes 22–30. Forty editions, OCR garbles, and the cases that need a historian."
+---
+
+## The problem
+
+Trimen has an entry in seven editions. A long-serving official has one in forty. Across 85 volumes the Record of Services yields on the order of 100,000 entry instances that have to be resolved into 27,526 people. Most of that is easy: the same surname, the same given names, the same career a line longer each year. The rest is where the OCR has rewritten a surname, a man has changed his title, or two men share a name.
+
+The design rule, stated before any code was written ([approach](../outputs/identity/approach-career-chains.md)):
+
+> A missed link is recoverable; a false merge silently corrupts the record. Every default resolves ties to *no merge*.
+
+## The passes
+
+1. **Deterministic passes** merge on strong keys: identical name and birth year, identical name and a shared dated event, and so on. They did most of the work and were tested against 543 hand-verified careers with zero false merges.
+2. **Clustering** the residue: biographies that share a spelled forename and the last four letters of the surname land together, so OCR variants of one person meet.
+3. **Adjudication** of each cluster by a model reading a dossier: every version of every biography, with birth year, education, honours, the full dated career. The output is a partition into people with a reason for each merge, appended to a ledger ([rules and loop](../outputs/identity/dedup-method-and-rules.md), [first 25 ledger entries](../outputs/identity/llm-merges-first25.json)). 917 groups so far.
+4. **A silver standard** of 200 hand-labelled cases, built afterwards, to measure what the passes and the judge actually did. On the India Office List the deterministic tier scored 39 of 40 (one unsure).
+
+## The rules
+
+Merge only on positive same-person evidence: an overlapping dated event, a near-identical education string, a shared honour with its year, or an OCR surname variant with a consistent career. Birth year is OCR-noisy and never splits on its own. Different spelled forenames keep people apart. And the decisive case: same name, adjacent birth years, divergent education or specialty is two people.
+
+## Four clusters
+
+From a [sample of twelve](../outputs/identity/dedup-clusters-sample.txt), unedited:
+
+| Cluster | | Decision |
+|---|---|---|
+| ABERY, Joseph / CARBERY, Joseph | Both M.B.C.M.; both "1867 Ceylon Assistant colonial surgeon"; ABERY appears in one edition, CARBERY in six | **Merge.** ABERY is an OCR garble; one identical event suffices with the forename and honour |
+| A'BECKETT, Thomas, b. 1836 / BECKETT, Thomas Rumbold, b. 1898 | Suffix and forename match; a Victorian judge knighted 1909 and a Nigerian telegraph engineer of 1948 | **Keep apart.** Birth years 62 years apart and disjoint careers |
+| ABRAHAM, Henry Charles, b. 1887 / GRAHAM, Charles Drummond, b. 1901 | Suffix "aham" and the forename Charles | **Keep apart.** Different first forenames, different colonies, no shared event |
+| ABBOTT, Myles John, b. 1906 / IBBOTT, John Thomas | Suffix and a shared "John" | **Keep apart.** Hong Kong judge of the 1930s and a Demerara customs clerk of 1860 |
+
+Three of four are easy once the dossier is in front of you, and that is the point: the model's job was to assemble the dossier and make the argument. The ledger keeps the reason, so the next person can disagree with it.
+
+**You decide:** the cases where the evidence is one shared event and a plausible OCR garble. Whether a peer's family name and his title are one biography. Whether a "thin" fragment with a full given name and nothing else should join a career. Those went to a review queue ranked by how much the decision matters: career length, cross-colony span, seniority.
+
+Next: [Ground](05-ground.qmd).

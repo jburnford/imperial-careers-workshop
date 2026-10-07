@@ -4,48 +4,54 @@ subtitle: "AI and History Conference, Johns Hopkins University. Thursday 15 Octo
 ---
 
 ::: {.callout-note title="Draft"}
-Working draft for Jim Clifford's review. Source and data: [github.com/jburnford/trimen-workshop](https://github.com/jburnford/trimen-workshop). Facts about the sources have been checked where a page says so; everything else is a proposal.
+Working draft for Jim Clifford's review. Source and data: [github.com/jburnford/trimen-workshop](https://github.com/jburnford/trimen-workshop). The dataset the hour is built on is published as [Imperial Careers](https://jimclifford.ca/col_matching/) (CC0). Counts on these pages come from that repository's `kg_stats.json` and the atlas `meta.json` of 4 September 2026 and are reproduced in [`outputs/atlas/`](outputs/atlas/).
 :::
+
+## One dataset, start to finish
+
+Two printed reference works, the *Colonial Office List* (1862–1966) and the *India Office List* (1886–1947), carry a terse biography for every senior official: born, schooled, every posting, every honour. The same man recurs in forty annual editions. The OCR garbles a name here and there. Two men who share a surname threaten to collapse into one career.
+
+Over a few months, one historian with a coding agent turned those volumes into a knowledge graph and an [animated atlas](https://jimclifford.ca/col_matching/) of imperial careers:
+
+| | Colonial Office List | India Office List |
+|---|---|---|
+| People | 27,526 | 19,400 |
+| Dated career events | 180,470 | 124,694 |
+| Events located to a Wikidata place | 131,343 | 80,238 |
+
+The hour is about how, and about where in that process a historian has to decide something.
 
 ## Three questions
 
-A historian turning a text into data asks three questions of it, and each has one decision only the historian can make. A model can do everything around that decision.
+A historian turning a text into data asks three questions of it, and each has one decision only the historian can make. A model can do everything around that decision, at scale.
 
 | | The question | The model does | You decide |
 |---|---|---|---|
-| **Clean** | Is this what the page says? | Flags what reads oddly | Read the page and rule |
-| **Structure** | What is a record here? | Proposes fields, fills them, keeps the quotes | What counts, and whether the record changed the meaning |
-| **Ground** | Who is this? | Retrieves candidates with evidence | Supported, unresolved, or wrong |
+| **Structure** | What is a record here? | Proposes the fields, fills them for 100,000 entries, reports what it could not parse | What counts as an event; whether the record changed the meaning |
+| **Clean** | Is this one person or two? | Clusters the candidates, argues each case, keeps the evidence | Merge, keep apart, or leave for review |
+| **Ground** | Which place, which person, in the shared vocabulary? | Retrieves candidates with evidence | Supported, unresolved, or wrong |
 
-That is the whole lesson. The hour illustrates it with one page.
+## The second half of the method
 
-## One page
-
-Walter Agar's letter, *The Tropical Agriculturist*, 2 July 1883, p. 66 ([scan](https://archive.org/details/tropicalagricult18831884colo/page/n83/mode/1up)). Two hundred and thirty-four words from a planters' quarrel about one cinchona tree. It contains:
-
-- a sentence the OCR got wrong in a way that reverses its meaning (**clean**);
-- a relationship the journal's editor states loosely and Agar states carefully (**structure**);
-- a person with a strong identity, Henry Trimen, Director of the Royal Botanic Gardens at Peradeniya, and a person with none in any authority file, Agar himself (**ground**).
-
-You do not need to know anything about cinchona. The dispute is context for thirty seconds.
+Extraction is half of it. The other half is looking at the result in a form where errors are visible. The atlas was built to answer a research question, and it turned out to be the best error detector the project had. A British Columbia premier appearing in Australia, a cluster of South African postings landing at Harare, two nodes both called Baluchistan: each was seen on the map, traced to a rule, fixed in the pipeline, and re-emitted for everyone it affected. Build, extract, visualise, see, fix, rerun. That loop is what the hour demonstrates.
 
 ## The hour
 
 | Minutes | | |
 |---|---|---|
-| 0–5 | [The page](steps/01-question.qmd) | Where Trimen comes from, and the letter |
-| 5–20 | [Structure](steps/02-structure-extract.qmd) | The model proposes a table and extracts records. Then you: did a careful statement become a flat one? |
-| 20–30 | [Ground](steps/03-candidates.qmd) | The model retrieves candidates. Then you: supported, unresolved, or wrong? |
-| 30–45 | [Clean, together](steps/04-review.qmd) | The OCR against the page, and what the correction becomes |
-| 45–55 | [Exercise](review/index.html) | Three decisions, in the room or on Zoom |
+| 0–5 | [The atlas](steps/01-atlas.qmd) | What the finished data does, and the loop that made it |
+| 5–12 | [The source](steps/02-source.qmd) | One printed entry. Mark up what you would extract |
+| 12–22 | [Structure](steps/03-structure.qmd) | The schema, the prompt, what the model got wrong, and why the fixes were not a bigger model |
+| 22–30 | [Clean](steps/04-identity.qmd) | Forty editions, one person: the merge rules and the cases that need a historian |
+| 30–40 | [Ground](steps/05-ground.qmd) | A live Wikidata lookup, and a chatbot asked to do the same from memory |
+| 40–47 | [The map finds the errors](steps/06-loop.qmd) | Three errors seen in the atlas and what fixing them changed |
+| 47–55 | [Exercise](review/index.html) | Seven decisions, in the room or on Zoom |
 | 55–60 | [Your own data](steps/07-your-data.qmd) | Taking the three questions to another collection |
-
-Every live stage has a saved checkpoint in `outputs/`.
 
 ## What you need
 
-A browser. The [exercise](review/index.html) runs from saved results and needs no account or key. Remote participants have the same pages and the same exercise; the exercise page has a button that copies a one-line summary of your decisions for the Zoom chat.
+A browser. The [decision exercise](review/index.html) and the [mark-up exercise](annotate/index.html) run from saved results and need no account or key. Remote participants have the same pages; each exercise has a button that copies a one-line summary of your work for the Zoom chat. There is a [printable handout](handout.qmd) with the same entries for the room.
 
 ## Further
 
-For those who want to go on: [what a correction becomes](steps/05-revise.qmd) in a working pipeline, [connecting collections](steps/06-connect.qmd) through a shared identifier, [worked answers](answers.qmd), [running it yourself](setup.qmd), and the [research packet](packet.qmd) for the wider network around Trimen. None of it is needed for the hour.
+[Worked answers](answers.qmd), [running it yourself](setup.qmd), and the saved outputs in [`outputs/`](outputs/): the extraction prompt, the audit of a structured sample, the duplicate-resolution rules and a sample of clusters, the place-grounding cache rows behind the errors, and the project review that found them.

@@ -1,0 +1,54 @@
+[
+ {
+  "co": "kgp_col1928-p1040b6",
+  "io": "kgp_iol1930-c3237995",
+  "name": "HENRY ROBERT CONWAY",
+  "surname": "DOBBS",
+  "birth": 1871,
+  "conf": "A",
+  "ev": "shared honour ('Q12177415', 1925)",
+  "co_stints": 19,
+  "io_stints": 25,
+  "co_qid": "Q4163347",
+  "ambiguous": false
+ },
+ {
+  "co": "kgp_col1948-p501b13",
+  "io": "kgp_iol1936-c4253983",
+  "name": "John Loader Maffey",
+  "surname": "MAFFEY",
+  "birth": 1877,
+  "conf": "A",
+  "ev": "shared honour ('Q12177415', 1931)",
+  "co_stints": 23,
+  "io_stints": 18,
+  "co_qid": null,
+  "ambiguous": false
+ },
+ {
+  "co": "kgp_col1878-p447b3",
+  "io": "kgp_iol1889_jan-c2242376",
+  "name": "PHILIP EDMUND",
+  "surname": "WODEHOUSE",
+  "birth": null,
+  "conf": "A",
+  "ev": "shared honour ('Q12177470', 1862)",
+  "co_stints": 10,
+  "io_stints": 11,
+  "co_qid": "Q1800510",
+  "ambiguous": false
+ },
+ {
+  "co": "kgp_col1886-p459b23",
+  "io": "kgp_iol1895_supp-c1885254",
+  "name": "JOHN",
+  "surname": "WODEHOUSE",
+  "birth": 1826,
+  "conf": "B",
+  "ev": "b.1826",
+  "co_stints": 11,
+  "io_stints": 22,
+  "co_qid": null,
+  "ambiguous": false
+ }
+]

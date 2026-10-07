@@ -1,0 +1,47 @@
+---
+title: "The atlas"
+subtitle: "Minutes 0–5. What the finished data does, and the loop that made it."
+---
+
+## Watch
+
+{{< video https://jimclifford.ca/col_matching/combined_mobility.mp4 >}}
+
+Fifty-six seconds. Every arc is one official moving from one colony, presidency or province to another, drawn from the career graph and played out by year, 1815 to 1966. The [interactive atlas](https://jimclifford.ca/col_matching/) behind it lets you search a name, follow a career, and open the 186 people the pipeline found serving in both the Colonial and the India Office: [Philip Edmond Wodehouse](https://www.wikidata.org/wiki/Q1800510), Governor of British Guiana, then the Cape, then Bombay, is one of them, and a historian of the Cape and a historian of Bombay would each have known half of him.
+
+What the atlas rests on, from the 4 September 2026 build:
+
+| | |
+|---|---|
+| Officials in the roster (both Lists) | 46,926 |
+| Officials with at least one recorded move | 16,287 |
+| Arcs drawn | 36,431 |
+
+Every arc lands where it does because a place name printed in a Victorian reference book was linked to a Wikidata item that carries coordinates, or links to the capital that does. Every arc belongs to one person because forty annual entries were resolved to one biography. Every arc has a year because a clause like "ag. comsnr., 1915-16; and from 1919" was read as two events, not one. Those are the three questions of the hour, and each was decided tens of thousands of times by a model and a few hundred times by a historian.
+
+## The loop
+
+The project did not go OCR, extract, visualise, publish. It went round a loop, many times:
+
+1. **Build** the pipeline with a coding agent: segment the biographies, structure them, resolve duplicates, ground the places.
+2. **Extract** the whole corpus with a cheap model inside that pipeline.
+3. **Visualise** the result in the form the research question needs.
+4. **See** what is wrong. A premier of British Columbia sitting in Australia. South African postings landing at Harare. Two Baluchistans.
+5. **Fix** the rule, not the record. The fix goes into the grounding cache or the resolver, with a test.
+6. **Rerun** and re-emit, and look again at everyone the fix touched, not only the case you noticed.
+
+The atlas is step 3 and step 4 at once. It was built to answer a question about imperial mobility; it turned out to be the project's best error detector, because a wrong grounding is invisible in a table of 180,000 rows and obvious on a map. [Step 6](06-loop.qmd) walks through three of the errors it found.
+
+## Ten years ago
+
+The same three problems at ten million pages: *Trading Consequences* (2012–2013) text-mined nineteenth-century commodity sources with the Edinburgh Geoparser, five institutions and a Digging into Data grant (Clifford, Alex, Coates, Klein and Watson, "Geoparsing history", *Historical Methods* 49:3, 2016, [doi:10.1080/01615440.2015.1116419](https://doi.org/10.1080/01615440.2015.1116419)).
+
+| | Trading Consequences, 2013 | Imperial Careers, 2026 |
+|---|---|---|
+| **Structuring** | A six-stage pipeline adapted by computational linguists; a relation was "same sentence" | A schema and a prompt written with a coding agent in an afternoon; a Qwen model reads 100,000 entries inside the script |
+| **Grounding** | GeoNames string matching; "Saharunpore" missed because the gazetteer knew "Saharanpur"; a bug put every "Italy" in a Texan town; F-scores 0.62 and 0.61 | Semantic search over Wikidata with verification gates; "Victoria" six ways; a bug put the Union of South Africa at Harare |
+| **Review** | Historians spotted false positives through the visualisations; false negatives were invisible | Same. The atlas found the errors; a sampled audit measured the rest |
+
+What changed is who writes the pipeline and how fast the loop from error to fix runs. What did not change is that the errors you can see get fixed, the errors you cannot see need a sample, and a corrected error should become a rule.
+
+Next: [The source](02-source.qmd).

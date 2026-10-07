@@ -1,69 +1,46 @@
 ---
 title: "Run it yourself"
-subtitle: "Optional. The shared exercise needs only a browser; this page is for rerunning or extending the example."
+subtitle: "Optional. The exercises need only a browser; this page is for rerunning or extending the example."
 ---
 
-::: {.callout-warning title="To be confirmed before the session"}
-The exact agent, model and lookup configuration to be demonstrated has not been fixed yet, and the costs of running the example with a personal account have not been measured. This page describes the configuration used to prepare the materials.
-:::
-
-## What is in the repository
+## What is in this repository
 
 ```
-source-pack/          OCR text, scan-checked transcription, Colonial Office List entries, citations
-outputs/01-structure/ model proposals for the record structure (one folder per run)
-outputs/02-extract/   extraction scripts, records and notes (one folder per run)
-outputs/03-candidates/ candidate identities with retrieved evidence
-outputs/05-revise/    the two real revisions, with before and after
-outputs/06-connect/   Trimen across the three collections
-review/               the browser exercise (static HTML + cases.json)
-research/trimen-network/  the wider research packet and the cached Wikidata responses
-scripts/              build scripts (no network needed except ground_trimen.py)
+outputs/structure/   the extraction prompt, Trimen's structured record, three audit examples, the structuring runbook
+outputs/identity/    the merge rules and loop, the approach document, a sample of twelve clusters, the first 25 ledger entries
+outputs/ground/      place-grounding cache rows for Victoria, South Africa, Penang, Perth; Brewster's record
+outputs/ground-test/ twenty entries for the grounding test, the answer key with MCP lookups, the Gemini run and its scoring
+outputs/audit/       the structuring error catalogue, the every-tenth reviewed pairs, the September 2026 project review, the running fixes list
+outputs/atlas/       kg_stats for both corpora, the atlas meta.json, the Wodehouse bridge records, the essay on grounding
+annotate/            the mark-up exercise (static HTML + bios.json)
+review/              the decision exercise (static HTML + cases.json)
+source-pack/         Trimen's seven Colonial Office List entries
+archive/tropical/    the earlier draft built on The Tropical Agriculturist, kept for reference
 ```
 
-## Rerunning the saved extraction
+## The dataset
 
-Each extraction run saved a script that regenerates its records from the OCR text, offline:
+Everything here is drawn from [Imperial Careers](https://github.com/jburnford/col_matching) (data CC0, code MIT, [DOI 10.5281/zenodo.21079938](https://doi.org/10.5281/zenodo.21079938)). The finished graph is committed there as JSONL under `data/kg/graph_stage3/` and `data/iol/graph_stage3/`; the README shows how to load it into LadybugDB or Neo4j in two commands. The pipeline code, the grounding caches and the method documents are in the same repository.
+
+## Rebuilding the exercise
 
 ```bash
-python3 outputs/02-extract/run-A/02_extract.py source-pack
+python3 scripts/build_review_cases.py      # cases.json for the decision exercise
 ```
 
-## Rebuilding the tables
+No network needed.
 
-```bash
-python3 scripts/build_trimen_workshop.py   # research packet CSV/JSON from the frozen search extract
-python3 scripts/build_candidates.py        # candidate evidence from the cached Wikidata responses
-python3 scripts/build_source_pack.py       # participant source pack
-python3 scripts/build_review_cases.py      # cases.json for the exercise
-```
+## Running the grounding test
 
-None of these touch the network.
+`outputs/ground-test/bios.md` has the twenty entries. For the chatbot column, paste them into any model without tools. For the retrieval column, use the [WikidataMCP](https://wd-mcp.wmcloud.org/) server (Streamable HTTP endpoint `https://wd-mcp.wmcloud.org/mcp`) from a coding agent, or its public search endpoint. Two things to know:
 
-## Running the extraction with a local open model
+- **Use the vector search, not the string search.** Wikidata's ordinary search API matches labels by string similarity. The MCP server's `search_items` uses semantic embeddings. It is rate limited; cache what you retrieve.
+- **No identifiers from memory.** Tell the agent, and check its output. Resolve every identifier you are given before you keep it; `wbgetentities` with a list of ids is enough to see what they are.
 
-`outputs/02-extract/run-C/02_extract.py` sends the two prompts to any OpenAI-compatible server (the saved run used Qwen3.8-27B-FP8 under vLLM on the University of Saskatchewan's Plato cluster; `scripts/plato_qwen_extract.slurm` is the job). Point it at your own server:
+## Running the structuring prompt
 
-```bash
-python3 outputs/02-extract/run-C/02_extract.py --base-url http://127.0.0.1:8000/v1 --model <served-name> --sources source-pack --out /tmp/runC
-```
-
-The model in this mode is not an agent: it returns the records as JSON and the script saves them. That is the shape of a production pipeline, where the agent writes the script once and the cheap model runs inside it.
-
-## Running the live steps with your own agent
-
-You need a coding agent that can read files, run Python and call a Wikidata lookup tool. The materials were prepared with [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and the [WikidataMCP](https://wd-mcp.wmcloud.org/) server (Streamable HTTP endpoint `https://wd-mcp.wmcloud.org/mcp`). Two things to know:
-
-- **Use the vector search, not the string search.** Wikidata's ordinary search API matches labels by string similarity. "Walpole Island" returns an island in New Caledonia. The MCP server's `search_items` uses semantic embeddings. It is rate limited; cache what you retrieve.
-- **No identifiers from memory.** Tell the agent, and check its output. The research packet's `scripts/ground_trimen.py` shows one way to cache full entity responses with retrieval timestamps.
-
-To fetch fresh evidence for an entity:
-
-```bash
-python3 scripts/ground_trimen.py entities Q2462643
-python3 scripts/ground_trimen.py search "Walter Agar Ceylon planter"
-```
+`outputs/structure/extraction-prompt.txt` is the system prompt. Send it with one entry as the user message to any OpenAI-compatible endpoint and ask for JSON. The Imperial Careers repository's `col_match/kg/extract.py` is the production version, with the validator that drops any place or year not present in the source.
 
 ## Credentials
 
-No file in this repository contains a credential, and none is needed for the exercise. If you configure an agent with an API key, keep it out of the repository.
+No file in this repository contains a credential, and none is needed for the exercises. If you configure an agent with an API key, keep it out of the repository.

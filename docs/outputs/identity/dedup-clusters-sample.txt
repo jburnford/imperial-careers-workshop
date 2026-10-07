@@ -1,0 +1,98 @@
+# 1193 clusters shown (of 1582 unreviewed); ledger has 917 groups
+
+### CLUSTER 1  (2 bios, surnames: ["A'BECKETT", 'BECKETT'])
+  [unmatch.] bio=a-beckett_thomas_b1836
+      versions=['col1909-L43508.v', 'col1911-L42709.v', 'col1918-L48177.v']
+      A'BECKETT, THOMAS; b.1836; hon: KNT. BACH/1909; career: 1859 - called to the Bar, Lincoln's Inn | 1860 - to Victorian Bar | 1886 Victoria puisne judge, Victoria, since
+  [MATCHED ] bio=beckett_thomas-rumbold_b1898
+      versions=['col1948-L31075.v', 'col1949-L30344.v']
+      BECKETT, Thomas Rumbold; b.1898; ed. ed. Judd Sch., Tonbridge and Faraday House, Lond.; hon: A.M.I.E.E; career: 1924 Nigeria asst. tel. engnr. | 1940 Nigeria div. engnr | 1948 Nigeria asst. engnr.-in-ch., posts & tels
+
+### CLUSTER 2  (2 bios, surnames: ['AANENSEN', 'JANSEN'])
+  [unmatch.] bio=aanensen_ernest-fenelon_b1882
+      versions=['col1940-L61853.v']
+      AANENSEN, ERNEST FENELON; b.1882; ed. ed. Ardingly Coll., Sussex and Queen's Royal Coll., Trinidad; career: 1900 - ent. Trinidad civ. serv | 1931 - princ. offr. sect | 1938 - 2nd astt. col. sec
+  [unmatch.] bio=jansen_ernest-george_b1881
+      versions=['col1925-L56841.v', 'col1934-L60595.v']
+      JANSEN, ERNEST GEORGE; b.1881; ed. ed. Ladysmith Gov't. Schl. and Durban High Schl.; hon: B.A; career: 1921 - mem., Union H. of A. for Vryheid s | 1924 - speaker, Union H. of A | 1929 - min. of native affs | 1933 - speaker, H. of A
+
+### CLUSTER 3  (2 bios, surnames: ['ABBOTT', 'IBBOTT'])
+  [MATCHED ] bio=abbott_myles-john_b1906
+      versions=['col1953-L16275.v', 'col1937-L58329.v']
+      ABBOTT, MYLES JOHN; b.1906; ed. ed. King's Sch., Canterbury; hon: Kt/1964; career: 1929 - admitted solr. (Eng.) | 1933 - 2nd lieut., 9th Bn., Middx. Regt.  | 1936 Hong Kong asst. crown solr. | 1936 - lieut | 1946 Hong Kong secon. to Ethiopian Govt. as pres. | 1950 Nigeria puisne judge | 1955 Nigeria judge, high ct. of Lagos and Cams | 1957 Nigeria fedl. justice | 1961 Bermuda ch. just.
+  [unmatch.] bio=ibbott_john-thomas_e1860
+      versions=['col1883-L28106.v', 'col1889-L33869.v']
+      IBBOTT, JOHN THOMAS; b.?; career: 1860 Demerara clerk in charge of the colonial bo | 1869 Demerara acting tide waiter | 1869 Berbice acting sub-controller of customs a | 1870 Berbice acting assistant government secret | 1870 Demerara 1st clerk to the customs | 1872 -  | 1874 - comptroller of customs | 1875 Berbice Sub-controller of customs and sub-
+
+### CLUSTER 4  (2 bios, surnames: ['ABRAHAM', 'GRAHAM'])
+  [MATCHED ] bio=abraham_henry-charles_b1887
+      versions=['col1930-L62066.v']
+      ABRAHAM, HENRY CHARLES; b.1887; ed. ed. Taunton's Schl., Southampton and Southampton Univ. Coll.; hon: F.L.S; career: 1911 Federated Malay States survr. prob. | 1912 Federated Malay States survr., grade II, topo. br | 1915 Federated Malay States 2nd lieut., R.G.A. (S.R.) | 1917 Federated Malay States lieut.- | 1919 Federated Malay States asst. aspt., topo. br | 1920 Federated Malay States rel. comm | 1927 Federated Malay States ag. aspt., topo. br | 1928 Federated Malay States ag. aspt., surveys, Penang | 1929 Federated Malay States sen. asst. supdt., topo. br | 1930 Federated Malay States senr. asst. supt., topo. br | 1932 Federated Malay States do., survey dept., F.M.S. and S.S | 1933 Straits Settlements supt., survey dept., S.S. and F.M.
+  [unmatch.] bio=graham_charles-drummond_b1901
+      versions=['col1948-L32928.v']
+      GRAHAM, Charles Drummond; b.1901; ed. ed. King's Sch., Canterbury; hon: A.M.I.C.E; career: 1922 - apptd. to K.U.R.S.H | 1927 - temp. asst. engrnr., P.W.D. Ken | 1932 - road survr | 1937 - asst. engrnr. (rev. staff) | 1944 - senr. asst. engrnr | 1945 - exec. engrnr., Gr. I
+
+### CLUSTER 5  (2 bios, surnames: ['ABRAMS', 'MIRAMS'])
+  [MATCHED ] bio=abrams_arthur-barrow_e1905
+      versions=['col1910-L43884.v']
+      ABRAMS, ARTHUR BARROW; b.?; career: 1905 Gold Coast asst. head storekeeper, P.W.D. | 1906 Gold Coast head storekeeper | 1907 Gold Coast asst. ch. clk. and acctnt | 1908 Gold Coast ch. clk. and acctnt
+  [MATCHED ] bio=mirams_rex-arthur_b1902
+      versions=['col1956-L23088.v', 'col1948-L34690.v']
+      MIRAMS, Rex Arthur; b.1902; ed. ed. Bishop's Stortford Coll. and Emmanuel Coll., Camb.; hon: A.M.I.C.E; career: 1936 Nigeria engrnr. | 1945 Hong Kong engrnr. | 1954 Hong Kong ch. engrnr
+
+### CLUSTER 6  (2 bios, surnames: ['ABRAMSON', 'HYAMSON'])
+  [unmatch.] bio=abramson_albert_b1876
+      versions=['col1927-L56703.v']
+      ABRAMSON, ALBERT; b.1876; hon: C.B.E/1927;O.B.E; career: 1918 - O.B.E | 1918 - mily. gov., Hebron | 1920 - ohmn., land coman., and dir., land | 1921 Transjordan ch. Br. rep. | 1922 Transjordan dist. gov., southern dist | 1925 Transjordan dist. comanr., northern dist | 1927 Transjordan comanr., lands
+  [MATCHED ] bio=hyamson_albert-montefiore_b1873
+      versions=['col1927-L59957.v']
+      HYAMSON, ALBERT MONTEFIORE; b.1873; ed. ed. Oxford High Schl. and Swansea Gram. Schl.; hon: O.B.E/1931; career: 1896 - savings bank dept., G.P.O., London | 1898 - supplementary estab., secy.'s dept | 1917 - dept. of infrn., F.O | 1918 - in charge, of sec., miny. of infrn | 1918 - Br. war mission | 1921 Palestine astt. dir., immigrn. and travel | 1922 Palestine sec., cent. town planning comsnt | 1923 Palestine in charge, dept. of immigrn. and t | 1924 Palestine contrlr., permits | 1926 Palestine ch. immigrn. offr | 1932 Palestine dir., immigrn
+
+### CLUSTER 7  (2 bios, surnames: ['ACKROYD', 'HOLROYD'])
+  [MATCHED ] bio=ackroyd_edward-james_e1853
+      versions=['col1883-L26129.v', 'col1899-L33336.v', 'col1898-L31854.v']
+      ACKROYD, EDWARD JAMES; b.?; hon: KT. BACH./1898;KT. RACI./1898; career: 1853 Mauritius Clk., sup. ct. | 1858 Mauritius clerk registry supreme court | 1859 - clerk to first puisne judge | 1863 - chief clerk in registry Supreme Co | 1863 - cl. clk., registry, sup. ct. | 1864 - chief clerk master's office | 1871 -  | 1871 -  | 1871 -  | 1872 -  | 1872 - called to the bar | 1873 Mauritius acting district magistrate | 1873 Riviere du Rempart dist. and stip. mag. | 1874 Port Louis acting police stipendiary magistra retired.1895
+  [unmatch.] bio=holroyd_edward-dundas_b1828
+      versions=['col1907-L44926.v']
+      HOLROYD, EDWARD DUNDAS; b.1828; ed. ed. at Winchester (Queen's gold medal for Latin and English essays), Trin. Coll., Camb. (B; hon: K.T. BACH/1903; career: 1856 - called to the bar | 1859 - called to Victorian bar | 1867 - Tasmanian bar | 1879 - Q.C | 1881 - raised to bench | 1906 - ret
+
+### CLUSTER 8  (2 bios, surnames: ['ADAMS'])
+  [unmatch.] bio=adams_alexander-samuel_b1861
+      versions=['col1922-L50205.v']
+      ADAMS, ALEXANDER SAMUEL; b.1861; ed. ed., pub. schls. and Otago Univ., N.Z.; career: 1883 - barrister and solr | 1920 - crown solr | 1921 New Zealand judge, N.Z. sup. obl
+  [MATCHED ] bio=adams_theodore-samuel_b1885
+      versions=['col1922-L50213.v', 'col1932-L57887.v']
+      ADAMS, THEODORE SAMUEL; b.1885; ed. ed., King's Schll., Canterbury, and All Soul's Coll., Oxford, B.A.; hon: C.M.G/1937; career: 1908 Federated Malay States cadet | 1910 Federated Malay States ag. supervisor of cust., Taiping | 1911 Federated Malay States asst. dist. offr., Klang | 1912 Federated Malay States dist. offr., Kuala Langat | 1914 Federated Malay States dist. offr., Ulu Kelantan | 1918 Kelantan supdt., lands | 1919 Kelantan ag. 1st asst. sec | 1920 Federated Malay States ag. 1st asst. sec. to govt | 1922 Kelantan ag. dist. offr., Ulu Selangor | 1923 Kelantan ag. dist. offr., Larut | 1925 Kelantan offr., cls. III | 1926 Federated Malay States dist. offr., Larut and regisr. tit | 1927 Kelantan ag.-dist. offr., Kuala Kangsar | 1928 Kelantan offr., cls. I.B., chmn., sany. bd.
+
+### CLUSTER 9  (2 bios, surnames: ['ADAMS'])
+  [MATCHED ] bio=adams_alfred-robert-davies_b1901
+      versions=['col1933-L57312.v']
+      ADAMS, ALFRED ROBERT DAVIES; b.1901; career: 1924 - lect. in protozoology | 1930 Uganda protozoologist | 1932 Mauritius pathologist
+  [MATCHED ] bio=adams_robert-patton_e1867
+      versions=['col1888-L31740.v']
+      ADAMS, ROBERT PATTON; b.?; career: 1867 Tasmania Solicitor-general | 1889 - puisne judge
+
+### CLUSTER 10  (2 bios, surnames: ['ADAMS'])
+  [unmatch.] bio=adams_ernest_b1884
+      versions=['col1924-L51897.v']
+      ADAMS, ERNEST; b.1884; ed. ed. Royal Orphanage, Wolverhampton; hon: O.B.E/1924; career: 1908 New South Wales company sec., Sydney | 1915 New South Wales office of agt. gen. for N.S.W., Lo | 1916 New South Wales custodian of enemy property, occup | 1919 Tanganyika Tanganyika territory
+  [MATCHED ] bio=adams_ernest-victor_b1875
+      versions=['col1920-L51309.v']
+      ADAMS, ERNEST VICTOR; b.1875; ed. Cranleigh Schl. and City of London Coll.; career: 1891 - served articles | 1894 - tech. asst., accts. br. | 1895 - accts. clk., civ.-engnr.-in-chfs.  | 1898 - passed prelim. exam. | 1900 Cape Colony senr. accts. clk., in charge accts | 1901 - agt. | 1902 - coman. | 1905 - captain | 1906 India ch. acctsnt., Engnr. | 1910 England asst. sec., Engnr. | 1912 Gold Coast acctsnt. and osnr. | 1915 - Fellow of the Registd. Corp. Acctn | 1918 Togoland rly. acctsnt., in charge rly. and  | 1919 Gambia asst. rec.-gen.
+
+### CLUSTER 11  (2 bios, surnames: ['ADAMS'])
+  [MATCHED ] bio=adams_george-p_e1876
+      versions=['col1888-L31734.v', 'col1886-L31826.v']
+      ADAMS, GEORGE P; b.?; career: 1876 Tasmania Recorder of titles | 1885 Tasmania registrar, supreme court
+  [MATCHED ] bio=adams_wilfrid-george_b1885
+      versions=['col1931-L61904.v']
+      ADAMS, WILFRID GEORGE; b.1885; ed. ed. Shrewsbury and Lincoln Coll., Oxford; hon: C.M.G/1926; career: 1914 Uganda asst. dist. comsrr. | 1919 Uganda dist. comsrr | 1928 Uganda dep. prov. comsrr | 1929 Uganda prov. comsrr., 2nd grade | 1930 Uganda 1st grade
+
+### CLUSTER 12  (2 bios, surnames: ['ADAMS'])
+  [MATCHED ] bio=adams_philip-francis-burnett_b1864
+      versions=['col1908-L42829.v', 'col1913-L43317.v']
+      ADAMS, PHILIP FRANCIS BURNETT; b.1864; ed. Ed. at King's Coll.; hon: M.I.C.E;M.I.M.E; career: 1902 - survr.-gen., O.R.C | 1903 - in addition head of mines dept | 1903 - M.L.C | 1910 Orange Free State survr.-gen.
+  [MATCHED ] bio=adams_phillip-francis_b1914
+      versions=['col1955-L19420.v', 'col1951-L35535.v']
+      ADAMS, Phillip Francis; b.1914; ed. ed. Mitcham Secondary Sch. and Lond. Univ.; hon: O.B.E/1948; career: 1937 - I.C.S | 1939 - asst. comsnr., Assam | 1945 - sec. to gov | 1947 - advr. to gov., for tribal areas an | 1948 Tanganyika col. admin. serv., sec. to devel.  | 1949 Tanganyika prin. asst. sec | 1950 Tanganyika prin. asst. sec. (devel.) | 1953 Tanganyika M.C.S., cl. IC | 1954 Malaya leader, Mal. reps., inter. rubber  | 1955 Tanganyika contrl., commerce and industry | 1957 Tanganyika supnmy. offr
+

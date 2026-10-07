@@ -1,0 +1,199 @@
+{
+ "bio": {
+  "bio_id": "col1918-p696b8",
+  "edition_year": 1918,
+  "surname": "BREWSTER",
+  "given_names": "HARLAN C",
+  "birth_year": 1870,
+  "honours": [],
+  "events": [
+   {
+    "position": "removed to B. Columbia in",
+    "place": null,
+    "year_start": 1897,
+    "year_end": null,
+    "text_span": "removed to B. Columbia in 1897",
+    "place_inherited": false
+   },
+   {
+    "position": "elec. to legis. ass. for Alberni, B. Columbia",
+    "place": null,
+    "year_start": 1907,
+    "year_end": null,
+    "text_span": "elec. to legis. ass. for Alberni, B. Columbia, 1907",
+    "place_inherited": false
+   },
+   {
+    "position": "re-elec",
+    "place": null,
+    "year_start": 1909,
+    "year_end": null,
+    "text_span": "re-elec., 1909",
+    "place_inherited": false
+   },
+   {
+    "position": "defeated by Sir Richard McBride, in Victoria",
+    "place": null,
+    "year_start": 1912,
+    "year_end": null,
+    "text_span": "defeated by Sir Richard McBride, in Victoria, 1912",
+    "place_inherited": false
+   },
+   {
+    "position": "re-elec. at bye-elec",
+    "place": null,
+    "year_start": 1916,
+    "year_end": null,
+    "text_span": "re-elec. at bye-elec., Mar., 1916",
+    "place_inherited": false
+   },
+   {
+    "position": "premier, B. Columbia",
+    "place": null,
+    "year_start": 1916,
+    "year_end": null,
+    "text_span": "premier, B. Columbia, 1916.",
+    "place_inherited": false
+   }
+  ],
+  "raw_text": "BREWSTER, HON. HARLAN C.\u2014B. 1870; took up newspaper work in New Brunswick and Boston; removed to B. Columbia in 1897; managing dir., Clayoquot Sound Canning Co.; elec. to legis. ass. for Alberni, B. Columbia, 1907; re-elec., 1909; defeated by Sir Richard McBride, in Victoria, 1912; re-elec. at bye-elec., Mar., 1916; premier, B. Columbia, 1916.",
+  "parser": "rules",
+  "provenance": [
+   {
+    "edition_year": 1918,
+    "doc": "col",
+    "page": 696,
+    "block": 8,
+    "bbox": [
+     100,
+     959,
+     794,
+     1199
+    ]
+   }
+  ],
+  "flags": []
+ },
+ "career_facts": [
+  {
+   "person_id": "kgp_col1918-p696b8",
+   "seq": 0,
+   "role_id": "colkg:legislative_ass_for_alberni",
+   "role_label": "legislative ass for alberni",
+   "role_modifiers": [],
+   "is_acting": false,
+   "org_id": null,
+   "org_label": null,
+   "org_type": "civil",
+   "place_qid": "Q1973",
+   "place_label": "British Columbia",
+   "colony_qid": "Q1973",
+   "colony_label": "British Columbia",
+   "year_start": 1907,
+   "year_end": 1909,
+   "position_raw": "legislative ass. for Alberni",
+   "role_source": "internal",
+   "org_source": null
+  },
+  {
+   "person_id": "kgp_col1918-p696b8",
+   "seq": 1,
+   "role_id": "colkg:legislative_ass_for_alberni",
+   "role_label": "legislative ass for alberni",
+   "role_modifiers": [],
+   "is_acting": false,
+   "org_id": null,
+   "org_label": null,
+   "org_type": "civil",
+   "place_qid": "Q1973",
+   "place_label": "British Columbia",
+   "colony_qid": "Q1973",
+   "colony_label": "British Columbia",
+   "year_start": 1909,
+   "year_end": 1912,
+   "position_raw": "legislative ass. for Alberni",
+   "role_source": "internal",
+   "org_source": null
+  },
+  {
+   "person_id": "kgp_col1918-p696b8",
+   "seq": 2,
+   "role_id": "colkg:legislative_ass_for_victoria",
+   "role_label": "legislative ass for victoria",
+   "role_modifiers": [],
+   "is_acting": false,
+   "org_id": null,
+   "org_label": null,
+   "org_type": "civil",
+   "place_qid": "Q1973",
+   "place_label": "British Columbia",
+   "colony_qid": "Q1973",
+   "colony_label": "British Columbia",
+   "year_start": 1912,
+   "year_end": 1916,
+   "position_raw": "legislative ass. for Victoria",
+   "role_source": "internal",
+   "org_source": null
+  },
+  {
+   "person_id": "kgp_col1918-p696b8",
+   "seq": 3,
+   "role_id": "colkg:legislative_ass_for_victoria",
+   "role_label": "legislative ass for victoria",
+   "role_modifiers": [],
+   "is_acting": false,
+   "org_id": null,
+   "org_label": null,
+   "org_type": "civil",
+   "place_qid": "Q1973",
+   "place_label": "British Columbia",
+   "colony_qid": "Q1973",
+   "colony_label": "British Columbia",
+   "year_start": 1916,
+   "year_end": null,
+   "position_raw": "legislative ass. for Victoria",
+   "role_source": "internal",
+   "org_source": null
+  },
+  {
+   "person_id": "kgp_col1918-p696b8",
+   "seq": 4,
+   "role_id": "Q959664",
+   "role_label": "premier",
+   "role_modifiers": [],
+   "is_acting": false,
+   "org_id": null,
+   "org_label": null,
+   "org_type": "civil",
+   "place_qid": "Q1973",
+   "place_label": "British Columbia",
+   "colony_qid": "Q1973",
+   "colony_label": "British Columbia",
+   "year_start": 1916,
+   "year_end": null,
+   "position_raw": "premier",
+   "role_source": "mcp",
+   "org_source": null
+  },
+  {
+   "person_id": "kgp_col1918-p696b8",
+   "seq": 5,
+   "role_id": "Q1162163",
+   "role_label": "director",
+   "role_modifiers": [],
+   "is_acting": false,
+   "org_id": null,
+   "org_label": null,
+   "org_type": "civil",
+   "place_qid": "Q1973",
+   "place_label": "British Columbia",
+   "colony_qid": "Q1973",
+   "colony_label": "British Columbia",
+   "year_start": null,
+   "year_end": null,
+   "position_raw": "managing director, Clayoquot Sound Canning Co.",
+   "role_source": "reuse",
+   "org_source": null
+  }
+ ]
+}

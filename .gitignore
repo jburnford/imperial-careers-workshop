@@ -9,3 +9,6 @@ __pycache__/
 .DS_Store
 *.swp
 .claude/
+
+# rendered copy of the archived draft; not published
+docs/archive/

@@ -97,28 +97,40 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-the-hour">    
         <li>
-    <a class="dropdown-item" href="./steps/01-question.html">
- <span class="dropdown-text">The page</span></a>
+    <a class="dropdown-item" href="./steps/01-atlas.html">
+ <span class="dropdown-text">1. The atlas</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./steps/02-structure-extract.html">
- <span class="dropdown-text">Structure</span></a>
+    <a class="dropdown-item" href="./steps/02-source.html">
+ <span class="dropdown-text">2. The source</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./steps/03-candidates.html">
- <span class="dropdown-text">Ground</span></a>
+    <a class="dropdown-item" href="./steps/03-structure.html">
+ <span class="dropdown-text">3. Structure</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./steps/04-review.html">
- <span class="dropdown-text">Clean, together</span></a>
+    <a class="dropdown-item" href="./steps/04-identity.html">
+ <span class="dropdown-text">4. Clean: one person or two?</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./steps/05-ground.html">
+ <span class="dropdown-text">5. Ground</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./steps/06-loop.html">
+ <span class="dropdown-text">6. The map finds the errors</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./review/index.html">
- <span class="dropdown-text">Exercise</span></a>
+ <span class="dropdown-text">Exercise: decide</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./annotate/index.html">
+ <span class="dropdown-text">Exercise: mark up an entry</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./steps/07-your-data.html">
- <span class="dropdown-text">Your own data</span></a>
+ <span class="dropdown-text">7. Your own data</span></a>
   </li>  
     </ul>
   </li>
@@ -131,25 +143,17 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Worked answers</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-further" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Further</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-more" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">More</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-further">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-more">    
         <li>
-    <a class="dropdown-item" href="./steps/05-revise.html">
- <span class="dropdown-text">What a correction becomes</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./steps/06-connect.html">
- <span class="dropdown-text">Connecting collections</span></a>
+    <a class="dropdown-item" href="./handout.html">
+ <span class="dropdown-text">Printable handout</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./setup.html">
  <span class="dropdown-text">Run it yourself</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./packet.html">
- <span class="dropdown-text">Research packet</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./presenter.html">
@@ -173,8 +177,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#three-questions" id="toc-three-questions" class="nav-link active" data-scroll-target="#three-questions">Three questions</a></li>
-  <li><a href="#one-page" id="toc-one-page" class="nav-link" data-scroll-target="#one-page">One page</a></li>
+  <li><a href="#one-dataset-start-to-finish" id="toc-one-dataset-start-to-finish" class="nav-link active" data-scroll-target="#one-dataset-start-to-finish">One dataset, start to finish</a></li>
+  <li><a href="#three-questions" id="toc-three-questions" class="nav-link" data-scroll-target="#three-questions">Three questions</a></li>
+  <li><a href="#the-second-half-of-the-method" id="toc-the-second-half-of-the-method" class="nav-link" data-scroll-target="#the-second-half-of-the-method">The second half of the method</a></li>
   <li><a href="#the-hour" id="toc-the-hour" class="nav-link" data-scroll-target="#the-hour">The hour</a></li>
   <li><a href="#what-you-need" id="toc-what-you-need" class="nav-link" data-scroll-target="#what-you-need">What you need</a></li>
   <li><a href="#further" id="toc-further" class="nav-link" data-scroll-target="#further">Further</a></li>
@@ -214,12 +219,44 @@ Draft
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Working draft for Jim Clifford’s review. Source and data: <a href="https://github.com/jburnford/trimen-workshop">github.com/jburnford/trimen-workshop</a>. Facts about the sources have been checked where a page says so; everything else is a proposal.</p>
+<p>Working draft for Jim Clifford’s review. Source and data: <a href="https://github.com/jburnford/trimen-workshop">github.com/jburnford/trimen-workshop</a>. The dataset the hour is built on is published as <a href="https://jimclifford.ca/col_matching/">Imperial Careers</a> (CC0). Counts on these pages come from that repository’s <code>kg_stats.json</code> and the atlas <code>meta.json</code> of 4 September 2026 and are reproduced in <a href="outputs/atlas/"><code>outputs/atlas/</code></a>.</p>
 </div>
 </div>
+<section id="one-dataset-start-to-finish" class="level2">
+<h2 class="anchored" data-anchor-id="one-dataset-start-to-finish">One dataset, start to finish</h2>
+<p>Two printed reference works, the <em>Colonial Office List</em> (1862–1966) and the <em>India Office List</em> (1886–1947), carry a terse biography for every senior official: born, schooled, every posting, every honour. The same man recurs in forty annual editions. The OCR garbles a name here and there. Two men who share a surname threaten to collapse into one career.</p>
+<p>Over a few months, one historian with a coding agent turned those volumes into a knowledge graph and an <a href="https://jimclifford.ca/col_matching/">animated atlas</a> of imperial careers:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Colonial Office List</th>
+<th>India Office List</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>People</td>
+<td>27,526</td>
+<td>19,400</td>
+</tr>
+<tr class="even">
+<td>Dated career events</td>
+<td>180,470</td>
+<td>124,694</td>
+</tr>
+<tr class="odd">
+<td>Events located to a Wikidata place</td>
+<td>131,343</td>
+<td>80,238</td>
+</tr>
+</tbody>
+</table>
+<p>The hour is about how, and about where in that process a historian has to decide something.</p>
+</section>
 <section id="three-questions" class="level2">
 <h2 class="anchored" data-anchor-id="three-questions">Three questions</h2>
-<p>A historian turning a text into data asks three questions of it, and each has one decision only the historian can make. A model can do everything around that decision.</p>
+<p>A historian turning a text into data asks three questions of it, and each has one decision only the historian can make. A model can do everything around that decision, at scale.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 25%">
@@ -237,36 +274,29 @@ Draft
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Clean</strong></td>
-<td>Is this what the page says?</td>
-<td>Flags what reads oddly</td>
-<td>Read the page and rule</td>
-</tr>
-<tr class="even">
 <td><strong>Structure</strong></td>
 <td>What is a record here?</td>
-<td>Proposes fields, fills them, keeps the quotes</td>
-<td>What counts, and whether the record changed the meaning</td>
+<td>Proposes the fields, fills them for 100,000 entries, reports what it could not parse</td>
+<td>What counts as an event; whether the record changed the meaning</td>
+</tr>
+<tr class="even">
+<td><strong>Clean</strong></td>
+<td>Is this one person or two?</td>
+<td>Clusters the candidates, argues each case, keeps the evidence</td>
+<td>Merge, keep apart, or leave for review</td>
 </tr>
 <tr class="odd">
 <td><strong>Ground</strong></td>
-<td>Who is this?</td>
+<td>Which place, which person, in the shared vocabulary?</td>
 <td>Retrieves candidates with evidence</td>
 <td>Supported, unresolved, or wrong</td>
 </tr>
 </tbody>
 </table>
-<p>That is the whole lesson. The hour illustrates it with one page.</p>
 </section>
-<section id="one-page" class="level2">
-<h2 class="anchored" data-anchor-id="one-page">One page</h2>
-<p>Walter Agar’s letter, <em>The Tropical Agriculturist</em>, 2 July 1883, p.&nbsp;66 (<a href="https://archive.org/details/tropicalagricult18831884colo/page/n83/mode/1up">scan</a>). Two hundred and thirty-four words from a planters’ quarrel about one cinchona tree. It contains:</p>
-<ul>
-<li>a sentence the OCR got wrong in a way that reverses its meaning (<strong>clean</strong>);</li>
-<li>a relationship the journal’s editor states loosely and Agar states carefully (<strong>structure</strong>);</li>
-<li>a person with a strong identity, Henry Trimen, Director of the Royal Botanic Gardens at Peradeniya, and a person with none in any authority file, Agar himself (<strong>ground</strong>).</li>
-</ul>
-<p>You do not need to know anything about cinchona. The dispute is context for thirty seconds.</p>
+<section id="the-second-half-of-the-method" class="level2">
+<h2 class="anchored" data-anchor-id="the-second-half-of-the-method">The second half of the method</h2>
+<p>Extraction is half of it. The other half is looking at the result in a form where errors are visible. The atlas was built to answer a research question, and it turned out to be the best error detector the project had. A British Columbia premier appearing in Australia, a cluster of South African postings landing at Harare, two nodes both called Baluchistan: each was seen on the map, traced to a rule, fixed in the pipeline, and re-emitted for everyone it affected. Build, extract, visualise, see, fix, rerun. That loop is what the hour demonstrates.</p>
 </section>
 <section id="the-hour" class="level2">
 <h2 class="anchored" data-anchor-id="the-hour">The hour</h2>
@@ -281,28 +311,38 @@ Draft
 <tbody>
 <tr class="odd">
 <td>0–5</td>
-<td><a href="./steps/01-question.html">The page</a></td>
-<td>Where Trimen comes from, and the letter</td>
+<td><a href="./steps/01-atlas.html">The atlas</a></td>
+<td>What the finished data does, and the loop that made it</td>
 </tr>
 <tr class="even">
-<td>5–20</td>
-<td><a href="./steps/02-structure-extract.html">Structure</a></td>
-<td>The model proposes a table and extracts records. Then you: did a careful statement become a flat one?</td>
+<td>5–12</td>
+<td><a href="./steps/02-source.html">The source</a></td>
+<td>One printed entry. Mark up what you would extract</td>
 </tr>
 <tr class="odd">
-<td>20–30</td>
-<td><a href="./steps/03-candidates.html">Ground</a></td>
-<td>The model retrieves candidates. Then you: supported, unresolved, or wrong?</td>
+<td>12–22</td>
+<td><a href="./steps/03-structure.html">Structure</a></td>
+<td>The schema, the prompt, what the model got wrong, and why the fixes were not a bigger model</td>
 </tr>
 <tr class="even">
-<td>30–45</td>
-<td><a href="./steps/04-review.html">Clean, together</a></td>
-<td>The OCR against the page, and what the correction becomes</td>
+<td>22–30</td>
+<td><a href="./steps/04-identity.html">Clean</a></td>
+<td>Forty editions, one person: the merge rules and the cases that need a historian</td>
 </tr>
 <tr class="odd">
-<td>45–55</td>
+<td>30–40</td>
+<td><a href="./steps/05-ground.html">Ground</a></td>
+<td>A live Wikidata lookup, and a chatbot asked to do the same from memory</td>
+</tr>
+<tr class="even">
+<td>40–47</td>
+<td><a href="./steps/06-loop.html">The map finds the errors</a></td>
+<td>Three errors seen in the atlas and what fixing them changed</td>
+</tr>
+<tr class="odd">
+<td>47–55</td>
 <td><a href="review/index.html">Exercise</a></td>
-<td>Three decisions, in the room or on Zoom</td>
+<td>Seven decisions, in the room or on Zoom</td>
 </tr>
 <tr class="even">
 <td>55–60</td>
@@ -311,15 +351,14 @@ Draft
 </tr>
 </tbody>
 </table>
-<p>Every live stage has a saved checkpoint in <code>outputs/</code>.</p>
 </section>
 <section id="what-you-need" class="level2">
 <h2 class="anchored" data-anchor-id="what-you-need">What you need</h2>
-<p>A browser. The <a href="review/index.html">exercise</a> runs from saved results and needs no account or key. Remote participants have the same pages and the same exercise; the exercise page has a button that copies a one-line summary of your decisions for the Zoom chat.</p>
+<p>A browser. The <a href="review/index.html">decision exercise</a> and the <a href="annotate/index.html">mark-up exercise</a> run from saved results and need no account or key. Remote participants have the same pages; each exercise has a button that copies a one-line summary of your work for the Zoom chat. There is a <a href="./handout.html">printable handout</a> with the same entries for the room.</p>
 </section>
 <section id="further" class="level2">
 <h2 class="anchored" data-anchor-id="further">Further</h2>
-<p>For those who want to go on: <a href="./steps/05-revise.html">what a correction becomes</a> in a working pipeline, <a href="./steps/06-connect.html">connecting collections</a> through a shared identifier, <a href="./answers.html">worked answers</a>, <a href="./setup.html">running it yourself</a>, and the <a href="./packet.html">research packet</a> for the wider network around Trimen. None of it is needed for the hour.</p>
+<p><a href="./answers.html">Worked answers</a>, <a href="./setup.html">running it yourself</a>, and the saved outputs in <a href="outputs/"><code>outputs/</code></a>: the extraction prompt, the audit of a structured sample, the duplicate-resolution rules and a sample of clusters, the place-grounding cache rows behind the errors, and the project review that found them.</p>
 
 
 </section>
@@ -757,7 +796,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>Source text: archive.org scans of The Tropical Agriculturist.</p>
+<p>Data: Imperial Careers (CC0), jimclifford.ca/col_matching</p>
 </div>
   </div>
 </footer>

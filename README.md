@@ -2,44 +2,32 @@
 
 Materials for a one-hour workshop at the AI and History Conference, Johns Hopkins University, Thursday 15 October 2026 (1:30–2:30 p.m., Room 110, SNF Agora Institute; streamed on Zoom). Presenter: Jim Clifford, University of Saskatchewan.
 
-The session shows how historians can delegate substantial data work to models and coding agents (proposing a structure, extracting records, writing the processing code, retrieving candidate identities, preparing evidence for review) while keeping the decisions that require historical judgment. The worked example follows Henry Trimen, Director of the Royal Botanic Gardens at Peradeniya, from the *Colonial Office List* into an 1883 dispute in *The Tropical Agriculturist* about a cinchona tree.
+The session follows one dataset from printed source to animated atlas: the *Colonial Office List* and *India Office List* as processed by the [Imperial Careers](https://github.com/jburnford/col_matching) project (46,926 officials, 305,164 dated career events, places grounded to Wikidata). It shows what a coding agent and a cheap model did at scale, where the historian had to decide something, and how the visualization became the error detector that drove fixes back through the pipeline.
 
-**Status: draft for review.** Everything here was prepared on 6 October 2026. The scan checks and pipeline facts stated on the pages were verified; the prompts, running order and case selection are proposals.
+**Status: draft for review.** Rebuilt on 7 October 2026 on the Imperial Careers example; the earlier draft on *The Tropical Agriculturist* is in `archive/tropical/`.
 
 ## Layout
 
 | Path | What it is |
 |---|---|
-| `index.qmd`, `steps/*.qmd`, `answers.qmd`, `presenter.qmd`, `setup.qmd`, `packet.qmd` | The participant site (Quarto). Rendered to `docs/` for GitHub Pages |
+| `index.qmd`, `steps/*.qmd`, `answers.qmd`, `presenter.qmd`, `setup.qmd`, `handout.qmd` | The participant site (Quarto). Rendered to `docs/` for GitHub Pages |
 | `slides.qmd` | The slide deck (reveal.js), rendered to `docs/slides.html`; speaker notes in the source |
-| `images/` | Scan crops used on the slides (archive.org, public domain) |
-| `review/` | The browser exercise: `index.html` + `cases.json`. Static; no account or API key needed |
-| `source-pack/` | OCR text of the six passages, the scan-checked transcription of the exercise letter, Trimen's Colonial Office List entries, citations with page links |
-| `outputs/` | Saved outputs for every stage: structure proposals, extraction runs, candidate evidence, the two real revisions, Trimen across collections |
-| `research/trimen-network/` | The wider research packet: 49 entities, 14 attributed claims, 25 catalogued letters, cached Wikidata responses. All human-review fields pending |
-| `scripts/` | Build scripts. All run offline except `ground_trimen.py`, which fetches and caches Wikidata evidence |
-| `workshop-plan.md` | The working plan for the session |
-| `tropical-project-review-2026-10-06.md` | Technical review of the Tropical pipeline that informed the case selection, with a postscript on what changed the same day |
+| `annotate/` | The mark-up exercise: tag positions, places, years and honours in an entry, then compare with the pipeline. Static |
+| `review/` | The decision exercise: seven accept/reject/unresolved cases with reasons. Static |
+| `outputs/` | Saved outputs: prompt, audit, merge rules and clusters, grounding cache rows, the twenty-entry grounding test with the Gemini control, project review, stats |
+| `source-pack/` | Trimen's seven Colonial Office List entries |
+| `scripts/build_review_cases.py` | Builds `review/cases.json` offline |
+| `archive/tropical/` | The 6 October draft and its materials |
 
 ## Building the site
 
 ```bash
 quarto render
+touch docs/.nojekyll
 ```
 
-Output goes to `docs/`, which GitHub Pages serves at https://jimclifford.ca/trimen-workshop/ (branch `main`, folder `/docs`). Commit the rendered `docs/` with the source changes. The `docs/.nojekyll` file tells GitHub to serve the files as rendered.
-
-## Rebuilding the data
-
-```bash
-python3 scripts/build_trimen_workshop.py
-python3 scripts/build_candidates.py
-python3 scripts/build_source_pack.py
-python3 scripts/build_review_cases.py
-```
+Output goes to `docs/`, which GitHub Pages serves at https://jimclifford.ca/trimen-workshop/ (branch `main`, folder `/docs`). `quarto render` deletes `docs/.nojekyll`; recreate it before committing.
 
 ## Sources and credits
 
-Passages are from *The Tropical Agriculturist* (Colombo), scans on archive.org (`tropicalagricult1188ceyl`, `tropicalagricult18831884colo`), OCR text from the [Tropical Agriculturist project](https://github.com/jburnford/tropical-agriculturist). Colonial Office List entries and career graph from [Imperial Careers / col_matching](https://github.com/jburnford/col_matching). Wikidata evidence retrieved through the [WikidataMCP](https://wd-mcp.wmcloud.org/) server and Wikidata's entity data endpoint. Modern plant-name treatments from Kew's Plants of the World Online.
-
-Extraction runs in `outputs/` were produced by Claude models in Claude Code on 6 October 2026 from the prompts recorded with them; each run's folder names the model used.
+Entries are from the *Colonial Office List* (OCR by the Imperial Careers project). Graph data, method documents, audits and grounding caches from [Imperial Careers / col_matching](https://github.com/jburnford/col_matching) (data CC0, code MIT). Wikidata evidence retrieved through the [WikidataMCP](https://wd-mcp.wmcloud.org/) server and Wikidata's `wbgetentities` API on 7 October 2026. The Gemini 3.8 Flash response in `outputs/ground-test/` was produced by Jim Clifford on 7 October 2026.

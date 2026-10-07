@@ -1,6 +1,6 @@
 ---
 title: "Cleaning, Structuring and Grounding Historical Data"
-subtitle: "A working session with a coding agent"
+subtitle: "One dataset, start to finish, with a coding agent"
 author: "Jim Clifford, University of Saskatchewan"
 date: "15 October 2026"
 format:
@@ -13,221 +13,213 @@ format:
     link-external-newwindow: true
 ---
 
+## {background-video="https://jimclifford.ca/col_matching/combined_mobility.mp4" background-video-loop="false" background-video-muted="true"}
+
+::: notes
+Let it run. 56 seconds. Every arc is one official moving between colonies, 1815–1966, from the Colonial Office List and the India Office List. Say nothing until the arcs reach Africa.
+:::
+
+## What that was
+
+| | Colonial Office List | India Office List |
+|---|---|---|
+| People | 27,526 | 19,400 |
+| Dated career events | 180,470 | 124,694 |
+| Events located to a Wikidata place | 131,343 | 80,238 |
+
+36,431 arcs. 186 people who served in both services.
+
+. . .
+
+One historian, a coding agent, a few months. Ten years ago: five institutions, a grant, F-scores of 0.6.
+
+::: notes
+Trading Consequences one sentence. Then: the hour is how, and where I had to decide something.
+:::
+
 ## Three questions
 
 | | The question | The model does | You decide |
 |---|---|---|---|
-| **Clean** | Is this what the page says? | Flags what reads oddly | Read the page and rule |
-| **Structure** | What is a record here? | Proposes fields, fills them, keeps the quotes | What counts; did the meaning change? |
-| **Ground** | Who is this? | Retrieves candidates with evidence | Supported, unresolved, or wrong |
+| **Structure** | What is a record here? | Proposes the fields, fills them for 100,000 entries | What counts as an event |
+| **Clean** | One person or two? | Clusters, argues each case, keeps the evidence | Merge, keep apart, review |
+| **Ground** | Which place, which person? | Retrieves candidates with evidence | Supported, unresolved, wrong |
 
 . . .
 
-Ten years ago the same three questions took five institutions and a text-mining pipeline, and scored F 0.6.
-What changed is who writes the pipeline and how fast the loop runs. What did not change is the right-hand column.
+**And the second half:** build, extract, **visualise, see, fix**, rerun.
 
-::: notes
-Trading Consequences (Clifford et al. 2016): 10.5 million pages, Edinburgh Geoparser, GeoNames, "Italy" in Texas. One sentence, then move on.
-:::
+## The source {.smaller}
 
-## One page
+> TRIMEN, HENRY, M.B. (Lond.), F.R.S., F.L.S. —Formerly lecturer on botany at St. Mary's Hospital, London, 1867 to 1875; was senior assistant to department of botany, British Museum, 1869 to 1879; director Royal Botanical Gardens, Ceylon, Feb., 1880; author of numerous works and papers on pure and applied botany.
 
-:::: {.columns}
-::: {.column width="50%"}
-![](images/agar-letter-p66-scan.jpg){height="600"}
-:::
-::: {.column width="50%"}
-Walter Agar, *The Tropical Agriculturist*, 2 July 1883, p. 66. 234 words.
+> BALMER, F. E.—Dep. chief acctnt., G.P.O., E. Africa Prot., Mar., 1919; ch. acctnt., G.P.O., Kenya, Oct., 1919; ch. acctnt., Kenya-Uganda-Tanganyika post and tel. service, 1933; senr. dep. P.M.G., do., 1935.
 
-Henry Trimen, Director of the Royal Botanic Gardens, Ceylon, had illustrated a cinchona tree. A London quinine maker said it was the wrong species. Planters wrote in.
+85 volumes. 1,400–2,900 entries per edition. The same man in forty of them.
 
 . . .
 
-You need to know nothing about cinchona.
-
-The page contains one decision of each kind.
-:::
-::::
-
-## The hour
-
-| Min | | |
-|---|---|---|
-| 0–5 | The page | Trimen in the Colonial Office List; the letter |
-| 5–20 | **Structure** | Model: propose a table, extract records. You: did the meaning change? |
-| 20–30 | **Ground** | Model: retrieve candidates. You: supported, unresolved, wrong? |
-| 30–45 | **Clean** | Together: the OCR against the page; what the correction becomes |
-| 45–55 | Exercise | Three decisions. **jimclifford.ca/trimen-workshop/review/** |
-| 55–60 | Your data | |
+**Mark one up.** jimclifford.ca/trimen-workshop/annotate/ (or the paper).
+Every position, place, year, honour. Three minutes.
 
 # Structure
 
-## Model: propose, then extract {.smaller}
+## The prompt is the decisions {.smaller}
 
-> Read these passages. **Propose a small table** for studying the people and activities mentioned. **Show two example records before processing the rest.** Preserve the printed wording and source references. Keep inferred information separate from what the text states. Use local record identifiers and do not add Wikidata identifiers yet.
+> Extract ONLY what is printed; never invent or infer facts.
+> **events:** one object per distinct posting. EXPLODE compound clauses into separate events.
+> **place:** as printed. If the clause names no place, carry over the previous clause's place and set place_inherited=true.
+> **birth_year:** only if explicitly printed. NEVER infer from the earliest career date.
+> **honours:** with their award year if printed in parentheses; award-years are NOT career events.
 
-> Use the agreed fields to process this sample. **Save the code, instructions, and output.** Report failed records and uncertain readings. Do not expand a person's name unless the source provides the expansion; record any outside identification separately.
+Every rule exists because a run broke it.
 
-::: notes
-Live on S04 if time allows; saved runs otherwise. Two examples first so the structure is cheap to correct.
-:::
+Reference set: ~200 entries by a frontier model in session. The corpus: Qwen on a shared GPU, inside the script.
 
-## What came back {.smaller}
-
-| Run | Model | Records | Flagged uncertain |
-|---|---|---|---|
-| A | Claude Sonnet 5.5, as coding agent | 85 | 8 |
-| B | Claude Fable 5.1, as coding agent | 71 | 9 |
-| C | Qwen3.8-27B, local, inside a script: the model used at scale | 13 | neither damaged sentence |
-
-Run A, the bark that was analysed:
+## Every tenth record, read against the source {.smaller}
 
 | | |
 |---|---|
-| printed_text | The bark of some of these trees was sent home by Mr. Campbell for analysis to Mr. Howard, who pronounced it to be Ledgeriana bark … |
-| asserted_by | S04-P02 (signed "WALTER AGAR") |
-| **inferred_note** | **Which trees supplied the bark is not stated beyond "some of these trees"** |
-
-## You: did the meaning change? {.smaller}
-
-:::: {.columns}
-::: {.column width="50%"}
-**The editor's headnote:**
-the tree figured by Dr. Trimen was an undoubted Ledgeriana, Mr. Howard himself having given testimony to that effect after having analyzed the bark.
-
-**Agar:**
-The bark of **some of these trees** was sent home … to Mr. Howard.
-
-I have also in my possession the bark from **the tree itself**.
-:::
-::: {.column width="50%"}
-A record saying *Howard analysed the illustrated tree* asserts a chemical result for a specimen never analysed. The whole quarrel rests on it.
+| Sampled | 186 |
+| Fully clean | 129 (69%) |
+| Major error | 8 (about 3%) |
 
 . . .
 
-Runs A and B kept them apart. Run C, the affordable model, wrote that Agar "confirms the tree sketched for Dr. Trimen was an undoubted Ledgeriana". That is the editor's sentence.
-
-**Its output reads well. Would you have noticed?**
-:::
-::::
-
-# Ground
-
-## Model: retrieve candidates {.smaller}
-
-> Look up candidate identities using the configured Wikidata tools and the Colonial Office List records. **Save the retrieved evidence and lookup date.** Show what supports the match, what conflicts, what is missing. **Leave unresolved cases unresolved. Do not generate QIDs from memory.**
-
-| Printed | Candidate | Supports | Conflicts or missing |
-|---|---|---|---|
-| "HENRY TRIMEN", Peradeniya | Q2462643, botanist 1843–1896 | Signature, address; CO List: director, Ceylon, 1880 | A brother, Roland, in both collections |
-| "WALTER AGAR", Lawrence | none | | Two searches: a politician, a zoologist b. 1882, a temple, a thickening agent |
-
-## You: supported, unresolved, or wrong
-
-1. **Does the identifier resolve to what was retrieved?** A Q-number from a model's memory is not a lookup.
-2. **Is that entity the one in this source?** Name, type, dates, place, activity. A real item can be the wrong person.
-3. **What does the link assert?** This mention is that man. Not every statement on the item. Not that 1883 "Ceylon" is the modern state.
+| Source | Record |
+|---|---|
+| "senr. dep. P.M.G., **do.**, 1935" | place: "do." |
+| "BLAKELY, DONALD QUENTIN.—Clk., atty.-gen.'s off., B. Honduras, **Apl., 1898**." | birth_year: **1898**; event year: null; "officer" |
+| "**KT. BACH.** (1920)" | honours: KT; BACH (1920) |
 
 . . .
 
-Trimen: supported, for these mentions. Agar: unresolved; keep the local record and the searches that were run. "Not found" is not "does not exist".
+Systematic, not random. An expansion table, a forward-fill, a merge rule. **Not a bigger model.**
 
 # Clean
 
-## The OCR {.smaller}
+## Forty editions, one person {.smaller}
 
-Chandra 2, a vision-language OCR model. Tested on this corpus; good results. In the production corpus, this page:
+> A missed link is recoverable; a false merge silently corrupts the record. **Ties resolve to no merge.**
 
-> … were put out, and were now **in a full condition and in flower**.
+1. Deterministic passes: 0 false merges on 543 hand-verified careers
+2. Cluster the residue: shared forename + surname suffix, so OCR variants meet
+3. A model argues each cluster from a dossier; the reason goes in a ledger (917 so far)
+4. A 200-case silver standard, afterwards, to measure it
 
-> I have by my **prints of the leaves of some of the trees** …
+## Four clusters {.smaller}
 
-. . .
-
-The page:
-
-> … and were **growing in a bad situation and not robust**.
-
-> I have **many plants from the seed of the specimen tree** …
-
-## What the model saw {.smaller}
-
-:::: {.columns}
-::: {.column width="50%"}
-**archive.org JPEG scan**
-
-![](images/p66-jpeg-detail.jpg)
-
-Chandra: *growing in a bad situation and not robust* (3 of 3)
-:::
-::: {.column width="50%"}
-**Same page rendered from the archive.org PDF** (JBIG2 text mask; what the corpus was OCR'd from)
-
-![](images/p66-pdf-render-detail.png)
-
-The two lines are mostly gone. Chandra: *now in a full condition and in flower* / *in a very abnormal situation at the time*. It filled the gap with language.
-:::
-::::
-
-## OCR is better, and not perfect {.smaller}
-
-The old archive.org text layer, same sentences:
-
-> … ami were growing; in a bad situation and not robust. I have many plants from the seed of the specimen^ tree as well as the oiheis that Mr. Moens declared …
+| | | |
+|---|---|---|
+| ABERY, Joseph / CARBERY, Joseph | both M.B.C.M., both "1867 Ceylon asst. colonial surgeon" | **merge** |
+| A'BECKETT, Thomas b. 1836 / BECKETT, Thomas Rumbold b. 1898 | a Victorian judge; a Nigerian telegraph engineer | keep apart |
+| ABRAHAM, Henry Charles / GRAHAM, Charles Drummond | suffix "aham", forename Charles | keep apart |
+| ABBOTT, Myles John / IBBOTT, John Thomas | Hong Kong 1936; Demerara 1860 | keep apart |
 
 . . .
 
-- The old OCR's errors look like errors. The new OCR's errors read like prose.
-- The two frontier runs flagged the sentences, then guessed; every guess was wrong. The affordable model reported the sentence as fact.
-- The two OCRs disagree exactly where the new one is wrong.
-- Given the JPEG scan, Chandra reads both sentences correctly, three times out of three. Given the same page rendered from the compressed PDF, it invents a third version. The error belongs to the page image. Nothing in the text tells you which you got.
+Easy with the dossier in front of you. The model's job was the dossier and the argument. **You decide** the one-shared-event cases.
 
-**A model can tell you a sentence reads oddly. Only the page tells you what it says.**
+# Ground
 
-## What the correction becomes
+## Why {.smaller}
 
-> This example is wrong for the following reason: [explain]. **Find other records that might have the same problem.** Propose a correction and show which records it would affect. Rerun a small batch and show both corrected cases **and previously accepted cases that changed**.
+Every arc needs coordinates for "the Central Provinces", "British Guiana", "Jodhpur". Wikidata has the item, the coordinates, or the capital that has them. One query.
+
+And: a historian of the Cape and a historian of Bombay who both ground to Q1800510 have joined their data without meeting.
 
 . . .
 
-- An uncertain reading is not data until someone has looked at the page.
-- A model's guess at the wording is not a reading.
-- Where two OCRs disagree, send the sentence to a human.
-- The probe that found the error becomes a test.
+**Two ways to get a QID.** Retrieve it, read the item, gate it. Or ask a chatbot.
+
+## Live: the lookup
+
+1. "Henry Trimen botanist Ceylon Peradeniya" → read the statements → **supported**
+2. "Ferdinando Hamlyn Price" → Q123279571, alias Hamlyn, b. 1855, d. 1942, Tamil description only → **supported**, and the pipeline's gate had rejected it
+3. "Elwood D'Arcy Tibbits Antigua" → nothing → **unresolved**, record the search
 
 ::: notes
-If there is time: the Tropical name-evidence fix (initial accepted as full name; 889 "verified" expansions became hypotheses; three probes now tests). Otherwise point to the Further pages.
+WikidataMCP vector search. Saved results in outputs/ground-test/ if the network fails.
 :::
 
-## Exercise: 45–55 {.smaller}
+## The control: Gemini 3.8 Flash, no tools {.smaller}
+
+"Parse these bios and ground the places, schools and people to Wikidata ids where possible." Twenty entries.
+
+| | |
+|---|---|
+| Person identifiers given | 16 |
+| Correct | **0** |
+| Not even a person (a plant, a patent, Thoth, a village, a reptile) | 6 |
+| Within a few thousand of the right number | 7 |
+| Place and school identifiers whose label matches | 43 of 142 |
+
+. . .
+
+Nyasaland → a disambiguation page. Straits Settlements → a Danish triathlete. Joseph Chamberlain → a Swiss footballer.
+
+**It knew who. It did not know the number.** Nothing in the text tells you which ones resolve.
+
+## Six Victorias {.smaller}
+
+The Australian colony. The capital of British Columbia. An electoral district. A gaol in Hong Kong. A district in the Cape. A county in Mauritius. A town in the Seychelles.
+
+. . .
+
+Surface-keyed cache → one QID for everyone. Context resolver → per person. Six surfaces left ungrounded on purpose.
+
+# The map finds the errors
+
+## Three errors {.smaller}
+
+| Seen | Cause | Fix |
+|---|---|---|
+| A premier of British Columbia with a seat in Melbourne | "Victoria" grounded once, by string | Per-person context resolver; also found the overrides had never applied |
+| Union of South Africa at Harare: 960 events, 572 arcs | Containment match: "South Africa" ⊂ British South Africa Company | Five cache rows patched; containment guard; 100 pre-1910 events still ambiguous |
+| Two Baluchistans | Colony under Q843 (Pakistan) and a second QID | One canonical row; duplicate folded |
+
+. . .
+
+Fix the **rule**, re-emit **both corpora**, rebuild the atlas, look at **everyone the rule touched**.
+
+## What the map cannot find
+
+False negatives. An ungrounded "Victoria" has no arc. A missed merge is two plausible short careers.
+
+For those: silver standards. 200 hand-labelled cases, risky strata oversampled.
+Rare surname + overlapping era: the judge's "different" verdicts were wrong **76%** of the time.
+
+## Exercise: 47–55 {.smaller}
 
 **jimclifford.ca/trimen-workshop/review/**
 
 | | | |
 |---|---|---|
-| **Clean** | R3 | Does the OCR reading stand? Open the scan |
-| **Structure** | R2 | Did Howard analyse the illustrated tree's bark? |
-| **Ground** | R1, R4 | Is "Dr. Trimen" Q2462643? Is there an item for Walter Agar? |
-| extra | R5, R6 | A plant name string; two men one letter apart |
+| **Structure** | R1, R2 | Blakely's birth year; Balmer's "do." |
+| **Clean** | R3, R4 | Abery and Carbery; A'Beckett and Beckett |
+| **Ground** | R5, R6 | South Africa at Harare; Brewster's Victoria |
+| extra | R7 | Price and the item with no career |
 
 Write the reason. The reason is what becomes the rule.
 Zoom: **Copy summary for chat**. Room: hands up when asked.
 
 ## Your own data {.smaller}
 
-- **One question, one small sample, the page reachable.** Twenty records you can check beat two thousand you cannot.
-- **Local identifiers first.** External ones only after retrieval and review. None suitable? Keep the local id.
-- **No identifiers from memory.**
-- **Model decisions and human decisions in different columns.** Fingerprint the data the decisions were made on.
-- **Make the correction a test.**
-- **Two kinds of model.** A frontier model writes the pipeline once. A local open model (Qwen on a shared GPU) reads the collection inside it.
+- **One question, one small sample, the page reachable.**
+- **Build the view early.** It is your error detector.
+- **Local identifiers first.** External ones after retrieval and review. **None from memory.**
+- **Ground to the historical entity.** Resolve per person, not per string.
+- **Ties resolve to no merge.**
+- **Fix the rule, not the record; make the correction a test.**
+- **Two kinds of model.** A frontier model writes the pipeline; a cheap one reads the collection inside it.
 
 ## Three questions
 
 | | | You decide |
 |---|---|---|
-| **Clean** | Is this what the page says? | Read the page and rule |
-| **Structure** | What is a record here? | What counts; did the meaning change? |
-| **Ground** | Who is this? | Supported, unresolved, or wrong |
+| **Structure** | What is a record here? | What counts as an event |
+| **Clean** | One person or two? | Merge, keep apart, review |
+| **Ground** | Which place, which person? | Supported, unresolved, wrong |
 
-**jimclifford.ca/trimen-workshop** — pages, saved outputs, exercise, worked answers, the wider research packet.
+**jimclifford.ca/trimen-workshop** — pages, saved outputs, both exercises, worked answers.
+Data: **jimclifford.ca/col_matching** (CC0).

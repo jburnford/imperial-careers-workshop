@@ -129,7 +129,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Cleaning, Structuring and Grounding Historical Data</h1>
-  <p class="subtitle">A working session with a coding agent</p>
+  <p class="subtitle">One dataset, start to finish, with a coding agent</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -140,6 +140,68 @@ Jim Clifford, University of Saskatchewan
 </div>
 
   <p class="date">2026-10-15</p>
+</section>
+<section id="section" class="slide level2" data-background-video="https://jimclifford.ca/col_matching/combined_mobility.mp4" data-background-video-loop="false" data-background-video-muted="true">
+<h2></h2>
+<aside class="notes">
+<p>Let it run. 56 seconds. Every arc is one official moving between colonies, 1815–1966, from the Colonial Office List and the India Office List. Say nothing until the arcs reach Africa.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="what-that-was" class="slide level2">
+<h2>What that was</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th>Colonial Office List</th>
+<th>India Office List</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>People</td>
+<td>27,526</td>
+<td>19,400</td>
+</tr>
+<tr class="even">
+<td>Dated career events</td>
+<td>180,470</td>
+<td>124,694</td>
+</tr>
+<tr class="odd">
+<td>Events located to a Wikidata place</td>
+<td>131,343</td>
+<td>80,238</td>
+</tr>
+</tbody>
+</table>
+<p>36,431 arcs. 186 people who served in both services.</p>
+<div class="fragment">
+<p>One historian, a coding agent, a few months. Ten years ago: five institutions, a grant, F-scores of 0.6.</p>
+<aside class="notes">
+<p>Trading Consequences one sentence. Then: the hour is how, and where I had to decide something.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
 </section>
 <section id="three-questions" class="slide level2">
 <h2>Three questions</h2>
@@ -160,255 +222,103 @@ Jim Clifford, University of Saskatchewan
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Clean</strong></td>
-<td>Is this what the page says?</td>
-<td>Flags what reads oddly</td>
-<td>Read the page and rule</td>
-</tr>
-<tr class="even">
 <td><strong>Structure</strong></td>
 <td>What is a record here?</td>
-<td>Proposes fields, fills them, keeps the quotes</td>
-<td>What counts; did the meaning change?</td>
+<td>Proposes the fields, fills them for 100,000 entries</td>
+<td>What counts as an event</td>
+</tr>
+<tr class="even">
+<td><strong>Clean</strong></td>
+<td>One person or two?</td>
+<td>Clusters, argues each case, keeps the evidence</td>
+<td>Merge, keep apart, review</td>
 </tr>
 <tr class="odd">
 <td><strong>Ground</strong></td>
-<td>Who is this?</td>
+<td>Which place, which person?</td>
 <td>Retrieves candidates with evidence</td>
-<td>Supported, unresolved, or wrong</td>
+<td>Supported, unresolved, wrong</td>
 </tr>
 </tbody>
 </table>
 <div class="fragment">
-<p>Ten years ago the same three questions took five institutions and a text-mining pipeline, and scored F 0.6. What changed is who writes the pipeline and how fast the loop runs. What did not change is the right-hand column.</p>
-<aside class="notes">
-<p>Trading Consequences (Clifford et al.&nbsp;2016): 10.5 million pages, Edinburgh Geoparser, GeoNames, “Italy” in Texas. One sentence, then move on.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<p><strong>And the second half:</strong> build, extract, <strong>visualise, see, fix</strong>, rerun.</p>
 </div>
 </section>
-<section id="one-page" class="slide level2">
-<h2>One page</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><img data-src="images/agar-letter-p66-scan.jpg" height="600"></p>
-</div><div class="column" style="width:50%;">
-<p>Walter Agar, <em>The Tropical Agriculturist</em>, 2 July 1883, p.&nbsp;66. 234 words.</p>
-<p>Henry Trimen, Director of the Royal Botanic Gardens, Ceylon, had illustrated a cinchona tree. A London quinine maker said it was the wrong species. Planters wrote in.</p>
-<p>. . .</p>
-<p>You need to know nothing about cinchona.</p>
-<p>The page contains one decision of each kind.</p>
-</div></div>
-</section>
-<section id="the-hour" class="slide level2">
-<h2>The hour</h2>
-<table class="caption-top">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Min</th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0–5</td>
-<td>The page</td>
-<td>Trimen in the Colonial Office List; the letter</td>
-</tr>
-<tr class="even">
-<td>5–20</td>
-<td><strong>Structure</strong></td>
-<td>Model: propose a table, extract records. You: did the meaning change?</td>
-</tr>
-<tr class="odd">
-<td>20–30</td>
-<td><strong>Ground</strong></td>
-<td>Model: retrieve candidates. You: supported, unresolved, wrong?</td>
-</tr>
-<tr class="even">
-<td>30–45</td>
-<td><strong>Clean</strong></td>
-<td>Together: the OCR against the page; what the correction becomes</td>
-</tr>
-<tr class="odd">
-<td>45–55</td>
-<td>Exercise</td>
-<td>Three decisions. <strong>jimclifford.ca/trimen-workshop/review/</strong></td>
-</tr>
-<tr class="even">
-<td>55–60</td>
-<td>Your data</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<section id="the-source" class="slide level2 smaller">
+<h2>The source</h2>
+<blockquote>
+<p>TRIMEN, HENRY, M.B. (Lond.), F.R.S., F.L.S. —Formerly lecturer on botany at St.&nbsp;Mary’s Hospital, London, 1867 to 1875; was senior assistant to department of botany, British Museum, 1869 to 1879; director Royal Botanical Gardens, Ceylon, Feb., 1880; author of numerous works and papers on pure and applied botany.</p>
+</blockquote>
+<blockquote>
+<p>BALMER, F. E.—Dep. chief acctnt., G.P.O., E. Africa Prot., Mar., 1919; ch.&nbsp;acctnt., G.P.O., Kenya, Oct., 1919; ch.&nbsp;acctnt., Kenya-Uganda-Tanganyika post and tel. service, 1933; senr. dep. P.M.G., do., 1935.</p>
+</blockquote>
+<p>85 volumes. 1,400–2,900 entries per edition. The same man in forty of them.</p>
+<div class="fragment">
+<p><strong>Mark one up.</strong> jimclifford.ca/trimen-workshop/annotate/ (or the paper). Every position, place, year, honour. Three minutes.</p>
+</div>
 </section>
 <section>
 <section id="structure" class="title-slide slide level1 center">
 <h1>Structure</h1>
 
 </section>
-<section id="model-propose-then-extract" class="slide level2 smaller">
-<h2>Model: propose, then extract</h2>
+<section id="the-prompt-is-the-decisions" class="slide level2 smaller">
+<h2>The prompt is the decisions</h2>
 <blockquote>
-<p>Read these passages. <strong>Propose a small table</strong> for studying the people and activities mentioned. <strong>Show two example records before processing the rest.</strong> Preserve the printed wording and source references. Keep inferred information separate from what the text states. Use local record identifiers and do not add Wikidata identifiers yet.</p>
+<p>Extract ONLY what is printed; never invent or infer facts. <strong>events:</strong> one object per distinct posting. EXPLODE compound clauses into separate events. <strong>place:</strong> as printed. If the clause names no place, carry over the previous clause’s place and set place_inherited=true. <strong>birth_year:</strong> only if explicitly printed. NEVER infer from the earliest career date. <strong>honours:</strong> with their award year if printed in parentheses; award-years are NOT career events.</p>
 </blockquote>
-<blockquote>
-<p>Use the agreed fields to process this sample. <strong>Save the code, instructions, and output.</strong> Report failed records and uncertain readings. Do not expand a person’s name unless the source provides the expansion; record any outside identification separately.</p>
-</blockquote>
-<aside class="notes">
-<p>Live on S04 if time allows; saved runs otherwise. Two examples first so the structure is cheap to correct.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<p>Every rule exists because a run broke it.</p>
+<p>Reference set: ~200 entries by a frontier model in session. The corpus: Qwen on a shared GPU, inside the script.</p>
 </section>
-<section id="what-came-back" class="slide level2 smaller">
-<h2>What came back</h2>
+<section id="every-tenth-record-read-against-the-source" class="slide level2 smaller">
+<h2>Every tenth record, read against the source</h2>
 <table class="caption-top">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Run</th>
-<th>Model</th>
-<th>Records</th>
-<th>Flagged uncertain</th>
-</tr>
-</thead>
 <tbody>
 <tr class="odd">
-<td>A</td>
-<td>Claude Sonnet 5.5, as coding agent</td>
-<td>85</td>
-<td>8</td>
+<td>Sampled</td>
+<td>186</td>
 </tr>
 <tr class="even">
-<td>B</td>
-<td>Claude Fable 5.1, as coding agent</td>
-<td>71</td>
-<td>9</td>
+<td>Fully clean</td>
+<td>129 (69%)</td>
 </tr>
 <tr class="odd">
-<td>C</td>
-<td>Qwen3.8-27B, local, inside a script: the model used at scale</td>
-<td>13</td>
-<td>neither damaged sentence</td>
+<td>Major error</td>
+<td>8 (about 3%)</td>
 </tr>
 </tbody>
 </table>
-<p>Run A, the bark that was analysed:</p>
-<table class="caption-top">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>printed_text</td>
-<td>The bark of some of these trees was sent home by Mr.&nbsp;Campbell for analysis to Mr.&nbsp;Howard, who pronounced it to be Ledgeriana bark …</td>
-</tr>
-<tr class="even">
-<td>asserted_by</td>
-<td>S04-P02 (signed “WALTER AGAR”)</td>
-</tr>
-<tr class="odd">
-<td><strong>inferred_note</strong></td>
-<td><strong>Which trees supplied the bark is not stated beyond “some of these trees”</strong></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="you-did-the-meaning-change" class="slide level2 smaller">
-<h2>You: did the meaning change?</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>The editor’s headnote:</strong> the tree figured by Dr.&nbsp;Trimen was an undoubted Ledgeriana, Mr.&nbsp;Howard himself having given testimony to that effect after having analyzed the bark.</p>
-<p><strong>Agar:</strong> The bark of <strong>some of these trees</strong> was sent home … to Mr.&nbsp;Howard.</p>
-<p>I have also in my possession the bark from <strong>the tree itself</strong>.</p>
-</div><div class="column" style="width:50%;">
-<p>A record saying <em>Howard analysed the illustrated tree</em> asserts a chemical result for a specimen never analysed. The whole quarrel rests on it.</p>
-<p>. . .</p>
-<p>Runs A and B kept them apart. Run C, the affordable model, wrote that Agar “confirms the tree sketched for Dr.&nbsp;Trimen was an undoubted Ledgeriana”. That is the editor’s sentence.</p>
-<p><strong>Its output reads well. Would you have noticed?</strong></p>
-</div></div>
-</section></section>
-<section>
-<section id="ground" class="title-slide slide level1 center">
-<h1>Ground</h1>
-
-</section>
-<section id="model-retrieve-candidates" class="slide level2 smaller">
-<h2>Model: retrieve candidates</h2>
-<blockquote>
-<p>Look up candidate identities using the configured Wikidata tools and the Colonial Office List records. <strong>Save the retrieved evidence and lookup date.</strong> Show what supports the match, what conflicts, what is missing. <strong>Leave unresolved cases unresolved. Do not generate QIDs from memory.</strong></p>
-</blockquote>
-<table class="caption-top">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Printed</th>
-<th>Candidate</th>
-<th>Supports</th>
-<th>Conflicts or missing</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>“HENRY TRIMEN”, Peradeniya</td>
-<td>Q2462643, botanist 1843–1896</td>
-<td>Signature, address; CO List: director, Ceylon, 1880</td>
-<td>A brother, Roland, in both collections</td>
-</tr>
-<tr class="even">
-<td>“WALTER AGAR”, Lawrence</td>
-<td>none</td>
-<td></td>
-<td>Two searches: a politician, a zoologist b. 1882, a temple, a thickening agent</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="you-supported-unresolved-or-wrong" class="slide level2">
-<h2>You: supported, unresolved, or wrong</h2>
-<ol type="1">
-<li><strong>Does the identifier resolve to what was retrieved?</strong> A Q-number from a model’s memory is not a lookup.</li>
-<li><strong>Is that entity the one in this source?</strong> Name, type, dates, place, activity. A real item can be the wrong person.</li>
-<li><strong>What does the link assert?</strong> This mention is that man. Not every statement on the item. Not that 1883 “Ceylon” is the modern state.</li>
-</ol>
 <div class="fragment">
-<p>Trimen: supported, for these mentions. Agar: unresolved; keep the local record and the searches that were run. “Not found” is not “does not exist”.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Source</th>
+<th>Record</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>“senr. dep. P.M.G., <strong>do.</strong>, 1935”</td>
+<td>place: “do.”</td>
+</tr>
+<tr class="even">
+<td>“BLAKELY, DONALD QUENTIN.—Clk., atty.-gen.’s off., B. Honduras, <strong>Apl., 1898</strong>.”</td>
+<td>birth_year: <strong>1898</strong>; event year: null; “officer”</td>
+</tr>
+<tr class="odd">
+<td>“<strong>KT. BACH.</strong> (1920)”</td>
+<td>honours: KT; BACH (1920)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<p>Systematic, not random. An expansion table, a forward-fill, a merge rule. <strong>Not a bigger model.</strong></p>
 </div>
 </section></section>
 <section>
@@ -416,68 +326,75 @@ Jim Clifford, University of Saskatchewan
 <h1>Clean</h1>
 
 </section>
-<section id="the-ocr" class="slide level2 smaller">
-<h2>The OCR</h2>
-<p>Chandra 2, a vision-language OCR model. Tested on this corpus; good results. In the production corpus, this page:</p>
+<section id="forty-editions-one-person" class="slide level2 smaller">
+<h2>Forty editions, one person</h2>
 <blockquote>
-<p>… were put out, and were now <strong>in a full condition and in flower</strong>.</p>
+<p>A missed link is recoverable; a false merge silently corrupts the record. <strong>Ties resolve to no merge.</strong></p>
 </blockquote>
-<blockquote>
-<p>I have by my <strong>prints of the leaves of some of the trees</strong> …</p>
-</blockquote>
+<ol type="1">
+<li>Deterministic passes: 0 false merges on 543 hand-verified careers</li>
+<li>Cluster the residue: shared forename + surname suffix, so OCR variants meet</li>
+<li>A model argues each cluster from a dossier; the reason goes in a ledger (917 so far)</li>
+<li>A 200-case silver standard, afterwards, to measure it</li>
+</ol>
+</section>
+<section id="four-clusters" class="slide level2 smaller">
+<h2>Four clusters</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>ABERY, Joseph / CARBERY, Joseph</td>
+<td>both M.B.C.M., both “1867 Ceylon asst. colonial surgeon”</td>
+<td><strong>merge</strong></td>
+</tr>
+<tr class="even">
+<td>A’BECKETT, Thomas b. 1836 / BECKETT, Thomas Rumbold b. 1898</td>
+<td>a Victorian judge; a Nigerian telegraph engineer</td>
+<td>keep apart</td>
+</tr>
+<tr class="odd">
+<td>ABRAHAM, Henry Charles / GRAHAM, Charles Drummond</td>
+<td>suffix “aham”, forename Charles</td>
+<td>keep apart</td>
+</tr>
+<tr class="even">
+<td>ABBOTT, Myles John / IBBOTT, John Thomas</td>
+<td>Hong Kong 1936; Demerara 1860</td>
+<td>keep apart</td>
+</tr>
+</tbody>
+</table>
 <div class="fragment">
-<p>The page:</p>
-<blockquote>
-<p>… and were <strong>growing in a bad situation and not robust</strong>.</p>
-</blockquote>
-<blockquote>
-<p>I have <strong>many plants from the seed of the specimen tree</strong> …</p>
-</blockquote>
+<p>Easy with the dossier in front of you. The model’s job was the dossier and the argument. <strong>You decide</strong> the one-shared-event cases.</p>
+</div>
+</section></section>
+<section>
+<section id="ground" class="title-slide slide level1 center">
+<h1>Ground</h1>
+
+</section>
+<section id="why" class="slide level2 smaller">
+<h2>Why</h2>
+<p>Every arc needs coordinates for “the Central Provinces”, “British Guiana”, “Jodhpur”. Wikidata has the item, the coordinates, or the capital that has them. One query.</p>
+<p>And: a historian of the Cape and a historian of Bombay who both ground to Q1800510 have joined their data without meeting.</p>
+<div class="fragment">
+<p><strong>Two ways to get a QID.</strong> Retrieve it, read the item, gate it. Or ask a chatbot.</p>
 </div>
 </section>
-<section id="what-the-model-saw" class="slide level2 smaller">
-<h2>What the model saw</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>archive.org JPEG scan</strong></p>
-<p><img data-src="images/p66-jpeg-detail.jpg"></p>
-<p>Chandra: <em>growing in a bad situation and not robust</em> (3 of 3)</p>
-</div><div class="column" style="width:50%;">
-<p><strong>Same page rendered from the archive.org PDF</strong> (JBIG2 text mask; what the corpus was OCR’d from)</p>
-<p><img data-src="images/p66-pdf-render-detail.png"></p>
-<p>The two lines are mostly gone. Chandra: <em>now in a full condition and in flower</em> / <em>in a very abnormal situation at the time</em>. It filled the gap with language.</p>
-</div></div>
-</section>
-<section id="ocr-is-better-and-not-perfect" class="slide level2 smaller">
-<h2>OCR is better, and not perfect</h2>
-<p>The old archive.org text layer, same sentences:</p>
-<blockquote>
-<p>… ami were growing; in a bad situation and not robust. I have many plants from the seed of the specimen^ tree as well as the oiheis that Mr.&nbsp;Moens declared …</p>
-</blockquote>
-<div class="fragment">
-<ul>
-<li>The old OCR’s errors look like errors. The new OCR’s errors read like prose.</li>
-<li>The two frontier runs flagged the sentences, then guessed; every guess was wrong. The affordable model reported the sentence as fact.</li>
-<li>The two OCRs disagree exactly where the new one is wrong.</li>
-<li>Given the JPEG scan, Chandra reads both sentences correctly, three times out of three. Given the same page rendered from the compressed PDF, it invents a third version. The error belongs to the page image. Nothing in the text tells you which you got.</li>
-</ul>
-<p><strong>A model can tell you a sentence reads oddly. Only the page tells you what it says.</strong></p>
-</div>
-</section>
-<section id="what-the-correction-becomes" class="slide level2">
-<h2>What the correction becomes</h2>
-<blockquote>
-<p>This example is wrong for the following reason: [explain]. <strong>Find other records that might have the same problem.</strong> Propose a correction and show which records it would affect. Rerun a small batch and show both corrected cases <strong>and previously accepted cases that changed</strong>.</p>
-</blockquote>
-<div class="fragment">
-<ul>
-<li>An uncertain reading is not data until someone has looked at the page.</li>
-<li>A model’s guess at the wording is not a reading.</li>
-<li>Where two OCRs disagree, send the sentence to a human.</li>
-<li>The probe that found the error becomes a test.</li>
-</ul>
+<section id="live-the-lookup" class="slide level2">
+<h2>Live: the lookup</h2>
+<ol type="1">
+<li>“Henry Trimen botanist Ceylon Peradeniya” → read the statements → <strong>supported</strong></li>
+<li>“Ferdinando Hamlyn Price” → Q123279571, alias Hamlyn, b. 1855, d.&nbsp;1942, Tamil description only → <strong>supported</strong>, and the pipeline’s gate had rejected it</li>
+<li>“Elwood D’Arcy Tibbits Antigua” → nothing → <strong>unresolved</strong>, record the search</li>
+</ol>
 <aside class="notes">
-<p>If there is time: the Tropical name-evidence fix (initial accepted as full name; 889 “verified” expansions became hypotheses; three probes now tests). Otherwise point to the Further pages.</p>
+<p>WikidataMCP vector search. Saved results in outputs/ground-test/ if the network fails.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -489,37 +406,121 @@ Jim Clifford, University of Saskatchewan
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</section>
+<section id="the-control-gemini-3.8-flash-no-tools" class="slide level2 smaller">
+<h2>The control: Gemini 3.8 Flash, no tools</h2>
+<p>“Parse these bios and ground the places, schools and people to Wikidata ids where possible.” Twenty entries.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Person identifiers given</td>
+<td>16</td>
+</tr>
+<tr class="even">
+<td>Correct</td>
+<td><strong>0</strong></td>
+</tr>
+<tr class="odd">
+<td>Not even a person (a plant, a patent, Thoth, a village, a reptile)</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td>Within a few thousand of the right number</td>
+<td>7</td>
+</tr>
+<tr class="odd">
+<td>Place and school identifiers whose label matches</td>
+<td>43 of 142</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<p>Nyasaland → a disambiguation page. Straits Settlements → a Danish triathlete. Joseph Chamberlain → a Swiss footballer.</p>
+<p><strong>It knew who. It did not know the number.</strong> Nothing in the text tells you which ones resolve.</p>
 </div>
 </section>
-<section id="exercise-4555" class="slide level2 smaller">
-<h2>Exercise: 45–55</h2>
-<p><strong>jimclifford.ca/trimen-workshop/review/</strong></p>
+<section id="six-victorias" class="slide level2 smaller">
+<h2>Six Victorias</h2>
+<p>The Australian colony. The capital of British Columbia. An electoral district. A gaol in Hong Kong. A district in the Cape. A county in Mauritius. A town in the Seychelles.</p>
+<div class="fragment">
+<p>Surface-keyed cache → one QID for everyone. Context resolver → per person. Six surfaces left ungrounded on purpose.</p>
+</div>
+</section></section>
+<section>
+<section id="the-map-finds-the-errors" class="title-slide slide level1 center">
+<h1>The map finds the errors</h1>
+
+</section>
+<section id="three-errors" class="slide level2 smaller">
+<h2>Three errors</h2>
 <table class="caption-top">
 <colgroup>
 <col style="width: 33%">
 <col style="width: 33%">
 <col style="width: 33%">
 </colgroup>
+<thead>
+<tr class="header">
+<th>Seen</th>
+<th>Cause</th>
+<th>Fix</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td><strong>Clean</strong></td>
-<td>R3</td>
-<td>Does the OCR reading stand? Open the scan</td>
+<td>A premier of British Columbia with a seat in Melbourne</td>
+<td>“Victoria” grounded once, by string</td>
+<td>Per-person context resolver; also found the overrides had never applied</td>
 </tr>
 <tr class="even">
+<td>Union of South Africa at Harare: 960 events, 572 arcs</td>
+<td>Containment match: “South Africa” ⊂ British South Africa Company</td>
+<td>Five cache rows patched; containment guard; 100 pre-1910 events still ambiguous</td>
+</tr>
+<tr class="odd">
+<td>Two Baluchistans</td>
+<td>Colony under Q843 (Pakistan) and a second QID</td>
+<td>One canonical row; duplicate folded</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<p>Fix the <strong>rule</strong>, re-emit <strong>both corpora</strong>, rebuild the atlas, look at <strong>everyone the rule touched</strong>.</p>
+</div>
+</section>
+<section id="what-the-map-cannot-find" class="slide level2">
+<h2>What the map cannot find</h2>
+<p>False negatives. An ungrounded “Victoria” has no arc. A missed merge is two plausible short careers.</p>
+<p>For those: silver standards. 200 hand-labelled cases, risky strata oversampled. Rare surname + overlapping era: the judge’s “different” verdicts were wrong <strong>76%</strong> of the time.</p>
+</section>
+<section id="exercise-4755" class="slide level2 smaller">
+<h2>Exercise: 47–55</h2>
+<p><strong>jimclifford.ca/trimen-workshop/review/</strong></p>
+<table class="caption-top">
+<tbody>
+<tr class="odd">
 <td><strong>Structure</strong></td>
-<td>R2</td>
-<td>Did Howard analyse the illustrated tree’s bark?</td>
+<td>R1, R2</td>
+<td>Blakely’s birth year; Balmer’s “do.”</td>
+</tr>
+<tr class="even">
+<td><strong>Clean</strong></td>
+<td>R3, R4</td>
+<td>Abery and Carbery; A’Beckett and Beckett</td>
 </tr>
 <tr class="odd">
 <td><strong>Ground</strong></td>
-<td>R1, R4</td>
-<td>Is “Dr.&nbsp;Trimen” Q2462643? Is there an item for Walter Agar?</td>
+<td>R5, R6</td>
+<td>South Africa at Harare; Brewster’s Victoria</td>
 </tr>
 <tr class="even">
 <td>extra</td>
-<td>R5, R6</td>
-<td>A plant name string; two men one letter apart</td>
+<td>R7</td>
+<td>Price and the item with no career</td>
 </tr>
 </tbody>
 </table>
@@ -528,12 +529,13 @@ Jim Clifford, University of Saskatchewan
 <section id="your-own-data" class="slide level2 smaller">
 <h2>Your own data</h2>
 <ul>
-<li><strong>One question, one small sample, the page reachable.</strong> Twenty records you can check beat two thousand you cannot.</li>
-<li><strong>Local identifiers first.</strong> External ones only after retrieval and review. None suitable? Keep the local id.</li>
-<li><strong>No identifiers from memory.</strong></li>
-<li><strong>Model decisions and human decisions in different columns.</strong> Fingerprint the data the decisions were made on.</li>
-<li><strong>Make the correction a test.</strong></li>
-<li><strong>Two kinds of model.</strong> A frontier model writes the pipeline once. A local open model (Qwen on a shared GPU) reads the collection inside it.</li>
+<li><strong>One question, one small sample, the page reachable.</strong></li>
+<li><strong>Build the view early.</strong> It is your error detector.</li>
+<li><strong>Local identifiers first.</strong> External ones after retrieval and review. <strong>None from memory.</strong></li>
+<li><strong>Ground to the historical entity.</strong> Resolve per person, not per string.</li>
+<li><strong>Ties resolve to no merge.</strong></li>
+<li><strong>Fix the rule, not the record; make the correction a test.</strong></li>
+<li><strong>Two kinds of model.</strong> A frontier model writes the pipeline; a cheap one reads the collection inside it.</li>
 </ul>
 </section>
 <section id="three-questions-1" class="slide level2">
@@ -553,23 +555,23 @@ Jim Clifford, University of Saskatchewan
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Clean</strong></td>
-<td>Is this what the page says?</td>
-<td>Read the page and rule</td>
-</tr>
-<tr class="even">
 <td><strong>Structure</strong></td>
 <td>What is a record here?</td>
-<td>What counts; did the meaning change?</td>
+<td>What counts as an event</td>
+</tr>
+<tr class="even">
+<td><strong>Clean</strong></td>
+<td>One person or two?</td>
+<td>Merge, keep apart, review</td>
 </tr>
 <tr class="odd">
 <td><strong>Ground</strong></td>
-<td>Who is this?</td>
-<td>Supported, unresolved, or wrong</td>
+<td>Which place, which person?</td>
+<td>Supported, unresolved, wrong</td>
 </tr>
 </tbody>
 </table>
-<p><strong>jimclifford.ca/trimen-workshop</strong> — pages, saved outputs, exercise, worked answers, the wider research packet.</p>
+<p><strong>jimclifford.ca/trimen-workshop</strong> — pages, saved outputs, both exercises, worked answers. Data: <strong>jimclifford.ca/col_matching</strong> (CC0).</p>
 
 
 </section></section>

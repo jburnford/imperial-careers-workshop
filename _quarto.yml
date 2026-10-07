@@ -4,53 +4,56 @@ project:
   render:
     - "*.qmd"
     - "steps/*.qmd"
+    - "!archive/"
   resources:
     - images/
     - review/
+    - annotate/
     - outputs/
     - source-pack/
-    - research/trimen-network/
 
 website:
   title: "Cleaning and Structuring Historical Data"
-  description: "A working session on delegating data work to models while keeping historical judgment. AI and History Conference, Johns Hopkins University, 15 October 2026."
+  description: "A working session on building a dataset at scale with models and coding agents while keeping historical judgment. AI and History Conference, Johns Hopkins University, 15 October 2026."
   navbar:
     left:
       - href: index.qmd
         text: Start
       - text: "The hour"
         menu:
-          - href: steps/01-question.qmd
-            text: "The page"
-          - href: steps/02-structure-extract.qmd
-            text: "Structure"
-          - href: steps/03-candidates.qmd
-            text: "Ground"
-          - href: steps/04-review.qmd
-            text: "Clean, together"
+          - href: steps/01-atlas.qmd
+            text: "1. The atlas"
+          - href: steps/02-source.qmd
+            text: "2. The source"
+          - href: steps/03-structure.qmd
+            text: "3. Structure"
+          - href: steps/04-identity.qmd
+            text: "4. Clean: one person or two?"
+          - href: steps/05-ground.qmd
+            text: "5. Ground"
+          - href: steps/06-loop.qmd
+            text: "6. The map finds the errors"
           - href: review/index.html
-            text: "Exercise"
+            text: "Exercise: decide"
+          - href: annotate/index.html
+            text: "Exercise: mark up an entry"
           - href: steps/07-your-data.qmd
-            text: "Your own data"
+            text: "7. Your own data"
       - href: slides.qmd
         text: Slides
       - href: answers.qmd
         text: Worked answers
-      - text: "Further"
+      - text: "More"
         menu:
-          - href: steps/05-revise.qmd
-            text: "What a correction becomes"
-          - href: steps/06-connect.qmd
-            text: "Connecting collections"
+          - href: handout.qmd
+            text: "Printable handout"
           - href: setup.qmd
             text: "Run it yourself"
-          - href: packet.qmd
-            text: "Research packet"
           - href: presenter.qmd
             text: "Presenter notes"
   page-footer:
     left: "Jim Clifford, University of Saskatchewan. Draft materials; sources credited on each page."
-    right: "Source text: archive.org scans of The Tropical Agriculturist."
+    right: "Data: Imperial Careers (CC0), jimclifford.ca/col_matching"
 
 format:
   html:

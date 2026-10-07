@@ -1,0 +1,58 @@
+---
+title: "Handout: five entries from the Record of Services"
+subtitle: "Mark every position, place, year and honour, and the education and birth fields. Then decide what counts as an event."
+format:
+  html: default
+  typst:
+    papersize: us-letter
+    margin:
+      x: 1in
+      y: 1in
+    fontsize: 11pt
+---
+
+*Colonial Office List*, Record of the Public Services of Officers. OCR text, unedited.
+
+**1. 1889**
+
+TRIMEN, HENRY, M.B. (Lond.), F.R.S., F.L.S. —Formerly lecturer on botany at St. Mary's Hospital, London, 1867 to 1875; was senior assistant to department of botany, British Museum, 1869 to 1879; director Royal Botanical Gardens, Ceylon, Feb., 1880; author of numerous works and papers on pure and applied botany.
+
+&nbsp;
+
+**2. 1936**
+
+BALMER, F. E.—Dep. chief acctnt., G.P.O., E. Africa Prot., Mar., 1919; ch. acctnt., G.P.O., Kenya, Oct., 1919; ch. acctnt., Kenya-Uganda-Tanganyika post and tel. service, 1933; senr. dep. P.M.G., do., 1935.
+
+&nbsp;
+
+**3. 1940**
+
+CONNOLLY, HON. SIR JAMES DANIEL, KT. BACH. (1920). —B. 1870; ed. Warwick Pub. Schl. and Catholic Schl.; M.L.C., Western Australia, 1902; col. sec. and min. of com. and lab., 1906; col. sec. and min. of pub. health, 1910; leader of leg. coun. from 1906 to 1911; M.L.A. for Perth, 1914; agt. genl. in London for Western Australia, 1917-23; agt. gen. in London for Malta, 1930.
+
+&nbsp;
+
+**4. 1918**
+
+BREWSTER, HON. HARLAN C.—B. 1870; took up newspaper work in New Brunswick and Boston; removed to B. Columbia in 1897; managing dir., Clayoquot Sound Canning Co.; elec. to legis. ass. for Alberni, B. Columbia, 1907; re-elec., 1909; defeated by Sir Richard McBride, in Victoria, 1912; re-elec. at bye-elec., Mar., 1916; premier, B. Columbia, 1916.
+
+&nbsp;
+
+**5. 1905**
+
+BLAKELY, DONALD QUENTIN.—Clk., atty.-gen.'s off., B. Honduras, Apl., 1898.
+
+&nbsp;
+
+## The target record
+
+One object per entry: `surname`, `given_names`, `birth_year` (only if printed), `education` (the "ed." string), `honours` (each with its award year if printed in parentheses), `events`, `terminal` (retired, resigned, died: year).
+
+One event per distinct posting: `position` as printed, `place` as printed (or inherited from the previous clause), `year_start`, `year_end`, `is_acting`, `civil` or `military`.
+
+## Three decisions
+
+- A clause with no place: does it inherit the previous one? ("do." in entry 2.)
+- "col. sec. and min. of com. and lab., 1906": one event or two?
+- "KT. BACH. (1920)": one honour with a year, two honours, or a title that is not an honour?
+
+Site: jimclifford.ca/trimen-workshop. Mark-up exercise online: jimclifford.ca/trimen-workshop/annotate/
