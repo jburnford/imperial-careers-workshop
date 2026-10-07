@@ -35,3 +35,7 @@ $selection-bg: #c9a227;
 .reveal .columns { gap: 1.5em; }
 .reveal mark { background: #c9a227; color: #15161a; padding: 0 0.15em; }
 .reveal .fragment.highlight-current-red.current-fragment { color: #c9a227; }
+
+/* Keep video controls reachable; the still is a poster, not a competing background. */
+.reveal .video-slide video { display: block; width: 100%; height: 600px; object-fit: contain; margin: 0 auto; }
+.reveal .video-slide .video-link { font-size: 0.55em; text-align: right; margin: 0.25em 0 0; }

@@ -22,10 +22,21 @@ format:
 ---
 
 
-## {background-video="https://jimclifford.ca/col_matching/combined_mobility.mp4" background-video-muted="true" background-image="images/combined-mobility-frame.jpg" background-size="cover"}
+## {#mobility-video .video-slide background-color="#15161a"}
+
+```{=html}
+<video data-autoplay controls muted playsinline preload="metadata"
+       poster="images/combined-mobility-frame.jpg"
+       aria-label="Animated atlas of imperial career postings">
+  <source src="https://jimclifford.ca/col_matching/combined_mobility.mp4" type="video/mp4">
+  <source src="media/combined-mobility.webm" type="video/webm">
+  Your browser cannot play this video. Use the direct link below.
+</video>
+<p class="video-link"><a href="https://jimclifford.ca/col_matching/combined_mobility.mp4" target="_blank" rel="noopener">Open the video directly</a></p>
+```
 
 ::: notes
-0–1. Let the 56-second video run. It is an earlier export; the September counts on the next slide supersede its caption. These are sequences of recorded postings, not observed travel routes. Use the downloaded copy if the network fails.
+0–1. Let the 56-second video run. It is an earlier export; the September counts on the next slide supersede its caption. These are sequences of recorded postings, not observed travel routes. The video starts muted when this slide opens; use Play or Replay in its controls if needed. The direct link opens the MP4 separately. Use the downloaded copy if the network fails.
 :::
 
 ## What one arc needs {.smaller}
@@ -58,6 +69,8 @@ A source clause → an event → a checked place identifier → a point.
 - **1851 Honduras** → Belmopan, a capital founded in 1970.
 
 [The map made the errors visible.]{.gold}
+
+**Still present in the public atlas** (checked 7 October).
 
 The date matters as much as the place name.
 :::

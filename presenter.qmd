@@ -15,7 +15,7 @@ subtitle: "A sixty-minute working session, with the same decisions in the room a
 
 ## Running order
 
-[Open the deck](slides.html); press `S` for speaker notes.
+[Open the deck](slides.html); press `S` for speaker notes. The video slide starts muted and has native Play/Replay controls, plus a direct MP4 link if autoplay is blocked.
 
 | Minutes | What happens | If time is short |
 |---|---|---|
