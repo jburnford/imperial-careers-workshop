@@ -25,6 +25,47 @@ format:
 Let it run. 56 seconds. Every arc is one official moving between colonies, 1815 to 1966. Say nothing until the arcs reach Africa. If the network is down, play the downloaded mp4 instead; the still behind this slide is a frame from it.
 :::
 
+## What one arc needs {.smaller}
+
+> WODEHOUSE, SIR PHILIP E., K.C.B.—Entered the Ceylon civil service as a writer, May, 1828; … district judge of Kandy, 1840; … superintendent of Honduras, 1851; in Feb. 1854, governor of British Guiana; was employed in 1858 on a special mission to the government of Venezuela; and in 1861 was appointed governor of the Cape of Good Hope; is also high commissioner in South Africa.
+
+| As printed | Event | Place, as printed | Identifier | Seat | Lat, long | Year |
+|---|---|---|---|---|---|---|
+| "writer, May, 1828" | writer | Ceylon | Q918153 British Ceylon | Colombo | 6.93, 79.86 | 1828 |
+| "superintendent of Honduras, 1851" | superintendent | British Honduras | Q1643555 | Belize | 17.5, −88.2 | 1851 |
+| "governor of British Guiana" | governor | British Guiana | Q918126 | Georgetown | 6.81, −58.15 | 1854 |
+| "governor of the Cape of Good Hope" | governor | Cape Colony | Q370736 | Cape Town | −33.93, 18.42 | 1861 |
+| "governor of Bombay" (India Office List) | governor | Bombay Presidency | Q891827 | Bombay | 18.97, 72.83 | 1872–77 |
+
+::: notes
+Colonial Office List 1867. Each row is the three questions answered once: what is the event, which entry is this man (both Lists), which place and so which coordinates. The year orders the arcs. The same work, 36,431 times.
+:::
+
+## One entry on the map
+
+![](images/wodehouse-trace.png){height="600"}
+
+## And what the map got wrong {.smaller}
+
+:::: {.columns}
+::: {.column width="38%"}
+![](images/atlas-wodehouse-panel.png){height="520"}
+:::
+::: {.column width="62%"}
+The atlas's own panel for the same man, Colonial Office record:
+
+- 1858 "employed on a special mission" → **Union of South Africa**. The source says Venezuela. Venezuela is no colony, so the event fell through to the next one.
+- 1861 "high commissioner" → **Union of South Africa**, seated at Bloemfontein. The Union dates from 1910. In 1861 he was high commissioner *for* South Africa, from Cape Town.
+- 1851 "Honduras" → seat **Belmopan**, a capital founded in 1970.
+
+[Seen on the map. Fixed in a rule. Rerun for everyone.]{.gold}
+:::
+::::
+
+::: notes
+Found while preparing this slide, 7 October 2026. Both records (CO and IO) have errors visible in the panel; the IO record also inherits British Guiana for Honduras. These go on the fixes list. That is the method.
+:::
+
 ## What that was
 
 ::: {.big}

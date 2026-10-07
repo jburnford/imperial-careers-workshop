@@ -41,8 +41,8 @@ Extraction is half of it. The other half is looking at the result in a form wher
 
 | Minutes | | |
 |---|---|---|
-| 0–5 | [The atlas](steps/01-atlas.qmd) | What the finished data does, and the loop that made it |
-| 5–12 | [The source](steps/02-source.qmd) | One printed entry. Mark up what you would extract |
+| 0–7 | [The atlas](steps/01-atlas.qmd) | The video; then one man's entry turned into identifiers, coordinates and arcs, and the rows the map got wrong |
+| 7–12 | [The source](steps/02-source.qmd) | One printed entry. Mark up what you would extract |
 | 12–22 | [Structure](steps/03-structure.qmd) | The schema, the prompt, what the model got wrong, and why the fixes were not a bigger model |
 | 22–30 | [Clean](steps/04-identity.qmd) | Forty editions, one person: the merge rules and the cases that need a historian |
 | 30–40 | [Ground](steps/05-ground.qmd) | A live Wikidata lookup, and a chatbot asked to do the same from memory |

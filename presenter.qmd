@@ -22,14 +22,18 @@ subtitle: "Running order, checkpoints, and the room-plus-Zoom plan."
 
 | Min | Step | Live or saved | Checkpoint if behind |
 |---|---|---|---|
-| 0–5 | [The atlas](steps/01-atlas.qmd) | The video, then the three numbers and the loop | Skip Trading Consequences |
-| 5–12 | [The source](steps/02-source.qmd) | Entries on screen; participants mark one up (annotate page or paper) | Cut the mark-up to two minutes, Balmer only |
+| 0–7 | [The atlas](steps/01-atlas.qmd) | The video; Wodehouse's entry as a table of events, identifiers, seats and years; his trace; the three rows the atlas gets wrong | Skip Trading Consequences; skip the trace figure |
+| 7–12 | [The source](steps/02-source.qmd) | Entries on screen; participants mark one up (annotate page or paper) | Cut the mark-up to two minutes, Balmer only |
 | 12–22 | [Structure](steps/03-structure.qmd) | Optional live: paste one entry into Claude Code with the prompt. Otherwise the saved Trimen record and the three audit examples | Audit numbers and the "not a bigger model" point |
 | 22–30 | [Clean](steps/04-identity.qmd) | Saved: the four clusters | Abery/Carbery and A'Beckett only |
 | 30–40 | [Ground](steps/05-ground.qmd) | Live: three MCP searches. Then the Gemini control (saved) | Saved lookups in `outputs/ground-test/answer-key.md` |
 | 40–47 | [The map finds the errors](steps/06-loop.qmd) | Saved: Brewster, South Africa, Baluchistan, on the live atlas if the network allows | Brewster only |
 | 47–55 | [Exercise](review/index.html) | R1–R6; show of hands and chat summaries on R2 and R6 | R1, R3, R6 |
 | 55–60 | [Your own data](steps/07-your-data.qmd) and questions | | |
+
+## Wodehouse
+
+The opening walk-through uses the 1867 Colonial Office List entry for Philip Edmond Wodehouse (Q1800510), who is also in the India Office List as Governor of Bombay. Four errors in the atlas's own panels for him were found on 7 October while the slide was built (Venezuela mission and 1861 high commissionership both landed in the Union of South Africa; Belmopan as the 1851 seat of British Honduras; and in the India Office record, Honduras inheriting British Guiana). They are not yet fixed in col_matching; say so, and say that they go on the fixes list. If they are fixed before the day, show the before and after.
 
 ## The live lookup
 

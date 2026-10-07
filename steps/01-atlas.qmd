@@ -32,6 +32,42 @@ What the atlas rests on, from the 4 September 2026 build:
 
 Every arc lands where it does because a place name printed in a Victorian reference book was linked to a Wikidata item that carries coordinates, or links to the capital that does. Every arc belongs to one person because forty annual entries were resolved to one biography. Every arc has a year because a clause like "ag. comsnr., 1915-16; and from 1919" was read as two events, not one. Those are the three questions of the hour, and each was decided tens of thousands of times by a model and a few hundred times by a historian.
 
+## What one arc needs
+
+Take one man who moved a lot. The 1867 *Colonial Office List* entry:
+
+> WODEHOUSE, SIR PHILIP E., K.C.B. (Creat. 1862.)—Entered the Ceylon civil service as a writer, May, 1828; promoted to be assistant colonial secretary and clerk of the executive and legislative councils, Oct. 1833; district judge of Kandy, 1840; government agent for the western province, 1843; was appointed superintendent of Honduras, 1851; in Feb. 1854, governor of British Guiana; was employed in 1858 on a special mission to the government of Venezuela; and in 1861 was appointed governor of the Cape of Good Hope; is also high commissioner in South Africa.
+
+The *India Office List* has him too, because he went on to govern Bombay from 1872 to 1877. To draw his arcs the pipeline had to answer the three questions of the hour for every clause: what is the event, which printed place is which real place, and whether the two Lists' entries are the same man.
+
+| As printed | Event | Place, as printed | Identifier retrieved | Seat | Lat, long | Year |
+|---|---|---|---|---|---|---|
+| "Entered the Ceylon civil service as a writer, May, 1828" | writer | Ceylon | [Q918153](https://www.wikidata.org/wiki/Q918153) British Ceylon | Colombo | 6.93, 79.86 | 1828 |
+| "district judge of Kandy, 1840" | district judge | Kandy | [Q203197](https://www.wikidata.org/wiki/Q203197) | (rolled up to Ceylon) | 7.29, 80.64 | 1840 |
+| "superintendent of Honduras, 1851" | superintendent | British Honduras | [Q1643555](https://www.wikidata.org/wiki/Q1643555) | Belize | 17.5, −88.2 | 1851 |
+| "governor of British Guiana" | governor | British Guiana | [Q918126](https://www.wikidata.org/wiki/Q918126) | Georgetown | 6.81, −58.15 | 1854 |
+| "special mission to the government of Venezuela" | special mission | Venezuela | [Q717](https://www.wikidata.org/wiki/Q717) | Caracas, via the item's capital | 10.51, −66.91 | 1858 |
+| "governor of the Cape of Good Hope" | governor | Cape Colony | [Q370736](https://www.wikidata.org/wiki/Q370736) | Cape Town | −33.93, 18.42 | 1861 |
+| "governor of Bombay" (India Office List) | governor | Bombay Presidency | [Q891827](https://www.wikidata.org/wiki/Q891827) | Bombay | 18.97, 72.83 | 1872–77 |
+
+The man himself is [Q1800510](https://www.wikidata.org/wiki/Q1800510), born 1811, died 1887. Every coordinate in the table came from Wikidata through the identifier: either the item carries a location, or it names a capital that does. Drawn in order of year:
+
+![](../images/wodehouse-trace.png)
+
+## And what the map got wrong
+
+The atlas's own panel for the same record, captured on 7 October 2026 while this page was being written:
+
+![](../images/atlas-wodehouse-co.png)
+
+Three rows are wrong, and each is a rule, not a typo:
+
+- **1858, "employed on a special mission" → Union of South Africa.** The source says Venezuela. Venezuela is not a colony, so the event had no colony of its own and fell through to the next one. The rule that rolls placeless events forward needs a stop for foreign missions.
+- **1861, "high commissioner" → Union of South Africa, seated at Bloemfontein.** The Union dates from 1910. In 1861 he was high commissioner *for* South Africa, from Cape Town. The surface "South Africa" was grounded to the twentieth-century state; the period entity is the office, not a polity.
+- **1851, "Honduras" → seat Belmopan.** A capital founded in 1970. The seat table needs a date-aware entry for Belize Town.
+
+The India Office record of the same man has a fourth: "superintendent of Honduras" inherits British Guiana, because its place was left empty and the inheritance rule filled it from the wrong direction. All four go on the fixes list; the fix will apply to every official the rules touched, and the atlas will be rebuilt. This is the loop, and it was running while the slide was made.
+
 ## The loop
 
 The project did not go OCR, extract, visualise, publish. It went round a loop, many times:

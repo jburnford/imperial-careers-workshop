@@ -161,6 +161,20 @@
     "text": "Watch\n\nFifty-six seconds. Every arc is one official moving from one colony, presidency or province to another, drawn from the career graph and played out by year, 1815 to 1966. The interactive atlas behind it lets you search a name, follow a career, and open the 186 people the pipeline found serving in both the Colonial and the India Office: Philip Edmond Wodehouse, Governor of British Guiana, then the Cape, then Bombay, is one of them, and a historian of the Cape and a historian of Bombay would each have known half of him.\nWhat the atlas rests on, from the 4 September 2026 build:\n\n\n\nOfficials in the roster (both Lists)\n46,926\n\n\nOfficials with at least one recorded move\n16,287\n\n\nArcs drawn\n36,431\n\n\n\nEvery arc lands where it does because a place name printed in a Victorian reference book was linked to a Wikidata item that carries coordinates, or links to the capital that does. Every arc belongs to one person because forty annual entries were resolved to one biography. Every arc has a year because a clause like “ag. comsnr., 1915-16; and from 1919” was read as two events, not one. Those are the three questions of the hour, and each was decided tens of thousands of times by a model and a few hundred times by a historian."
   },
   {
+    "objectID": "steps/01-atlas.html#what-one-arc-needs",
+    "href": "steps/01-atlas.html#what-one-arc-needs",
+    "title": "The atlas",
+    "section": "What one arc needs",
+    "text": "What one arc needs\nTake one man who moved a lot. The 1867 Colonial Office List entry:\n\nWODEHOUSE, SIR PHILIP E., K.C.B. (Creat. 1862.)—Entered the Ceylon civil service as a writer, May, 1828; promoted to be assistant colonial secretary and clerk of the executive and legislative councils, Oct. 1833; district judge of Kandy, 1840; government agent for the western province, 1843; was appointed superintendent of Honduras, 1851; in Feb. 1854, governor of British Guiana; was employed in 1858 on a special mission to the government of Venezuela; and in 1861 was appointed governor of the Cape of Good Hope; is also high commissioner in South Africa.\n\nThe India Office List has him too, because he went on to govern Bombay from 1872 to 1877. To draw his arcs the pipeline had to answer the three questions of the hour for every clause: what is the event, which printed place is which real place, and whether the two Lists’ entries are the same man.\n\n\n\nAs printed\nEvent\nPlace, as printed\nIdentifier retrieved\nSeat\nLat, long\nYear\n\n\n\n\n“Entered the Ceylon civil service as a writer, May, 1828”\nwriter\nCeylon\nQ918153 British Ceylon\nColombo\n6.93, 79.86\n1828\n\n\n“district judge of Kandy, 1840”\ndistrict judge\nKandy\nQ203197\n(rolled up to Ceylon)\n7.29, 80.64\n1840\n\n\n“superintendent of Honduras, 1851”\nsuperintendent\nBritish Honduras\nQ1643555\nBelize\n17.5, −88.2\n1851\n\n\n“governor of British Guiana”\ngovernor\nBritish Guiana\nQ918126\nGeorgetown\n6.81, −58.15\n1854\n\n\n“special mission to the government of Venezuela”\nspecial mission\nVenezuela\nQ717\nCaracas, via the item’s capital\n10.51, −66.91\n1858\n\n\n“governor of the Cape of Good Hope”\ngovernor\nCape Colony\nQ370736\nCape Town\n−33.93, 18.42\n1861\n\n\n“governor of Bombay” (India Office List)\ngovernor\nBombay Presidency\nQ891827\nBombay\n18.97, 72.83\n1872–77\n\n\n\nThe man himself is Q1800510, born 1811, died 1887. Every coordinate in the table came from Wikidata through the identifier: either the item carries a location, or it names a capital that does. Drawn in order of year:"
+  },
+  {
+    "objectID": "steps/01-atlas.html#and-what-the-map-got-wrong",
+    "href": "steps/01-atlas.html#and-what-the-map-got-wrong",
+    "title": "The atlas",
+    "section": "And what the map got wrong",
+    "text": "And what the map got wrong\nThe atlas’s own panel for the same record, captured on 7 October 2026 while this page was being written:\n\nThree rows are wrong, and each is a rule, not a typo:\n\n1858, “employed on a special mission” → Union of South Africa. The source says Venezuela. Venezuela is not a colony, so the event had no colony of its own and fell through to the next one. The rule that rolls placeless events forward needs a stop for foreign missions.\n1861, “high commissioner” → Union of South Africa, seated at Bloemfontein. The Union dates from 1910. In 1861 he was high commissioner for South Africa, from Cape Town. The surface “South Africa” was grounded to the twentieth-century state; the period entity is the office, not a polity.\n1851, “Honduras” → seat Belmopan. A capital founded in 1970. The seat table needs a date-aware entry for Belize Town.\n\nThe India Office record of the same man has a fourth: “superintendent of Honduras” inherits British Guiana, because its place was left empty and the inheritance rule filled it from the wrong direction. All four go on the fixes list; the fix will apply to every official the rules touched, and the atlas will be rebuilt. This is the loop, and it was running while the slide was made."
+  },
+  {
     "objectID": "steps/01-atlas.html#the-loop",
     "href": "steps/01-atlas.html#the-loop",
     "title": "The atlas",
@@ -256,7 +270,7 @@
     "href": "index.html#the-hour",
     "title": "Cleaning and Structuring Historical Data: A Working Session",
     "section": "The hour",
-    "text": "The hour\n\n\n\nMinutes\n\n\n\n\n\n\n0–5\nThe atlas\nWhat the finished data does, and the loop that made it\n\n\n5–12\nThe source\nOne printed entry. Mark up what you would extract\n\n\n12–22\nStructure\nThe schema, the prompt, what the model got wrong, and why the fixes were not a bigger model\n\n\n22–30\nClean\nForty editions, one person: the merge rules and the cases that need a historian\n\n\n30–40\nGround\nA live Wikidata lookup, and a chatbot asked to do the same from memory\n\n\n40–47\nThe map finds the errors\nThree errors seen in the atlas and what fixing them changed\n\n\n47–55\nExercise\nSeven decisions, in the room or on Zoom\n\n\n55–60\nYour own data\nTaking the three questions to another collection"
+    "text": "The hour\n\n\n\nMinutes\n\n\n\n\n\n\n0–7\nThe atlas\nThe video; then one man’s entry turned into identifiers, coordinates and arcs, and the rows the map got wrong\n\n\n7–12\nThe source\nOne printed entry. Mark up what you would extract\n\n\n12–22\nStructure\nThe schema, the prompt, what the model got wrong, and why the fixes were not a bigger model\n\n\n22–30\nClean\nForty editions, one person: the merge rules and the cases that need a historian\n\n\n30–40\nGround\nA live Wikidata lookup, and a chatbot asked to do the same from memory\n\n\n40–47\nThe map finds the errors\nThree errors seen in the atlas and what fixing them changed\n\n\n47–55\nExercise\nSeven decisions, in the room or on Zoom\n\n\n55–60\nYour own data\nTaking the three questions to another collection"
   },
   {
     "objectID": "index.html#what-you-need",
@@ -410,7 +424,14 @@
     "href": "presenter.html#running-order",
     "title": "Presenter notes",
     "section": "Running order",
-    "text": "Running order\n\n\n\nMin\nStep\nLive or saved\nCheckpoint if behind\n\n\n\n\n0–5\nThe atlas\nThe video, then the three numbers and the loop\nSkip Trading Consequences\n\n\n5–12\nThe source\nEntries on screen; participants mark one up (annotate page or paper)\nCut the mark-up to two minutes, Balmer only\n\n\n12–22\nStructure\nOptional live: paste one entry into Claude Code with the prompt. Otherwise the saved Trimen record and the three audit examples\nAudit numbers and the “not a bigger model” point\n\n\n22–30\nClean\nSaved: the four clusters\nAbery/Carbery and A’Beckett only\n\n\n30–40\nGround\nLive: three MCP searches. Then the Gemini control (saved)\nSaved lookups in outputs/ground-test/answer-key.md\n\n\n40–47\nThe map finds the errors\nSaved: Brewster, South Africa, Baluchistan, on the live atlas if the network allows\nBrewster only\n\n\n47–55\nExercise\nR1–R6; show of hands and chat summaries on R2 and R6\nR1, R3, R6\n\n\n55–60\nYour own data and questions"
+    "text": "Running order\n\n\n\nMin\nStep\nLive or saved\nCheckpoint if behind\n\n\n\n\n0–7\nThe atlas\nThe video; Wodehouse’s entry as a table of events, identifiers, seats and years; his trace; the three rows the atlas gets wrong\nSkip Trading Consequences; skip the trace figure\n\n\n7–12\nThe source\nEntries on screen; participants mark one up (annotate page or paper)\nCut the mark-up to two minutes, Balmer only\n\n\n12–22\nStructure\nOptional live: paste one entry into Claude Code with the prompt. Otherwise the saved Trimen record and the three audit examples\nAudit numbers and the “not a bigger model” point\n\n\n22–30\nClean\nSaved: the four clusters\nAbery/Carbery and A’Beckett only\n\n\n30–40\nGround\nLive: three MCP searches. Then the Gemini control (saved)\nSaved lookups in outputs/ground-test/answer-key.md\n\n\n40–47\nThe map finds the errors\nSaved: Brewster, South Africa, Baluchistan, on the live atlas if the network allows\nBrewster only\n\n\n47–55\nExercise\nR1–R6; show of hands and chat summaries on R2 and R6\nR1, R3, R6\n\n\n55–60\nYour own data and questions"
+  },
+  {
+    "objectID": "presenter.html#wodehouse",
+    "href": "presenter.html#wodehouse",
+    "title": "Presenter notes",
+    "section": "Wodehouse",
+    "text": "Wodehouse\nThe opening walk-through uses the 1867 Colonial Office List entry for Philip Edmond Wodehouse (Q1800510), who is also in the India Office List as Governor of Bombay. Four errors in the atlas’s own panels for him were found on 7 October while the slide was built (Venezuela mission and 1861 high commissionership both landed in the Union of South Africa; Belmopan as the 1851 seat of British Honduras; and in the India Office record, Honduras inheriting British Guiana). They are not yet fixed in col_matching; say so, and say that they go on the fixes list. If they are fixed before the day, show the before and after."
   },
   {
     "objectID": "presenter.html#the-live-lookup",
@@ -446,6 +467,27 @@
     "title": "Cleaning, Structuring and Grounding Historical Data",
     "section": "",
     "text": "Let it run. 56 seconds. Every arc is one official moving between colonies, 1815 to 1966. Say nothing until the arcs reach Africa. If the network is down, play the downloaded mp4 instead; the still behind this slide is a frame from it."
+  },
+  {
+    "objectID": "slides.html#what-one-arc-needs",
+    "href": "slides.html#what-one-arc-needs",
+    "title": "Cleaning, Structuring and Grounding Historical Data",
+    "section": "What one arc needs",
+    "text": "What one arc needs\n\nWODEHOUSE, SIR PHILIP E., K.C.B.—Entered the Ceylon civil service as a writer, May, 1828; … district judge of Kandy, 1840; … superintendent of Honduras, 1851; in Feb. 1854, governor of British Guiana; was employed in 1858 on a special mission to the government of Venezuela; and in 1861 was appointed governor of the Cape of Good Hope; is also high commissioner in South Africa.\n\n\n\n\n\n\n\n\n\n\n\n\n\nAs printed\nEvent\nPlace, as printed\nIdentifier\nSeat\nLat, long\nYear\n\n\n\n\n“writer, May, 1828”\nwriter\nCeylon\nQ918153 British Ceylon\nColombo\n6.93, 79.86\n1828\n\n\n“superintendent of Honduras, 1851”\nsuperintendent\nBritish Honduras\nQ1643555\nBelize\n17.5, −88.2\n1851\n\n\n“governor of British Guiana”\ngovernor\nBritish Guiana\nQ918126\nGeorgetown\n6.81, −58.15\n1854\n\n\n“governor of the Cape of Good Hope”\ngovernor\nCape Colony\nQ370736\nCape Town\n−33.93, 18.42\n1861\n\n\n“governor of Bombay” (India Office List)\ngovernor\nBombay Presidency\nQ891827\nBombay\n18.97, 72.83\n1872–77\n\n\n\n\nColonial Office List 1867. Each row is the three questions answered once: what is the event, which entry is this man (both Lists), which place and so which coordinates. The year orders the arcs. The same work, 36,431 times."
+  },
+  {
+    "objectID": "slides.html#one-entry-on-the-map",
+    "href": "slides.html#one-entry-on-the-map",
+    "title": "Cleaning, Structuring and Grounding Historical Data",
+    "section": "One entry on the map",
+    "text": "One entry on the map"
+  },
+  {
+    "objectID": "slides.html#and-what-the-map-got-wrong",
+    "href": "slides.html#and-what-the-map-got-wrong",
+    "title": "Cleaning, Structuring and Grounding Historical Data",
+    "section": "And what the map got wrong",
+    "text": "And what the map got wrong\n\n\n\n\nThe atlas’s own panel for the same man, Colonial Office record:\n\n1858 “employed on a special mission” → Union of South Africa. The source says Venezuela. Venezuela is no colony, so the event fell through to the next one.\n1861 “high commissioner” → Union of South Africa, seated at Bloemfontein. The Union dates from 1910. In 1861 he was high commissioner for South Africa, from Cape Town.\n1851 “Honduras” → seat Belmopan, a capital founded in 1970.\n\nSeen on the map. Fixed in a rule. Rerun for everyone.\n\n\nFound while preparing this slide, 7 October 2026. Both records (CO and IO) have errors visible in the panel; the IO record also inherits British Guiana for Honduras. These go on the fixes list. That is the method."
   },
   {
     "objectID": "slides.html#what-that-was",
