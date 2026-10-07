@@ -8,7 +8,7 @@ subtitle: "Minutes 0–7. What the finished data does, and the loop that made it
 - **pipeline**: the chain of scripts that turns the OCR text into the graph; run again when a rule changes.
 - **arc**: one line on the atlas: one official moving from one posting to another.
 - **Wikidata item, QID**: a shared identifier (Q plus a number) for a person or place, with its own facts attached.
-- **F-score**: one number for how much a system found (recall) and how much of that was right (precision); 0.6 means about six in ten on both.
+- **F-score**: one number for how much a system found (recall) and how much of that was right (precision); it does not give either value separately.
 - **gazetteer**: a list of place names with coordinates.
 - **cache**: the saved results of earlier lookups, so they are not repeated and can be corrected in one place.
 - **re-emit**: write the graph out again after a rule changes.
@@ -20,15 +20,19 @@ All terms: [glossary](../glossary.qmd).
 
 {{< video https://jimclifford.ca/col_matching/combined_mobility.mp4 >}}
 
-Fifty-six seconds. Every arc is one official moving from one colony, presidency or province to another, drawn from the career graph and played out by year, 1815 to 1966. The [interactive atlas](https://jimclifford.ca/col_matching/) behind it lets you search a name, follow a career, and open the 186 people the pipeline found serving in both the Colonial and the India Office: [Philip Edmond Wodehouse](https://www.wikidata.org/wiki/Q1800510), Governor of British Guiana, then the Cape, then Bombay, is one of them, and a historian of the Cape and a historian of Bombay would each have known half of him.
+Fifty-six seconds. Every arc is one official moving from one colony, presidency or province to another, drawn from the career graph and played out by year, 1815 to 1966. The [interactive atlas](https://jimclifford.ca/col_matching/) behind it lets you search a name, follow a career, and open 186 proposed links between people in the Colonial and India Office records: [Philip Edmond Wodehouse](https://www.wikidata.org/wiki/Q1800510), Governor of British Guiana, then the Cape, then Bombay, is one of them, and a historian of the Cape and a historian of Bombay would each have known half of him.
+
+The cross-service links are candidates: the September review found errors in a small check (11 of 15 links supported). Wodehouse is the worked example here; the full set of bridges needs further review.
 
 What the atlas rests on, from the 4 September 2026 build:
 
 | | |
 |---|---|
-| Officials in the roster (both Lists) | 46,926 |
+| Person records in the roster (sum of both Lists) | 46,926 |
 | Officials with at least one recorded move | 16,287 |
 | Arcs drawn | 36,431 |
+
+The video is an earlier export; use the table above for the September build counts. These arcs represent sequences of recorded postings, with many points placed at an administrative seat. They are not observed travel routes.
 
 Every arc lands where it does because a place name printed in a Victorian reference book was linked to a Wikidata item that carries coordinates, or links to the capital that does. Every arc belongs to one person because forty annual entries were resolved to one biography. Every arc has a year because a clause like "ag. comsnr., 1915-16; and from 1919" was read as two events, not one. Those are the three questions of the hour, and each was decided tens of thousands of times by a model and a few hundred times by a historian.
 
@@ -81,14 +85,14 @@ The project did not go OCR, extract, visualise, publish. It went round a loop, m
 
 The atlas is step 3 and step 4 at once. It was built to answer a question about imperial mobility; it turned out to be the project's best error detector, because a wrong grounding is invisible in a table of 180,000 rows and obvious on a map. [Step 6](06-loop.qmd) walks through three of the errors it found.
 
-## Ten years ago
+## An earlier project
 
 The same three problems at ten million pages: *Trading Consequences* (2012–2013) text-mined nineteenth-century commodity sources with the Edinburgh Geoparser, five institutions and a Digging into Data grant (Clifford, Alex, Coates, Klein and Watson, "Geoparsing history", *Historical Methods* 49:3, 2016, [doi:10.1080/01615440.2015.1116419](https://doi.org/10.1080/01615440.2015.1116419)).
 
 | | Trading Consequences, 2013 | Imperial Careers, 2026 |
 |---|---|---|
 | **Structuring** | A six-stage pipeline adapted by computational linguists; a relation was "same sentence" | A schema and a prompt written with a coding agent in an afternoon; a Qwen model reads 100,000 entries inside the script |
-| **Grounding** | GeoNames string matching; "Saharunpore" missed because the gazetteer knew "Saharanpur"; a bug put every "Italy" in a Texan town. F-scores of 0.62 and 0.61, which is to say: of the places and commodities it found, about six in ten were right, and of those on the page, it found about six in ten | Semantic search over Wikidata with verification gates; "Victoria" six ways; a bug put the Union of South Africa at Harare |
+| **Grounding** | GeoNames string matching; "Saharunpore" missed because the gazetteer knew "Saharanpur"; a bug put every "Italy" in a Texan town. F-scores of 0.62 for commodities and 0.61 for locations, combining precision and recall | Semantic search over Wikidata with verification gates; "Victoria" six ways; a bug put the Union of South Africa at Harare |
 | **Review** | Historians spotted false positives through the visualisations; false negatives were invisible | Same. The atlas found the errors; a sampled audit measured the rest |
 
 What changed is who writes the pipeline and how fast the loop from error to fix runs. What did not change is that the errors you can see get fixed, the errors you cannot see need a sample, and a corrected error should become a rule.

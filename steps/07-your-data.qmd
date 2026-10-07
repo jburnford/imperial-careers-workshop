@@ -1,13 +1,13 @@
 ---
 title: "Your own data"
-subtitle: "Minutes 55–60. A practical next step for another collection."
+subtitle: "Minutes 56–60. A practical next step for another collection."
 ---
 
 ::: {.callout-note collapse="true" title="Terms on this page"}
 - **fingerprint**: a short code computed from the data, stored with each decision so it cannot be attached to a different version.
 - **precision and recall**: of what you found, how much was right; of what was there, how much you found.
 - **stratified sample**: a sample built slice by slice so the hard cases are represented.
-- **frontier model**: a commercial model run by its maker; expensive per entry, used to write the pipeline.
+- **frontier model**: a model at the leading edge of capability; used here in a coding agent to write and repair the pipeline.
 
 All terms: [glossary](../glossary.qmd).
 :::
@@ -37,19 +37,25 @@ The published session description invited you to bring messy historical datasets
 - **Local identifiers first.** Every record gets a stable local id before any external one. Add a Wikidata link only after retrieval and review support it. Nothing suitable? Keep the local id.
 - **No identifiers from memory.** A model will offer plausible Q-numbers. Treat any identifier that was not retrieved by a tool as unverified.
 - **Ground to the historical entity, not the modern one.** The Colony of Victoria, not the state; British Raj, not India. Where a surface means different places for different people, resolve per person, not per string.
-- **Ties resolve to no merge.** A missed link is recoverable. A false merge is not.
+- **Ties resolve to no merge.** A missed link is recoverable. A false merge can silently corrupt later analysis.
 - **Model decisions and human decisions in different columns.** Never overwrite one with the other. Export human decisions with a fingerprint of the data they were made on.
 - **Fix the rule, not the record.** Then look at everyone the rule touched.
 - **Make the correction a test.** The probe that found the defect goes into the test suite.
-- **Report what the sample can support.** Handpicked cases explain failure modes. A stratified sample measures precision for one stratum. Neither measures recall; for that you need the silver standard.
+- **Report what the sample can support.** Handpicked cases explain failure modes. A stratified sample measures precision for one stratum. Recall needs labelled true matches, including ones the system missed. An oversampled stratum is not the population; report its result separately or weight it appropriately.
 
 ## Tools, and what they cost at scale
 
 Two different jobs need two different kinds of model.
 
 - **The agent that writes the pipeline** reads your sample, proposes the structure, writes and tests the scripts, builds the review views and the atlas. This is hours of a frontier model's time per project, in a coding agent. Imperial Careers used Claude in Claude Code.
-- **The model inside the pipeline** reads every entry and judges every cluster. At 100,000 entries the frontier models are too expensive. Imperial Careers used Qwen3.6-35B-A3B on a university GPU box for structuring, at about one entry a second, and Qwen3.8-27B on a Compute Canada cluster for the never-biographied matching, with the frontier model's in-session work as the reference set to measure it against.
+- **The model inside the pipeline** reads every entry and judges every cluster. At corpus scale, measure cost and throughput on a sample before choosing a model. Imperial Careers used Qwen3.6-35B-A3B on a university GPU box for structuring, at about one entry a second, and Qwen3.8-27B on a Compute Canada cluster for the never-biographied matching, with the frontier model's in-session work as the reference set to measure it against.
 
 The agent can write the pipeline so that the cheap model does the reading and the agent is only called back when something fails. Which operation produced a given record should remain visible in the output.
+
+For your first trial, you do not need a university GPU. Use twenty records you can check, a hosted model or your existing coding agent, and a small output table. Record input and output tokens, charges, elapsed time, failures and review time. University computing also has a cost even when there is no bill per request.
+
+**Take-home instruction for your agent:**
+
+> Read these twenty entries. Propose a schema and return two examples before processing the rest. Keep a local record id and a source reference. Preserve the wording; put interpretations in separate fields. Show omissions, unresolved cases and validation failures. After my review, write a script that saves each result and can resume without repeating completed records.
 
 The presenter's environment uses Claude Code as the coding agent and the [WikidataMCP](https://wd-mcp.wmcloud.org/) server for lookups. Any coding agent that can run code, read files and call a lookup tool will do. See [Run it yourself](../setup.qmd).

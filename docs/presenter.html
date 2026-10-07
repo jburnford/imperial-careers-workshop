@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -182,13 +216,12 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#before-the-day" id="toc-before-the-day" class="nav-link active" data-scroll-target="#before-the-day">Before the day</a></li>
-  <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
   <li><a href="#running-order" id="toc-running-order" class="nav-link" data-scroll-target="#running-order">Running order</a></li>
-  <li><a href="#wodehouse" id="toc-wodehouse" class="nav-link" data-scroll-target="#wodehouse">Wodehouse</a></li>
-  <li><a href="#the-live-lookup" id="toc-the-live-lookup" class="nav-link" data-scroll-target="#the-live-lookup">The live lookup</a></li>
-  <li><a href="#the-control" id="toc-the-control" class="nav-link" data-scroll-target="#the-control">The control</a></li>
-  <li><a href="#online-participation" id="toc-online-participation" class="nav-link" data-scroll-target="#online-participation">Online participation</a></li>
-  <li><a href="#what-not-to-claim" id="toc-what-not-to-claim" class="nav-link" data-scroll-target="#what-not-to-claim">What not to claim</a></li>
+  <li><a href="#the-correction-replay" id="toc-the-correction-replay" class="nav-link" data-scroll-target="#the-correction-replay">The correction replay</a></li>
+  <li><a href="#two-unfinished-repairs-worth-showing" id="toc-two-unfinished-repairs-worth-showing" class="nav-link" data-scroll-target="#two-unfinished-repairs-worth-showing">Two unfinished repairs worth showing</a></li>
+  <li><a href="#the-live-lookup-and-saved-runs" id="toc-the-live-lookup-and-saved-runs" class="nav-link" data-scroll-target="#the-live-lookup-and-saved-runs">The live lookup and saved runs</a></li>
+  <li><a href="#participation-and-debrief" id="toc-participation-and-debrief" class="nav-link" data-scroll-target="#participation-and-debrief">Participation and debrief</a></li>
+  <li><a href="#claims-to-keep-bounded" id="toc-claims-to-keep-bounded" class="nav-link" data-scroll-target="#claims-to-keep-bounded">Claims to keep bounded</a></li>
   </ul>
 </nav>
     </div>
@@ -198,7 +231,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Presenter notes</h1>
-<p class="subtitle lead">Running order, checkpoints, and the room-plus-Zoom plan.</p>
+<p class="subtitle lead">A sixty-minute working session, with the same decisions in the room and on Zoom.</p>
 </div>
 
 
@@ -218,111 +251,108 @@ ul.task-list li input[type="checkbox"] {
 <section id="before-the-day" class="level2">
 <h2 class="anchored" data-anchor-id="before-the-day">Before the day</h2>
 <ul class="task-list">
-<li><label><input type="checkbox">Confirm with the organizer how remote questions reach the room, and who monitors the Zoom chat. Do not plan to read the chat while presenting.</label></li>
-<li><label><input type="checkbox">The published description invites participants to “bring messy historical datasets”. Open by saying the hour works on one finished dataset and that <a href="./steps/07-your-data.html">Your own data</a> is the take-home.</label></li>
-<li><label><input type="checkbox">Download <code>combined_mobility.mp4</code> from the col_matching site to the presenting laptop in case the room’s network is slow; the opening slide streams it.</label></li>
-<li><label><input type="checkbox">Test the WikidataMCP endpoint from a non-campus network the day before. Rate limit is about five calls a second; the vector search takes one to two seconds a call.</label></li>
-<li><label><input type="checkbox">Decide which chatbot to use live for the control, or show the saved Gemini run. Either way have <code>outputs/ground-test/gemini-scoring.md</code> open.</label></li>
-<li><label><input type="checkbox">Print the <a href="./handout.html">handout</a> (one page, 25 copies).</label></li>
-<li><label><input type="checkbox">Rehearse against the clock with the saved checkpoints. Protect minutes 30–47.</label></li>
-<li><label><input type="checkbox">Put the site URL and both exercise URLs on the first slide. Someone posts them in the Zoom chat at the start.</label></li>
+<li><label><input type="checkbox">Confirm who monitors Zoom chat and how questions reach the room. Ask them to relay a reason as well as a verdict.</label></li>
+<li><label><input type="checkbox">Confirm the session description: this hour uses a shared dataset and starts after OCR. It does not demonstrate the Britannica OCR tools mentioned in the published blurb. Participants apply the sequence to their own data afterwards.</label></li>
+<li><label><input type="checkbox">Download <code>combined_mobility.mp4</code> to the presenting laptop. Its caption is from an earlier export; use the September counts in the deck.</label></li>
+<li><label><input type="checkbox">Test the Wikidata lookup from the presenting laptop. Keep the saved answer key open as the fallback.</label></li>
+<li><label><input type="checkbox">Print the <a href="handout.pdf">two-page handout</a>, double-sided if convenient. Confirm the quantity against the room registration; browser participation is equally suitable.</label></li>
+<li><label><input type="checkbox">Rehearse once against the clock. Protect the mark-up and the final ten-minute exercise.</label></li>
+<li><label><input type="checkbox">Ask the chat monitor to post the site, <code>/annotate/</code> and <code>/review/</code> links at the start.</label></li>
 </ul>
-</section>
-<section id="slides" class="level2">
-<h2 class="anchored" data-anchor-id="slides">Slides</h2>
-<p><a href="slides.html">slides.html</a> is the deck, with speaker notes (press <code>S</code> in the browser). The second slide streams the mobility video as a full-screen background with a still frame behind it; let it run.</p>
 </section>
 <section id="running-order" class="level2">
 <h2 class="anchored" data-anchor-id="running-order">Running order</h2>
+<p><a href="slides.html">Open the deck</a>; press <code>S</code> for speaker notes.</p>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>Min</th>
-<th>Step</th>
-<th>Live or saved</th>
-<th>Checkpoint if behind</th>
+<th>Minutes</th>
+<th>What happens</th>
+<th>If time is short</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>0–7</td>
-<td><a href="./steps/01-atlas.html">The atlas</a></td>
-<td>The video; Wodehouse’s entry as a table of events, identifiers, seats and years; his trace; the four rows the atlas gets wrong</td>
-<td>Skip Trading Consequences; skip the trace figure</td>
+<td>Video; Wodehouse source-to-map table and errors; what the records make visible; three questions</td>
+<td>Summarise the three Wodehouse errors in one sentence each</td>
 </tr>
 <tr class="even">
-<td>7–12</td>
-<td><a href="./steps/02-source.html">The source</a></td>
-<td>Entries on screen; participants mark one up (annotate page or paper)</td>
-<td>Cut the mark-up to two minutes, Balmer only</td>
+<td>7–13</td>
+<td>Balmer: three minutes tagging the last two postings, one minute comparing, one minute discussing</td>
+<td>Keep everyone on Balmer; no tour of the other entries</td>
 </tr>
 <tr class="odd">
-<td>12–22</td>
-<td><a href="./steps/03-structure.html">Structure</a></td>
-<td>Optional live: paste one entry into Claude Code with the prompt. Otherwise the saved Trimen record and the three audit examples</td>
-<td>Audit numbers and the “not a bigger model” point</td>
+<td>13–23</td>
+<td>Hybrid extraction, prompt, pre-fix audit, one correction replayed and checked</td>
+<td>Show the saved replay instead of running the command</td>
 </tr>
 <tr class="even">
-<td>22–30</td>
-<td><a href="./steps/04-identity.html">Clean</a></td>
-<td>Saved: the four clusters</td>
-<td>Abery/Carbery and A’Beckett only</td>
+<td>23–30</td>
+<td>Abery/Carbery decision before reveal; A’Beckett/Beckett contrast</td>
+<td>Keep the first decision; shorten the second example</td>
 </tr>
 <tr class="odd">
 <td>30–40</td>
-<td><a href="./steps/05-ground.html">Ground</a></td>
-<td>Live: three MCP searches. Then the Gemini control (saved)</td>
-<td>Saved lookups in <code>outputs/ground-test/answer-key.md</code></td>
+<td>Three lookups (maximum four minutes); saved chatbot comparison; model roles and cost</td>
+<td>Use saved lookups; do not start a live chatbot run</td>
 </tr>
 <tr class="even">
-<td>40–47</td>
-<td><a href="./steps/06-loop.html">The map finds the errors</a></td>
-<td>Saved: Brewster, South Africa, Baluchistan, on the live atlas if the network allows</td>
-<td>Brewster only</td>
+<td>40–46</td>
+<td>Brewster: repair the geography, then discover the unsupported appointment; limits of maps</td>
+<td>Keep both reveals; leave South Africa and Baluchistan on the supporting page</td>
 </tr>
 <tr class="odd">
-<td>47–55</td>
-<td><a href="review/index.html">Exercise</a></td>
-<td>R1–R7; show of hands and chat summaries on R2 and R6</td>
-<td>R1, R3, R6</td>
+<td>46–56</td>
+<td>R1, R3, R8: six minutes deciding, four minutes discussing Harris</td>
+<td>Reduce the recap cases; protect Harris and the reasons</td>
 </tr>
 <tr class="even">
-<td>55–60</td>
-<td><a href="./steps/07-your-data.html">Your own data</a> and questions</td>
-<td></td>
-<td></td>
+<td>56–60</td>
+<td>One sentence about participants’ own records, questions, take-home links</td>
+<td>Use the written take-home prompt on step 7</td>
 </tr>
 </tbody>
 </table>
+<p>The detailed pages contain more examples than the hour. Trading Consequences, the full Wodehouse trace, two additional clusters and the other map defects are supporting material.</p>
 </section>
-<section id="wodehouse" class="level2">
-<h2 class="anchored" data-anchor-id="wodehouse">Wodehouse</h2>
-<p>The opening walk-through uses the 1867 Colonial Office List entry for Philip Edmond Wodehouse (Q1800510), who is also in the India Office List as Governor of Bombay. Four errors in the atlas’s own panels for him were found on 7 October while the slide was built (Venezuela mission and 1861 high commissionership both landed in the Union of South Africa; Belmopan as the 1851 seat of British Honduras; and in the India Office record, Honduras inheriting British Guiana). They are not yet fixed in col_matching; say so, and say that they go on the fixes list. If they are fixed before the day, show the before and after.</p>
+<section id="the-correction-replay" class="level2">
+<h2 class="anchored" data-anchor-id="the-correction-replay">The correction replay</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> scripts/demo_ditto_fix.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This needs neither a model nor a network. It checks three saved records and twelve events, changes Balmer’s literal “do.”, preserves the other fields, and checks that a second run makes no further changes. Constructed cases check that a missing predecessor stays unresolved. The <a href="outputs/structure/ditto-fix-replay.json">saved report</a> includes before, after and the reason.</p>
+<p>Call this a workshop replay. It is not a production rerun or a measurement of the graph’s post-fix accuracy. Blakely and Connolly’s unrelated errors remain in the replay output.</p>
 </section>
-<section id="the-live-lookup" class="level2">
-<h2 class="anchored" data-anchor-id="the-live-lookup">The live lookup</h2>
-<p>Three searches, in this order, with the statements read aloud for the first two: Trimen (supported), Price (supported, and the gate had rejected it), Tibbits (nothing; record the search). If the endpoint is down, the same three are written up on the Ground page.</p>
+<section id="two-unfinished-repairs-worth-showing" class="level2">
+<h2 class="anchored" data-anchor-id="two-unfinished-repairs-worth-showing">Two unfinished repairs worth showing</h2>
+<p><strong>Wodehouse:</strong> the saved atlas still has the Venezuela mission and the 1861 high commissionership in the Union of South Africa, Belmopan as the 1851 seat of Honduras, and Honduras inheriting British Guiana in the India Office record. The 1861 error followed a blanket South Africa cache patch. Say these are open defects.</p>
+<p><strong>Brewster:</strong> correcting Victoria’s geography leaves the saved graph asserting a 1912–1916 appointment from a clause saying he was defeated. Ask for a verdict before revealing it. Keep the defeat as source evidence; do not treat it as an office held. This is also an open defect in the saved graph.</p>
 </section>
-<section id="the-control" class="level2">
-<h2 class="anchored" data-anchor-id="the-control">The control</h2>
-<p>Jim’s Gemini 3.8 Flash run of 7 October is scored in <code>outputs/ground-test/gemini-scoring.md</code>: zero of sixteen person identifiers, six not even people, seven near-miss numbers. Jim’s Opus 5.5 run with web retrieval, same day, is scored in <code>outputs/ground-test/opus-scoring.md</code>: sixteen of sixteen, Prince found, the Gorges duplicate found, out of tool calls before any place. Show the four-column slide. If running a chatbot live, use entry 4 (Archer) or 18 (Marsh): both produced a near-miss number in Gemini, which makes the point better than a wild one.</p>
+<section id="the-live-lookup-and-saved-runs" class="level2">
+<h2 class="anchored" data-anchor-id="the-live-lookup-and-saved-runs">The live lookup and saved runs</h2>
+<p>Search Trimen, Price, then Tibbits. Read the retrieved evidence before deciding. Price is a useful pause: a rare name and compatible career context support the match, but another source would strengthen it. Tibbits is unresolved after the search, not proof that no item exists. The <a href="./steps/05-ground.html">Ground page</a> and <a href="outputs/ground-test/answer-key.md">answer key</a> are the fallback.</p>
+<p>Use the saved chatbot runs. Gemini supplied sixteen person identifiers, none correct; Opus and Astra supplied sixteen accepted subject matches each. Opus’s first pass stopped before places; its second reached seventeen. The place counts use different units and coverage. These are examples of workflows, not a controlled model ranking. Keep Harris’s particular date conflict for the final exercise.</p>
+<p>The cost slide distinguishes the coding agent, corpus reader and hard-case reviewer. Twenty-seven minutes for twenty entries extrapolates to about twenty-five days <strong>serially at that observed rate</strong>. Caching, concurrency and task changes affect it; it is not an invoice or production forecast. Participants without a GPU can begin with twenty records and a hosted model.</p>
 </section>
-<section id="online-participation" class="level2">
-<h2 class="anchored" data-anchor-id="online-participation">Online participation</h2>
+<section id="participation-and-debrief" class="level2">
+<h2 class="anchored" data-anchor-id="participation-and-debrief">Participation and debrief</h2>
+<p>Use the same prompts in the room and on Zoom. Pause before the Abery decision and the Brewster second reveal. Ask for evidence, not a show of confidence. No polling software is required.</p>
+<p>For the final exercise, the page puts <strong>R1, R3 and R8 first</strong>; the other five are further practice. Select R8 beside <strong>Copy decision and reason</strong> for a chat response. Paper users have the same proposals and evidence. The TSV download retains all reasons and the case-set fingerprint; do not promise collection unless a destination has been arranged.</p>
+<p>For Harris, invite both an “accept with conflict recorded” and an “unresolved pending a check” response. The key distinction is between accepting the identity and replacing the birth year in the source. Check the scan, another edition and the external date’s cited source. Repeated copies of an account do not make independent corroboration.</p>
+</section>
+<section id="claims-to-keep-bounded" class="level2">
+<h2 class="anchored" data-anchor-id="claims-to-keep-bounded">Claims to keep bounded</h2>
 <ul>
-<li>Remote participants see the same pages and both exercises. Nothing requires a login.</li>
-<li>Both exercise pages have a <strong>Copy summary</strong> button that produces one line for the Zoom chat, so the chat monitor can read decisions out.</li>
-<li>The decision exercise can <strong>Download TSV</strong> with reasons. If the organizers want them collected, say where to send the file.</li>
-<li>The atlas at jimclifford.ca/col_matching works in any browser; invite remote participants to search a name while the room marks up entries.</li>
-</ul>
-</section>
-<section id="what-not-to-claim" class="level2">
-<h2 class="anchored" data-anchor-id="what-not-to-claim">What not to claim</h2>
-<ul>
-<li>The audit numbers are from one 186-record sample of the structuring stage; they are not an accuracy rate for the whole graph.</li>
-<li>The silver standard measured the deterministic tier; the model judge’s agreement rates were still pending in September.</li>
-<li>The published counts in the col_matching README, stats file and atlas disagreed in September; the numbers on these pages are from <code>kg_stats.json</code> and the atlas <code>meta.json</code> of 4 September 2026, copied into <code>outputs/atlas/</code>.</li>
-<li>The Gemini control is one run of one model with one prompt. It shows the failure mode; it does not rank models.</li>
+<li>Roster counts are sums of within-List person records, not unique people across both services. The 186 bridges are proposed links; a small September check supported 11 of 15.</li>
+<li>The structuring audit has three model-reviewed samples, before normalisation. Round 1 has eight major findings on six records. The samples do not establish finished-graph accuracy.</li>
+<li>A labelled sample measures the population and decision type it was designed for. The 76% figure concerns “different” decisions in a particular risky stratum, not overall recall.</li>
+<li>An identifier resolving to the expected label is not enough to establish a historically correct match.</li>
+<li>Administrative seats are plotting proxies. Arcs connect recorded postings; they are not observed journeys.</li>
+<li>The published Imperial Careers site is unchanged by this workshop revision.</li>
 </ul>
 
 
@@ -755,7 +785,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>Jim Clifford, University of Saskatchewan. Draft materials; sources credited on each page.</p>
+<p>Jim Clifford, University of Saskatchewan. Sources credited on each page.</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;

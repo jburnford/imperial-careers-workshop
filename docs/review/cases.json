@@ -1,5 +1,5 @@
 {
- "title": "Seven decisions: Imperial Careers",
+ "title": "Three decisions, then further practice: Imperial Careers",
  "built": "2026-10-07",
  "cases": [
   {
@@ -24,6 +24,47 @@
    "optional": false
   },
   {
+   "id": "R3",
+   "kind": "identity",
+   "title": "ABERY and CARBERY: one person?",
+   "source_label": "Dedup cluster from the Record of Services, 1886 and 1897 editions",
+   "source_quote": "ABERY, Joseph; hon: M.B.C.M; career: 1867 Ceylon Assistant colonial surgeon (1897 edition only)\nCARBERY, Joseph; hon: M.B.C.M; career: 1867 Ceylon Assistant colonial surgeon (1886, 1889, 1890, 1894, 1896, 1897 editions)",
+   "source_url": "https://github.com/jburnford/col_matching/blob/master/docs/DEDUP_LLM_METHOD.md",
+   "proposal": "Merge the two biographies into one person.",
+   "evidence_for": [
+    "Same forename, same qualification, one identical dated event (1867, Ceylon, assistant colonial surgeon).",
+    "ABERY is a plausible OCR garble of CARBERY (two characters lost at a line start).",
+    "ABERY appears in one edition; CARBERY in six, including that one."
+   ],
+   "evidence_against": [
+    "The surnames differ.",
+    "A single shared event is thin evidence for two men with a common forename."
+   ],
+   "question": "Accept the merge?",
+   "principle": "Clean",
+   "optional": false
+  },
+  {
+   "id": "R8",
+   "kind": "identity",
+   "title": "Harris: a supported identity with a disputed birth year?",
+   "source_label": "Colonial Office List 1927, entry col1927-p935b5; retrieved candidate checked 7 October 2026",
+   "source_quote": "HARRIS, SIR CHARLES ALEXANDER ... B. 1858; scholar, prizeman, and Porteus medallist of Christ's Coll., Camb.; ... gov. and c. in c., Newfoundland, 1st Nov., 1917; assumed govt., 17th Dec., 1917; ret., 1922. [Excerpt from the OCR; omissions marked.]",
+   "source_url": "../outputs/ground-test/harris-evidence.json",
+   "proposal": "Link the entry to the retrieved Charles Alexander Harris item, Q5075044. Keep birth_year_as_printed: 1858, record the item's 1855 separately, and flag the disagreement for review.",
+   "evidence_for": [
+    "The full name, Christ's College and the office of Governor of Newfoundland agree.",
+    "The proposal preserves the source reading and records the conflict instead of silently choosing a birth year."
+   ],
+   "evidence_against": [
+    "The birth years differ by three years. The OCR excerpt cannot establish whether the discrepancy began in scanning, printing or the external record.",
+    "The item and this entry may share an underlying source; agreement is not necessarily independent corroboration."
+   ],
+   "question": "Accept the identity link while leaving the birth year disputed?",
+   "principle": "Ground and source criticism",
+   "optional": false
+  },
+  {
    "id": "R2",
    "kind": "record",
    "title": "Balmer: the last posting's place",
@@ -41,28 +82,7 @@
    ],
    "question": "Accept the event with place \"do.\"?",
    "principle": "Structure",
-   "optional": false
-  },
-  {
-   "id": "R3",
-   "kind": "identity",
-   "title": "ABERY and CARBERY: one person?",
-   "source_label": "Dedup cluster from the Record of Services, 1886 and 1897 editions",
-   "source_quote": "ABERY, Joseph; hon: M.B.C.M; career: 1867 Ceylon Assistant colonial surgeon (1897 edition only)\nCARBERY, Joseph; hon: M.B.C.M; career: 1867 Ceylon Assistant colonial surgeon (1886, 1889, 1890, 1894, 1896, 1897 editions)",
-   "source_url": "https://github.com/jburnford/col_matching/blob/master/docs/DEDUP_LLM_METHOD.md",
-   "proposal": "Merge the two biographies into one person.",
-   "evidence_for": [
-    "Same forename, same honour, one identical dated event (1867, Ceylon, assistant colonial surgeon).",
-    "ABERY is a plausible OCR garble of CARBERY (two characters lost at a line start).",
-    "ABERY appears in one edition; CARBERY in six, including that one."
-   ],
-   "evidence_against": [
-    "The surnames differ.",
-    "A single shared event is thin evidence for two men with a common forename."
-   ],
-   "question": "Accept the merge?",
-   "principle": "Clean",
-   "optional": false
+   "optional": true
   },
   {
    "id": "R4",
@@ -76,12 +96,12 @@
     "Same forename Thomas; surname suffix matches; the apostrophe could be OCR noise."
    ],
    "evidence_against": [
-    "Birth years 62 years apart. Birth year is OCR-noisy by one or two digits, not by six decades.",
+    "Birth years differ by 62 years, and the careers also conflict. The decision does not rest on a birth-year discrepancy alone.",
     "A Victorian judge knighted in 1909 and a Nigerian telegraph engineer of 1948 share no event, place, honour or education."
    ],
    "question": "Accept the merge?",
    "principle": "Clean",
-   "optional": false
+   "optional": true
   },
   {
    "id": "R5",
@@ -102,7 +122,7 @@
    ],
    "question": "Accept the grounding?",
    "principle": "Ground",
-   "optional": false
+   "optional": true
   },
   {
    "id": "R6",
@@ -122,7 +142,7 @@
    ],
    "question": "Accept the grounding for this mention?",
    "principle": "Ground",
-   "optional": false
+   "optional": true
   },
   {
    "id": "R7",
@@ -139,12 +159,12 @@
    ],
    "evidence_against": [
     "The item has no statements beyond dates; nothing on it says Ceylon, Colombo or mayor.",
-    "The pipeline's zero-false-positive gate rejected the match because the surname spelling differed."
+    "The pipeline's conservative matching gate rejected the match because the name spelling differed."
    ],
    "question": "Accept the identity?",
-   "principle": "Ground (extra)",
+   "principle": "Ground",
    "optional": true
   }
  ],
- "fingerprint": "6c1405d7277f"
+ "fingerprint": "cd5cb3ba4de2"
 }

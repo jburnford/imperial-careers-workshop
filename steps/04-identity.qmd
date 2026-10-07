@@ -1,6 +1,6 @@
 ---
 title: "Clean: one person or two?"
-subtitle: "Minutes 22–30. Forty editions, OCR garbles, and the cases that need a historian."
+subtitle: "Minutes 23–30. Forty editions, OCR garbles, and the cases that need a historian."
 ---
 
 ::: {.callout-note collapse="true" title="Terms on this page"}
@@ -39,7 +39,7 @@ From a [sample of twelve](../outputs/identity/dedup-clusters-sample.txt), unedit
 
 | Cluster | | Decision |
 |---|---|---|
-| ABERY, Joseph / CARBERY, Joseph | Both M.B.C.M.; both "1867 Ceylon Assistant colonial surgeon"; ABERY appears in one edition, CARBERY in six | **Merge.** ABERY is an OCR garble; one identical event suffices with the forename and honour |
+| ABERY, Joseph / CARBERY, Joseph | Both M.B.C.M.; both "1867 Ceylon Assistant colonial surgeon"; ABERY appears in one edition, CARBERY in six | **Merge.** ABERY is an OCR garble; the shared dated appointment, forename and qualification support the merge |
 | A'BECKETT, Thomas, b. 1836 / BECKETT, Thomas Rumbold, b. 1898 | Suffix and forename match; a Victorian judge knighted 1909 and a Nigerian telegraph engineer of 1948 | **Keep apart.** Birth years 62 years apart and disjoint careers |
 | ABRAHAM, Henry Charles, b. 1887 / GRAHAM, Charles Drummond, b. 1901 | Suffix "aham" and the forename Charles | **Keep apart.** Different first forenames, different colonies, no shared event |
 | ABBOTT, Myles John, b. 1906 / IBBOTT, John Thomas | Suffix and a shared "John" | **Keep apart.** Hong Kong judge of the 1930s and a Demerara customs clerk of 1860 |

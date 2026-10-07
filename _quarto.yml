@@ -54,7 +54,7 @@ website:
           - href: presenter.qmd
             text: "Presenter notes"
   page-footer:
-    left: "Jim Clifford, University of Saskatchewan. Draft materials; sources credited on each page."
+    left: "Jim Clifford, University of Saskatchewan. Sources credited on each page."
     right: "Data: Imperial Careers (CC0), jimclifford.ca/col_matching"
 
 format:

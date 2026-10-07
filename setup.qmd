@@ -26,6 +26,7 @@ Everything here is drawn from [Imperial Careers](https://github.com/jburnford/co
 
 ```bash
 python3 scripts/build_review_cases.py      # cases.json for the decision exercise
+python3 scripts/demo_ditto_fix.py          # before/after records and bounded checks
 ```
 
 No network needed.

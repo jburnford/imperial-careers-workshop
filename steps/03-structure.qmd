@@ -1,6 +1,6 @@
 ---
 title: "Structure"
-subtitle: "Minutes 12–22. What is a record here? Python takes the regular entries, a cheap model takes the rest overnight, Python checks the result; you decide what counts as an event."
+subtitle: "Minutes 13–23. What is a record here? Python takes the regular entries, a cheap model takes the rest overnight, Python checks the result; you decide what counts as an event."
 ---
 
 ::: {.callout-note collapse="true" title="Terms on this page"}
@@ -13,7 +13,7 @@ subtitle: "Minutes 12–22. What is a record here? Python takes the regular entr
 - **GPU**: the graphics card the model runs on; the model has to fit in its memory.
 - **token**: the unit a model reads and writes in, roughly three-quarters of a word.
 - **reasoning mode**: a setting where the model writes out its thinking before answering; off here, because it spent the budget and returned nothing.
-- **frontier model / open model**: a commercial model such as Claude or Gemini, run by its maker; an open model such as Qwen, whose weights you can download and run yourself.
+- **frontier model / open model**: frontier refers to leading capability; open refers here to downloadable model weights. These are different properties, not opposites. The project used a commercial coding agent and an open model inside the pipeline.
 - **deterministic**: done by fixed rules, so the same input always gives the same output; no model involved.
 
 All terms: [glossary](../glossary.qmd).
@@ -84,11 +84,11 @@ Structured records were read against their source by a reviewer model, in three 
 
 | Round | Sample | Fully clean | Major error |
 |---|---|---|---|
-| 1 | every tenth of the first 1,859 records: 186 | 129 (69%) | 8 (about 3%) |
+| 1 | every tenth of the first 1,859 records: 186 | 129 (69%) | 6 records (3.2%); 8 findings |
 | 2 | 100 spread across the corpus | 51 (51%) | 9 (about 9%) |
 | 3 | 300 spread across the corpus | about 149 (50%) | not tallied |
 
-Round 1 was front-loaded on early, simple entries; the later rounds reach the dense twentieth-century careers and the peerage entries, and are the better estimate. A model did the reading in all three; the examples below were checked by hand.
+Round 1 sampled only the first 1,859 records; it was not spread across the corpus. Rounds 2 and 3 cover a broader range. These are sample results, not a measured accuracy rate for the finished graph. A model did the reading in all three; the examples below were checked by hand.
 
 Three of the findings, source beside record ([saved](../outputs/structure/audit-examples.json)):
 
@@ -102,7 +102,28 @@ Three of the findings, source beside record ([saved](../outputs/structure/audit-
 
 The errors are not random. They are a handful of systematic patterns: a short list of abbreviations mis-expanded the same way every time, ditto marks left literal, one compound honour split, "mentioned in despatches" dropped. Each has a deterministic fix, and those fixes are the post-normalisation pass: merge `KT` + `BACH` into Knight Bachelor; forward-fill a "do." place from the previous event and set the flag; strip honorifics folded into given names; "officer in chief" back to "officer in charge"; drop a military tag with no military signal in the position. Every change is appended to a list on the record, so nothing is silent. The "off." expansion is fixed one step earlier, by not pre-expanding ambiguous abbreviations at all.
 
-A frontier model on every entry would have cost more, taken longer, and still needed the audit.
+The fixes do not establish the accuracy of the finished corpus. That needs a new audit after normalisation, including records changed by each rule and a fresh sample. A more capable model would also need that audit.
+
+## One correction, checked
+
+Here is a small replay you can run without a model or a network. It uses the three saved audit records above: twelve events in all. It changes only a literal “do.” or “ditto” when the preceding event has a resolved place.
+
+| | Balmer’s fourth event |
+|---|---|
+| Source | “senr. dep. P.M.G., do., 1935” |
+| Before | `place: "do."`, `place_inherited: true` |
+| After | `place: "Kenya-Uganda-Tanganyika"`, `place_inherited: true` |
+| Reason kept with the change | Printed ditto; the previous event supplies the place |
+
+**Checked:** one event changed; the other eleven events and all other fields stayed unchanged. A second run made no further changes. Constructed boundary cases with no preceding resolved place stayed unresolved. Blakely’s birth-year error and Connolly’s split knighthood remain: this rule fixes one class of error.
+
+[Saved before-and-after records and checks](../outputs/structure/ditto-fix-replay.json). To reproduce from the workshop repository:
+
+```bash
+python3 scripts/demo_ditto_fix.py
+```
+
+This is a workshop replay on three records, not a rerun of the published graph or a post-fix accuracy estimate.
 
 **You decide:** what is an event. Whether an acting appointment is a posting. Whether "called to the bar, 1879" belongs in the career. Whether "leader of leg. coun. from 1906 to 1911" is a position or a description. The prompt records those decisions; the audit checks whether the model kept them; the post-normaliser enforces the ones that can be enforced.
 

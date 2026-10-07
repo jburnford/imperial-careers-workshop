@@ -3,7 +3,7 @@ title: "Cleaning and Structuring Historical Data: A Working Session"
 subtitle: "AI and History Conference, Johns Hopkins University. Thursday 15 October 2026, 1:30–2:30 p.m., Room 110, SNF Agora Institute. Streamed on Zoom."
 ---
 
-::: {.callout-note title="Draft"}
+::: {.callout-note title="Sources and data"}
 Source and data: [github.com/jburnford/imperial-careers-workshop](https://github.com/jburnford/imperial-careers-workshop). The dataset the hour is built on is published as [Imperial Careers](https://jimclifford.ca/col_matching/) (CC0). Counts on these pages come from that repository's `kg_stats.json` and the atlas `meta.json` of 4 September 2026 and are reproduced in [`outputs/atlas/`](https://github.com/jburnford/imperial-careers-workshop/tree/main/outputs/atlas).
 :::
 
@@ -15,17 +15,19 @@ Over a few months, one historian with a coding agent turned those volumes into a
 
 | | Colonial Office List | India Office List |
 |---|---|---|
-| People | 27,526 | 19,400 |
-| Dated career events | 180,470 | 124,694 |
+| Person records within each List | 27,526 | 19,400 |
+| Career events | 180,470 | 124,694 |
 | Events located to a Wikidata place | 131,343 | 80,238 |
 
-The hour is about how, and about where in that process a historian has to decide something.
+The hour is about how, and about where in that process a historian has to decide something. The two person counts are resolved within each List; their sum is a roster count, not a count of unique people across both services.
+
+By the end you will have marked up an entry, judged a proposed record and an identity match, and decided how to preserve a disagreement between sources. We work on a shared example in a browser; the final step takes the method to your own material.
 
 ## Three questions
 
 Technical terms are explained where they first appear on each page, and in the [glossary](glossary.qmd).
 
-A historian turning a text into data asks three questions of it, and each has one decision only the historian can make. A model can do everything around that decision, at scale.
+A historian turning a text into data asks three questions of it, and each has a decision the historian must own. Models and scripts carry those decisions across the collection; their output still needs review.
 
 | | The question | The model does | You decide |
 |---|---|---|---|
@@ -42,17 +44,17 @@ Extraction is half of it. The other half is looking at the result in a form wher
 | Minutes | | |
 |---|---|---|
 | 0–7 | [The atlas](steps/01-atlas.qmd) | The video; then one man's entry turned into identifiers, coordinates and arcs, and the rows the map got wrong |
-| 7–12 | [The source](steps/02-source.qmd) | One printed entry. Mark up what you would extract |
-| 12–22 | [Structure](steps/03-structure.qmd) | The schema, the prompt, what the model got wrong, and why the fixes were not a bigger model |
-| 22–30 | [Clean](steps/04-identity.qmd) | Forty editions, one person: the merge rules and the cases that need a historian |
+| 7–13 | [The source](steps/02-source.qmd) | One printed entry. Mark up what you would extract |
+| 13–23 | [Structure](steps/03-structure.qmd) | The prompt, the audit, and one correction replayed with checks |
+| 23–30 | [Clean](steps/04-identity.qmd) | Forty editions, one person: the merge rules and the cases that need a historian |
 | 30–40 | [Ground](steps/05-ground.qmd) | A live Wikidata lookup, and a chatbot asked to do the same from memory |
-| 40–47 | [The map finds the errors](steps/06-loop.qmd) | Three errors seen in the atlas and what fixing them changed |
-| 47–55 | [Exercise](review/index.html) | Seven decisions, in the room or on Zoom |
-| 55–60 | [Your own data](steps/07-your-data.qmd) | Taking the three questions to another collection |
+| 40–46 | [The map finds the errors](steps/06-loop.qmd) | Brewster: the wrong place, then an unsupported appointment |
+| 46–56 | [Exercise](review/index.html) | Three decisions with reasons; five further cases to take home |
+| 56–60 | [Your own data](steps/07-your-data.qmd) | Taking the three questions to another collection |
 
 ## What you need
 
-A browser. The [decision exercise](review/index.html) and the [mark-up exercise](annotate/index.html) run from saved results and need no account or key. Remote participants have the same pages; each exercise has a button that copies a one-line summary of your work for the Zoom chat. There is a [printable handout](handout.qmd) with the same entries for the room.
+A browser. The [decision exercise](review/index.html) and the [mark-up exercise](annotate/index.html) run from saved results and need no account or key. Remote participants have the same pages; each exercise has a button that copies a one-line summary of your work for the Zoom chat. There is a [two-page printable handout](handout.pdf) with Balmer and the same three decisions for the room.
 
 ## Further
 

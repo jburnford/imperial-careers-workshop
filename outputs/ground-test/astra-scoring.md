@@ -1,6 +1,6 @@
 # Scoring GPT Astra 6 (medium) with web retrieval on the twenty entries
 
-Jim Clifford gave the twenty entries (`bios.md`) to OpenAI's GPT Astra 6, a frontier model released in late summer 2026, at the medium setting, on 7 October 2026, starting about 08:35; the output file `bios-grounded.json` was downloaded at 09:02, so about 27 minutes. Prompt, the same as for the other two runs: "Parse these bios and ground the places, schools and people to Wikidata ids where possible." The file's own methodology block says: public web search, Wikipedia sitelinks and web-retrieved Wikidata pages, not the API or a vector search; the answer key was not consulted; birth years only where printed. The file is saved as `astra-grounding.json`; every identifier in it was resolved with `wbgetentities` on 7 October (`astra-grounding-check.json`).
+Jim Clifford gave the twenty entries (`bios.md`) to GPT Astra 6, at the medium setting, on 7 October 2026, starting about 08:35; the output file `bios-grounded.json` was downloaded at 09:02, so about 27 minutes. Prompt, the same as for the other two runs: "Parse these bios and ground the places, schools and people to Wikidata ids where possible." The file's own methodology block says: public web search, Wikipedia sitelinks and web-retrieved Wikidata pages, not the API or a vector search; the answer key was not consulted; birth years only where printed. The file is saved as `astra-grounding.json`; every identifier in it was resolved with `wbgetentities` on 7 October (`astra-grounding-check.json`).
 
 ## What it produced
 
@@ -15,7 +15,7 @@ A structured dataset rather than a list: 180 entities, 301 mentions with charact
 | Unresolved, with a reason | 15 |
 | Modern items recorded as proxies only, not matches | 9 |
 
-By type: 30 people, 1 award eponym, 20 schools and inns, 31 historical polities, 64 places, 9 regions, all consistent.
+By type: 30 people, 1 award eponym, 20 schools and inns, 31 historical polities, 64 places, 9 regions. Label consistency does not establish historical correctness; exceptions follow.
 
 ## Where it was better than the pipeline
 
@@ -31,13 +31,13 @@ One modern collapse remains: "Victoria, Australia" for Belcher's postings → Q3
 ## What this shows
 
 - Retrieval with a careful model and enough time produces the dataset a historian would want: period entities, modern proxies labelled as such, refusals with reasons, evidence with dates. Twenty-seven minutes for twenty entries.
-- That is about 80 seconds an entry. The Colonial Office List has 27,526 people; at this rate the grounding alone is 25 days of continuous model time, before the India Office List, and it would have to be audited anyway. The pipeline's vector search plus gates runs the same lookups in seconds per surface and reaches 131,343 placed events; its failures were caught on the map.
-- The right use of this column is the review queue and the gold standard: run it on the hard cases and the sample, use what it decides to write the rules, measure the pipeline against it.
+- That is about 80 seconds an entry. The Colonial Office List has 27,526 people; at this rate a serial extrapolation is about 25 days at this run’s observed rate, before the India Office List, and it would have to be audited anyway. The pipeline's vector search plus gates runs the same lookups in seconds per surface and reaches 131,343 placed events; its failures were caught on the map.
+- The right use of this column is the review queue and a reference sample checked by a historian: run it on the hard cases and the sample, use what it decides to write the rules, measure the pipeline against it.
 
 Four runs, one table:
 
 | | Gemini 3.8 Flash, no tools | Pipeline: vector search + gates | Claude Opus 5.5, retrieval | GPT Astra 6 (medium), retrieval |
 |---|---|---|---|---|
 | Person identifiers correct | 0 of 16 | 12 of 12 given; 8 ungrounded, 4 have items | 16 of 16 | 16 of 16 |
-| Places | 38 of 104 labels match; modern items | 3,207 surfaces over the corpus; modern-collapse errors fixed later from the map | 17 of 138, then stopped | 104, period entities, 9 modern proxies labelled |
+| Places | 38 of 104 labels match; modern items | 3,207 surfaces over the corpus; modern-collapse errors fixed later from the map | 17 of 138, then stopped | 104 place/region identifiers; many period entities, 9 labelled proxies, known exceptions |
 | Time | under 5 min | overnight for the corpus | ~20 min, two passes | ~27 min |

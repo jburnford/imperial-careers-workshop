@@ -1,6 +1,6 @@
 ---
 title: "The source"
-subtitle: "Minutes 7–12. One printed entry, and what you would extract from it."
+subtitle: "Minutes 7–13. One printed entry, and what you would extract from it."
 ---
 
 ::: {.callout-note collapse="true" title="Terms on this page"}
@@ -25,7 +25,7 @@ The same man has an entry in seven editions, 1883 to 1896, and they differ ([all
 
 ## Mark it up yourself
 
-Before the model does it, do it by hand. Open the [mark-up exercise](../annotate/index.html) (or the paper [handout](../handout.qmd) in the room) and tag, in one entry, every **position**, **place**, **year**, **honour**, and the **education** and **birth** fields. Three minutes. Then press *Compare* to see what the pipeline extracted for the same entry.
+Before the model does it, do it by hand. Open the [mark-up exercise](../annotate/index.html) (or the paper [handout](../handout.qmd) in the room) and choose **Balmer (entry 2)**. Tag the last two positions, their places and their years. Three minutes, then one minute to compare: what does “do.” refer to, and where should that decision be recorded? Press *Compare* to see the saved pipeline record. The other entries are for further practice.
 
 Three things come up every time, and they are the structuring decisions of the next step:
 
@@ -41,11 +41,17 @@ Three things come up every time, and they are the structuring decisions of the n
 | Editions with a Record of Services | every one from 1883, except the slim 1946 restart |
 | Entries per edition | 1,400–2,900 |
 | Resolved people (Colonial Office List) | 27,526 |
-| Dated career events | 180,470 |
+| Career events | 180,470 |
 
 The India Office List is the same shape and was processed by the same scripts, rerooted to a second corpus: 19,400 people, 124,694 events.
 
-We begin after OCR. The volumes were OCR'd with olmOCR on a Compute Canada cluster; other sessions cover that. What matters here is that OCR output is the input, with its garbles ("ABERY" for CARBERY, "ACARLTHUR" for McARTHUR), and that the page is one click away when a reading has to be checked.
+The published description mentions Britannica OCR tools. This session begins with existing OCR and does not demonstrate those tools. The volumes used here were OCR'd with olmOCR on a Compute Canada cluster. The same structuring and review steps can be tried on text from another OCR workflow. What matters here is that OCR output is the input, with its garbles ("ABERY" for CARBERY, "ACARLTHUR" for McARTHUR), and that a record retains its volume, page and block reference. The workshop packet contains OCR excerpts; a source-note link is not a scan. Check the page image before treating a surprising OCR reading as what the book printed.
+
+## What the source can tell us
+
+These are administrative accounts of careers. They make offices, promotions and honours visible through the categories of colonial government. They are not a census of everyone who worked for, lived under or resisted those administrations. Repeated entries can repeat an error as well as confirm a fact.
+
+The map adds another interpretation: a posting becomes a point, often at a capital, and successive postings become an arc. That point is a plotting location, not evidence that the official lived there; the arc is not an observed travel route. Keep the printed wording, the inferred location and the reason for the inference separately.
 
 ## Why this example
 

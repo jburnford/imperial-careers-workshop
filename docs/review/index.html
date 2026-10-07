@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Review exercise: seven decisions from Imperial Careers</title>
+<title>Review exercise: three decisions from Imperial Careers</title>
 <style>
   body { font-family: Georgia, "Times New Roman", serif; max-width: 60em; margin: 1.5em auto; padding: 0 1em; line-height: 1.45; color: #222; }
   h1 { font-size: 1.6em; } h2 { font-size: 1.2em; margin-top: 2em; border-top: 1px solid #ccc; padding-top: 1em; }
@@ -22,16 +22,17 @@
 </style>
 </head>
 <body>
-<h1>Review exercise: seven decisions from Imperial Careers</h1>
-<p class="meta">AI and History Conference, 15 October 2026. Seven decisions from the Imperial Careers pipeline (the <em>Colonial Office List</em> as structured data): two about structuring a record, two about whether two entries are one person, two about grounding a place, and an extra about grounding a person. Each is a real case from the project's audits, with the evidence the historian had. Your answers stay in this browser until you download or copy them; nothing is sent anywhere.</p>
+<h1>Review exercise: three decisions from Imperial Careers</h1>
+<p class="meta">AI and History Conference, 15 October 2026. Start with <b>R1, R3 and R8</b>: two familiar decisions and one new case. Take six minutes to decide, then discuss Harris. Five further cases follow for practice. Your answers stay in this browser until you download or copy them.</p>
 <p>For each case: read the passage, look at what the model or the pipeline proposed, weigh the evidence, and record a decision with a reason. "Unresolved" is a legitimate answer when the evidence does not settle it; say what would.</p>
 
 <div class="toolbar">
   <label>Your name or initials: <input type="text" id="reviewer" placeholder="optional"></label>
-  <button id="copy">Copy summary for chat</button>
+  <label>Discuss <select id="discussion" aria-label="Case to copy with its reason"></select></label>
+  <button id="copy">Copy decision and reason</button>
   <button id="download">Download TSV</button>
   <button id="clear">Clear my answers</button>
-  <span class="status" id="status"></span>
+  <span class="status" id="status" role="status" aria-live="polite"></span>
 </div>
 
 <div id="cases"></div>
@@ -49,9 +50,18 @@
   const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
   const md = s => esc(s).replace(/`([^`]+)`/g, '<code>$1</code>');
   const root = document.getElementById('cases');
+  const discussion = document.getElementById('discussion');
+  for (const c of data.cases) { const option = document.createElement('option'); option.value = c.id; option.textContent = c.id; discussion.appendChild(option); }
+  discussion.value = 'R8';
+  let destination = root;
   let extrasShown = false;
   for (const c of data.cases) {
-    if (c.optional && !extrasShown) { extrasShown = true; const h = document.createElement('h2'); h.textContent = 'If you have time'; h.style.marginTop = '2.5em'; root.appendChild(h); }
+    if (c.optional && !extrasShown) {
+      extrasShown = true;
+      destination = document.createElement('details');
+      const summary = document.createElement('summary'); summary.textContent = 'Five further cases for practice';
+      destination.appendChild(summary); root.appendChild(destination);
+    }
     const sec = document.createElement('section');
     sec.innerHTML = `
       <h2>${c.id}. ${esc(c.title)} <span style="font-weight:normal;color:#777;font-size:0.8em">${esc(c.principle || '')}</span></h2>
@@ -66,7 +76,7 @@
         ${['accept','reject','unresolved'].map(o => `<label class="opt"><input type="radio" name="d_${c.id}" value="${o}"> ${o}</label>`).join('')}
       </p>
       <textarea id="r_${c.id}" aria-label="Reason for ${c.id}" placeholder="Your reason, in a sentence. What evidence decided it, or what would?"></textarea>`;
-    root.appendChild(sec);
+    destination.appendChild(sec);
     const s = state[c.id] || {};
     if (s.decision) sec.querySelector(`input[value="${s.decision}"]`).checked = true;
     sec.querySelector('textarea').value = s.reason || '';
@@ -88,14 +98,16 @@
   function save() {
     const out = collect(); Object.assign(state, out);
     localStorage.setItem(KEY, JSON.stringify(state));
-    const n = data.cases.filter(c => state[c.id] && state[c.id].decision).length;
-    status.textContent = `${n} of ${data.cases.length} decided. Saved in this browser (dataset ${data.fingerprint}).`;
+    const n = data.cases.filter(c => !c.optional && state[c.id] && state[c.id].decision).length;
+    status.textContent = `${n} of 3 core cases decided. Saved in this browser.`;
   }
   save();
 
   document.getElementById('copy').onclick = async () => {
     const who = state._reviewer ? state._reviewer + ': ' : '';
-    const line = who + data.cases.map(c => c.id + ' ' + ((state[c.id] && state[c.id].decision) || '-')).join('; ');
+    const id = discussion.value;
+    const answer = state[id] || {};
+    const line = who + id + ': ' + (answer.decision || 'not decided') + ' — ' + (answer.reason || 'No reason entered.');
     try { await navigator.clipboard.writeText(line); status.textContent = 'Copied: ' + line; }
     catch (e) { prompt('Copy this line:', line); }
   };

@@ -27,24 +27,36 @@ That is what the model is asked to return for each entry, what the Python valida
 
 ## The model: Qwen3.6-35B-A3B
 
-An open-weights language model released by Alibaba's Qwen team ([announcement](https://qwen.ai/blog?id=qwen3.6-35b-a3b)). The name says what it is: 35 billion parameters in total, of which about 3 billion are active for any one token ("A3B"), because it is a mixture-of-experts model: 256 small specialist sub-networks, of which eight plus one shared one are consulted per token. The effect is that it reads and writes at the speed and cost of a 3-billion-parameter model while carrying the knowledge of a 35-billion one. It can run in a "thinking" mode that reasons at length before answering; the project turned that off, because on long entries the reasoning ate the token budget and returned nothing.
+The open-weights model used in the saved structuring runs. “35B” refers to total parameters and “A3B” to the approximate number active per token in its mixture-of-experts design. Fewer active parameters reduce computation; the other weights still need to be stored.
 
-**What it takes to run.** The whole model has to sit in GPU memory. At full precision that is about 70 GB, which means one datacentre card (an 80 GB A100 or H100) or four 24 GB consumer cards ([specifications and memory figures](https://apxml.com/models/qwen36-35b-a3b)). The project served it with vLLM, an open-source server that exposes the model through the same interface as the commercial APIs, so the same Python client talks to either. The overnight run used a university GPU box; the matching jobs used one H100 on a Compute Canada cluster, with vLLM started inside the batch job and the model's name on the server set to `qwen3-30b-a3b` ([job script](https://github.com/jburnford/col_matching/blob/master/nibi/qwen_b1_full.slurm)).
+The project served it with vLLM on a university GPU box. The India Office List run processed 30,496 entries in 8.24 hours, with reasoning off, temperature zero and sixteen workers. Those are measurements of this setup and corpus, not a speed guarantee for another machine. The saved [structuring page](steps/03-structure.qmd) describes the prompt, checks and failures.
 
-**If you do not have a cluster.** In rough order of effort:
+**Two jobs.** The coding agent writes and repairs the scripts with the historian. The model inside those scripts reads the collection. They can be different models. A more capable model can also help review difficult cases, but its answers need checking before becoming a reference set.
 
-1. **Rent the model by the token.** OpenRouter and similar brokers serve Qwen models through the same interface; you change one line, the server address, and pay per million tokens. The project's own bake-off script does exactly this ([`kg_bench_openrouter.py`](https://github.com/jburnford/col_matching/blob/master/kg_bench_openrouter.py)), pointing the same client at `https://openrouter.ai/api/v1`. For 30,000 entries at a few hundred tokens each, the whole run is in the tens of millions of tokens, which at the prices such models list is dollars to tens of dollars; check the current price before you start. Free tiers exist and the script defaults to one, with the warning that free models drift on field names, which is why the prompt pins the keys.
-2. **Rent a GPU by the hour.** Cloud GPU services rent an 80 GB card by the hour. An eight-hour run with the same vLLM command costs an evening's worth of hours; price it on the day.
-3. **Run a compressed copy locally.** A 4-bit quantised version of the same model needs about 19 GB of memory, which fits a single 24 GB consumer card or a Mac with 32 GB of unified memory, under llama.cpp, Ollama or LM Studio. It is slower, perhaps an entry every 15 to 40 seconds rather than one a second, so a 30,000-entry corpus is days rather than a night, but the runner is resumable and it costs nothing after the hardware.
-4. **Use a smaller sibling.** Qwen's 4 and 8 billion parameter dense models run on a laptop. Expect worse structuring; measure it against a reference set of 200 entries before trusting it, exactly as the project measured the 35B model against the in-session reference set.
-5. **Use a commercial batch API.** The project's first fallback tier sent the entries the Python grammar refused to Gemini's batch endpoint at half the interactive price, overnight. Any provider's batch tier works the same way.
-6. **Ask for an allocation.** Canadian researchers get Compute Canada (the Digital Research Alliance) time by application; in the United States, campus research computing or NSF ACCESS. The job script above is what an allocation lets you run.
+### Starting without a university GPU
 
-Whichever route: keep the prompt, the validator and the post-normaliser the same, and run the 200-entry reference set first. The model is the swappable part.
+Use a small sample with a hosted model or an existing coding agent before choosing infrastructure for the whole collection. The same prompt can be tried through a hosted endpoint; the Imperial Careers [comparison script](https://github.com/jburnford/col_matching/blob/master/kg_bench_openrouter.py) illustrates that approach. Recheck output quality when changing the model or serving setup.
+
+Local or rented GPUs are alternatives once the workload is clear. Memory requirements depend on the stored weight precision, context length and concurrent requests; weight size alone does not establish that a run will fit. A compressed model also needs a fresh check against the source sample.
+
+### A small cost worksheet
+
+For twenty representative entries, record:
+
+| Measure | Why keep it |
+|---|---|
+| Input and output tokens, separately | Apply the chosen provider’s current rates to each |
+| Charges or GPU hours | University allocations consume resources even without a per-request invoice |
+| Wall-clock time and concurrency | Distinguish elapsed time from total computation |
+| Failed requests and retries | A successful response is not the only work you paid for |
+| Human review and correction time | Cheap extraction can still produce expensive cleanup |
+| Records accepted after review | Compare cost per usable record |
+
+For a rough token-cost estimate, multiply measured tokens per entry by the intended number of entries and the current input/output rates. State the assumptions: longer entries, tool calls, retries and a different mix of hard cases will change it. The model’s price is only one part of the project’s cost.
 
 ## Other terms
 
-**F-score.** One number summarising two: precision (of what the system found, how much was right) and recall (of what was there, how much the system found). An F-score of 0.6 means both are around six in ten. Trading Consequences scored 0.62 on commodities and 0.61 on places.
+**F-score.** One number summarising two: precision (of what the system found, how much was right) and recall (of what was there, how much the system found). The F1 score is their harmonic mean; 0.6 does not imply that either component is 0.6. Trading Consequences scored 0.62 on commodities and 0.61 on places.
 
 **QID.** A Wikidata identifier: the letter Q and a number, such as Q1800510 for Philip Wodehouse. Stable, language-neutral, and shared by everyone who grounds to Wikidata. A model's memory of one is not a lookup.
 
@@ -60,7 +72,7 @@ Whichever route: keep the prompt, the validator and the post-normaliser the same
 
 **Quantisation.** Storing a model's numbers at lower precision (4 bits instead of 16) so it needs a quarter of the memory, at a small cost in quality.
 
-**The three chatbots in the grounding test.** Gemini 3.8 Flash (Google's fast, inexpensive tier), Claude Opus 5.5 (Anthropic's frontier model) and GPT Astra 6 (OpenAI's frontier model, released in late summer 2026). All three were given the same prompt and the same twenty entries on 7 October 2026; Gemini without tools, the other two with web search.
+**The three chatbots in the grounding test.** Gemini 3.8 Flash (Google's fast, inexpensive tier), Claude Opus 5.5 (Anthropic's frontier model) and GPT Astra 6. All three were given the same prompt and the same twenty entries on 7 October 2026; Gemini without tools, the other two with web search.
 
 **Reasoning mode.** A setting where the model writes out a chain of thought before answering. Helpful for hard questions; on this task it spent the whole budget thinking and produced no record.
 
@@ -70,6 +82,6 @@ Whichever route: keep the prompt, the validator and the post-normaliser the same
 
 **Ledger.** An append-only file of decisions with reasons, such as the 917 merge groups, so that every decision can be revisited.
 
-**Silver standard.** A set of cases labelled by hand after the fact, used to measure what the automated passes did. "Silver" because it is smaller and less exhaustively checked than a gold standard built in advance.
+**Silver standard.** A set of cases labelled by hand after the fact, used to measure what the automated passes did. Here “silver” means a provisional reference set. Its value depends on how the cases were selected, labelled and checked; a frontier model’s answer alone is not a gold standard.
 
-**Zero-false-positive gate.** A rule that accepts a link only when the evidence leaves no plausible alternative, and otherwise leaves it unlinked. It trades recall for precision, which is why a review queue exists.
+**Conservative matching gate.** A rule intended to accept a link only when the evidence strongly supports it, and otherwise leave it unlinked. The project calls this a “zero-false-positive gate”; that names an aim, not a measured guarantee. It trades coverage for precision, which is why a review queue exists.

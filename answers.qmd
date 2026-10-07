@@ -11,38 +11,50 @@ subtitle: "Read after you have decided. Where more than one reading remains poss
 All terms: [glossary](glossary.qmd).
 :::
 
-These are the preparer's answers with the evidence, drawn from the Imperial Careers project's own audits. Each decision is for the record in front of you.
+Start with R1, R3 and R8 after you have decided. The other cases are further practice. These are the preparer's answers with the evidence; each decision is for the proposal in front of you.
 
 ## R1 (Structure). Blakely's record does not stand
 
-**Reject.** The entry prints no birth clause. Its only date, "Apl., 1898", is the appointment, and it went into `birth_year` while the event lost its year. The prompt forbids exactly this inference. Also "off." became "officer". This record is one of eight major errors in the 186-record audit; the category is `HALLUCINATION`. The fix is a guard: a birth year may only come from a printed "B." clause, and an event with no year while the entry has an unassigned date is flagged.
-
-## R2 (Structure). Balmer's "do." is not a place
-
-**Reject as it stands; accept once resolved.** The clause names no place; the rule says inherit the previous one, which is the Kenya-Uganda-Tanganyika service. The model copied the abbreviation. Because this error is systematic across the sample, the fix is a deterministic forward-fill: any place equal to "do." or "ditto" inherits the previous event's place, with `place_inherited` set. No model rerun needed.
+**Reject.** The entry prints no birth clause. Its only date, "Apl., 1898", is the appointment, and it went into `birth_year` while the event lost its year. The prompt forbids exactly this inference. Also "off." became "officer". This record contributed one of eight major findings across six records in the 186-record audit; the category is `HALLUCINATION`. The fix is a guard: a birth year may only come from a printed "B." clause, and an event with no year while the entry has an unassigned date is flagged.
 
 ## R3 (Clean). Abery and Carbery are one person
 
-**Accept the merge.** The rules allow a merge on an OCR surname variant when the forename and career are consistent and one identical dated event is shared. Here: same forename, same honour (M.B.C.M.), the same 1867 Ceylon appointment, and ABERY attested only in the 1897 edition where CARBERY also appears. The ledger records the reason: "ABERY is OCR garble of CARBERY". A reviewer who wanted more could check the 1897 page image for the lost characters.
+**Accept the merge.** The rules allow a merge on an OCR surname variant when the forename and career are consistent and one identical dated event is shared. Here: same forename, same qualification (M.B.C.M.), the same 1867 Ceylon appointment, and ABERY attested only in the 1897 edition where CARBERY also appears. The ledger records the reason: "ABERY is OCR garble of CARBERY". A reviewer who wanted more could check the 1897 page image for the lost characters.
 
-## R4 (Clean). A'Beckett and Beckett are two people
+## R8 (Ground). Harris can be linked without settling his birth year
 
-**Reject the merge.** The cluster exists only because of the suffix key and the forename. Birth years are 62 years apart; the rule tolerates OCR noise of a digit, not six decades. The careers share nothing: Lincoln's Inn and the Victorian bench against Nigerian telegraphs. This is the normal case in the cluster sample: the clustering is deliberately loose so that real variants meet, and most clusters resolve to "keep apart" in seconds.
+**Accept with the disagreement recorded, or leave unresolved with a specific next check.** The retrieved candidate shares the full name, Christ’s College and the Newfoundland governorship. Those support the identity despite the conflicting dates. A conservative reviewer can reasonably ask to see the scan and another independent account before accepting.
 
-## R5 (Ground). "Union of S. Africa" is not Q5155572
+The proposal keeps `birth_year_as_printed: 1858`, records the external value 1855 separately, and flags the conflict. Accepting the link does not authorise changing the source field. The OCR could be wrong, the printed book could be wrong, or the external record could be wrong. The excerpt alone cannot decide which.
+
+Next checks: inspect the 1927 page image, compare another edition, and trace the external date to its cited source. Do not count repeated copies of the same account as independent corroboration. [Retrieved evidence](outputs/ground-test/harris-evidence.json).
+
+## Further practice
+
+### R2 (Structure). Balmer's "do." is not a place
+
+**Reject as it stands; accept once resolved.** The clause names no place; the rule says inherit the previous one, which is the Kenya-Uganda-Tanganyika service. The model copied the abbreviation. Because this error is systematic across the sample, the fix is a deterministic forward-fill: any place equal to "do." or "ditto" inherits the previous event's place, with `place_inherited` set. No model rerun needed.
+
+### R4 (Clean). A'Beckett and Beckett are two people
+
+**Reject the merge.** The cluster exists only because of the suffix key and the forename. Birth years are 62 years apart, and the conflicting careers support keeping them separate; the year discrepancy is not the sole reason. The careers share nothing: Lincoln's Inn and the Victorian bench against Nigerian telegraphs. This is the normal case in the cluster sample: the clustering is deliberately loose so that real variants meet, and most clusters resolve to "keep apart" in seconds.
+
+### R5 (Ground). "Union of S. Africa" is not Q5155572
 
 **Reject.** Q5155572 is the British South Africa Company's territory, seated at Harare. Q193619, the Union of South Africa, is what the surface names. The error came from a containment match on the string "South Africa" during the manifest join; it affected 960 Colonial Office events and was visible on the atlas as a Rhodesia node with far too many arcs. The fix patched five cache rows with a stated reason, added a containment guard to the join, and left a note that pre-1910 "S. Africa" (about 100 events) is ambiguous between the Cape and the Union and needs a date-aware rule.
 
-## R6 (Ground). Brewster's "Victoria" is British Columbia
+### R6 (Ground). Brewster's "Victoria" is British Columbia
 
-**Reject the proposed grounding; ground to British Columbia for this person.** Every other clause in the entry is British Columbia, and Victoria is its capital and an electoral district. A surface-keyed cache cannot know that; a per-person resolver can. The fix routed "Victoria" through a context rule (British Columbia signal in the career → Q1973, which geolocates to its seat; otherwise the Australian colony). Fixing it exposed a second bug: per-person overrides had never applied because the resolver and the graph keyed people differently. Both corpora were re-emitted.
+**Reject the proposed grounding; ground to British Columbia for this person.** Every other clause in the entry is British Columbia, and Victoria is its capital and an electoral district. A surface-keyed cache cannot know that; a per-person resolver can. That repairs the geography only. The saved graph still turns the 1912 defeat into an appointment lasting to 1916; the source does not support that office held. Keep or type the defeat separately, and flag the appointment assertion for correction.
+
+The place fix routed "Victoria" through a context rule (British Columbia signal in the career → Q1973, which geolocates to its seat; otherwise the Australian colony). Fixing it exposed a second bug: per-person overrides had never applied because the resolver and the graph keyed people differently. Both corpora were re-emitted.
 
 What remains open: six "Victoria" surfaces ("Victoria district", "Victoria county", the Cape variants) mean different places for different people and are left ungrounded by design until each is resolved per person.
 
-## R7 (Ground, extra). Price is Q123279571, on the name and dates
+### R7 (Ground, extra). Price is Q123279571, on the name and dates
 
-**Accept, with the evidence recorded.** The item has a rare name with the alias covering the spelling, birth and death years consistent with the career (scholarship 1875, writership 1878), and a Tamil description meaning Sri Lankan politician, which fits three terms as mayor of Colombo. It has no career statements, so the match rests on name, dates and place of activity, and the record should say so. The pipeline's zero-false-positive gate rejected it because the surname differs by one letter; that is the gate doing its job, and this is the kind of case a human review queue exists for. A reasonable person could also mark it unresolved pending a Ceylon directory; what they cannot do is treat the gate's rejection as evidence that no item exists.
+**Accept, with the evidence recorded.** The item has a rare name with the alias covering the spelling, birth and death years consistent with the career (scholarship 1875, writership 1878), and a Tamil description meaning Sri Lankan politician, which fits three terms as mayor of Colombo. It has no career statements, so the match rests on name, dates and place of activity, and the record should say so. The pipeline's conservative matching gate rejected it because the name spelling differs; that is the gate doing its job, and this is the kind of case a human review queue exists for. A reasonable person could also mark it unresolved pending a Ceylon directory; what they cannot do is treat the gate's rejection as evidence that no item exists.
 
 ## The pattern
 
-Across the seven cases the decisive evidence was never the model's confidence and never the identifier's existence. It was the source's own words ("Apl., 1898" is an appointment; "do." is a ditto), the dossier's dates and careers, the item's statements read rather than assumed, and the map. Every fix went into a rule, a cache row with a reason, or a test, and was then checked against everyone it touched.
+Across these cases the decisive evidence was never the model's confidence and never the identifier's existence. It was the source's own words ("Apl., 1898" is an appointment; "do." is a ditto), the dossier's dates and careers, the item's statements read rather than assumed, and the map. A correction needs a reason, a rerun and a check of other affected records. The ditto replay demonstrates that on a small sample; the Wodehouse and Brewster defects show why the published graph still needs further work.

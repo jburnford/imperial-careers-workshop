@@ -18,13 +18,13 @@ All terms: [glossary](../glossary.qmd).
 
 ## Why ground at all
 
-Every arc on the atlas needs a latitude and longitude for a place named in a Victorian reference book: the Colony of Victoria, the Central Provinces, British Guiana, a princely state. Modern gazetteers do not have them or mislocate them. Wikidata has an item for each, with coordinates or a link to the capital that has them. Once every place surface in the corpus was grounded to a Wikidata item, one query returned coordinates for all of them. Weeks of gazetteer work did not happen.
+Every arc on the atlas needs a latitude and longitude for a place named in a Victorian reference book: the Colony of Victoria, the Central Provinces, British Guiana, a princely state. Modern gazetteers do not have them or mislocate them. Wikidata has an item for each, with coordinates or a link to the capital that has them. For accepted place links, a query can retrieve coordinates or a capital. Unresolved names remain unplaced, and the choice of a historical entity and a period-appropriate seat still needs checking.
 
 The second reason is composition. A historian of the Cape and a historian of Bombay who both ground to [Q1800510](https://www.wikidata.org/wiki/Q1800510) have joined their datasets without meeting. The [longer argument](../outputs/atlas/why-historians-need-wikidata.md) is Jim's; the short version is: ground to Wikidata, do not host your scholarship there.
 
 ## Two ways to get a QID
 
-**Retrieve it.** The pipeline uses the [WikidataMCP](https://wd-mcp.wmcloud.org/) server's vector search, which matches meaning rather than strings, then reads the item's statements, then applies verification gates (type, dates, place) before accepting. Every accepted link has the retrieved evidence and the lookup date beside it. The Colonial Office List graph has 1,066 people grounded this way with a zero-false-positive gate, and 131,343 events grounded to a place.
+**Retrieve it.** The pipeline uses the [WikidataMCP](https://wd-mcp.wmcloud.org/) server's vector search, which matches meaning rather than strings, then reads the item's statements, then applies verification gates (type, dates, place) before accepting. Every accepted link has the retrieved evidence and the lookup date beside it. The Colonial Office List graph has 1,066 of its 27,526 person records grounded this way (about 3.9%), and 131,343 events grounded to a place. The gate aims to avoid false matches; that is a design aim, not a demonstrated zero-error rate. Low coverage matters: the linked people are not a representative sample of the roster.
 
 **Ask a chatbot.** Paste the biography into a model with no tools and ask for the QID. It will give one. Sometimes it is right.
 
@@ -36,13 +36,13 @@ The presenter runs the MCP search in the room. Suggested script:
 2. Search "Ferdinando Hamlyn Price" with the career words. The top hit is [Q123279571](https://www.wikidata.org/wiki/Q123279571), "Ferdinando Hamblyn Price", alias Hamlyn, born 1855, died 1942, described only in Tamil as a Sri Lankan politician, no career statements at all. The entry says mayor of Colombo three times. **Supported, on the name, the dates and Colombo**, and the pipeline's gate had rejected it because the spelling differed.
 3. Search "Elwood D'Arcy Tibbits Antigua". Nothing plausible in the top fifty. **Unresolved.** Keep the local record and the search that was run.
 
-## Live, or saved: the chatbot
+## The saved chatbot comparison
 
-[Twenty long entries](../outputs/ground-test/bios.md) were chosen on 7 October 2026: twelve for people the pipeline grounded, eight it did not. Paste one into a chatbot with no tools: "Who is this? Give the Wikidata QID." Then look the answer up. Score it: right, wrong item, invented identifier, or declined. The [answer key](../outputs/ground-test/answer-key.md) has the pipeline's QID and the MCP lookups.
+[Twenty long entries](../outputs/ground-test/bios.md) were chosen on 7 October 2026: twelve for people the pipeline grounded, eight it did not. For an optional follow-up, paste one into a chatbot with no tools: "Who is this? Give the Wikidata QID." Then look the answer up. Score it: right, wrong item, invented identifier, or declined. In the workshop, use the saved runs below. The [answer key](../outputs/ground-test/answer-key.md) has the pipeline's QID and the MCP lookups.
 
 What the lookups already show: of the eight the pipeline left ungrounded, three have a plausible item the vector search finds at once (Price, Henry Francis Wilson, T. J. Alldridge) and five have nothing in the top fifty. "Not grounded" means the gate did not accept; it never means "no such item".
 
-And the control. On 7 October Jim pasted the twenty entries into Gemini 3.8 Flash with no tools: "Parse these bios and ground the places, schools and people to Wikidata ids where possible." The [response](../outputs/ground-test/gemini-response.md) is fluent and well organised, names every person and place correctly, and gives identifiers for everything. [Scored](../outputs/ground-test/gemini-scoring.md) against Wikidata:
+And the control. On 7 October Jim pasted the twenty entries into Gemini 3.8 Flash with no tools: "Parse these bios and ground the places, schools and people to Wikidata ids where possible." The [response](../outputs/ground-test/gemini-response.md) is fluent and well organised, supplies plausible names and many identifiers. [Scored](../outputs/ground-test/gemini-scoring.md) against Wikidata:
 
 | | |
 |---|---|
@@ -60,12 +60,14 @@ The same day, the same twenty entries went to Claude Opus 5.5 in a chat with web
 | | Gemini, no tools | Pipeline: vector search + gates | Claude Opus 5.5, with retrieval | GPT Astra 6, with retrieval |
 |---|---|---|---|---|
 | Person identifiers correct | 0 of 16 | 12 given, all 12 confirmed by the Opus run independently (Gorges via a duplicate item); 8 ungrounded, of which 4 have items | 16 of 16 given | 16 of 16 given |
-| Places | 38 of 104 labels match; modern items | 3,207 surfaces across the corpus; modern-collapse errors found on the map | 17 of 138, then stopped | 104 grounded to period entities; 9 modern proxies labelled as such |
+| Places | 38 of 104 labels match; modern items | 3,207 surfaces across the corpus; modern-collapse errors found on the map | 17 of 138, then stopped | 104 place/region identifiers; many period entities, 9 labelled proxies; known exceptions |
 | Time | under 5 minutes | overnight, for the whole corpus | about 20 minutes, two passes | about 27 minutes |
 
-A third run, OpenAI's GPT Astra 6 (its frontier model, released in late summer 2026) at the medium setting with web retrieval, took 27 minutes and produced a [structured file](../outputs/ground-test/astra-grounding.json) of 180 entities with offsets, confidence, a relation type, rejected candidates with reasons and dated evidence ([scoring](../outputs/ground-test/astra-scoring.md)). All 155 identifiers resolve consistently. It grounded Ceylon, the Straits Settlements, the Union of South Africa and the rest to the period polities, and it recorded Penang Q188096, the item the pipeline had wrongly matched, as a modern proxy only. It is the dataset a historian would want, at about 80 seconds an entry, which over 27,526 people is 25 days of model time before the India Office List.
+A third run, GPT Astra 6 at the medium setting with web retrieval, took 27 minutes and produced a [structured file](../outputs/ground-test/astra-grounding.json) of 180 entities with offsets, confidence, a relation type, rejected candidates with reasons and dated evidence ([scoring](../outputs/ground-test/astra-scoring.md)). All 155 identifiers passed the saved label/alias check; that check does not establish that every match fits its historical context. It grounded Ceylon, the Straits Settlements, the Union of South Africa and the rest to the period polities, and it recorded Penang Q188096, the item the pipeline had wrongly matched, as a modern proxy only. The file still maps one colonial Victoria to the modern state, and its “Malay States” match needs review. At about 80 seconds an entry, a serial extrapolation over 27,526 people is about 25 days. That is an illustration of throughput at the observed rate, not a forecast: parallel requests, caching, shorter entries and different tools would change it.
 
-All three chatbots read the biographies correctly. The difference is where the number came from, and what it cost. And even the best column needs the historian: someone has to pick between the two Gorges items, and someone decided Harris was Harris when the printed birth year disagreed with the item.
+These runs show why an identifier must be retrieved and checked. They do not rank models or isolate the effect of retrieval: model, tools and output coverage all differ. The place counts use different units and are not comparable accuracy scores. Even a retrieved, correctly labelled item can be the wrong historical match.
+
+Use retrieval on hard cases and a reference sample, then have a historian review the decisions before treating them as a standard. Record wall-clock time, model charges and human review time separately. A slow demonstration is evidence about this run, not a general price comparison.
 
 ## Three questions to keep separate
 

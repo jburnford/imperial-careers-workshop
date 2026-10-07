@@ -1,26 +1,21 @@
 # Workshop plan (7 October 2026)
 
-Rebuilt after Jim's decision on 7 October to drop the Tropical Agriculturist example and build the hour on Imperial Careers (col_matching). The earlier plan is in `archive/tropical/workshop-plan.md`.
-
-## Frame
-
-Three questions (structure, clean, ground), each with one decision only the historian makes, shown on one dataset at full scale, plus the second half of the method: the visualization finds the errors, the fix goes into a rule, the pipeline reruns.
+One dataset: Imperial Careers, from source to structured records, identities and mapped postings. Three questions belong to the historian: what counts as an event, which entries are one person, and what a retrieved identifier asserts. The second half of the method is the correction loop: build, extract, visualise, see, fix, rerun.
 
 ## Running order
 
-See `presenter.qmd`. 0–5 video and numbers; 5–12 the source and a three-minute hand mark-up; 12–22 structure (prompt, audit, deterministic fixes); 22–30 identity (rules, four clusters); 30–40 ground (live MCP, Gemini control); 40–47 the map finds the errors; 47–55 decision exercise; 55–60 your data.
+Follow `presenter.qmd`: 0–7 atlas and scope; 7–13 Balmer mark-up; 13–23 structure and checked ditto replay; 23–30 identity decisions; 30–40 grounding and model/cost choices; 40–46 Brewster’s two errors; 46–56 three decisions; 56–60 participants’ own data and questions.
 
-## Decisions taken
+## Decisions
 
-- Open with `combined_mobility.mp4` from the col_matching site.
-- One optional live stage (structuring one entry in Claude Code); everything else saved.
-- Numbers from `kg_stats.json` and the atlas `meta.json` of 4 September 2026, copied to `outputs/atlas/`.
-- The chatbot control is Jim's Gemini 3.8 Flash run of 7 October, scored in `outputs/ground-test/`.
-- The col_matching public site is frozen; nothing is pushed there.
+- Keep the Wodehouse opening, but distinguish source wording, historical identity and plotting proxy. Use September counts rather than the earlier video caption.
+- Keep cost and model choices: this audience misses the parallel session on those subjects.
+- Make the live lookup the only network-dependent demonstration. Have saved evidence ready. The optional ditto replay runs offline.
+- Demonstrate one correction on three saved records, with preservation and boundary checks. Do not claim a new production accuracy result.
+- Give participants R1 and R3 as recap, then R8 (Harris) as a fresh decision. Preserve the other five cases for further practice.
+- Keep source interpretation visible: administrative coverage, provenance, inherited places, and the distinction between a defeat and an office held.
+- Publish these workshop changes only. Do not modify or push the frozen col_matching site.
 
-## Still to do
+## Before presenting
 
-- Jim's review of every page and the seven cases.
-- Organizer: Zoom question routing; revised session description if wanted.
-- Download the video to the presenting laptop; print the handout.
-- Optional: a Qwen run of the twenty-entry grounding test from Plato, as the cheap-model column.
+Jim reviews the rendered deck and pages. Confirm Zoom question routing and handout quantity, reconcile the published OCR description with the session’s scope, download the opening video, and rehearse once against the clock.

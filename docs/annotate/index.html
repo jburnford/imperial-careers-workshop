@@ -27,13 +27,13 @@
 </head>
 <body>
 <h1>Mark up an entry</h1>
-<p class="note">Choose an entry from the <em>Colonial Office List</em> Record of Services. Pick a tag, then click the first and last word of a span. Tag every <b>position</b>, <b>place</b>, <b>year</b>, <b>honour</b>, the <b>education</b> and <b>birth</b> fields, and how the career <b>ended</b>. Then press <em>Compare</em> to see what the pipeline extracted for the same entry. Nothing leaves your browser.</p>
+<p class="note">Start with <b>Balmer (entry 2)</b>: tag the last two positions, their places and years. The other entries are for further practice. Choose an entry from the <em>Colonial Office List</em> Record of Services. Pick a tag, then click the first and last word of a span. Tag every <b>position</b>, <b>place</b>, <b>year</b>, <b>honour</b>, the <b>education</b> and <b>birth</b> fields, and how the career <b>ended</b>. Then press <em>Compare</em> to see what the pipeline extracted for the same entry. Nothing leaves your browser.</p>
 
 <div class="row">
  <label>Entry <select id="pick"></select></label>
  <span id="edition" class="small"></span>
 </div>
-<p class="note" id="hint"></p>
+
 
 <div class="tags" id="tags">
  <button data-tag="name">name</button>
@@ -55,13 +55,14 @@
  <button class="plain" id="btnCompare">Compare with the pipeline</button>
  <button class="plain" id="btnClear">Clear</button>
  <button class="plain" id="btnCopy">Copy summary for chat</button>
- <span id="msg" class="small"></span>
+ <span id="msg" role="status" aria-live="polite" class="small"></span>
 </div>
 
 <div id="compare">
  <h2>Your spans</h2>
  <div id="mine"></div>
- <h2>What the pipeline extracted</h2>
+ <h2>What the saved pipeline record contains</h2>
+ <p class="note" id="hint"></p>
  <p class="note" id="cmpnote"></p>
  <div id="theirs"></div>
  <h2>Questions to settle</h2>
@@ -69,17 +70,18 @@
   <li>Did you count a clause with no place as inheriting the previous place? The pipeline's rule says yes, and marks it <code>place_inherited</code>.</li>
   <li>Did you split "col. sec. and min. of com. and lab." into two positions, or keep it as one? The rule says explode compound clauses into separate events.</li>
   <li>Is a month ("Mar., 1919") part of the year, or dropped? The schema keeps years only.</li>
-  <li>Is "called to the bar" a career event? Is "defeated by Sir Richard McBride" one? The schema has no field for either; the historian decides what counts.</li>
+  <li>Is "called to the bar" a career event? Is "defeated by Sir Richard McBride" one? A defeat can be an event, but it is not an office held. The historian decides what event types the schema needs.</li>
   <li>If the entry prints no birth year, did you leave birth blank? The pipeline's rule says never infer it, and one of these records broke the rule.</li>
  </ul>
 </div>
 
 <script>
-let data=null, bios=[], cur=0, tag='position', spans=[], anchor=null;
+let data=null, bios=[], cur=1, tag='position', spans=[], anchor=null;
+const savedSpans = new Map();
 const TAGS=['name','birth','education','honour','position','place','year','terminal'];
-fetch('bios.json').then(r=>r.json()).then(d=>{data=d;bios=d.bios;const p=document.getElementById('pick');bios.forEach((b,i)=>{const o=document.createElement('option');o.value=i;o.textContent=(i+1)+'. '+b.text.split(/[,.]/)[0]+' ('+b.edition+')';p.appendChild(o);});p.onchange=()=>{cur=+p.value;load();};load();});
+fetch('bios.json').then(r=>r.json()).then(d=>{data=d;bios=d.bios;const p=document.getElementById('pick');bios.forEach((b,i)=>{const o=document.createElement('option');o.value=i;o.textContent=(i+1)+'. '+b.text.split(/[,.]/)[0]+' ('+b.edition+')';p.appendChild(o);});p.value=cur;p.onchange=()=>{savedSpans.set(cur, structuredClone(spans));cur=+p.value;load();};load();});
 function tokens(){return bios[cur].text.split(/(\s+)/);}
-function load(){spans=[];anchor=null;const b=bios[cur];document.getElementById('edition').textContent='Colonial Office List '+b.edition+', entry '+b.bio_id;document.getElementById('hint').textContent=b.note||'';render();document.getElementById('compare').style.display='none';}
+function load(){spans=structuredClone(savedSpans.get(cur)||[]);anchor=null;const b=bios[cur];document.getElementById('edition').textContent='Colonial Office List '+b.edition+', entry '+b.bio_id;document.getElementById('hint').textContent=b.note||'';render();document.getElementById('compare').style.display='none';}
 function render(){const e=document.getElementById('entry');e.innerHTML='';const tk=tokens();let wi=0;tk.forEach((t,i)=>{if(/^\s+$/.test(t)){e.appendChild(document.createTextNode(t));return;}const s=document.createElement('span');s.className='w';s.dataset.i=wi;const sp=spans.find(x=>wi>=x.a&&wi<=x.b);if(sp)s.classList.add('t-'+sp.tag);if(anchor===wi)s.classList.add('sel');s.textContent=t;s.tabIndex=0;s.setAttribute('role','button');s.setAttribute('aria-label',t+(sp?', tagged '+sp.tag:'')+(anchor===wi?', span start':''));if(sp)s.title=sp.tag;s.onclick=()=>click(+s.dataset.i);s.onkeydown=ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();const k=+s.dataset.i;click(k);const n=document.querySelector('#entry .w[data-i="'+k+'"]');if(n)n.focus();}};e.appendChild(s);wi++;});}
 function click(i){if(tag===''){spans=spans.filter(x=>!(i>=x.a&&i<=x.b));anchor=null;render();return;}if(anchor===null){anchor=i;render();return;}const a=Math.min(anchor,i),b=Math.max(anchor,i);spans=spans.filter(x=>x.b<a||x.a>b);spans.push({tag,a,b});anchor=null;render();}
 document.querySelectorAll('#tags button').forEach(btn=>{btn.onclick=()=>{tag=btn.dataset.tag;document.querySelectorAll('#tags button').forEach(x=>{x.classList.remove('active');x.setAttribute('aria-pressed','false');});btn.classList.add('active');btn.setAttribute('aria-pressed','true');anchor=null;render();};});
@@ -89,8 +91,8 @@ document.querySelectorAll('#tags button').forEach(b=>{if(b.dataset.tag)b.classLi
 function words(){return tokens().filter(t=>!/^\s+$/.test(t));}
 function spanText(s){return words().slice(s.a,s.b+1).join(' ');}
 document.getElementById('btnClear').onclick=()=>{spans=[];anchor=null;render();};
-document.getElementById('btnCompare').onclick=()=>{const b=bios[cur];const m=document.getElementById('mine');const sorted=[...spans].sort((x,y)=>x.a-y.a);m.innerHTML=sorted.length?'<table><tr><th>tag</th><th>text</th></tr>'+sorted.map(s=>'<tr><td>'+s.tag+'</td><td>'+esc(spanText(s))+'</td></tr>').join('')+'</table>':'<p class="note">No spans yet.</p>';const t=document.getElementById('theirs');const st=b.structured;document.getElementById('cmpnote').textContent=st?'The record as the pipeline holds it. Compare it field by field with your spans; the note under the entry picker says what to look for.':'This entry was structured by the pipeline but the per-record JSON is not in the workshop packet; the graph holds six events for it, all placed in British Columbia.';if(!st){t.innerHTML='';}else{let h='<table><tr><th>field</th><th>value</th></tr>';h+='<tr><td>surname / given names</td><td>'+esc(st.surname+' / '+(st.given_names||''))+'</td></tr>';h+='<tr><td>birth_year</td><td>'+esc(String(st.birth_year))+'</td></tr>';h+='<tr><td>education</td><td>'+esc(String(st.education))+'</td></tr>';h+='<tr><td>honours</td><td>'+esc((st.honours||[]).map(x=>x.award+(x.year?' ('+x.year+')':'')).join('; ')||'none')+'</td></tr>';h+='<tr><td>terminal</td><td>'+esc(st.terminal?JSON.stringify(st.terminal):'null')+'</td></tr></table>';h+='<table style="margin-top:.5rem"><tr><th>#</th><th>position</th><th>place</th><th>years</th><th>flags</th></tr>';(st.events||[]).forEach((ev,i)=>{h+='<tr><td>'+(i+1)+'</td><td>'+esc(ev.position||'')+'</td><td>'+esc(ev.place||'')+(ev.place_inherited?' <span class="small">(inherited)</span>':'')+'</td><td>'+esc((ev.year_start??'')+(ev.year_end&&ev.year_end!==ev.year_start?'–'+ev.year_end:''))+'</td><td>'+esc([ev.is_acting?'acting':'',ev.org_type||''].filter(Boolean).join(', '))+'</td></tr>';});h+='</table>';t.innerHTML=h;}document.getElementById('compare').style.display='block';document.getElementById('compare').scrollIntoView({behavior:'smooth'});};
-document.getElementById('btnCopy').onclick=()=>{const b=bios[cur];const c={};spans.forEach(s=>{c[s.tag]=(c[s.tag]||0)+1;});const line='markup '+b.bio_id+': '+TAGS.filter(t=>c[t]).map(t=>t+' '+c[t]).join(', ');navigator.clipboard.writeText(line).then(()=>{document.getElementById('msg').textContent='Copied: '+line;});};
+document.getElementById('btnCompare').onclick=()=>{const b=bios[cur];const m=document.getElementById('mine');const sorted=[...spans].sort((x,y)=>x.a-y.a);m.innerHTML=sorted.length?'<table><tr><th>tag</th><th>text</th></tr>'+sorted.map(s=>'<tr><td>'+s.tag+'</td><td>'+esc(spanText(s))+'</td></tr>').join('')+'</table>':'<p class="note">No spans yet.</p>';const t=document.getElementById('theirs');const st=b.structured;document.getElementById('cmpnote').textContent=st?'The record as the pipeline holds it. Compare it field by field with your spans; the note under the entry picker says what to look for.':'This is the saved graph, a later stage than the structured records shown for the other entries. Its geography was corrected, but compare the 1912 appointment with the source’s defeat clause.';if(!st){t.innerHTML='<table><tr><th>Graph role</th><th>Place</th><th>Years</th></tr>'+b.career_facts.map(ev=>'<tr><td>'+esc(ev.role_label)+'</td><td>'+esc(ev.place_label)+'</td><td>'+esc((ev.year_start??'')+(ev.year_end?'–'+ev.year_end:''))+'</td></tr>').join('')+'</table>'; }else{let h='<table><tr><th>field</th><th>value</th></tr>';h+='<tr><td>surname / given names</td><td>'+esc(st.surname+' / '+(st.given_names||''))+'</td></tr>';h+='<tr><td>birth_year</td><td>'+esc(String(st.birth_year))+'</td></tr>';h+='<tr><td>education</td><td>'+esc(String(st.education))+'</td></tr>';h+='<tr><td>honours</td><td>'+esc((st.honours||[]).map(x=>x.award+(x.year?' ('+x.year+')':'')).join('; ')||'none')+'</td></tr>';h+='<tr><td>terminal</td><td>'+esc(st.terminal?JSON.stringify(st.terminal):'null')+'</td></tr></table>';h+='<table style="margin-top:.5rem"><tr><th>#</th><th>position</th><th>place</th><th>years</th><th>flags</th></tr>';(st.events||[]).forEach((ev,i)=>{h+='<tr><td>'+(i+1)+'</td><td>'+esc(ev.position||'')+'</td><td>'+esc(ev.place||'')+(ev.place_inherited?' <span class="small">(inherited)</span>':'')+'</td><td>'+esc((ev.year_start??'')+(ev.year_end&&ev.year_end!==ev.year_start?'–'+ev.year_end:''))+'</td><td>'+esc([ev.is_acting?'acting':'',ev.org_type||''].filter(Boolean).join(', '))+'</td></tr>';});h+='</table>';t.innerHTML=h;}document.getElementById('compare').style.display='block';document.getElementById('compare').scrollIntoView({behavior:'smooth'});};
+document.getElementById('btnCopy').onclick=()=>{const b=bios[cur];const c={};spans.forEach(s=>{c[s.tag]=(c[s.tag]||0)+1;});const line='markup '+b.bio_id+': '+TAGS.filter(t=>c[t]).map(t=>t+' '+c[t]).join(', ');navigator.clipboard.writeText(line).then(()=>{document.getElementById('msg').textContent='Copied: '+line;}).catch(()=>prompt('Copy this line:',line));};
 function esc(s){return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
 </script>
 </body>

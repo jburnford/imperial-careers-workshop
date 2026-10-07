@@ -181,7 +181,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#a-premier-of-british-columbia-in-australia" id="toc-a-premier-of-british-columbia-in-australia" class="nav-link active" data-scroll-target="#a-premier-of-british-columbia-in-australia">A premier of British Columbia in Australia</a></li>
+  <li><a href="#a-premier-of-british-columbia-in-australia" id="toc-a-premier-of-british-columbia-in-australia" class="nav-link active" data-scroll-target="#a-premier-of-british-columbia-in-australia">A premier of British Columbia in Australia</a>
+  <ul class="collapse">
+  <li><a href="#a-plausible-map-can-still-be-wrong" id="toc-a-plausible-map-can-still-be-wrong" class="nav-link" data-scroll-target="#a-plausible-map-can-still-be-wrong">A plausible map can still be wrong</a></li>
+  </ul></li>
   <li><a href="#the-union-of-south-africa-at-harare" id="toc-the-union-of-south-africa-at-harare" class="nav-link" data-scroll-target="#the-union-of-south-africa-at-harare">The Union of South Africa at Harare</a></li>
   <li><a href="#two-baluchistans" id="toc-two-baluchistans" class="nav-link" data-scroll-target="#two-baluchistans">Two Baluchistans</a></li>
   <li><a href="#what-a-fix-changes" id="toc-what-a-fix-changes" class="nav-link" data-scroll-target="#what-a-fix-changes">What a fix changes</a></li>
@@ -195,7 +198,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">The map finds the errors</h1>
-<p class="subtitle lead">Minutes 40–47. Three errors seen in the atlas, what caused them, and what fixing them changed.</p>
+<p class="subtitle lead">Minutes 40–46. Three errors seen in the atlas, what caused them, and what fixing them changed.</p>
 </div>
 
 
@@ -243,6 +246,12 @@ Terms on this page
 <h2 class="anchored" data-anchor-id="a-premier-of-british-columbia-in-australia">A premier of British Columbia in Australia</h2>
 <p>Harlan Brewster’s 1918 entry (<a href="../outputs/ground/brewster.json">saved</a>): newspaper work in New Brunswick and Boston, removed to British Columbia in 1897, elected for Alberni, “defeated by Sir Richard McBride, in Victoria, 1912”, re-elected at a by-election in 1916, premier of British Columbia 1916. The graph gives him two events as member for Victoria. The bare surface “Victoria” was grounded to the Australian colony, Q56850459, by the surface-keyed cache. The atlas showed a British Columbia premier with a seat in Melbourne.</p>
 <p><strong>Seen</strong> on the map. <strong>Cause:</strong> a cache keyed on the surface string, with “Victoria” resolved once for everyone. <strong>Fix:</strong> a per-person context resolver. If the official’s other postings signal British Columbia, “Victoria” is British Columbia (Q1973), which geolocates to its seat; otherwise the colony. <strong>Also found while fixing it:</strong> per-person overrides had never applied at all, because the resolver keyed people one way and the graph another. Repairing that fixed a second, unrelated split between the North-Western Provinces of India and of Ceylon. Both corpora re-emitted.</p>
+<section id="a-plausible-map-can-still-be-wrong" class="level3">
+<h3 class="anchored" data-anchor-id="a-plausible-map-can-still-be-wrong">A plausible map can still be wrong</h3>
+<p>Now read the source again: Brewster was <strong>defeated</strong> in Victoria in 1912. In the saved graph, that clause became a legislative assembly posting for Victoria from 1912 to 1916. Correcting the place leaves an unsupported appointment on a plausible map.</p>
+<p><strong>Pause and decide:</strong> does this record stand after the geography is fixed? What must be preserved, and what must be removed from a table of offices held?</p>
+<p>The defeat can be retained as an event with its own type, but it does not establish that he held the seat. Keep the source clause, flag the appointment assertion, and inspect other “defeated” clauses. This remaining defect is visible in the saved graph; it has not been repaired in the published atlas. A checked location is not a checked career.</p>
+</section>
 </section>
 <section id="the-union-of-south-africa-at-harare" class="level2">
 <h2 class="anchored" data-anchor-id="the-union-of-south-africa-at-harare">The Union of South Africa at Harare</h2>
@@ -261,7 +270,7 @@ Terms on this page
 <section id="what-the-map-cannot-find" class="level2">
 <h2 class="anchored" data-anchor-id="what-the-map-cannot-find">What the map cannot find</h2>
 <p>False negatives. An official whose “Victoria” was left ungrounded does not appear anywhere wrong; he simply has no arc. A merge that should have happened leaves two short careers instead of one long one, both plausible. For those the project built the silver standards: 200 hand-labelled cases, stratified so that the risky strata (rare surname, overlapping eras) are oversampled, scored against the machine output. On the Colonial Office List never-biographied population the judge’s “different” verdicts in the rare-surname stratum turned out to have a false-negative rate of 76 per cent, which no map would have shown.</p>
-<p>Now: <a href="../review/index.html">the exercise</a>. Seven decisions, one reason each.</p>
+<p>Now: <a href="../review/index.html">the exercise</a>. Work through R1, R3 and the new R8. Give each decision a reason; for an unresolved case, say what evidence you would seek. The other five cases are further practice.</p>
 
 
 </section>
@@ -693,7 +702,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>Jim Clifford, University of Saskatchewan. Draft materials; sources credited on each page.</p>
+<p>Jim Clifford, University of Saskatchewan. Sources credited on each page.</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;

@@ -21,85 +21,67 @@ format:
       data-background-opacity: "0.15"
 ---
 
+
 ## {background-video="https://jimclifford.ca/col_matching/combined_mobility.mp4" background-video-muted="true" background-image="images/combined-mobility-frame.jpg" background-size="cover"}
 
 ::: notes
-Let it run. 56 seconds. Every arc is one official moving between colonies, 1815 to 1966. Say nothing until the arcs reach Africa. If the network is down, play the downloaded mp4 instead; the still behind this slide is a frame from it.
+0–1. Let the 56-second video run. It is an earlier export; the September counts on the next slide supersede its caption. These are sequences of recorded postings, not observed travel routes. Use the downloaded copy if the network fails.
 :::
 
 ## What one arc needs {.smaller}
 
-> WODEHOUSE, SIR PHILIP E., K.C.B.—Entered the Ceylon civil service as a writer, May, 1828; … district judge of Kandy, 1840; … superintendent of Honduras, 1851; in Feb. 1854, governor of British Guiana; was employed in 1858 on a special mission to the government of Venezuela; and in 1861 was appointed governor of the Cape of Good Hope; is also high commissioner in South Africa.
+> WODEHOUSE, SIR PHILIP E.—Entered the Ceylon civil service as a writer, May, 1828; … superintendent of Honduras, 1851; … governor of British Guiana; … in 1861 was appointed governor of the Cape of Good Hope.
 
-| As printed | Event | Place, as printed | Identifier | Seat | Lat, long | Year |
-|---|---|---|---|---|---|---|
-| "writer, May, 1828" | writer | Ceylon | Q918153 British Ceylon | Colombo | 6.93, 79.86 | 1828 |
-| "superintendent of Honduras, 1851" | superintendent | British Honduras | Q1643555 | Belize | 17.5, −88.2 | 1851 |
-| "governor of British Guiana" | governor | British Guiana | Q918126 | Georgetown | 6.81, −58.15 | 1854 |
-| "governor of the Cape of Good Hope" | governor | Cape Colony | Q370736 | Cape Town | −33.93, 18.42 | 1861 |
-| "governor of Bombay" (India Office List) | governor | Bombay Presidency | Q891827 | Bombay | 18.97, 72.83 | 1872–77 |
+| Printed wording | Event | Historical place | Plotting seat | Year |
+|---|---|---|---|---|
+| writer, May, 1828 | writer | British Ceylon | Colombo | 1828 |
+| superintendent of Honduras | superintendent | British Honduras | Belize | 1851 |
+| governor of British Guiana | governor | British Guiana | Georgetown | 1854 |
+| governor of the Cape of Good Hope | governor | Cape Colony | Cape Town | 1861 |
+| governor of Bombay (India Office List) | governor | Bombay Presidency | Bombay | 1872–77 |
+
+A source clause → an event → a checked place identifier → a point.
 
 ::: notes
-Colonial Office List 1867. Each row is the three questions answered once: what is the event, which entry is this man (both Lists), which place and so which coordinates. The year orders the arcs. The same work, 36,431 times.
+1–3. Source is the 1867 Colonial Office List; Bombay comes from the India Office List. The full table, identifiers and trace are on step 1. “Honduras” to “British Honduras” is an interpretation, kept separately from printed wording. A capital is a plotting proxy, not evidence of residence. Wodehouse is a checked example of the cross-service match; the other bridges need review.
 :::
-
-## One entry on the map
-
-![](images/wodehouse-trace.png){height="600"}
 
 ## And what the map got wrong {.smaller}
 
 :::: {.columns}
 ::: {.column width="38%"}
-![](images/atlas-wodehouse-panel.png){height="520"}
+![](images/atlas-wodehouse-panel.png){height="440" fig-alt="Wodehouse's atlas panel, showing the incorrect South Africa and Belmopan locations"}
 :::
 ::: {.column width="62%"}
-The atlas's own panel for the same man, Colonial Office record:
+- **1858 mission to Venezuela** → Union of South Africa.
+- **1861 high commissioner** → a state founded in 1910.
+- **1851 Honduras** → Belmopan, a capital founded in 1970.
 
-- 1858 "employed on a special mission" → **Union of South Africa**. The source says Venezuela. Venezuela is no colony, so the event fell through to the next one.
-- 1861 "high commissioner" → **Union of South Africa**, seated at Bloemfontein. The Union dates from 1910. In 1861 he was high commissioner *for* South Africa, from Cape Town.
-- 1851 "Honduras" → seat **Belmopan**, a capital founded in 1970.
+[The map made the errors visible.]{.gold}
 
-[Seen on the map. Next: fix the rule, rerun for everyone.]{.gold}
+The date matters as much as the place name.
 :::
 ::::
 
 ::: notes
-Found while preparing this slide, 7 October 2026. Not yet fixed in col_matching: say so. Both records (CO and IO) have errors visible in the panel; the IO record also inherits British Guiana for Honduras. The 1861 row is a side-effect of the South Africa fix on slide 26: the patched cache sends the bare surface "South Africa" (38 events) to Q193619, the Union, and pre-1910 that is wrong. The fix for one error made the next one; that is why you look again at everyone a rule touched.
+3–4. Found 7 October; still present in the saved atlas. The IO record also inherits British Guiana for Honduras. The 1861 error was introduced by a blanket South Africa cache fix. Do not claim these are repaired. The point is to inspect everyone a rule touches.
 :::
 
-## What that was
+## What the records make visible {.smaller}
 
-::: {.big}
-[46,926]{.gold} officials  
-[305,164]{.gold} career events  
-[211,581]{.gold} of them on the map
-:::
+**46,926 person records** across two Lists\
+**305,164 career events** · **211,581 linked to a Wikidata place**
 
-<br>
+The September atlas draws 36,431 arcs for 16,287 roster records with moves.
 
-Two printed reference books. One historian, a coding agent, a few months.
+- Administrative accounts of careers, offices and honours.
+- Person counts resolved within each List; their sum includes cross-service overlap.
+- Seats used for plotting; arcs connect postings, not observed journeys.
+
+**Whose careers does this source make easy to see? Whose does it leave out?**
 
 ::: notes
-CO 27,526 people / 180,470 events / 131,343 placed. IOL 19,400 / 124,694 / 80,238. 36,431 arcs. 186 people in both services; Wodehouse.
-:::
-
-## Ten years ago
-
-| | Trading Consequences, 2013 | Imperial Careers, 2026 |
-|---|---|---|
-| [Clean]{.gold} | OCR turned "lime" into "time"; fixes hand-built by a team | OCR garbles a surname; a merge rule and a ledger |
-| [Structure]{.gold} | A six-stage pipeline built by computational linguists | A prompt, and a cheap model overnight |
-| [Ground]{.gold} | A gazetteer, matched by string; every "Italy" landed in Texas | Wikidata, matched by meaning; "Victoria" six ways |
-
-<br>
-
-Five institutions and a grant. Of the places it found, six in ten were right; of the places there, it found six in ten.
-
-One historian and a coding agent.
-
-::: notes
-Clifford, Alex, Coates, Klein, Watson, Historical Methods 2016. 10.5 million pages. F-scores 0.62 commodities, 0.61 locations: precision and recall both about 0.6. What changed is who writes the pipeline and how fast the loop runs; what did not change is where the historian is needed.
+4–5. Ask for one response, room or chat. Official records make the administration's categories visible, not everyone who worked for or lived under it. Grounding covers 1,066 of 27,526 CO people, about 3.9%; person links are selective, not representative. Event-to-place coverage is a different measure. Stats copied from 4 September.
 :::
 
 ## Three questions
@@ -110,66 +92,58 @@ Clifford, Alex, Coates, Klein, Watson, Historical Methods 2016. 10.5 million pag
 | [Clean]{.gold} | One person or two? | Merge, keep apart, review |
 | [Ground]{.gold} | Which place, which person? | Supported, unresolved, wrong |
 
-<br>
+Build. Extract. **Visualise. See. Fix. Rerun.**
 
-The model does everything around the decision, a hundred thousand times.
-
-## The second half of the method
-
-::: {.big}
-Build. Extract. [Visualise.]{.gold} [See.]{.gold} Fix. Rerun.
+::: notes
+5–7. A historian owns the decisions; the agent writes scripts that apply them at scale. Today participants mark up an entry and make three decisions. We start after OCR. The published description mentions Britannica OCR tools; this session uses existing olmOCR output and does not demonstrate those tools. Your own dataset is the take-home application. Put the site and exercise links in Zoom chat.
 :::
 
-<br>
-
-The atlas was built to answer a question.
-It turned out to be the best error detector the project had.
-
-## The source {background-color="#1d1e23"}
+## The source
 
 > BALMER, F. E.—Dep. chief acctnt., G.P.O., E. Africa Prot., Mar., 1919; ch. acctnt., G.P.O., Kenya, Oct., 1919; ch. acctnt., Kenya-Uganda-Tanganyika post and tel. service, 1933; senr. dep. P.M.G., <mark>do.</mark>, 1935.
 
-85 volumes, 1883 to 1966.\
-1,400 to 2,900 entries in each.\
-The same man in forty of them.
+85 volumes OCR’d, **1867–1966**.\
+The Record of Services appears from **1883**.\
+The same person returns in many editions.
 
 ::: notes
-Record of the Public Services of Officers. Cumulative. OCR'd with olmOCR; we begin after OCR.
+7–8. Keep OCR and source separate. A surprising date may be an OCR error or a printed error. Each record needs a volume and page reference; the packet's source notes are not scans. The 1946 restart lacks the usual Record of Services.
 :::
 
-## Mark one up
+## Mark up Balmer
 
 :::: {.columns}
-::: {.column width="72%"}
-![](images/annotate-screenshot.png)
+::: {.column width="70%"}
+Choose **entry 2**. Tag the last two positions, their places and years.
+
+Three minutes, then compare:
+
+**What does “do.” inherit?**\
+**Where should that decision be recorded?**
 :::
-::: {.column width="28%"}
+::: {.column width="30%"}
 ![](images/qr-annotate.png){width="240" fig-alt="QR code for the mark-up exercise"}
 :::
 ::::
 
-**jimclifford.ca/imperial-careers-workshop/annotate/** or the paper. Three minutes.
-
-# Structure {background-color="#1d1e23"}
-
-What is a record here?
-
-## Python, a cheap model, Python
-
-| | | |
-|---|---|---|
-| **1. Python** | a grammar for the entry shape | refuses anything it cannot fully parse |
-| **2. Qwen3.6-35B** | one entry in, one structured record (JSON) out | run-on, ditto and concurrent clauses |
-| **3. Python** | every place and year checked against the source | systematic errors fixed by rule |
-
-<br>
-
-::: {.big}
-[30,496]{.gold} entries · [8.2]{.gold} hours · [1]{.gold} a second · [55]{.gold} failures
-:::
+**jimclifford.ca/imperial-careers-workshop/annotate/**
 
 ::: notes
-IOL run, overnight 25–26 June, 16 workers, reasoning off, temp 0. Reasoning on: 67% failures. COL: 34,743, about a day including setup.
+8–13. Three minutes marking, one minute comparing, one minute debrief. Ask one room participant and the chat monitor for a reason. Paper users circle the corresponding words. Protect this time. The remaining entries are take-home practice.
+:::
+
+## Structure: Python, a model, Python
+
+| | Job |
+|---|---|
+| **1. Python** | Parse regular entries; refuse what the grammar cannot handle |
+| **2. Qwen3.6-35B** | Bind positions, places and dates across difficult clauses |
+| **3. Python** | Check the output; apply logged rules for recurring errors |
+
+**30,496 entries · 8.24 hours · 55 invalid-JSON failures**
+
+::: notes
+13–15. IOL run, 25–26 June, 16 workers, reasoning off, temperature zero. 55 is a format failure count, not the number of inaccurate records. The frontier coding agent wrote the machinery; an open model read the collection. COL bulk run: 34,743 entries, about a day including setup.
 :::
 
 ## The prompt is the decisions
@@ -178,197 +152,264 @@ IOL run, overnight 25–26 June, 16 workers, reasoning off, temp 0. Reasoning on
 
 > **events:** one object per distinct posting. EXPLODE compound clauses.
 
-> **place:** as printed. No place in the clause? Carry the previous one and say so.
+**Place rule, summarised:** keep printed wording; flag inheritance and stop at a stated transfer.
 
 > **birth_year:** only if printed. NEVER infer from the earliest career date.
 
-Every rule is there because a run broke it.
-
-## Samples read against the source
-
-::: {.big}
-Early entries: [69%]{.gold} clean\
-Across the corpus: [about 50%]{.gold} clean, [9%]{.gold} major
+::: notes
+15–17. The first, second and fourth quotations are from the saved prompt; the place line summarises its inheritance rule, including the stop at a stated transfer. Link to the exact prompt on step 3. Ask: would “defeated in an election” count as an office held? Leave that distinction in mind for Brewster.
 :::
 
-Three samples (186, 100, 300), read by a model against the source, before the rule fixes.
+## Read records against the source {.smaller}
 
-| Source | Record |
+| Model-reviewed sample, before rule fixes | Fully clean | Records with a major error |
+|---|---|---|
+| First 1,859 records, every tenth: 186 | 129 (69%) | 6 (3.2%); 8 findings |
+| 100 spread across the corpus | 51 (51%) | 9 (9%) |
+| 300 spread across the corpus | about 149 (50%) | not tallied |
+
+| Source | Wrong field |
 |---|---|
-| "senr. dep. P.M.G., **do.**, 1935" | place: "do." |
-| "BLAKELY … atty.-gen.'s off., B. Honduras, **Apl., 1898**." | birth_year: **1898** |
-| "**KT. BACH.** (1920)" | two honours: KT; BACH |
+| “do., 1935” | place: “do.” |
+| “Apl., 1898” | birth_year: 1898 |
+| “KT. BACH. (1920)” | two honours |
 
-## Not a bigger model
+These samples do **not** measure the finished graph’s accuracy.
 
-The errors are systematic, so the fixes are rules:
-
-- merge `KT` + `BACH` into Knight Bachelor
-- forward-fill a "do." place, and say it was inherited
-- "officer in chief" back to "officer in charge"
-- stop pre-expanding "off." at all
-
-Every change logged on the record. Zero cost per entry.
-
-# Clean {background-color="#1d1e23"}
-
-One person or two?
-
-## Forty editions, one person
-
-::: {.big}
-A missed link is recoverable.
-A false merge is not.
-[Ties resolve to no merge.]{.gold}
+::: notes
+17–19. All three audits were read by a model; the displayed examples were checked by hand. Round 1 was limited to the first 1,859 records. Valid JSON is not a correct biography. Do not imply all errors can be fixed with a single rule.
 :::
 
-<br>
+## One correction, checked {.smaller}
 
-Deterministic passes first.\
-Then a model argues each leftover cluster from a dossier. 917 so far, each with its reason.
+| Balmer, final event | |
+|---|---|
+| **Before** | place: “do.”; inherited: true |
+| **Rule** | Literal ditto + previous resolved place → inherit and log |
+| **After** | place: “Kenya-Uganda-Tanganyika”; inherited: true |
 
-## Two clusters
+**3 saved records · 12 events · 1 place corrected**
 
-:::: {.columns}
-::: {.column width="50%"}
+- Other events and fields unchanged.
+- Second run changes nothing.
+- No preceding resolved place? Leave it for review.
+
+[Saved before-and-after records](outputs/structure/ditto-fix-replay.json)
+
+::: notes
+19–23. Run python3 scripts/demo_ditto_fix.py if useful; no model or network. This is a bounded workshop replay, not a rerun of col_matching. The other eleven events are unchanged; Blakely and Connolly still have their other errors. The missing-predecessor checks are constructed tests, not historical records. Ask what else must be checked before applying this to the corpus: affected records, boundary cases, a fresh sample afterwards.
+:::
+
+## Clean: forty editions, one person
+
+A missed link leaves a fragmented career.\
+A false merge can silently corrupt later analysis.
+
+[Ties resolve to no merge.]{.gold}
+
+Strong rules first. Then dossiers for the difficult clusters.\
+Keep the source records and a reason for every merge.
+
+::: notes
+23–25. 199,099 printed CO entry instances resolved into 27,526 person records. The ledger makes decisions revisitable; do not call false merges irreversible. Explain a dossier as the source evidence for both candidates, gathered in one place.
+:::
+
+## Decide before the answer {.smaller}
+
 **ABERY, Joseph**\
-M.B.C.M. · 1867 Ceylon, asst. colonial surgeon · one edition
+M.B.C.M. · 1867 Ceylon, assistant colonial surgeon · one edition
 
 **CARBERY, Joseph**\
-M.B.C.M. · 1867 Ceylon, asst. colonial surgeon · six editions
+M.B.C.M. · 1867 Ceylon, assistant colonial surgeon · six editions
 
-[Merge.]{.gold} An OCR garble with one identical event.
+**Merge, keep apart, or review? What evidence decides it?**
+
+::: {.fragment}
+The ledger merges them: consistent name and qualification, an identical dated appointment, and a plausible OCR loss. Preserve both entries and the reason.
 :::
-::: {.column width="50%"}
-**A'BECKETT, Thomas, b. 1836**\
-Lincoln's Inn · Victorian puisne judge · knighted 1909
-
-**BECKETT, Thomas Rumbold, b. 1898**\
-Judd School · Nigeria, telegraph engineer
-
-[Keep apart.]{.gold} Sixty-two years and nothing shared.
-:::
-::::
-
-# Ground {background-color="#1d1e23"}
-
-Which place, which person?
-
-## Why ground
-
-Every arc needs coordinates for "the Central Provinces", "British Guiana", "Jodhpur".
-
-Wikidata has the item, or the capital that has the coordinates. One query.
-
-<br>
-
-And: a historian of the Cape and a historian of Bombay who both ground to **Q1800510** have joined their data without meeting.
-
-## Live: the lookup
-
-1. "Henry Trimen botanist Ceylon Peradeniya" → read the statements → [supported]{.gold}
-2. "Ferdinando Hamlyn Price" → Q123279571, b. 1855, Tamil description only → [supported]{.gold}, and the pipeline's gate had rejected it
-3. "Elwood D'Arcy Tibbits Antigua" → nothing → [unresolved]{.gold}, record the search
 
 ::: notes
-WikidataMCP vector search. Saved results in outputs/ground-test/ if the network fails.
+25–28. Give 30 seconds to decide; room and Zoom use the same three words. Then reveal. Qualification is not an honour. Checking the scan for the lost letters would strengthen the decision. A common first name alone is insufficient.
 :::
 
-## Ask a chatbot instead
+## Keep apart; keep the evidence
+
+**A’BECKETT, Thomas, born 1836**\
+Lincoln’s Inn · Victorian judge · knighted 1909
+
+**BECKETT, Thomas Rumbold, born 1898**\
+Judd School · Nigerian telegraph engineer
+
+Different careers as well as different birth years.
+
+::: notes
+28–30. A birth-year discrepancy alone is not a universal veto: it may be OCR. Here the whole dossiers differ. The supporting page has more clusters; do not run all four aloud.
+:::
+
+## Ground: retrieve, read, decide
+
+Every plotted posting needs a place.\
+Every shared person identifier asserts an identity.
+
+1. Retrieve a candidate.
+2. Read its statements against the source.
+3. Record the evidence, date and decision.
+
+No supported match? Keep the local identifier.
+
+::: notes
+30–31. An identifier's existence is not evidence that it belongs to this mention. Introduce MCP simply as a lookup tool the agent can use; the protocol is not today's lesson.
+:::
+
+## Live: three searches
+
+1. **Henry Trimen** — botanist, Ceylon, Peradeniya.
+2. **Ferdinando Hamlyn Price** — a rare name, compatible dates, thin career evidence.
+3. **Elwood D’Arcy Tibbits** — no plausible result in the saved search.
+
+Supported · unresolved · wrong
+
+::: notes
+31–35. Trimen: read statements before accepting. Price: ask participants before stating your decision; accepting with recorded limitations or seeking another source is defensible. Tibbits: record the search, do not claim no item exists. Use saved answer-key.md if live lookup fails. Cap live work at four minutes.
+:::
+
+## Ask a chatbot without lookup tools
 
 ::: {.big}
-[0]{.gold} of 16
+[0 of 16]{.gold}
 :::
 
-Gemini 3.8 Flash, no tools, the same twenty entries.
+person identifiers correct in the saved Gemini 3.8 Flash run.
 
-Alfred Sharpe → a species of orchid. Richard Wilkinson → Thoth.
-Nyasaland → a disambiguation page. Joseph Chamberlain → a Swiss footballer.
+Fluent biographies. Plausible-looking numbers. Wrong items.
 
-<br>
-
-**It knew who. It did not know the number.**
-
-## Four ways to get the number
-
-| | Gemini, no tools | Pipeline | Claude Opus, retrieval | GPT Astra 6, retrieval |
-|---|---|---|---|---|
-| People right | [0]{.gold} of 16 | 12 given; Opus confirms all 12 | [16]{.gold} of 16 | [16]{.gold} of 16 |
-| Places | 38 of 104, modern | 3,207 surfaces | 17 of 138, stopped | 104, period entities |
-| Time | 5 min | overnight, corpus | 20 min | 27 min |
-
-<br>
-
-27 minutes for 20 entries is 25 days for one List.
-The retrieval columns are the review queue, not the corpus.
+**A name understood is not an identifier verified.**
 
 ::: notes
-George V from memory: Q269 is Tashkent; Opus caught it by reading the page. Gorges has two items. Harris b. 1858 vs item 1855.
+35–36. Twenty entries; sixteen identifiers supplied, four declined. This is one run, not a general model ranking. Saved outputs are sufficient; do not start a second live demo.
 :::
 
-# The map finds the errors {background-image="images/atlas-screenshot.png" background-opacity="0.15"}
+## Same entries, different workflows {.smaller}
 
-## Three errors
-
-| Seen on the map | Cause | Fix |
+| Saved run | Subject links accepted in review | Elapsed |
 |---|---|---|
-| A premier of British Columbia with a seat in Melbourne | "Victoria" grounded once, by string | Resolve per person |
-| The Union of South Africa at Harare: 960 events | "South Africa" matched inside "British South Africa Company" | Five cache rows; a guard on the join |
-| Two Baluchistans | One under Q843, Pakistan | One canonical row |
+| Gemini 3.8 Flash, no tools | 0 of 16 supplied | under 5 min |
+| Claude Opus 5.5, web retrieval | 16 of 16 supplied | about 20 min |
+| GPT Astra 6, web retrieval | 16 of 16 supplied | about 27 min |
 
-<br>
+The pipeline supplied **12** links; the review supported all 12.
 
-Fix the **rule**, re-emit **both corpora**, look at **everyone the rule touched**.
+Place coverage and historical correctness differ. Even the most detailed retrieval output has a modern Victoria mismatch.
 
-## What the map cannot find
-
-::: {.big}
-[76%]{.gold}
+::: notes
+36–38. Different models and tools: not a controlled test of retrieval alone. The site keeps the detailed place table with its different denominators. Astra's 155 label/alias checks are not 155 historically correct matches. Hold Harris's specific discrepancy back for R8.
 :::
 
-of the judge's "different" verdicts were wrong in the rare-surname, overlapping-era stratum.
+## Two jobs; measure their costs {.smaller}
 
-No map shows a missed merge. For that: 200 hand-labelled cases, risky strata oversampled.
+| Job | What the project used | What to measure |
+|---|---|---|
+| Write and repair the pipeline | Frontier coding agent | Session cost and historian time |
+| Read the collection | Open model on a university GPU | Throughput, GPU time, failures and audit time |
+| Review hard cases | Retrieval with a capable model | Lookup cost and time per case |
 
-## Exercise
+27 minutes / 20 entries ≈ 80 seconds each.\
+**About 25 days if run serially for 27,526 entries at that rate.**
+
+Start with twenty records. No cluster needed for the first trial.
+
+::: notes
+38–40. The 25 days is a serial extrapolation, not a forecast or invoice. Caching and concurrency change throughput. Campus computing is not free infrastructure, even without a per-request bill. Hosted models are a route for participants without a GPU. Measure on their sample rather than promising a dollar total. Keep this slide: attendees miss the parallel cost/model session.
+:::
+
+## The map finds the wrong Victoria
+
+Brewster’s entry: **“defeated by Sir Richard McBride, in Victoria, 1912.”**
+
+The atlas placed a British Columbia politician in Australia.
+
+**Cause:** one “Victoria” match reused for everyone.\
+**Place fix:** use this person’s career context.
+
+::: notes
+40–42. Explain the per-person resolver and the identifier-key bug it exposed. Both corpora were re-emitted. The supporting page retains South Africa and Baluchistan as further examples.
+:::
+
+## But did he hold that office?
+
+| Source | Saved graph, after the place fix |
+|---|---|
+| **Defeated**, Victoria, 1912 | Legislative assembly member for Victoria, **1912–1916** |
+
+**Does the corrected record stand?**
+
+::: {.fragment}
+A defeat does not establish an appointment. Keep the source clause, flag the office-held assertion, and check other defeat clauses.
+:::
+
+A plausible map can conceal a misread source.
+
+::: notes
+42–44. Pause for a room/chat verdict before reveal. This defect remains in the saved graph; do not claim it has been fixed. A defeat can be an event if the schema supports that type; it is not evidence of service in the office.
+:::
+
+## What a map cannot check
+
+Missing links can leave two plausible short careers.\
+An ungrounded posting may disappear from the view.
+
+Use a labelled sample, including the cases the pipeline rejected.
+
+**Check both the repaired cases and other records the rule changed.**
+
+::: notes
+44–46. If time: 76% of “different” decisions were wrong in one sampled rare-surname, overlapping-era stratum of never-biographied careers. This is a stratum-specific result, not overall recall. Preserve the larger methodological point without leading with another unexplained percentage.
+:::
+
+## Three decisions, with reasons
 
 :::: {.columns}
-::: {.column width="55%"}
-![](images/review-screenshot.png)
+::: {.column width="70%"}
+**R1** · Blakely: accept the record?\
+**R3** · Abery / Carbery: accept the merge?\
+**R8** · Harris: accept a link with a disputed birth year?
 
-![](images/qr-review.png){height="200" fig-alt="QR code for the decision exercise"}
+Decide. Give the evidence. Say what you would check next.
+
+**Six minutes working; four minutes discussing R8.**
 :::
-::: {.column width="45%"}
-**jimclifford.ca/imperial-careers-workshop/review/**
-
-[Structure]{.gold} Blakely, Balmer\
-[Clean]{.gold} Abery, A'Beckett\
-[Ground]{.gold} South Africa, Brewster\
-[Extra]{.gold} Price
-
-Write the reason.\
-Zoom: **Copy summary for chat**.
+::: {.column width="30%"}
+![](images/qr-review.png){width="240" fig-alt="QR code for the three-decision exercise"}
 :::
 ::::
 
-## Your own data
+**jimclifford.ca/imperial-careers-workshop/review/**
 
-- One question, one small sample, the page reachable
-- Build the view early. It is your error detector
-- Local identifiers first. None from memory
-- Ground to the historical entity, per person
-- Ties resolve to no merge
-- Fix the rule, not the record. Make the correction a test
-- A frontier model writes the pipeline; a cheap one reads the collection
+::: notes
+46–56. The site displays the core cases first; the other five are further practice. Do not reveal the Harris answer until participants have decided. Zoom users select R8 and copy its decision and reason. Ask for an accept and an unresolved rationale; both can be defensible. Separate identity confidence from permission to change a source field. Printed handout page 2 has the same three decisions.
+:::
 
-## Three questions {background-image="images/atlas-screenshot.png" background-opacity="0.1"}
+## Your first twenty records
 
-| | | You decide |
-|---|---|---|
-| [Structure]{.gold} | What is a record here? | What counts as an event |
-| [Clean]{.gold} | One person or two? | Merge, keep apart, review |
-| [Ground]{.gold} | Which place, which person? | Supported, unresolved, wrong |
+- Pick a question and a sample with a hard case.
+- Keep the source reference and printed wording.
+- Ask the agent for a schema and two examples; review them.
+- Run the sample, inspect the result, record a correction.
+- Rerun and check what else changed.
 
-![](images/qr-site.png){height="150" fig-alt="QR code for the workshop site"}
+**Write one sentence: what counts as a record in your collection?**
 
-**jimclifford.ca/imperial-careers-workshop** · glossary, answers, both exercises · data **jimclifford.ca/col_matching**
+::: notes
+56–60. One minute for this sentence; invite one response and questions. The take-home prompt and cost worksheet are on step 7. Close by pointing to the saved prompt, replay and exercises, not by listing every tool again.
+:::
+
+## Keep the decision with the evidence {background-image="images/atlas-screenshot.png" background-opacity="0.1"}
+
+Structure · Clean · Ground
+
+Build. Extract. Visualise. See. Fix. Rerun.
+
+![](images/qr-site.png){height="180" fig-alt="QR code for the workshop site"}
+
+**jimclifford.ca/imperial-careers-workshop**\
+Exercises, worked answers, prompt, replay and glossary.

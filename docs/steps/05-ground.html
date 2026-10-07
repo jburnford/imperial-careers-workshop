@@ -184,7 +184,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#why-ground-at-all" id="toc-why-ground-at-all" class="nav-link active" data-scroll-target="#why-ground-at-all">Why ground at all</a></li>
   <li><a href="#two-ways-to-get-a-qid" id="toc-two-ways-to-get-a-qid" class="nav-link" data-scroll-target="#two-ways-to-get-a-qid">Two ways to get a QID</a></li>
   <li><a href="#live-the-lookup" id="toc-live-the-lookup" class="nav-link" data-scroll-target="#live-the-lookup">Live: the lookup</a></li>
-  <li><a href="#live-or-saved-the-chatbot" id="toc-live-or-saved-the-chatbot" class="nav-link" data-scroll-target="#live-or-saved-the-chatbot">Live, or saved: the chatbot</a></li>
+  <li><a href="#the-saved-chatbot-comparison" id="toc-the-saved-chatbot-comparison" class="nav-link" data-scroll-target="#the-saved-chatbot-comparison">The saved chatbot comparison</a></li>
   <li><a href="#three-questions-to-keep-separate" id="toc-three-questions-to-keep-separate" class="nav-link" data-scroll-target="#three-questions-to-keep-separate">Three questions to keep separate</a></li>
   <li><a href="#places-are-harder-than-people" id="toc-places-are-harder-than-people" class="nav-link" data-scroll-target="#places-are-harder-than-people">Places are harder than people</a></li>
   </ul>
@@ -241,12 +241,12 @@ Terms on this page
 </div>
 <section id="why-ground-at-all" class="level2">
 <h2 class="anchored" data-anchor-id="why-ground-at-all">Why ground at all</h2>
-<p>Every arc on the atlas needs a latitude and longitude for a place named in a Victorian reference book: the Colony of Victoria, the Central Provinces, British Guiana, a princely state. Modern gazetteers do not have them or mislocate them. Wikidata has an item for each, with coordinates or a link to the capital that has them. Once every place surface in the corpus was grounded to a Wikidata item, one query returned coordinates for all of them. Weeks of gazetteer work did not happen.</p>
+<p>Every arc on the atlas needs a latitude and longitude for a place named in a Victorian reference book: the Colony of Victoria, the Central Provinces, British Guiana, a princely state. Modern gazetteers do not have them or mislocate them. Wikidata has an item for each, with coordinates or a link to the capital that has them. For accepted place links, a query can retrieve coordinates or a capital. Unresolved names remain unplaced, and the choice of a historical entity and a period-appropriate seat still needs checking.</p>
 <p>The second reason is composition. A historian of the Cape and a historian of Bombay who both ground to <a href="https://www.wikidata.org/wiki/Q1800510">Q1800510</a> have joined their datasets without meeting. The <a href="../outputs/atlas/why-historians-need-wikidata.md">longer argument</a> is Jim’s; the short version is: ground to Wikidata, do not host your scholarship there.</p>
 </section>
 <section id="two-ways-to-get-a-qid" class="level2">
 <h2 class="anchored" data-anchor-id="two-ways-to-get-a-qid">Two ways to get a QID</h2>
-<p><strong>Retrieve it.</strong> The pipeline uses the <a href="https://wd-mcp.wmcloud.org/">WikidataMCP</a> server’s vector search, which matches meaning rather than strings, then reads the item’s statements, then applies verification gates (type, dates, place) before accepting. Every accepted link has the retrieved evidence and the lookup date beside it. The Colonial Office List graph has 1,066 people grounded this way with a zero-false-positive gate, and 131,343 events grounded to a place.</p>
+<p><strong>Retrieve it.</strong> The pipeline uses the <a href="https://wd-mcp.wmcloud.org/">WikidataMCP</a> server’s vector search, which matches meaning rather than strings, then reads the item’s statements, then applies verification gates (type, dates, place) before accepting. Every accepted link has the retrieved evidence and the lookup date beside it. The Colonial Office List graph has 1,066 of its 27,526 person records grounded this way (about 3.9%), and 131,343 events grounded to a place. The gate aims to avoid false matches; that is a design aim, not a demonstrated zero-error rate. Low coverage matters: the linked people are not a representative sample of the roster.</p>
 <p><strong>Ask a chatbot.</strong> Paste the biography into a model with no tools and ask for the QID. It will give one. Sometimes it is right.</p>
 </section>
 <section id="live-the-lookup" class="level2">
@@ -258,11 +258,11 @@ Terms on this page
 <li>Search “Elwood D’Arcy Tibbits Antigua”. Nothing plausible in the top fifty. <strong>Unresolved.</strong> Keep the local record and the search that was run.</li>
 </ol>
 </section>
-<section id="live-or-saved-the-chatbot" class="level2">
-<h2 class="anchored" data-anchor-id="live-or-saved-the-chatbot">Live, or saved: the chatbot</h2>
-<p><a href="../outputs/ground-test/bios.md">Twenty long entries</a> were chosen on 7 October 2026: twelve for people the pipeline grounded, eight it did not. Paste one into a chatbot with no tools: “Who is this? Give the Wikidata QID.” Then look the answer up. Score it: right, wrong item, invented identifier, or declined. The <a href="../outputs/ground-test/answer-key.md">answer key</a> has the pipeline’s QID and the MCP lookups.</p>
+<section id="the-saved-chatbot-comparison" class="level2">
+<h2 class="anchored" data-anchor-id="the-saved-chatbot-comparison">The saved chatbot comparison</h2>
+<p><a href="../outputs/ground-test/bios.md">Twenty long entries</a> were chosen on 7 October 2026: twelve for people the pipeline grounded, eight it did not. For an optional follow-up, paste one into a chatbot with no tools: “Who is this? Give the Wikidata QID.” Then look the answer up. Score it: right, wrong item, invented identifier, or declined. In the workshop, use the saved runs below. The <a href="../outputs/ground-test/answer-key.md">answer key</a> has the pipeline’s QID and the MCP lookups.</p>
 <p>What the lookups already show: of the eight the pipeline left ungrounded, three have a plausible item the vector search finds at once (Price, Henry Francis Wilson, T. J. Alldridge) and five have nothing in the top fifty. “Not grounded” means the gate did not accept; it never means “no such item”.</p>
-<p>And the control. On 7 October Jim pasted the twenty entries into Gemini 3.8 Flash with no tools: “Parse these bios and ground the places, schools and people to Wikidata ids where possible.” The <a href="../outputs/ground-test/gemini-response.md">response</a> is fluent and well organised, names every person and place correctly, and gives identifiers for everything. <a href="../outputs/ground-test/gemini-scoring.md">Scored</a> against Wikidata:</p>
+<p>And the control. On 7 October Jim pasted the twenty entries into Gemini 3.8 Flash with no tools: “Parse these bios and ground the places, schools and people to Wikidata ids where possible.” The <a href="../outputs/ground-test/gemini-response.md">response</a> is fluent and well organised, supplies plausible names and many identifiers. <a href="../outputs/ground-test/gemini-scoring.md">Scored</a> against Wikidata:</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -327,7 +327,7 @@ Terms on this page
 <td>38 of 104 labels match; modern items</td>
 <td>3,207 surfaces across the corpus; modern-collapse errors found on the map</td>
 <td>17 of 138, then stopped</td>
-<td>104 grounded to period entities; 9 modern proxies labelled as such</td>
+<td>104 place/region identifiers; many period entities, 9 labelled proxies; known exceptions</td>
 </tr>
 <tr class="odd">
 <td>Time</td>
@@ -338,8 +338,9 @@ Terms on this page
 </tr>
 </tbody>
 </table>
-<p>A third run, OpenAI’s GPT Astra 6 (its frontier model, released in late summer 2026) at the medium setting with web retrieval, took 27 minutes and produced a <a href="../outputs/ground-test/astra-grounding.json">structured file</a> of 180 entities with offsets, confidence, a relation type, rejected candidates with reasons and dated evidence (<a href="../outputs/ground-test/astra-scoring.md">scoring</a>). All 155 identifiers resolve consistently. It grounded Ceylon, the Straits Settlements, the Union of South Africa and the rest to the period polities, and it recorded Penang Q188096, the item the pipeline had wrongly matched, as a modern proxy only. It is the dataset a historian would want, at about 80 seconds an entry, which over 27,526 people is 25 days of model time before the India Office List.</p>
-<p>All three chatbots read the biographies correctly. The difference is where the number came from, and what it cost. And even the best column needs the historian: someone has to pick between the two Gorges items, and someone decided Harris was Harris when the printed birth year disagreed with the item.</p>
+<p>A third run, GPT Astra 6 at the medium setting with web retrieval, took 27 minutes and produced a <a href="../outputs/ground-test/astra-grounding.json">structured file</a> of 180 entities with offsets, confidence, a relation type, rejected candidates with reasons and dated evidence (<a href="../outputs/ground-test/astra-scoring.md">scoring</a>). All 155 identifiers passed the saved label/alias check; that check does not establish that every match fits its historical context. It grounded Ceylon, the Straits Settlements, the Union of South Africa and the rest to the period polities, and it recorded Penang Q188096, the item the pipeline had wrongly matched, as a modern proxy only. The file still maps one colonial Victoria to the modern state, and its “Malay States” match needs review. At about 80 seconds an entry, a serial extrapolation over 27,526 people is about 25 days. That is an illustration of throughput at the observed rate, not a forecast: parallel requests, caching, shorter entries and different tools would change it.</p>
+<p>These runs show why an identifier must be retrieved and checked. They do not rank models or isolate the effect of retrieval: model, tools and output coverage all differ. The place counts use different units and are not comparable accuracy scores. Even a retrieved, correctly labelled item can be the wrong historical match.</p>
+<p>Use retrieval on hard cases and a reference sample, then have a historian review the decisions before treating them as a standard. Record wall-clock time, model charges and human review time separately. A slow demonstration is evidence about this run, not a general price comparison.</p>
 </section>
 <section id="three-questions-to-keep-separate" class="level2">
 <h2 class="anchored" data-anchor-id="three-questions-to-keep-separate">Three questions to keep separate</h2>
@@ -785,7 +786,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>Jim Clifford, University of Saskatchewan. Draft materials; sources credited on each page.</p>
+<p>Jim Clifford, University of Saskatchewan. Sources credited on each page.</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;

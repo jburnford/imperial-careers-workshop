@@ -13,7 +13,7 @@ The session follows one dataset from printed source to animated atlas: the *Colo
 | `index.qmd`, `steps/*.qmd`, `answers.qmd`, `presenter.qmd`, `setup.qmd`, `handout.qmd` | The participant site (Quarto). Rendered to `docs/` for GitHub Pages |
 | `slides.qmd` | The slide deck (reveal.js), rendered to `docs/slides.html`; speaker notes in the source |
 | `annotate/` | The mark-up exercise: tag positions, places, years and honours in an entry, then compare with the pipeline. Static |
-| `review/` | The decision exercise: seven accept/reject/unresolved cases with reasons. Static |
+| `review/` | The decision exercise: three core accept/reject/unresolved decisions with reasons, plus five further cases. Static |
 | `outputs/` | Saved outputs: prompt, audit, merge rules and clusters, grounding cache rows, the twenty-entry grounding test with the Gemini control, project review, stats |
 | `source-pack/` | Trimen's seven Colonial Office List entries |
 | `scripts/build_review_cases.py` | Builds `review/cases.json` offline |

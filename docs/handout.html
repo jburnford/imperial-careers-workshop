@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Handout: five entries from the Record of Services – Cleaning and Structuring Historical Data</title>
+<title>Cleaning and Structuring Historical Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -181,8 +181,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-target-record" id="toc-the-target-record" class="nav-link active" data-scroll-target="#the-target-record">The target record</a></li>
-  <li><a href="#three-decisions" id="toc-three-decisions" class="nav-link" data-scroll-target="#three-decisions">Three decisions</a></li>
+  <li><a href="#mark-up-balmer" id="toc-mark-up-balmer" class="nav-link active" data-scroll-target="#mark-up-balmer">Mark up Balmer</a></li>
+  <li><a href="#a-second-entry-for-later" id="toc-a-second-entry-for-later" class="nav-link" data-scroll-target="#a-second-entry-for-later">A second entry for later</a></li>
+  <li><a href="#keep-the-decisions-visible" id="toc-keep-the-decisions-visible" class="nav-link" data-scroll-target="#keep-the-decisions-visible">Keep the decisions visible</a></li>
+  <li><a href="#three-decisions-with-reasons" id="toc-three-decisions-with-reasons" class="nav-link" data-scroll-target="#three-decisions-with-reasons">Three decisions with reasons</a>
+  <ul class="collapse">
+  <li><a href="#r1-blakely" id="toc-r1-blakely" class="nav-link" data-scroll-target="#r1-blakely">R1 · Blakely</a></li>
+  <li><a href="#r3-abery-and-carbery" id="toc-r3-abery-and-carbery" class="nav-link" data-scroll-target="#r3-abery-and-carbery">R3 · Abery and Carbery</a></li>
+  <li><a href="#r8-harris" id="toc-r8-harris" class="nav-link" data-scroll-target="#r8-harris">R8 · Harris</a></li>
+  </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="handout.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li></ul></div></nav>
     </div>
@@ -191,8 +198,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Handout: five entries from the Record of Services</h1>
-<p class="subtitle lead">Mark every position, place, year and honour, and the education and birth fields. Then decide what counts as an event.</p>
+<h1 class="title">Cleaning and Structuring Historical Data</h1>
+<p class="subtitle lead">Working sheet · Jim Clifford · 15 October 2026</p>
 </div>
 
 
@@ -209,37 +216,87 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><em>Colonial Office List</em>, Record of the Public Services of Officers. OCR text, unedited.</p>
-<p><strong>1. 1889</strong></p>
-<p>TRIMEN, HENRY, M.B. (Lond.), F.R.S., F.L.S. —Formerly lecturer on botany at St.&nbsp;Mary’s Hospital, London, 1867 to 1875; was senior assistant to department of botany, British Museum, 1869 to 1879; director Royal Botanical Gardens, Ceylon, Feb., 1880; author of numerous works and papers on pure and applied botany.</p>
-<p>&nbsp;</p>
-<p><strong>2. 1936</strong></p>
+<section id="mark-up-balmer" class="level2">
+<h2 class="anchored" data-anchor-id="mark-up-balmer">Mark up Balmer</h2>
+<p><em>Colonial Office List</em>, 1936, Record of Services. OCR excerpt, entry <code>col1936-p832b11</code>. A source reference lets us return to the page; the OCR is not the page image.</p>
+<blockquote class="blockquote">
 <p>BALMER, F. E.—Dep. chief acctnt., G.P.O., E. Africa Prot., Mar., 1919; ch.&nbsp;acctnt., G.P.O., Kenya, Oct., 1919; ch.&nbsp;acctnt., Kenya-Uganda-Tanganyika post and tel. service, 1933; senr. dep. P.M.G., do., 1935.</p>
-<p>&nbsp;</p>
-<p><strong>3. 1940</strong></p>
-<p>CONNOLLY, HON. SIR JAMES DANIEL, KT. BACH. (1920). —B. 1870; ed.&nbsp;Warwick Pub. Schl. and Catholic Schl.; M.L.C., Western Australia, 1902; col.&nbsp;sec.&nbsp;and min. of com. and lab., 1906; col.&nbsp;sec.&nbsp;and min. of pub. health, 1910; leader of leg. coun. from 1906 to 1911; M.L.A. for Perth, 1914; agt. genl. in London for Western Australia, 1917-23; agt. gen. in London for Malta, 1930.</p>
-<p>&nbsp;</p>
-<p><strong>4. 1918</strong></p>
-<p>BREWSTER, HON. HARLAN C.—B. 1870; took up newspaper work in New Brunswick and Boston; removed to B. Columbia in 1897; managing dir., Clayoquot Sound Canning Co.; elec. to legis. ass. for Alberni, B. Columbia, 1907; re-elec., 1909; defeated by Sir Richard McBride, in Victoria, 1912; re-elec. at bye-elec., Mar., 1916; premier, B. Columbia, 1916.</p>
-<p>&nbsp;</p>
-<p><strong>5. 1905</strong></p>
-<p>BLAKELY, DONALD QUENTIN.—Clk., atty.-gen.’s off., B. Honduras, Apl., 1898.</p>
-<p>&nbsp;</p>
-<section id="the-target-record" class="level2">
-<h2 class="anchored" data-anchor-id="the-target-record">The target record</h2>
-<p>One object per entry: <code>surname</code>, <code>given_names</code>, <code>birth_year</code> (only if printed), <code>education</code> (the “ed.” string), <code>honours</code> (each with its award year if printed in parentheses), <code>events</code>, <code>terminal</code> (retired, resigned, died: year).</p>
-<p>One event per distinct posting: <code>position</code> as printed, <code>place</code> as printed (or inherited from the previous clause), <code>year_start</code>, <code>year_end</code>, <code>is_acting</code>, <code>civil</code> or <code>military</code>.</p>
+</blockquote>
+<p><strong>Three minutes:</strong> underline the last two positions, circle their places and box their years. What does “do.” refer to? How would you record that the place was inherited?</p>
+<p>My decision and reason:</p>
+<hr>
+<hr>
+<p>The target is one event per posting: position, place, start and end year, acting status, and whether the place was inherited. Keep the source reference and printed wording alongside the interpretation.</p>
 </section>
-<section id="three-decisions" class="level2">
-<h2 class="anchored" data-anchor-id="three-decisions">Three decisions</h2>
-<ul>
-<li>A clause with no place: does it inherit the previous one? (“do.” in entry 2.)</li>
-<li>“col.&nbsp;sec.&nbsp;and min. of com. and lab., 1906”: one event or two?</li>
-<li>“KT. BACH. (1920)”: one honour with a year, two honours, or a title that is not an honour?</li>
-</ul>
-<p>Site: jimclifford.ca/imperial-careers-workshop. Mark-up exercise online: jimclifford.ca/imperial-careers-workshop/annotate/</p>
+<section id="a-second-entry-for-later" class="level2">
+<h2 class="anchored" data-anchor-id="a-second-entry-for-later">A second entry for later</h2>
+<p><em>Colonial Office List</em>, 1889, entry <code>col1889-p554b20</code>.</p>
+<blockquote class="blockquote">
+<p>TRIMEN, HENRY, M.B. (Lond.), F.R.S., F.L.S. —Formerly lecturer on botany at St.&nbsp;Mary’s Hospital, London, 1867 to 1875; was senior assistant to department of botany, British Museum, 1869 to 1879; director Royal Botanical Gardens, Ceylon, Feb., 1880; author of numerous works and papers on pure and applied botany.</p>
+</blockquote>
+<p>Two appointments overlap. Should the record preserve both? Is “British Museum” an institution, a location, or both for your research question?</p>
+</section>
+<section id="keep-the-decisions-visible" class="level2">
+<h2 class="anchored" data-anchor-id="keep-the-decisions-visible">Keep the decisions visible</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Question</th>
+<th>Decision</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Structure</td>
+<td>What counts as an event?</td>
+</tr>
+<tr class="even">
+<td>Clean</td>
+<td>Merge, keep apart, or review?</td>
+</tr>
+<tr class="odd">
+<td>Ground</td>
+<td>Supported, unresolved, or wrong?</td>
+</tr>
+</tbody>
+</table>
+<p>Build. Extract. Visualise. See. Fix. Rerun.</p>
+<p><strong>Your data:</strong> what counts as a record in your collection?</p>
+<hr>
+<p>Site, exercises and worked answers: <strong>jimclifford.ca/imperial-careers-workshop</strong></p>
+</section>
+<section id="three-decisions-with-reasons" class="level2">
+<h2 class="anchored" data-anchor-id="three-decisions-with-reasons">Three decisions with reasons</h2>
+<p>Take six minutes. Choose <strong>accept</strong>, <strong>reject</strong>, or <strong>unresolved</strong> for each proposal. Give the evidence that decided it; if unresolved, say what you would check. We will discuss R8 together.</p>
+<section id="r1-blakely" class="level3">
+<h3 class="anchored" data-anchor-id="r1-blakely">R1 · Blakely</h3>
+<p>Source, <em>Colonial Office List</em> 1905: “BLAKELY, DONALD QUENTIN.—Clk., atty.-gen.’s off., B. Honduras, Apl., 1898.”</p>
+<p><strong>Proposal:</strong> birth year 1898; one posting, “Clk., atty.-gen.’s officer”, in B. Honduras, with no event year.</p>
+<p>The place and position are recognisable, and the model was told to extract only printed facts. But the entry has no birth clause; its date belongs to the appointment. “Off.” means office here.</p>
+<p>Decision and reason: ______________________________________________________</p>
+<hr>
+</section>
+<section id="r3-abery-and-carbery" class="level3">
+<h3 class="anchored" data-anchor-id="r3-abery-and-carbery">R3 · Abery and Carbery</h3>
+<p><strong>ABERY, Joseph:</strong> M.B.C.M.; 1867 Ceylon, assistant colonial surgeon; one edition (1897).</p>
+<p><strong>CARBERY, Joseph:</strong> M.B.C.M.; same dated appointment; six editions, including 1897.</p>
+<p><strong>Proposal:</strong> merge the biographies. The forename, qualification and appointment agree, and the shorter surname could be an OCR loss. Against: the surnames differ, and one shared event may need corroboration.</p>
+<p>Decision and reason: ______________________________________________________</p>
+<hr>
+</section>
+<section id="r8-harris" class="level3">
+<h3 class="anchored" data-anchor-id="r8-harris">R8 · Harris</h3>
+<p>Source, <em>Colonial Office List</em> 1927 (OCR excerpt; omissions marked): “HARRIS, SIR CHARLES ALEXANDER … B. 1858; scholar, prizeman, and Porteus medallist of Christ’s Coll., Camb.; … gov. and c.&nbsp;in c., Newfoundland, 1st Nov., 1917; assumed govt., 17th Dec., 1917; ret., 1922.”</p>
+<p>The retrieved Charles Alexander Harris item names Christ’s College and the Newfoundland governorship, but gives birth in <strong>1855</strong>.</p>
+<p><strong>Proposal:</strong> accept the identity link, preserve <strong>1858</strong> as the source reading, record <strong>1855</strong> separately and flag the disagreement.</p>
+<p>The name, college and office agree. The dates conflict; the OCR alone cannot tell us whether the discrepancy began in scanning, printing or the external record. The accounts may also share an underlying source.</p>
+<p>Decision and reason: ______________________________________________________</p>
+<hr>
+<p>Next evidence to check: ____________________________________________________</p>
+<p><strong>Accepting an identity and correcting a source are separate decisions.</strong></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -669,7 +726,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>Jim Clifford, University of Saskatchewan. Draft materials; sources credited on each page.</p>
+<p>Jim Clifford, University of Saskatchewan. Sources credited on each page.</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;

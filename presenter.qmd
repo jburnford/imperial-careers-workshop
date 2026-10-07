@@ -1,58 +1,72 @@
 ---
 title: "Presenter notes"
-subtitle: "Running order, checkpoints, and the room-plus-Zoom plan."
+subtitle: "A sixty-minute working session, with the same decisions in the room and on Zoom."
 ---
 
 ## Before the day
 
-- [ ] Confirm with the organizer how remote questions reach the room, and who monitors the Zoom chat. Do not plan to read the chat while presenting.
-- [ ] The published description invites participants to "bring messy historical datasets". Open by saying the hour works on one finished dataset and that [Your own data](steps/07-your-data.qmd) is the take-home.
-- [ ] Download `combined_mobility.mp4` from the col_matching site to the presenting laptop in case the room's network is slow; the opening slide streams it.
-- [ ] Test the WikidataMCP endpoint from a non-campus network the day before. Rate limit is about five calls a second; the vector search takes one to two seconds a call.
-- [ ] Decide which chatbot to use live for the control, or show the saved Gemini run. Either way have `outputs/ground-test/gemini-scoring.md` open.
-- [ ] Print the [handout](handout.qmd) (one page, 25 copies).
-- [ ] Rehearse against the clock with the saved checkpoints. Protect minutes 30–47.
-- [ ] Put the site URL and both exercise URLs on the first slide. Someone posts them in the Zoom chat at the start.
-
-## Slides
-
-[slides.html](slides.html) is the deck, with speaker notes (press `S` in the browser). The second slide streams the mobility video as a full-screen background with a still frame behind it; let it run.
+- [ ] Confirm who monitors Zoom chat and how questions reach the room. Ask them to relay a reason as well as a verdict.
+- [ ] Confirm the session description: this hour uses a shared dataset and starts after OCR. It does not demonstrate the Britannica OCR tools mentioned in the published blurb. Participants apply the sequence to their own data afterwards.
+- [ ] Download `combined_mobility.mp4` to the presenting laptop. Its caption is from an earlier export; use the September counts in the deck.
+- [ ] Test the Wikidata lookup from the presenting laptop. Keep the saved answer key open as the fallback.
+- [ ] Print the [two-page handout](handout.pdf), double-sided if convenient. Confirm the quantity against the room registration; browser participation is equally suitable.
+- [ ] Rehearse once against the clock. Protect the mark-up and the final ten-minute exercise.
+- [ ] Ask the chat monitor to post the site, `/annotate/` and `/review/` links at the start.
 
 ## Running order
 
-| Min | Step | Live or saved | Checkpoint if behind |
-|---|---|---|---|
-| 0–7 | [The atlas](steps/01-atlas.qmd) | The video; Wodehouse's entry as a table of events, identifiers, seats and years; his trace; the four rows the atlas gets wrong | Skip Trading Consequences; skip the trace figure |
-| 7–12 | [The source](steps/02-source.qmd) | Entries on screen; participants mark one up (annotate page or paper) | Cut the mark-up to two minutes, Balmer only |
-| 12–22 | [Structure](steps/03-structure.qmd) | Optional live: paste one entry into Claude Code with the prompt. Otherwise the saved Trimen record and the three audit examples | Audit numbers and the "not a bigger model" point |
-| 22–30 | [Clean](steps/04-identity.qmd) | Saved: the four clusters | Abery/Carbery and A'Beckett only |
-| 30–40 | [Ground](steps/05-ground.qmd) | Live: three MCP searches. Then the Gemini control (saved) | Saved lookups in `outputs/ground-test/answer-key.md` |
-| 40–47 | [The map finds the errors](steps/06-loop.qmd) | Saved: Brewster, South Africa, Baluchistan, on the live atlas if the network allows | Brewster only |
-| 47–55 | [Exercise](review/index.html) | R1–R7; show of hands and chat summaries on R2 and R6 | R1, R3, R6 |
-| 55–60 | [Your own data](steps/07-your-data.qmd) and questions | | |
+[Open the deck](slides.html); press `S` for speaker notes.
 
-## Wodehouse
+| Minutes | What happens | If time is short |
+|---|---|---|
+| 0–7 | Video; Wodehouse source-to-map table and errors; what the records make visible; three questions | Summarise the three Wodehouse errors in one sentence each |
+| 7–13 | Balmer: three minutes tagging the last two postings, one minute comparing, one minute discussing | Keep everyone on Balmer; no tour of the other entries |
+| 13–23 | Hybrid extraction, prompt, pre-fix audit, one correction replayed and checked | Show the saved replay instead of running the command |
+| 23–30 | Abery/Carbery decision before reveal; A’Beckett/Beckett contrast | Keep the first decision; shorten the second example |
+| 30–40 | Three lookups (maximum four minutes); saved chatbot comparison; model roles and cost | Use saved lookups; do not start a live chatbot run |
+| 40–46 | Brewster: repair the geography, then discover the unsupported appointment; limits of maps | Keep both reveals; leave South Africa and Baluchistan on the supporting page |
+| 46–56 | R1, R3, R8: six minutes deciding, four minutes discussing Harris | Reduce the recap cases; protect Harris and the reasons |
+| 56–60 | One sentence about participants’ own records, questions, take-home links | Use the written take-home prompt on step 7 |
 
-The opening walk-through uses the 1867 Colonial Office List entry for Philip Edmond Wodehouse (Q1800510), who is also in the India Office List as Governor of Bombay. Four errors in the atlas's own panels for him were found on 7 October while the slide was built (Venezuela mission and 1861 high commissionership both landed in the Union of South Africa; Belmopan as the 1851 seat of British Honduras; and in the India Office record, Honduras inheriting British Guiana). They are not yet fixed in col_matching; say so, and say that they go on the fixes list. If they are fixed before the day, show the before and after.
+The detailed pages contain more examples than the hour. Trading Consequences, the full Wodehouse trace, two additional clusters and the other map defects are supporting material.
 
-## The live lookup
+## The correction replay
 
-Three searches, in this order, with the statements read aloud for the first two: Trimen (supported), Price (supported, and the gate had rejected it), Tibbits (nothing; record the search). If the endpoint is down, the same three are written up on the Ground page.
+```bash
+python3 scripts/demo_ditto_fix.py
+```
 
-## The control
+This needs neither a model nor a network. It checks three saved records and twelve events, changes Balmer’s literal “do.”, preserves the other fields, and checks that a second run makes no further changes. Constructed cases check that a missing predecessor stays unresolved. The [saved report](outputs/structure/ditto-fix-replay.json) includes before, after and the reason.
 
-Jim's Gemini 3.8 Flash run of 7 October is scored in `outputs/ground-test/gemini-scoring.md`: zero of sixteen person identifiers, six not even people, seven near-miss numbers. Jim's Opus 5.5 run with web retrieval, same day, is scored in `outputs/ground-test/opus-scoring.md`: sixteen of sixteen, Prince found, the Gorges duplicate found, out of tool calls before any place. Show the four-column slide. If running a chatbot live, use entry 4 (Archer) or 18 (Marsh): both produced a near-miss number in Gemini, which makes the point better than a wild one.
+Call this a workshop replay. It is not a production rerun or a measurement of the graph’s post-fix accuracy. Blakely and Connolly’s unrelated errors remain in the replay output.
 
-## Online participation
+## Two unfinished repairs worth showing
 
-- Remote participants see the same pages and both exercises. Nothing requires a login.
-- Both exercise pages have a **Copy summary** button that produces one line for the Zoom chat, so the chat monitor can read decisions out.
-- The decision exercise can **Download TSV** with reasons. If the organizers want them collected, say where to send the file.
-- The atlas at jimclifford.ca/col_matching works in any browser; invite remote participants to search a name while the room marks up entries.
+**Wodehouse:** the saved atlas still has the Venezuela mission and the 1861 high commissionership in the Union of South Africa, Belmopan as the 1851 seat of Honduras, and Honduras inheriting British Guiana in the India Office record. The 1861 error followed a blanket South Africa cache patch. Say these are open defects.
 
-## What not to claim
+**Brewster:** correcting Victoria’s geography leaves the saved graph asserting a 1912–1916 appointment from a clause saying he was defeated. Ask for a verdict before revealing it. Keep the defeat as source evidence; do not treat it as an office held. This is also an open defect in the saved graph.
 
-- The audit numbers are from one 186-record sample of the structuring stage; they are not an accuracy rate for the whole graph.
-- The silver standard measured the deterministic tier; the model judge's agreement rates were still pending in September.
-- The published counts in the col_matching README, stats file and atlas disagreed in September; the numbers on these pages are from `kg_stats.json` and the atlas `meta.json` of 4 September 2026, copied into `outputs/atlas/`.
-- The Gemini control is one run of one model with one prompt. It shows the failure mode; it does not rank models.
+## The live lookup and saved runs
+
+Search Trimen, Price, then Tibbits. Read the retrieved evidence before deciding. Price is a useful pause: a rare name and compatible career context support the match, but another source would strengthen it. Tibbits is unresolved after the search, not proof that no item exists. The [Ground page](steps/05-ground.qmd) and [answer key](outputs/ground-test/answer-key.md) are the fallback.
+
+Use the saved chatbot runs. Gemini supplied sixteen person identifiers, none correct; Opus and Astra supplied sixteen accepted subject matches each. Opus’s first pass stopped before places; its second reached seventeen. The place counts use different units and coverage. These are examples of workflows, not a controlled model ranking. Keep Harris’s particular date conflict for the final exercise.
+
+The cost slide distinguishes the coding agent, corpus reader and hard-case reviewer. Twenty-seven minutes for twenty entries extrapolates to about twenty-five days **serially at that observed rate**. Caching, concurrency and task changes affect it; it is not an invoice or production forecast. Participants without a GPU can begin with twenty records and a hosted model.
+
+## Participation and debrief
+
+Use the same prompts in the room and on Zoom. Pause before the Abery decision and the Brewster second reveal. Ask for evidence, not a show of confidence. No polling software is required.
+
+For the final exercise, the page puts **R1, R3 and R8 first**; the other five are further practice. Select R8 beside **Copy decision and reason** for a chat response. Paper users have the same proposals and evidence. The TSV download retains all reasons and the case-set fingerprint; do not promise collection unless a destination has been arranged.
+
+For Harris, invite both an “accept with conflict recorded” and an “unresolved pending a check” response. The key distinction is between accepting the identity and replacing the birth year in the source. Check the scan, another edition and the external date’s cited source. Repeated copies of an account do not make independent corroboration.
+
+## Claims to keep bounded
+
+- Roster counts are sums of within-List person records, not unique people across both services. The 186 bridges are proposed links; a small September check supported 11 of 15.
+- The structuring audit has three model-reviewed samples, before normalisation. Round 1 has eight major findings on six records. The samples do not establish finished-graph accuracy.
+- A labelled sample measures the population and decision type it was designed for. The 76% figure concerns “different” decisions in a particular risky stratum, not overall recall.
+- An identifier resolving to the expected label is not enough to establish a historically correct match.
+- Administrative seats are plotting proxies. Arcs connect recorded postings; they are not observed journeys.
+- The published Imperial Careers site is unchanged by this workshop revision.
