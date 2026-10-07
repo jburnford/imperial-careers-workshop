@@ -10,3 +10,5 @@ Rules:
 - birth_year: only if explicitly printed ('B. 1872'); else null. NEVER infer from the earliest career date.
 - education: the 'ed. ...' string as one metadata string; university class honours stay here, NOT as events.
 - terminal: {kind: retired|resigned|died|pensioned|other, year} if the entry states the career ended, else null.
+
+Return ONE JSON object with EXACTLY these top-level keys: surname, given_names, birth_year, education, honours, events, terminal. Split the headword into surname + given_names (no 'name'/'person' key). Each honour is {"award": str, "year": int|null} (no 'decoration'/'order' key).
