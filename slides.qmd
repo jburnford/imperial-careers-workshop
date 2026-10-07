@@ -7,7 +7,7 @@ format:
   revealjs:
     theme: simple
     slide-number: true
-    footer: "jimclifford.ca/trimen-workshop"
+    footer: "jimclifford.ca/imperial-careers-workshop"
     width: 1280
     height: 720
     link-external-newwindow: true
@@ -59,7 +59,7 @@ Trading Consequences one sentence. Then: the hour is how, and where I had to dec
 
 . . .
 
-**Mark one up.** jimclifford.ca/trimen-workshop/annotate/ (or the paper).
+**Mark one up.** jimclifford.ca/imperial-careers-workshop/annotate/ (or the paper).
 Every position, place, year, honour. Three minutes.
 
 # Structure
@@ -205,7 +205,7 @@ Rare surname + overlapping era: the judge's "different" verdicts were wrong **76
 
 ## Exercise: 47–55 {.smaller}
 
-**jimclifford.ca/trimen-workshop/review/**
+**jimclifford.ca/imperial-careers-workshop/review/**
 
 | | | |
 |---|---|---|
@@ -235,5 +235,5 @@ Zoom: **Copy summary for chat**. Room: hands up when asked.
 | **Clean** | One person or two? | Merge, keep apart, review |
 | **Ground** | Which place, which person? | Supported, unresolved, wrong |
 
-**jimclifford.ca/trimen-workshop** — pages, saved outputs, both exercises, worked answers.
+**jimclifford.ca/imperial-careers-workshop** — pages, saved outputs, both exercises, worked answers.
 Data: **jimclifford.ca/col_matching** (CC0).

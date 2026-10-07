@@ -26,7 +26,7 @@ quarto render
 touch docs/.nojekyll
 ```
 
-Output goes to `docs/`, which GitHub Pages serves at https://jimclifford.ca/trimen-workshop/ (branch `main`, folder `/docs`). `quarto render` deletes `docs/.nojekyll`; recreate it before committing.
+Output goes to `docs/`, which GitHub Pages serves at https://jimclifford.ca/imperial-careers-workshop/ (branch `main`, folder `/docs`). `quarto render` deletes `docs/.nojekyll`; recreate it before committing.
 
 ## Sources and credits
 

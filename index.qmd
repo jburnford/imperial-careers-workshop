@@ -4,7 +4,7 @@ subtitle: "AI and History Conference, Johns Hopkins University. Thursday 15 Octo
 ---
 
 ::: {.callout-note title="Draft"}
-Working draft for Jim Clifford's review. Source and data: [github.com/jburnford/trimen-workshop](https://github.com/jburnford/trimen-workshop). The dataset the hour is built on is published as [Imperial Careers](https://jimclifford.ca/col_matching/) (CC0). Counts on these pages come from that repository's `kg_stats.json` and the atlas `meta.json` of 4 September 2026 and are reproduced in [`outputs/atlas/`](outputs/atlas/).
+Working draft for Jim Clifford's review. Source and data: [github.com/jburnford/imperial-careers-workshop](https://github.com/jburnford/imperial-careers-workshop). The dataset the hour is built on is published as [Imperial Careers](https://jimclifford.ca/col_matching/) (CC0). Counts on these pages come from that repository's `kg_stats.json` and the atlas `meta.json` of 4 September 2026 and are reproduced in [`outputs/atlas/`](outputs/atlas/).
 :::
 
 ## One dataset, start to finish

@@ -228,7 +228,7 @@
     "href": "index.html",
     "title": "Cleaning and Structuring Historical Data: A Working Session",
     "section": "",
-    "text": "Draft\n\n\n\nWorking draft for Jim Clifford’s review. Source and data: github.com/jburnford/trimen-workshop. The dataset the hour is built on is published as Imperial Careers (CC0). Counts on these pages come from that repository’s kg_stats.json and the atlas meta.json of 4 September 2026 and are reproduced in outputs/atlas/."
+    "text": "Draft\n\n\n\nWorking draft for Jim Clifford’s review. Source and data: github.com/jburnford/imperial-careers-workshop. The dataset the hour is built on is published as Imperial Careers (CC0). Counts on these pages come from that repository’s kg_stats.json and the atlas meta.json of 4 September 2026 and are reproduced in outputs/atlas/."
   },
   {
     "objectID": "index.html#one-dataset-start-to-finish",
@@ -354,7 +354,7 @@
     "href": "handout.html#three-decisions",
     "title": "Handout: five entries from the Record of Services",
     "section": "Three decisions",
-    "text": "Three decisions\n\nA clause with no place: does it inherit the previous one? (“do.” in entry 2.)\n“col. sec. and min. of com. and lab., 1906”: one event or two?\n“KT. BACH. (1920)”: one honour with a year, two honours, or a title that is not an honour?\n\nSite: jimclifford.ca/trimen-workshop. Mark-up exercise online: jimclifford.ca/trimen-workshop/annotate/"
+    "text": "Three decisions\n\nA clause with no place: does it inherit the previous one? (“do.” in entry 2.)\n“col. sec. and min. of com. and lab., 1906”: one event or two?\n“KT. BACH. (1920)”: one honour with a year, two honours, or a title that is not an honour?\n\nSite: jimclifford.ca/imperial-careers-workshop. Mark-up exercise online: jimclifford.ca/imperial-careers-workshop/annotate/"
   },
   {
     "objectID": "presenter.html",
@@ -438,7 +438,7 @@
     "href": "slides.html#the-source",
     "title": "Cleaning, Structuring and Grounding Historical Data",
     "section": "The source",
-    "text": "The source\n\nTRIMEN, HENRY, M.B. (Lond.), F.R.S., F.L.S. —Formerly lecturer on botany at St. Mary’s Hospital, London, 1867 to 1875; was senior assistant to department of botany, British Museum, 1869 to 1879; director Royal Botanical Gardens, Ceylon, Feb., 1880; author of numerous works and papers on pure and applied botany.\n\n\nBALMER, F. E.—Dep. chief acctnt., G.P.O., E. Africa Prot., Mar., 1919; ch. acctnt., G.P.O., Kenya, Oct., 1919; ch. acctnt., Kenya-Uganda-Tanganyika post and tel. service, 1933; senr. dep. P.M.G., do., 1935.\n\n85 volumes. 1,400–2,900 entries per edition. The same man in forty of them.\n\nMark one up. jimclifford.ca/trimen-workshop/annotate/ (or the paper). Every position, place, year, honour. Three minutes."
+    "text": "The source\n\nTRIMEN, HENRY, M.B. (Lond.), F.R.S., F.L.S. —Formerly lecturer on botany at St. Mary’s Hospital, London, 1867 to 1875; was senior assistant to department of botany, British Museum, 1869 to 1879; director Royal Botanical Gardens, Ceylon, Feb., 1880; author of numerous works and papers on pure and applied botany.\n\n\nBALMER, F. E.—Dep. chief acctnt., G.P.O., E. Africa Prot., Mar., 1919; ch. acctnt., G.P.O., Kenya, Oct., 1919; ch. acctnt., Kenya-Uganda-Tanganyika post and tel. service, 1933; senr. dep. P.M.G., do., 1935.\n\n85 volumes. 1,400–2,900 entries per edition. The same man in forty of them.\n\nMark one up. jimclifford.ca/imperial-careers-workshop/annotate/ (or the paper). Every position, place, year, honour. Three minutes."
   },
   {
     "objectID": "slides.html#the-prompt-is-the-decisions",
@@ -522,7 +522,7 @@
     "href": "slides.html#exercise-4755",
     "title": "Cleaning, Structuring and Grounding Historical Data",
     "section": "Exercise: 47–55",
-    "text": "Exercise: 47–55\njimclifford.ca/trimen-workshop/review/\n\n\n\nStructure\nR1, R2\nBlakely’s birth year; Balmer’s “do.”\n\n\nClean\nR3, R4\nAbery and Carbery; A’Beckett and Beckett\n\n\nGround\nR5, R6\nSouth Africa at Harare; Brewster’s Victoria\n\n\nextra\nR7\nPrice and the item with no career\n\n\n\nWrite the reason. The reason is what becomes the rule. Zoom: Copy summary for chat. Room: hands up when asked."
+    "text": "Exercise: 47–55\njimclifford.ca/imperial-careers-workshop/review/\n\n\n\nStructure\nR1, R2\nBlakely’s birth year; Balmer’s “do.”\n\n\nClean\nR3, R4\nAbery and Carbery; A’Beckett and Beckett\n\n\nGround\nR5, R6\nSouth Africa at Harare; Brewster’s Victoria\n\n\nextra\nR7\nPrice and the item with no career\n\n\n\nWrite the reason. The reason is what becomes the rule. Zoom: Copy summary for chat. Room: hands up when asked."
   },
   {
     "objectID": "slides.html#your-own-data",
@@ -536,7 +536,7 @@
     "href": "slides.html#three-questions-1",
     "title": "Cleaning, Structuring and Grounding Historical Data",
     "section": "Three questions",
-    "text": "Three questions\n\n\n\n\n\n\n\n\n\n\nYou decide\n\n\n\n\nStructure\nWhat is a record here?\nWhat counts as an event\n\n\nClean\nOne person or two?\nMerge, keep apart, review\n\n\nGround\nWhich place, which person?\nSupported, unresolved, wrong\n\n\n\njimclifford.ca/trimen-workshop — pages, saved outputs, both exercises, worked answers. Data: jimclifford.ca/col_matching (CC0)."
+    "text": "Three questions\n\n\n\n\n\n\n\n\n\n\nYou decide\n\n\n\n\nStructure\nWhat is a record here?\nWhat counts as an event\n\n\nClean\nOne person or two?\nMerge, keep apart, review\n\n\nGround\nWhich place, which person?\nSupported, unresolved, wrong\n\n\n\njimclifford.ca/imperial-careers-workshop — pages, saved outputs, both exercises, worked answers. Data: jimclifford.ca/col_matching (CC0)."
   },
   {
     "objectID": "steps/02-source.html",

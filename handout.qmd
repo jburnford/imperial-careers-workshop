@@ -55,4 +55,4 @@ One event per distinct posting: `position` as printed, `place` as printed (or in
 - "col. sec. and min. of com. and lab., 1906": one event or two?
 - "KT. BACH. (1920)": one honour with a year, two honours, or a title that is not an honour?
 
-Site: jimclifford.ca/trimen-workshop. Mark-up exercise online: jimclifford.ca/trimen-workshop/annotate/
+Site: jimclifford.ca/imperial-careers-workshop. Mark-up exercise online: jimclifford.ca/imperial-careers-workshop/annotate/
