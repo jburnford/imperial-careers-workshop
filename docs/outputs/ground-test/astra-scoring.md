@@ -1,6 +1,6 @@
 # Scoring "Astra medium" with web retrieval on the twenty entries
 
-Jim Clifford gave the twenty entries (`bios.md`) to Astra medium on 7 October 2026, starting about 08:35; the output file `bios-grounded.json` was downloaded at 09:02, so about 27 minutes. The prompt is to be recorded. The file's own methodology block says: public web search, Wikipedia sitelinks and web-retrieved Wikidata pages, not the API or a vector search; the answer key was not consulted; birth years only where printed. The file is saved as `astra-grounding.json`; every identifier in it was resolved with `wbgetentities` on 7 October (`astra-grounding-check.json`).
+Jim Clifford gave the twenty entries (`bios.md`) to Astra medium on 7 October 2026, starting about 08:35; the output file `bios-grounded.json` was downloaded at 09:02, so about 27 minutes. Prompt, the same as for the other two runs: "Parse these bios and ground the places, schools and people to Wikidata ids where possible." The file's own methodology block says: public web search, Wikipedia sitelinks and web-retrieved Wikidata pages, not the API or a vector search; the answer key was not consulted; birth years only where printed. The file is saved as `astra-grounding.json`; every identifier in it was resolved with `wbgetentities` on 7 October (`astra-grounding-check.json`).
 
 ## What it produced
 

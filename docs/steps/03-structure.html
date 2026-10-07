@@ -177,10 +177,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-schema" id="toc-the-schema" class="nav-link active" data-scroll-target="#the-schema">The schema</a></li>
-  <li><a href="#the-prompt" id="toc-the-prompt" class="nav-link" data-scroll-target="#the-prompt">The prompt</a></li>
-  <li><a href="#what-came-back" id="toc-what-came-back" class="nav-link" data-scroll-target="#what-came-back">What came back</a></li>
+  <li><a href="#the-shape-of-it" id="toc-the-shape-of-it" class="nav-link active" data-scroll-target="#the-shape-of-it">The shape of it</a></li>
+  <li><a href="#the-schema" id="toc-the-schema" class="nav-link" data-scroll-target="#the-schema">The schema</a></li>
+  <li><a href="#the-prompt-exactly-as-sent" id="toc-the-prompt-exactly-as-sent" class="nav-link" data-scroll-target="#the-prompt-exactly-as-sent">The prompt, exactly as sent</a></li>
+  <li><a href="#the-overnight-run" id="toc-the-overnight-run" class="nav-link" data-scroll-target="#the-overnight-run">The overnight run</a></li>
   <li><a href="#two-kinds-of-model" id="toc-two-kinds-of-model" class="nav-link" data-scroll-target="#two-kinds-of-model">Two kinds of model</a></li>
+  <li><a href="#what-came-back" id="toc-what-came-back" class="nav-link" data-scroll-target="#what-came-back">What came back</a></li>
   <li><a href="#the-audit" id="toc-the-audit" class="nav-link" data-scroll-target="#the-audit">The audit</a></li>
   <li><a href="#why-the-fix-was-not-a-bigger-model" id="toc-why-the-fix-was-not-a-bigger-model" class="nav-link" data-scroll-target="#why-the-fix-was-not-a-bigger-model">Why the fix was not a bigger model</a></li>
   </ul>
@@ -192,7 +194,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Structure</h1>
-<p class="subtitle lead">Minutes 12–22. What is a record here? The model proposes and fills the fields; you decide what counts as an event.</p>
+<p class="subtitle lead">Minutes 12–22. What is a record here? Python takes the regular entries, a cheap model takes the rest overnight, Python checks the result; you decide what counts as an event.</p>
 </div>
 
 
@@ -209,21 +211,100 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="the-shape-of-it" class="level2">
+<h2 class="anchored" data-anchor-id="the-shape-of-it">The shape of it</h2>
+<p>Structuring the biographies was never “send them to a model”. It was a hybrid, in three parts, and the same three parts ran twice: once for the Colonial Office List in June 2026, once for the India Office List a week later.</p>
+<ol type="1">
+<li><strong>Python first.</strong> A regex grammar for the printed entry shape parses what it can. It is all-or-nothing: if any clause containing a year fails to parse cleanly, the whole entry is refused rather than half-parsed. A second Python pass expands the abbreviations it recognises (“Feb.” to “February”, “acctnt.” to “accountant”) and leaves everything else exactly as printed.</li>
+<li><strong>A model for what Python cannot do.</strong> Binding position to place to time span across run-on, elided, “ditto” and concurrent clauses. One entry in, one JSON object out. For the Colonial Office List the first residue went to a batch API with a cheap commercial model; the bulk of both corpora went to an open model on a university GPU.</li>
+<li><strong>Python again.</strong> A validator that checks every place and year the model emitted against the source text and drops what it cannot find there. Then a post-normalisation pass that applies the deterministic fixes found by the audit, logging every change.</li>
+</ol>
+</section>
 <section id="the-schema" class="level2">
 <h2 class="anchored" data-anchor-id="the-schema">The schema</h2>
-<p>A biography becomes one JSON object: name, birth year, education string, honours with award years, a list of career events, and how the career ended. Each event has a position, a place as printed, start and end years, an acting flag and a civil or military tag. The agent and the historian settled the schema on a sample of entries before any batch ran.</p>
+<p>One object per entry: <code>surname</code>, <code>given_names</code>, <code>birth_year</code> (only if printed), <code>education</code>, <code>honours</code> with award years, <code>events</code>, and <code>terminal</code>. One event per posting: <code>position</code> and <code>place</code> as printed, <code>year_start</code>, <code>year_end</code>, <code>place_inherited</code>, <code>is_acting</code>, and <code>civil</code> or <code>military</code>. The agent and the historian settled it on a sample before any batch ran.</p>
 </section>
-<section id="the-prompt" class="level2">
-<h2 class="anchored" data-anchor-id="the-prompt">The prompt</h2>
-<p>The system prompt the pipeline sends with every entry (<a href="../outputs/structure/extraction-prompt.txt">full text</a>). The rules are the historian’s decisions, written down:</p>
-<blockquote class="blockquote">
-<p>Extract ONLY what is printed; never invent or infer facts. <strong>events:</strong> one object per distinct posting. EXPLODE compound/concurrent clauses into separate events (e.g.&nbsp;‘reg.-gen., 1887, and M.L.C., 1889’ = two events). <strong>place:</strong> the colony, territory, OR locality named in the clause, AS PRINTED. If the clause names no place, carry over the previous clause’s place and set place_inherited=true; do NOT guess or upgrade a locality to its parent colony. <strong>birth_year:</strong> only if explicitly printed (‘B. 1872’); else null. NEVER infer from the earliest career date. <strong>honours:</strong> decorations/orders with their AWARD year if printed in parentheses; these award-years are NOT career events.</p>
-</blockquote>
-<p>Every one of those rules exists because an earlier run broke it.</p>
+<section id="the-prompt-exactly-as-sent" class="level2">
+<h2 class="anchored" data-anchor-id="the-prompt-exactly-as-sent">The prompt, exactly as sent</h2>
+<p>The system message for every one of the 65,000 entries (<a href="../outputs/structure/extraction-prompt.txt">file</a>):</p>
+<pre class="text"><code>You convert ONE printed Colonial Office List biographical entry into a JSON career record. Extract ONLY what is printed; never invent or infer facts.
+Rules:
+- events: one object per distinct posting. EXPLODE compound/concurrent clauses into separate events (e.g. 'reg.-gen., 1887, and M.L.C., 1889' = two events; 'ag. comsnr., 1915-16; and from 1919' = two events).
+- position: as printed (the normalized expansion is fine), e.g. 'assistant colonial secretary'.
+- place: the colony, territory, OR locality named in the clause, AS PRINTED (e.g. 'Ceylon', 'Negombo', 'N. Nigeria'). If the clause names no place, carry over the previous clause's place and set place_inherited=true; do NOT guess or upgrade a locality to its parent colony — record exactly what is printed. Inheritance stops when a transfer is stated.
+- year_start/year_end: the posting's years; year_end null if a single year.
+- is_acting: true when the post is acting ('ag.'/'acting').
+- org_type: 'military' for army/navy/regiment/expedition/campaign postings, else 'civil'.
+- honours: decorations/orders with their AWARD year if printed in parentheses (e.g. 'C.M.G. (1905)'); these award-years are NOT career events.
+- birth_year: only if explicitly printed ('B. 1872'); else null. NEVER infer from the earliest career date.
+- education: the 'ed. ...' string as one metadata string; university class honours stay here, NOT as events.
+- terminal: {kind: retired|resigned|died|pensioned|other, year} if the entry states the career ended, else null.
+
+Return ONE JSON object with EXACTLY these top-level keys: surname, given_names, birth_year, education, honours, events, terminal. Split the headword into surname + given_names (no 'name'/'person' key). Each honour is {"award": str, "year": int|null} (no 'decoration'/'order' key).
+</code></pre>
+<p>The user message is the entry alone, after the abbreviation pass. Trimen’s 1889 entry goes in like this (<a href="../outputs/structure/extraction-user-message-example.txt">file</a>):</p>
+<pre class="text"><code>TRIMEN, HENRY, M.B. (Lond.), F.R.S., F.L.S. —Formerly lecturer on botany at St. Mary's Hospital, London, 1867 to 1875; was senior assistant to department of botany, British Museum, 1869 to 1879; director Royal Botanical Gardens, Ceylon, February, 1880; author of numerous works and papers on pure and applied botany.
+</code></pre>
+<p>Three things to notice. Every rule in the list exists because an earlier run broke it; the rule about birth years is there because a model had been inferring them from the first appointment. The last paragraph pins the key names, because a bake-off found the model drifting to <code>name</code> and <code>decoration</code> without it. And nothing in the prompt is about the historical question; it is entirely about what the page says and how to hold it.</p>
+</section>
+<section id="the-overnight-run" class="level2">
+<h2 class="anchored" data-anchor-id="the-overnight-run">The overnight run</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Colonial Office List</th>
+<th>India Office List</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Model</td>
+<td>Qwen3.6-35B-A3B, served by vLLM on a university GPU box</td>
+<td>same</td>
+</tr>
+<tr class="even">
+<td>Settings</td>
+<td>temperature 0, reasoning off, 8 to 16 workers, 4 retries</td>
+<td>same</td>
+</tr>
+<tr class="odd">
+<td>Entries</td>
+<td>34,743</td>
+<td>30,496</td>
+</tr>
+<tr class="even">
+<td>Rate once warm</td>
+<td>about 1 a second</td>
+<td>1.03 a second</td>
+</tr>
+<tr class="odd">
+<td>Elapsed</td>
+<td>about a day including setup, 19–20 June</td>
+<td>8.24 hours, overnight 25–26 June</td>
+</tr>
+<tr class="even">
+<td>Failed to return valid JSON</td>
+<td></td>
+<td>55, under 0.2 per cent</td>
+</tr>
+</tbody>
+</table>
+<p>The handoff note records the setting that matters most: reasoning off. With it on, long entries eat the token budget and return no JSON, a 67 per cent failure rate. Thinking off, temperature zero: the same finding every run on this corpus has made.</p>
+<p>The India Office List needed one new piece of code, a Python segmenter for its different OCR format, written that morning. The prompt, the model, the validator and the post-normaliser were reused unchanged through one environment variable. The graph was published that afternoon.</p>
+</section>
+<section id="two-kinds-of-model" class="level2">
+<h2 class="anchored" data-anchor-id="two-kinds-of-model">Two kinds of model</h2>
+<p>A frontier model, in session as the coding agent, structured about 200 entries by hand as the reference set and wrote everything in the list above. The open model inside the script read the corpus. Every record says which path produced it. The runbook for the in-session loop is <a href="../outputs/structure/structuring-loop-runbook.md">saved</a>.</p>
 </section>
 <section id="what-came-back" class="level2">
 <h2 class="anchored" data-anchor-id="what-came-back">What came back</h2>
-<p>Trimen’s 1889 entry, structured (<a href="../outputs/structure/trimen-structured.json">saved</a>):</p>
+<p>Trimen’s entry, structured (<a href="../outputs/structure/trimen-structured.json">saved</a>):</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 25%">
@@ -260,15 +341,11 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
-<p>Plus <code>education: "M.B. (Lond.)"</code>, two honours without years, no birth year, no terminal event. In the published graph the first and third events are placed (London Q84, Ceylon Q918153); “British Museum” is an institution, not a place, and stays unplaced.</p>
-</section>
-<section id="two-kinds-of-model" class="level2">
-<h2 class="anchored" data-anchor-id="two-kinds-of-model">Two kinds of model</h2>
-<p>The reference set was structured in session by a frontier model acting as the coding agent: about 200 entries, each checked. The corpus was structured by Qwen on a shared university GPU inside the script the agent wrote, at a cost the frontier model could not match for 100,000 entries. The runbook for the loop is <a href="../outputs/structure/structuring-loop-runbook.md">saved</a>. Every record says which path produced it.</p>
+<p>Plus <code>education: "M.B. (Lond.)"</code>, two honours without years, no birth year, no terminal event. In the published graph the first and third events are placed; “British Museum” is an institution, not a place, and stays unplaced.</p>
 </section>
 <section id="the-audit" class="level2">
 <h2 class="anchored" data-anchor-id="the-audit">The audit</h2>
-<p>Every tenth structured record was read against its source by a reviewer model and the findings were categorised (<a href="../outputs/audit/struct-error-catalog.md">catalogue</a>, <a href="../outputs/audit/every10-reviewed-pairs.json">reviewed pairs</a>). Of the first 186 sampled:</p>
+<p>Every tenth structured record was read against its source by a reviewer model and the findings categorised (<a href="../outputs/audit/struct-error-catalog.md">catalogue</a>, <a href="../outputs/audit/every10-reviewed-pairs.json">reviewed pairs</a>). Of the first 186 sampled:</p>
 <table class="caption-top table">
 <tbody>
 <tr class="odd">
@@ -285,15 +362,16 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
-<p>Three of the findings, with the source beside the record (<a href="../outputs/structure/audit-examples.json">saved</a>):</p>
+<p>Three of the findings, source beside record (<a href="../outputs/structure/audit-examples.json">saved</a>):</p>
 <p><strong>The ditto that was not resolved.</strong> Balmer’s last clause, “senr. dep. P.M.G., do., 1935”, came back with <code>place: "do."</code>. The rule says inherit; the model copied the abbreviation.</p>
 <p><strong>The appointment date that became a birth year.</strong> “BLAKELY, DONALD QUENTIN.—Clk., atty.-gen.’s off., B. Honduras, Apl., 1898.” came back with <code>birth_year: 1898</code> and an event with no year. The prompt forbids exactly this. The same record expanded “off.” to “officer” instead of “office”.</p>
 <p><strong>The knighthood split in two.</strong> “KT. BACH. (1920)” came back as two honours, <code>KT</code> and <code>BACH (1920)</code>. Three records in the sample did the same.</p>
 </section>
 <section id="why-the-fix-was-not-a-bigger-model" class="level2">
 <h2 class="anchored" data-anchor-id="why-the-fix-was-not-a-bigger-model">Why the fix was not a bigger model</h2>
-<p>The errors are not random. They are a handful of systematic patterns: a short list of abbreviations mis-expanded the same way every time (“off.”, “col.”, “govt.”, “offr. in ch.”), ditto marks left literal, one compound honour split, “mentioned in despatches” dropped. Each has a deterministic fix: an expansion table, a forward-fill pass, a merge rule, a sweep of the source for a phrase. The fixes run after the model and cost nothing per record. A frontier model on every entry would have cost more and would still have needed the audit.</p>
-<p><strong>You decide:</strong> what is an event. Whether an acting appointment is a posting. Whether “called to the bar, 1879” belongs in the career. Whether “leader of leg. coun. from 1906 to 1911” is a position or a description. The prompt records those decisions; the audit checks whether the model kept them.</p>
+<p>The errors are not random. They are a handful of systematic patterns: a short list of abbreviations mis-expanded the same way every time, ditto marks left literal, one compound honour split, “mentioned in despatches” dropped. Each has a deterministic fix, and those fixes are the post-normalisation pass: merge <code>KT</code> + <code>BACH</code> into Knight Bachelor; forward-fill a “do.” place from the previous event and set the flag; strip honorifics folded into given names; “officer in chief” back to “officer in charge”; drop a military tag with no military signal in the position. Every change is appended to a list on the record, so nothing is silent. The “off.” expansion is fixed one step earlier, by not pre-expanding ambiguous abbreviations at all.</p>
+<p>A frontier model on every entry would have cost more, taken longer, and still needed the audit.</p>
+<p><strong>You decide:</strong> what is an event. Whether an acting appointment is a posting. Whether “called to the bar, 1879” belongs in the career. Whether “leader of leg. coun. from 1906 to 1911” is a position or a description. The prompt records those decisions; the audit checks whether the model kept them; the post-normaliser enforces the ones that can be enforced.</p>
 <p>Next: <a href="../steps/04-identity.html">Clean: one person or two?</a></p>
 
 

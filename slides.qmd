@@ -74,7 +74,7 @@ Every position, place, year, honour. Three minutes.
 
 Every rule exists because a run broke it.
 
-Reference set: ~200 entries by a frontier model in session. The corpus: Qwen on a shared GPU, inside the script.
+Python grammar first; refuses what it cannot fully parse. Then Qwen3.6-35B-A3B on a university GPU, reasoning off, temp 0: **30,496 entries in 8.24 hours, one a second, 55 failures.** Then a Python validator and a post-normaliser.
 
 ## Every tenth record, read against the source {.smaller}
 

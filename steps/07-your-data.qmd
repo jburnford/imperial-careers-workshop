@@ -39,7 +39,7 @@ The published session description invited you to bring messy historical datasets
 Two different jobs need two different kinds of model.
 
 - **The agent that writes the pipeline** reads your sample, proposes the structure, writes and tests the scripts, builds the review views and the atlas. This is hours of a frontier model's time per project, in a coding agent. Imperial Careers used Claude in Claude Code.
-- **The model inside the pipeline** reads every entry and judges every cluster. At 100,000 entries the frontier models are too expensive. Imperial Careers used Qwen on shared university GPUs for structuring and for the never-biographied matching, with the frontier model's in-session work as the reference set to measure it against.
+- **The model inside the pipeline** reads every entry and judges every cluster. At 100,000 entries the frontier models are too expensive. Imperial Careers used Qwen3.6-35B-A3B on a university GPU box for structuring, at about one entry a second, and Qwen3.8-27B on a Compute Canada cluster for the never-biographied matching, with the frontier model's in-session work as the reference set to measure it against.
 
 The agent can write the pipeline so that the cheap model does the reading and the agent is only called back when something fails. Which operation produced a given record should remain visible in the output.
 

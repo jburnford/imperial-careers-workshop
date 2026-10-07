@@ -269,7 +269,7 @@ Jim Clifford, University of Saskatchewan
 <p>Extract ONLY what is printed; never invent or infer facts. <strong>events:</strong> one object per distinct posting. EXPLODE compound clauses into separate events. <strong>place:</strong> as printed. If the clause names no place, carry over the previous clause’s place and set place_inherited=true. <strong>birth_year:</strong> only if explicitly printed. NEVER infer from the earliest career date. <strong>honours:</strong> with their award year if printed in parentheses; award-years are NOT career events.</p>
 </blockquote>
 <p>Every rule exists because a run broke it.</p>
-<p>Reference set: ~200 entries by a frontier model in session. The corpus: Qwen on a shared GPU, inside the script.</p>
+<p>Python grammar first; refuses what it cannot fully parse. Then Qwen3.6-35B-A3B on a university GPU, reasoning off, temp 0: <strong>30,496 entries in 8.24 hours, one a second, 55 failures.</strong> Then a Python validator and a post-normaliser.</p>
 </section>
 <section id="every-tenth-record-read-against-the-source" class="slide level2 smaller">
 <h2>Every tenth record, read against the source</h2>
