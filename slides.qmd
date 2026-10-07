@@ -43,25 +43,19 @@ CO 27,526 people / 180,470 events / 131,343 placed. IOL 19,400 / 124,694 / 80,23
 
 ## Ten years ago
 
-:::: {.columns}
-::: {.column width="50%"}
-**Trading Consequences, 2013**
+| | Trading Consequences, 2013 | Imperial Careers, 2026 |
+|---|---|---|
+| [Clean]{.gold} | OCR turned "lime" into "time"; fixes hand-built by a team | OCR garbles a surname; a merge rule and a ledger |
+| [Structure]{.gold} | A six-stage pipeline built by computational linguists | A prompt, and a cheap model overnight |
+| [Ground]{.gold} | A gazetteer, matched by string; every "Italy" landed in Texas | Wikidata, matched by meaning; "Victoria" six ways |
 
-Five institutions. A grant.
-A pipeline built by computational linguists.
-F-scores of 0.6.
-:::
-::: {.column width="50%"}
-**Imperial Careers, 2026**
+<br>
 
-One historian. A coding agent.
-A cheap model reading overnight.
-The same three problems.
-:::
-::::
+Five institutions and a grant. Of the places it found, six in ten were right; of the places there, it found six in ten.
+One historian and a coding agent.
 
 ::: notes
-Clifford, Alex, Coates, Klein, Watson, Historical Methods 2016. "Italy" in Texas. What changed is who writes the pipeline and how fast the loop runs.
+Clifford, Alex, Coates, Klein, Watson, Historical Methods 2016. 10.5 million pages. F-scores 0.62 commodities, 0.61 locations: precision and recall both about 0.6. What changed is who writes the pipeline and how fast the loop runs; what did not change is where the historian is needed.
 :::
 
 ## Three questions

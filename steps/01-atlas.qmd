@@ -39,7 +39,7 @@ The same three problems at ten million pages: *Trading Consequences* (2012–201
 | | Trading Consequences, 2013 | Imperial Careers, 2026 |
 |---|---|---|
 | **Structuring** | A six-stage pipeline adapted by computational linguists; a relation was "same sentence" | A schema and a prompt written with a coding agent in an afternoon; a Qwen model reads 100,000 entries inside the script |
-| **Grounding** | GeoNames string matching; "Saharunpore" missed because the gazetteer knew "Saharanpur"; a bug put every "Italy" in a Texan town; F-scores 0.62 and 0.61 | Semantic search over Wikidata with verification gates; "Victoria" six ways; a bug put the Union of South Africa at Harare |
+| **Grounding** | GeoNames string matching; "Saharunpore" missed because the gazetteer knew "Saharanpur"; a bug put every "Italy" in a Texan town. F-scores of 0.62 and 0.61, which is to say: of the places and commodities it found, about six in ten were right, and of those on the page, it found about six in ten | Semantic search over Wikidata with verification gates; "Victoria" six ways; a bug put the Union of South Africa at Harare |
 | **Review** | Historians spotted false positives through the visualisations; false negatives were invisible | Same. The atlas found the errors; a sampled audit measured the rest |
 
 What changed is who writes the pipeline and how fast the loop from error to fix runs. What did not change is that the errors you can see get fixed, the errors you cannot see need a sample, and a corrected error should become a rule.
