@@ -4,7 +4,7 @@ subtitle: "AI and History Conference, Johns Hopkins University. Thursday 15 Octo
 ---
 
 ::: {.callout-note title="Draft"}
-Working draft for Jim Clifford's review. Source and data: [github.com/jburnford/imperial-careers-workshop](https://github.com/jburnford/imperial-careers-workshop). The dataset the hour is built on is published as [Imperial Careers](https://jimclifford.ca/col_matching/) (CC0). Counts on these pages come from that repository's `kg_stats.json` and the atlas `meta.json` of 4 September 2026 and are reproduced in [`outputs/atlas/`](outputs/atlas/).
+Source and data: [github.com/jburnford/imperial-careers-workshop](https://github.com/jburnford/imperial-careers-workshop). The dataset the hour is built on is published as [Imperial Careers](https://jimclifford.ca/col_matching/) (CC0). Counts on these pages come from that repository's `kg_stats.json` and the atlas `meta.json` of 4 September 2026 and are reproduced in [`outputs/atlas/`](https://github.com/jburnford/imperial-careers-workshop/tree/main/outputs/atlas).
 :::
 
 ## One dataset, start to finish
@@ -29,7 +29,7 @@ A historian turning a text into data asks three questions of it, and each has on
 
 | | The question | The model does | You decide |
 |---|---|---|---|
-| **Structure** | What is a record here? | Proposes the fields, fills them for 100,000 entries, reports what it could not parse | What counts as an event; whether the record changed the meaning |
+| **Structure** | What is a record here? | Proposes the fields, fills them for 65,000 entries, reports what it could not parse | What counts as an event; whether the record changed the meaning |
 | **Clean** | Is this one person or two? | Clusters the candidates, argues each case, keeps the evidence | Merge, keep apart, or leave for review |
 | **Ground** | Which place, which person, in the shared vocabulary? | Retrieves candidates with evidence | Supported, unresolved, or wrong |
 
@@ -56,4 +56,4 @@ A browser. The [decision exercise](review/index.html) and the [mark-up exercise]
 
 ## Further
 
-[Worked answers](answers.qmd), a [glossary](glossary.qmd) of the terms used, [running it yourself](setup.qmd), and the saved outputs in [`outputs/`](outputs/): the extraction prompt, the audit of a structured sample, the duplicate-resolution rules and a sample of clusters, the place-grounding cache rows behind the errors, and the project review that found them.
+[Worked answers](answers.qmd), a [glossary](glossary.qmd) of the terms used, [running it yourself](setup.qmd), and the saved outputs in [`outputs/`](https://github.com/jburnford/imperial-careers-workshop/tree/main/outputs): the extraction prompt, the audit of a structured sample, the duplicate-resolution rules and a sample of clusters, the place-grounding cache rows behind the errors, and the project review that found them.

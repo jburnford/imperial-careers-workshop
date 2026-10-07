@@ -8,7 +8,7 @@
    "title": "Blakely: does the structured record stand?",
    "source_label": "Colonial Office List 1905, Record of Services (OCR as delivered)",
    "source_quote": "BLAKELY, DONALD QUENTIN.—Clk., atty.-gen.'s off., B. Honduras, Apl., 1898.",
-   "source_url": "https://github.com/jburnford/col_matching/blob/main/docs/STRUCT_ERROR_CATALOG.md",
+   "source_url": "https://github.com/jburnford/col_matching/blob/master/docs/STRUCT_ERROR_CATALOG.md",
    "proposal": "Structured record: birth_year 1898; one event \"Clk., atty.-gen.'s officer\", place \"B. Honduras\", year_start null.",
    "evidence_for": [
     "The record was produced by the production prompt, which says: birth_year only if explicitly printed; NEVER infer from the earliest career date.",
@@ -29,7 +29,7 @@
    "title": "Balmer: the last posting's place",
    "source_label": "Colonial Office List 1936, Record of Services (OCR as delivered)",
    "source_quote": "BALMER, F. E.—Dep. chief acctnt., G.P.O., E. Africa Prot., Mar., 1919; ch. acctnt., G.P.O., Kenya, Oct., 1919; ch. acctnt., Kenya-Uganda-Tanganyika post and tel. service, 1933; senr. dep. P.M.G., do., 1935.",
-   "source_url": "https://github.com/jburnford/col_matching/blob/main/docs/STRUCT_ERROR_CATALOG.md",
+   "source_url": "https://github.com/jburnford/col_matching/blob/master/docs/STRUCT_ERROR_CATALOG.md",
    "proposal": "Event 4: position \"senior deputy P.M.G.\", place \"do.\", year 1935, place_inherited true.",
    "evidence_for": [
     "That is what the clause prints.",
@@ -49,7 +49,7 @@
    "title": "ABERY and CARBERY: one person?",
    "source_label": "Dedup cluster from the Record of Services, 1886 and 1897 editions",
    "source_quote": "ABERY, Joseph; hon: M.B.C.M; career: 1867 Ceylon Assistant colonial surgeon (1897 edition only)\nCARBERY, Joseph; hon: M.B.C.M; career: 1867 Ceylon Assistant colonial surgeon (1886, 1889, 1890, 1894, 1896, 1897 editions)",
-   "source_url": "https://github.com/jburnford/col_matching/blob/main/docs/DEDUP_LLM_METHOD.md",
+   "source_url": "https://github.com/jburnford/col_matching/blob/master/docs/DEDUP_LLM_METHOD.md",
    "proposal": "Merge the two biographies into one person.",
    "evidence_for": [
     "Same forename, same honour, one identical dated event (1867, Ceylon, assistant colonial surgeon).",
@@ -70,7 +70,7 @@
    "title": "A'BECKETT and BECKETT: one person?",
    "source_label": "Dedup cluster from the Record of Services, 1909–1918 and 1948–1949 editions",
    "source_quote": "A'BECKETT, THOMAS; b.1836; hon: KNT. BACH/1909; career: 1859 called to the Bar, Lincoln's Inn | 1860 to Victorian Bar | 1886 Victoria puisne judge\nBECKETT, Thomas Rumbold; b.1898; ed. Judd Sch., Tonbridge and Faraday House, Lond.; hon: A.M.I.E.E; career: 1924 Nigeria asst. tel. engnr. | 1940 Nigeria div. engnr | 1948 Nigeria asst. engnr.-in-ch., posts & tels",
-   "source_url": "https://github.com/jburnford/col_matching/blob/main/docs/DEDUP_LLM_METHOD.md",
+   "source_url": "https://github.com/jburnford/col_matching/blob/master/docs/DEDUP_LLM_METHOD.md",
    "proposal": "Merge the two biographies into one person.",
    "evidence_for": [
     "Same forename Thomas; surname suffix matches; the apostrophe could be OCR noise."
@@ -89,7 +89,7 @@
    "title": "\"Union of S. Africa\" is Q5155572?",
    "source_label": "Place-grounding cache, Colonial Office List graph (rows for the surface \"Union of S. Africa\", \"S. Africa\", \"S.A.\")",
    "source_quote": "place: \"Union of S. Africa\"; query: \"South Africa\"; match_type: manifest (containment); qid: Q5155572; count: 1,062 events",
-   "source_url": "https://github.com/jburnford/col_matching/blob/main/docs/REVIEW_2026-09-03.md",
+   "source_url": "https://github.com/jburnford/col_matching/blob/master/docs/REVIEW_2026-09-03.md",
    "proposal": "Ground the surfaces \"Union of S. Africa\", \"S. Africa\" and \"S.A.\" to Q5155572.",
    "evidence_for": [
     "The manifest join matched the string \"South Africa\" inside the item's name.",
@@ -110,7 +110,7 @@
    "title": "Brewster's \"Victoria\" is the Colony of Victoria?",
    "source_label": "Colonial Office List 1918, Record of Services (OCR as delivered)",
    "source_quote": "BREWSTER, HON. HARLAN C.—B. 1870; took up newspaper work in New Brunswick and Boston; removed to B. Columbia in 1897; managing dir., Clayoquot Sound Canning Co.; elec. to legis. ass. for Alberni, B. Columbia, 1907; re-elec., 1909; defeated by Sir Richard McBride, in Victoria, 1912; re-elec. at bye-elec., Mar., 1916; premier, B. Columbia, 1916.",
-   "source_url": "https://github.com/jburnford/col_matching/blob/main/KG_FIXES_TODO.md",
+   "source_url": "https://github.com/jburnford/col_matching/blob/master/KG_FIXES_TODO.md",
    "proposal": "Ground \"Victoria\" in \"defeated by Sir Richard McBride, in Victoria, 1912\" (graph events: legislative ass. for Victoria, 1912 and 1916) to Q56850459, Victoria (Colony), Australia, as the cache does for the bare surface.",
    "evidence_for": [
     "Most occurrences of the bare surface \"Victoria\" in the corpus are the Australian colony, and the cache is keyed on the surface string."

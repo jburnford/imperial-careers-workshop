@@ -3,6 +3,7 @@ title: "Cleaning, Structuring and Grounding Historical Data"
 subtitle: "One dataset, start to finish, with a coding agent"
 author: "Jim Clifford, University of Saskatchewan"
 date: "15 October 2026"
+date-format: "D MMMM YYYY"
 format:
   revealjs:
     theme: [default, slides.scss]
@@ -14,9 +15,10 @@ format:
     link-external-newwindow: true
     transition: fade
     background-transition: fade
+    include-after-body: slides-title-qr.html
     title-slide-attributes:
       data-background-image: images/atlas-screenshot.png
-      data-background-opacity: "0.35"
+      data-background-opacity: "0.15"
 ---
 
 ## {background-video="https://jimclifford.ca/col_matching/combined_mobility.mp4" background-video-muted="true" background-image="images/combined-mobility-frame.jpg" background-size="cover"}
@@ -58,12 +60,12 @@ The atlas's own panel for the same man, Colonial Office record:
 - 1861 "high commissioner" → **Union of South Africa**, seated at Bloemfontein. The Union dates from 1910. In 1861 he was high commissioner *for* South Africa, from Cape Town.
 - 1851 "Honduras" → seat **Belmopan**, a capital founded in 1970.
 
-[Seen on the map. Fixed in a rule. Rerun for everyone.]{.gold}
+[Seen on the map. Next: fix the rule, rerun for everyone.]{.gold}
 :::
 ::::
 
 ::: notes
-Found while preparing this slide, 7 October 2026. Both records (CO and IO) have errors visible in the panel; the IO record also inherits British Guiana for Honduras. These go on the fixes list. That is the method.
+Found while preparing this slide, 7 October 2026. Not yet fixed in col_matching: say so. Both records (CO and IO) have errors visible in the panel; the IO record also inherits British Guiana for Honduras. The 1861 row is a side-effect of the South Africa fix on slide 26: the patched cache sends the bare surface "South Africa" (38 events) to Q193619, the Union, and pre-1910 that is wrong. The fix for one error made the next one; that is why you look again at everyone a rule touched.
 :::
 
 ## What that was
@@ -93,6 +95,7 @@ CO 27,526 people / 180,470 events / 131,343 placed. IOL 19,400 / 124,694 / 80,23
 <br>
 
 Five institutions and a grant. Of the places it found, six in ten were right; of the places there, it found six in ten.
+
 One historian and a coding agent.
 
 ::: notes
@@ -126,8 +129,8 @@ It turned out to be the best error detector the project had.
 
 > BALMER, F. E.—Dep. chief acctnt., G.P.O., E. Africa Prot., Mar., 1919; ch. acctnt., G.P.O., Kenya, Oct., 1919; ch. acctnt., Kenya-Uganda-Tanganyika post and tel. service, 1933; senr. dep. P.M.G., <mark>do.</mark>, 1935.
 
-85 volumes, 1883 to 1966.
-1,400 to 2,900 entries in each.
+85 volumes, 1883 to 1966.\
+1,400 to 2,900 entries in each.\
 The same man in forty of them.
 
 ::: notes
@@ -136,7 +139,14 @@ Record of the Public Services of Officers. Cumulative. OCR'd with olmOCR; we beg
 
 ## Mark one up
 
-![](images/annotate-screenshot.png){height="520"}
+:::: {.columns}
+::: {.column width="72%"}
+![](images/annotate-screenshot.png)
+:::
+::: {.column width="28%"}
+![](images/qr-annotate.png){width="240" fig-alt="QR code for the mark-up exercise"}
+:::
+::::
 
 **jimclifford.ca/imperial-careers-workshop/annotate/** or the paper. Three minutes.
 
@@ -174,11 +184,14 @@ IOL run, overnight 25–26 June, 16 workers, reasoning off, temp 0. Reasoning on
 
 Every rule is there because a run broke it.
 
-## Every tenth record, read against the source
+## Samples read against the source
 
 ::: {.big}
-[186]{.gold} sampled · [69%]{.gold} clean · [3%]{.gold} major
+Early entries: [69%]{.gold} clean\
+Across the corpus: [about 50%]{.gold} clean, [9%]{.gold} major
 :::
+
+Three samples (186, 100, 300), read by a model against the source, before the rule fixes.
 
 | Source | Record |
 |---|---|
@@ -211,7 +224,7 @@ A false merge is not.
 
 <br>
 
-Deterministic passes first: zero false merges on 543 hand-checked careers.
+Deterministic passes first.\
 Then a model argues each leftover cluster from a dossier. 917 so far, each with its reason.
 
 ## Two clusters
@@ -280,7 +293,7 @@ Nyasaland → a disambiguation page. Joseph Chamberlain → a Swiss footballer.
 
 | | No tools | Pipeline | Opus, retrieval | Astra, retrieval |
 |---|---|---|---|---|
-| People right | [0]{.gold} of 16 | 12 of 12 given | [16]{.gold} of 16 | [16]{.gold} of 16 |
+| People right | [0]{.gold} of 16 | 12 given; Opus confirms all 12 | [16]{.gold} of 16 | [16]{.gold} of 16 |
 | Places | 38 of 104, modern | 3,207 surfaces | 17 of 138, stopped | 104, period entities |
 | Time | 5 min | overnight, corpus | 20 min | 27 min |
 
@@ -293,7 +306,7 @@ The retrieval columns are the review queue, not the corpus.
 George V from memory: Q269 is Tashkent; Opus caught it by reading the page. Gorges has two items. Harris b. 1858 vs item 1855.
 :::
 
-# The map finds the errors {background-image="images/atlas-screenshot.png" background-opacity="0.3"}
+# The map finds the errors {background-image="images/atlas-screenshot.png" background-opacity="0.15"}
 
 ## Three errors
 
@@ -322,6 +335,8 @@ No map shows a missed merge. For that: 200 hand-labelled cases, risky strata ove
 :::: {.columns}
 ::: {.column width="55%"}
 ![](images/review-screenshot.png)
+
+![](images/qr-review.png){height="200" fig-alt="QR code for the decision exercise"}
 :::
 ::: {.column width="45%"}
 **jimclifford.ca/imperial-careers-workshop/review/**
@@ -346,7 +361,7 @@ Zoom: **Copy summary for chat**.
 - Fix the rule, not the record. Make the correction a test
 - A frontier model writes the pipeline; a cheap one reads the collection
 
-## Three questions {background-image="images/atlas-screenshot.png" background-opacity="0.25"}
+## Three questions {background-image="images/atlas-screenshot.png" background-opacity="0.1"}
 
 | | | You decide |
 |---|---|---|
@@ -354,6 +369,6 @@ Zoom: **Copy summary for chat**.
 | [Clean]{.gold} | One person or two? | Merge, keep apart, review |
 | [Ground]{.gold} | Which place, which person? | Supported, unresolved, wrong |
 
-<br>
+![](images/qr-site.png){height="150" fig-alt="QR code for the workshop site"}
 
 **jimclifford.ca/imperial-careers-workshop** · glossary, answers, both exercises · data **jimclifford.ca/col_matching**

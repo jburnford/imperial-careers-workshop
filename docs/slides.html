@@ -127,7 +127,7 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-image="images/atlas-screenshot.png" data-background-opacity="0.35" class="quarto-title-block center">
+<section id="title-slide" data-background-image="images/atlas-screenshot.png" data-background-opacity="0.15" class="quarto-title-block center">
   <h1 class="title">Cleaning, Structuring and Grounding Historical Data</h1>
   <p class="subtitle">One dataset, start to finish, with a coding agent</p>
 
@@ -139,7 +139,7 @@ Jim Clifford, University of Saskatchewan
 </div>
 </div>
 
-  <p class="date">2026-10-15</p>
+  <p class="date">15 October 2026</p>
 </section>
 <section id="section" class="slide level2" data-background-video="https://jimclifford.ca/col_matching/combined_mobility.mp4" data-background-video-muted="true" data-background-image="images/combined-mobility-frame.jpg" data-background-size="cover">
 <h2></h2>
@@ -261,10 +261,10 @@ Jim Clifford, University of Saskatchewan
 <li>1861 “high commissioner” → <strong>Union of South Africa</strong>, seated at Bloemfontein. The Union dates from 1910. In 1861 he was high commissioner <em>for</em> South Africa, from Cape Town.</li>
 <li>1851 “Honduras” → seat <strong>Belmopan</strong>, a capital founded in 1970.</li>
 </ul>
-<p><span class="gold">Seen on the map. Fixed in a rule. Rerun for everyone.</span></p>
+<p><span class="gold">Seen on the map. Next: fix the rule, rerun for everyone.</span></p>
 </div></div>
 <aside class="notes">
-<p>Found while preparing this slide, 7 October 2026. Both records (CO and IO) have errors visible in the panel; the IO record also inherits British Guiana for Honduras. These go on the fixes list. That is the method.</p>
+<p>Found while preparing this slide, 7 October 2026. Not yet fixed in col_matching: say so. Both records (CO and IO) have errors visible in the panel; the IO record also inherits British Guiana for Honduras. The 1861 row is a side-effect of the South Africa fix on slide 26: the patched cache sends the bare surface “South Africa” (38 events) to Q193619, the Union, and pre-1910 that is wrong. The fix for one error made the next one; that is why you look again at everyone a rule touched.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -334,7 +334,8 @@ Jim Clifford, University of Saskatchewan
 </tbody>
 </table>
 <p><br></p>
-<p>Five institutions and a grant. Of the places it found, six in ten were right; of the places there, it found six in ten. One historian and a coding agent.</p>
+<p>Five institutions and a grant. Of the places it found, six in ten were right; of the places there, it found six in ten.</p>
+<p>One historian and a coding agent.</p>
 <aside class="notes">
 <p>Clifford, Alex, Coates, Klein, Watson, Historical Methods 2016. 10.5 million pages. F-scores 0.62 commodities, 0.61 locations: precision and recall both about 0.6. What changed is who writes the pipeline and how fast the loop runs; what did not change is where the historian is needed.</p>
 <style type="text/css">
@@ -398,7 +399,9 @@ Jim Clifford, University of Saskatchewan
 <blockquote>
 <p>BALMER, F. E.—Dep. chief acctnt., G.P.O., E. Africa Prot., Mar., 1919; ch.&nbsp;acctnt., G.P.O., Kenya, Oct., 1919; ch.&nbsp;acctnt., Kenya-Uganda-Tanganyika post and tel. service, 1933; senr. dep. P.M.G., <mark>do.</mark>, 1935.</p>
 </blockquote>
-<p>85 volumes, 1883 to 1966. 1,400 to 2,900 entries in each. The same man in forty of them.</p>
+<p>85 volumes, 1883 to 1966.<br>
+1,400 to 2,900 entries in each.<br>
+The same man in forty of them.</p>
 <aside class="notes">
 <p>Record of the Public Services of Officers. Cumulative. OCR’d with olmOCR; we begin after OCR.</p>
 <style type="text/css">
@@ -415,7 +418,12 @@ Jim Clifford, University of Saskatchewan
 </section>
 <section id="mark-one-up" class="slide level2">
 <h2>Mark one up</h2>
-<p><img data-src="images/annotate-screenshot.png" height="520"></p>
+<div class="columns">
+<div class="column" style="width:72%;">
+<p><img data-src="images/annotate-screenshot.png"></p>
+</div><div class="column" style="width:28%;">
+<p><img data-src="images/qr-annotate.png" alt="QR code for the mark-up exercise" width="240"></p>
+</div></div>
 <p><strong>jimclifford.ca/imperial-careers-workshop/annotate/</strong> or the paper. Three minutes.</p>
 </section>
 <section>
@@ -483,11 +491,13 @@ Jim Clifford, University of Saskatchewan
 </blockquote>
 <p>Every rule is there because a run broke it.</p>
 </section>
-<section id="every-tenth-record-read-against-the-source" class="slide level2">
-<h2>Every tenth record, read against the source</h2>
+<section id="samples-read-against-the-source" class="slide level2">
+<h2>Samples read against the source</h2>
 <div class="big">
-<p><span class="gold">186</span> sampled · <span class="gold">69%</span> clean · <span class="gold">3%</span> major</p>
+<p>Early entries: <span class="gold">69%</span> clean<br>
+Across the corpus: <span class="gold">about 50%</span> clean, <span class="gold">9%</span> major</p>
 </div>
+<p>Three samples (186, 100, 300), read by a model against the source, before the rule fixes.</p>
 <table class="caption-top">
 <colgroup>
 <col style="width: 50%">
@@ -537,7 +547,8 @@ Jim Clifford, University of Saskatchewan
 <p>A missed link is recoverable. A false merge is not. <span class="gold">Ties resolve to no merge.</span></p>
 </div>
 <p><br></p>
-<p>Deterministic passes first: zero false merges on 543 hand-checked careers. Then a model argues each leftover cluster from a dossier. 917 so far, each with its reason.</p>
+<p>Deterministic passes first.<br>
+Then a model argues each leftover cluster from a dossier. 917 so far, each with its reason.</p>
 </section>
 <section id="two-clusters" class="slide level2">
 <h2>Two clusters</h2>
@@ -622,7 +633,7 @@ Judd School · Nigeria, telegraph engineer</p>
 <tr class="odd">
 <td>People right</td>
 <td><span class="gold">0</span> of 16</td>
-<td>12 of 12 given</td>
+<td>12 given; Opus confirms all 12</td>
 <td><span class="gold">16</span> of 16</td>
 <td><span class="gold">16</span> of 16</td>
 </tr>
@@ -659,7 +670,7 @@ Judd School · Nigeria, telegraph engineer</p>
       }</style></aside>
 </section></section>
 <section>
-<section id="the-map-finds-the-errors" class="title-slide slide level1 center" data-background-image="images/atlas-screenshot.png" data-background-opacity="0.3">
+<section id="the-map-finds-the-errors" class="title-slide slide level1 center" data-background-image="images/atlas-screenshot.png" data-background-opacity="0.15">
 <h1>The map finds the errors</h1>
 
 </section>
@@ -712,6 +723,7 @@ Judd School · Nigeria, telegraph engineer</p>
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><img data-src="images/review-screenshot.png"></p>
+<p><img data-src="images/qr-review.png" alt="QR code for the decision exercise" height="200"></p>
 </div><div class="column" style="width:45%;">
 <p><strong>jimclifford.ca/imperial-careers-workshop/review/</strong></p>
 <p><span class="gold">Structure</span> Blakely, Balmer<br>
@@ -734,7 +746,7 @@ Zoom: <strong>Copy summary for chat</strong>.</p>
 <li>A frontier model writes the pipeline; a cheap one reads the collection</li>
 </ul>
 </section>
-<section id="three-questions-1" class="slide level2" data-background-image="images/atlas-screenshot.png" data-background-opacity="0.25">
+<section id="three-questions-1" class="slide level2" data-background-image="images/atlas-screenshot.png" data-background-opacity="0.1">
 <h2>Three questions</h2>
 <table class="caption-top">
 <colgroup>
@@ -767,7 +779,7 @@ Zoom: <strong>Copy summary for chat</strong>.</p>
 </tr>
 </tbody>
 </table>
-<p><br></p>
+<p><img data-src="images/qr-site.png" alt="QR code for the workshop site" height="150"></p>
 <p><strong>jimclifford.ca/imperial-careers-workshop</strong> · glossary, answers, both exercises · data <strong>jimclifford.ca/col_matching</strong></p>
 
 
@@ -986,6 +998,18 @@ Zoom: <strong>Copy summary for chat</strong>.</p>
           RevealZoom
         ]
       });
+    </script>
+    <script>
+    // Site QR code on the title slide, for the room and for Zoom screens.
+    (function () {
+      var t = document.getElementById('title-slide');
+      if (!t) return;
+      var img = document.createElement('img');
+      img.src = 'images/qr-site.png';
+      img.alt = 'QR code for jimclifford.ca/imperial-careers-workshop';
+      img.style.cssText = 'position:absolute;right:0;bottom:40px;width:190px;height:190px;margin:0';
+      t.appendChild(img);
+    })();
     </script>
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {

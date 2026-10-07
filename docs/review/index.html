@@ -24,7 +24,7 @@
 <body>
 <h1>Review exercise: seven decisions from Imperial Careers</h1>
 <p class="meta">AI and History Conference, 15 October 2026. Seven decisions from the Imperial Careers pipeline (the <em>Colonial Office List</em> as structured data): two about structuring a record, two about whether two entries are one person, two about grounding a place, and an extra about grounding a person. Each is a real case from the project's audits, with the evidence the historian had. Your answers stay in this browser until you download or copy them; nothing is sent anywhere.</p>
-<p>For each case: read the passage (the scan is one click away), look at what the model or the pipeline proposed, weigh the evidence, and record a decision with a reason. "Unresolved" is a legitimate answer when the evidence does not settle it; say what would.</p>
+<p>For each case: read the passage, look at what the model or the pipeline proposed, weigh the evidence, and record a decision with a reason. "Unresolved" is a legitimate answer when the evidence does not settle it; say what would.</p>
 
 <div class="toolbar">
   <label>Your name or initials: <input type="text" id="reviewer" placeholder="optional"></label>
@@ -55,7 +55,7 @@
     const sec = document.createElement('section');
     sec.innerHTML = `
       <h2>${c.id}. ${esc(c.title)} <span style="font-weight:normal;color:#777;font-size:0.8em">${esc(c.principle || '')}</span></h2>
-      <p class="meta">${esc(c.source_label)}. <a href="${esc(c.source_url)}" target="_blank" rel="noopener">Open the scan</a></p>
+      <p class="meta">${esc(c.source_label)}. <a href="${esc(c.source_url)}" target="_blank" rel="noopener">Open the source note</a></p>
       <blockquote>${esc(c.source_quote)}</blockquote>
       <p class="proposal"><strong>Proposed:</strong> ${md(c.proposal)}</p>
       <div class="cols">
@@ -65,7 +65,7 @@
       <p><strong>${esc(c.question)}</strong><br>
         ${['accept','reject','unresolved'].map(o => `<label class="opt"><input type="radio" name="d_${c.id}" value="${o}"> ${o}</label>`).join('')}
       </p>
-      <textarea id="r_${c.id}" placeholder="Your reason, in a sentence. What evidence decided it, or what would?"></textarea>`;
+      <textarea id="r_${c.id}" aria-label="Reason for ${c.id}" placeholder="Your reason, in a sentence. What evidence decided it, or what would?"></textarea>`;
     root.appendChild(sec);
     const s = state[c.id] || {};
     if (s.decision) sec.querySelector(`input[value="${s.decision}"]`).checked = true;
@@ -107,7 +107,7 @@
     }
     const blob = new Blob([rows.map(r => r.join('\t')).join('\n') + '\n'], { type: 'text/tab-separated-values' });
     const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
-    a.download = `trimen_review_${(state._reviewer || 'anon').replace(/\W+/g, '_')}_${new Date().toISOString().slice(0,10)}.tsv`;
+    a.download = `imperial_careers_review_${(state._reviewer || 'anon').replace(/\W+/g, '_')}_${new Date().toISOString().slice(0,10)}.tsv`;
     a.click();
   };
   document.getElementById('clear').onclick = () => {

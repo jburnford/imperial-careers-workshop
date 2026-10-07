@@ -237,7 +237,7 @@ Terms on this page
 </div>
 <section id="the-problem" class="level2">
 <h2 class="anchored" data-anchor-id="the-problem">The problem</h2>
-<p>Trimen has an entry in seven editions. A long-serving official has one in forty. Across 85 volumes the Record of Services yields on the order of 100,000 entry instances that have to be resolved into 27,526 people. Most of that is easy: the same surname, the same given names, the same career a line longer each year. The rest is where the OCR has rewritten a surname, a man has changed his title, or two men share a name.</p>
+<p>Trimen has an entry in seven editions. A long-serving official has one in forty. Across 85 volumes the Record of Services yields 199,099 printed entry instances that have to be resolved into 27,526 people. Most of that is easy: the same surname, the same given names, the same career a line longer each year. The rest is where the OCR has rewritten a surname, a man has changed his title, or two men share a name.</p>
 <p>The design rule, stated before any code was written (<a href="../outputs/identity/approach-career-chains.md">approach</a>):</p>
 <blockquote class="blockquote">
 <p>A missed link is recoverable; a false merge silently corrupts the record. Every default resolves ties to <em>no merge</em>.</p>
@@ -246,7 +246,7 @@ Terms on this page
 <section id="the-passes" class="level2">
 <h2 class="anchored" data-anchor-id="the-passes">The passes</h2>
 <ol type="1">
-<li><strong>Deterministic passes</strong> merge on strong keys: identical name and birth year, identical name and a shared dated event, and so on. They did most of the work and were tested against 543 hand-verified careers with zero false merges.</li>
+<li><strong>Deterministic passes</strong> merge on strong keys: identical name and birth year, identical name and a shared dated event, and so on. They did most of the work.</li>
 <li><strong>Clustering</strong> the residue: biographies that share a spelled forename and the last four letters of the surname land together, so OCR variants of one person meet.</li>
 <li><strong>Adjudication</strong> of each cluster by a model reading a dossier: every version of every biography, with birth year, education, honours, the full dated career. The output is a partition into people with a reason for each merge, appended to a ledger (<a href="../outputs/identity/dedup-method-and-rules.md">rules and loop</a>, <a href="../outputs/identity/llm-merges-first25.json">first 25 ledger entries</a>). 917 groups so far.</li>
 <li><strong>A silver standard</strong> of 200 hand-labelled cases, built afterwards, to measure what the passes and the judge actually did. On the India Office List the deterministic tier scored 39 of 40 (one unsure).</li>

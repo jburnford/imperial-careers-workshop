@@ -8,7 +8,7 @@ subtitle: "Read after you have decided. Where more than one reading remains poss
 - **manifest join, containment**: matching printed names against a table of historical polities; accepting a match because one name occurs inside another.
 - **ledger, dossier**: the file of merge decisions with reasons; the evidence laid out for one cluster.
 
-All terms: [glossary](../glossary.qmd).
+All terms: [glossary](glossary.qmd).
 :::
 
 These are the preparer's answers with the evidence, drawn from the Imperial Careers project's own audits. Each decision is for the record in front of you.

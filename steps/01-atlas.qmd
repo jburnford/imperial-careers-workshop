@@ -1,6 +1,6 @@
 ---
 title: "The atlas"
-subtitle: "Minutes 0–5. What the finished data does, and the loop that made it."
+subtitle: "Minutes 0–7. What the finished data does, and the loop that made it."
 ---
 
 ::: {.callout-note collapse="true" title="Terms on this page"}
@@ -63,7 +63,7 @@ The atlas's own panel for the same record, captured on 7 October 2026 while this
 Three rows are wrong, and each is a rule, not a typo:
 
 - **1858, "employed on a special mission" → Union of South Africa.** The source says Venezuela. Venezuela is not a colony, so the event had no colony of its own and fell through to the next one. The rule that rolls placeless events forward needs a stop for foreign missions.
-- **1861, "high commissioner" → Union of South Africa, seated at Bloemfontein.** The Union dates from 1910. In 1861 he was high commissioner *for* South Africa, from Cape Town. The surface "South Africa" was grounded to the twentieth-century state; the period entity is the office, not a polity.
+- **1861, "high commissioner" → Union of South Africa, seated at Bloemfontein.** The Union dates from 1910. In 1861 he was high commissioner *for* South Africa, from Cape Town. The surface "South Africa" was grounded to the twentieth-century state; the period entity is the office, not a polity. This one was made by a fix: the South Africa repair in [step 6](06-loop.qmd) sent the bare surface "South Africa" to the Union for every year.
 - **1851, "Honduras" → seat Belmopan.** A capital founded in 1970. The seat table needs a date-aware entry for Belize Town.
 
 The India Office record of the same man has a fourth: "superintendent of Honduras" inherits British Guiana, because its place was left empty and the inheritance rule filled it from the wrong direction. All four go on the fixes list; the fix will apply to every official the rules touched, and the atlas will be rebuilt. This is the loop, and it was running while the slide was made.

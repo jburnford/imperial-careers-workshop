@@ -1,0 +1,12 @@
+<script>
+// Site QR code on the title slide, for the room and for Zoom screens.
+(function () {
+  var t = document.getElementById('title-slide');
+  if (!t) return;
+  var img = document.createElement('img');
+  img.src = 'images/qr-site.png';
+  img.alt = 'QR code for jimclifford.ca/imperial-careers-workshop';
+  img.style.cssText = 'position:absolute;right:0;bottom:40px;width:190px;height:190px;margin:0';
+  t.appendChild(img);
+})();
+</script>

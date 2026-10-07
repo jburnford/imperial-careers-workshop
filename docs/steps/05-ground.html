@@ -296,7 +296,7 @@ Terms on this page
 </tbody>
 </table>
 <p>The matches are the famous, low-numbered items: Paris, Canada, Singapore, Churchill. Nyasaland resolved to a disambiguation page, the Straits Settlements to a Danish triathlete, the Cape Colony to an Austrian goalkeeper, Joseph Chamberlain to a Swiss footballer. The model knew who; it did not know the number. A Q-number from memory is a string the model has seen near a name, and nothing in the response tells you which ones resolve.</p>
-<p>The same day, the same twenty entries went to Claude Opus 5.5 in a chat with web search, told to report only identifiers it had seen on a page (<a href="../outputs/ground-test/opus-response.md">response</a>, <a href="../outputs/ground-test/opus-scoring.md">scoring</a>). Sixteen identifiers given, sixteen right, the same four declined. It found Prince, whom the vector search had missed, and it found that Gorges has two Wikidata items for one man. It also stopped at its tool limit before reaching a single place name; a second pass finished the schools and the other people and reached 17 of 138 places (<a href="../outputs/ground-test/opus-grounding.csv">CSV</a>, 75 identifiers, all verified). Its first memory guess for George V was Q269, which is Tashkent; it caught that itself by reading the page.</p>
+<p>The same day, the same twenty entries went to Claude Opus 5.5 in a chat with web search, with the same prompt; it reported only identifiers it had seen on a page (<a href="../outputs/ground-test/opus-response.md">response</a>, <a href="../outputs/ground-test/opus-scoring.md">scoring</a>). Sixteen identifiers given, sixteen right, the same four declined. It found Prince, whom the vector search had missed, and it found that Gorges has two Wikidata items for one man. It also stopped at its tool limit before reaching a single place name; a second pass finished the schools and the other people and reached 17 of 138 places (<a href="../outputs/ground-test/opus-grounding.csv">CSV</a>, 75 identifiers, all verified). Its first memory guess for George V was Q269, which is Tashkent; it caught that itself by reading the page.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 20%">
@@ -318,7 +318,7 @@ Terms on this page
 <tr class="odd">
 <td>Person identifiers correct</td>
 <td>0 of 16</td>
-<td>12 of 12 given; 8 ungrounded, of which 4 have items</td>
+<td>12 given, all 12 confirmed by the Opus run independently (Gorges via a duplicate item); 8 ungrounded, of which 4 have items</td>
 <td>16 of 16 given</td>
 <td>16 of 16 given</td>
 </tr>

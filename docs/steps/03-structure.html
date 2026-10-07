@@ -378,23 +378,44 @@ Return ONE JSON object with EXACTLY these top-level keys: surname, given_names, 
 </section>
 <section id="the-audit" class="level2">
 <h2 class="anchored" data-anchor-id="the-audit">The audit</h2>
-<p>Every tenth structured record was read against its source by a reviewer model and the findings categorised (<a href="../outputs/audit/struct-error-catalog.md">catalogue</a>, <a href="../outputs/audit/every10-reviewed-pairs.json">reviewed pairs</a>). Of the first 186 sampled:</p>
+<p>Structured records were read against their source by a reviewer model, in three rounds, and the findings categorised (<a href="../outputs/audit/struct-error-catalog.md">catalogue</a>, <a href="../outputs/audit/every10-reviewed-pairs.json">round 1 pairs</a>). The figures are before the post-normaliser described below:</p>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Round</th>
+<th>Sample</th>
+<th>Fully clean</th>
+<th>Major error</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td>Fully clean</td>
+<td>1</td>
+<td>every tenth of the first 1,859 records: 186</td>
 <td>129 (69%)</td>
+<td>8 (about 3%)</td>
 </tr>
 <tr class="even">
-<td>Records with a finding</td>
-<td>56</td>
+<td>2</td>
+<td>100 spread across the corpus</td>
+<td>51 (51%)</td>
+<td>9 (about 9%)</td>
 </tr>
 <tr class="odd">
-<td>Findings judged major</td>
-<td>8 (about 3% of records)</td>
+<td>3</td>
+<td>300 spread across the corpus</td>
+<td>about 149 (50%)</td>
+<td>not tallied</td>
 </tr>
 </tbody>
 </table>
+<p>Round 1 was front-loaded on early, simple entries; the later rounds reach the dense twentieth-century careers and the peerage entries, and are the better estimate. A model did the reading in all three; the examples below were checked by hand.</p>
 <p>Three of the findings, source beside record (<a href="../outputs/structure/audit-examples.json">saved</a>):</p>
 <p><strong>The ditto that was not resolved.</strong> Balmer’s last clause, “senr. dep. P.M.G., do., 1935”, came back with <code>place: "do."</code>. The rule says inherit; the model copied the abbreviation.</p>
 <p><strong>The appointment date that became a birth year.</strong> “BLAKELY, DONALD QUENTIN.—Clk., atty.-gen.’s off., B. Honduras, Apl., 1898.” came back with <code>birth_year: 1898</code> and an event with no year. The prompt forbids exactly this. The same record expanded “off.” to “officer” instead of “office”.</p>

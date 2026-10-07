@@ -1,6 +1,6 @@
 ---
 title: "The source"
-subtitle: "Minutes 5–12. One printed entry, and what you would extract from it."
+subtitle: "Minutes 7–12. One printed entry, and what you would extract from it."
 ---
 
 ::: {.callout-note collapse="true" title="Terms on this page"}

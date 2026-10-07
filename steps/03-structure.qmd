@@ -80,13 +80,15 @@ Plus `education: "M.B. (Lond.)"`, two honours without years, no birth year, no t
 
 ## The audit
 
-Every tenth structured record was read against its source by a reviewer model and the findings categorised ([catalogue](../outputs/audit/struct-error-catalog.md), [reviewed pairs](../outputs/audit/every10-reviewed-pairs.json)). Of the first 186 sampled:
+Structured records were read against their source by a reviewer model, in three rounds, and the findings categorised ([catalogue](../outputs/audit/struct-error-catalog.md), [round 1 pairs](../outputs/audit/every10-reviewed-pairs.json)). The figures are before the post-normaliser described below:
 
-| | |
-|---|---|
-| Fully clean | 129 (69%) |
-| Records with a finding | 56 |
-| Findings judged major | 8 (about 3% of records) |
+| Round | Sample | Fully clean | Major error |
+|---|---|---|---|
+| 1 | every tenth of the first 1,859 records: 186 | 129 (69%) | 8 (about 3%) |
+| 2 | 100 spread across the corpus | 51 (51%) | 9 (about 9%) |
+| 3 | 300 spread across the corpus | about 149 (50%) | not tallied |
+
+Round 1 was front-loaded on early, simple entries; the later rounds reach the dense twentieth-century careers and the peerage entries, and are the better estimate. A model did the reading in all three; the examples below were checked by hand.
 
 Three of the findings, source beside record ([saved](../outputs/structure/audit-examples.json)):
 
