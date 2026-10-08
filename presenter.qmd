@@ -23,7 +23,7 @@ Lead with what the dataset makes possible: following careers across editions and
 |---|---|---|
 | 0–7 | Video; Wodehouse source-to-map; one career across two Lists; what the records make visible; three questions | Keep the cross-service example; shorten the table walkthrough |
 | 7–13 | Balmer: three minutes tagging the last two postings, one minute comparing, one minute discussing | Keep everyone on Balmer; no tour of the other entries |
-| 13–23 | Hybrid extraction, prompt, source-reading examples from an earlier audit, a past correction replayed and checked | Show the saved replay instead of running the command |
+| 13–23 | Show Claude Code the raw OCR; explain why regular expressions alone were insufficient; develop the hybrid; prompt, source check and saved correction | Keep the source discussion and division of work; use the saved replay |
 | 23–30 | Abery/Carbery decision before reveal; A’Beckett/Beckett contrast | Keep the first decision; shorten the second example |
 | 30–40 | Three lookups (maximum four minutes); saved chatbot comparison; model roles and cost | Use saved lookups; do not start a live chatbot run |
 | 40–46 | Brewster: two completed repairs, geography and event meaning; how to check beyond a map | Keep the source decision and completed result; leave other repair examples on the supporting page |
@@ -31,6 +31,19 @@ Lead with what the dataset makes possible: following careers across editions and
 | 56–60 | One sentence about participants’ own records, questions, take-home links | Use the written take-home prompt on step 7 |
 
 The detailed pages contain more examples than the hour. Trading Consequences, the full Wodehouse trace and repair history, two additional clusters and the other past map errors are supporting material. Keep the detailed audit percentages available for questions; the presentation teaches the review method through source clauses.
+
+## Walk through the development process
+
+The Python/model/Python table is the result of the design discussion. Begin with what actually happened: I showed Claude Code raw OCR, discussed whether Python could handle it alone, and developed the hybrid approach with it.
+
+- **13–14:** show the raw Balmer excerpt. Participants have just marked it up, so ask what their reading requires the program to know.
+- **14–16:** identify the familiar historical problem: semi-structured records whose prose is too irregular for regular expressions alone. Use inherited places, the meaning of a date and concurrent appointments. OCR adds variation, but the source itself is irregular.
+- **16–17:** explain how the work was divided. Agree the fields; try examples; keep reliable rules in Python; use a model for difficult clauses; validate with Python. Claude Code helped develop and write this pipeline. Qwen read entries inside it.
+- **17–19:** show the prompt as the written result of those decisions.
+- **19–20:** compare saved outputs with their sources. Mention the 30,496-entry, 8.24-hour run after explaining the design and checks.
+- **20–23:** walk through the saved Balmer correction and its checks. Run the command only if there is time.
+
+Use the saved OCR block and prompt as concrete material. The proposed instruction on step 3 is wording participants can reuse; it is not a transcript of the original conversation. The raw block is from OCR page index 832, block index 11 of the 1936 volume; the printed page number is 614.
 
 ## The correction replay
 

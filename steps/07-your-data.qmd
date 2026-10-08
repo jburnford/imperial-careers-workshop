@@ -56,6 +56,6 @@ For your first trial, you do not need a university GPU. Use twenty records you c
 
 **Take-home instruction for your agent:**
 
-> Read these twenty entries. Propose a schema and return two examples before processing the rest. Keep a local record id and a source reference. Preserve the wording; put interpretations in separate fields. Show omissions, unresolved cases and validation failures. After my review, write a script that saves each result and can resume without repeating completed records.
+> Read these twenty raw entries. Explain which parts Python rules can handle reliably and which clauses need interpretation. Propose a hybrid approach, a schema and two example records before processing the rest. Keep a local record id and a source reference. Preserve the wording; put interpretations in separate fields. Show omissions, unresolved cases and validation failures. After my review, write a script that saves each result and can resume without repeating completed records.
 
 The presenter's environment uses Claude Code as the coding agent and the [WikidataMCP](https://wd-mcp.wmcloud.org/) server for lookups. Any coding agent that can run code, read files and call a lookup tool will do. See [Run it yourself](../setup.qmd).

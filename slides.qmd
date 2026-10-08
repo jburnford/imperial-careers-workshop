@@ -138,7 +138,43 @@ Three minutes, then compare:
 8–13. Three minutes marking, one minute comparing, one minute debrief. Ask one room participant and the chat monitor for a reason. Paper users circle the corresponding words. Protect this time. The remaining entries are take-home practice.
 :::
 
-## Structure: Python, a model, Python
+## Start with the raw OCR {.smaller}
+
+I showed **Claude Code** the text and discussed how to structure it.
+
+> ch. acctnt., Kenya-Uganda-Tanganyika post and tel. service, 1933; senr. dep. P.M.G., do., 1935.
+
+**Could Python do this on its own? What would the rules need to know?**
+
+Read a sample together. Agree what counts as a record and what fields to keep.
+
+[Balmer’s original OCR block](outputs/structure/balmer-raw-ocr.json)
+
+::: notes
+13–14. Start with the actual working process: I opened the raw OCR with Claude Code and discussed whether a Python parser could do the job. The displayed excerpt is copied directly from the 1936 raw OCR block, before abbreviation expansion. The saved file includes the original bounding box, OCR page index 832, block index 11 and printed page 614. This is a walkthrough of the process, not a recovered chat transcript. Use the Balmer exercise they just completed: they already know that “do.” refers back to a place. Ask what the code would need to preserve to reach the same reading. Claude Code helped inspect the source, discuss the approach and write the scripts; the historian decided what the fields meant.
+:::
+
+## Too irregular for regular expressions alone {.smaller}
+
+**A familiar historical problem: semi-structured data.**
+
+The fields recur. The wording and relationships vary.
+
+| Source wording | What needs interpretation |
+|---|---|
+| “do., 1935” | Which preceding place does this posting inherit? |
+| “B. Honduras, Apl., 1898” | An appointment date; “B.” belongs to the place name |
+| Trimen’s posts, 1867–1875 and 1869–1879 | Two concurrent jobs, not one sequence |
+
+Finding a year is easier than deciding **what it dates**.
+
+::: notes
+14–16. This is a source problem historians know well: recurring headings, names, dates and offices without a uniform sentence structure. OCR can add variation, but even perfectly transcribed entries contain elision, abbreviations, compound clauses and concurrent appointments. Regular expressions recognise specified patterns; increasingly elaborate rules did not cover the collection reliably. Python is still useful for segmentation, regular cases and checks. Explain the three rows: Balmer inherits the preceding service’s place; Blakely’s “B. Honduras” is British Honduras and April 1898 dates his clerkship; Trimen’s lecturer and British Museum posts overlap. The third example is in the saved Trimen source pack. The conclusion of our discussion was that Python rules alone were insufficient for this corpus. The hard part is binding the right position, place and date, not simply detecting a number.
+:::
+
+## Develop the hybrid with Claude Code {.smaller}
+
+Agree the fields → try examples → decide which work belongs in each stage.
 
 | | Job |
 |---|---|
@@ -146,10 +182,10 @@ Three minutes, then compare:
 | **2. Qwen3.6-35B** | Bind positions, places and dates across difficult clauses |
 | **3. Python** | Check the output; apply logged rules for recurring errors |
 
-**30,496 entries processed in 8.24 hours**
+**Claude Code helped build the pipeline. Qwen read the difficult entries.**
 
 ::: notes
-13–15. IOL run, 25–26 June, 16 workers, reasoning off, temperature zero. The frontier coding agent wrote the machinery; an open model read the collection. COL bulk run: 34,743 entries, about a day including setup. If asked about completion: 55 entries failed JSON validation in the IOL run. That is a format failure count, not a count of inaccurate records.
+16–17. Walk through the design as a division of work developed with Claude Code. First, keep Python where explicit rules are reliable; if a dated clause cannot be parsed, refuse the whole entry rather than silently omit it. Second, ask the model to interpret the difficult clauses within an agreed schema. Third, use Python to validate the result and log recurring corrections. One event has position, place, start/end years and an inheritance flag. Compare sample outputs with the OCR before increasing the run size. Claude Code was the interactive coding environment; Qwen3.6-35B was the model called by the corpus-reading script. The saved in-session runbook records how the reference examples were structured and validated.
 :::
 
 ## The prompt is the decisions
@@ -163,7 +199,7 @@ Three minutes, then compare:
 > **birth_year:** only if printed. NEVER infer from the earliest career date.
 
 ::: notes
-15–17. The first, second and fourth quotations are from the saved prompt; the place line summarises its inheritance rule, including the stop at a stated transfer. Link to the exact prompt on step 3. Ask: would “defeated in an election” count as an office held? Leave that distinction in mind for Brewster.
+17–19. This is what the discussion became: explicit instructions for the model inside the pipeline. The first, second and fourth quotations are from the saved prompt; the place line summarises its inheritance rule, including the stop at a stated transfer. Link to the exact prompt on step 3. Ask: would “defeated in an election” count as an office held? Leave that distinction in mind for Brewster.
 :::
 
 ## Read records against the source {.smaller}
@@ -178,8 +214,10 @@ Three minutes, then compare:
 
 Keep the source beside the record. Turn recurring findings into explicit rules.
 
+**Batch run: 30,496 entries in 8.24 hours.**
+
 ::: notes
-17–19. These are historical extraction outputs used to teach source reading, not a report of current defects. All three audits were read by a model; the displayed examples were checked by hand. The detailed sample counts remain on step 3 for questions; they do not measure finished-graph accuracy. Ask participants to explain each reading before moving to the Balmer replay. Valid JSON is not a correct biography. Some findings need individual review rather than a general rule.
+19–20. The model’s output still needs to be read against the source. These are historical extraction outputs used to teach that reading, not a report of current defects. All three audits were read by a model; the displayed examples were checked by hand. The detailed sample counts remain on step 3 for questions; they do not measure finished-graph accuracy. Ask participants to explain one reading before moving to the Balmer replay. Some findings need individual review rather than a general rule. The resulting hybrid processed 30,496 India Office entries in 8.24 hours, 25–26 June, with 16 workers, reasoning off and temperature zero. Put this scale result after the design and review process. If asked: 55 entries failed JSON validation, a format count rather than a count of inaccurate records.
 :::
 
 ## Replay a past correction {.smaller}
@@ -201,7 +239,7 @@ Keep the source beside the record. Turn recurring findings into explicit rules.
 [Saved before-and-after records](outputs/structure/ditto-fix-replay.json)
 
 ::: notes
-19–23. Run python3 scripts/demo_ditto_fix.py if useful; no model or network. Introduce this as a replay of an earlier correction using saved records. It is not a rerun of col_matching. The other eleven events and the saved Blakely and Connolly fields are unchanged: this demonstrates the scope of the ditto rule. The missing-predecessor checks are constructed tests, not historical records. Ask what else must be checked before applying this to the corpus: affected records, boundary cases, a fresh sample afterwards.
+20–23. Use the saved replay; run python3 scripts/demo_ditto_fix.py only if time allows. No model or network is needed. Introduce this as a replay of an earlier correction using saved records. It is not a rerun of col_matching. The other eleven events and the saved Blakely and Connolly fields are unchanged: this demonstrates the scope of the ditto rule. The missing-predecessor checks are constructed tests, not historical records. Ask what else must be checked before applying this to the corpus: affected records, boundary cases, a fresh sample afterwards.
 :::
 
 ## Clean: forty editions, one person
@@ -399,11 +437,11 @@ Decide. Give the evidence. Say what you would check next.
 
 ## Your first twenty records
 
-- Pick a question and a sample with a hard case.
-- Keep the source reference and printed wording.
-- Ask the agent for a schema and two examples; review them.
-- Run the sample, inspect the result, record a correction.
-- Rerun and check what else changed.
+- Show the coding agent your raw text, including a hard case.
+- Discuss what Python rules can handle and what needs interpretation.
+- Agree a schema and review two examples against the source.
+- Build the hybrid; run a small sample and record corrections.
+- Rerun, check what changed, then measure a larger run.
 
 **Write one sentence: what counts as a record in your collection?**
 

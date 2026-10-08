@@ -215,7 +215,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-shape-of-it" id="toc-the-shape-of-it" class="nav-link active" data-scroll-target="#the-shape-of-it">The shape of it</a></li>
+  <li><a href="#start-by-showing-claude-code-the-raw-ocr" id="toc-start-by-showing-claude-code-the-raw-ocr" class="nav-link active" data-scroll-target="#start-by-showing-claude-code-the-raw-ocr">Start by showing Claude Code the raw OCR</a></li>
+  <li><a href="#why-regular-expressions-alone-were-insufficient" id="toc-why-regular-expressions-alone-were-insufficient" class="nav-link" data-scroll-target="#why-regular-expressions-alone-were-insufficient">Why regular expressions alone were insufficient</a></li>
+  <li><a href="#develop-and-check-the-hybrid" id="toc-develop-and-check-the-hybrid" class="nav-link" data-scroll-target="#develop-and-check-the-hybrid">Develop and check the hybrid</a></li>
   <li><a href="#the-schema" id="toc-the-schema" class="nav-link" data-scroll-target="#the-schema">The schema</a></li>
   <li><a href="#the-prompt-exactly-as-sent" id="toc-the-prompt-exactly-as-sent" class="nav-link" data-scroll-target="#the-prompt-exactly-as-sent">The prompt, exactly as sent</a></li>
   <li><a href="#the-overnight-run" id="toc-the-overnight-run" class="nav-link" data-scroll-target="#the-overnight-run">The overnight run</a></li>
@@ -233,7 +235,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Structure</h1>
-<p class="subtitle lead">Minutes 13–23. What is a record here? Python takes the regular entries, a cheap model takes the rest overnight, Python checks the result; you decide what counts as an event.</p>
+<p class="subtitle lead">Minutes 13–23. From raw OCR to a hybrid workflow, developed with Claude Code.</p>
 </div>
 
 
@@ -279,9 +281,55 @@ Terms on this page
 </div>
 </div>
 </div>
-<section id="the-shape-of-it" class="level2">
-<h2 class="anchored" data-anchor-id="the-shape-of-it">The shape of it</h2>
-<p>Structuring the biographies was never “send them to a model”. It was a hybrid, in three parts, and the same three parts ran twice: once for the Colonial Office List in June 2026, once for the India Office List a week later.</p>
+<section id="start-by-showing-claude-code-the-raw-ocr" class="level2">
+<h2 class="anchored" data-anchor-id="start-by-showing-claude-code-the-raw-ocr">Start by showing Claude Code the raw OCR</h2>
+<p>I began by showing Claude Code the raw OCR and discussing whether Python could structure it on its own. We read examples, discussed what a record should contain, and worked out where explicit rules would be reliable and where the text needed interpretation.</p>
+<p>Balmer’s original OCR block, before abbreviation expansion:</p>
+<blockquote class="blockquote">
+<p>BALMER, F. E.—Dep. chief acctnt., G.P.O., E. Africa Prot., Mar., 1919; ch.&nbsp;acctnt., G.P.O., Kenya, Oct., 1919; ch.&nbsp;acctnt., Kenya-Uganda-Tanganyika post and tel. service, 1933; senr. dep. P.M.G., do., 1935.</p>
+</blockquote>
+<p>The <a href="../outputs/structure/balmer-raw-ocr.json">saved raw block</a> retains its bounding box and source location: the 1936 volume, printed page 614, OCR page index 832, block index 11. The OCR page index and printed page number differ.</p>
+<p>For a similar discussion with your coding agent, start with:</p>
+<blockquote class="blockquote">
+<p>Read this OCR sample. What could Python extract reliably using explicit rules? Show the clauses those rules would struggle with. Propose fields and two example records, then explain how Python and a model could share the work.</p>
+</blockquote>
+</section>
+<section id="why-regular-expressions-alone-were-insufficient" class="level2">
+<h2 class="anchored" data-anchor-id="why-regular-expressions-alone-were-insufficient">Why regular expressions alone were insufficient</h2>
+<p>This is a familiar problem for historians: <strong>semi-structured data</strong>. Names, offices, places and dates recur, but their relationships are expressed in varied prose. The irregularity belongs to the source as well as to the OCR.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Example</th>
+<th>What a reading must establish</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Balmer: “senr. dep. P.M.G., do., 1935”</td>
+<td>The new position inherits the preceding place</td>
+</tr>
+<tr class="even">
+<td>Blakely: “B. Honduras, Apl., 1898”</td>
+<td>“B.” abbreviates British Honduras; April 1898 dates the appointment</td>
+</tr>
+<tr class="odd">
+<td>Trimen: lecturer, 1867–1875; British Museum assistant, 1869–1879</td>
+<td>Two appointments overlap; one does not end when the other begins</td>
+</tr>
+</tbody>
+</table>
+<p>A regular expression can recognise a year or a specified abbreviation. Binding that year to the correct posting, carrying a place across an omitted phrase, or separating concurrent jobs needs more context. A fixed grammar could handle the regular cases, but adding exceptions did not make it a reliable parser for the whole collection.</p>
+<p>Python remained useful for splitting the input, parsing regular clauses, managing the run and checking outputs. We developed a hybrid so a model could read the difficult clauses within an agreed structure.</p>
+</section>
+<section id="develop-and-check-the-hybrid" class="level2">
+<h2 class="anchored" data-anchor-id="develop-and-check-the-hybrid">Develop and check the hybrid</h2>
+<p>The collaboration with Claude Code produced the schema, Python stages and extraction prompt. We settled the fields on a sample, inspected example records against their source, and revised the rules. The <a href="../outputs/structure/structuring-loop-runbook.md">in-session runbook</a> records batches of reference examples followed by Python validation. The model inside the eventual batch script was Qwen; Claude Code was the environment used to develop the machinery.</p>
+<p>The resulting workflow had three parts. It ran for the Colonial Office List in June 2026 and for the India Office List a week later:</p>
 <ol type="1">
 <li><strong>Python first.</strong> A regex grammar for the printed entry shape parses what it can. It is all-or-nothing: if any clause containing a year fails to parse cleanly, the whole entry is refused rather than half-parsed. A second Python pass expands the abbreviations it recognises (“Feb.” to “February”, “acctnt.” to “accountant”) and leaves everything else exactly as printed.</li>
 <li><strong>A model for what Python cannot do.</strong> Binding position to place to time span across run-on, elided, “ditto” and concurrent clauses. One entry in, one JSON object out. For the Colonial Office List the first residue went to a batch API with a cheap commercial model; the bulk of both corpora went to an open model on a university GPU.</li>
@@ -368,7 +416,7 @@ Return ONE JSON object with EXACTLY these top-level keys: surname, given_names, 
 </section>
 <section id="two-kinds-of-model" class="level2">
 <h2 class="anchored" data-anchor-id="two-kinds-of-model">Two kinds of model</h2>
-<p>A frontier model, in session as the coding agent, structured about 200 entries by hand as the reference set and wrote everything in the list above. The open model inside the script read the corpus. Every record says which path produced it. The runbook for the in-session loop is <a href="../outputs/structure/structuring-loop-runbook.md">saved</a>.</p>
+<p>Claude in Claude Code structured about 200 entries in-session as the reference set and wrote the pipeline with the historian’s direction. The open model inside the script read the corpus. Every record says which path produced it. The runbook for the in-session loop is <a href="../outputs/structure/structuring-loop-runbook.md">saved</a>.</p>
 </section>
 <section id="what-came-back" class="level2">
 <h2 class="anchored" data-anchor-id="what-came-back">What came back</h2>

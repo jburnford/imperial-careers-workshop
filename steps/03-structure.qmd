@@ -1,6 +1,6 @@
 ---
 title: "Structure"
-subtitle: "Minutes 13–23. What is a record here? Python takes the regular entries, a cheap model takes the rest overnight, Python checks the result; you decide what counts as an event."
+subtitle: "Minutes 13–23. From raw OCR to a hybrid workflow, developed with Claude Code."
 ---
 
 ::: {.callout-note collapse="true" title="Terms on this page"}
@@ -19,9 +19,39 @@ subtitle: "Minutes 13–23. What is a record here? Python takes the regular entr
 All terms: [glossary](../glossary.qmd).
 :::
 
-## The shape of it
+## Start by showing Claude Code the raw OCR
 
-Structuring the biographies was never "send them to a model". It was a hybrid, in three parts, and the same three parts ran twice: once for the Colonial Office List in June 2026, once for the India Office List a week later.
+I began by showing Claude Code the raw OCR and discussing whether Python could structure it on its own. We read examples, discussed what a record should contain, and worked out where explicit rules would be reliable and where the text needed interpretation.
+
+Balmer’s original OCR block, before abbreviation expansion:
+
+> BALMER, F. E.—Dep. chief acctnt., G.P.O., E. Africa Prot., Mar., 1919; ch. acctnt., G.P.O., Kenya, Oct., 1919; ch. acctnt., Kenya-Uganda-Tanganyika post and tel. service, 1933; senr. dep. P.M.G., do., 1935.
+
+The [saved raw block](../outputs/structure/balmer-raw-ocr.json) retains its bounding box and source location: the 1936 volume, printed page 614, OCR page index 832, block index 11. The OCR page index and printed page number differ.
+
+For a similar discussion with your coding agent, start with:
+
+> Read this OCR sample. What could Python extract reliably using explicit rules? Show the clauses those rules would struggle with. Propose fields and two example records, then explain how Python and a model could share the work.
+
+## Why regular expressions alone were insufficient
+
+This is a familiar problem for historians: **semi-structured data**. Names, offices, places and dates recur, but their relationships are expressed in varied prose. The irregularity belongs to the source as well as to the OCR.
+
+| Example | What a reading must establish |
+|---|---|
+| Balmer: “senr. dep. P.M.G., do., 1935” | The new position inherits the preceding place |
+| Blakely: “B. Honduras, Apl., 1898” | “B.” abbreviates British Honduras; April 1898 dates the appointment |
+| Trimen: lecturer, 1867–1875; British Museum assistant, 1869–1879 | Two appointments overlap; one does not end when the other begins |
+
+A regular expression can recognise a year or a specified abbreviation. Binding that year to the correct posting, carrying a place across an omitted phrase, or separating concurrent jobs needs more context. A fixed grammar could handle the regular cases, but adding exceptions did not make it a reliable parser for the whole collection.
+
+Python remained useful for splitting the input, parsing regular clauses, managing the run and checking outputs. We developed a hybrid so a model could read the difficult clauses within an agreed structure.
+
+## Develop and check the hybrid
+
+The collaboration with Claude Code produced the schema, Python stages and extraction prompt. We settled the fields on a sample, inspected example records against their source, and revised the rules. The [in-session runbook](../outputs/structure/structuring-loop-runbook.md) records batches of reference examples followed by Python validation. The model inside the eventual batch script was Qwen; Claude Code was the environment used to develop the machinery.
+
+The resulting workflow had three parts. It ran for the Colonial Office List in June 2026 and for the India Office List a week later:
 
 1. **Python first.** A regex grammar for the printed entry shape parses what it can. It is all-or-nothing: if any clause containing a year fails to parse cleanly, the whole entry is refused rather than half-parsed. A second Python pass expands the abbreviations it recognises ("Feb." to "February", "acctnt." to "accountant") and leaves everything else exactly as printed.
 2. **A model for what Python cannot do.** Binding position to place to time span across run-on, elided, "ditto" and concurrent clauses. One entry in, one JSON object out. For the Colonial Office List the first residue went to a batch API with a cheap commercial model; the bulk of both corpora went to an open model on a university GPU.
@@ -64,7 +94,7 @@ The India Office List needed one new piece of code, a Python segmenter for its d
 
 ## Two kinds of model
 
-A frontier model, in session as the coding agent, structured about 200 entries by hand as the reference set and wrote everything in the list above. The open model inside the script read the corpus. Every record says which path produced it. The runbook for the in-session loop is [saved](../outputs/structure/structuring-loop-runbook.md).
+Claude in Claude Code structured about 200 entries in-session as the reference set and wrote the pipeline with the historian’s direction. The open model inside the script read the corpus. Every record says which path produced it. The runbook for the in-session loop is [saved](../outputs/structure/structuring-loop-runbook.md).
 
 ## What came back
 

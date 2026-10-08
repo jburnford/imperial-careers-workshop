@@ -217,6 +217,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#before-the-day" id="toc-before-the-day" class="nav-link active" data-scroll-target="#before-the-day">Before the day</a></li>
   <li><a href="#running-order" id="toc-running-order" class="nav-link" data-scroll-target="#running-order">Running order</a></li>
+  <li><a href="#walk-through-the-development-process" id="toc-walk-through-the-development-process" class="nav-link" data-scroll-target="#walk-through-the-development-process">Walk through the development process</a></li>
   <li><a href="#the-correction-replay" id="toc-the-correction-replay" class="nav-link" data-scroll-target="#the-correction-replay">The correction replay</a></li>
   <li><a href="#completed-repairs-as-teaching-examples" id="toc-completed-repairs-as-teaching-examples" class="nav-link" data-scroll-target="#completed-repairs-as-teaching-examples">Completed repairs as teaching examples</a></li>
   <li><a href="#the-live-lookup-and-saved-runs" id="toc-the-live-lookup-and-saved-runs" class="nav-link" data-scroll-target="#the-live-lookup-and-saved-runs">The live lookup and saved runs</a></li>
@@ -290,8 +291,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="odd">
 <td>13–23</td>
-<td>Hybrid extraction, prompt, source-reading examples from an earlier audit, a past correction replayed and checked</td>
-<td>Show the saved replay instead of running the command</td>
+<td>Show Claude Code the raw OCR; explain why regular expressions alone were insufficient; develop the hybrid; prompt, source check and saved correction</td>
+<td>Keep the source discussion and division of work; use the saved replay</td>
 </tr>
 <tr class="even">
 <td>23–30</td>
@@ -321,6 +322,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 <p>The detailed pages contain more examples than the hour. Trading Consequences, the full Wodehouse trace and repair history, two additional clusters and the other past map errors are supporting material. Keep the detailed audit percentages available for questions; the presentation teaches the review method through source clauses.</p>
+</section>
+<section id="walk-through-the-development-process" class="level2">
+<h2 class="anchored" data-anchor-id="walk-through-the-development-process">Walk through the development process</h2>
+<p>The Python/model/Python table is the result of the design discussion. Begin with what actually happened: I showed Claude Code raw OCR, discussed whether Python could handle it alone, and developed the hybrid approach with it.</p>
+<ul>
+<li><strong>13–14:</strong> show the raw Balmer excerpt. Participants have just marked it up, so ask what their reading requires the program to know.</li>
+<li><strong>14–16:</strong> identify the familiar historical problem: semi-structured records whose prose is too irregular for regular expressions alone. Use inherited places, the meaning of a date and concurrent appointments. OCR adds variation, but the source itself is irregular.</li>
+<li><strong>16–17:</strong> explain how the work was divided. Agree the fields; try examples; keep reliable rules in Python; use a model for difficult clauses; validate with Python. Claude Code helped develop and write this pipeline. Qwen read entries inside it.</li>
+<li><strong>17–19:</strong> show the prompt as the written result of those decisions.</li>
+<li><strong>19–20:</strong> compare saved outputs with their sources. Mention the 30,496-entry, 8.24-hour run after explaining the design and checks.</li>
+<li><strong>20–23:</strong> walk through the saved Balmer correction and its checks. Run the command only if there is time.</li>
+</ul>
+<p>Use the saved OCR block and prompt as concrete material. The proposed instruction on step 3 is wording participants can reuse; it is not a transcript of the original conversation. The raw block is from OCR page index 832, block index 11 of the 1936 volume; the printed page number is 614.</p>
 </section>
 <section id="the-correction-replay" class="level2">
 <h2 class="anchored" data-anchor-id="the-correction-replay">The correction replay</h2>

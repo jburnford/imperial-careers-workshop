@@ -4,13 +4,14 @@ One dataset: Imperial Careers, from source to structured records, identities and
 
 ## Running order
 
-Follow `presenter.qmd`: 0–7 atlas, cross-service career and scope; 7–13 Balmer mark-up; 13–23 structure, source reading and checked ditto replay; 23–30 identity decisions; 30–40 grounding and model/cost choices; 40–46 Brewster’s two completed repairs; 46–56 three saved teaching cases; 56–60 participants’ own data and questions.
+Follow `presenter.qmd`: 0–7 atlas, cross-service career and scope; 7–13 Balmer mark-up; 13–23 raw OCR, discussion with Claude Code, why regular expressions alone were insufficient, hybrid design and checked ditto replay; 23–30 identity decisions; 30–40 grounding and model/cost choices; 40–46 Brewster’s two completed repairs; 46–56 three saved teaching cases; 56–60 participants’ own data and questions.
 
 ## Decisions
 
 - Use Wodehouse to open with a career across two Lists. Distinguish source wording, historical identity and plotting proxy. Keep his repair history on the supporting page. Use September counts rather than the earlier video caption.
 - Keep cost and model choices: this audience misses the parallel session on those subjects.
 - Make the live lookup the only network-dependent demonstration. Have saved evidence ready. The optional ditto replay runs offline.
+- Walk through developing the extraction pipeline with Claude Code, starting from actual raw OCR. Explain semi-structured historical data as the reason regular expressions alone were insufficient. Introduce the Python/model/Python table after that discussion; put throughput after the design and source checks.
 - Demonstrate one correction on three saved records, with preservation and boundary checks. Do not claim a new production accuracy result.
 - Teach source reading with the saved pre-fix audit examples. Keep detailed audit rates on the supporting pages rather than foregrounding them in the deck.
 - Give participants R1 and R3 as recap, then R8 (Harris) as a fresh decision. Preserve the other five cases for further practice.

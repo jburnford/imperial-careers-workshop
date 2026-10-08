@@ -1,0 +1,20 @@
+{
+  "source": {
+    "project": "jburnford/col_matching",
+    "file": "raw_ocr/json/ColonialOfficeList1936.pdf/result.json",
+    "edition_year": 1936,
+    "ocr_page_index": 832,
+    "block_index": 11,
+    "printed_page": "614"
+  },
+  "raw_block": {
+    "bbox": [
+      142,
+      2184,
+      827,
+      2334
+    ],
+    "category": "text",
+    "text": "BALMER, F. E.—Dep. chief acctnt., G.P.O., E. Africa Prot., Mar., 1919; ch. acctnt., G.P.O., Kenya, Oct., 1919; ch. acctnt., Kenya-Uganda-Tanganyika post and tel. service, 1933; senr. dep. P.M.G., do., 1935."
+  }
+}

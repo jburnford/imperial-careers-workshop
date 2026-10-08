@@ -42,6 +42,9 @@ async def main():
             assert bounds['bottom'] <= bounds['height'],bounds
             assert 'One career across two Lists' in bounds['text']
             titles=[
+                'Start with the raw OCR',
+                'Too irregular for regular expressions alone',
+                'Develop the hybrid with Claude Code',
                 'Read records against the source',
                 'Replay a past correction',
                 'Same entries, different workflows',
@@ -71,7 +74,7 @@ async def main():
             assert 'unfinished repairs' not in await page.locator('body').inner_text()
             assert not errors,errors
             server.shutdown()
-            print('Seven revised slides, rebuilt image and presenter notes passed; no browser errors.')
+            print(f'{len(titles)+1} revised slides, rebuilt image and presenter notes passed; no browser errors.')
         await browser.close()
 
 if __name__=='__main__':asyncio.run(main())

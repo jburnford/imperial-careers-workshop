@@ -45,7 +45,7 @@ Extraction is half of it. The other half is looking at the result in a form wher
 |---|---|---|
 | 0–7 | [The atlas](steps/01-atlas.qmd) | The video; then one man's entry turned into identifiers, coordinates and arcs, and the corrections carried through to the rebuilt atlas |
 | 7–13 | [The source](steps/02-source.qmd) | One printed entry. Mark up what you would extract |
-| 13–23 | [Structure](steps/03-structure.qmd) | The prompt, the audit, and one correction replayed with checks |
+| 13–23 | [Structure](steps/03-structure.qmd) | Raw OCR, the discussion with Claude Code, why Python rules alone were insufficient, and the hybrid workflow |
 | 23–30 | [Clean](steps/04-identity.qmd) | Forty editions, one person: the merge rules and the cases that need a historian |
 | 30–40 | [Ground](steps/05-ground.qmd) | A live Wikidata lookup, and a chatbot asked to do the same from memory |
 | 40–46 | [The map finds the errors](steps/06-loop.qmd) | Brewster: the wrong place, then an unsupported appointment |
