@@ -25,7 +25,7 @@ Lead with what the dataset makes possible: following careers across editions and
 | 7–13 | Balmer: three minutes tagging the last two postings, one minute comparing, one minute discussing | Keep everyone on Balmer; no tour of the other entries |
 | 13–23 | Show Claude Code the raw OCR; explain why regular expressions alone were insufficient; develop the hybrid; prompt, source check and saved correction | Keep the source discussion and division of work; use the saved replay |
 | 23–30 | Abery/Carbery decision before reveal; A’Beckett/Beckett contrast | Keep the first decision; shorten the second example |
-| 30–40 | Three lookups (maximum four minutes); saved chatbot comparison; model roles and cost | Use saved lookups; do not start a live chatbot run |
+| 30–40 | Three lookups (maximum three minutes); saved chatbot comparison; model roles; worked corpus cost | Use saved lookups; do not start a live chatbot run |
 | 40–46 | Brewster: two completed repairs, geography and event meaning; how to check beyond a map | Keep the source decision and completed result; leave other repair examples on the supporting page |
 | 46–56 | R1, R3, R8: six minutes deciding, four minutes discussing Harris | Reduce the recap cases; protect Harris and the reasons |
 | 56–60 | One sentence about participants’ own records, questions, take-home links | Use the written take-home prompt on step 7 |
@@ -37,8 +37,9 @@ The detailed pages contain more examples than the hour. Trading Consequences, th
 The Python/model/Python table is the result of the design discussion. Begin with what actually happened: I showed Claude Code raw OCR, discussed whether Python could handle it alone, and developed the hybrid approach with it.
 
 - **13–14:** show the raw Balmer excerpt. Participants have just marked it up, so ask what their reading requires the program to know.
-- **14–16:** identify the familiar historical problem: semi-structured records whose prose is too irregular for regular expressions alone. Use inherited places, the meaning of a date and concurrent appointments. OCR adds variation, but the source itself is irregular.
-- **16–17:** explain how the work was divided. Agree the fields; try examples; keep reliable rules in Python; use a model for difficult clauses; validate with Python. Claude Code helped develop and write this pipeline. Qwen read entries inside it.
+- **14–15:** identify the familiar historical problem: semi-structured records whose prose is too irregular for regular expressions alone. Use inherited places, the meaning of a date and concurrent appointments. OCR adds variation, but the source itself is irregular.
+- **15–16:** explain how the work was divided. Agree the fields; try examples; keep reliable rules in Python; use a model for difficult clauses; validate with Python. Claude Code helped develop and write this pipeline. Qwen read entries inside it. Read the “What is Qwen?” box aloud only if the room looks unsure.
+- **16–17:** three ways to run Qwen. The script posts to one OpenAI-compatible address; OpenRouter was used to choose the model, a DGX Spark desktop ran the corpus, and an Alliance cluster ran later identity judgements. One minute.
 - **17–19:** show the prompt as the written result of those decisions.
 - **19–20:** compare saved outputs with their sources. Mention the 30,496-entry, 8.24-hour run after explaining the design and checks.
 - **20–23:** walk through the saved Balmer correction and its checks. Run the command only if there is time.
@@ -70,6 +71,8 @@ Search Trimen, Price, then Tibbits. Read the retrieved evidence before deciding.
 Use the saved chatbot runs. Gemini supplied sixteen person identifiers, none correct; Opus and Astra supplied sixteen accepted subject matches each. Opus’s first pass stopped before places; its second reached seventeen. The place counts use different units and coverage. These are examples of workflows, not a controlled model ranking. Keep Harris’s particular date conflict for the final exercise.
 
 The cost slide distinguishes the coding agent, corpus reader and hard-case reviewer. Twenty-seven minutes for twenty entries extrapolates to about twenty-five days **serially at that observed rate**. Caching, concurrency and task changes affect it; it is not an invoice or production forecast. Participants without a GPU can begin with twenty records and a hosted model.
+
+The next slide (38–40) is a worked hosted-cost estimate from measured tokens: about 640 read and 330 written per entry; Qwen3.8-27B on OpenRouter at \$0.0239/\$2.175 per million (a 50% promotion on 8 October) gives ≈ \$22 for 30,496 entries, ≈ \$45 at the regular price. Check the price on the morning of the session. Stress that output tokens are almost all of it, and that a model change needs the sample audit again.
 
 ## Participation and debrief
 

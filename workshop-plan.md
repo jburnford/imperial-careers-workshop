@@ -9,7 +9,7 @@ Follow `presenter.qmd`: 0–7 atlas, cross-service career and scope; 7–13 Balm
 ## Decisions
 
 - Use Wodehouse to open with a career across two Lists. Distinguish source wording, historical identity and plotting proxy. Keep his repair history on the supporting page. Use September counts rather than the earlier video caption.
-- Keep cost and model choices: this audience misses the parallel session on those subjects.
+- Keep cost and model choices: this audience misses the parallel session on those subjects. Define Claude Code, Qwen, vLLM, tokens, Wikidata and MCP on the slides where they first appear. Show where Qwen ran (OpenRouter for the bake-off, DGX Spark desktop for the corpus, Alliance cluster for identity judgements) and a worked hosted cost from measured tokens.
 - Make the live lookup the only network-dependent demonstration. Have saved evidence ready. The optional ditto replay runs offline.
 - Walk through developing the extraction pipeline with Claude Code, starting from actual raw OCR. Explain semi-structured historical data as the reason regular expressions alone were insufficient. Introduce the Python/model/Python table after that discussion; put throughput after the design and source checks.
 - Demonstrate one correction on three saved records, with preservation and boundary checks. Do not claim a new production accuracy result.

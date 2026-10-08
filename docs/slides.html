@@ -30,7 +30,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-61f2f2cd8c4ee902090f812e5ebf9259.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-731aca3fa2b26cb952c064d9e94a4161.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -223,7 +223,17 @@ Jim Clifford, University of Saskatchewan
 </tr>
 </tbody>
 </table>
-<p>A source clause → an event → a checked place identifier → a point.</p>
+<div class="flow">
+  <div class="node"><b>Printed clause</b><span>“governor of the Cape of Good Hope”</span></div>
+  <div class="arrow">→</div>
+  <div class="node"><b>Event</b><span>governor · 1861</span></div>
+  <div class="arrow">→</div>
+  <div class="node blue"><b>Checked place identifier</b><span>Cape Colony, a Wikidata item</span></div>
+  <div class="arrow">→</div>
+  <div class="node blue"><b>Plotting seat</b><span>Cape Town: a proxy, not a residence</span></div>
+  <div class="arrow">→</div>
+  <div class="node"><b>Arc</b><span>British Guiana → Cape</span></div>
+</div>
 <aside class="notes">
 <p>1–3. Source is the 1867 Colonial Office List; Bombay comes from the India Office List. The full table, identifiers and trace are on step 1. “Honduras” to “British Honduras” is an interpretation, kept separately from printed wording. A capital is a plotting proxy, not evidence of residence. Wodehouse is a checked example of the cross-service match; the other bridges need review.</p>
 <style type="text/css">
@@ -240,11 +250,19 @@ Jim Clifford, University of Saskatchewan
 </section>
 <section id="cross-service-career" class="slide level2">
 <h2>One career across two Lists</h2>
-<p><strong>Colonial Office List:</strong> Ceylon → Honduras → British Guiana → Cape</p>
-<p><strong>India Office List:</strong> Bombay, 1872–77</p>
-<p>Linking the entries lets us follow a career across administrative collections.</p>
+<div class="columns">
+<div class="column" style="width:42%;">
+<p><span class="blue">Colonial Office List</span><br>
+Ceylon → Honduras → British Guiana → Cape</p>
+<p><span class="gold">India Office List</span><br>
+Bombay, 1872–77</p>
+<p>Linking the entries follows one career across two administrative collections.</p>
 <p><strong>What becomes visible when we read the two Lists together?</strong></p>
 <p><a href="https://jimclifford.ca/col_matching/?p=kgp_col1878-p447b3">Open Wodehouse’s career</a></p>
+</div><div class="column" style="width:58%;">
+<p><img data-src="images/atlas-wodehouse-repaired.png" alt="Current atlas view of Philip Wodehouse's career, with arcs from Ceylon to Honduras, British Guiana, the Cape and Bombay, and a dated list of postings"></p>
+<p><span class="caption">Current public atlas, after the 7–8 October repairs</span></p>
+</div></div>
 <aside class="notes">
 <p>3–4. Lead with the historical use: a reader of either List alone sees part of this career. The checked link brings those parts together. This is a selection of postings, not the full itinerary. The public example reflects the repairs published and checked on 7–8 October. The supporting page retains the earlier Wodehouse errors and their corrections as optional teaching material. This one checked link does not establish that all proposed cross-service links are correct.</p>
 <style type="text/css">
@@ -261,9 +279,12 @@ Jim Clifford, University of Saskatchewan
 </section>
 <section id="what-the-records-make-visible" class="slide level2 smaller">
 <h2>What the records make visible</h2>
-<p><strong>46,926 person records</strong> across two Lists<br>
-<strong>305,164 career events</strong> · <strong>211,581 linked to a Wikidata place</strong></p>
-<p>The September atlas draws 36,431 arcs for 16,287 roster records with moves.</p>
+<div class="stats">
+  <div class="stat"><span class="num">46,926</span><span class="lbl">person records across two Lists</span></div>
+  <div class="stat"><span class="num">305,164</span><span class="lbl">career events</span></div>
+  <div class="stat"><span class="num">211,581</span><span class="lbl">events linked to a Wikidata place</span></div>
+  <div class="stat"><span class="num">36,431</span><span class="lbl">arcs for 16,287 roster records with moves (September build)</span></div>
+</div>
 <ul>
 <li>Administrative accounts of careers, offices and honours.</li>
 <li>Person counts resolved within each List; their sum includes cross-service overlap.</li>
@@ -317,7 +338,18 @@ Jim Clifford, University of Saskatchewan
 </tr>
 </tbody>
 </table>
-<p>Build. Extract. <strong>Visualise. See. Fix. Rerun.</strong></p>
+<div class="flow">
+  <div class="node blue"><b>OCR text</b><span>85 volumes</span></div>
+  <div class="arrow">→</div>
+  <div class="node"><b>Structure</b><span>entries → events</span></div>
+  <div class="arrow">→</div>
+  <div class="node"><b>Clean</b><span>editions → people</span></div>
+  <div class="arrow">→</div>
+  <div class="node"><b>Ground</b><span>names → identifiers</span></div>
+  <div class="arrow">→</div>
+  <div class="node blue"><b>Graph and atlas</b><span>visualise, then look</span></div>
+</div>
+<div class="loopback">↺ See · Fix the rule · Rerun for every affected record</div>
 <aside class="notes">
 <p>5–7. A historian owns the decisions; the agent writes scripts that apply them at scale. Today participants mark up an entry and make three decisions. We start after OCR. The published description mentions Britannica OCR tools; this session uses existing olmOCR output and does not demonstrate those tools. Your own dataset is the take-home application. Put the site and exercise links in Zoom chat.</p>
 <style type="text/css">
@@ -337,9 +369,15 @@ Jim Clifford, University of Saskatchewan
 <blockquote>
 <p>BALMER, F. E.—Dep. chief acctnt., G.P.O., E. Africa Prot., Mar., 1919; ch.&nbsp;acctnt., G.P.O., Kenya, Oct., 1919; ch.&nbsp;acctnt., Kenya-Uganda-Tanganyika post and tel. service, 1933; senr. dep. P.M.G., <mark>do.</mark>, 1935.</p>
 </blockquote>
-<p>85 volumes OCR’d, <strong>1867–1966</strong>.<br>
-The Record of Services appears from <strong>1883</strong>.<br>
-The same person returns in many editions.</p>
+<p>85 volumes OCR’d, <strong>1867–1966</strong>. The Record of Services appears from <strong>1883</strong>. The same person returns in many editions.</p>
+<div class="defs">
+<div class="def">
+<p><span class="def-term">What is OCR?</span> Optical character recognition turns a page image into text. These volumes were read by olmOCR, an open model that returns text blocks with their position on the page. OCR errors and printers’ errors look alike in the text; the scan decides.</p>
+</div>
+<div class="def">
+<p><span class="def-term">What is “do.”?</span> <em>Ditto</em>: “the same as before”. The printer saved space by pointing back to an earlier place or office. A reader resolves it without thinking; a program has to be told.</p>
+</div>
+</div>
 <aside class="notes">
 <p>7–8. Keep OCR and source separate. A surprising date may be an OCR error or a printed error. Each record needs a volume and page reference; the packet’s source notes are not scans. The 1946 restart lacks the usual Record of Services.</p>
 <style type="text/css">
@@ -380,15 +418,24 @@ The same person returns in many editions.</p>
           display:block!important;
       }</style></aside>
 </section>
-<section id="start-with-the-raw-ocr" class="slide level2 smaller">
+<section id="start-with-the-raw-ocr" class="slide level2">
 <h2>Start with the raw OCR</h2>
 <p>I showed <strong>Claude Code</strong> the text and discussed how to structure it.</p>
 <blockquote>
 <p>ch.&nbsp;acctnt., Kenya-Uganda-Tanganyika post and tel. service, 1933; senr. dep. P.M.G., do., 1935.</p>
 </blockquote>
+<div class="columns">
+<div class="column" style="width:52%;">
 <p><strong>Could Python do this on its own? What would the rules need to know?</strong></p>
-<p>Read a sample together. Agree what counts as a record and what fields to keep.</p>
-<p><a href="outputs/structure/balmer-raw-ocr.json">Balmer’s original OCR block</a></p>
+<p><span class="small">Read a sample together. Agree what counts as a record and what fields to keep.</span></p>
+<div class="source-meta"><b>edition</b> 1936 · <b>printed page</b> 614<br><b>OCR page index</b> 832 · <b>block</b> 11<br><b>bbox</b> [142, 2184, 827, 2334] · <b>category</b> text</div>
+<p><span class="caption"><a href="outputs/structure/balmer-raw-ocr.json">Balmer’s original OCR block</a>: every record keeps its way back to the page</span></p>
+</div><div class="column" style="width:48%;">
+<div class="def">
+<p><span class="def-term">What is Claude Code?</span> Anthropic’s coding agent. It runs on your own computer, reads the files you point it to, and writes and runs Python with your permission. You describe the task in plain language and judge the results; it reports what it did.</p>
+<p>It is a commercial service, paid through a Claude subscription or per use. Here it <strong>built</strong> the pipeline; it did not read the 65,000 entries.</p>
+</div>
+</div></div>
 <aside class="notes">
 <p>13–14. Start with the actual working process: I opened the raw OCR with Claude Code and discussed whether a Python parser could do the job. The displayed excerpt is copied directly from the 1936 raw OCR block, before abbreviation expansion. The saved file includes the original bounding box, OCR page index 832, block index 11 and printed page 614. This is a walkthrough of the process, not a recovered chat transcript. Use the Balmer exercise they just completed: they already know that “do.” refers back to a place. Ask what the code would need to preserve to reach the same reading. Claude Code helped inspect the source, discuss the approach and write the scripts; the historian decided what the fields meant.</p>
 <style type="text/css">
@@ -434,8 +481,11 @@ The same person returns in many editions.</p>
 </tbody>
 </table>
 <p>Finding a year is easier than deciding <strong>what it dates</strong>.</p>
+<div class="def">
+<p><span class="def-term">What is a regular expression?</span> A pattern that matches text by its shape. <code>1[89]\d\d</code> finds every year from 1800 to 1999 in an entry. It cannot say which posting the year belongs to, or that “do.” points back three clauses.</p>
+</div>
 <aside class="notes">
-<p>14–16. This is a source problem historians know well: recurring headings, names, dates and offices without a uniform sentence structure. OCR can add variation, but even perfectly transcribed entries contain elision, abbreviations, compound clauses and concurrent appointments. Regular expressions recognise specified patterns; increasingly elaborate rules did not cover the collection reliably. Python is still useful for segmentation, regular cases and checks. Explain the three rows: Balmer inherits the preceding service’s place; Blakely’s “B. Honduras” is British Honduras and April 1898 dates his clerkship; Trimen’s lecturer and British Museum posts overlap. The third example is in the saved Trimen source pack. The conclusion of our discussion was that Python rules alone were insufficient for this corpus. The hard part is binding the right position, place and date, not simply detecting a number.</p>
+<p>14–15. This is a source problem historians know well: recurring headings, names, dates and offices without a uniform sentence structure. OCR can add variation, but even perfectly transcribed entries contain elision, abbreviations, compound clauses and concurrent appointments. Regular expressions recognise specified patterns; increasingly elaborate rules did not cover the collection reliably. Python is still useful for segmentation, regular cases and checks. Explain the three rows: Balmer inherits the preceding service’s place; Blakely’s “B. Honduras” is British Honduras and April 1898 dates his clerkship; Trimen’s lecturer and British Museum posts overlap. The third example is in the saved Trimen source pack. The conclusion of our discussion was that Python rules alone were insufficient for this corpus. The hard part is binding the right position, place and date, not simply detecting a number.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -448,38 +498,63 @@ The same person returns in many editions.</p>
           display:block!important;
       }</style></aside>
 </section>
-<section id="develop-the-hybrid-with-claude-code" class="slide level2 smaller">
+<section id="develop-the-hybrid-with-claude-code" class="slide level2">
 <h2>Develop the hybrid with Claude Code</h2>
-<p>Agree the fields → try examples → decide which work belongs in each stage.</p>
-<table class="caption-top">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-<th>Job</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>1. Python</strong></td>
-<td>Parse regular entries; refuse what the grammar cannot handle</td>
-</tr>
-<tr class="even">
-<td><strong>2. Qwen3.6-35B</strong></td>
-<td>Bind positions, places and dates across difficult clauses</td>
-</tr>
-<tr class="odd">
-<td><strong>3. Python</strong></td>
-<td>Check the output; apply logged rules for recurring errors</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Claude Code helped build the pipeline. Qwen read the difficult entries.</strong></p>
+<p><span class="small">Agree the fields → try examples → decide which work belongs in each stage.</span></p>
+<div class="flow">
+  <div class="node blue"><b>1 · Python</b><span>Parse the regular entries. If any dated clause fails, refuse the whole entry.</span></div>
+  <div class="arrow">→</div>
+  <div class="node wide"><b>2 · Qwen reads</b><span>One entry in, one JSON record out. Binds position, place and dates across ditto, elided and concurrent clauses.</span></div>
+  <div class="arrow">→</div>
+  <div class="node blue"><b>3 · Python checks</b><span>Drop any place or year not in the source. Apply logged fixes for recurring errors.</span></div>
+</div>
+<div class="def">
+<p><span class="def-term">What is Qwen?</span> A family of <strong>open-weight</strong> language models from Alibaba’s Qwen team. Open weight means the trained model can be downloaded and run on your own hardware, or reached through a hosted service. The structuring runs used <strong>Qwen3.6-35B-A3B</strong>: 35 billion parameters in all, about 3 billion active for each word-piece, so one GPU can run it quickly.</p>
+</div>
+<p><strong>Claude Code helped build the pipeline. Qwen read the entries.</strong></p>
 <aside class="notes">
-<p>16–17. Walk through the design as a division of work developed with Claude Code. First, keep Python where explicit rules are reliable; if a dated clause cannot be parsed, refuse the whole entry rather than silently omit it. Second, ask the model to interpret the difficult clauses within an agreed schema. Third, use Python to validate the result and log recurring corrections. One event has position, place, start/end years and an inheritance flag. Compare sample outputs with the OCR before increasing the run size. Claude Code was the interactive coding environment; Qwen3.6-35B was the model called by the corpus-reading script. The saved in-session runbook records how the reference examples were structured and validated.</p>
+<p>15–16. Walk through the design as a division of work developed with Claude Code. First, keep Python where explicit rules are reliable; if a dated clause cannot be parsed, refuse the whole entry rather than silently omit it. Second, ask the model to interpret the difficult clauses within an agreed schema. Third, use Python to validate the result and log recurring corrections. One event has position, place, start/end years and an inheritance flag. Compare sample outputs with the OCR before increasing the run size. Claude Code was the interactive coding environment; Qwen3.6-35B was the model called by the corpus-reading script. The saved in-session runbook records how the reference examples were structured and validated.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="three-ways-to-run-qwen" class="slide level2">
+<h2>Three ways to run Qwen</h2>
+<p>The script sends each entry to a web address that speaks the OpenAI request format.<br>
+<strong>Change one address to change where the model runs.</strong></p>
+<div class="cards">
+  <div class="card">
+    <span class="kicker">Hosted service</span>
+    <h4>OpenRouter</h4>
+    <p>A broker for many models, open and commercial. Pay per token; no hardware.</p>
+    <p class="fact">Used in June to compare several open models on the same 40 entries, scored against records Claude had structured in-session. Qwen3.6 came closest.</p>
+  </div>
+  <div class="card accent">
+    <span class="kicker">Desktop GPU</span>
+    <h4>NVIDIA DGX Spark</h4>
+    <p>A desktop machine with 128 GB of memory shared with its GPU. vLLM serves the model on the local network.</p>
+    <p class="fact">India Office List: 30,496 entries in 8.24 hours overnight. No per-request bill.</p>
+  </div>
+  <div class="card">
+    <span class="kicker">Research cluster</span>
+    <h4>Alliance: Narval, Nibi</h4>
+    <p>Canada’s national research computing. Submit a batch job; it waits in a queue, starts the model, works through a file.</p>
+    <p class="fact">Qwen3.8-27B judged 3,539 identity pairs in 35 minutes on one A100 GPU.</p>
+  </div>
+</div>
+<div class="def">
+<p><span class="def-term">What is vLLM?</span> Open-source software that loads a model onto a GPU and answers requests in the same format as the commercial services, so the same script works locally, on a cluster or through OpenRouter.</p>
+</div>
+<aside class="notes">
+<p>16–17. One slide on infrastructure, because participants ask how to run the model. The script did not change between routes: it posts the system prompt and one entry to an OpenAI-compatible endpoint, and the base URL selects the service. The June bake-off (19 June, 40 entries against the in-session Opus reference set, reasoning off, temperature zero) ran several open models through OpenRouter; Qwen3.6-35B-A3B had the best event precision, place and honours scores. That reference set is provisional, not a gold standard. Production ran the same model on a DGX Spark desktop through vLLM, with no tunnel to depend on. The cluster example is later identity work, not structuring: Narval job 2430423, Qwen3.8-27B, one A100-40GB, 1.7 pairs a second. Cluster compute nodes have no internet, so the job serves the model inside the allocation. Any change of model or serving setup needs the sample audit again.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -504,6 +579,9 @@ The same person returns in many editions.</p>
 <blockquote>
 <p><strong>birth_year:</strong> only if printed. NEVER infer from the earliest career date.</p>
 </blockquote>
+<div class="def">
+<p><span class="def-term">What is a system prompt?</span> The standing instructions sent with every one of the 65,000 entries. The entry itself follows as the user message. Every rule here exists because an earlier run broke it.</p>
+</div>
 <aside class="notes">
 <p>17–19. This is what the discussion became: explicit instructions for the model inside the pipeline. The first, second and fourth quotations are from the saved prompt; the place line summarises its inheritance rule, including the stop at a stated transfer. Link to the exact prompt on step 3. Ask: would “defeated in an election” count as an office held? Leave that distinction in mind for Brewster.</p>
 <style type="text/css">
@@ -518,9 +596,9 @@ The same person returns in many editions.</p>
           display:block!important;
       }</style></aside>
 </section>
-<section id="read-records-against-the-source" class="slide level2 smaller">
+<section id="read-records-against-the-source" class="slide level2">
 <h2>Read records against the source</h2>
-<p><strong>Examples from the saved extraction audit, before rule fixes</strong></p>
+<p><span class="small">Examples from the saved extraction audit, before rule fixes</span></p>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -547,7 +625,15 @@ The same person returns in many editions.</p>
 </tr>
 </tbody>
 </table>
-<p>Keep the source beside the record. Turn recurring findings into explicit rules.</p>
+<div class="flow">
+  <div class="node blue"><b>Sample</b><span>every tenth record, then spread across the corpus</span></div>
+  <div class="arrow">→</div>
+  <div class="node"><b>Read against the source</b><span>record beside the printed entry</span></div>
+  <div class="arrow">→</div>
+  <div class="node"><b>Sort findings</b><span>one-off, or a recurring pattern?</span></div>
+  <div class="arrow">→</div>
+  <div class="node after"><b>Logged rule</b><span>or individual review</span></div>
+</div>
 <p><strong>Batch run: 30,496 entries in 8.24 hours.</strong></p>
 <aside class="notes">
 <p>19–20. The model’s output still needs to be read against the source. These are historical extraction outputs used to teach that reading, not a report of current defects. All three audits were read by a model; the displayed examples were checked by hand. The detailed sample counts remain on step 3 for questions; they do not measure finished-graph accuracy. Ask participants to explain one reading before moving to the Balmer replay. Some findings need individual review rather than a general rule. The resulting hybrid processed 30,496 India Office entries in 8.24 hours, 25–26 June, with 16 workers, reasoning off and temperature zero. Put this scale result after the design and review process. If asked: 55 entries failed JSON validation, a format count rather than a count of inaccurate records.</p>
@@ -563,31 +649,16 @@ The same person returns in many editions.</p>
           display:block!important;
       }</style></aside>
 </section>
-<section id="replay-a-past-correction" class="slide level2 smaller">
+<section id="replay-a-past-correction" class="slide level2">
 <h2>Replay a past correction</h2>
-<p><strong>Balmer · saved extraction output</strong></p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>Balmer, final event</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Before</strong></td>
-<td>place: “do.”; inherited: true</td>
-</tr>
-<tr class="even">
-<td><strong>Rule</strong></td>
-<td>Literal ditto + previous resolved place → inherit and log</td>
-</tr>
-<tr class="odd">
-<td><strong>After</strong></td>
-<td>place: “Kenya-Uganda-Tanganyika”; inherited: true</td>
-</tr>
-</tbody>
-</table>
+<p><strong>Balmer’s final event · saved extraction output</strong></p>
+<div class="flow">
+  <div class="node before"><b>Before</b><span>place: “do.”<br>place_inherited: true</span></div>
+  <div class="arrow">→</div>
+  <div class="node wide"><b>Rule</b><span>A literal ditto, and the previous event has a resolved place → inherit that place and log the reason</span></div>
+  <div class="arrow">→</div>
+  <div class="node after"><b>After</b><span>place: “Kenya-Uganda-Tanganyika”<br>place_inherited: true</span></div>
+</div>
 <p><strong>3 saved records · 12 events · 1 place corrected</strong></p>
 <ul>
 <li>Other events and fields unchanged.</li>
@@ -614,8 +685,25 @@ The same person returns in many editions.</p>
 <p>A missed link leaves a fragmented career.<br>
 A false merge can silently corrupt later analysis.</p>
 <p><span class="gold">Ties resolve to no merge.</span></p>
-<p>Strong rules first. Then dossiers for the difficult clusters.<br>
-Keep the source records and a reason for every merge.</p>
+<div class="flow">
+  <div class="node blue"><b>199,099</b><span>printed entries, Colonial Office List</span></div>
+  <div class="arrow">→</div>
+  <div class="node"><b>Strong rules</b><span>same name and birth year, or a shared dated event</span></div>
+  <div class="arrow">→</div>
+  <div class="node"><b>Clusters</b><span>same forename, same surname ending, so OCR variants meet</span></div>
+  <div class="arrow">→</div>
+  <div class="node"><b>Dossiers</b><span>a model argues each hard case; review queue for the rest</span></div>
+  <div class="arrow">→</div>
+  <div class="node after"><b>27,526</b><span>person records, with a ledger of reasons</span></div>
+</div>
+<div class="defs">
+<div class="def">
+<p><span class="def-term">Dossier</span> Every version of every biography in a cluster, laid out for one decision: births, schools, honours, the full dated career.</p>
+</div>
+<div class="def">
+<p><span class="def-term">Ledger</span> An append-only file of merge decisions, each with its reason, so any one can be revisited and reversed.</p>
+</div>
+</div>
 <aside class="notes">
 <p>23–25. 199,099 printed CO entry instances resolved into 27,526 person records. The ledger makes decisions revisitable; do not call false merges irreversible. Explain a dossier as the source evidence for both candidates, gathered in one place.</p>
 <style type="text/css">
@@ -630,12 +718,12 @@ Keep the source records and a reason for every merge.</p>
           display:block!important;
       }</style></aside>
 </section>
-<section id="decide-before-the-answer" class="slide level2 smaller">
+<section id="decide-before-the-answer" class="slide level2">
 <h2>Decide before the answer</h2>
-<p><strong>ABERY, Joseph</strong><br>
-M.B.C.M. · 1867 Ceylon, assistant colonial surgeon · one edition</p>
-<p><strong>CARBERY, Joseph</strong><br>
-M.B.C.M. · 1867 Ceylon, assistant colonial surgeon · six editions</p>
+<div class="cards" style="font-size:0.78em">
+  <div class="card"><span class="kicker">One edition</span><h4>ABERY, Joseph</h4><p>M.B.C.M.</p><p>1867 · Ceylon · assistant colonial surgeon</p></div>
+  <div class="card"><span class="kicker">Six editions</span><h4>CARBERY, Joseph</h4><p>M.B.C.M.</p><p>1867 · Ceylon · assistant colonial surgeon</p></div>
+</div>
 <p><strong>Merge, keep apart, or review? What evidence decides it?</strong></p>
 <div class="fragment">
 <p>The ledger merges them: consistent name and qualification, an identical dated appointment, and a plausible OCR loss. Preserve both entries and the reason.</p>
@@ -656,11 +744,14 @@ M.B.C.M. · 1867 Ceylon, assistant colonial surgeon · six editions</p>
 </section>
 <section id="keep-apart-keep-the-evidence" class="slide level2">
 <h2>Keep apart; keep the evidence</h2>
-<p><strong>A’BECKETT, Thomas, born 1836</strong><br>
-Lincoln’s Inn · Victorian judge · knighted 1909</p>
-<p><strong>BECKETT, Thomas Rumbold, born 1898</strong><br>
-Judd School · Nigerian telegraph engineer</p>
-<p>Different careers as well as different birth years.</p>
+<div class="cards" style="font-size:0.78em">
+  <div class="card"><span class="kicker">Born 1836</span><h4>A’BECKETT, Thomas</h4><p>Lincoln’s Inn</p><p>Victorian judge · knighted 1909</p></div>
+  <div class="card"><span class="kicker">Born 1898</span><h4>BECKETT, Thomas Rumbold</h4><p>Judd School</p><p>Nigerian telegraph engineer</p></div>
+</div>
+<p>Different schools and careers, not only different birth years. <strong>Keep apart.</strong></p>
+<div class="def">
+<p><span class="def-term">The merge rules, in brief</span> Merge only on positive evidence: an overlapping dated event, a shared honour with its year, near-identical education, or an OCR variant with a consistent career. Birth year alone never splits: it is often misread. Different spelled forenames keep people apart.</p>
+</div>
 <aside class="notes">
 <p>28–30. A birth-year discrepancy alone is not a universal veto: it may be OCR. Here the whole dossiers differ. The supporting page has more clusters; do not run all four aloud.</p>
 <style type="text/css">
@@ -679,12 +770,24 @@ Judd School · Nigerian telegraph engineer</p>
 <h2>Ground: retrieve, read, decide</h2>
 <p>Every plotted posting needs a place.<br>
 Every shared person identifier asserts an identity.</p>
-<ol type="1">
-<li>Retrieve a candidate.</li>
-<li>Read its statements against the source.</li>
-<li>Record the evidence, date and decision.</li>
-</ol>
+<div class="flow">
+  <div class="node blue"><b>Mention</b><span>“Victoria, 1912”</span></div>
+  <div class="arrow">→</div>
+  <div class="node"><b>Retrieve</b><span>candidate items from a search tool</span></div>
+  <div class="arrow">→</div>
+  <div class="node"><b>Read</b><span>type, dates, location against the career</span></div>
+  <div class="arrow">→</div>
+  <div class="node after"><b>Decide and record</b><span>supported · unresolved · wrong, with evidence and date</span></div>
+</div>
 <p>No supported match? Keep the local identifier.</p>
+<div class="defs">
+<div class="def">
+<p><span class="def-term">What is Wikidata? A QID?</span> A free, shared knowledge base. Each item has an identifier: Q plus a number. Q1800510 is Philip Wodehouse. Linking to it lets other projects join their data to ours.</p>
+</div>
+<div class="def">
+<p><span class="def-term">What is MCP?</span> Model Context Protocol: a standard way to hand a model a tool, such as a Wikidata search. The answer comes back as retrieved evidence, not from the model’s memory.</p>
+</div>
+</div>
 <aside class="notes">
 <p>30–31. An identifier’s existence is not evidence that it belongs to this mention. Introduce MCP simply as a lookup tool the agent can use; the protocol is not today’s lesson.</p>
 <style type="text/css">
@@ -707,8 +810,11 @@ Every shared person identifier asserts an identity.</p>
 <li><strong>Elwood D’Arcy Tibbits</strong> — no plausible result in the saved search.</li>
 </ol>
 <p>Supported · unresolved · wrong</p>
+<div class="def">
+<p><span class="def-term">Reading a candidate item</span> Is it a human? Do the birth and death dates fit the career? Do occupation, positions held and places match the entry? One contradiction outweighs a matching name.</p>
+</div>
 <aside class="notes">
-<p>31–35. Trimen: read statements before accepting. Price: ask participants before stating your decision; accepting with recorded limitations or seeking another source is defensible. Tibbits: record the search, do not claim no item exists. Use saved answer-key.md if live lookup fails. Cap live work at four minutes.</p>
+<p>31–34. Trimen: read statements before accepting. Price: ask participants before stating your decision; accepting with recorded limitations or seeking another source is defensible. Tibbits: record the search, do not claim no item exists. Use saved answer-key.md if live lookup fails. Cap live work at three minutes.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -729,8 +835,11 @@ Every shared person identifier asserts an identity.</p>
 <p>person identifiers correct in the saved Gemini 3.8 Flash run.</p>
 <p>Fluent biographies. Plausible-looking numbers. Wrong items.</p>
 <p><strong>A name understood is not an identifier verified.</strong></p>
+<div class="def">
+<p><span class="def-term">Why memory fails here</span> A QID is an arbitrary number. A model can learn that officials have QIDs, and what such numbers look like, without learning which number belongs to whom. Without a lookup tool it writes a plausible number.</p>
+</div>
 <aside class="notes">
-<p>35–36. Twenty entries; sixteen identifiers supplied, four declined. This is one run, not a general model ranking. Saved outputs are sufficient; do not start a second live demo.</p>
+<p>34–35. Twenty entries; sixteen identifiers supplied, four declined. This is one run, not a general model ranking. Saved outputs are sufficient; do not start a second live demo.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -743,7 +852,7 @@ Every shared person identifier asserts an identity.</p>
           display:block!important;
       }</style></aside>
 </section>
-<section id="same-entries-different-workflows" class="slide level2 smaller">
+<section id="same-entries-different-workflows" class="slide level2">
 <h2>Same entries, different workflows</h2>
 <p><strong>Saved experiment · twenty entries</strong></p>
 <table class="caption-top">
@@ -775,7 +884,7 @@ Every shared person identifier asserts an identity.</p>
 <p>The pipeline supplied <strong>12</strong> links; the review supported all 12.</p>
 <p>Check retrieved evidence against the career’s dates and context.</p>
 <aside class="notes">
-<p>36–38. These are saved experimental outputs, not current atlas results. Different models and tools: not a controlled test of retrieval alone. The site keeps the detailed place table with its different denominators and the historical Victoria mismatch. Astra’s 155 label/alias checks are not 155 historically correct matches. Hold Harris’s specific discrepancy back for R8.</p>
+<p>35–36. These are saved experimental outputs, not current atlas results. Different models and tools: not a controlled test of retrieval alone. The site keeps the detailed place table with its different denominators and the historical Victoria mismatch. Astra’s 155 label/alias checks are not 155 historically correct matches. Hold Harris’s specific discrepancy back for R8.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -788,7 +897,7 @@ Every shared person identifier asserts an identity.</p>
           display:block!important;
       }</style></aside>
 </section>
-<section id="two-jobs-measure-their-costs" class="slide level2 smaller">
+<section id="two-jobs-measure-their-costs" class="slide level2">
 <h2>Two jobs; measure their costs</h2>
 <table class="caption-top">
 <colgroup>
@@ -811,7 +920,7 @@ Every shared person identifier asserts an identity.</p>
 </tr>
 <tr class="even">
 <td>Read the collection</td>
-<td>Open model on a university GPU</td>
+<td>Open model (Qwen) on a desktop GPU or cluster</td>
 <td>Throughput, GPU time, failures and audit time</td>
 </tr>
 <tr class="odd">
@@ -824,8 +933,68 @@ Every shared person identifier asserts an identity.</p>
 <p>27 minutes / 20 entries ≈ 80 seconds each.<br>
 <strong>About 25 days if run serially for 27,526 entries at that rate.</strong></p>
 <p>Start with twenty records. No cluster needed for the first trial.</p>
+<div class="def">
+<p><span class="def-term">Frontier and open-weight</span> <em>Frontier</em>: the most capable models, from Anthropic, OpenAI and Google, reached only through their services. <em>Open-weight</em>: models whose trained weights can be downloaded and run anywhere. Different properties, not opposites.</p>
+</div>
 <aside class="notes">
-<p>38–40. The 25 days is a serial extrapolation, not a forecast or invoice. Caching and concurrency change throughput. Campus computing is not free infrastructure, even without a per-request bill. Hosted models are a route for participants without a GPU. Measure on their sample rather than promising a dollar total. Keep this slide: attendees miss the parallel cost/model session.</p>
+<p>36–38. The 25 days is a serial extrapolation, not a forecast or invoice. Caching and concurrency change throughput. Campus computing is not free infrastructure, even without a per-request bill. Hosted models are a route for participants without a GPU. Measure on their sample rather than promising a dollar total. Keep this slide: attendees miss the parallel cost/model session.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="what-reading-the-corpus-costs" class="slide level2 smaller">
+<h2>What reading the corpus costs</h2>
+<p>Measured on a random sample of 2,000 India Office entries and 2,000 Qwen records:</p>
+<div class="stats">
+  <div class="stat"><span class="num">~640</span><span class="lbl">tokens read per entry: 470 of prompt, about 150 of entry</span></div>
+  <div class="stat"><span class="num">~330</span><span class="lbl">tokens written per entry: the JSON record</span></div>
+  <div class="stat"><span class="num">30,496</span><span class="lbl">India Office List entries</span></div>
+</div>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Route</th>
+<th>Price</th>
+<th>30,496 entries</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>OpenRouter, Qwen3.8-27B, 8 Oct</td>
+<td>$0.0239 read / $2.175 written per million tokens (50% promotion)</td>
+<td><strong>≈ $22</strong></td>
+</tr>
+<tr class="even">
+<td>Same model, regular price</td>
+<td>about twice the promotion</td>
+<td><strong>≈ $45</strong></td>
+</tr>
+<tr class="odd">
+<td>DGX Spark desktop, Qwen3.6 (as run)</td>
+<td>the machine and its electricity</td>
+<td><strong>8.24 hours</strong>, no bill per request</td>
+</tr>
+</tbody>
+</table>
+<p>Almost all of the hosted cost is the <strong>writing</strong>: the record the model returns, not the text it reads.</p>
+<div class="def">
+<p><span class="def-term">What is a token?</span> The unit models read and write in, roughly three-quarters of a word. Services charge per million tokens, with separate prices for reading (input) and writing (output).</p>
+</div>
+<aside class="notes">
+<p>38–40. Worked estimate, not an invoice. Token counts use the Qwen tokenizer on a random 2,000 India Office entry instances and 2,000 saved Qwen records; input is the 471-token system prompt plus the entry and a small chat-template allowance. 30,496 × 640 ≈ 19.5 million tokens read ≈ $0.47; 30,496 × 330 ≈ 10 million written ≈ $22. Add retries (four allowed) and failures. The OpenRouter price was 50% off on 8 October 2026; check the current price on the day. Qwen3.8-27B was not the structuring model: switching models needs the sample audit again. For comparison, the June bake-off estimated about $13 for the Colonial Office List on Qwen3.6 through OpenRouter at June prices. The desktop has no per-request bill, but the machine, power and the historian’s time are real costs.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -842,8 +1011,15 @@ Every shared person identifier asserts an identity.</p>
 <h2>A past repair: which Victoria?</h2>
 <p>Brewster’s entry: <strong>“defeated by Sir Richard McBride, in Victoria, 1912.”</strong></p>
 <p>An earlier atlas placed a British Columbia politician in Australia.</p>
-<p><strong>Cause:</strong> one “Victoria” match reused for everyone.<br>
-<strong>Completed place fix:</strong> use this person’s career context.</p>
+<div class="chips"><span>Colony of Victoria, Australia</span><span class="hit">Victoria, British Columbia</span><span>Victoria, Hong Kong</span><span>Victoria, Seychelles</span><span>Victoria, Labuan</span></div>
+<p><span class="caption">One printed word; several imperial places with that name.</span></p>
+<div class="flow">
+  <div class="node before"><b>Before</b><span>One “Victoria” lookup, reused for every entry that printed the word → Australia</span></div>
+  <div class="arrow">→</div>
+  <div class="node wide"><b>Completed fix</b><span>Resolve the place per person, from the surrounding career: McBride, the legislative assembly, British Columbia</span></div>
+  <div class="arrow">→</div>
+  <div class="node after"><b>After</b><span>Victoria, British Columbia; every affected entry re-emitted</span></div>
+</div>
 <aside class="notes">
 <p>40–42. State that this is a completed repair before discussing the old result. Explain the per-person resolver and the identifier-key bug it exposed. Both corpora were re-emitted. Ask what evidence selects British Columbia: the surrounding career clauses. The supporting page retains South Africa and Baluchistan as further historical examples.</p>
 <style type="text/css">
@@ -899,8 +1075,10 @@ Every shared person identifier asserts an identity.</p>
 </section>
 <section id="what-a-map-cannot-check" class="slide level2">
 <h2>What a map cannot check</h2>
-<p>Missing links can leave two plausible short careers.<br>
-An ungrounded posting may disappear from the view.</p>
+<div class="cards">
+  <div class="card accent"><span class="kicker">The map shows</span><h4>What looks wrong</h4><p>A politician in the wrong hemisphere. A jump no career could make. Two nodes with one name.</p></div>
+  <div class="card warn"><span class="kicker">The map hides</span><h4>What is missing</h4><p>A missed link leaves two plausible short careers. An ungrounded posting simply vanishes. A false merge can look like an ordinary career.</p></div>
+</div>
 <p>Use a labelled sample, including the cases the pipeline rejected.</p>
 <p><strong>Check both the repaired cases and other records the rule changed.</strong></p>
 <aside class="notes">

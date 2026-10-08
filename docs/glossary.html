@@ -218,6 +218,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#json" id="toc-json" class="nav-link active" data-scroll-target="#json">JSON</a></li>
   <li><a href="#the-model-qwen3.6-35b-a3b" id="toc-the-model-qwen3.6-35b-a3b" class="nav-link" data-scroll-target="#the-model-qwen3.6-35b-a3b">The model: Qwen3.6-35B-A3B</a>
   <ul class="collapse">
+  <li><a href="#three-ways-to-run-it" id="toc-three-ways-to-run-it" class="nav-link" data-scroll-target="#three-ways-to-run-it">Three ways to run it</a></li>
+  <li><a href="#what-reading-the-india-office-list-would-cost-on-a-hosted-service" id="toc-what-reading-the-india-office-list-would-cost-on-a-hosted-service" class="nav-link" data-scroll-target="#what-reading-the-india-office-list-would-cost-on-a-hosted-service">What reading the India Office List would cost on a hosted service</a></li>
   <li><a href="#starting-without-a-university-gpu" id="toc-starting-without-a-university-gpu" class="nav-link" data-scroll-target="#starting-without-a-university-gpu">Starting without a university GPU</a></li>
   <li><a href="#a-small-cost-worksheet" id="toc-a-small-cost-worksheet" class="nav-link" data-scroll-target="#a-small-cost-worksheet">A small cost worksheet</a></li>
   </ul></li>
@@ -269,8 +271,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="the-model-qwen3.6-35b-a3b" class="level2">
 <h2 class="anchored" data-anchor-id="the-model-qwen3.6-35b-a3b">The model: Qwen3.6-35B-A3B</h2>
 <p>The open-weights model used in the saved structuring runs. “35B” refers to total parameters and “A3B” to the approximate number active per token in its mixture-of-experts design. Fewer active parameters reduce computation; the other weights still need to be stored.</p>
-<p>The project served it with vLLM on a university GPU box. The India Office List run processed 30,496 entries in 8.24 hours, with reasoning off, temperature zero and sixteen workers. Those are measurements of this setup and corpus, not a speed guarantee for another machine. The saved <a href="./steps/03-structure.html">structuring page</a> describes the prompt, checks and failures.</p>
+<p>Qwen is a family of open-weight models from Alibaba’s Qwen team: the trained weights can be downloaded and run on your own hardware, or reached through a hosted service. The project served Qwen3.6-35B-A3B with vLLM on an NVIDIA DGX Spark, a desktop machine with 128 GB of memory shared with its GPU. The India Office List run processed 30,496 entries in 8.24 hours, with reasoning off, temperature zero and sixteen workers. Those are measurements of this setup and corpus, not a speed guarantee for another machine. The saved <a href="./steps/03-structure.html">structuring page</a> describes the prompt, checks and failures.</p>
 <p><strong>Two jobs.</strong> The coding agent writes and repairs the scripts with the historian. The model inside those scripts reads the collection. They can be different models. A more capable model can also help review difficult cases, but its answers need checking before becoming a reference set.</p>
+<section id="three-ways-to-run-it" class="level3">
+<h3 class="anchored" data-anchor-id="three-ways-to-run-it">Three ways to run it</h3>
+<p>The structuring script sends the system prompt and one entry to a web address that accepts the OpenAI request format. Changing that address changes where the model runs; the script stays the same.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Route</th>
+<th>What it is</th>
+<th>How Imperial Careers used it</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Hosted service</strong> (<a href="https://openrouter.ai/">OpenRouter</a>)</td>
+<td>A broker that resells access to many models. Pay per token, no hardware.</td>
+<td>June 2026: compared several open models on the same 40 entries, scored against records Claude had structured in-session. Qwen3.6 came closest.</td>
+</tr>
+<tr class="even">
+<td><strong>Desktop GPU</strong> (NVIDIA DGX Spark)</td>
+<td>Your own machine, with vLLM serving the model on the local network. No per-request bill.</td>
+<td>All structuring: 30,496 India Office entries in 8.24 hours overnight.</td>
+</tr>
+<tr class="odd">
+<td><strong>Research cluster</strong> (Digital Research Alliance of Canada: Narval, Nibi)</td>
+<td>Shared university GPUs. A batch job waits in a queue, starts the model inside the job and works through a file. Compute nodes have no internet.</td>
+<td>Identity judgements with Qwen3.8-27B: 3,539 pairs in 35 minutes on one A100 GPU.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="what-reading-the-india-office-list-would-cost-on-a-hosted-service" class="level3">
+<h3 class="anchored" data-anchor-id="what-reading-the-india-office-list-would-cost-on-a-hosted-service">What reading the India Office List would cost on a hosted service</h3>
+<p>Measured with the Qwen tokenizer on a random 2,000 India Office entries and 2,000 saved Qwen records: about 640 tokens read per entry (a 471-token system prompt plus about 150 for the entry) and about 330 written.</p>
+<p>On 8 October 2026 OpenRouter listed Qwen3.8-27B at $0.0239 per million input tokens and $2.175 per million output tokens, a 50% promotion. For 30,496 entries: about 19.5 million tokens read (≈ $0.47) and 10 million written (≈ $22). At the regular price, roughly twice that: ≈ $45. Almost all of the cost is output. Retries and failures add to it, prices change, and Qwen3.8-27B was not the model used for structuring: a different model needs the sample audit again.</p>
+</section>
 <section id="starting-without-a-university-gpu" class="level3">
 <h3 class="anchored" data-anchor-id="starting-without-a-university-gpu">Starting without a university GPU</h3>
 <p>Use a small sample with a hosted model or an existing coding agent before choosing infrastructure for the whole collection. The same prompt can be tried through a hosted endpoint; the Imperial Careers <a href="https://github.com/jburnford/col_matching/blob/master/kg_bench_openrouter.py">comparison script</a> illustrates that approach. Recheck output quality when changing the model or serving setup.</p>
@@ -328,6 +365,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Vector search.</strong> Search by meaning rather than by matching letters: the query and every item are turned into lists of numbers that place similar meanings near each other. “Walpole Island” by string finds an island in New Caledonia; by vector it finds the Ontario reserve. The WikidataMCP server offers this over Wikidata.</p>
 <p><strong>MCP.</strong> Model Context Protocol, a standard way of giving a model a tool, such as a search endpoint, that it can call and whose results come back as evidence rather than memory.</p>
 <p><strong>vLLM.</strong> An open-source server that runs an open model on a GPU and answers requests in the same format as the commercial APIs.</p>
+<p><strong>OpenRouter.</strong> A hosted service that gives one account and one request format for many models, open and commercial, charged per token.</p>
+<p><strong>DGX Spark.</strong> NVIDIA’s desktop AI computer: one GB10 chip with 128 GB of memory shared between processor and GPU, enough to hold a mid-sized open model.</p>
+<p><strong>Cluster and SLURM.</strong> A research cluster is a pool of shared computers. SLURM is the queue: you submit a job script asking for a GPU and a time limit, and it runs when resources are free.</p>
 <p><strong>Mixture of experts.</strong> A model built from many small specialist networks, only a few of which run for each token, so it is cheap to run for its size.</p>
 <p><strong>Quantisation.</strong> Storing a model’s numbers at lower precision (4 bits instead of 16) so it needs a quarter of the memory, at a small cost in quality.</p>
 <p><strong>The three chatbots in the grounding test.</strong> Gemini 3.8 Flash (Google’s fast, inexpensive tier), Claude Opus 5.5 (Anthropic’s frontier model) and GPT Astra 6. All three were given the same prompt and the same twenty entries on 7 October 2026; Gemini without tools, the other two with web search.</p>

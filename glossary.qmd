@@ -29,9 +29,25 @@ That is what the model is asked to return for each entry, what the Python valida
 
 The open-weights model used in the saved structuring runs. “35B” refers to total parameters and “A3B” to the approximate number active per token in its mixture-of-experts design. Fewer active parameters reduce computation; the other weights still need to be stored.
 
-The project served it with vLLM on a university GPU box. The India Office List run processed 30,496 entries in 8.24 hours, with reasoning off, temperature zero and sixteen workers. Those are measurements of this setup and corpus, not a speed guarantee for another machine. The saved [structuring page](steps/03-structure.qmd) describes the prompt, checks and failures.
+Qwen is a family of open-weight models from Alibaba’s Qwen team: the trained weights can be downloaded and run on your own hardware, or reached through a hosted service. The project served Qwen3.6-35B-A3B with vLLM on an NVIDIA DGX Spark, a desktop machine with 128 GB of memory shared with its GPU. The India Office List run processed 30,496 entries in 8.24 hours, with reasoning off, temperature zero and sixteen workers. Those are measurements of this setup and corpus, not a speed guarantee for another machine. The saved [structuring page](steps/03-structure.qmd) describes the prompt, checks and failures.
 
 **Two jobs.** The coding agent writes and repairs the scripts with the historian. The model inside those scripts reads the collection. They can be different models. A more capable model can also help review difficult cases, but its answers need checking before becoming a reference set.
+
+### Three ways to run it
+
+The structuring script sends the system prompt and one entry to a web address that accepts the OpenAI request format. Changing that address changes where the model runs; the script stays the same.
+
+| Route | What it is | How Imperial Careers used it |
+|---|---|---|
+| **Hosted service** ([OpenRouter](https://openrouter.ai/)) | A broker that resells access to many models. Pay per token, no hardware. | June 2026: compared several open models on the same 40 entries, scored against records Claude had structured in-session. Qwen3.6 came closest. |
+| **Desktop GPU** (NVIDIA DGX Spark) | Your own machine, with vLLM serving the model on the local network. No per-request bill. | All structuring: 30,496 India Office entries in 8.24 hours overnight. |
+| **Research cluster** (Digital Research Alliance of Canada: Narval, Nibi) | Shared university GPUs. A batch job waits in a queue, starts the model inside the job and works through a file. Compute nodes have no internet. | Identity judgements with Qwen3.8-27B: 3,539 pairs in 35 minutes on one A100 GPU. |
+
+### What reading the India Office List would cost on a hosted service
+
+Measured with the Qwen tokenizer on a random 2,000 India Office entries and 2,000 saved Qwen records: about 640 tokens read per entry (a 471-token system prompt plus about 150 for the entry) and about 330 written.
+
+On 8 October 2026 OpenRouter listed Qwen3.8-27B at \$0.0239 per million input tokens and \$2.175 per million output tokens, a 50% promotion. For 30,496 entries: about 19.5 million tokens read (≈ \$0.47) and 10 million written (≈ \$22). At the regular price, roughly twice that: ≈ \$45. Almost all of the cost is output. Retries and failures add to it, prices change, and Qwen3.8-27B was not the model used for structuring: a different model needs the sample audit again.
 
 ### Starting without a university GPU
 
@@ -67,6 +83,12 @@ For a rough token-cost estimate, multiply measured tokens per entry by the inten
 **MCP.** Model Context Protocol, a standard way of giving a model a tool, such as a search endpoint, that it can call and whose results come back as evidence rather than memory.
 
 **vLLM.** An open-source server that runs an open model on a GPU and answers requests in the same format as the commercial APIs.
+
+**OpenRouter.** A hosted service that gives one account and one request format for many models, open and commercial, charged per token.
+
+**DGX Spark.** NVIDIA’s desktop AI computer: one GB10 chip with 128 GB of memory shared between processor and GPU, enough to hold a mid-sized open model.
+
+**Cluster and SLURM.** A research cluster is a pool of shared computers. SLURM is the queue: you submit a job script asking for a GPU and a time limit, and it runs when resources are free.
 
 **Mixture of experts.** A model built from many small specialist networks, only a few of which run for each token, so it is cheap to run for its size.
 

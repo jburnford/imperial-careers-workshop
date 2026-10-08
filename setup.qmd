@@ -42,6 +42,8 @@ No network needed.
 
 `outputs/structure/extraction-prompt.txt` is the system prompt. Send it with one entry as the user message to any OpenAI-compatible endpoint and ask for JSON. The Imperial Careers repository's `col_match/kg/extract.py` is the production version, with the validator that drops any place or year not present in the source.
 
+The endpoint can be a hosted service such as OpenRouter (an API key, pay per token), a model you serve yourself with vLLM on a desktop GPU, or a batch job on a research cluster. The [glossary](glossary.qmd#three-ways-to-run-it) compares the three as the project used them, with a worked cost estimate.
+
 ## Credentials
 
 No file in this repository contains a credential, and none is needed for the exercises. If you configure an agent with an API key, keep it out of the repository.

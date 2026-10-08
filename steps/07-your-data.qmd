@@ -48,11 +48,11 @@ The published session description invited you to bring messy historical datasets
 Two different jobs need two different kinds of model.
 
 - **The agent that writes the pipeline** reads your sample, proposes the structure, writes and tests the scripts, builds the review views and the atlas. This is hours of a frontier model's time per project, in a coding agent. Imperial Careers used Claude in Claude Code.
-- **The model inside the pipeline** reads every entry and judges every cluster. At corpus scale, measure cost and throughput on a sample before choosing a model. Imperial Careers used Qwen3.6-35B-A3B on a university GPU box for structuring, at about one entry a second, and Qwen3.8-27B on a Compute Canada cluster for the never-biographied matching, with the frontier model's in-session work as the reference set to measure it against.
+- **The model inside the pipeline** reads every entry and judges every cluster. At corpus scale, measure cost and throughput on a sample before choosing a model. Imperial Careers used Qwen3.6-35B-A3B on a DGX Spark desktop GPU for structuring, at about one entry a second, and Qwen3.8-27B on Alliance clusters for the never-biographied matching, with the frontier model's in-session work as the reference set to measure it against.
 
 The agent can write the pipeline so that the cheap model does the reading and the agent is only called back when something fails. Which operation produced a given record should remain visible in the output.
 
-For your first trial, you do not need a university GPU. Use twenty records you can check, a hosted model or your existing coding agent, and a small output table. Record input and output tokens, charges, elapsed time, failures and review time. University computing also has a cost even when there is no bill per request.
+For your first trial, you do not need a university GPU. Use twenty records you can check, a hosted model or your existing coding agent, and a small output table. Record input and output tokens, charges, elapsed time, failures and review time. University computing also has a cost even when there is no bill per request. For scale: reading all 30,496 India Office entries through a hosted Qwen model would cost roughly \$22–45 at October 2026 prices ([worked estimate](../glossary.qmd#what-reading-the-india-office-list-would-cost-on-a-hosted-service)).
 
 **Take-home instruction for your agent:**
 

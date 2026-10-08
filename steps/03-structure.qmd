@@ -54,7 +54,7 @@ The collaboration with Claude Code produced the schema, Python stages and extrac
 The resulting workflow had three parts. It ran for the Colonial Office List in June 2026 and for the India Office List a week later:
 
 1. **Python first.** A regex grammar for the printed entry shape parses what it can. It is all-or-nothing: if any clause containing a year fails to parse cleanly, the whole entry is refused rather than half-parsed. A second Python pass expands the abbreviations it recognises ("Feb." to "February", "acctnt." to "accountant") and leaves everything else exactly as printed.
-2. **A model for what Python cannot do.** Binding position to place to time span across run-on, elided, "ditto" and concurrent clauses. One entry in, one JSON object out. For the Colonial Office List the first residue went to a batch API with a cheap commercial model; the bulk of both corpora went to an open model on a university GPU.
+2. **A model for what Python cannot do.** Binding position to place to time span across run-on, elided, "ditto" and concurrent clauses. One entry in, one JSON object out. For the Colonial Office List the first residue went to a batch API with a cheap commercial model; the bulk of both corpora went to an open model on a desktop GPU.
 3. **Python again.** A validator that checks every place and year the model emitted against the source text and drops what it cannot find there. Then a post-normalisation pass that applies the deterministic fixes found by the audit, logging every change.
 
 ## The schema
@@ -81,7 +81,7 @@ Three things to notice. Every rule in the list exists because an earlier run bro
 
 | | Colonial Office List | India Office List |
 |---|---|---|
-| Model | Qwen3.6-35B-A3B, served by vLLM on a university GPU box | same |
+| Model | Qwen3.6-35B-A3B, served by vLLM on an NVIDIA DGX Spark desktop GPU | same |
 | Settings | temperature 0, reasoning off, 8 to 16 workers, 4 retries | same |
 | Entries | 34,743 | 30,496 |
 | Rate once warm | about 1 a second | 1.03 a second |
@@ -89,6 +89,8 @@ Three things to notice. Every rule in the list exists because an earlier run bro
 | Failed to return valid JSON | | 55, under 0.2 per cent |
 
 The handoff note records the setting that matters most: reasoning off. With it on, long entries eat the token budget and return no JSON, a 67 per cent failure rate. Thinking off, temperature zero: the same finding every run on this corpus has made.
+
+The model was chosen first through OpenRouter, a hosted service, by running several open models on the same 40 entries; the production run then used the same model on local hardware. The [glossary](../glossary.qmd#three-ways-to-run-it) compares the hosted, desktop and cluster routes, with a worked cost estimate at current hosted prices.
 
 The India Office List needed one new piece of code, a Python segmenter for its different OCR format, written that morning. The prompt, the model, the validator and the post-normaliser were reused unchanged through one environment variable. The graph was published that afternoon.
 

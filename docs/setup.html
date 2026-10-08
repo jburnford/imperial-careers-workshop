@@ -281,6 +281,7 @@ archive/tropical/    the earlier draft built on The Tropical Agriculturist, kept
 <section id="running-the-structuring-prompt" class="level2">
 <h2 class="anchored" data-anchor-id="running-the-structuring-prompt">Running the structuring prompt</h2>
 <p><code>outputs/structure/extraction-prompt.txt</code> is the system prompt. Send it with one entry as the user message to any OpenAI-compatible endpoint and ask for JSON. The Imperial Careers repository’s <code>col_match/kg/extract.py</code> is the production version, with the validator that drops any place or year not present in the source.</p>
+<p>The endpoint can be a hosted service such as OpenRouter (an API key, pay per token), a model you serve yourself with vLLM on a desktop GPU, or a batch job on a research cluster. The <a href="./glossary.html#three-ways-to-run-it">glossary</a> compares the three as the project used them, with a worked cost estimate.</p>
 </section>
 <section id="credentials" class="level2">
 <h2 class="anchored" data-anchor-id="credentials">Credentials</h2>

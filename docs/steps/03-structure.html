@@ -332,7 +332,7 @@ Terms on this page
 <p>The resulting workflow had three parts. It ran for the Colonial Office List in June 2026 and for the India Office List a week later:</p>
 <ol type="1">
 <li><strong>Python first.</strong> A regex grammar for the printed entry shape parses what it can. It is all-or-nothing: if any clause containing a year fails to parse cleanly, the whole entry is refused rather than half-parsed. A second Python pass expands the abbreviations it recognises (“Feb.” to “February”, “acctnt.” to “accountant”) and leaves everything else exactly as printed.</li>
-<li><strong>A model for what Python cannot do.</strong> Binding position to place to time span across run-on, elided, “ditto” and concurrent clauses. One entry in, one JSON object out. For the Colonial Office List the first residue went to a batch API with a cheap commercial model; the bulk of both corpora went to an open model on a university GPU.</li>
+<li><strong>A model for what Python cannot do.</strong> Binding position to place to time span across run-on, elided, “ditto” and concurrent clauses. One entry in, one JSON object out. For the Colonial Office List the first residue went to a batch API with a cheap commercial model; the bulk of both corpora went to an open model on a desktop GPU.</li>
 <li><strong>Python again.</strong> A validator that checks every place and year the model emitted against the source text and drops what it cannot find there. Then a post-normalisation pass that applies the deterministic fixes found by the audit, logging every change.</li>
 </ol>
 </section>
@@ -381,7 +381,7 @@ Return ONE JSON object with EXACTLY these top-level keys: surname, given_names, 
 <tbody>
 <tr class="odd">
 <td>Model</td>
-<td>Qwen3.6-35B-A3B, served by vLLM on a university GPU box</td>
+<td>Qwen3.6-35B-A3B, served by vLLM on an NVIDIA DGX Spark desktop GPU</td>
 <td>same</td>
 </tr>
 <tr class="even">
@@ -412,6 +412,7 @@ Return ONE JSON object with EXACTLY these top-level keys: surname, given_names, 
 </tbody>
 </table>
 <p>The handoff note records the setting that matters most: reasoning off. With it on, long entries eat the token budget and return no JSON, a 67 per cent failure rate. Thinking off, temperature zero: the same finding every run on this corpus has made.</p>
+<p>The model was chosen first through OpenRouter, a hosted service, by running several open models on the same 40 entries; the production run then used the same model on local hardware. The <a href="../glossary.html#three-ways-to-run-it">glossary</a> compares the hosted, desktop and cluster routes, with a worked cost estimate at current hosted prices.</p>
 <p>The India Office List needed one new piece of code, a Python segmenter for its different OCR format, written that morning. The prompt, the model, the validator and the post-normaliser were reused unchanged through one environment variable. The graph was published that afternoon.</p>
 </section>
 <section id="two-kinds-of-model" class="level2">
