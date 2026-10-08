@@ -41,7 +41,7 @@ Next checks: inspect the 1927 page image, compare another edition, and trace the
 
 ### R5 (Ground). "Union of S. Africa" is not Q5155572
 
-**Reject.** Q5155572 is the British South Africa Company's territory, seated at Harare. Q193619, the Union of South Africa, is what the surface names. The error came from a containment match on the string "South Africa" during the manifest join; it affected 960 Colonial Office events and was visible on the atlas as a Rhodesia node with far too many arcs. The fix patched five cache rows with a stated reason, added a containment guard to the join, and left a note that pre-1910 "S. Africa" (about 100 events) is ambiguous between the Cape and the Union and needs a date-aware rule.
+**Reject.** Q5155572 is the British South Africa Company's territory, seated at Harare. Q193619, the Union of South Africa, is what the surface names. The error came from a containment match on the string "South Africa" during the manifest join; it affected 960 Colonial Office events and was visible on the atlas as a Rhodesia node with far too many arcs. The fix patched five cache rows with a stated reason, and added a containment guard to the join. The October rebuild added the date-aware check: pre-1910 records cannot use the Union, explicit towns are retained, and unresolved jurisdictions are not replaced with a guess.
 
 ### R6 (Ground). Brewster's "Victoria" is British Columbia
 

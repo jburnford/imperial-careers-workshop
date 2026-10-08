@@ -3,6 +3,8 @@ title: "Presenter notes"
 subtitle: "A sixty-minute working session, with the same decisions in the room and on Zoom."
 ---
 
+Lead with what the dataset makes possible: following careers across editions and across the two Lists. The core atlas repairs are complete. Use saved earlier outputs to teach how to read, decide and check a correction, with the repaired result made explicit.
+
 ## Before the day
 
 - [ ] Confirm who monitors Zoom chat and how questions reach the room. Ask them to relay a reason as well as a verdict.
@@ -19,16 +21,16 @@ subtitle: "A sixty-minute working session, with the same decisions in the room a
 
 | Minutes | What happens | If time is short |
 |---|---|---|
-| 0–7 | Video; Wodehouse source-to-map table and errors; what the records make visible; three questions | Summarise the three Wodehouse errors in one sentence each |
+| 0–7 | Video; Wodehouse source-to-map; one career across two Lists; what the records make visible; three questions | Keep the cross-service example; shorten the table walkthrough |
 | 7–13 | Balmer: three minutes tagging the last two postings, one minute comparing, one minute discussing | Keep everyone on Balmer; no tour of the other entries |
-| 13–23 | Hybrid extraction, prompt, pre-fix audit, one correction replayed and checked | Show the saved replay instead of running the command |
+| 13–23 | Hybrid extraction, prompt, source-reading examples from an earlier audit, a past correction replayed and checked | Show the saved replay instead of running the command |
 | 23–30 | Abery/Carbery decision before reveal; A’Beckett/Beckett contrast | Keep the first decision; shorten the second example |
 | 30–40 | Three lookups (maximum four minutes); saved chatbot comparison; model roles and cost | Use saved lookups; do not start a live chatbot run |
-| 40–46 | Brewster: repair the geography, then discover the unsupported appointment; limits of maps | Keep both reveals; leave South Africa and Baluchistan on the supporting page |
+| 40–46 | Brewster: two completed repairs, geography and event meaning; how to check beyond a map | Keep the source decision and completed result; leave other repair examples on the supporting page |
 | 46–56 | R1, R3, R8: six minutes deciding, four minutes discussing Harris | Reduce the recap cases; protect Harris and the reasons |
 | 56–60 | One sentence about participants’ own records, questions, take-home links | Use the written take-home prompt on step 7 |
 
-The detailed pages contain more examples than the hour. Trading Consequences, the full Wodehouse trace, two additional clusters and the other map defects are supporting material.
+The detailed pages contain more examples than the hour. Trading Consequences, the full Wodehouse trace and repair history, two additional clusters and the other past map errors are supporting material. Keep the detailed audit percentages available for questions; the presentation teaches the review method through source clauses.
 
 ## The correction replay
 
@@ -38,13 +40,15 @@ python3 scripts/demo_ditto_fix.py
 
 This needs neither a model nor a network. It checks three saved records and twelve events, changes Balmer’s literal “do.”, preserves the other fields, and checks that a second run makes no further changes. Constructed cases check that a missing predecessor stays unresolved. The [saved report](outputs/structure/ditto-fix-replay.json) includes before, after and the reason.
 
-Call this a workshop replay. It is not a production rerun or a measurement of the graph’s post-fix accuracy. Blakely and Connolly’s unrelated errors remain in the replay output.
+Call this a replay of a past correction. It is not a production rerun or a measurement of the graph’s post-fix accuracy. The saved Blakely and Connolly fields are unchanged because they are outside the ditto rule’s scope. Treat these files as teaching snapshots.
 
-## Two unfinished repairs worth showing
+## Completed repairs as teaching examples
 
-**Wodehouse:** show the saved before image, then the rebuilt public atlas. Venezuela, the Cape high commissionership, Belize City, and the IO Honduras record are repaired. The wider check found 1,120 pre-1910 Union assignments across both Lists. Explicit towns stay available; ambiguous historical jurisdictions remain unresolved. Dated seats replace the later-capital shortcuts.
+**Wodehouse, optional supporting example:** the opening follows his career across the two Lists. If asked how historical geography was checked, use the supporting page, which pairs the saved before image with a current atlas capture. Venezuela, the Cape high commissionership, Belize City, and the IO Honduras record are repaired. The wider check found 1,120 pre-1910 Union assignments across both Lists. Explicit towns stay available; ambiguous historical jurisdictions remain unresolved. Dated seats replace the later-capital shortcuts.
 
-**Brewster:** correcting Victoria’s geography leaves the saved graph asserting a 1912–1916 appointment from a clause saying he was defeated. Ask for a verdict before revealing it. Keep the defeat as source evidence; do not treat it as an office held. The saved graph is the before version. The rebuilt graph preserves this as an electoral defeat and removes the held-role assertion.
+**Brewster, minutes 40–44:** introduce both repairs as complete, then retrace the decisions. Correcting Victoria’s geography left an earlier graph asserting a 1912–1916 appointment from a clause saying he was defeated. Ask whether that assertion is supported before revealing the completed correction. Keep the defeat as source evidence; do not treat it as an office held. The saved graph is the before version. The rebuilt graph preserves this as an electoral defeat and removes the held-role assertion.
+
+The wider repair work also checked route rendering. Cameron’s acting Windward appointments remain mapped and connect to Gambia; the Ottawa conference visit stays in the written record. These are supporting examples of deciding what to map, not additional slides for the hour. The Province of Canada correction and sources are recorded in the [atlas repository](https://github.com/jburnford/col_matching/blob/master/research/canada-geography-2026-10-08.json).
 
 ## The live lookup and saved runs
 
@@ -58,7 +62,7 @@ The cost slide distinguishes the coding agent, corpus reader and hard-case revie
 
 Use the same prompts in the room and on Zoom. Pause before the Abery decision and the Brewster second reveal. Ask for evidence, not a show of confidence. No polling software is required.
 
-For the final exercise, the page puts **R1, R3 and R8 first**; the other five are further practice. Select R8 beside **Copy decision and reason** for a chat response. Paper users have the same proposals and evidence. The TSV download retains all reasons and the case-set fingerprint; do not promise collection unless a destination has been arranged.
+For the final exercise, introduce the records as **saved teaching cases**, then work through **R1, R3 and R8**; the other five are further practice. Participants judge the saved proposals against their evidence. Select R8 beside **Copy decision and reason** for a chat response. Paper users have the same proposals and evidence. The TSV download retains all reasons and the case-set fingerprint; do not promise collection unless a destination has been arranged.
 
 For Harris, invite both an “accept with conflict recorded” and an “unresolved pending a check” response. The key distinction is between accepting the identity and replacing the birth year in the source. Check the scan, another edition and the external date’s cited source. Repeated copies of an account do not make independent corroboration.
 
@@ -69,4 +73,4 @@ For Harris, invite both an “accept with conflict recorded” and an “unresol
 - A labelled sample measures the population and decision type it was designed for. The 76% figure concerns “different” decisions in a particular risky stratum, not overall recall.
 - An identifier resolving to the expected label is not enough to establish a historically correct match.
 - Administrative seats are plotting proxies. Arcs connect recorded postings; they are not observed journeys.
-- The published Imperial Careers site is unchanged by this workshop revision.
+- The atlas repairs were published and browser-checked on 7–8 October. Historical screenshots and saved experiment outputs are dated evidence, not the current public result. The top-500 geographic review does not mean all 500 careers have been fully verified against primary sources.

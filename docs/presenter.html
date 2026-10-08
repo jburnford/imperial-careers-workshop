@@ -218,7 +218,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#before-the-day" id="toc-before-the-day" class="nav-link active" data-scroll-target="#before-the-day">Before the day</a></li>
   <li><a href="#running-order" id="toc-running-order" class="nav-link" data-scroll-target="#running-order">Running order</a></li>
   <li><a href="#the-correction-replay" id="toc-the-correction-replay" class="nav-link" data-scroll-target="#the-correction-replay">The correction replay</a></li>
-  <li><a href="#two-unfinished-repairs-worth-showing" id="toc-two-unfinished-repairs-worth-showing" class="nav-link" data-scroll-target="#two-unfinished-repairs-worth-showing">Two unfinished repairs worth showing</a></li>
+  <li><a href="#completed-repairs-as-teaching-examples" id="toc-completed-repairs-as-teaching-examples" class="nav-link" data-scroll-target="#completed-repairs-as-teaching-examples">Completed repairs as teaching examples</a></li>
   <li><a href="#the-live-lookup-and-saved-runs" id="toc-the-live-lookup-and-saved-runs" class="nav-link" data-scroll-target="#the-live-lookup-and-saved-runs">The live lookup and saved runs</a></li>
   <li><a href="#participation-and-debrief" id="toc-participation-and-debrief" class="nav-link" data-scroll-target="#participation-and-debrief">Participation and debrief</a></li>
   <li><a href="#claims-to-keep-bounded" id="toc-claims-to-keep-bounded" class="nav-link" data-scroll-target="#claims-to-keep-bounded">Claims to keep bounded</a></li>
@@ -248,6 +248,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<p>Lead with what the dataset makes possible: following careers across editions and across the two Lists. The core atlas repairs are complete. Use saved earlier outputs to teach how to read, decide and check a correction, with the repaired result made explicit.</p>
 <section id="before-the-day" class="level2">
 <h2 class="anchored" data-anchor-id="before-the-day">Before the day</h2>
 <ul class="task-list">
@@ -279,8 +280,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td>0–7</td>
-<td>Video; Wodehouse source-to-map table and errors; what the records make visible; three questions</td>
-<td>Summarise the three Wodehouse errors in one sentence each</td>
+<td>Video; Wodehouse source-to-map; one career across two Lists; what the records make visible; three questions</td>
+<td>Keep the cross-service example; shorten the table walkthrough</td>
 </tr>
 <tr class="even">
 <td>7–13</td>
@@ -289,7 +290,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="odd">
 <td>13–23</td>
-<td>Hybrid extraction, prompt, pre-fix audit, one correction replayed and checked</td>
+<td>Hybrid extraction, prompt, source-reading examples from an earlier audit, a past correction replayed and checked</td>
 <td>Show the saved replay instead of running the command</td>
 </tr>
 <tr class="even">
@@ -304,8 +305,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td>40–46</td>
-<td>Brewster: repair the geography, then discover the unsupported appointment; limits of maps</td>
-<td>Keep both reveals; leave South Africa and Baluchistan on the supporting page</td>
+<td>Brewster: two completed repairs, geography and event meaning; how to check beyond a map</td>
+<td>Keep the source decision and completed result; leave other repair examples on the supporting page</td>
 </tr>
 <tr class="odd">
 <td>46–56</td>
@@ -319,18 +320,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<p>The detailed pages contain more examples than the hour. Trading Consequences, the full Wodehouse trace, two additional clusters and the other map defects are supporting material.</p>
+<p>The detailed pages contain more examples than the hour. Trading Consequences, the full Wodehouse trace and repair history, two additional clusters and the other past map errors are supporting material. Keep the detailed audit percentages available for questions; the presentation teaches the review method through source clauses.</p>
 </section>
 <section id="the-correction-replay" class="level2">
 <h2 class="anchored" data-anchor-id="the-correction-replay">The correction replay</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> scripts/demo_ditto_fix.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This needs neither a model nor a network. It checks three saved records and twelve events, changes Balmer’s literal “do.”, preserves the other fields, and checks that a second run makes no further changes. Constructed cases check that a missing predecessor stays unresolved. The <a href="outputs/structure/ditto-fix-replay.json">saved report</a> includes before, after and the reason.</p>
-<p>Call this a workshop replay. It is not a production rerun or a measurement of the graph’s post-fix accuracy. Blakely and Connolly’s unrelated errors remain in the replay output.</p>
+<p>Call this a replay of a past correction. It is not a production rerun or a measurement of the graph’s post-fix accuracy. The saved Blakely and Connolly fields are unchanged because they are outside the ditto rule’s scope. Treat these files as teaching snapshots.</p>
 </section>
-<section id="two-unfinished-repairs-worth-showing" class="level2">
-<h2 class="anchored" data-anchor-id="two-unfinished-repairs-worth-showing">Two unfinished repairs worth showing</h2>
-<p><strong>Wodehouse:</strong> show the saved before image, then the rebuilt public atlas. Venezuela, the Cape high commissionership, Belize City, and the IO Honduras record are repaired. The wider check found 1,120 pre-1910 Union assignments across both Lists. Explicit towns stay available; ambiguous historical jurisdictions remain unresolved. Dated seats replace the later-capital shortcuts.</p>
-<p><strong>Brewster:</strong> correcting Victoria’s geography leaves the saved graph asserting a 1912–1916 appointment from a clause saying he was defeated. Ask for a verdict before revealing it. Keep the defeat as source evidence; do not treat it as an office held. The saved graph is the before version. The rebuilt graph preserves this as an electoral defeat and removes the held-role assertion.</p>
+<section id="completed-repairs-as-teaching-examples" class="level2">
+<h2 class="anchored" data-anchor-id="completed-repairs-as-teaching-examples">Completed repairs as teaching examples</h2>
+<p><strong>Wodehouse, optional supporting example:</strong> the opening follows his career across the two Lists. If asked how historical geography was checked, use the supporting page, which pairs the saved before image with a current atlas capture. Venezuela, the Cape high commissionership, Belize City, and the IO Honduras record are repaired. The wider check found 1,120 pre-1910 Union assignments across both Lists. Explicit towns stay available; ambiguous historical jurisdictions remain unresolved. Dated seats replace the later-capital shortcuts.</p>
+<p><strong>Brewster, minutes 40–44:</strong> introduce both repairs as complete, then retrace the decisions. Correcting Victoria’s geography left an earlier graph asserting a 1912–1916 appointment from a clause saying he was defeated. Ask whether that assertion is supported before revealing the completed correction. Keep the defeat as source evidence; do not treat it as an office held. The saved graph is the before version. The rebuilt graph preserves this as an electoral defeat and removes the held-role assertion.</p>
+<p>The wider repair work also checked route rendering. Cameron’s acting Windward appointments remain mapped and connect to Gambia; the Ottawa conference visit stays in the written record. These are supporting examples of deciding what to map, not additional slides for the hour. The Province of Canada correction and sources are recorded in the <a href="https://github.com/jburnford/col_matching/blob/master/research/canada-geography-2026-10-08.json">atlas repository</a>.</p>
 </section>
 <section id="the-live-lookup-and-saved-runs" class="level2">
 <h2 class="anchored" data-anchor-id="the-live-lookup-and-saved-runs">The live lookup and saved runs</h2>
@@ -341,7 +343,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="participation-and-debrief" class="level2">
 <h2 class="anchored" data-anchor-id="participation-and-debrief">Participation and debrief</h2>
 <p>Use the same prompts in the room and on Zoom. Pause before the Abery decision and the Brewster second reveal. Ask for evidence, not a show of confidence. No polling software is required.</p>
-<p>For the final exercise, the page puts <strong>R1, R3 and R8 first</strong>; the other five are further practice. Select R8 beside <strong>Copy decision and reason</strong> for a chat response. Paper users have the same proposals and evidence. The TSV download retains all reasons and the case-set fingerprint; do not promise collection unless a destination has been arranged.</p>
+<p>For the final exercise, introduce the records as <strong>saved teaching cases</strong>, then work through <strong>R1, R3 and R8</strong>; the other five are further practice. Participants judge the saved proposals against their evidence. Select R8 beside <strong>Copy decision and reason</strong> for a chat response. Paper users have the same proposals and evidence. The TSV download retains all reasons and the case-set fingerprint; do not promise collection unless a destination has been arranged.</p>
 <p>For Harris, invite both an “accept with conflict recorded” and an “unresolved pending a check” response. The key distinction is between accepting the identity and replacing the birth year in the source. Check the scan, another edition and the external date’s cited source. Repeated copies of an account do not make independent corroboration.</p>
 </section>
 <section id="claims-to-keep-bounded" class="level2">
@@ -352,7 +354,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>A labelled sample measures the population and decision type it was designed for. The 76% figure concerns “different” decisions in a particular risky stratum, not overall recall.</li>
 <li>An identifier resolving to the expected label is not enough to establish a historically correct match.</li>
 <li>Administrative seats are plotting proxies. Arcs connect recorded postings; they are not observed journeys.</li>
-<li>The published Imperial Careers site is unchanged by this workshop revision.</li>
+<li>The atlas repairs were published and browser-checked on 7–8 October. Historical screenshots and saved experiment outputs are dated evidence, not the current public result. The top-500 geographic review does not mean all 500 careers have been fully verified against primary sources.</li>
 </ul>
 
 

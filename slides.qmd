@@ -36,7 +36,7 @@ format:
 ```
 
 ::: notes
-0–1. Let the 56-second video run. It is an earlier export; the September counts on the next slide supersede its caption. These are sequences of recorded postings, not observed travel routes. The video starts muted when this slide opens; use Play or Replay in its controls if needed. The direct link opens the MP4 separately. Use the downloaded copy if the network fails.
+0–1. Let the 56-second video run. It is an earlier export; the dated build counts in the deck supersede its caption. These are sequences of recorded postings, not observed travel routes. The video starts muted when this slide opens; use Play or Replay in its controls if needed. The direct link opens the MP4 separately. Use the downloaded copy if the network fails.
 :::
 
 ## What one arc needs {.smaller}
@@ -57,29 +57,20 @@ A source clause → an event → a checked place identifier → a point.
 1–3. Source is the 1867 Colonial Office List; Bombay comes from the India Office List. The full table, identifiers and trace are on step 1. “Honduras” to “British Honduras” is an interpretation, kept separately from printed wording. A capital is a plotting proxy, not evidence of residence. Wodehouse is a checked example of the cross-service match; the other bridges need review.
 :::
 
-## What the map got wrong — and we repaired {.smaller}
+## One career across two Lists {#cross-service-career}
 
-:::: {.columns}
-::: {.column width="38%"}
-![](images/atlas-wodehouse-panel.png){height="440" fig-alt="Wodehouse's atlas panel, showing the incorrect South Africa and Belmopan locations"}
-:::
-::: {.column width="62%"}
-- **1858 mission to Venezuela** → Union of South Africa.
-- **1861 high commissioner** → a state founded in 1910.
-- **1851 Honduras** → Belmopan, a capital founded in 1970.
+**Colonial Office List:** Ceylon → Honduras → British Guiana → Cape
 
-[The map made the errors visible.]{.gold}
+**India Office List:** Bombay, 1872–77
 
-**Repaired in the public atlas** (7 October).
+Linking the entries lets us follow a career across administrative collections.
 
-The same checks now run across both Lists.
+**What becomes visible when we read the two Lists together?**
 
-The date matters as much as the place name.
-:::
-::::
+[Open Wodehouse’s career](https://jimclifford.ca/col_matching/?p=kgp_col1878-p447b3)
 
 ::: notes
-3–4. The image is the before view, saved on 7 October. The rebuilt public atlas places the mission in Venezuela, the high commissioner at the Cape, and Honduras at Belize City. The IO Honduras record is repaired too. The wider audit found 1,120 pre-1910 Union assignments. Remove invalid jurisdictions, retain explicit towns, and leave ambiguous locations unresolved. The point is to repair the rule and inspect everyone it touches.
+3–4. Lead with the historical use: a reader of either List alone sees part of this career. The checked link brings those parts together. This is a selection of postings, not the full itinerary. The public example reflects the repairs published and checked on 7–8 October. The supporting page retains the earlier Wodehouse errors and their corrections as optional teaching material. This one checked link does not establish that all proposed cross-service links are correct.
 :::
 
 ## What the records make visible {.smaller}
@@ -155,10 +146,10 @@ Three minutes, then compare:
 | **2. Qwen3.6-35B** | Bind positions, places and dates across difficult clauses |
 | **3. Python** | Check the output; apply logged rules for recurring errors |
 
-**30,496 entries · 8.24 hours · 55 invalid-JSON failures**
+**30,496 entries processed in 8.24 hours**
 
 ::: notes
-13–15. IOL run, 25–26 June, 16 workers, reasoning off, temperature zero. 55 is a format failure count, not the number of inaccurate records. The frontier coding agent wrote the machinery; an open model read the collection. COL bulk run: 34,743 entries, about a day including setup.
+13–15. IOL run, 25–26 June, 16 workers, reasoning off, temperature zero. The frontier coding agent wrote the machinery; an open model read the collection. COL bulk run: 34,743 entries, about a day including setup. If asked about completion: 55 entries failed JSON validation in the IOL run. That is a format failure count, not a count of inaccurate records.
 :::
 
 ## The prompt is the decisions
@@ -177,25 +168,23 @@ Three minutes, then compare:
 
 ## Read records against the source {.smaller}
 
-| Model-reviewed sample, before rule fixes | Fully clean | Records with a major error |
+**Examples from the saved extraction audit, before rule fixes**
+
+| Source | Earlier output | Reading to preserve |
 |---|---|---|
-| First 1,859 records, every tenth: 186 | 129 (69%) | 6 (3.2%); 8 findings |
-| 100 spread across the corpus | 51 (51%) | 9 (9%) |
-| 300 spread across the corpus | about 149 (50%) | not tallied |
+| “do., 1935” | place: “do.” | Inherit the preceding place |
+| “Apl., 1898” | birth_year: 1898 | Date of the appointment |
+| “KT. BACH. (1920)” | two honours | One knighthood |
 
-| Source | Wrong field |
-|---|---|
-| “do., 1935” | place: “do.” |
-| “Apl., 1898” | birth_year: 1898 |
-| “KT. BACH. (1920)” | two honours |
-
-These samples do **not** measure the finished graph’s accuracy.
+Keep the source beside the record. Turn recurring findings into explicit rules.
 
 ::: notes
-17–19. All three audits were read by a model; the displayed examples were checked by hand. Round 1 was limited to the first 1,859 records. Valid JSON is not a correct biography. Do not imply all errors can be fixed with a single rule.
+17–19. These are historical extraction outputs used to teach source reading, not a report of current defects. All three audits were read by a model; the displayed examples were checked by hand. The detailed sample counts remain on step 3 for questions; they do not measure finished-graph accuracy. Ask participants to explain each reading before moving to the Balmer replay. Valid JSON is not a correct biography. Some findings need individual review rather than a general rule.
 :::
 
-## One correction, checked {.smaller}
+## Replay a past correction {.smaller}
+
+**Balmer · saved extraction output**
 
 | Balmer, final event | |
 |---|---|
@@ -212,7 +201,7 @@ These samples do **not** measure the finished graph’s accuracy.
 [Saved before-and-after records](outputs/structure/ditto-fix-replay.json)
 
 ::: notes
-19–23. Run python3 scripts/demo_ditto_fix.py if useful; no model or network. This is a bounded workshop replay, not a rerun of col_matching. The other eleven events are unchanged; Blakely and Connolly still have their other errors. The missing-predecessor checks are constructed tests, not historical records. Ask what else must be checked before applying this to the corpus: affected records, boundary cases, a fresh sample afterwards.
+19–23. Run python3 scripts/demo_ditto_fix.py if useful; no model or network. Introduce this as a replay of an earlier correction using saved records. It is not a rerun of col_matching. The other eleven events and the saved Blakely and Connolly fields are unchanged: this demonstrates the scope of the ditto rule. The missing-predecessor checks are constructed tests, not historical records. Ask what else must be checked before applying this to the corpus: affected records, boundary cases, a fresh sample afterwards.
 :::
 
 ## Clean: forty editions, one person
@@ -288,7 +277,7 @@ Supported · unresolved · wrong
 31–35. Trimen: read statements before accepting. Price: ask participants before stating your decision; accepting with recorded limitations or seeking another source is defensible. Tibbits: record the search, do not claim no item exists. Use saved answer-key.md if live lookup fails. Cap live work at four minutes.
 :::
 
-## Ask a chatbot without lookup tools
+## A saved run without lookup tools
 
 ::: {.big}
 [0 of 16]{.gold}
@@ -306,6 +295,8 @@ Fluent biographies. Plausible-looking numbers. Wrong items.
 
 ## Same entries, different workflows {.smaller}
 
+**Saved experiment · twenty entries**
+
 | Saved run | Subject links accepted in review | Elapsed |
 |---|---|---|
 | Gemini 3.8 Flash, no tools | 0 of 16 supplied | under 5 min |
@@ -314,10 +305,10 @@ Fluent biographies. Plausible-looking numbers. Wrong items.
 
 The pipeline supplied **12** links; the review supported all 12.
 
-Place coverage and historical correctness differ. Even the most detailed retrieval output has a modern Victoria mismatch.
+Check retrieved evidence against the career’s dates and context.
 
 ::: notes
-36–38. Different models and tools: not a controlled test of retrieval alone. The site keeps the detailed place table with its different denominators. Astra's 155 label/alias checks are not 155 historically correct matches. Hold Harris's specific discrepancy back for R8.
+36–38. These are saved experimental outputs, not current atlas results. Different models and tools: not a controlled test of retrieval alone. The site keeps the detailed place table with its different denominators and the historical Victoria mismatch. Astra's 155 label/alias checks are not 155 historically correct matches. Hold Harris's specific discrepancy back for R8.
 :::
 
 ## Two jobs; measure their costs {.smaller}
@@ -337,26 +328,26 @@ Start with twenty records. No cluster needed for the first trial.
 38–40. The 25 days is a serial extrapolation, not a forecast or invoice. Caching and concurrency change throughput. Campus computing is not free infrastructure, even without a per-request bill. Hosted models are a route for participants without a GPU. Measure on their sample rather than promising a dollar total. Keep this slide: attendees miss the parallel cost/model session.
 :::
 
-## The map finds the wrong Victoria
+## A past repair: which Victoria?
 
 Brewster’s entry: **“defeated by Sir Richard McBride, in Victoria, 1912.”**
 
-The atlas placed a British Columbia politician in Australia.
+An earlier atlas placed a British Columbia politician in Australia.
 
 **Cause:** one “Victoria” match reused for everyone.\
-**Place fix:** use this person’s career context.
+**Completed place fix:** use this person’s career context.
 
 ::: notes
-40–42. Explain the per-person resolver and the identifier-key bug it exposed. Both corpora were re-emitted. The supporting page retains South Africa and Baluchistan as further examples.
+40–42. State that this is a completed repair before discussing the old result. Explain the per-person resolver and the identifier-key bug it exposed. Both corpora were re-emitted. Ask what evidence selects British Columbia: the surrounding career clauses. The supporting page retains South Africa and Baluchistan as further historical examples.
 :::
 
-## But did he hold that office?
+## A past repair: what counts as an event?
 
-| Source | Saved graph, after the place fix |
+| Source | Earlier graph, after the place fix |
 |---|---|
 | **Defeated**, Victoria, 1912 | Legislative assembly member for Victoria, **1912–1916** |
 
-**Does the corrected record stand?**
+**Would you accept this office-held assertion?**
 
 ::: {.fragment}
 A defeat does not establish an appointment. **Repaired:** preserve the defeat as an event; remove the office-held assertion. Check other defeat clauses.
@@ -365,7 +356,7 @@ A defeat does not establish an appointment. **Repaired:** preserve the defeat as
 A plausible map can conceal a misread source.
 
 ::: notes
-42–44. Pause for a room/chat verdict before reveal. The table shows the saved before version. The public graph now types this as an electoral defeat and removes the held-role edge. The same check catches other explicit electoral-defeat events. It does not establish that every misread defeat clause has been found.
+42–44. The table is a saved stage in the repair, before the event correction. Pause for a room/chat verdict before revealing the completed repair. The public graph now types this as an electoral defeat and removes the held-role edge. The same check catches other explicit electoral-defeat events. Use this to teach the difference between recording an event and asserting an office held.
 :::
 
 ## What a map cannot check
@@ -378,10 +369,12 @@ Use a labelled sample, including the cases the pipeline rejected.
 **Check both the repaired cases and other records the rule changed.**
 
 ::: notes
-44–46. If time: 76% of “different” decisions were wrong in one sampled rare-surname, overlapping-era stratum of never-biographied careers. This is a stratum-specific result, not overall recall. Preserve the larger methodological point without leading with another unexplained percentage.
+44–46. Explain why source sampling complements visual inspection: a missing record may produce no visible anomaly. Include accepted and rejected decisions in the review design. Keep the historical audit figures on the supporting pages for questions; focus here on how participants would check their own data.
 :::
 
 ## Three decisions, with reasons
+
+**Work from the saved teaching cases.**
 
 :::: {.columns}
 ::: {.column width="70%"}
@@ -401,7 +394,7 @@ Decide. Give the evidence. Say what you would check next.
 **jimclifford.ca/imperial-careers-workshop/review/**
 
 ::: notes
-46–56. The site displays the core cases first; the other five are further practice. Do not reveal the Harris answer until participants have decided. Zoom users select R8 and copy its decision and reason. Ask for an accept and an unresolved rationale; both can be defensible. Separate identity confidence from permission to change a source field. Printed handout page 2 has the same three decisions.
+46–56. Introduce these as saved proposals for practising decisions, not a live queue of atlas errors. The site displays the core cases first; the other five are further practice. Do not reveal the Harris answer until participants have decided. Zoom users select R8 and copy its decision and reason. Ask for an accept and an unresolved rationale; both can be defensible. Separate identity confidence from permission to change a source field. Printed handout page 2 has the same three decisions.
 :::
 
 ## Your first twenty records

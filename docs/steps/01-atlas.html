@@ -185,7 +185,10 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#watch" id="toc-watch" class="nav-link active" data-scroll-target="#watch">Watch</a></li>
   <li><a href="#what-one-arc-needs" id="toc-what-one-arc-needs" class="nav-link" data-scroll-target="#what-one-arc-needs">What one arc needs</a></li>
-  <li><a href="#and-what-the-map-got-wrong" id="toc-and-what-the-map-got-wrong" class="nav-link" data-scroll-target="#and-what-the-map-got-wrong">And what the map got wrong</a></li>
+  <li><a href="#from-a-visible-error-to-a-repaired-atlas" id="toc-from-a-visible-error-to-a-repaired-atlas" class="nav-link" data-scroll-target="#from-a-visible-error-to-a-repaired-atlas">From a visible error to a repaired atlas</a>
+  <ul class="collapse">
+  <li><a href="#the-rebuilt-result" id="toc-the-rebuilt-result" class="nav-link" data-scroll-target="#the-rebuilt-result">The rebuilt result</a></li>
+  </ul></li>
   <li><a href="#the-loop" id="toc-the-loop" class="nav-link" data-scroll-target="#the-loop">The loop</a></li>
   <li><a href="#an-earlier-project" id="toc-an-earlier-project" class="nav-link" data-scroll-target="#an-earlier-project">An earlier project</a></li>
   </ul>
@@ -229,7 +232,7 @@ Terms on this page
 <ul>
 <li><strong>coding agent</strong>: a model that can read files, write and run code, and call tools, rather than only answer in chat.</li>
 <li><strong>pipeline</strong>: the chain of scripts that turns the OCR text into the graph; run again when a rule changes.</li>
-<li><strong>arc</strong>: one line on the atlas: one official moving from one posting to another.</li>
+<li><strong>arc</strong>: a line connecting recorded appointments; solid lines follow dated sequences, while dashed lines mark uncertain connections.</li>
 <li><strong>Wikidata item, QID</strong>: a shared identifier (Q plus a number) for a person or place, with its own facts attached.</li>
 <li><strong>F-score</strong>: one number for how much a system found (recall) and how much of that was right (precision); it does not give either value separately.</li>
 <li><strong>gazetteer</strong>: a list of place names with coordinates.</li>
@@ -243,7 +246,7 @@ Terms on this page
 <section id="watch" class="level2">
 <h2 class="anchored" data-anchor-id="watch">Watch</h2>
 <div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="https://jimclifford.ca/col_matching/combined_mobility.mp4"></video></div>
-<p>This is an earlier atlas export, before the 7 October geography repairs. Fifty-six seconds. Every arc is one official moving from one colony, presidency or province to another, drawn from the career graph and played out by year, 1815 to 1966. The <a href="https://jimclifford.ca/col_matching/">interactive atlas</a> behind it lets you search a name, follow a career, and open 186 proposed links between people in the Colonial and India Office records: <a href="https://www.wikidata.org/wiki/Q1800510">Philip Edmond Wodehouse</a>, Governor of British Guiana, then the Cape, then Bombay, is one of them, and a historian of the Cape and a historian of Bombay would each have known half of him.</p>
+<p>This is an earlier atlas export, before the 7 October geography repairs. Fifty-six seconds. Each arc connects one official’s recorded postings between colonies, presidencies or provinces, drawn from the career graph and played out by year, 1815 to 1966. The <a href="https://jimclifford.ca/col_matching/">interactive atlas</a> behind it lets you search a name, follow a career, and open 186 proposed links between people in the Colonial and India Office records: <a href="https://www.wikidata.org/wiki/Q1800510">Philip Edmond Wodehouse</a>, Governor of British Guiana, then the Cape, then Bombay, is one of them, and a historian of the Cape and a historian of Bombay would each have known half of him.</p>
 <p>The cross-service links are candidates: the September review found errors in a small check (11 of 15 links supported). Wodehouse is the worked example here; the full set of bridges needs further review.</p>
 <p>What the atlas rests on, from the 4 September 2026 build:</p>
 <table class="caption-top table">
@@ -353,17 +356,27 @@ Terms on this page
 <p>The man himself is <a href="https://www.wikidata.org/wiki/Q1800510">Q1800510</a>, born 1811, died 1887. Every coordinate in the table came from Wikidata through the identifier: either the item carries a location, or it names a capital that does. Drawn in order of year:</p>
 <p><img src="../images/wodehouse-trace.png" class="img-fluid"></p>
 </section>
-<section id="and-what-the-map-got-wrong" class="level2">
-<h2 class="anchored" data-anchor-id="and-what-the-map-got-wrong">And what the map got wrong</h2>
+<section id="from-a-visible-error-to-a-repaired-atlas" class="level2">
+<h2 class="anchored" data-anchor-id="from-a-visible-error-to-a-repaired-atlas">From a visible error to a repaired atlas</h2>
 <p>The atlas’s own panel for the same record, captured before the repairs on 7 October 2026:</p>
 <p><img src="../images/atlas-wodehouse-co.png" class="img-fluid"></p>
-<p>Three rows were wrong. Each exposed a rule that needed repair:</p>
+<p>These are the saved <strong>before</strong> rows. Each led to a published correction:</p>
 <ul>
-<li><strong>1858, “employed on a special mission” → Union of South Africa.</strong> The source says Venezuela. Venezuela is not a colony, so the event had no colony of its own and fell through to the next one. The rule that rolls placeless events forward needs a stop for foreign missions.</li>
+<li><strong>1858, “employed on a special mission” → Union of South Africa.</strong> The source says Venezuela. Venezuela is not a colony, so the event had no colony of its own and fell through to the next one. The rebuilt atlas uses the explicit Venezuela location and no longer fills a missing location from the nearest appointment.</li>
 <li><strong>1861, “high commissioner” → Union of South Africa, seated at Bloemfontein.</strong> The Union dates from 1910. In 1861 he was high commissioner <em>for</em> South Africa, from Cape Town. The surface “South Africa” was grounded to the twentieth-century state; the period entity is the office, not a polity. This one was made by a fix: the South Africa repair in <a href="../steps/06-loop.html">step 6</a> sent the bare surface “South Africa” to the Union for every year.</li>
-<li><strong>1851, “Honduras” → seat Belmopan.</strong> A capital founded in 1970. The seat table needs a date-aware entry for Belize Town.</li>
+<li><strong>1851, “Honduras” → seat Belmopan.</strong> A capital founded in 1970. The dated seat rule now places this appointment at Belize.</li>
 </ul>
-<p>The India Office record of the same man has a fourth: “superintendent of Honduras” inherits British Guiana, because its place was left empty and the inheritance rule filled it from the wrong direction. All four are now repaired in the <a href="https://jimclifford.ca/col_matching/?p=kgp_col1878-p447b3">public atlas</a>. The build uses explicit grounded places, checks dates, and never fills a missing location from the nearest appointment. British Honduras uses Belize City for these dates. The <a href="https://github.com/jburnford/col_matching/tree/master/research/geography-2026-10-07">wider audit</a> checks both Lists and records corrections separately from candidates needing source review.</p>
+<p>The India Office record had a fourth error: “superintendent of Honduras” inherited British Guiana, because its place was left empty and the inheritance rule filled it from the wrong direction. All four are now repaired in the <a href="https://jimclifford.ca/col_matching/?p=kgp_col1878-p447b3">public atlas</a>. The build uses explicit grounded places, checks dates, and never fills a missing location from the nearest appointment. British Honduras uses Belize City for these dates. The <a href="https://github.com/jburnford/col_matching/tree/master/research/geography-2026-10-07">wider audit</a> checks both Lists and records corrections separately from candidates needing source review.</p>
+<section id="the-rebuilt-result" class="level3">
+<h3 class="anchored" data-anchor-id="the-rebuilt-result">The rebuilt result</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/atlas-wodehouse-repaired.png" class="img-fluid figure-img"></p>
+<figcaption>Wodehouse’s corrected public atlas career, captured 8 October 2026.</figcaption>
+</figure>
+</div>
+<p>The earlier screenshot records how we found the problem. This is the result after the correction and rebuild. <a href="https://jimclifford.ca/col_matching/?p=kgp_col1878-p447b3">Open the current career</a> to inspect the dates and postings.</p>
+</section>
 </section>
 <section id="the-loop" class="level2">
 <h2 class="anchored" data-anchor-id="the-loop">The loop</h2>
@@ -373,7 +386,7 @@ Terms on this page
 <li><strong>Extract</strong> the whole corpus with a cheap model inside that pipeline.</li>
 <li><strong>Visualise</strong> the result in the form the research question needs.</li>
 <li><strong>See</strong> what is wrong. A premier of British Columbia sitting in Australia. South African postings landing at Harare. Two Baluchistans.</li>
-<li><strong>Fix</strong> the rule, not the record. The fix goes into the grounding cache or the resolver, with a test.</li>
+<li><strong>Fix</strong> the cause: a grounding rule, a mistaken inheritance, or a source-specific reading. Record the evidence and add a check.</li>
 <li><strong>Rerun</strong> and re-emit, and look again at everyone the fix touched, not only the case you noticed.</li>
 </ol>
 <p>The atlas is step 3 and step 4 at once. It was built to answer a question about imperial mobility; it turned out to be the project’s best error detector, because a wrong grounding is invisible in a table of 180,000 rows and obvious on a map. <a href="../steps/06-loop.html">Step 6</a> walks through three of the errors it found.</p>

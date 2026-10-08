@@ -43,7 +43,7 @@ Extraction is half of it. The other half is looking at the result in a form wher
 
 | Minutes | | |
 |---|---|---|
-| 0–7 | [The atlas](steps/01-atlas.qmd) | The video; then one man's entry turned into identifiers, coordinates and arcs, and the rows the map got wrong |
+| 0–7 | [The atlas](steps/01-atlas.qmd) | The video; then one man's entry turned into identifiers, coordinates and arcs, and the corrections carried through to the rebuilt atlas |
 | 7–13 | [The source](steps/02-source.qmd) | One printed entry. Mark up what you would extract |
 | 13–23 | [Structure](steps/03-structure.qmd) | The prompt, the audit, and one correction replayed with checks |
 | 23–30 | [Clean](steps/04-identity.qmd) | Forty editions, one person: the merge rules and the cases that need a historian |

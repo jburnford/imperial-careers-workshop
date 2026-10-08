@@ -150,7 +150,7 @@ Jim Clifford, University of Saskatchewan
 </video>
 <p class="video-link"><a href="https://jimclifford.ca/col_matching/combined_mobility.mp4" target="_blank" rel="noopener">Open the video directly</a> · Earlier atlas export</p>
 <aside class="notes">
-<p>0–1. Let the 56-second video run. It is an earlier export; the September counts on the next slide supersede its caption. These are sequences of recorded postings, not observed travel routes. The video starts muted when this slide opens; use Play or Replay in its controls if needed. The direct link opens the MP4 separately. Use the downloaded copy if the network fails.</p>
+<p>0–1. Let the 56-second video run. It is an earlier export; the dated build counts in the deck supersede its caption. These are sequences of recorded postings, not observed travel routes. The video starts muted when this slide opens; use Play or Replay in its controls if needed. The direct link opens the MP4 separately. Use the downloaded copy if the network fails.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -238,24 +238,15 @@ Jim Clifford, University of Saskatchewan
           display:block!important;
       }</style></aside>
 </section>
-<section id="what-the-map-got-wrong-and-we-repaired" class="slide level2 smaller">
-<h2>What the map got wrong — and we repaired</h2>
-<div class="columns">
-<div class="column" style="width:38%;">
-<p><img data-src="images/atlas-wodehouse-panel.png" alt="Wodehouse's atlas panel, showing the incorrect South Africa and Belmopan locations" height="440"></p>
-</div><div class="column" style="width:62%;">
-<ul>
-<li><strong>1858 mission to Venezuela</strong> → Union of South Africa.</li>
-<li><strong>1861 high commissioner</strong> → a state founded in 1910.</li>
-<li><strong>1851 Honduras</strong> → Belmopan, a capital founded in 1970.</li>
-</ul>
-<p><span class="gold">The map made the errors visible.</span></p>
-<p><strong>Repaired in the public atlas</strong> (7 October).</p>
-<p>The same checks now run across both Lists.</p>
-<p>The date matters as much as the place name.</p>
-</div></div>
+<section id="cross-service-career" class="slide level2">
+<h2>One career across two Lists</h2>
+<p><strong>Colonial Office List:</strong> Ceylon → Honduras → British Guiana → Cape</p>
+<p><strong>India Office List:</strong> Bombay, 1872–77</p>
+<p>Linking the entries lets us follow a career across administrative collections.</p>
+<p><strong>What becomes visible when we read the two Lists together?</strong></p>
+<p><a href="https://jimclifford.ca/col_matching/?p=kgp_col1878-p447b3">Open Wodehouse’s career</a></p>
 <aside class="notes">
-<p>3–4. The image is the before view, saved on 7 October. The rebuilt public atlas places the mission in Venezuela, the high commissioner at the Cape, and Honduras at Belize City. The IO Honduras record is repaired too. The wider audit found 1,120 pre-1910 Union assignments. Remove invalid jurisdictions, retain explicit towns, and leave ambiguous locations unresolved. The point is to repair the rule and inspect everyone it touches.</p>
+<p>3–4. Lead with the historical use: a reader of either List alone sees part of this career. The checked link brings those parts together. This is a selection of postings, not the full itinerary. The public example reflects the repairs published and checked on 7–8 October. The supporting page retains the earlier Wodehouse errors and their corrections as optional teaching material. This one checked link does not establish that all proposed cross-service links are correct.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -417,9 +408,9 @@ The same person returns in many editions.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>30,496 entries · 8.24 hours · 55 invalid-JSON failures</strong></p>
+<p><strong>30,496 entries processed in 8.24 hours</strong></p>
 <aside class="notes">
-<p>13–15. IOL run, 25–26 June, 16 workers, reasoning off, temperature zero. 55 is a format failure count, not the number of inaccurate records. The frontier coding agent wrote the machinery; an open model read the collection. COL bulk run: 34,743 entries, about a day including setup.</p>
+<p>13–15. IOL run, 25–26 June, 16 workers, reasoning off, temperature zero. The frontier coding agent wrote the machinery; an open model read the collection. COL bulk run: 34,743 entries, about a day including setup. If asked about completion: 55 entries failed JSON validation in the IOL run. That is a format failure count, not a count of inaccurate records.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -460,62 +451,36 @@ The same person returns in many editions.</p>
 </section>
 <section id="read-records-against-the-source" class="slide level2 smaller">
 <h2>Read records against the source</h2>
-<table class="caption-top">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Model-reviewed sample, before rule fixes</th>
-<th>Fully clean</th>
-<th>Records with a major error</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>First 1,859 records, every tenth: 186</td>
-<td>129 (69%)</td>
-<td>6 (3.2%); 8 findings</td>
-</tr>
-<tr class="even">
-<td>100 spread across the corpus</td>
-<td>51 (51%)</td>
-<td>9 (9%)</td>
-</tr>
-<tr class="odd">
-<td>300 spread across the corpus</td>
-<td>about 149 (50%)</td>
-<td>not tallied</td>
-</tr>
-</tbody>
-</table>
+<p><strong>Examples from the saved extraction audit, before rule fixes</strong></p>
 <table class="caption-top">
 <thead>
 <tr class="header">
 <th>Source</th>
-<th>Wrong field</th>
+<th>Earlier output</th>
+<th>Reading to preserve</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>“do., 1935”</td>
 <td>place: “do.”</td>
+<td>Inherit the preceding place</td>
 </tr>
 <tr class="even">
 <td>“Apl., 1898”</td>
 <td>birth_year: 1898</td>
+<td>Date of the appointment</td>
 </tr>
 <tr class="odd">
 <td>“KT. BACH. (1920)”</td>
 <td>two honours</td>
+<td>One knighthood</td>
 </tr>
 </tbody>
 </table>
-<p>These samples do <strong>not</strong> measure the finished graph’s accuracy.</p>
+<p>Keep the source beside the record. Turn recurring findings into explicit rules.</p>
 <aside class="notes">
-<p>17–19. All three audits were read by a model; the displayed examples were checked by hand. Round 1 was limited to the first 1,859 records. Valid JSON is not a correct biography. Do not imply all errors can be fixed with a single rule.</p>
+<p>17–19. These are historical extraction outputs used to teach source reading, not a report of current defects. All three audits were read by a model; the displayed examples were checked by hand. The detailed sample counts remain on step 3 for questions; they do not measure finished-graph accuracy. Ask participants to explain each reading before moving to the Balmer replay. Valid JSON is not a correct biography. Some findings need individual review rather than a general rule.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -528,8 +493,9 @@ The same person returns in many editions.</p>
           display:block!important;
       }</style></aside>
 </section>
-<section id="one-correction-checked" class="slide level2 smaller">
-<h2>One correction, checked</h2>
+<section id="replay-a-past-correction" class="slide level2 smaller">
+<h2>Replay a past correction</h2>
+<p><strong>Balmer · saved extraction output</strong></p>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -560,7 +526,7 @@ The same person returns in many editions.</p>
 </ul>
 <p><a href="outputs/structure/ditto-fix-replay.json">Saved before-and-after records</a></p>
 <aside class="notes">
-<p>19–23. Run python3 scripts/demo_ditto_fix.py if useful; no model or network. This is a bounded workshop replay, not a rerun of col_matching. The other eleven events are unchanged; Blakely and Connolly still have their other errors. The missing-predecessor checks are constructed tests, not historical records. Ask what else must be checked before applying this to the corpus: affected records, boundary cases, a fresh sample afterwards.</p>
+<p>19–23. Run python3 scripts/demo_ditto_fix.py if useful; no model or network. Introduce this as a replay of an earlier correction using saved records. It is not a rerun of col_matching. The other eleven events and the saved Blakely and Connolly fields are unchanged: this demonstrates the scope of the ditto rule. The missing-predecessor checks are constructed tests, not historical records. Ask what else must be checked before applying this to the corpus: affected records, boundary cases, a fresh sample afterwards.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -685,8 +651,8 @@ Every shared person identifier asserts an identity.</p>
           display:block!important;
       }</style></aside>
 </section>
-<section id="ask-a-chatbot-without-lookup-tools" class="slide level2">
-<h2>Ask a chatbot without lookup tools</h2>
+<section id="a-saved-run-without-lookup-tools" class="slide level2">
+<h2>A saved run without lookup tools</h2>
 <div class="big">
 <p><span class="gold">0 of 16</span></p>
 </div>
@@ -709,6 +675,7 @@ Every shared person identifier asserts an identity.</p>
 </section>
 <section id="same-entries-different-workflows" class="slide level2 smaller">
 <h2>Same entries, different workflows</h2>
+<p><strong>Saved experiment · twenty entries</strong></p>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -736,9 +703,9 @@ Every shared person identifier asserts an identity.</p>
 </tbody>
 </table>
 <p>The pipeline supplied <strong>12</strong> links; the review supported all 12.</p>
-<p>Place coverage and historical correctness differ. Even the most detailed retrieval output has a modern Victoria mismatch.</p>
+<p>Check retrieved evidence against the career’s dates and context.</p>
 <aside class="notes">
-<p>36–38. Different models and tools: not a controlled test of retrieval alone. The site keeps the detailed place table with its different denominators. Astra’s 155 label/alias checks are not 155 historically correct matches. Hold Harris’s specific discrepancy back for R8.</p>
+<p>36–38. These are saved experimental outputs, not current atlas results. Different models and tools: not a controlled test of retrieval alone. The site keeps the detailed place table with its different denominators and the historical Victoria mismatch. Astra’s 155 label/alias checks are not 155 historically correct matches. Hold Harris’s specific discrepancy back for R8.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -801,14 +768,14 @@ Every shared person identifier asserts an identity.</p>
           display:block!important;
       }</style></aside>
 </section>
-<section id="the-map-finds-the-wrong-victoria" class="slide level2">
-<h2>The map finds the wrong Victoria</h2>
+<section id="a-past-repair-which-victoria" class="slide level2">
+<h2>A past repair: which Victoria?</h2>
 <p>Brewster’s entry: <strong>“defeated by Sir Richard McBride, in Victoria, 1912.”</strong></p>
-<p>The atlas placed a British Columbia politician in Australia.</p>
+<p>An earlier atlas placed a British Columbia politician in Australia.</p>
 <p><strong>Cause:</strong> one “Victoria” match reused for everyone.<br>
-<strong>Place fix:</strong> use this person’s career context.</p>
+<strong>Completed place fix:</strong> use this person’s career context.</p>
 <aside class="notes">
-<p>40–42. Explain the per-person resolver and the identifier-key bug it exposed. Both corpora were re-emitted. The supporting page retains South Africa and Baluchistan as further examples.</p>
+<p>40–42. State that this is a completed repair before discussing the old result. Explain the per-person resolver and the identifier-key bug it exposed. Both corpora were re-emitted. Ask what evidence selects British Columbia: the surrounding career clauses. The supporting page retains South Africa and Baluchistan as further historical examples.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -821,8 +788,8 @@ Every shared person identifier asserts an identity.</p>
           display:block!important;
       }</style></aside>
 </section>
-<section id="but-did-he-hold-that-office" class="slide level2">
-<h2>But did he hold that office?</h2>
+<section id="a-past-repair-what-counts-as-an-event" class="slide level2">
+<h2>A past repair: what counts as an event?</h2>
 <table class="caption-top">
 <colgroup>
 <col style="width: 50%">
@@ -831,7 +798,7 @@ Every shared person identifier asserts an identity.</p>
 <thead>
 <tr class="header">
 <th>Source</th>
-<th>Saved graph, after the place fix</th>
+<th>Earlier graph, after the place fix</th>
 </tr>
 </thead>
 <tbody>
@@ -841,13 +808,13 @@ Every shared person identifier asserts an identity.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Does the corrected record stand?</strong></p>
+<p><strong>Would you accept this office-held assertion?</strong></p>
 <div class="fragment">
 <p>A defeat does not establish an appointment. <strong>Repaired:</strong> preserve the defeat as an event; remove the office-held assertion. Check other defeat clauses.</p>
 </div>
 <p>A plausible map can conceal a misread source.</p>
 <aside class="notes">
-<p>42–44. Pause for a room/chat verdict before reveal. The table shows the saved before version. The public graph now types this as an electoral defeat and removes the held-role edge. The same check catches other explicit electoral-defeat events. It does not establish that every misread defeat clause has been found.</p>
+<p>42–44. The table is a saved stage in the repair, before the event correction. Pause for a room/chat verdict before revealing the completed repair. The public graph now types this as an electoral defeat and removes the held-role edge. The same check catches other explicit electoral-defeat events. Use this to teach the difference between recording an event and asserting an office held.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -867,7 +834,7 @@ An ungrounded posting may disappear from the view.</p>
 <p>Use a labelled sample, including the cases the pipeline rejected.</p>
 <p><strong>Check both the repaired cases and other records the rule changed.</strong></p>
 <aside class="notes">
-<p>44–46. If time: 76% of “different” decisions were wrong in one sampled rare-surname, overlapping-era stratum of never-biographied careers. This is a stratum-specific result, not overall recall. Preserve the larger methodological point without leading with another unexplained percentage.</p>
+<p>44–46. Explain why source sampling complements visual inspection: a missing record may produce no visible anomaly. Include accepted and rejected decisions in the review design. Keep the historical audit figures on the supporting pages for questions; focus here on how participants would check their own data.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -882,6 +849,7 @@ An ungrounded posting may disappear from the view.</p>
 </section>
 <section id="three-decisions-with-reasons" class="slide level2">
 <h2>Three decisions, with reasons</h2>
+<p><strong>Work from the saved teaching cases.</strong></p>
 <div class="columns">
 <div class="column" style="width:70%;">
 <p><strong>R1</strong> · Blakely: accept the record?<br>
@@ -894,7 +862,7 @@ An ungrounded posting may disappear from the view.</p>
 </div></div>
 <p><strong>jimclifford.ca/imperial-careers-workshop/review/</strong></p>
 <aside class="notes">
-<p>46–56. The site displays the core cases first; the other five are further practice. Do not reveal the Harris answer until participants have decided. Zoom users select R8 and copy its decision and reason. Ask for an accept and an unresolved rationale; both can be defensible. Separate identity confidence from permission to change a source field. Printed handout page 2 has the same three decisions.</p>
+<p>46–56. Introduce these as saved proposals for practising decisions, not a live queue of atlas errors. The site displays the core cases first; the other five are further practice. Do not reveal the Harris answer until participants have decided. Zoom users select R8 and copy its decision and reason. Ask for an accept and an unresolved rationale; both can be defensible. Separate identity confidence from permission to change a source field. Printed handout page 2 has the same three decisions.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;

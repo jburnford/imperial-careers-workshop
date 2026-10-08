@@ -4,7 +4,7 @@ Materials for a one-hour workshop at the AI and History Conference, Johns Hopkin
 
 The session follows one dataset from printed source to animated atlas: the *Colonial Office List* and *India Office List* as processed by the [Imperial Careers](https://github.com/jburnford/col_matching) project (46,926 officials, 305,164 dated career events, places grounded to Wikidata). It shows what a coding agent and a cheap model did at scale, where the historian had to decide something, and how the visualization became the error detector that drove fixes back through the pipeline.
 
-**Status: draft for review.** Rebuilt on 7 October 2026 on the Imperial Careers example; the earlier draft on *The Tropical Agriculturist* is in `archive/tropical/`.
+**Status: draft for review.** Updated on 8 October 2026 on the Imperial Careers example; the earlier draft on *The Tropical Agriculturist* is in `archive/tropical/`. The worked atlas errors are completed corrections, with dated before evidence and a rebuilt result.
 
 ## Layout
 
