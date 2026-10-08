@@ -243,7 +243,7 @@ Terms on this page
 <section id="watch" class="level2">
 <h2 class="anchored" data-anchor-id="watch">Watch</h2>
 <div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="https://jimclifford.ca/col_matching/combined_mobility.mp4"></video></div>
-<p>Fifty-six seconds. Every arc is one official moving from one colony, presidency or province to another, drawn from the career graph and played out by year, 1815 to 1966. The <a href="https://jimclifford.ca/col_matching/">interactive atlas</a> behind it lets you search a name, follow a career, and open 186 proposed links between people in the Colonial and India Office records: <a href="https://www.wikidata.org/wiki/Q1800510">Philip Edmond Wodehouse</a>, Governor of British Guiana, then the Cape, then Bombay, is one of them, and a historian of the Cape and a historian of Bombay would each have known half of him.</p>
+<p>This is an earlier atlas export, before the 7 October geography repairs. Fifty-six seconds. Every arc is one official moving from one colony, presidency or province to another, drawn from the career graph and played out by year, 1815 to 1966. The <a href="https://jimclifford.ca/col_matching/">interactive atlas</a> behind it lets you search a name, follow a career, and open 186 proposed links between people in the Colonial and India Office records: <a href="https://www.wikidata.org/wiki/Q1800510">Philip Edmond Wodehouse</a>, Governor of British Guiana, then the Cape, then Bombay, is one of them, and a historian of the Cape and a historian of Bombay would each have known half of him.</p>
 <p>The cross-service links are candidates: the September review found errors in a small check (11 of 15 links supported). Wodehouse is the worked example here; the full set of bridges needs further review.</p>
 <p>What the atlas rests on, from the 4 September 2026 build:</p>
 <table class="caption-top table">
@@ -355,15 +355,15 @@ Terms on this page
 </section>
 <section id="and-what-the-map-got-wrong" class="level2">
 <h2 class="anchored" data-anchor-id="and-what-the-map-got-wrong">And what the map got wrong</h2>
-<p>The atlas’s own panel for the same record, captured on 7 October 2026 while this page was being written:</p>
+<p>The atlas’s own panel for the same record, captured before the repairs on 7 October 2026:</p>
 <p><img src="../images/atlas-wodehouse-co.png" class="img-fluid"></p>
-<p>Three rows are wrong, and each is a rule, not a typo:</p>
+<p>Three rows were wrong. Each exposed a rule that needed repair:</p>
 <ul>
 <li><strong>1858, “employed on a special mission” → Union of South Africa.</strong> The source says Venezuela. Venezuela is not a colony, so the event had no colony of its own and fell through to the next one. The rule that rolls placeless events forward needs a stop for foreign missions.</li>
 <li><strong>1861, “high commissioner” → Union of South Africa, seated at Bloemfontein.</strong> The Union dates from 1910. In 1861 he was high commissioner <em>for</em> South Africa, from Cape Town. The surface “South Africa” was grounded to the twentieth-century state; the period entity is the office, not a polity. This one was made by a fix: the South Africa repair in <a href="../steps/06-loop.html">step 6</a> sent the bare surface “South Africa” to the Union for every year.</li>
 <li><strong>1851, “Honduras” → seat Belmopan.</strong> A capital founded in 1970. The seat table needs a date-aware entry for Belize Town.</li>
 </ul>
-<p>The India Office record of the same man has a fourth: “superintendent of Honduras” inherits British Guiana, because its place was left empty and the inheritance rule filled it from the wrong direction. All four go on the fixes list; the fix will apply to every official the rules touched, and the atlas will be rebuilt. This is the loop, and it was running while the slide was made.</p>
+<p>The India Office record of the same man has a fourth: “superintendent of Honduras” inherits British Guiana, because its place was left empty and the inheritance rule filled it from the wrong direction. All four are now repaired in the <a href="https://jimclifford.ca/col_matching/?p=kgp_col1878-p447b3">public atlas</a>. The build uses explicit grounded places, checks dates, and never fills a missing location from the nearest appointment. British Honduras uses Belize City for these dates. The <a href="https://github.com/jburnford/col_matching/tree/master/research/geography-2026-10-07">wider audit</a> checks both Lists and records corrections separately from candidates needing source review.</p>
 </section>
 <section id="the-loop" class="level2">
 <h2 class="anchored" data-anchor-id="the-loop">The loop</h2>

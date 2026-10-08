@@ -20,7 +20,7 @@ A wrong grounding is invisible in a table of 180,000 rows. On a map it is a dot 
 
 ## A premier of British Columbia in Australia
 
-Harlan Brewster's 1918 entry ([saved](../outputs/ground/brewster.json)): newspaper work in New Brunswick and Boston, removed to British Columbia in 1897, elected for Alberni, "defeated by Sir Richard McBride, in Victoria, 1912", re-elected at a by-election in 1916, premier of British Columbia 1916. The graph gives him two events as member for Victoria. The bare surface "Victoria" was grounded to the Australian colony, Q56850459, by the surface-keyed cache. The atlas showed a British Columbia premier with a seat in Melbourne.
+Harlan Brewster's 1918 entry ([saved](../outputs/ground/brewster.json)): newspaper work in New Brunswick and Boston, removed to British Columbia in 1897, elected for Alberni, "defeated by Sir Richard McBride, in Victoria, 1912", re-elected at a by-election in 1916, premier of British Columbia 1916. The saved graph gave him two events as member for Victoria. The bare surface "Victoria" was grounded to the Australian colony, Q56850459, by the surface-keyed cache. The atlas showed a British Columbia premier with a seat in Melbourne.
 
 **Seen** on the map. **Cause:** a cache keyed on the surface string, with "Victoria" resolved once for everyone. **Fix:** a per-person context resolver. If the official's other postings signal British Columbia, "Victoria" is British Columbia (Q1973), which geolocates to its seat; otherwise the colony. **Also found while fixing it:** per-person overrides had never applied at all, because the resolver keyed people one way and the graph another. Repairing that fixed a second, unrelated split between the North-Western Provinces of India and of Ceylon. Both corpora re-emitted.
 
@@ -30,13 +30,15 @@ Now read the source again: Brewster was **defeated** in Victoria in 1912. In the
 
 **Pause and decide:** does this record stand after the geography is fixed? What must be preserved, and what must be removed from a table of offices held?
 
-The defeat can be retained as an event with its own type, but it does not establish that he held the seat. Keep the source clause, flag the appointment assertion, and inspect other “defeated” clauses. This remaining defect is visible in the saved graph; it has not been repaired in the published atlas. A checked location is not a checked career.
+The rebuilt graph now preserves the defeat as an event of its own type and removes the office-held assertion. The public atlas lists it under other recorded events. The same check applies to explicit electoral-defeat events elsewhere in the corpus; military victories and resignations require different readings. A checked location is not a checked career.
 
 ## The Union of South Africa at Harare
 
 Five surfaces, "Union of S. Africa", "S. Africa", "S.A." and two more, had been joined to the Wikidata item for the British South Africa Company's territory, Q5155572, because the join matched "South Africa" by containment. 960 Colonial Office events, 283 arcs in and 289 out, plotted at Harare.
 
-**Seen** in the September review, on the map, as a node with far too many arcs for Rhodesia. **Cause:** a containment match in the manifest join. **Fix:** five cache rows patched to Q193619 Union of South Africa, a containment guard added to the join so it cannot recur, and the note that pre-1910 "S. Africa" is ambiguous and about 100 events still need a date-aware rule. The patched rows carry the reason ([cache rows](../outputs/ground/places-grounding-examples.json)).
+**Seen** in the September review, on the map, as a node with far too many arcs for Rhodesia. **Cause:** a containment match in the manifest join. **Fix:** five cache rows patched to Q193619 Union of South Africa, a containment guard added to the join so it cannot recur, and the note that pre-1910 "S. Africa" is ambiguous and needed a date-aware rule. The patched rows carry the reason ([cache rows](../outputs/ground/places-grounding-examples.json)).
+
+The 7 October audit found **1,120 pre-1910 Union assignments** across both Lists. The repair removes the anachronistic jurisdiction, retains explicit towns where available, and leaves ambiguous cases unresolved. It also removes the nearest-posting fallback and selects seats by date. See the [audit and review queue](https://github.com/jburnford/col_matching/tree/master/research/geography-2026-10-07).
 
 ## Two Baluchistans
 
