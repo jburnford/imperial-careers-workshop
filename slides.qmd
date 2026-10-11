@@ -237,30 +237,27 @@ It is a commercial service, paid through a Claude subscription or per use. Here 
 13–14. Start with the actual working process: I opened the raw OCR with Claude Code and discussed whether a Python parser could do the job. The displayed excerpt is copied directly from the 1936 raw OCR block, before abbreviation expansion. The saved file includes the original bounding box, OCR page index 832, block index 11 and printed page 614. This is a walkthrough of the process, not a recovered chat transcript. Use the Balmer exercise they just completed: they already know that “do.” refers back to a place. Ask what the code would need to preserve to reach the same reading. Claude Code helped inspect the source, discuss the approach and write the scripts; the historian decided what the fields meant.
 :::
 
-## Try it: one regular expression [Motion draft]{.motion-tag} {#regex-demo .motion}
+## Real rules: mostly right, quietly wrong [Motion draft]{.motion-tag} {#regex-demo .motion}
 
 ```{=html}
-<div class="rx-pattern rise" data-at="300">Split the career at semicolons; read each clause as <b>position</b> , <b>place</b> , [<b>month.</b>] <b>year</b><span class="rx-src">^(?P&lt;position&gt;.+?),\s*(?P&lt;place&gt;[^,]+),\s*(?:(?P&lt;month&gt;[A-Z][a-z]{2,4})\.,?\s*)?(?P&lt;year&gt;1[89]\d\d)…$</span></div>
+<div class="rx-pattern rise" data-at="300" style="font-family:inherit;font-size:0.58em">Our real rule-based parser: <b>258 lines of Python</b>, run on every printed biography in 66 editions. It splits a career at semicolons, knows months, abbreviations and ditto marks, and refuses an entry whole when a dated clause will not parse.</div>
 <div class="rx-rows">
-  <span class="h">Entry</span><span class="h">Printed clause</span><span class="h">The pattern returns</span><span class="h">Verdict</span>
-  <span class="who rise" data-at="1000">Balmer</span><span class="cl rise" data-at="1000">ch. acctnt., G.P.O., Kenya, Oct., 1919</span><span class="got" data-at="1450">place: Kenya · 1919</span><span data-at="1850"><span class="ok">✓ the regular shape works</span></span>
-  <span class="who rise" data-at="2150">Balmer</span><span class="cl rise" data-at="2150">ch. acctnt., Kenya-Uganda-Tanganyika post and tel. service, 1933</span><span class="got" data-at="2600">place: Kenya-Uganda-Tanganyika post and tel. service</span><span data-at="3000"><span class="no">✗ the office lands in the place</span></span>
-  <span class="who rise" data-at="3300">Balmer</span><span class="cl rise" data-at="3300">senr. dep. P.M.G., do., 1935</span><span class="got" data-at="3750">place: do.</span><span data-at="4150"><span class="no">✗ copies the ditto</span></span>
-  <span class="who rise" data-at="4450">Wodehouse</span><span class="cl rise" data-at="4450">… as a writer, May, 1828</span><span class="got" data-at="4900">place: May</span><span data-at="5300"><span class="no">✗ a month becomes a place</span></span>
-  <span class="who rise" data-at="5600">Wodehouse</span><span class="cl rise" data-at="5600">district judge of Kandy, 1840</span><span class="got" data-at="6050"><i>no match</i></span><span data-at="6450"><span class="no">✗ the place is inside the phrase</span></span>
-  <span class="who rise" data-at="6750">Wodehouse</span><span class="cl rise" data-at="6750">and in 1861 was appointed governor of the Cape of Good Hope</span><span class="got" data-at="7200"><i>no match</i></span><span data-at="7600"><span class="no">✗ prose: the year comes first</span></span>
-  <span class="who rise" data-at="7900">Connolly</span><span class="cl rise" data-at="7900">HON. SIR JAMES DANIEL, KT. BACH. (1920)</span><span class="got" data-at="8350">honours: HON · KT · BACH (1920)</span><span data-at="8750"><span class="no">✗ one honour becomes three</span></span>
+  <span class="h">Entry</span><span class="h">Printed clause</span><span class="h">The rules returned</span><span class="h">Verdict</span>
+  <span class="who rise" data-at="1100">Balmer, 1936</span><span class="cl rise" data-at="1100">ch. acctnt., G.P.O., Kenya, Oct., 1919</span><span class="got" data-at="1600">place: Kenya · 1919</span><span data-at="2050"><span class="ok">✓ the regular shape works</span></span>
+  <span class="who rise" data-at="2600">Balmer, 1936</span><span class="cl rise" data-at="2600">senr. dep. P.M.G., do., 1935</span><span class="got" data-at="3100">place: Dominions Office · 1935</span><span data-at="3550"><span class="no">✗ two rules collide</span></span>
+  <span class="who rise" data-at="4100">Connolly, 1940</span><span class="cl rise" data-at="4100">agt. gen. in London for Malta, 1930</span><span class="got" data-at="4600">place: Western Australia · 1930</span><span data-at="5050"><span class="no">✗ accepted, and wrong</span></span>
+  <span class="who rise" data-at="5600">Wodehouse, 1867</span><span class="cl rise" data-at="5600">and in 1861 was appointed governor of the Cape of Good Hope</span><span class="got" data-at="6100"><i>entry refused</i> → Qwen: 9 events, each placed</span><span data-at="6550"><span class="ok">✓ refused, not guessed</span></span>
 </div>
-<div class="rx-score rise" data-at="9350">
-  <div><b>4 of 4</b> Balmer clauses matched; two are wrong</div>
-  <div><b>1 of 9</b> Wodehouse clauses matched; that one is wrong</div>
-  <div><b>1 of 7</b> Connolly career clauses matched</div>
+<div class="rx-score rise" data-at="7300">
+  <div><b>78%</b> of 202,100 printed biographies parsed by rules</div>
+  <div><b>61% → 96%</b> rules share, 1888 vs 1960 editions</div>
+  <div><b>3,755</b> places dropped mid-clause, recovered later</div>
 </div>
-<p class="motion-caption rise" data-at="10150">Each new rule fixes one shape and misses the next. Matching a pattern is not reading the entry.</p>
+<p class="motion-caption rise" data-at="8100">Rules are fast and exact on regular entries. Each new rule can collide with another, and the dangerous errors are the confident ones.</p>
 ```
 
 ::: notes
-14–15. A real run, not a mock-up: scripts/demo_regex_limits.py applies this one pattern to the Balmer, Wodehouse and Connolly entries and saves every result in outputs/structure/regex-limits.json. Let the rows build (about 10 seconds; use Play animation or ?motion if Windows has animations off). The pattern is a reasonable first attempt, and it works on Balmer's regular clauses. Then it fails in the ways historians would predict: the office lands in the place field, the ditto is copied literally, “May” becomes a place, places inside phrases (“of Kandy”) and prose order (“in 1861 was appointed…”) do not match at all, and the honours rule turns “HON.” and “KT. BACH.” into three honours. Wodehouse’s older, prose-style entry matches 1 of 9 clauses. “Matched” is not “right”: Balmer matches 4 of 4 with two wrong. Ask: what rule would you add next, and which other entry would it break? The next slide names the underlying problem.
+14–15. These are the project's real rule-based parser and its saved output, not a mock-up (outputs/structure/rules-parser-examples.json; col_matching col_match/services/rules_parse.py, data/volume/col*/bios.jsonl). The parser is not naive: it splits at semicolons because the printer did, and it has a month list, an abbreviation gazetteer, ditto handling and all-or-nothing refusal. It parsed 157,108 of 202,100 printed Colonial Office biographies across 66 editions; its share rises from 61% (1888) to 96% (1960) as house style became more regular. The refusal works: Wodehouse’s 1867 prose entry was refused and Qwen read all nine events. The problem is what the rules accept. Balmer’s “do.” became Dominions Office, because the abbreviation “do” fires before the ditto rule; Connolly’s Malta posting was accepted with Western Australia carried forward. A later pass recovered 3,755 places the rules had dropped because the colony sat mid-clause. Ask: what rule would you add next, and what would it break? This is the edition-reading stage; the next slides show why the final records were read by the model.
 :::
 
 ## Too irregular for regular expressions alone {.smaller}
@@ -291,12 +288,21 @@ A pattern that matches text by its shape. `1[89]\d\d` finds every year from 1800
 [Agree the fields → try examples → decide which work belongs in each stage.]{.small}
 
 ```{=html}
-<div class="flow">
-  <div class="node blue"><b>1 · Python</b><span>Parse the regular entries. If any dated clause fails, refuse the whole entry.</span></div>
+<p style="font-size:0.5em;color:#9cc0ea;margin:0.4em 0 0">Stage 1 · reading every edition, about 200,000 printed biographies</p>
+<div class="flow" style="margin-top:0.2em">
+  <div class="node blue"><b>Python rules</b><span>Parse the regular entries; refuse the rest whole.</span></div>
   <div class="arrow">→</div>
-  <div class="node wide"><b>2 · Qwen reads</b><span>One entry in, one JSON record out. Binds position, place and dates across ditto, elided and concurrent clauses.</span></div>
+  <div class="node"><b>Qwen</b><span>Reads the refused entries.</span></div>
   <div class="arrow">→</div>
-  <div class="node blue"><b>3 · Python checks</b><span>Drop any place or year not in the source. Apply logged fixes for recurring errors.</span></div>
+  <div class="node blue"><b>Link</b><span>Entries joined into people across editions.</span></div>
+</div>
+<p style="font-size:0.5em;color:#c9a227;margin:0.4em 0 0">Stage 2 · the final records, 65,239 careers</p>
+<div class="flow" style="margin-top:0.2em">
+  <div class="node blue"><b>Python</b><span>Expands known abbreviations; keeps the rest as printed.</span></div>
+  <div class="arrow">→</div>
+  <div class="node wide"><b>Qwen reads every career</b><span>One entry in, one JSON record out: position, place and dates bound across ditto, elided and concurrent clauses.</span></div>
+  <div class="arrow">→</div>
+  <div class="node blue"><b>Python checks</b><span>Drops any place or year not in the source; applies logged fixes.</span></div>
 </div>
 ```
 
@@ -308,7 +314,7 @@ A family of **open-weight** language models from Alibaba’s Qwen team. Open wei
 **Claude Code helped build the pipeline. Qwen read the entries.**
 
 ::: notes
-15–16. Walk through the design as a division of work developed with Claude Code. First, keep Python where explicit rules are reliable; if a dated clause cannot be parsed, refuse the whole entry rather than silently omit it. Second, ask the model to interpret the difficult clauses within an agreed schema. Third, use Python to validate the result and log recurring corrections. One event has position, place, start/end years and an inheritance flag. Compare sample outputs with the OCR before increasing the run size. Claude Code was the interactive coding environment; Qwen3.6-35B was the model called by the corpus-reading script. The saved in-session runbook records how the reference examples were structured and validated.
+15–16. Walk through the design as a division of work developed with Claude Code, in two stages. Stage 1 read every printed edition to link entries into people: Python rules parsed the regular entries and refused the rest whole, and Qwen read the refused ones (78% rules overall). Stage 2 produced the final structured records: after the rules’ silent errors (previous slide), Qwen read every one of the 65,239 deduplicated careers, after Python expanded known abbreviations; Python then checked every place and year against the source and applied logged corrections. One event has position, place, start/end years and an inheritance flag. Compare sample outputs with the OCR before increasing the run size. Claude Code was the interactive coding environment; Qwen3.6-35B was the model called by the corpus-reading script. The saved in-session runbook records how the reference examples were structured and validated.
 :::
 
 ## Three ways to run Qwen
@@ -392,7 +398,7 @@ The standing instructions sent with each of about 65,000 career records. The ent
 **Batch run: 30,496 entries in 8.24 hours.**
 
 ::: notes
-19–20. The model’s output still needs to be read against the source. These are historical extraction outputs used to teach that reading, not a report of current defects. All three audits were read by a model; the displayed examples were checked by hand. The detailed sample counts remain on step 3 for questions; they do not measure finished-graph accuracy. Ask participants to explain one reading before moving to the Balmer replay. Some findings need individual review rather than a general rule. The resulting hybrid processed 30,496 India Office entries in 8.24 hours, 25–26 June, with 16 workers, reasoning off and temperature zero. Put this scale result after the design and review process. If asked: 55 entries failed JSON validation, a format count rather than a count of inaccurate records.
+19–20. The model’s output still needs to be read against the source. These are historical extraction outputs used to teach that reading, not a report of current defects. All three audits were read by a model; the displayed examples were checked by hand. The detailed sample counts remain on step 3 for questions; they do not measure finished-graph accuracy. Ask participants to explain one reading before moving to the Balmer replay. Some findings need individual review rather than a general rule. The stage-2 run read 30,496 India Office careers in 8.24 hours, 25–26 June, with 16 workers, reasoning off and temperature zero. Put this scale result after the design and review process. If asked: 55 entries failed JSON validation, a format count rather than a count of inaccurate records.
 :::
 
 ## Replay a past correction

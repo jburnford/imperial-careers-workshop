@@ -1,0 +1,571 @@
+{
+ "source": "Imperial Careers data/volume/col*/bios.jsonl; parser col_match/services/rules_parse.py",
+ "note": "parser = rules: accepted by the rule-based parser; qwen: refused by the rules (flag rules_failed) and read by Qwen. Accepted output is not necessarily correct.",
+ "totals": {
+  "editions": 66,
+  "biographies_read": 202100,
+  "rules": 157108,
+  "qwen": 44578,
+  "unparsed": 414,
+  "not_a_bio": 6351,
+  "rules_share": 0.777
+ },
+ "editions": {
+  "col1867": {
+   "rules": 907,
+   "qwen": 447,
+   "unparsed": 22,
+   "rules_share": 0.659
+  },
+  "col1877": {
+   "rules": 754,
+   "qwen": 496,
+   "unparsed": 14,
+   "rules_share": 0.597
+  },
+  "col1878": {
+   "rules": 772,
+   "qwen": 570,
+   "unparsed": 16,
+   "rules_share": 0.568
+  },
+  "col1879": {
+   "rules": 794,
+   "qwen": 630,
+   "unparsed": 15,
+   "rules_share": 0.552
+  },
+  "col1880": {
+   "rules": 789,
+   "qwen": 607,
+   "unparsed": 10,
+   "rules_share": 0.561
+  },
+  "col1883": {
+   "rules": 837,
+   "qwen": 679,
+   "unparsed": 122,
+   "rules_share": 0.511
+  },
+  "col1886": {
+   "rules": 1143,
+   "qwen": 721,
+   "unparsed": 26,
+   "rules_share": 0.605
+  },
+  "col1888": {
+   "rules": 1333,
+   "qwen": 820,
+   "unparsed": 27,
+   "rules_share": 0.611
+  },
+  "col1889": {
+   "rules": 1387,
+   "qwen": 841,
+   "unparsed": 16,
+   "rules_share": 0.618
+  },
+  "col1890": {
+   "rules": 1467,
+   "qwen": 825,
+   "unparsed": 24,
+   "rules_share": 0.633
+  },
+  "col1894": {
+   "rules": 1342,
+   "qwen": 795,
+   "unparsed": 10,
+   "rules_share": 0.625
+  },
+  "col1896": {
+   "rules": 1318,
+   "qwen": 816,
+   "unparsed": 9,
+   "rules_share": 0.615
+  },
+  "col1897": {
+   "rules": 1255,
+   "qwen": 754,
+   "unparsed": 9,
+   "rules_share": 0.622
+  },
+  "col1898": {
+   "rules": 1364,
+   "qwen": 762,
+   "unparsed": 13,
+   "rules_share": 0.638
+  },
+  "col1899": {
+   "rules": 1291,
+   "qwen": 774,
+   "unparsed": 9,
+   "rules_share": 0.622
+  },
+  "col1900": {
+   "rules": 1252,
+   "qwen": 761,
+   "unparsed": 7,
+   "rules_share": 0.62
+  },
+  "col1905": {
+   "rules": 1416,
+   "qwen": 832,
+   "unparsed": 2,
+   "rules_share": 0.629
+  },
+  "col1906": {
+   "rules": 1424,
+   "qwen": 868,
+   "unparsed": 2,
+   "rules_share": 0.621
+  },
+  "col1907": {
+   "rules": 1421,
+   "qwen": 871,
+   "unparsed": 2,
+   "rules_share": 0.619
+  },
+  "col1908": {
+   "rules": 1520,
+   "qwen": 961,
+   "unparsed": 2,
+   "rules_share": 0.612
+  },
+  "col1909": {
+   "rules": 1966,
+   "qwen": 1214,
+   "unparsed": 2,
+   "rules_share": 0.618
+  },
+  "col1910": {
+   "rules": 1738,
+   "qwen": 984,
+   "unparsed": 2,
+   "rules_share": 0.638
+  },
+  "col1911": {
+   "rules": 1890,
+   "qwen": 1017,
+   "unparsed": 2,
+   "rules_share": 0.65
+  },
+  "col1912": {
+   "rules": 1929,
+   "qwen": 1054,
+   "unparsed": 2,
+   "rules_share": 0.646
+  },
+  "col1913": {
+   "rules": 2032,
+   "qwen": 1096,
+   "unparsed": 1,
+   "rules_share": 0.649
+  },
+  "col1914": {
+   "rules": 2116,
+   "qwen": 1104,
+   "unparsed": 1,
+   "rules_share": 0.657
+  },
+  "col1915": {
+   "rules": 2175,
+   "qwen": 1061,
+   "unparsed": 2,
+   "rules_share": 0.672
+  },
+  "col1917": {
+   "rules": 2284,
+   "qwen": 1014,
+   "unparsed": 1,
+   "rules_share": 0.692
+  },
+  "col1918": {
+   "rules": 2316,
+   "qwen": 1034,
+   "unparsed": 1,
+   "rules_share": 0.691
+  },
+  "col1919": {
+   "rules": 2245,
+   "qwen": 1028,
+   "unparsed": 1,
+   "rules_share": 0.686
+  },
+  "col1920": {
+   "rules": 2286,
+   "qwen": 1035,
+   "unparsed": 1,
+   "rules_share": 0.688
+  },
+  "col1921": {
+   "rules": 2384,
+   "qwen": 1032,
+   "unparsed": 1,
+   "rules_share": 0.698
+  },
+  "col1922": {
+   "rules": 2461,
+   "qwen": 995,
+   "unparsed": 1,
+   "rules_share": 0.712
+  },
+  "col1923": {
+   "rules": 2479,
+   "qwen": 954,
+   "unparsed": 0,
+   "rules_share": 0.722
+  },
+  "col1924": {
+   "rules": 2469,
+   "qwen": 936,
+   "unparsed": 0,
+   "rules_share": 0.725
+  },
+  "col1925": {
+   "rules": 2426,
+   "qwen": 884,
+   "unparsed": 4,
+   "rules_share": 0.732
+  },
+  "col1927": {
+   "rules": 2617,
+   "qwen": 901,
+   "unparsed": 0,
+   "rules_share": 0.744
+  },
+  "col1928": {
+   "rules": 2729,
+   "qwen": 944,
+   "unparsed": 0,
+   "rules_share": 0.743
+  },
+  "col1929": {
+   "rules": 2654,
+   "qwen": 860,
+   "unparsed": 1,
+   "rules_share": 0.755
+  },
+  "col1930": {
+   "rules": 2594,
+   "qwen": 860,
+   "unparsed": 0,
+   "rules_share": 0.751
+  },
+  "col1931": {
+   "rules": 2698,
+   "qwen": 889,
+   "unparsed": 0,
+   "rules_share": 0.752
+  },
+  "col1932": {
+   "rules": 2784,
+   "qwen": 827,
+   "unparsed": 1,
+   "rules_share": 0.771
+  },
+  "col1933": {
+   "rules": 2737,
+   "qwen": 778,
+   "unparsed": 0,
+   "rules_share": 0.779
+  },
+  "col1934": {
+   "rules": 2642,
+   "qwen": 743,
+   "unparsed": 0,
+   "rules_share": 0.781
+  },
+  "col1936": {
+   "rules": 2833,
+   "qwen": 771,
+   "unparsed": 1,
+   "rules_share": 0.786
+  },
+  "col1937": {
+   "rules": 2619,
+   "qwen": 715,
+   "unparsed": 1,
+   "rules_share": 0.785
+  },
+  "col1939": {
+   "rules": 2999,
+   "qwen": 755,
+   "unparsed": 2,
+   "rules_share": 0.798
+  },
+  "col1940": {
+   "rules": 3098,
+   "qwen": 778,
+   "unparsed": 1,
+   "rules_share": 0.799
+  },
+  "col1948": {
+   "rules": 2914,
+   "qwen": 304,
+   "unparsed": 19,
+   "rules_share": 0.9
+  },
+  "col1949": {
+   "rules": 3247,
+   "qwen": 295,
+   "unparsed": 0,
+   "rules_share": 0.917
+  },
+  "col1950": {
+   "rules": 3702,
+   "qwen": 297,
+   "unparsed": 0,
+   "rules_share": 0.926
+  },
+  "col1951": {
+   "rules": 4031,
+   "qwen": 309,
+   "unparsed": 0,
+   "rules_share": 0.929
+  },
+  "col1953": {
+   "rules": 1632,
+   "qwen": 114,
+   "unparsed": 0,
+   "rules_share": 0.935
+  },
+  "col1954": {
+   "rules": 1784,
+   "qwen": 125,
+   "unparsed": 0,
+   "rules_share": 0.935
+  },
+  "col1955": {
+   "rules": 1927,
+   "qwen": 146,
+   "unparsed": 0,
+   "rules_share": 0.93
+  },
+  "col1956": {
+   "rules": 2821,
+   "qwen": 183,
+   "unparsed": 0,
+   "rules_share": 0.939
+  },
+  "col1957": {
+   "rules": 3926,
+   "qwen": 211,
+   "unparsed": 2,
+   "rules_share": 0.949
+  },
+  "col1958": {
+   "rules": 4087,
+   "qwen": 201,
+   "unparsed": 2,
+   "rules_share": 0.953
+  },
+  "col1959": {
+   "rules": 4619,
+   "qwen": 210,
+   "unparsed": 2,
+   "rules_share": 0.956
+  },
+  "col1960": {
+   "rules": 4747,
+   "qwen": 201,
+   "unparsed": 2,
+   "rules_share": 0.959
+  },
+  "col1961": {
+   "rules": 4833,
+   "qwen": 211,
+   "unparsed": 1,
+   "rules_share": 0.958
+  },
+  "col1962": {
+   "rules": 4895,
+   "qwen": 143,
+   "unparsed": 0,
+   "rules_share": 0.972
+  },
+  "col1963": {
+   "rules": 4881,
+   "qwen": 147,
+   "unparsed": 0,
+   "rules_share": 0.971
+  },
+  "col1964": {
+   "rules": 4430,
+   "qwen": 133,
+   "unparsed": 0,
+   "rules_share": 0.971
+  },
+  "col1965": {
+   "rules": 3569,
+   "qwen": 129,
+   "unparsed": 0,
+   "rules_share": 0.965
+  },
+  "col1966": {
+   "rules": 3077,
+   "qwen": 126,
+   "unparsed": 0,
+   "rules_share": 0.961
+  }
+ },
+ "examples": [
+  {
+   "edition": "col1936",
+   "bio_id": "col1936-p832b11",
+   "parser": "rules",
+   "flags": [
+    "place_inherited:2"
+   ],
+   "raw_text": "BALMER, F. E.—Dep. chief acctnt., G.P.O., E. Africa Prot., Mar., 1919; ch. acctnt., G.P.O., Kenya, Oct., 1919; ch. acctnt., Kenya-Uganda-Tanganyika post and tel. service, 1933; senr. dep. P.M.G., do., 1935.",
+   "events": [
+    {
+     "position": "Dep. chief acctnt., G.P.O.",
+     "place": "East Africa",
+     "year_start": 1919,
+     "year_end": null
+    },
+    {
+     "position": "ch. acctnt., G.P.O.",
+     "place": "Kenya",
+     "year_start": 1919,
+     "year_end": null
+    },
+    {
+     "position": "ch. acctnt., Kenya-Uganda-Tanganyika post and tel. service",
+     "place": "Kenya",
+     "year_start": 1933,
+     "year_end": null
+    },
+    {
+     "position": "senr. dep. P.M.G.",
+     "place": "Dominions Office",
+     "year_start": 1935,
+     "year_end": null
+    }
+   ]
+  },
+  {
+   "edition": "col1940",
+   "bio_id": "col1940-p905b22",
+   "parser": "rules",
+   "flags": [
+    "place_inherited:1",
+    "place_inherited:2",
+    "place_inherited:3",
+    "place_inherited:4",
+    "place_inherited:5",
+    "place_inherited:6"
+   ],
+   "raw_text": "CONNOLLY, HON. SIR JAMES DANIEL, KT. BACH. (1920). —B. 1870; ed. Warwick Pub. Schl. and Catholic Schl.; M.L.C., Western Australia, 1902; col. sec. and min. of com. and lab., 1906; col. sec. and min. of pub. health, 1910; leader of leg. coun. from 1906 to 1911; M.L.A. for Perth, 1914; agt. genl. in London for Western Australia, 1917-23; agt. gen. in London for Malta, 1930.",
+   "events": [
+    {
+     "position": "M.L.C.",
+     "place": "Western Australia",
+     "year_start": 1902,
+     "year_end": null
+    },
+    {
+     "position": "col. sec. and min. of com. and lab",
+     "place": "Western Australia",
+     "year_start": 1906,
+     "year_end": null
+    },
+    {
+     "position": "col. sec. and min. of pub. health",
+     "place": "Western Australia",
+     "year_start": 1910,
+     "year_end": null
+    },
+    {
+     "position": "leader of leg. coun. from",
+     "place": "Western Australia",
+     "year_start": 1906,
+     "year_end": 1911
+    },
+    {
+     "position": "M.L.A. for Perth",
+     "place": "Western Australia",
+     "year_start": 1914,
+     "year_end": null
+    },
+    {
+     "position": "agt. genl. in London for Western Australia",
+     "place": "Western Australia",
+     "year_start": 1917,
+     "year_end": 1923
+    },
+    {
+     "position": "agt. gen. in London for Malta",
+     "place": "Western Australia",
+     "year_start": 1930,
+     "year_end": null
+    }
+   ]
+  },
+  {
+   "edition": "col1867",
+   "bio_id": "col1867-p271b15",
+   "parser": "qwen",
+   "flags": [
+    "rules_failed"
+   ],
+   "raw_text": "WODEHOUSE, SIR PHILIP E., K.C.B. (Creat. 1862.)—Entered the Ceylon civil service as a writer, May, 1828; promoted to be assistant colonial secretary and clerk of the executive and legislative councils, Oct. 1833; district judge of Kandy, 1840; government agent for the western province, 1843; was appointed superintendent of Honduras, 1851; in Feb. 1854, governor of British Guiana; was employed in 1858 on a special mission to the government of Venezuela; and in 1861 was appointed governor of the Cape of Good Hope; is also high commissioner in South Africa.",
+   "events": [
+    {
+     "position": "writer",
+     "place": "Ceylon",
+     "year_start": 1828,
+     "year_end": null
+    },
+    {
+     "position": "assistant colonial secretary and clerk of the executive and legislative councils",
+     "place": "Ceylon",
+     "year_start": 1833,
+     "year_end": null
+    },
+    {
+     "position": "district judge",
+     "place": "Kandy",
+     "year_start": 1840,
+     "year_end": null
+    },
+    {
+     "position": "government agent for the western province",
+     "place": "Ceylon",
+     "year_start": 1843,
+     "year_end": null
+    },
+    {
+     "position": "superintendent",
+     "place": "Honduras",
+     "year_start": 1851,
+     "year_end": null
+    },
+    {
+     "position": "governor",
+     "place": "British Guiana",
+     "year_start": 1854,
+     "year_end": null
+    },
+    {
+     "position": "special mission",
+     "place": "Venezuela",
+     "year_start": 1858,
+     "year_end": null
+    },
+    {
+     "position": "governor",
+     "place": "Cape of Good Hope",
+     "year_start": 1861,
+     "year_end": null
+    },
+    {
+     "position": "high commissioner in South Africa",
+     "place": "Cape of Good Hope",
+     "year_start": null,
+     "year_end": null
+    }
+   ]
+  }
+ ]
+}

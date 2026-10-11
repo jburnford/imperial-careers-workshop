@@ -27,7 +27,7 @@ Everything here is drawn from [Imperial Careers](https://github.com/jburnford/co
 ```bash
 python3 scripts/build_review_cases.py      # cases.json for the decision exercise
 python3 scripts/demo_ditto_fix.py          # before/after records and bounded checks
-python3 scripts/demo_regex_limits.py       # one regular expression against three entries
+python3 scripts/extract_rules_examples.py --col-matching ~/col_matching   # real rule-parser output and coverage
 ```
 
 No network needed.

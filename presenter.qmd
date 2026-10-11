@@ -38,7 +38,8 @@ The Python/model/Python table is the result of the design discussion. Begin with
 
 - **13–14:** show the raw Balmer excerpt. Participants have just marked it up, so ask what their reading requires the program to know.
 - **14–15:** identify the familiar historical problem: semi-structured records whose prose is too irregular for regular expressions alone. Use inherited places, the meaning of a date and concurrent appointments. OCR adds variation, but the source itself is irregular.
-- **15–16:** explain how the work was divided. Agree the fields; try examples; keep reliable rules in Python; use a model for difficult clauses; validate with Python. Claude Code helped develop and write this pipeline. Qwen read entries inside it. Read the “What is Qwen?” box aloud only if the room looks unsure.
+- **14–15:** the real rule-based parser at scale: 78% of 202,100 printed biographies, refusal working on Wodehouse 1867, and confident errors on Balmer (“Dominions Office”) and Connolly (Western Australia).
+- **15–16:** explain how the work was divided, in two stages. Reading every edition: rules first, Qwen for refused entries. Final records: Qwen read every one of the 65,239 careers after Python expanded abbreviations; Python validated the output. Claude Code helped develop and write this pipeline. Qwen read entries inside it. Read the “What is Qwen?” box aloud only if the room looks unsure.
 - **16–17:** three ways to run Qwen. The script posts to one OpenAI-compatible address; OpenRouter was used to choose the model, a DGX Spark desktop ran the corpus, and an Alliance cluster ran later identity judgements. One minute.
 - **17–19:** show the prompt as the written result of those decisions.
 - **19–20:** compare saved outputs with their sources. Mention the 30,496-entry, 8.24-hour run after explaining the design and checks.

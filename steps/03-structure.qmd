@@ -6,7 +6,7 @@ subtitle: "Minutes 13–23. From raw OCR to a hybrid workflow, developed with Cl
 ::: {.callout-note collapse="true" title="Terms on this page"}
 - **JSON**: a plain-text format for a record: named fields in braces, lists in brackets (see the glossary for Trimen's).
 - **prompt**: the written instructions sent to the model with each entry.
-- **regex grammar**: pattern rules that match text by its shape, written in Python; the deterministic first tier.
+- **regex grammar**: pattern rules that match text by its shape, written in Python; used to read every printed edition.
 - **validator**: Python that checks every place and year the model wrote against the source and drops what is not there.
 - **post-normaliser**: Python that applies the systematic fixes found by the audit, logging each change.
 - **vLLM**: an open-source server that runs an open model on a GPU and answers like a commercial API.
@@ -45,15 +45,11 @@ This is a familiar problem for historians: **semi-structured data**. Names, offi
 
 A regular expression can recognise a year or a specified abbreviation. Binding that year to the correct posting, carrying a place across an omitted phrase, or separating concurrent jobs needs more context. A fixed grammar could handle the regular cases, but adding exceptions did not make it a reliable parser for the whole collection.
 
-### Try it: one regular expression
+### What the rules did at scale
 
-The workshop repository includes a small demonstration. It splits a career at semicolons and reads each clause as *position, place, [month.] year*, a reasonable first attempt. Run against three printed entries, it works on Balmer’s regular clauses, then puts an office name in the place field, copies Balmer’s “do.” literally, takes Wodehouse’s “May” for a place, misses clauses such as “district judge of Kandy, 1840” and “in 1861 was appointed governor of the Cape of Good Hope”, and turns Connolly’s “HON. … KT. BACH. (1920)” into three honours. It matches 4 of 4 Balmer clauses (two wrong), 1 of 9 Wodehouse clauses (that one wrong) and 1 of 7 Connolly career clauses. Matching a pattern is not the same as reading the entry.
+The project's real rule-based parser is 258 lines of Python. It splits a career at semicolons, knows months, abbreviations and ditto marks, and refuses an entry whole when a dated clause will not parse. Run on every printed biography in 66 editions of the *Colonial Office List*, it parsed 157,108 of 202,100 (78%); its share rises from 61% in the 1888 edition to 96% in 1960 as the house style became more regular. Entries it refused, such as Wodehouse's prose entry of 1867, were read by Qwen.
 
-```bash
-python3 scripts/demo_regex_limits.py
-```
-
-[Every result is saved](../outputs/structure/regex-limits.json), with the patterns used.
+The harder problem is what the rules accept. Balmer's “senr. dep. P.M.G., do., 1935” came out as the Dominions Office, because the abbreviation “do” fired before the ditto rule. Connolly's “agt. gen. in London for Malta, 1930” was accepted with Western Australia carried forward. A later pass recovered 3,755 places the rules had dropped because the colony sat mid-clause. Each new rule can collide with another, and refusal only catches clauses that fail to parse, not clauses parsed wrongly. [The parser's saved output and per-edition counts](../outputs/structure/rules-parser-examples.json) are extracted with `scripts/extract_rules_examples.py` from the Imperial Careers repository.
 
 Python remained useful for splitting the input, parsing regular clauses, managing the run and checking outputs. We developed a hybrid so a model could read the difficult clauses within an agreed structure.
 
@@ -61,10 +57,14 @@ Python remained useful for splitting the input, parsing regular clauses, managin
 
 The collaboration with Claude Code produced the schema, Python stages and extraction prompt. We settled the fields on a sample, inspected example records against their source, and revised the rules. The [in-session runbook](../outputs/structure/structuring-loop-runbook.md) records batches of reference examples followed by Python validation. The model inside the eventual batch script was Qwen; Claude Code was the environment used to develop the machinery.
 
-The resulting workflow had three parts. It ran for the Colonial Office List in June 2026 and for the India Office List a week later:
+The resulting workflow had two stages.
 
-1. **Python first.** A regex grammar for the printed entry shape parses what it can. It is all-or-nothing: if any clause containing a year fails to parse cleanly, the whole entry is refused rather than half-parsed. A second Python pass expands the abbreviations it recognises ("Feb." to "February", "acctnt." to "accountant") and leaves everything else exactly as printed.
-2. **A model for what Python cannot do.** Binding position to place to time span across run-on, elided, "ditto" and concurrent clauses. One entry in, one JSON object out. For the Colonial Office List the first residue went to a batch API with a cheap commercial model; the bulk of both corpora went to an open model on a desktop GPU.
+**Stage 1: reading every edition.** To link the same person across editions, every printed biography was read. The rule-based parser handled the regular entries and refused the rest whole; the refused entries went to a model. For the Colonial Office List the first residue went to a batch API with a cheap commercial model; later residue went to Qwen. The entries were then linked into people (step 4).
+
+**Stage 2: the final records.** For the 65,239 deduplicated careers (34,743 Colonial Office in June 2026, 30,496 India Office a week later), the model read every career, because the rules' accepted output could be silently wrong:
+
+1. **Python first.** A Python pass expands the abbreviations it recognises ("Feb." to "February", "acctnt." to "accountant") and leaves everything else exactly as printed.
+2. **The model reads every career.** Binding position to place to time span across run-on, elided, "ditto" and concurrent clauses. One entry in, one JSON object out, from an open model on a desktop GPU.
 3. **Python again.** A validator that checks every place and year the model emitted against the source text and drops what it cannot find there. Then a post-normalisation pass that applies the deterministic fixes found by the audit, logging every change.
 
 ## The schema

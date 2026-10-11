@@ -98,7 +98,7 @@ For a rough token-cost estimate, multiply measured tokens per entry by the inten
 
 **Reasoning mode.** A setting where the model writes out a chain of thought before answering. Helpful for hard questions; on this task it spent the whole budget thinking and produced no record.
 
-**Regex.** A pattern language for matching text by shape ("capital letters, comma, names, a dash, then clauses ending in a year"). The project's first tier.
+**Regex.** A pattern language for matching text by shape ("capital letters, comma, names, a dash, then clauses ending in a year"). Used to read every printed edition; entries it could not parse went to a model.
 
 **Validator.** Python code that checks the model's output against the source and drops anything the source does not contain.
 
