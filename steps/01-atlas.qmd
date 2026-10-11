@@ -20,7 +20,7 @@ All terms: [glossary](../glossary.qmd).
 
 {{< video https://jimclifford.ca/col_matching/combined_mobility.mp4 >}}
 
-This is an earlier atlas export, before the 7 October geography repairs. Fifty-six seconds. Each arc connects one official’s recorded postings between colonies, presidencies or provinces, drawn from the career graph and played out by year, 1815 to 1966. The [interactive atlas](https://jimclifford.ca/col_matching/) behind it lets you search a name, follow a career, and open 186 proposed links between people in the Colonial and India Office records: [Philip Edmond Wodehouse](https://www.wikidata.org/wiki/Q1800510), Governor of British Guiana, then the Cape, then Bombay, is one of them, and a historian of the Cape and a historian of Bombay would each have known half of him.
+This is an earlier atlas export, before the 7 October geography repairs. Fifty-six seconds. Each arc connects one official’s recorded postings between colonies, presidencies or provinces, drawn from the career graph and played out by year, 1815 to 1966. The [interactive atlas](https://jimclifford.ca/col_matching/) behind it lets you search a name, follow a career, and open 186 proposed links between people in the Colonial and India Office records: [Philip Edmond Wodehouse](https://www.wikidata.org/wiki/Q1800510), Governor of British Guiana, then the Cape, then Bombay, is one of them. Both Lists print his whole career; linking the two records identifies one man across two administrative series and lets each be read against the other.
 
 The cross-service links are candidates: the September review found errors in a small check (11 of 15 links supported). Wodehouse is the worked example here; the full set of bridges needs further review.
 
@@ -42,7 +42,7 @@ Take one man who moved a lot. The 1867 *Colonial Office List* entry:
 
 > WODEHOUSE, SIR PHILIP E., K.C.B. (Creat. 1862.)—Entered the Ceylon civil service as a writer, May, 1828; promoted to be assistant colonial secretary and clerk of the executive and legislative councils, Oct. 1833; district judge of Kandy, 1840; government agent for the western province, 1843; was appointed superintendent of Honduras, 1851; in Feb. 1854, governor of British Guiana; was employed in 1858 on a special mission to the government of Venezuela; and in 1861 was appointed governor of the Cape of Good Hope; is also high commissioner in South Africa.
 
-The *India Office List* has him too, because he went on to govern Bombay from 1872 to 1877. To draw his arcs the pipeline had to answer the three questions of the hour for every clause: what is the event, which printed place is which real place, and whether the two Lists' entries are the same man.
+The *India Office List* has him too, because he went on to govern Bombay from 1872 to 1877. Its entry (January 1889) and later *Colonial Office List* editions (1878) both print the whole career, Ceylon to Bombay. They disagree by a day on the start of the Bombay governorship: 7 May 1872 in the Colonial Office List, 6 May in the India Office List. Keep both readings with their sources. To draw his arcs the pipeline had to answer the three questions of the hour for every clause: what is the event, which printed place is which real place, and whether the two Lists' entries are the same man.
 
 | As printed | Event | Place, as printed | Identifier retrieved | Seat | Lat, long | Year |
 |---|---|---|---|---|---|---|
@@ -52,7 +52,7 @@ The *India Office List* has him too, because he went on to govern Bombay from 18
 | "governor of British Guiana" | governor | British Guiana | [Q918126](https://www.wikidata.org/wiki/Q918126) | Georgetown | 6.81, −58.15 | 1854 |
 | "special mission to the government of Venezuela" | special mission | Venezuela | [Q717](https://www.wikidata.org/wiki/Q717) | Caracas, via the item's capital | 10.51, −66.91 | 1858 |
 | "governor of the Cape of Good Hope" | governor | Cape Colony | [Q370736](https://www.wikidata.org/wiki/Q370736) | Cape Town | −33.93, 18.42 | 1861 |
-| "governor of Bombay" (India Office List) | governor | Bombay Presidency | [Q891827](https://www.wikidata.org/wiki/Q891827) | Bombay | 18.97, 72.83 | 1872–77 |
+| "governor of Bombay" (1878 Colonial Office List; India Office List) | governor | Bombay Presidency | [Q891827](https://www.wikidata.org/wiki/Q891827) | Bombay | 18.97, 72.83 | 1872–77 |
 
 The man himself is [Q1800510](https://www.wikidata.org/wiki/Q1800510), born 1811, died 1887. Every coordinate in the table came from Wikidata through the identifier: either the item carries a location, or it names a capital that does. Drawn in order of year:
 

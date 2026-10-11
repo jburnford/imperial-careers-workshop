@@ -49,7 +49,7 @@ format:
 | superintendent of Honduras | superintendent | British Honduras | Belize | 1851 |
 | governor of British Guiana | governor | British Guiana | Georgetown | 1854 |
 | governor of the Cape of Good Hope | governor | Cape Colony | Cape Town | 1861 |
-| governor of Bombay (India Office List) | governor | Bombay Presidency | Bombay | 1872–77 |
+| governor of Bombay (later editions; India Office List) | governor | Bombay Presidency | Bombay | 1872–77 |
 
 ```{=html}
 <div class="flow">
@@ -66,7 +66,7 @@ format:
 ```
 
 ::: notes
-1–3. Source is the 1867 Colonial Office List; Bombay comes from the India Office List. The full table, identifiers and trace are on step 1. “Honduras” to “British Honduras” is an interpretation, kept separately from printed wording. A capital is a plotting proxy, not evidence of residence. Wodehouse is a checked example of the cross-service match; the other bridges need review.
+1–3. The quotation is the 1867 Colonial Office List entry, which predates Bombay; the Bombay row is printed in later Colonial Office editions (1878) and in the India Office List. The full table, identifiers and trace are on step 1. “Honduras” to “British Honduras” is an interpretation, kept separately from printed wording. A capital is a plotting proxy, not evidence of residence. Wodehouse is a checked example of the cross-service match; the other bridges need review.
 :::
 
 
@@ -108,17 +108,19 @@ MOTION DRAFT, replacing the earlier single-clause version; compare with the stat
 
 :::: {.columns}
 ::: {.column width="42%"}
-[Colonial Office List]{.blue}\
-Ceylon → Honduras → British Guiana → Cape
+::: {style="font-size:0.8em"}
+[Colonial Office List, 1878]{.blue}\
+Ceylon → Honduras → British Guiana → Venezuela → Cape → Bombay
 
-[India Office List]{.gold}\
-Bombay, 1872–77
+[India Office List, 1889]{.gold}\
+The same career, Ceylon to Bombay, in its own words
 
-Linking the entries follows one career across two administrative collections.
+Both print the whole career. The link joins two records of one man and shows where they disagree: Bombay from 7 or 6 May 1872?
 
 **What becomes visible when we read the two Lists together?**
 
 [Open Wodehouse’s career](https://jimclifford.ca/col_matching/?p=kgp_col1878-p447b3)
+:::
 :::
 ::: {.column width="58%"}
 ![](images/atlas-wodehouse-repaired.png){fig-alt="Current atlas view of Philip Wodehouse's career, with arcs from Ceylon to Honduras, British Guiana, the Cape and Bombay, and a dated list of postings"}
@@ -128,7 +130,7 @@ Linking the entries follows one career across two administrative collections.
 ::::
 
 ::: notes
-3–4. Lead with the historical use: a reader of either List alone sees part of this career. The checked link brings those parts together. This is a selection of postings, not the full itinerary. The public example reflects the repairs published and checked on 7–8 October. The supporting page retains the earlier Wodehouse errors and their corrections as optional teaching material. This one checked link does not establish that all proposed cross-service links are correct.
+3–4. Lead with the historical use, and keep it to what the entries show. For Wodehouse neither List is partial: the 1878 Colonial Office entry and the 1889 India Office entry both print the career from Ceylon to Bombay. The link identifies one person across two administrative series (same name, K.C.B. of 1862 in both), lets each record be read against the other, and exposes a disagreement over the Bombay start date (7 May 1872 in the Colonial Office List, 6 May in the India Office List). The two entries may draw on the same official returns, so agreement is not independent corroboration. For other bridged officials, check what each List actually adds before claiming that one shows only part of a career. The map shows a selection of postings, not the full itinerary. The public example reflects the repairs published and checked on 7–8 October. The supporting page retains the earlier Wodehouse errors and their corrections as optional teaching material. This one checked link does not establish that all proposed cross-service links are correct.
 :::
 
 ## What the records make visible {.smaller}
