@@ -61,38 +61,9 @@ The presenter runs the MCP search in the room. Suggested script:
 2. Search "Ferdinando Hamlyn Price" with the career words. The top hit is [Q123279571](https://www.wikidata.org/wiki/Q123279571), "Ferdinando Hamblyn Price", alias Hamlyn, born 1855, died 1942, described only in Tamil as a Sri Lankan politician, no career statements at all. The entry says mayor of Colombo three times. **Supported, on the name, the dates and Colombo**, and the pipeline's gate had rejected it because the spelling differed.
 3. Search "Elwood D'Arcy Tibbits Antigua". Nothing plausible in the top fifty. **Unresolved.** Keep the local record and the search that was run.
 
-## The saved chatbot comparison
+## A side experiment: twenty entries, three workflows
 
-[Twenty long entries](../outputs/ground-test/bios.md) were chosen on 7 October 2026: twelve for people the pipeline grounded, eight it did not. For an optional follow-up, paste one into a chatbot with no tools: "Who is this? Give the Wikidata QID." Then look the answer up. Score it: right, wrong item, invented identifier, or declined. In the workshop, use the saved runs below. The [answer key](../outputs/ground-test/answer-key.md) has the pipeline's QID and the MCP lookups.
-
-What the lookups already show: of the eight the pipeline left ungrounded, three have a plausible item the vector search finds at once (Price, Henry Francis Wilson, T. J. Alldridge) and five have nothing in the top fifty. "Not grounded" means the gate did not accept; it never means "no such item".
-
-And the control. On 7 October Jim pasted the twenty entries into Gemini 3.8 Flash with no tools: "Parse these bios and ground the places, schools and people to Wikidata ids where possible." The [response](../outputs/ground-test/gemini-response.md) is fluent and well organised, supplies plausible names and many identifiers. [Scored](../outputs/ground-test/gemini-scoring.md) against Wikidata:
-
-| | |
-|---|---|
-| Person identifiers given | 16 (4 entries declined) |
-| Correct | 0 |
-| Resolve to something that is not a person (a plant, a patent, Thoth, an Iranian village, an archive series, a reptile) | 6 |
-| Within a few thousand of the right number | 7 |
-| Place, school and other-person identifiers given | 142 |
-| Whose Wikidata label matches the name | 43 |
-
-The matches are the famous, low-numbered items: Paris, Canada, Singapore, Churchill. Nyasaland resolved to a disambiguation page, the Straits Settlements to a Danish triathlete, the Cape Colony to an Austrian goalkeeper, Joseph Chamberlain to a Swiss footballer. The model knew who; it did not know the number. A Q-number from memory is a string the model has seen near a name, and nothing in the response tells you which ones resolve.
-
-The same day, the same twenty entries went to Claude Opus 5.5 in a chat with web search, with the same prompt; it reported only identifiers it had seen on a page ([response](../outputs/ground-test/opus-response.md), [scoring](../outputs/ground-test/opus-scoring.md)). Sixteen identifiers given, sixteen right, the same four declined. It found Prince, whom the vector search had missed, and it found that Gorges has two Wikidata items for one man. It also stopped at its tool limit before reaching a single place name; a second pass finished the schools and the other people and reached 17 of 138 places ([CSV](../outputs/ground-test/opus-grounding.csv), 75 identifiers, all verified). Its first memory guess for George V was Q269, which is Tashkent; it caught that itself by reading the page.
-
-| | Gemini, no tools | Pipeline: vector search + gates | Claude Opus 5.5, with retrieval | GPT Astra 6, with retrieval |
-|---|---|---|---|---|
-| Person identifiers correct | 0 of 16 | 12 given, all 12 confirmed by the Opus run independently (Gorges via a duplicate item); 8 ungrounded, of which 4 have items | 16 of 16 given | 16 of 16 given |
-| Places | 38 of 104 labels match; modern items | 3,207 surfaces across the corpus; modern-collapse errors found on the map | 17 of 138, then stopped | 104 place/region identifiers; many period entities, 9 labelled proxies; known exceptions |
-| Time | under 5 minutes | overnight, for the whole corpus | about 20 minutes, two passes | about 27 minutes |
-
-A third run, GPT Astra 6 at the medium setting with web retrieval, took 27 minutes and produced a [structured file](../outputs/ground-test/astra-grounding.json) of 180 entities with offsets, confidence, a relation type, rejected candidates with reasons and dated evidence ([scoring](../outputs/ground-test/astra-scoring.md)). All 155 identifiers passed the saved label/alias check; that check does not establish that every match fits its historical context. It grounded Ceylon, the Straits Settlements, the Union of South Africa and the rest to the period polities, and it recorded Penang Q188096, the item the pipeline had wrongly matched, as a modern proxy only. The file still maps one colonial Victoria to the modern state, and its “Malay States” match needs review. At about 80 seconds an entry, a serial extrapolation over 27,526 people is about 25 days. That is an illustration of throughput at the observed rate, not a forecast: parallel requests, caching, shorter entries and different tools would change it.
-
-These runs show why an identifier must be retrieved and checked. They do not rank models or isolate the effect of retrieval: model, tools and output coverage all differ. The place counts use different units and are not comparable accuracy scores. Even a retrieved, correctly labelled item can be the wrong historical match.
-
-Use retrieval on hard cases and a reference sample, then have a historian review the decisions before treating them as a standard. Record wall-clock time, model charges and human review time separately. A slow demonstration is evidence about this run, not a general price comparison.
+Before trusting a model with identifiers, we gave the same twenty entries to a chatbot without tools and to two models with web retrieval. The chatbot supplied sixteen person identifiers and none was right; the retrieval runs got sixteen of sixteen but took twenty to twenty-seven minutes. The full write-up, with the scoring and what each workflow costs in time, is on its own page: [Side experiment: twenty entries, three workflows](../grounding-test.qmd).
 
 ## Three questions to keep separate
 

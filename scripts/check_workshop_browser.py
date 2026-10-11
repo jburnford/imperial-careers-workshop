@@ -47,7 +47,6 @@ async def main():
                 'Develop the hybrid with Claude Code',
                 'Read records against the source',
                 'Replay a past correction',
-                'Same entries, different workflows',
                 'A past repair: which Victoria?',
                 'A past repair: what counts as an event?',
                 'Three decisions, with reasons',

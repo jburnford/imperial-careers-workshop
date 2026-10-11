@@ -152,6 +152,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">5. Ground</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="./grounding-test.html">
+ <span class="dropdown-text">Side experiment: chatbots and lookups</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="./steps/06-loop.html">
  <span class="dropdown-text">6. The map finds the errors</span></a>
   </li>  
@@ -302,7 +306,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="odd">
 <td>30–40</td>
-<td>Three lookups (maximum three minutes); saved chatbot comparison; model roles; worked corpus cost</td>
+<td>One entry, three kinds of link; WikidataMCP; QLever; three lookups (maximum three minutes); worked corpus cost</td>
 <td>Use saved lookups; do not start a live chatbot run</td>
 </tr>
 <tr class="even">
@@ -354,9 +358,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="the-live-lookup-and-saved-runs" class="level2">
 <h2 class="anchored" data-anchor-id="the-live-lookup-and-saved-runs">The live lookup and saved runs</h2>
 <p>Search Trimen, Price, then Tibbits. Read the retrieved evidence before deciding. Price is a useful pause: a rare name and compatible career context support the match, but another source would strengthen it. Tibbits is unresolved after the search, not proof that no item exists. The <a href="./steps/05-ground.html">Ground page</a> and <a href="outputs/ground-test/answer-key.md">answer key</a> are the fallback.</p>
-<p>Use the saved chatbot runs. Gemini supplied sixteen person identifiers, none correct; Opus and Astra supplied sixteen accepted subject matches each. Opus’s first pass stopped before places; its second reached seventeen. The place counts use different units and coverage. These are examples of workflows, not a controlled model ranking. Keep Harris’s particular date conflict for the final exercise.</p>
-<p>The cost slide distinguishes the coding agent, corpus reader and hard-case reviewer. Twenty-seven minutes for twenty entries extrapolates to about twenty-five days <strong>serially at that observed rate</strong>. Caching, concurrency and task changes affect it; it is not an invoice or production forecast. Participants without a GPU can begin with twenty records and a hosted model.</p>
-<p>The next slide (38–40) is a worked hosted-cost estimate from measured tokens: about 640 read and 330 written per entry; Qwen3.8-27B on OpenRouter at $0.0239/$2.175 per million (a 50% promotion on 8 October) gives ≈ $22 for 30,496 entries, ≈ $45 at the regular price. Check the price on the morning of the session. Stress that output tokens are almost all of it, and that a model change needs the sample audit again.</p>
+<p>The saved chatbot-versus-retrieval experiment (Gemini without tools: 0 of 16 person identifiers; Opus and Astra with retrieval: 16 of 16, 20–27 minutes) is now a <a href="./grounding-test.html">website page</a>, not part of the hour. Point to it if asked. Keep Harris’s particular date conflict for the final exercise.</p>
+<p>The distinction between coding agent, corpus reader and hard-case reviewer, and the 25-day serial extrapolation for retrieval, moved to the side-experiment page. Participants without a GPU can begin with twenty records and a hosted model.</p>
+<p>The cost slide (38–40) is a worked hosted-cost estimate from measured tokens: about 640 read and 330 written per entry; Qwen3.8-27B on OpenRouter at $0.0239/$2.175 per million (a 50% promotion on 8 October) gives ≈ $22 for 30,496 entries, ≈ $45 at the regular price. Check the price on the morning of the session. Stress that output tokens are almost all of it, and that a model change needs the sample audit again.</p>
 </section>
 <section id="participation-and-debrief" class="level2">
 <h2 class="anchored" data-anchor-id="participation-and-debrief">Participation and debrief</h2>

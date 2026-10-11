@@ -34,6 +34,8 @@ website:
             text: "4. Clean: one person or two?"
           - href: steps/05-ground.qmd
             text: "5. Ground"
+          - href: grounding-test.qmd
+            text: "Side experiment: chatbots and lookups"
           - href: steps/06-loop.qmd
             text: "6. The map finds the errors"
           - href: review/index.html

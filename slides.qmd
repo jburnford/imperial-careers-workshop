@@ -673,70 +673,7 @@ Read the whole biography: name, education, offices, places and chronology. OCR c
 :::
 
 ::: notes
-31–34. Judge the whole biography, allowing for OCR errors. An isolated date or spelling discrepancy should not split an otherwise matching career. Preserve the conflicting readings and their sources; accepting the identity does not settle the disputed field. Different education, offices and career histories can establish that these are different people. Trimen: read statements before accepting. Price: ask participants before stating your decision; accepting with recorded limitations or seeking another source is defensible. Tibbits: record the search, do not claim no item exists. Use saved answer-key.md if live lookup fails. Cap live work at three minutes.
-:::
-
-## A saved run without lookup tools
-
-::: {.big}
-[0 of 16]{.gold}
-:::
-
-person identifiers correct in the saved Gemini 3.8 Flash run.
-
-Fluent biographies. Plausible-looking numbers. Wrong items.
-
-**A name understood is not an identifier verified.**
-
-::: {.def}
-[Why memory fails here]{.def-term}
-A QID is an arbitrary number. A model can learn that officials have QIDs, and what such numbers look like, without learning which number belongs to whom. Without a lookup tool it writes a plausible number.
-:::
-
-::: notes
-34–35. Twenty entries; sixteen identifiers supplied, four declined. This is one run, not a general model ranking. Saved outputs are sufficient; do not start a second live demo.
-:::
-
-## Same entries, different workflows
-
-**Saved experiment · twenty entries**
-
-| Saved run | Subject links accepted in review | Elapsed |
-|---|---|---|
-| Gemini 3.8 Flash, no tools | 0 of 16 supplied | under 5 min |
-| Claude Opus 5.5, web retrieval | 16 of 16 supplied | about 20 min |
-| GPT Astra 6, web retrieval | 16 of 16 supplied | about 27 min |
-
-The pipeline supplied **12** links; the review supported all 12.
-
-Check retrieved evidence against the career’s dates and context.
-
-Different models and tools: these runs do not isolate retrieval’s effect.
-
-::: notes
-35–36. These are saved experimental outputs, not current atlas results. Different models and tools: not a controlled test of retrieval alone. The site keeps the detailed place table with its different denominators and the historical Victoria mismatch. Astra's 155 label/alias checks are not 155 historically correct matches. Hold Harris's specific discrepancy back for R8.
-:::
-
-## Two jobs; measure their costs
-
-| Job | What the project used | What to measure |
-|---|---|---|
-| Write and repair the pipeline | Frontier coding agent | Session cost and historian time |
-| Read the collection | Open model (Qwen) on a desktop GPU or cluster | Throughput, GPU time, failures and audit time |
-| Review hard cases | Retrieval with a capable model | Lookup cost and time per case |
-
-27 minutes / 20 entries ≈ 80 seconds each.\
-**About 25 days if run serially for 27,526 entries at that rate.**
-
-Start with twenty records. No cluster needed for the first trial.
-
-::: {.def}
-[Frontier and open-weight]{.def-term}
-*Frontier*: the most capable models, from Anthropic, OpenAI and Google, reached only through their services. *Open-weight*: models whose trained weights can be downloaded and run anywhere. Different properties, not opposites.
-:::
-
-::: notes
-36–38. The 25 days is a serial extrapolation, not a forecast or invoice. Caching and concurrency change throughput. Campus computing is not free infrastructure, even without a per-request bill. Hosted models are a route for participants without a GPU. Measure on their sample rather than promising a dollar total. Keep this slide: attendees miss the parallel cost/model session.
+31–34. Judge the whole biography, allowing for OCR errors. An isolated date or spelling discrepancy should not split an otherwise matching career. Preserve the conflicting readings and their sources; accepting the identity does not settle the disputed field. Different education, offices and career histories can establish that these are different people. Trimen: read statements before accepting. Price: ask participants before stating your decision; accepting with recorded limitations or seeking another source is defensible. Tibbits: record the search, do not claim no item exists. Use saved answer-key.md if live lookup fails. Cap live work at three minutes. The saved chatbot-versus-retrieval experiment is now a website page (grounding-test), not part of the hour; point to it if asked.
 :::
 
 ## What reading the corpus costs {.smaller}
