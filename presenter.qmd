@@ -21,7 +21,7 @@ Lead with what the dataset makes possible: following careers across editions and
 
 | Minutes | What happens | If time is short |
 |---|---|---|
-| 0–7 | Video; Wodehouse source-to-map; one career across two Lists; what the records make visible; three questions | Keep the cross-service example; shorten the table walkthrough |
+| 0–7 | Printed page; video; Wodehouse source-to-map from both Lists; what the records make visible; three questions | Keep the cross-service example; shorten the table walkthrough |
 | 7–13 | Balmer: three minutes tagging the last two postings, one minute comparing, one minute discussing | Keep everyone on Balmer; no tour of the other entries |
 | 13–23 | Show Claude Code the raw OCR; explain why regular expressions alone were insufficient; develop the hybrid; prompt, source check and saved correction | Keep the source discussion and division of work; use the saved replay |
 | 23–30 | Abery/Carbery decision before reveal; A’Beckett/Beckett contrast | Keep the first decision; shorten the second example |

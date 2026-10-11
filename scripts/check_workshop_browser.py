@@ -32,7 +32,7 @@ async def main():
             page.on('pageerror',lambda e:errors.append(str(e)))
             await page.goto(base+'/slides.html',wait_until='networkidle')
             await page.wait_for_function('window.Reveal?.isReady()')
-            await page.evaluate("() => {const s=[...document.querySelectorAll('.reveal .slides > section')];Reveal.slide(s.findIndex(x=>x.id==='cross-service-career'));}")
+            await page.evaluate("() => {const s=[...document.querySelectorAll('.reveal .slides > section')];Reveal.slide(s.findIndex(x=>x.id==='one-clause-one-arc-motion-draft'));}")
             await page.wait_for_timeout(400)
             await page.screenshot(path='/tmp/workshop-cross-service-slide.png')
             bounds=await page.evaluate("""() => {
@@ -40,7 +40,7 @@ async def main():
               return {bottom:r.bottom,height:innerHeight,text:s.innerText};
             }""")
             assert bounds['bottom'] <= bounds['height'],bounds
-            assert 'One career across two Lists' in bounds['text']
+            assert 'Two Lists, one career' in bounds['text']
             titles=[
                 'Start with the raw OCR',
                 'Too irregular for regular expressions alone',
