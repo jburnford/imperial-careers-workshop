@@ -181,7 +181,7 @@ html.workshop-reading { scroll-padding-top: 4.5rem; }
 .reveal section.motion.motion-reset [data-at] { transition: none !important; }
 .reveal .swap { display: inline-grid; justify-items: start; }
 .reveal .swap > span { grid-area: 1 / 1; }
-.reveal .motion-replay { position: absolute; right: 5em; bottom: -0.35em; font: 600 14px/1 system-ui, sans-serif; color: #9a958a; background: #1d1e23; border: 1px solid #3a3b40; border-radius: 4px; padding: 0.45em 0.8em; cursor: pointer; }
+.reveal .motion-replay { position: absolute; right: 0; top: 0.5em; z-index: 5; font: 600 14px/1 system-ui, sans-serif; color: #9a958a; background: #1d1e23; border: 1px solid #3a3b40; border-radius: 4px; padding: 0.45em 0.8em; cursor: pointer; }
 .reveal .motion-replay:hover { color: #f3ead3; }
 .reveal .motion-tag { font: 600 13px/1 system-ui, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; color: #15161a; background: #7fa7d6; border-radius: 3px; padding: 0.3em 0.55em; vertical-align: middle; margin-left: 0.6em; }
 .reveal .motion-map { width: 100%; height: auto; display: block; }

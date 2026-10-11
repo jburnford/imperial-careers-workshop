@@ -30,7 +30,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-9c76864c403842d71b6daa452e8918bc.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-e2acc541da5c3013088d86841189e6c7.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -1495,18 +1495,20 @@ Exercises, worked answers, prompt, replay and glossary.</p>
     <script>
     // Code-driven slide animation (a stand-in for Claude Motion until access arrives).
     // Elements with data-at="ms" gain .on that many milliseconds after their slide opens.
-    // Reduced-motion users, the phone reading view and print/PDF get the final frame.
+    // Reduced-motion users, the phone reading view and print/PDF get the final frame;
+    // Replay always plays, and ?motion autoplays even when the system asks for reduced motion.
     (function () {
       function start() {
         var R = window.Reveal, timers = new WeakMap();
         var reduce = matchMedia('(prefers-reduced-motion: reduce)');
+        var force = new URLSearchParams(location.search).has('motion');
         function steps(s) { return Array.prototype.slice.call(s.querySelectorAll('[data-at]')); }
         function finalFrame(s) { steps(s).forEach(function (e) { e.classList.add('on'); }); }
-        function play(s) {
+        function play(s, asked) {
           (timers.get(s) || []).forEach(clearTimeout);
-          if (reduce.matches || R.isPrintView() || document.documentElement.classList.contains('workshop-reading')) {
-            finalFrame(s); return;
-          }
+          var still = R.isPrintView() || document.documentElement.classList.contains('workshop-reading') ||
+            (reduce.matches && !force && !asked);
+          if (still) { finalFrame(s); return; }
           s.classList.add('motion-reset');
           steps(s).forEach(function (e) { e.classList.remove('on'); });
           void s.offsetWidth;
@@ -1517,8 +1519,9 @@ Exercises, worked answers, prompt, replay and glossary.</p>
         }
         document.querySelectorAll('.reveal section.motion').forEach(function (s) {
           var b = document.createElement('button');
-          b.type = 'button'; b.className = 'motion-replay'; b.textContent = '↻ Replay';
-          b.addEventListener('click', function () { play(s); });
+          b.type = 'button'; b.className = 'motion-replay';
+          b.textContent = reduce.matches && !force ? '▶ Play animation' : '↻ Replay';
+          b.addEventListener('click', function () { play(s, true); });
           s.appendChild(b);
           finalFrame(s);
         });
