@@ -252,6 +252,32 @@ It is a commercial service, paid through a Claude subscription or per use. Here 
 13–14. Start with the actual working process: I opened the raw OCR with Claude Code and discussed whether a Python parser could do the job. The displayed excerpt is copied directly from the 1936 raw OCR block, before abbreviation expansion. The saved file includes the original bounding box, OCR page index 832, block index 11 and printed page 614. This is a walkthrough of the process, not a recovered chat transcript. Use the Balmer exercise they just completed: they already know that “do.” refers back to a place. Ask what the code would need to preserve to reach the same reading. Claude Code helped inspect the source, discuss the approach and write the scripts; the historian decided what the fields meant.
 :::
 
+## Try it: one regular expression [Motion draft]{.motion-tag} {#regex-demo .motion}
+
+```{=html}
+<div class="rx-pattern rise" data-at="300">Split the career at semicolons; read each clause as <b>position</b> , <b>place</b> , [<b>month.</b>] <b>year</b><span class="rx-src">^(?P&lt;position&gt;.+?),\s*(?P&lt;place&gt;[^,]+),\s*(?:(?P&lt;month&gt;[A-Z][a-z]{2,4})\.,?\s*)?(?P&lt;year&gt;1[89]\d\d)…$</span></div>
+<div class="rx-rows">
+  <span class="h">Entry</span><span class="h">Printed clause</span><span class="h">The pattern returns</span><span class="h">Verdict</span>
+  <span class="who rise" data-at="1000">Balmer</span><span class="cl rise" data-at="1000">ch. acctnt., G.P.O., Kenya, Oct., 1919</span><span class="got" data-at="1450">place: Kenya · 1919</span><span data-at="1850"><span class="ok">✓ the regular shape works</span></span>
+  <span class="who rise" data-at="2150">Balmer</span><span class="cl rise" data-at="2150">ch. acctnt., Kenya-Uganda-Tanganyika post and tel. service, 1933</span><span class="got" data-at="2600">place: Kenya-Uganda-Tanganyika post and tel. service</span><span data-at="3000"><span class="no">✗ the office lands in the place</span></span>
+  <span class="who rise" data-at="3300">Balmer</span><span class="cl rise" data-at="3300">senr. dep. P.M.G., do., 1935</span><span class="got" data-at="3750">place: do.</span><span data-at="4150"><span class="no">✗ copies the ditto</span></span>
+  <span class="who rise" data-at="4450">Wodehouse</span><span class="cl rise" data-at="4450">… as a writer, May, 1828</span><span class="got" data-at="4900">place: May</span><span data-at="5300"><span class="no">✗ a month becomes a place</span></span>
+  <span class="who rise" data-at="5600">Wodehouse</span><span class="cl rise" data-at="5600">district judge of Kandy, 1840</span><span class="got" data-at="6050"><i>no match</i></span><span data-at="6450"><span class="no">✗ the place is inside the phrase</span></span>
+  <span class="who rise" data-at="6750">Wodehouse</span><span class="cl rise" data-at="6750">and in 1861 was appointed governor of the Cape of Good Hope</span><span class="got" data-at="7200"><i>no match</i></span><span data-at="7600"><span class="no">✗ prose: the year comes first</span></span>
+  <span class="who rise" data-at="7900">Connolly</span><span class="cl rise" data-at="7900">HON. SIR JAMES DANIEL, KT. BACH. (1920)</span><span class="got" data-at="8350">honours: HON · KT · BACH (1920)</span><span data-at="8750"><span class="no">✗ one honour becomes three</span></span>
+</div>
+<div class="rx-score rise" data-at="9350">
+  <div><b>4 of 4</b> Balmer clauses matched; two are wrong</div>
+  <div><b>1 of 9</b> Wodehouse clauses matched; that one is wrong</div>
+  <div><b>1 of 7</b> Connolly career clauses matched</div>
+</div>
+<p class="motion-caption rise" data-at="10150">Each new rule fixes one shape and misses the next. Matching a pattern is not reading the entry.</p>
+```
+
+::: notes
+14–15. A real run, not a mock-up: scripts/demo_regex_limits.py applies this one pattern to the Balmer, Wodehouse and Connolly entries and saves every result in outputs/structure/regex-limits.json. Let the rows build (about 10 seconds; use Play animation or ?motion if Windows has animations off). The pattern is a reasonable first attempt, and it works on Balmer's regular clauses. Then it fails in the ways historians would predict: the office lands in the place field, the ditto is copied literally, “May” becomes a place, places inside phrases (“of Kandy”) and prose order (“in 1861 was appointed…”) do not match at all, and the honours rule turns “HON.” and “KT. BACH.” into three honours. Wodehouse’s older, prose-style entry matches 1 of 9 clauses. “Matched” is not “right”: Balmer matches 4 of 4 with two wrong. Ask: what rule would you add next, and which other entry would it break? The next slide names the underlying problem.
+:::
+
 ## Too irregular for regular expressions alone {.smaller}
 
 **A familiar historical problem: semi-structured data.**
@@ -272,7 +298,7 @@ A pattern that matches text by its shape. `1[89]\d\d` finds every year from 1800
 :::
 
 ::: notes
-14–15. This is a source problem historians know well: recurring headings, names, dates and offices without a uniform sentence structure. OCR can add variation, but even perfectly transcribed entries contain elision, abbreviations, compound clauses and concurrent appointments. Regular expressions recognise specified patterns; increasingly elaborate rules did not cover the collection reliably. Python is still useful for segmentation, regular cases and checks. Explain the three rows: Balmer inherits the preceding service’s place; Blakely’s “B. Honduras” is British Honduras and April 1898 dates his clerkship; Trimen’s lecturer and British Museum posts overlap. The third example is in the saved Trimen source pack. The conclusion of our discussion was that Python rules alone were insufficient for this corpus. The hard part is binding the right position, place and date, not simply detecting a number.
+15. This is a source problem historians know well: recurring headings, names, dates and offices without a uniform sentence structure. OCR can add variation, but even perfectly transcribed entries contain elision, abbreviations, compound clauses and concurrent appointments. Regular expressions recognise specified patterns; increasingly elaborate rules did not cover the collection reliably. Python is still useful for segmentation, regular cases and checks. Explain the three rows: Balmer inherits the preceding service’s place; Blakely’s “B. Honduras” is British Honduras and April 1898 dates his clerkship; Trimen’s lecturer and British Museum posts overlap. The third example is in the saved Trimen source pack. The conclusion of our discussion was that Python rules alone were insufficient for this corpus. The hard part is binding the right position, place and date, not simply detecting a number.
 :::
 
 ## Develop the hybrid with Claude Code

@@ -204,3 +204,25 @@ html.workshop-reading { scroll-padding-top: 4.5rem; }
 .reveal .motion-json .log { color: #9a958a; }
 .reveal .motion-caption { font-size: 0.68em; color: #f3ead3; margin-top: 0.4em; }
 .workshop-reading .reveal .motion-replay { display: none; }
+
+/* Regex demo rows: clause → what the pattern returned → verdict. */
+.reveal .rx-pattern { font-family: ui-monospace, Menlo, monospace; font-size: 0.5em; background: #1d1e23; border: 1px solid #3a3b40; border-left: 4px solid #7fa7d6; border-radius: 4px; padding: 0.45em 0.8em; margin: 0.2em 0 0.5em; color: #d9d3c4; }
+.reveal .rx-pattern b { color: #9cc0ea; font-weight: 400; }
+.reveal .rx-pattern .rx-src { display: block; color: #8a857a; font-size: 0.85em; margin-top: 0.2em; overflow-wrap: anywhere; }
+.reveal .rx-rows { display: grid; grid-template-columns: 0.5fr 1.2fr 1.05fr 1.15fr; gap: 0.3em 0.7em; font-size: 0.57em; line-height: 1.3; align-items: center; }
+.reveal .rx-rows .h { color: #c9a227; font-weight: 600; border-bottom: 2px solid #3a3b40; padding-bottom: 0.15em; }
+.reveal .rx-rows .who { color: #9a958a; }
+.reveal .rx-rows .cl { font-family: Georgia, serif; color: #e9e4d8; }
+.reveal .rx-rows .got { font-family: ui-monospace, Menlo, monospace; font-size: 0.92em; color: #d9d3c4; }
+.reveal .rx-rows .got i { font-style: normal; color: #9a958a; }
+.reveal .rx-rows .ok, .reveal .rx-rows .no { border-radius: 3px; padding: 0.15em 0.5em; font-weight: 600; }
+.reveal .rx-rows .ok { color: #15161a; background: #79a868; }
+.reveal .rx-rows .no { color: #15161a; background: #e08a74; }
+.reveal .rx-score { display: flex; gap: 0.6em; margin-top: 0.6em; font-size: 0.6em; }
+.reveal .rx-score div { flex: 1; background: #1d1e23; border: 1px solid #3a3b40; border-radius: 4px; padding: 0.3em 0.6em; color: #b4ae9f; }
+.reveal .rx-score b { color: #c9a227; font-family: Georgia, serif; font-size: 1.25em; font-weight: 400; }
+.workshop-reading .reveal .rx-rows { grid-template-columns: 1fr; font-size: 1rem; }
+.workshop-reading .reveal .rx-rows .h { display: none; }
+.workshop-reading .reveal .rx-rows .who { margin-top: 0.8rem; }
+.workshop-reading .reveal .rx-score { flex-direction: column; font-size: 1rem; }
+.workshop-reading .reveal .rx-pattern { font-size: 0.9rem; }

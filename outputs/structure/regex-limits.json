@@ -1,0 +1,165 @@
+{
+ "pattern": {
+  "clause": "^(?P<position>.+?),\\s*(?P<place>[^,]+),\\s*(?:(?P<month>[A-Z][a-z]{2,4})\\.,?\\s*)?(?P<year>1[89]\\d\\d)(?:-(?P<end>\\d{2,4}))?\\.?$",
+  "honour": "\\b(?P<award>[A-Z]{2,5})\\.(?:\\s*\\((?P<year>\\d{4})\\))?",
+  "born": "^B\\.\\s*(?P<year>1[89]\\d\\d)$",
+  "education": "^ed\\.\\s"
+ },
+ "note": "One reasonable first-attempt pattern. \"Matched\" means the pattern returned fields, not that the fields are right; see the slide for which are wrong.",
+ "entries": {
+  "BALMER": {
+   "honours": [],
+   "clauses": [
+    {
+     "clause": "Dep. chief acctnt., G.P.O., E. Africa Prot., Mar., 1919",
+     "match": {
+      "position": "Dep. chief acctnt., G.P.O.",
+      "place": "E. Africa Prot.",
+      "month": "Mar",
+      "year": "1919"
+     }
+    },
+    {
+     "clause": "ch. acctnt., G.P.O., Kenya, Oct., 1919",
+     "match": {
+      "position": "ch. acctnt., G.P.O.",
+      "place": "Kenya",
+      "month": "Oct",
+      "year": "1919"
+     }
+    },
+    {
+     "clause": "ch. acctnt., Kenya-Uganda-Tanganyika post and tel. service, 1933",
+     "match": {
+      "position": "ch. acctnt.",
+      "place": "Kenya-Uganda-Tanganyika post and tel. service",
+      "year": "1933"
+     }
+    },
+    {
+     "clause": "senr. dep. P.M.G., do., 1935",
+     "match": {
+      "position": "senr. dep. P.M.G.",
+      "place": "do.",
+      "year": "1935"
+     }
+    }
+   ],
+   "source": "Colonial Office List 1936, p. 614",
+   "text": "BALMER, F. E.—Dep. chief acctnt., G.P.O., E. Africa Prot., Mar., 1919; ch. acctnt., G.P.O., Kenya, Oct., 1919; ch. acctnt., Kenya-Uganda-Tanganyika post and tel. service, 1933; senr. dep. P.M.G., do., 1935.",
+   "clauses_matched": 4,
+   "clauses_total": 4
+  },
+  "WODEHOUSE": {
+   "honours": [],
+   "clauses": [
+    {
+     "clause": "Entered the Ceylon civil service as a writer, May, 1828",
+     "match": {
+      "position": "Entered the Ceylon civil service as a writer",
+      "place": "May",
+      "year": "1828"
+     }
+    },
+    {
+     "clause": "promoted to be assistant colonial secretary and clerk of the executive and legislative councils, Oct. 1833",
+     "match": null
+    },
+    {
+     "clause": "district judge of Kandy, 1840",
+     "match": null
+    },
+    {
+     "clause": "government agent for the western province, 1843",
+     "match": null
+    },
+    {
+     "clause": "was appointed superintendent of Honduras, 1851",
+     "match": null
+    },
+    {
+     "clause": "in Feb. 1854, governor of British Guiana",
+     "match": null
+    },
+    {
+     "clause": "was employed in 1858 on a special mission to the government of Venezuela",
+     "match": null
+    },
+    {
+     "clause": "and in 1861 was appointed governor of the Cape of Good Hope",
+     "match": null
+    },
+    {
+     "clause": "is also high commissioner in South Africa",
+     "match": null
+    }
+   ],
+   "source": "Colonial Office List 1867",
+   "text": "WODEHOUSE, SIR PHILIP E., K.C.B. (Creat. 1862.)—Entered the Ceylon civil service as a writer, May, 1828; promoted to be assistant colonial secretary and clerk of the executive and legislative councils, Oct. 1833; district judge of Kandy, 1840; government agent for the western province, 1843; was appointed superintendent of Honduras, 1851; in Feb. 1854, governor of British Guiana; was employed in 1858 on a special mission to the government of Venezuela; and in 1861 was appointed governor of the Cape of Good Hope; is also high commissioner in South Africa.",
+   "clauses_matched": 1,
+   "clauses_total": 9
+  },
+  "CONNOLLY": {
+   "honours": [
+    {
+     "award": "HON",
+     "year": null
+    },
+    {
+     "award": "KT",
+     "year": null
+    },
+    {
+     "award": "BACH",
+     "year": "1920"
+    }
+   ],
+   "clauses": [
+    {
+     "clause": "B. 1870",
+     "birth_year": "1870"
+    },
+    {
+     "clause": "ed. Warwick Pub. Schl. and Catholic Schl.",
+     "education": "ed. Warwick Pub. Schl. and Catholic Schl."
+    },
+    {
+     "clause": "M.L.C., Western Australia, 1902",
+     "match": {
+      "position": "M.L.C.",
+      "place": "Western Australia",
+      "year": "1902"
+     }
+    },
+    {
+     "clause": "col. sec. and min. of com. and lab., 1906",
+     "match": null
+    },
+    {
+     "clause": "col. sec. and min. of pub. health, 1910",
+     "match": null
+    },
+    {
+     "clause": "leader of leg. coun. from 1906 to 1911",
+     "match": null
+    },
+    {
+     "clause": "M.L.A. for Perth, 1914",
+     "match": null
+    },
+    {
+     "clause": "agt. genl. in London for Western Australia, 1917-23",
+     "match": null
+    },
+    {
+     "clause": "agt. gen. in London for Malta, 1930",
+     "match": null
+    }
+   ],
+   "source": "Colonial Office List 1940",
+   "text": "CONNOLLY, HON. SIR JAMES DANIEL, KT. BACH. (1920). —B. 1870; ed. Warwick Pub. Schl. and Catholic Schl.; M.L.C., Western Australia, 1902; col. sec. and min. of com. and lab., 1906; col. sec. and min. of pub. health, 1910; leader of leg. coun. from 1906 to 1911; M.L.A. for Perth, 1914; agt. genl. in London for Western Australia, 1917-23; agt. gen. in London for Malta, 1930.",
+   "clauses_matched": 1,
+   "clauses_total": 7
+  }
+ }
+}

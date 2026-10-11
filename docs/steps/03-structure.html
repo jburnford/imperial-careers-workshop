@@ -217,7 +217,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#start-by-showing-claude-code-the-raw-ocr" id="toc-start-by-showing-claude-code-the-raw-ocr" class="nav-link active" data-scroll-target="#start-by-showing-claude-code-the-raw-ocr">Start by showing Claude Code the raw OCR</a></li>
-  <li><a href="#why-regular-expressions-alone-were-insufficient" id="toc-why-regular-expressions-alone-were-insufficient" class="nav-link" data-scroll-target="#why-regular-expressions-alone-were-insufficient">Why regular expressions alone were insufficient</a></li>
+  <li><a href="#why-regular-expressions-alone-were-insufficient" id="toc-why-regular-expressions-alone-were-insufficient" class="nav-link" data-scroll-target="#why-regular-expressions-alone-were-insufficient">Why regular expressions alone were insufficient</a>
+  <ul class="collapse">
+  <li><a href="#try-it-one-regular-expression" id="toc-try-it-one-regular-expression" class="nav-link" data-scroll-target="#try-it-one-regular-expression">Try it: one regular expression</a></li>
+  </ul></li>
   <li><a href="#develop-and-check-the-hybrid" id="toc-develop-and-check-the-hybrid" class="nav-link" data-scroll-target="#develop-and-check-the-hybrid">Develop and check the hybrid</a></li>
   <li><a href="#the-schema" id="toc-the-schema" class="nav-link" data-scroll-target="#the-schema">The schema</a></li>
   <li><a href="#the-prompt-exactly-as-sent" id="toc-the-prompt-exactly-as-sent" class="nav-link" data-scroll-target="#the-prompt-exactly-as-sent">The prompt, exactly as sent</a></li>
@@ -325,7 +328,13 @@ Terms on this page
 </tbody>
 </table>
 <p>A regular expression can recognise a year or a specified abbreviation. Binding that year to the correct posting, carrying a place across an omitted phrase, or separating concurrent jobs needs more context. A fixed grammar could handle the regular cases, but adding exceptions did not make it a reliable parser for the whole collection.</p>
+<section id="try-it-one-regular-expression" class="level3">
+<h3 class="anchored" data-anchor-id="try-it-one-regular-expression">Try it: one regular expression</h3>
+<p>The workshop repository includes a small demonstration. It splits a career at semicolons and reads each clause as <em>position, place, [month.] year</em>, a reasonable first attempt. Run against three printed entries, it works on Balmer’s regular clauses, then puts an office name in the place field, copies Balmer’s “do.” literally, takes Wodehouse’s “May” for a place, misses clauses such as “district judge of Kandy, 1840” and “in 1861 was appointed governor of the Cape of Good Hope”, and turns Connolly’s “HON. … KT. BACH. (1920)” into three honours. It matches 4 of 4 Balmer clauses (two wrong), 1 of 9 Wodehouse clauses (that one wrong) and 1 of 7 Connolly career clauses. Matching a pattern is not the same as reading the entry.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> scripts/demo_regex_limits.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><a href="../outputs/structure/regex-limits.json">Every result is saved</a>, with the patterns used.</p>
 <p>Python remained useful for splitting the input, parsing regular clauses, managing the run and checking outputs. We developed a hybrid so a model could read the difficult clauses within an agreed structure.</p>
+</section>
 </section>
 <section id="develop-and-check-the-hybrid" class="level2">
 <h2 class="anchored" data-anchor-id="develop-and-check-the-hybrid">Develop and check the hybrid</h2>
@@ -547,7 +556,7 @@ Return ONE JSON object with EXACTLY these top-level keys: surname, given_names, 
 </table>
 <p><strong>Checked:</strong> one event changed; the other eleven events and all other fields stayed unchanged. A second run made no further changes. Constructed boundary cases with no preceding resolved place stayed unresolved. Blakely’s birth-year error and Connolly’s split knighthood remain: this rule fixes one class of error.</p>
 <p><a href="../outputs/structure/ditto-fix-replay.json">Saved before-and-after records and checks</a>. To reproduce from the workshop repository:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> scripts/demo_ditto_fix.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> scripts/demo_ditto_fix.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This is a workshop replay on three records, not a rerun of the published graph or a post-fix accuracy estimate.</p>
 <p><strong>You decide:</strong> what is an event. Whether an acting appointment is a posting. Whether “called to the bar, 1879” belongs in the career. Whether “leader of leg. coun. from 1906 to 1911” is a position or a description. The prompt records those decisions; the audit checks whether the model kept them; the post-normaliser enforces the ones that can be enforced.</p>
 <p>Next: <a href="../steps/04-identity.html">Clean: one person or two?</a></p>

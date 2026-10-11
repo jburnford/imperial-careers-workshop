@@ -45,6 +45,16 @@ This is a familiar problem for historians: **semi-structured data**. Names, offi
 
 A regular expression can recognise a year or a specified abbreviation. Binding that year to the correct posting, carrying a place across an omitted phrase, or separating concurrent jobs needs more context. A fixed grammar could handle the regular cases, but adding exceptions did not make it a reliable parser for the whole collection.
 
+### Try it: one regular expression
+
+The workshop repository includes a small demonstration. It splits a career at semicolons and reads each clause as *position, place, [month.] year*, a reasonable first attempt. Run against three printed entries, it works on Balmer’s regular clauses, then puts an office name in the place field, copies Balmer’s “do.” literally, takes Wodehouse’s “May” for a place, misses clauses such as “district judge of Kandy, 1840” and “in 1861 was appointed governor of the Cape of Good Hope”, and turns Connolly’s “HON. … KT. BACH. (1920)” into three honours. It matches 4 of 4 Balmer clauses (two wrong), 1 of 9 Wodehouse clauses (that one wrong) and 1 of 7 Connolly career clauses. Matching a pattern is not the same as reading the entry.
+
+```bash
+python3 scripts/demo_regex_limits.py
+```
+
+[Every result is saved](../outputs/structure/regex-limits.json), with the patterns used.
+
 Python remained useful for splitting the input, parsing regular clauses, managing the run and checking outputs. We developed a hybrid so a model could read the difficult clauses within an agreed structure.
 
 ## Develop and check the hybrid
