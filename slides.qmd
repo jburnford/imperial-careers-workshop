@@ -22,6 +22,17 @@ format:
 ---
 
 
+## Thousands of pages like this… {#printed-page}
+
+![](images/col1913-pp561-562.webp){fig-alt="Two facing pages, 561 and 562, of the Colonial Office List for 1913: dense columns of abbreviated biographies from KELLY to KING" height="420" fig-align="center"}
+
+[…became the moving atlas on the next slide.]{style="font-size:0.9em;color:#f3ead3"}\
+[*The Colonial Office List for 1913* (52nd publication), pp. 561–562. Scan digitised by Google, from the Internet Archive.]{.caption}
+
+::: notes
+0–1. One simple point before the video: this pipeline turned thousands of printed pages like these into the animated atlas that follows. Two facing pages of the Record of Services hold about forty compressed biographies; the project used 85 volumes of the Colonial Office List, 1867–1966, and the India Office List. Then play the video.
+:::
+
 ## {#mobility-video .video-slide background-color="#15161a"}
 
 ```{=html}
