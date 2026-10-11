@@ -1,0 +1,57 @@
+/* Shared reading and touch behavior for the site and both exercises. */
+*, *::before, *::after { box-sizing: border-box; }
+main, .cols > div, .row > *, .toolbar > * { min-width: 0; }
+main, .entry, blockquote, .proposal, .cols, .meta { overflow-wrap: anywhere; }
+img, video, iframe { max-width: 100%; }
+pre { max-width: 100%; overflow-x: auto; }
+textarea, input, select { max-width: 100%; }
+.workshop-table { width: 100%; }
+.workshop-table td, .workshop-table th { overflow-wrap: anywhere; }
+
+@media (max-width: 1024px) {
+  button, select, input[type="text"], .navbar-toggler { min-height: 44px; }
+  button, input, select, textarea { font-size: 1rem; }
+  .tags button { min-width: 44px; }
+  label.opt { display: inline-flex; align-items: center; min-height: 44px; gap: 0.4rem; }
+  input[type="radio"] { width: 20px; height: 20px; }
+  .navbar-nav .nav-link, .navbar .dropdown-item { padding-top: 0.65rem; padding-bottom: 0.65rem; }
+  #entry .w { line-height: 2; padding: 0.25rem 0.1rem; }
+}
+
+@media (max-width: 640px) {
+  body:not(.reveal-viewport) { font-size: 1rem; }
+  main h1 { font-size: 1.8rem; }
+  main h2 { font-size: 1.45rem; }
+  main blockquote { margin-left: 0; margin-right: 0; padding-left: 0.8rem; }
+  main .callout { margin-left: 0; margin-right: 0; }
+  .toolbar { position: static; align-items: stretch; }
+  .toolbar > label, .toolbar > button { flex: 1 1 100%; }
+  .toolbar input, .toolbar select { width: 100%; }
+  .cols { flex-direction: column; gap: 0.75rem; }
+  .cols > div { flex: auto; }
+  .row > label { flex: 1 1 100%; }
+  #pick { width: 100%; }
+  #compare { scroll-margin-top: 1rem; }
+  /* Row cards preserve every value and its column label without sideways scrolling. */
+  .workshop-table { display: block; border: 0; font-size: 1rem; }
+  .workshop-table thead, .workshop-table-head {
+    position: absolute; width: 1px; height: 1px; padding: 0;
+    overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+  }
+  .workshop-table tbody { display: block; width: 100%; }
+  .workshop-table tbody tr:not(.workshop-table-head) {
+    display: block; padding: 0.6rem 0.8rem; margin: 0 0 0.8rem;
+    border: 1px solid #d6d9dc; border-radius: 0.35rem; background: #fff;
+  }
+  .workshop-table td { display: block; width: auto; padding: 0.35rem 0; border: 0; }
+  .workshop-table td:first-child { font-weight: 600; }
+  .workshop-table td[data-label]::before {
+    content: attr(data-label); display: block; margin-bottom: 0.15rem;
+    color: #555; font-size: 0.82rem; font-weight: 600;
+  }
+}
+
+@media print {
+  .toolbar, .tags, #btnCopy, #btnClear { display: none; }
+  .workshop-table { display: table; }
+}

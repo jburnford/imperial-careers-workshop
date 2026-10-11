@@ -102,6 +102,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
+<link rel="stylesheet" href="workshop.css">
 </head>
 
 <body class="nav-fixed">
@@ -360,7 +361,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="participation-and-debrief">Participation and debrief</h2>
 <p>Use the same prompts in the room and on Zoom. Pause before the Abery decision and the Brewster second reveal. Ask for evidence, not a show of confidence. No polling software is required.</p>
 <p>For the final exercise, introduce the records as <strong>saved teaching cases</strong>, then work through <strong>R1, R3 and R8</strong>; the other five are further practice. Participants judge the saved proposals against their evidence. Select R8 beside <strong>Copy decision and reason</strong> for a chat response. Paper users have the same proposals and evidence. The TSV download retains all reasons and the case-set fingerprint; do not promise collection unless a destination has been arranged.</p>
-<p>For Harris, invite both an “accept with conflict recorded” and an “unresolved pending a check” response. The key distinction is between accepting the identity and replacing the birth year in the source. Check the scan, another edition and the external date’s cited source. Repeated copies of an account do not make independent corroboration.</p>
+<p>For Harris, ask what supports the identity and what remains uncertain about the date. The full name, college and governorship support joining the records despite a possible OCR error in the birth year. Keep the conflict recorded; accepting the identity does not replace the source reading. Leave an identity unresolved when the wider biography supplies insufficient evidence, rather than splitting a matching career over one date. Check the scan, another edition and the external date’s cited source. Repeated copies of an account do not make independent corroboration.</p>
 </section>
 <section id="claims-to-keep-bounded" class="level2">
 <h2 class="anchored" data-anchor-id="claims-to-keep-bounded">Claims to keep bounded</h2>
@@ -377,6 +378,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 
 </main> <!-- /main -->
+<script>
+// Quarto records the site root so nested pages load the same shared behavior.
+(function () {
+  const offset = document.querySelector('meta[name="quarto:offset"]')?.content || './';
+  const script = document.createElement('script');
+  script.src = offset + 'workshop.js';
+  document.body.appendChild(script);
+})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

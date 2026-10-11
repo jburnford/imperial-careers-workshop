@@ -68,6 +68,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
+<link rel="stylesheet" href="../workshop.css">
 </head>
 
 <body class="nav-fixed">
@@ -251,6 +252,7 @@ Terms on this page
 </section>
 <section id="live-the-lookup" class="level2">
 <h2 class="anchored" data-anchor-id="live-the-lookup">Live: the lookup</h2>
+<p>Read the whole biography, allowing for OCR errors in names and dates. When education, offices, places and the career sequence agree, link the identity despite an isolated discrepancy. Preserve the conflicting readings with their sources and flag the field for review. Keep people apart when the careers themselves conflict; a single misread digit should not fragment an otherwise matching biography.</p>
 <p>The presenter runs the MCP search in the room. Suggested script:</p>
 <ol type="1">
 <li>Search “Henry Trimen botanist Ceylon Peradeniya”. Read the top hit’s statements: born 1843, died 1896, botanist. Compare with the entry: director from 1880, M.B., F.R.S. <strong>Supported.</strong></li>
@@ -360,6 +362,15 @@ Terms on this page
 </section>
 
 </main> <!-- /main -->
+<script>
+// Quarto records the site root so nested pages load the same shared behavior.
+(function () {
+  const offset = document.querySelector('meta[name="quarto:offset"]')?.content || './';
+  const script = document.createElement('script');
+  script.src = offset + 'workshop.js';
+  document.body.appendChild(script);
+})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

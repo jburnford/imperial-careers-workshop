@@ -12,6 +12,8 @@ project:
     - annotate/
     - outputs/
     - source-pack/
+    - workshop.css
+    - workshop.js
 
 website:
   title: "Cleaning and Structuring Historical Data"
@@ -61,6 +63,8 @@ website:
 format:
   html:
     theme: cosmo
+    css: workshop.css
+    include-after-body: workshop-responsive.html
     toc: true
     toc-depth: 3
     code-copy: true

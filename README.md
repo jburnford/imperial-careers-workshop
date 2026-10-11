@@ -12,6 +12,7 @@ The session follows one dataset from printed source to animated atlas: the *Colo
 |---|---|
 | `index.qmd`, `steps/*.qmd`, `answers.qmd`, `presenter.qmd`, `setup.qmd`, `handout.qmd` | The participant site (Quarto). Rendered to `docs/` for GitHub Pages |
 | `slides.qmd` | The slide deck (reveal.js), rendered to `docs/slides.html`; speaker notes in the source |
+| `workshop.css`, `workshop.js`, `workshop-responsive.html` | Shared responsive tables and touch controls; the deck uses a scrolling reading view on touch screens up to 1024 pixels wide; add `?present` to force the slide view |
 | `media/combined-mobility.webm` | WebM playback fallback, converted from the Imperial Careers opening MP4 |
 | `annotate/` | The mark-up exercise: tag positions, places, years and honours in an entry, then compare with the pipeline. Static |
 | `review/` | The decision exercise: three core accept/reject/unresolved decisions with reasons, plus five further cases. Static |
@@ -28,6 +29,8 @@ touch docs/.nojekyll
 ```
 
 Output goes to `docs/`, which GitHub Pages serves at https://jimclifford.ca/imperial-careers-workshop/ (branch `main`, folder `/docs`). `quarto render` deletes `docs/.nojekyll`; recreate it before committing.
+
+After rendering, run `python3 scripts/check_workshop_responsive.py` to check every page at phone, tablet and desktop widths, exercise interactions, slide images and switching back to presentation mode. The check uses Playwright and a temporary local HTTP server. `python3 scripts/check_workshop_browser.py` checks the presentation layout and the saved atlas example.
 
 ## Sources and credits
 

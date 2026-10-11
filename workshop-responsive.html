@@ -1,0 +1,9 @@
+<script>
+// Quarto records the site root so nested pages load the same shared behavior.
+(function () {
+  const offset = document.querySelector('meta[name="quarto:offset"]')?.content || './';
+  const script = document.createElement('script');
+  script.src = offset + 'workshop.js';
+  document.body.appendChild(script);
+})();
+</script>

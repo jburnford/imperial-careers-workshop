@@ -13,7 +13,7 @@ Two printed reference works, the *Colonial Office List* (1862–1966) and the *I
 
 Over a few months, one historian with a coding agent turned those volumes into a knowledge graph and an [animated atlas](https://jimclifford.ca/col_matching/) of imperial careers:
 
-| | Colonial Office List | India Office List |
+| Measure | Colonial Office List | India Office List |
 |---|---|---|
 | Person records within each List | 27,526 | 19,400 |
 | Career events | 180,470 | 124,694 |
@@ -29,9 +29,9 @@ Technical terms are explained where they first appear on each page, and in the [
 
 A historian turning a text into data asks three questions of it, and each has a decision the historian must own. Models and scripts carry those decisions across the collection; their output still needs review.
 
-| | The question | The model does | You decide |
+| Step | The question | The model does | You decide |
 |---|---|---|---|
-| **Structure** | What is a record here? | Proposes the fields, fills them for 65,000 entries, reports what it could not parse | What counts as an event; whether the record changed the meaning |
+| **Structure** | What is a record here? | Proposes the fields, fills them for about 65,000 career records, reports what it could not parse | What counts as an event; whether the record changed the meaning |
 | **Clean** | Is this one person or two? | Clusters the candidates, argues each case, keeps the evidence | Merge, keep apart, or leave for review |
 | **Ground** | Which place, which person, in the shared vocabulary? | Retrieves candidates with evidence | Supported, unresolved, or wrong |
 
@@ -41,7 +41,7 @@ Extraction is half of it. The other half is looking at the result in a form wher
 
 ## The hour
 
-| Minutes | | |
+| Minutes | Stage | Focus |
 |---|---|---|
 | 0–7 | [The atlas](steps/01-atlas.qmd) | The video; then one man's entry turned into identifiers, coordinates and arcs, and the corrections carried through to the rebuilt atlas |
 | 7–13 | [The source](steps/02-source.qmd) | One printed entry. Mark up what you would extract |

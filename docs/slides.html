@@ -30,7 +30,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-731aca3fa2b26cb952c064d9e94a4161.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-6aeffa87ca58355dc0c86cb93f90eb00.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -433,7 +433,7 @@ Bombay, 1872–77</p>
 </div><div class="column" style="width:48%;">
 <div class="def">
 <p><span class="def-term">What is Claude Code?</span> Anthropic’s coding agent. It runs on your own computer, reads the files you point it to, and writes and runs Python with your permission. You describe the task in plain language and judge the results; it reports what it did.</p>
-<p>It is a commercial service, paid through a Claude subscription or per use. Here it <strong>built</strong> the pipeline; it did not read the 65,000 entries.</p>
+<p>It is a commercial service, paid through a Claude subscription or per use. Here it <strong>built</strong> the pipeline; it did not read the 65,000 career records.</p>
 </div>
 </div></div>
 <aside class="notes">
@@ -580,7 +580,7 @@ Bombay, 1872–77</p>
 <p><strong>birth_year:</strong> only if printed. NEVER infer from the earliest career date.</p>
 </blockquote>
 <div class="def">
-<p><span class="def-term">What is a system prompt?</span> The standing instructions sent with every one of the 65,000 entries. The entry itself follows as the user message. Every rule here exists because an earlier run broke it.</p>
+<p><span class="def-term">What is a system prompt?</span> The standing instructions sent with each of about 65,000 career records. The entry itself follows as the user message. Every rule here exists because an earlier run broke it.</p>
 </div>
 <aside class="notes">
 <p>17–19. This is what the discussion became: explicit instructions for the model inside the pipeline. The first, second and fourth quotations are from the saved prompt; the place line summarises its inheritance rule, including the stop at a stated transfer. Link to the exact prompt on step 3. Ask: would “defeated in an election” count as an office held? Leave that distinction in mind for Brewster.</p>
@@ -811,10 +811,10 @@ Every shared person identifier asserts an identity.</p>
 </ol>
 <p>Supported · unresolved · wrong</p>
 <div class="def">
-<p><span class="def-term">Reading a candidate item</span> Is it a human? Do the birth and death dates fit the career? Do occupation, positions held and places match the entry? One contradiction outweighs a matching name.</p>
+<p><span class="def-term">Reading a candidate item</span> Read the whole biography: name, education, offices, places and chronology. OCR can misread names and dates. Link when the rest of the biography agrees; preserve discrepancies for review. Keep apart when the careers themselves conflict.</p>
 </div>
 <aside class="notes">
-<p>31–34. Trimen: read statements before accepting. Price: ask participants before stating your decision; accepting with recorded limitations or seeking another source is defensible. Tibbits: record the search, do not claim no item exists. Use saved answer-key.md if live lookup fails. Cap live work at three minutes.</p>
+<p>31–34. Judge the whole biography, allowing for OCR errors. An isolated date or spelling discrepancy should not split an otherwise matching career. Preserve the conflicting readings and their sources; accepting the identity does not settle the disputed field. Different education, offices and career histories can establish that these are different people. Trimen: read statements before accepting. Price: ask participants before stating your decision; accepting with recorded limitations or seeking another source is defensible. Tibbits: record the search, do not claim no item exists. Use saved answer-key.md if live lookup fails. Cap live work at three minutes.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -883,6 +883,7 @@ Every shared person identifier asserts an identity.</p>
 </table>
 <p>The pipeline supplied <strong>12</strong> links; the review supported all 12.</p>
 <p>Check retrieved evidence against the career’s dates and context.</p>
+<p>Different models and tools: these runs do not isolate retrieval’s effect.</p>
 <aside class="notes">
 <p>35–36. These are saved experimental outputs, not current atlas results. Different models and tools: not a controlled test of retrieval alone. The site keeps the detailed place table with its different denominators and the historical Victoria mismatch. Astra’s 155 label/alias checks are not 155 historically correct matches. Hold Harris’s specific discrepancy back for R8.</p>
 <style type="text/css">
@@ -1110,7 +1111,7 @@ Every shared person identifier asserts an identity.</p>
 </div></div>
 <p><strong>jimclifford.ca/imperial-careers-workshop/review/</strong></p>
 <aside class="notes">
-<p>46–56. Introduce these as saved proposals for practising decisions, not a live queue of atlas errors. The site displays the core cases first; the other five are further practice. Do not reveal the Harris answer until participants have decided. Zoom users select R8 and copy its decision and reason. Ask for an accept and an unresolved rationale; both can be defensible. Separate identity confidence from permission to change a source field. Printed handout page 2 has the same three decisions.</p>
+<p>46–56. Introduce these as saved proposals for practising decisions, not a live queue of atlas errors. The site displays the core cases first; the other five are further practice. Do not reveal the Harris answer until participants have decided. Zoom users select R8 and copy its decision and reason. Ask what supports the identity and what remains uncertain about the date. The matching biography supports joining the records despite a possible OCR error; preserve the disputed readings. Separate identity confidence from permission to change a source field. Printed handout page 2 has the same three decisions.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1373,6 +1374,15 @@ Exercises, worked answers, prompt, replay and glossary.</p>
       });
     </script>
     <script>
+    // Quarto records the site root so nested pages load the same shared behavior.
+    (function () {
+      const offset = document.querySelector('meta[name="quarto:offset"]')?.content || './';
+      const script = document.createElement('script');
+      script.src = offset + 'workshop.js';
+      document.body.appendChild(script);
+    })();
+    </script>
+    <script>
     // Site QR code on the title slide, for the room and for Zoom screens.
     (function () {
       var t = document.getElementById('title-slide');
@@ -1380,6 +1390,7 @@ Exercises, worked answers, prompt, replay and glossary.</p>
       var img = document.createElement('img');
       img.src = 'images/qr-site.png';
       img.alt = 'QR code for jimclifford.ca/imperial-careers-workshop';
+      img.className = 'workshop-title-qr';
       img.style.cssText = 'position:absolute;right:0;bottom:40px;width:190px;height:190px;margin:0';
       t.appendChild(img);
     })();

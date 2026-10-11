@@ -68,6 +68,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
+<link rel="stylesheet" href="workshop.css">
 </head>
 
 <body class="nav-fixed">
@@ -251,7 +252,7 @@ Terms on this page
 </section>
 <section id="r8-ground.-harris-can-be-linked-without-settling-his-birth-year" class="level2">
 <h2 class="anchored" data-anchor-id="r8-ground.-harris-can-be-linked-without-settling-his-birth-year">R8 (Ground). Harris can be linked without settling his birth year</h2>
-<p><strong>Accept with the disagreement recorded, or leave unresolved with a specific next check.</strong> The retrieved candidate shares the full name, Christ’s College and the Newfoundland governorship. Those support the identity despite the conflicting dates. A conservative reviewer can reasonably ask to see the scan and another independent account before accepting.</p>
+<p><strong>Accept with the disagreement recorded.</strong> The retrieved candidate shares the full name, Christ’s College and the Newfoundland governorship. Read the biography as a whole, allowing for OCR errors: an isolated birth-year discrepancy should not split an otherwise matching career. Link the identity and review the disputed date separately. Leave the identity unresolved when the wider biography does not supply enough evidence to decide.</p>
 <p>The proposal keeps <code>birth_year_as_printed: 1858</code>, records the external value 1855 separately, and flags the conflict. Accepting the link does not authorise changing the source field. The OCR could be wrong, the printed book could be wrong, or the external record could be wrong. The excerpt alone cannot decide which.</p>
 <p>Next checks: inspect the 1927 page image, compare another edition, and trace the external date to its cited source. Do not count repeated copies of the same account as independent corroboration. <a href="outputs/ground-test/harris-evidence.json">Retrieved evidence</a>.</p>
 </section>
@@ -288,6 +289,15 @@ Terms on this page
 </section>
 
 </main> <!-- /main -->
+<script>
+// Quarto records the site root so nested pages load the same shared behavior.
+(function () {
+  const offset = document.querySelector('meta[name="quarto:offset"]')?.content || './';
+  const script = document.createElement('script');
+  script.src = offset + 'workshop.js';
+  document.body.appendChild(script);
+})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

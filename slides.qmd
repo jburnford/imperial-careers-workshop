@@ -15,7 +15,7 @@ format:
     link-external-newwindow: true
     transition: fade
     background-transition: fade
-    include-after-body: slides-title-qr.html
+    include-after-body: [workshop-responsive.html, slides-title-qr.html]
     title-slide-attributes:
       data-background-image: images/atlas-screenshot.png
       data-background-opacity: "0.15"
@@ -209,7 +209,7 @@ I showed **Claude Code** the text and discussed how to structure it.
 [What is Claude Code?]{.def-term}
 Anthropic’s coding agent. It runs on your own computer, reads the files you point it to, and writes and runs Python with your permission. You describe the task in plain language and judge the results; it reports what it did.
 
-It is a commercial service, paid through a Claude subscription or per use. Here it **built** the pipeline; it did not read the 65,000 entries.
+It is a commercial service, paid through a Claude subscription or per use. Here it **built** the pipeline; it did not read the 65,000 career records.
 :::
 :::
 ::::
@@ -315,7 +315,7 @@ Open-source software that loads a model onto a GPU and answers requests in the s
 
 ::: {.def}
 [What is a system prompt?]{.def-term}
-The standing instructions sent with every one of the 65,000 entries. The entry itself follows as the user message. Every rule here exists because an earlier run broke it.
+The standing instructions sent with each of about 65,000 career records. The entry itself follows as the user message. Every rule here exists because an earlier run broke it.
 :::
 
 ::: notes
@@ -495,11 +495,11 @@ Supported · unresolved · wrong
 
 ::: {.def}
 [Reading a candidate item]{.def-term}
-Is it a human? Do the birth and death dates fit the career? Do occupation, positions held and places match the entry? One contradiction outweighs a matching name.
+Read the whole biography: name, education, offices, places and chronology. OCR can misread names and dates. Link when the rest of the biography agrees; preserve discrepancies for review. Keep apart when the careers themselves conflict.
 :::
 
 ::: notes
-31–34. Trimen: read statements before accepting. Price: ask participants before stating your decision; accepting with recorded limitations or seeking another source is defensible. Tibbits: record the search, do not claim no item exists. Use saved answer-key.md if live lookup fails. Cap live work at three minutes.
+31–34. Judge the whole biography, allowing for OCR errors. An isolated date or spelling discrepancy should not split an otherwise matching career. Preserve the conflicting readings and their sources; accepting the identity does not settle the disputed field. Different education, offices and career histories can establish that these are different people. Trimen: read statements before accepting. Price: ask participants before stating your decision; accepting with recorded limitations or seeking another source is defensible. Tibbits: record the search, do not claim no item exists. Use saved answer-key.md if live lookup fails. Cap live work at three minutes.
 :::
 
 ## A saved run without lookup tools
@@ -536,6 +536,8 @@ A QID is an arbitrary number. A model can learn that officials have QIDs, and wh
 The pipeline supplied **12** links; the review supported all 12.
 
 Check retrieved evidence against the career’s dates and context.
+
+Different models and tools: these runs do not isolate retrieval’s effect.
 
 ::: notes
 35–36. These are saved experimental outputs, not current atlas results. Different models and tools: not a controlled test of retrieval alone. The site keeps the detailed place table with its different denominators and the historical Victoria mismatch. Astra's 155 label/alias checks are not 155 historically correct matches. Hold Harris's specific discrepancy back for R8.
@@ -674,7 +676,7 @@ Decide. Give the evidence. Say what you would check next.
 **jimclifford.ca/imperial-careers-workshop/review/**
 
 ::: notes
-46–56. Introduce these as saved proposals for practising decisions, not a live queue of atlas errors. The site displays the core cases first; the other five are further practice. Do not reveal the Harris answer until participants have decided. Zoom users select R8 and copy its decision and reason. Ask for an accept and an unresolved rationale; both can be defensible. Separate identity confidence from permission to change a source field. Printed handout page 2 has the same three decisions.
+46–56. Introduce these as saved proposals for practising decisions, not a live queue of atlas errors. The site displays the core cases first; the other five are further practice. Do not reveal the Harris answer until participants have decided. Zoom users select R8 and copy its decision and reason. Ask what supports the identity and what remains uncertain about the date. The matching biography supports joining the records despite a possible OCR error; preserve the disputed readings. Separate identity confidence from permission to change a source field. Printed handout page 2 has the same three decisions.
 :::
 
 ## Your first twenty records

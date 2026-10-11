@@ -70,6 +70,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
+<link rel="stylesheet" href="../workshop.css">
 </head>
 
 <body class="nav-fixed">
@@ -411,7 +412,7 @@ Terms on this page
 <tr class="odd">
 <td><strong>Structuring</strong></td>
 <td>A six-stage pipeline adapted by computational linguists; a relation was “same sentence”</td>
-<td>A schema and a prompt written with a coding agent in an afternoon; a Qwen model reads 100,000 entries inside the script</td>
+<td>A schema and a prompt written with a coding agent in an afternoon; Qwen structures about 65,000 career records after preliminary chaining and deduplication</td>
 </tr>
 <tr class="even">
 <td><strong>Grounding</strong></td>
@@ -432,6 +433,15 @@ Terms on this page
 </section>
 
 </main> <!-- /main -->
+<script>
+// Quarto records the site root so nested pages load the same shared behavior.
+(function () {
+  const offset = document.querySelector('meta[name="quarto:offset"]')?.content || './';
+  const script = document.createElement('script');
+  script.src = offset + 'workshop.js';
+  document.body.appendChild(script);
+})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

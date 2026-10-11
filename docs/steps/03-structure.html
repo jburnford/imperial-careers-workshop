@@ -102,6 +102,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
+<link rel="stylesheet" href="../workshop.css">
 </head>
 
 <body class="nav-fixed">
@@ -342,7 +343,7 @@ Terms on this page
 </section>
 <section id="the-prompt-exactly-as-sent" class="level2">
 <h2 class="anchored" data-anchor-id="the-prompt-exactly-as-sent">The prompt, exactly as sent</h2>
-<p>The system message for every one of the 65,000 entries (<a href="../outputs/structure/extraction-prompt.txt">file</a>):</p>
+<p>The system message for the approximately 65,000 career records in the structuring runs (<a href="../outputs/structure/extraction-prompt.txt">file</a>):</p>
 <pre class="text"><code>You convert ONE printed Colonial Office List biographical entry into a JSON career record. Extract ONLY what is printed; never invent or infer facts.
 Rules:
 - events: one object per distinct posting. EXPLODE compound/concurrent clauses into separate events (e.g. 'reg.-gen., 1887, and M.L.C., 1889' = two events; 'ag. comsnr., 1915-16; and from 1919' = two events).
@@ -411,6 +412,7 @@ Return ONE JSON object with EXACTLY these top-level keys: surname, given_names, 
 </tr>
 </tbody>
 </table>
+<p>The two structuring runs cover <strong>65,239 career records</strong>: 34,743 Colonial Office and 30,496 India Office records, after preliminary chaining and deduplication. These are not every printed appearance of an entry, and not the final person counts after further identity resolution. The <a href="https://github.com/jburnford/col_matching/blob/master/docs/WEEKEND_RUN.md">Colonial Office run instructions</a> describe the deduplicated input; the <a href="https://github.com/jburnford/col_matching/blob/master/docs/IOL_VS_COL.md#4-the-person-identity-stack-and-the-dedup-merge-map-q3">India Office method</a> distinguishes printed biographies, career chains, structuring and final merges.</p>
 <p>The handoff note records the setting that matters most: reasoning off. With it on, long entries eat the token budget and return no JSON, a 67 per cent failure rate. Thinking off, temperature zero: the same finding every run on this corpus has made.</p>
 <p>The model was chosen first through OpenRouter, a hosted service, by running several open models on the same 40 entries; the production run then used the same model on local hardware. The <a href="../glossary.html#three-ways-to-run-it">glossary</a> compares the hosted, desktop and cluster routes, with a worked cost estimate at current hosted prices.</p>
 <p>The India Office List needed one new piece of code, a Python segmenter for its different OCR format, written that morning. The prompt, the model, the validator and the post-normaliser were reused unchanged through one environment variable. The graph was published that afternoon.</p>
@@ -554,6 +556,15 @@ Return ONE JSON object with EXACTLY these top-level keys: surname, given_names, 
 </section>
 
 </main> <!-- /main -->
+<script>
+// Quarto records the site root so nested pages load the same shared behavior.
+(function () {
+  const offset = document.querySelector('meta[name="quarto:offset"]')?.content || './';
+  const script = document.createElement('script');
+  script.src = offset + 'workshop.js';
+  document.body.appendChild(script);
+})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

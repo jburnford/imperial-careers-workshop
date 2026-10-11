@@ -80,7 +80,7 @@ Use the same prompts in the room and on Zoom. Pause before the Abery decision an
 
 For the final exercise, introduce the records as **saved teaching cases**, then work through **R1, R3 and R8**; the other five are further practice. Participants judge the saved proposals against their evidence. Select R8 beside **Copy decision and reason** for a chat response. Paper users have the same proposals and evidence. The TSV download retains all reasons and the case-set fingerprint; do not promise collection unless a destination has been arranged.
 
-For Harris, invite both an “accept with conflict recorded” and an “unresolved pending a check” response. The key distinction is between accepting the identity and replacing the birth year in the source. Check the scan, another edition and the external date’s cited source. Repeated copies of an account do not make independent corroboration.
+For Harris, ask what supports the identity and what remains uncertain about the date. The full name, college and governorship support joining the records despite a possible OCR error in the birth year. Keep the conflict recorded; accepting the identity does not replace the source reading. Leave an identity unresolved when the wider biography supplies insufficient evidence, rather than splitting a matching career over one date. Check the scan, another edition and the external date’s cited source. Repeated copies of an account do not make independent corroboration.
 
 ## Claims to keep bounded
 

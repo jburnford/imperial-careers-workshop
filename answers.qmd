@@ -23,7 +23,7 @@ Start with R1, R3 and R8 after you have decided. The other cases are further pra
 
 ## R8 (Ground). Harris can be linked without settling his birth year
 
-**Accept with the disagreement recorded, or leave unresolved with a specific next check.** The retrieved candidate shares the full name, Christ’s College and the Newfoundland governorship. Those support the identity despite the conflicting dates. A conservative reviewer can reasonably ask to see the scan and another independent account before accepting.
+**Accept with the disagreement recorded.** The retrieved candidate shares the full name, Christ’s College and the Newfoundland governorship. Read the biography as a whole, allowing for OCR errors: an isolated birth-year discrepancy should not split an otherwise matching career. Link the identity and review the disputed date separately. Leave the identity unresolved when the wider biography does not supply enough evidence to decide.
 
 The proposal keeps `birth_year_as_printed: 1858`, records the external value 1855 separately, and flags the conflict. Accepting the link does not authorise changing the source field. The OCR could be wrong, the printed book could be wrong, or the external record could be wrong. The excerpt alone cannot decide which.
 

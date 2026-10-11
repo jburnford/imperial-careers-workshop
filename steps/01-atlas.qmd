@@ -97,7 +97,7 @@ The same three problems at ten million pages: *Trading Consequences* (2012–201
 
 | | Trading Consequences, 2013 | Imperial Careers, 2026 |
 |---|---|---|
-| **Structuring** | A six-stage pipeline adapted by computational linguists; a relation was "same sentence" | A schema and a prompt written with a coding agent in an afternoon; a Qwen model reads 100,000 entries inside the script |
+| **Structuring** | A six-stage pipeline adapted by computational linguists; a relation was "same sentence" | A schema and a prompt written with a coding agent in an afternoon; Qwen structures about 65,000 career records after preliminary chaining and deduplication |
 | **Grounding** | GeoNames string matching; "Saharunpore" missed because the gazetteer knew "Saharanpur"; a bug put every "Italy" in a Texan town. F-scores of 0.62 for commodities and 0.61 for locations, combining precision and recall | Semantic search over Wikidata with verification gates; "Victoria" six ways; a bug put the Union of South Africa at Harare |
 | **Review** | Historians spotted false positives through the visualisations; false negatives were invisible | Same. The atlas found the errors; a sampled audit measured the rest |
 

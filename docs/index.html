@@ -68,6 +68,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
+<link rel="stylesheet" href="workshop.css">
 </head>
 
 <body class="nav-fixed">
@@ -233,7 +234,7 @@ Sources and data
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th></th>
+<th>Measure</th>
 <th>Colonial Office List</th>
 <th>India Office List</th>
 </tr>
@@ -272,7 +273,7 @@ Sources and data
 </colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th>Step</th>
 <th>The question</th>
 <th>The model does</th>
 <th>You decide</th>
@@ -282,7 +283,7 @@ Sources and data
 <tr class="odd">
 <td><strong>Structure</strong></td>
 <td>What is a record here?</td>
-<td>Proposes the fields, fills them for 65,000 entries, reports what it could not parse</td>
+<td>Proposes the fields, fills them for about 65,000 career records, reports what it could not parse</td>
 <td>What counts as an event; whether the record changed the meaning</td>
 </tr>
 <tr class="even">
@@ -310,8 +311,8 @@ Sources and data
 <thead>
 <tr class="header">
 <th>Minutes</th>
-<th></th>
-<th></th>
+<th>Stage</th>
+<th>Focus</th>
 </tr>
 </thead>
 <tbody>
@@ -370,6 +371,15 @@ Sources and data
 </section>
 
 </main> <!-- /main -->
+<script>
+// Quarto records the site root so nested pages load the same shared behavior.
+(function () {
+  const offset = document.querySelector('meta[name="quarto:offset"]')?.content || './';
+  const script = document.createElement('script');
+  script.src = offset + 'workshop.js';
+  document.body.appendChild(script);
+})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

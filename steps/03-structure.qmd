@@ -63,7 +63,7 @@ One object per entry: `surname`, `given_names`, `birth_year` (only if printed), 
 
 ## The prompt, exactly as sent
 
-The system message for every one of the 65,000 entries ([file](../outputs/structure/extraction-prompt.txt)):
+The system message for the approximately 65,000 career records in the structuring runs ([file](../outputs/structure/extraction-prompt.txt)):
 
 ```{.text}
 {{< include ../outputs/structure/extraction-prompt.txt >}}
@@ -87,6 +87,8 @@ Three things to notice. Every rule in the list exists because an earlier run bro
 | Rate once warm | about 1 a second | 1.03 a second |
 | Elapsed | about a day including setup, 19–20 June | 8.24 hours, overnight 25–26 June |
 | Failed to return valid JSON | | 55, under 0.2 per cent |
+
+The two structuring runs cover **65,239 career records**: 34,743 Colonial Office and 30,496 India Office records, after preliminary chaining and deduplication. These are not every printed appearance of an entry, and not the final person counts after further identity resolution. The [Colonial Office run instructions](https://github.com/jburnford/col_matching/blob/master/docs/WEEKEND_RUN.md) describe the deduplicated input; the [India Office method](https://github.com/jburnford/col_matching/blob/master/docs/IOL_VS_COL.md#4-the-person-identity-stack-and-the-dedup-merge-map-q3) distinguishes printed biographies, career chains, structuring and final merges.
 
 The handoff note records the setting that matters most: reasoning off. With it on, long entries eat the token budget and return no JSON, a 67 per cent failure rate. Thinking off, temperature zero: the same finding every run on this corpus has made.
 
