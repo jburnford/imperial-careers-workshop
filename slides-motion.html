@@ -1,0 +1,37 @@
+<script>
+// Code-driven slide animation (a stand-in for Claude Motion until access arrives).
+// Elements with data-at="ms" gain .on that many milliseconds after their slide opens.
+// Reduced-motion users, the phone reading view and print/PDF get the final frame.
+(function () {
+  function start() {
+    var R = window.Reveal, timers = new WeakMap();
+    var reduce = matchMedia('(prefers-reduced-motion: reduce)');
+    function steps(s) { return Array.prototype.slice.call(s.querySelectorAll('[data-at]')); }
+    function finalFrame(s) { steps(s).forEach(function (e) { e.classList.add('on'); }); }
+    function play(s) {
+      (timers.get(s) || []).forEach(clearTimeout);
+      if (reduce.matches || R.isPrintView() || document.documentElement.classList.contains('workshop-reading')) {
+        finalFrame(s); return;
+      }
+      s.classList.add('motion-reset');
+      steps(s).forEach(function (e) { e.classList.remove('on'); });
+      void s.offsetWidth;
+      s.classList.remove('motion-reset');
+      timers.set(s, steps(s).map(function (e) {
+        return setTimeout(function () { e.classList.add('on'); }, +e.dataset.at);
+      }));
+    }
+    document.querySelectorAll('.reveal section.motion').forEach(function (s) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'motion-replay'; b.textContent = '↻ Replay';
+      b.addEventListener('click', function () { play(s); });
+      s.appendChild(b);
+      finalFrame(s);
+    });
+    function current() { var s = R.getCurrentSlide(); if (s && s.classList.contains('motion')) play(s); }
+    R.on('slidechanged', current);
+    current();
+  }
+  if (window.Reveal && Reveal.isReady()) start(); else Reveal.on('ready', start);
+})();
+</script>

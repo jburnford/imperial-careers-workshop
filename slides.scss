@@ -166,3 +166,41 @@ html.workshop-reading { scroll-padding-top: 4.5rem; }
     content: attr(data-label); display: block; color: #9cc0ea; font-size: 0.85rem; font-weight: 600;
   }
 }
+
+/* Code-driven animation (motion-draft branch). */
+.reveal section.motion [data-at] { opacity: 0; transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal section.motion .rise[data-at] { transform: translateY(14px); }
+.reveal section.motion [data-at].on { opacity: 1; transform: none; }
+.reveal section.motion .mk[data-at] { opacity: 1; border-radius: 3px; padding: 0 0.1em; transition: background-color 0.5s, color 0.5s, box-shadow 0.5s; }
+.reveal section.motion .mk[data-at].on { background: #c9a227; color: #15161a; }
+.reveal section.motion .mk.target[data-at].on { background: none; color: #9cc0ea; box-shadow: inset 0 -3px 0 #7fa7d6; }
+.reveal section.motion .exit[data-at] { opacity: 1; }
+.reveal section.motion .exit[data-at].on { opacity: 0; }
+.reveal section.motion path.draw[data-at] { opacity: 1; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.5s ease-in-out; }
+.reveal section.motion path.draw[data-at].on { stroke-dashoffset: 0; }
+.reveal section.motion.motion-reset [data-at] { transition: none !important; }
+.reveal .swap { display: inline-grid; justify-items: start; }
+.reveal .swap > span { grid-area: 1 / 1; }
+.reveal .motion-replay { position: absolute; right: 5em; bottom: -0.35em; font: 600 14px/1 system-ui, sans-serif; color: #9a958a; background: #1d1e23; border: 1px solid #3a3b40; border-radius: 4px; padding: 0.45em 0.8em; cursor: pointer; }
+.reveal .motion-replay:hover { color: #f3ead3; }
+.reveal .motion-tag { font: 600 13px/1 system-ui, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; color: #15161a; background: #7fa7d6; border-radius: 3px; padding: 0.3em 0.55em; vertical-align: middle; margin-left: 0.6em; }
+.reveal .motion-map { width: 100%; height: auto; display: block; }
+.reveal .motion-map text { font: 600 13px system-ui, sans-serif; fill: #d9d3c4; }
+.reveal .motion-map .yr { fill: #c9a227; font-weight: 400; }
+.reveal .motion-map .pt { fill: #7fa7d6; stroke: #15161a; stroke-width: 1.5; }
+.reveal .motion-map .pt.gold { fill: #c9a227; }
+.reveal .motion-map .pt.bad { fill: #c0674f; }
+.reveal .motion-map .pt.good { fill: #79a868; }
+.reveal .motion-map .lbl-bad { fill: #e08a74; }
+.reveal .motion-map .lbl-good { fill: #9fcf8c; }
+.reveal .motion-card { background: #1d1e23; border: 1px solid #3a3b40; border-left: 3px solid #c9a227; border-radius: 4px; padding: 0.35em 0.6em; margin: 0.35em 0; font-size: 0.6em; line-height: 1.35; }
+.reveal .motion-card b { color: #f3ead3; }
+.reveal .motion-card .k { color: #9a958a; display: inline-block; min-width: 7.5em; }
+.reveal .motion-card.alt { border-left-color: #7fa7d6; }
+.reveal .motion-json { font-family: ui-monospace, Menlo, monospace; font-size: 0.5em; line-height: 1.6; background: #1d1e23; border: 1px solid #3a3b40; border-radius: 4px; padding: 0.6em 0.9em; }
+.reveal .motion-json .k { color: #9cc0ea; }
+.reveal .motion-json .bad { color: #e08a74; }
+.reveal .motion-json .good { color: #9fcf8c; }
+.reveal .motion-json .log { color: #9a958a; }
+.reveal .motion-caption { font-size: 0.68em; color: #f3ead3; margin-top: 0.4em; }
+.workshop-reading .reveal .motion-replay { display: none; }

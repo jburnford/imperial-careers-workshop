@@ -59,7 +59,7 @@ async def main():
                         reading = width <= 1024
                         await page.wait_for_function('expected => document.documentElement.classList.contains("workshop-reading") === expected', arg=reading)
                         if reading:
-                            assert await page.locator('.reveal .slides > section:visible').count() == 30
+                            assert await page.locator('.reveal .slides > section:visible').count() == await page.evaluate('Reveal.getTotalSlides()')
                             assert await page.locator('.reveal .slides > section[aria-hidden="true"]').count() == 0
                             size = await page.locator('.reveal .slides > section p').first.evaluate('(e) => parseFloat(getComputedStyle(e).fontSize)')
                             assert size >= 16, (width, size)
@@ -129,7 +129,7 @@ async def main():
             await page.wait_for_function('document.documentElement.classList.contains("workshop-reading")')
             await page.set_viewport_size({'width': 1440, 'height': 900})
             await page.wait_for_function('!document.documentElement.classList.contains("workshop-reading")')
-            await page.evaluate('Reveal.slide(19)')
+            await page.evaluate("Reveal.slide([...document.querySelectorAll('.reveal .slides > section')].findIndex(s => s.querySelector('h2')?.textContent === 'Live: three searches'))")
             assert 'Read the whole biography' in await page.locator('.reveal section.present').inner_text()
             await assert_fits(page, 'desktop after resizing')
             assert not errors, errors

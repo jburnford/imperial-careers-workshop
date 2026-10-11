@@ -796,5 +796,26 @@
     "title": "The map finds the errors",
     "section": "What the map cannot find",
     "text": "What the map cannot find\nFalse negatives. An official whose “Victoria” was left ungrounded does not appear anywhere wrong; he simply has no arc. A merge that should have happened leaves two short careers instead of one long one, both plausible. For those the project built the silver standards: 200 hand-labelled cases, stratified so that the risky strata (rare surname, overlapping eras) are oversampled, scored against the machine output. On the Colonial Office List never-biographied population the judge’s “different” verdicts in the rare-surname stratum turned out to have a false-negative rate of 76 per cent, which no map would have shown.\nNow: the exercise. Work through R1, R3 and the new R8. Give each decision a reason; for an unresolved case, say what evidence you would seek. The other five cases are further practice."
+  },
+  {
+    "objectID": "slides.html#one-clause-one-arc-motion-draft",
+    "href": "slides.html#one-clause-one-arc-motion-draft",
+    "title": "Cleaning, Structuring and Grounding Historical Data",
+    "section": "One clause, one arc Motion draft",
+    "text": "One clause, one arc Motion draft\n\n\n  WODEHOUSE, SIR PHILIP E.— … governor of British Guiana; … in 1861 was appointed governor of the Cape of Good Hope.\n  Eventgovernor · 1861\n  Checked placeCape Colony, a Wikidata item\n  Plotting seatCape Town: a proxy, not a residence\n  The rest of the career draws the same way. Gold comes from the India Office List.\n\n\n\n  \n  British Guiana1854\n  Cape Town1861\n  \n  Ceylon1828\n  \n  British Honduras1851\n  \n  \n  Bombay1872–77\n\n\n\nA source clause → an event → a checked place → a point → an arc.\n\nMOTION DRAFT, for comparison with the static slide before it; keep one of the two. About 13 seconds; Replay is bottom right. Talk over it: the clause is highlighted, becomes an event, gets a checked place and a plotting seat, then the arc draws; the rest of the career fills in, with Bombay from the India Office List in gold. Arcs connect recorded postings in order, not journeys. The Venezuela mission of 1858 is omitted here as on the static table. Coordinates: Natural Earth land outlines (public domain), Web Mercator."
+  },
+  {
+    "objectID": "slides.html#balmers-ditto-resolved-motion-draft",
+    "href": "slides.html#balmers-ditto-resolved-motion-draft",
+    "title": "Cleaning, Structuring and Grounding Historical Data",
+    "section": "Balmer’s ditto, resolved Motion draft",
+    "text": "Balmer’s ditto, resolved Motion draft\nBALMER, F. E.—Dep. chief acctnt., G.P.O., E. Africa Prot., Mar., 1919; ch. acctnt., G.P.O., Kenya, Oct., 1919; ch. acctnt., Kenya-Uganda-Tanganyika post and tel. service, 1933; senr. dep. P.M.G., do., 1935.\ndo. = ditto, “the same as before”: it points back to the last place named.\n\n{ \"position\": \"senior deputy P.M.G.\",\n  \"place\": \"do.\",\"Kenya-Uganda-Tanganyika\",\n  \"year_start\": 1935, \"place_inherited\": true }\n+ change logged: “Printed ditto; previous event has a place.”\n\nA reader resolves it at a glance. A program has to be told, and the change is logged.\n\nMOTION DRAFT, for comparison with the static replay slide before it. About 8 seconds. The record lines are copied from the saved before/after file (event 4); only the place changes, with the logged reason."
+  },
+  {
+    "objectID": "slides.html#which-victoria-motion-draft",
+    "href": "slides.html#which-victoria-motion-draft",
+    "title": "Cleaning, Structuring and Grounding Historical Data",
+    "section": "Which Victoria? Motion draft",
+    "text": "Which Victoria? Motion draft\nBrewster: “defeated by Sir Richard McBride, in Victoria, 1912.”\n\n  \n  Victoria, British Columbia\n  Colony of Victoria\n  Victoria, Hong Kong\n  Victoria, Labuan\n  Victoria, Seychelles\n  \n    \n    Before: one match, reused for everyone\n  \n  Career context: McBride · legislative assembly\n  After: Brewster placed in British Columbia\n\nResolve the place per person, from the surrounding career. Every affected entry is re-emitted.\n\nMOTION DRAFT, for comparison with the static Victoria slide before it. About 8 seconds. Five real imperial places named Victoria; the earlier atlas reused one match (the Australian colony) for every entry. The repair resolves per person from the career context. Points are approximate seats on Natural Earth outlines."
   }
 ]
