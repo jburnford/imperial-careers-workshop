@@ -564,6 +564,110 @@ Model Context Protocol: a standard way to hand a model a tool, such as a Wikidat
 30–31. An identifier's existence is not evidence that it belongs to this mention. Introduce MCP simply as a lookup tool the agent can use; the protocol is not today's lesson.
 :::
 
+## One entry, three kinds of link [Motion draft]{.motion-tag} {#ground-three .motion}
+
+```{=html}
+<blockquote style="font-size:0.6em">LOGAN, Sir William Marston, K.B.E. (1944) … —<span class="mk" data-at="3300">b. 1889</span>; ed. <span class="mk" data-at="5900">Bristol</span> and <span class="mk" data-at="5600">Brasenose Coll., Oxford</span> …; ch. sec., <span class="mk" data-at="700">N. Rhod.</span>, 1937; <span class="mk" data-at="3500">ag. gov.</span>, Dec., 1937 …; gov. and c.-in-c., <span class="mk" data-at="1000">Seychelles</span>, 1942; retd., 1947 …</blockquote>
+<div class="lanes">
+  <div class="lane rise" data-at="1500"><span class="kicker">Places · WikidataMCP search</span>
+    <span class="from">“N. Rhod.”</span> → <span class="to">Northern Rhodesia</span>
+    <span class="from">“Seychelles”</span> → <span class="to">Seychelles</span>
+    <span class="how">Read the candidate’s type, country and dates; prefer the colonial-era entity.</span>
+    <span class="tot rise" data-at="2400">131,343 of 152,132 placed events (86%)</span></div>
+  <div class="lane person rise" data-at="3900"><span class="kicker">Person · QLever query</span>
+    <span class="from">name · b. 1889 · Northern Rhodesia</span> → <span class="to">William Marston Logan</span>
+    <span class="how">Q108649219. Surname, given names, birth year and office all agree; died 1968, after his last listing.</span>
+    <span class="tot rise" data-at="4800">1,066 of 27,526 people (3.9%)</span></div>
+  <div class="lane school rise" data-at="6200"><span class="kicker">School · WikidataMCP search</span>
+    <span class="from">“Brasenose Coll., Oxford”</span> → <span class="to">Brasenose College</span>
+    <span class="how">Q899030. <span class="miss">“Bristol” stays unlinked</span>: a city, not a named school.</span>
+    <span class="tot rise" data-at="7100">11,056 of 15,775 education links (70%)</span></div>
+</div>
+<p class="motion-caption rise" data-at="8200">Places are many and easy to check. People need more evidence, so most stay with a local identifier.</p>
+```
+
+::: notes
+30–31. One printed entry, three kinds of link, each with its own method and its own evidence threshold. Logan’s entry is from the 1948 Colonial Office List. Places: the agent searched WikidataMCP and read each candidate’s statements; the place strings were first collected and normalised (5,376 distinct strings in the Colonial Office cache), colonies came from a curated list of 740, and towns went through MCP batches. People: 1,066 of 27,526 Colonial Office person records are linked, about 3.9 per cent; the rest keep local identifiers. Schools: education strings were split into institutions (rules for the Colonial Office List, Qwen for the India Office List) and searched; bare multi-referent names such as “St. John’s College” were quarantined. The List calls Logan acting governor of Northern Rhodesia; Wikidata lists the governorship as a position held. Counts from col_matching graph_stage3 files.
+:::
+
+## WikidataMCP: search by meaning, then read
+
+```{=html}
+<div class="flow">
+  <div class="node blue"><b>Printed string</b><span>“Penang, S. Sttlnts.”</span></div>
+  <div class="arrow">→</div>
+  <div class="node"><b>Normalised query</b><span>“Penang Straits Settlements”</span></div>
+  <div class="arrow">→</div>
+  <div class="node"><b>search_items</b><span>candidates ranked by meaning, not spelling</span></div>
+  <div class="arrow">→</div>
+  <div class="node"><b>get_statements</b><span>instance of · country · located in · coordinates</span></div>
+  <div class="arrow">→</div>
+  <div class="node after"><b>Cache the decision</b><span>with its evidence, so the graph rebuilds without new lookups</span></div>
+</div>
+<div class="cards">
+  <div class="card"><span class="kicker">Rules the agent followed</span>
+    <p>Prefer the colonial-era entity: British Ceylon, not Sri Lanka.</p>
+    <p>Leave compounds and ambiguous initialisms (“Ken. and Uga.”, “N.S.”) ungrounded.</p>
+    <p>Never write an identifier from memory.</p></div>
+  <div class="card warn"><span class="kicker">What the checks caught</span>
+    <p>A later check of every identifier caught five invented by parallel agents: Dehra, Ayrshire, Rohilkund, Neemuch, Narsinghpur.</p>
+    <p>Fuzzy reuse flipped N./S. and E./W.; only exact spelling variants were folded (166).</p></div>
+</div>
+```
+
+::: {.def}
+[What is vector search?]{.def-term}
+Each Wikidata item is stored as a list of numbers that captures what its description means, so a query finds items close in meaning, not only in spelling. It still returns candidates, not answers: on 11 October “Penang Straits Settlements” put the whole colony first, the modern Malaysian state eighth and Penang Island 24th. Reading the statements decides.
+:::
+
+::: notes
+31–32. The agent (Claude Code, in session, with a place-disambiguation skill) made the MCP calls; Python only prepared work lists and recorded answers. Endpoint wd-mcp.wmcloud.org, rate limited, so results were cached aggressively. Every QID was later re-checked with batched SPARQL or wbgetentities; the five invented identifiers came from parallel sub-agents in the India Office tail batches (col_matching commit 2d457a5). The N./S. flips came from fuzzy matching in the reuse pass, which is why only exact-token variants were accepted. Sources: docs/GROUNDING_NEXT_100.md, col_match/kg/ground.py.
+:::
+
+## QLever: ask exactly when you can [Motion draft]{.motion-tag} {#qlever .motion}
+
+```{=html}
+<div class="qcols">
+<div>
+  <p class="qplain">Who held a position named <b>“Governor … Northern Rhodesia”</b>? Give their birth dates.</p>
+  <div class="qsparql rise" data-at="500">SELECT ?person ?personLabel ?dob WHERE {
+  ?pos rdfs:label ?posLabel .
+  FILTER(CONTAINS(?posLabel, <b>"Northern Rhodesia"</b>))
+  FILTER(CONTAINS(?posLabel, <b>"Governor"</b>))
+  ?person <b>wdt:P39</b> ?pos ; <b>wdt:P31 wd:Q5</b> .
+  OPTIONAL { ?person <b>wdt:P569</b> ?dob }
+}</div>
+  <p class="qstep rise" data-at="3600"><b>1</b> Birth within two years of the List’s 1889</p>
+  <p class="qstep rise" data-at="5000"><b>2</b> Same surname and given names: LOGAN, William Marston</p>
+  <p class="qstep rise" data-at="6400"><b>3</b> Death check: died 1968; last listed 1948 ✓</p>
+</div>
+<div class="cands">
+    <div class="row hdr rise" data-at="1300"><span>Wikidata holders returned</span><span>born</span></div>
+    <div class="row rise" data-at="1600"><span class="win" data-at="6400"><span>William Marston Logan</span><span class="yr">1889</span></span></div>
+    <div class="row rise" data-at="1850"><span class="strike" data-at="5200"><span>Sir John Maybin</span><span class="yr">1889</span></span></div>
+    <div class="row rise" data-at="2100"><span class="strike" data-at="5200"><span>John Waddington</span><span class="yr">1890</span></span></div>
+    <div class="row rise" data-at="2350"><span class="strike" data-at="3800"><span>Hubert Winthrop Young</span><span class="yr">1885</span></span></div>
+    <div class="row rise" data-at="2600"><span class="strike" data-at="3800"><span>Ronald Storrs</span><span class="yr">1881</span></span></div>
+    <div class="row rise" data-at="2850"><span class="strike" data-at="3800"><span>Herbert Stanley</span><span class="yr">1872</span></span></div>
+    <div class="row rise" data-at="3100"><span class="strike" data-at="3800"><span>James Crawford Maxwell</span><span class="yr">1869</span></span></div>
+</div>
+</div>
+<div class="rx-score rise" data-at="7400">
+  <div><b>1,095</b> senior officials without a link</div>
+  <div><b>198</b> colony names queried</div>
+  <div><b>124</b> people linked this way</div>
+</div>
+```
+
+::: {.def}
+[What are SPARQL and QLever?]{.def-term}
+SPARQL is the query language for Wikidata: ask for every item matching a pattern of statements, such as “held this office and was born in…”. QLever, from the University of Freiburg, is a fast public engine that runs such queries over all of Wikidata.
+:::
+
+::: notes
+32–33. Use QLever when the entry gives enough structured evidence to ask an exact question: an office, a jurisdiction and a birth year. This is a real result: the project’s query for Northern Rhodesia governorships returned these seven people. Two were born in 1889, so the birth year alone cannot decide; name, birth year and office together do. Rule (kg_ground_persons_l2_match.py): equal surname, compatible given names, no link if birth years differ by more than two, exactly one surviving holder, and a guard against two people claiming one QID. Then verify_person_deaths.py drops any match where the List shows the person more than a year after Wikidata’s death date (21 dropped). The List calls Logan acting governor of Northern Rhodesia (1937–41) and governor of the Seychelles (1942); Wikidata lists both governorships. The query on the slide is simplified from kg_ground_persons_l2.py, which also accepts Secretary, Administrator and Chief Justice titles. Most of the 1,066 linked people came from an earlier pass against a harvested set of Wikidata officials with the same birth-year rule.
+:::
+
 ## Live: three searches
 
 1. **Henry Trimen** — botanist, Ceylon, Peradeniya.

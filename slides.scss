@@ -226,3 +226,32 @@ html.workshop-reading { scroll-padding-top: 4.5rem; }
 .workshop-reading .reveal .rx-rows .who { margin-top: 0.8rem; }
 .workshop-reading .reveal .rx-score { flex-direction: column; font-size: 1rem; }
 .workshop-reading .reveal .rx-pattern { font-size: 0.9rem; }
+
+/* Grounding slides: three lanes, QLever candidate filter. */
+.reveal .lanes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.6em; font-size: 0.56em; line-height: 1.35; margin-top: 0.5em; }
+.reveal .lane { background: #1d1e23; border: 1px solid #3a3b40; border-top: 3px solid #7fa7d6; border-radius: 4px; padding: 0.5em 0.7em; }
+.reveal .lane.person { border-top-color: #c9a227; }
+.reveal .lane.school { border-top-color: #79a868; }
+.reveal .lane .kicker { display: block; color: #9a958a; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.8em; }
+.reveal .lane .from { font-family: Georgia, serif; color: #f0c674; }
+.reveal .lane .to { font-family: Georgia, serif; color: #f3ead3; font-size: 1.15em; display: block; margin: 0.15em 0; }
+.reveal .lane .how { color: #b4ae9f; display: block; margin-top: 0.3em; }
+.reveal .lane .tot { display: block; margin-top: 0.45em; padding-top: 0.35em; border-top: 1px solid #3a3b40; color: #c9a227; }
+.reveal .lane .miss { color: #e08a74; }
+.reveal .qcols { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 0.9em; align-items: start; }
+.reveal .qsparql { font-family: ui-monospace, Menlo, monospace; font-size: 0.42em; line-height: 1.45; background: #1d1e23; border: 1px solid #3a3b40; border-left: 4px solid #7fa7d6; border-radius: 4px; padding: 0.6em 0.8em; color: #b4ae9f; white-space: pre-wrap; }
+.reveal .qsparql b { color: #9cc0ea; font-weight: 400; }
+.reveal .qplain { font-size: 0.6em; color: #e9e4d8; margin: 0 0 0.4em; }
+.reveal .cands { font-size: 0.56em; line-height: 1.25; }
+.reveal .cands .row { display: flex; justify-content: space-between; gap: 0.6em; padding: 0.22em 0.5em; border-bottom: 1px solid #2c2d32; }
+.reveal .cands .row .yr { font-family: ui-monospace, Menlo, monospace; color: #c9a227; }
+.reveal .cands .hdr { color: #c9a227; font-weight: 600; border-bottom: 2px solid #3a3b40; }
+.reveal section.motion .strike[data-at] { opacity: 1; display: flex; justify-content: space-between; gap: 0.6em; width: 100%; transition: opacity 0.5s; }
+.reveal section.motion .strike[data-at].on { opacity: 0.28; text-decoration: line-through; }
+.reveal section.motion .win[data-at] { opacity: 1; display: flex; justify-content: space-between; gap: 0.6em; width: 100%; border-radius: 3px; transition: background-color 0.5s, box-shadow 0.5s; }
+.reveal section.motion .win[data-at].on { background: rgba(121, 168, 104, 0.18); box-shadow: inset 3px 0 0 #79a868; }
+.reveal .qstep { font-size: 0.56em; margin: 0.25em 0; color: #e9e4d8; }
+.reveal .qstep b { color: #c9a227; }
+.workshop-reading .reveal .lanes, .workshop-reading .reveal .qcols { grid-template-columns: 1fr; font-size: 1rem; }
+.workshop-reading .reveal .cands, .workshop-reading .reveal .qstep, .workshop-reading .reveal .qplain { font-size: 1rem; }
+.workshop-reading .reveal .qsparql { font-size: 0.8rem; }
