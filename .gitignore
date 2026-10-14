@@ -12,3 +12,6 @@ __pycache__/
 
 # rendered copy of the archived draft; not published
 docs/archive/
+
+# slide exports (large; regenerate with scripts/export_slides.py)
+/exports/
