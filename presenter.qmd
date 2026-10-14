@@ -17,7 +17,7 @@ Lead with what the dataset makes possible: following careers across editions and
 
 ## Running order
 
-[Open the deck](slides.html); press `S` for speaker notes. The video slide starts muted and has native Play/Replay controls, plus a direct MP4 link if autoplay is blocked.
+[Open the deck](slides.html?motion); press `S` for speaker notes. `?motion` makes the animated slides play even when Windows animation effects are off. The video slide starts muted and has native Play/Replay controls, plus a direct MP4 link if autoplay is blocked.
 
 | Minutes | What happens | If time is short |
 |---|---|---|

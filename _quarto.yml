@@ -44,7 +44,7 @@ website:
             text: "Exercise: mark up an entry"
           - href: steps/07-your-data.qmd
             text: "7. Your own data"
-      - href: slides.qmd
+      - href: slides.html?motion
         text: Slides
       - href: answers.qmd
         text: Worked answers
