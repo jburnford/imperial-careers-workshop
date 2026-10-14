@@ -81,7 +81,7 @@ format:
 :::
 
 
-## Two Lists, one career, mapped [Motion draft]{.motion-tag} {#one-clause-one-arc-motion-draft .motion}
+## Two Lists, one career, mapped {#one-clause-one-arc-motion-draft .motion}
 
 ```{=html}
 <div style="display:flex;gap:1em;align-items:flex-start">
@@ -112,7 +112,7 @@ format:
 ```
 
 ::: notes
-MOTION DRAFT, replacing the earlier single-clause version; compare with the static table slide before it. About 12 seconds; use ?motion or Play animation if Windows has animations off. Both texts are the raw OCR entries the pipeline read: Colonial Office List 1878 (record kgp_col1878-p447b3) and India Office List January 1889 (kgp_iol1889_jan-c2242376). The cross-service link is the project's confidence-A bridge, evidence a shared K.C.B. of 1862. As each posting appears, the same clause lights in both Lists (blue Colonial Office, gold India Office) and lands on the map. Ceylon includes the Kandy judgeship (1840), too close to Colombo to show at this scale. The Venezuela mission is included because the atlas keeps missions as eligible postings. Both Lists print the whole career, including Bombay; the link joins two administrative records and exposes the one-day disagreement over the Bombay start date. The two entries may draw on the same official returns, so agreement is not independent corroboration. For other linked officials, check what each List adds before claiming that one shows only part of a career. Atlas link for questions: https://jimclifford.ca/col_matching/?p=kgp_col1878-p447b3 Plotting points are approximate seats on Natural Earth outlines; arcs connect recorded postings in order, not observed travel.
+Animated, about 12 seconds; use ?motion or Play animation if Windows has animations off. Both texts are the raw OCR entries the pipeline read: Colonial Office List 1878 (record kgp_col1878-p447b3) and India Office List January 1889 (kgp_iol1889_jan-c2242376). The cross-service link is the project's confidence-A bridge, evidence a shared K.C.B. of 1862. As each posting appears, the same clause lights in both Lists (blue Colonial Office, gold India Office) and lands on the map. Ceylon includes the Kandy judgeship (1840), too close to Colombo to show at this scale. The Venezuela mission is included because the atlas keeps missions as eligible postings. Both Lists print the whole career, including Bombay; the link joins two administrative records and exposes the one-day disagreement over the Bombay start date. The two entries may draw on the same official returns, so agreement is not independent corroboration. For other linked officials, check what each List adds before claiming that one shows only part of a career. Atlas link for questions: https://jimclifford.ca/col_matching/?p=kgp_col1878-p447b3 Plotting points are approximate seats on Natural Earth outlines; arcs connect recorded postings in order, not observed travel.
 :::
 
 ## What the records make visible {.smaller}
@@ -238,7 +238,7 @@ It is a commercial service, paid through a Claude subscription or per use. Here 
 13–14. Start with the actual working process: I opened the raw OCR with Claude Code and discussed whether a Python parser could do the job. The displayed excerpt is copied directly from the 1936 raw OCR block, before abbreviation expansion. The saved file includes the original bounding box, OCR page index 832, block index 11 and printed page 614. This is a walkthrough of the process, not a recovered chat transcript. Use the Balmer exercise they just completed: they already know that “do.” refers back to a place. Ask what the code would need to preserve to reach the same reading. Claude Code helped inspect the source, discuss the approach and write the scripts; the historian decided what the fields meant.
 :::
 
-## Real rules: mostly right, quietly wrong [Motion draft]{.motion-tag} {#regex-demo .motion}
+## Real rules: mostly right, quietly wrong {#regex-demo .motion}
 
 ```{=html}
 <div class="rx-pattern rise" data-at="300" style="font-family:inherit;font-size:0.58em">Our real rule-based parser: <b>258 lines of Python</b>, run on every printed biography in 66 editions. It splits a career at semicolons, knows months, abbreviations and ditto marks, and refuses an entry whole when a dated clause will not parse.</div>
@@ -429,7 +429,7 @@ The standing instructions sent with each of about 65,000 career records. The ent
 :::
 
 
-## Balmer’s ditto, resolved [Motion draft]{.motion-tag} {.motion}
+## Balmer’s ditto, resolved {#balmers-ditto-resolved-motion-draft .motion}
 
 ```{=html}
 <blockquote style="font-size:0.72em">BALMER, F. E.—Dep. chief acctnt., G.P.O., E. Africa Prot., Mar., 1919; ch. acctnt., G.P.O., Kenya, Oct., 1919; ch. acctnt., <span class="mk target" data-at="2300">Kenya-Uganda-Tanganyika</span> post and tel. service, 1933; senr. dep. P.M.G., <span class="mk" data-at="700">do.</span>, 1935.</blockquote>
@@ -444,7 +444,7 @@ The standing instructions sent with each of about 65,000 career records. The ent
 ```
 
 ::: notes
-MOTION DRAFT, for comparison with the static replay slide before it. About 8 seconds. The record lines are copied from the saved before/after file (event 4); only the place changes, with the logged reason.
+Animated, about 8 seconds; it shows the correction from the replay slide before it. The record lines are copied from the saved before/after file (event 4); only the place changes, with the logged reason.
 :::
 
 ## Clean: forty editions, one person
@@ -556,7 +556,7 @@ Model Context Protocol: a standard way to hand a model a tool, such as a Wikidat
 30–31. An identifier's existence is not evidence that it belongs to this mention. Introduce MCP simply as a lookup tool the agent can use; the protocol is not today's lesson.
 :::
 
-## One entry, three kinds of link [Motion draft]{.motion-tag} {#ground-three .motion}
+## One entry, three kinds of link {#ground-three .motion}
 
 ```{=html}
 <blockquote style="font-size:0.6em">LOGAN, Sir William Marston, K.B.E. (1944) … —<span class="mk" data-at="3300">b. 1889</span>; ed. <span class="mk" data-at="5900">Bristol</span> and <span class="mk" data-at="5600">Brasenose Coll., Oxford</span> …; ch. sec., <span class="mk" data-at="700">N. Rhod.</span>, 1937; <span class="mk" data-at="3500">ag. gov.</span>, Dec., 1937 …; gov. and c.-in-c., <span class="mk" data-at="1000">Seychelles</span>, 1942; retd., 1947 …</blockquote>
@@ -616,7 +616,7 @@ Each Wikidata item is stored as a list of numbers that captures what its descrip
 31–32. The agent (Claude Code, in session, with a place-disambiguation skill) made the MCP calls; Python only prepared work lists and recorded answers. Endpoint wd-mcp.wmcloud.org, rate limited, so results were cached aggressively. Every QID was later re-checked with batched SPARQL or wbgetentities; the five invented identifiers came from parallel sub-agents in the India Office tail batches (col_matching commit 2d457a5). The N./S. flips came from fuzzy matching in the reuse pass, which is why only exact-token variants were accepted. Sources: docs/GROUNDING_NEXT_100.md, col_match/kg/ground.py.
 :::
 
-## QLever: ask exactly when you can [Motion draft]{.motion-tag} {#qlever .motion}
+## QLever: ask exactly when you can {#qlever .motion}
 
 ```{=html}
 <div class="qcols">
@@ -732,7 +732,7 @@ An earlier atlas placed a British Columbia politician in Australia.
 :::
 
 
-## Which Victoria? [Motion draft]{.motion-tag} {.motion}
+## Which Victoria? {#which-victoria-motion-draft .motion}
 
 ```{=html}
 <p style="font-size:0.72em;margin-bottom:0.2em">Brewster: “defeated by Sir Richard McBride, in <span class="mk" data-at="600">Victoria</span>, 1912.”</p>
@@ -754,7 +754,7 @@ An earlier atlas placed a British Columbia politician in Australia.
 ```
 
 ::: notes
-MOTION DRAFT, for comparison with the static Victoria slide before it. About 8 seconds. Five real imperial places named Victoria; the earlier atlas reused one match (the Australian colony) for every entry. The repair resolves per person from the career context. Points are approximate seats on Natural Earth outlines.
+Animated, about 8 seconds; it shows the repair on the Victoria slide before it. Five real imperial places named Victoria; the earlier atlas reused one match (the Australian colony) for every entry. The repair resolves per person from the career context. Points are approximate seats on Natural Earth outlines.
 :::
 
 ## A past repair: what counts as an event?
