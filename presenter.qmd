@@ -83,6 +83,18 @@ For the final exercise, introduce the records as **saved teaching cases**, then 
 
 For Harris, ask what supports the identity and what remains uncertain about the date. The full name, college and governorship support joining the records despite a possible OCR error in the birth year. Keep the conflict recorded; accepting the identity does not replace the source reading. Leave an identity unresolved when the wider biography supplies insufficient evidence, rather than splitting a matching career over one date. Check the scan, another edition and the external date’s cited source. Repeated copies of an account do not make independent corroboration.
 
+## Likely questions
+
+**Why not let a model do it end to end?** For the final records it largely did: Qwen read every one of the 65,239 careers. What the pipeline adds around the model is what makes the result checkable: the source text stays beside every record, Python drops any place or year the source does not contain, and recurring fixes (Balmer’s ditto) are deterministic rules that log their reason and can be rerun when a rule changes. The printed reading and the inference stay in separate fields (`place: "do."` versus the inherited place, flagged `place_inherited`).
+
+**How many careers cross the two Lists, and why is that matching harder?** The atlas publishes 186 proposed cross-service links (72 at confidence A, 93 at B, 21 at C; 30 flagged ambiguous). A September spot check supported 11 of 15, so treat them as candidates. Matching across Lists is harder than within one: different house styles and abbreviations, no shared identifiers, different editions years apart, and name forms that change with titles. Wodehouse is linked by name plus a K.C.B. of 1862 printed in both.
+
+**Is 3.9% of people in Wikidata a problem?** It is the point: Wikidata knows governors and judges, not most clerks and surveyors. Event-to-place coverage (about 69% of all events, 86% of placed Colonial Office events) is a different measure. The linked people are not a representative sample.
+
+**Why plot at capitals?** A seat is a plotting proxy, not a residence or a journey. Kandy (1840) is in the data as its own place but sits on top of Colombo at world scale; arcs connect recorded postings in order.
+
+**Why does the OCR start in 1867 when the List began in 1862?** The project’s digitised run starts in 1867. Early editions carry an account of the principal officers’ services; the full Record of Services begins in 1883.
+
 ## Claims to keep bounded
 
 - Roster counts are sums of within-List person records, not unique people across both services. The 186 bridges are proposed links; a small September check supported 11 of 15.

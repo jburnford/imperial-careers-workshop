@@ -9,7 +9,7 @@ Source and data: [github.com/jburnford/imperial-careers-workshop](https://github
 
 ## One dataset, start to finish
 
-Two printed reference works, the *Colonial Office List* (1862–1966) and the *India Office List* (1886–1947), carry a terse biography for every senior official: born, schooled, every posting, every honour. The same man recurs in forty annual editions. The OCR garbles a name here and there. Two men who share a surname threaten to collapse into one career.
+Two printed reference works, the *Colonial Office List* (published 1862–1966; the project used editions from 1867) and the *India Office List* (1886–1947), carry a terse biography for every senior official: born, schooled, every posting, every honour. The same man recurs in forty annual editions. The OCR garbles a name here and there. Two men who share a surname threaten to collapse into one career.
 
 Over a few months, one historian with a coding agent turned those volumes into a knowledge graph and an [animated atlas](https://jimclifford.ca/col_matching/) of imperial careers:
 

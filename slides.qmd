@@ -30,7 +30,7 @@ format:
 [*The Colonial Office List for 1913* (52nd publication), pp. 561–562. Scan digitised by Google, from the Internet Archive.]{.caption}
 
 ::: notes
-0–1. One simple point before the video: this pipeline turned thousands of printed pages like these into the animated atlas that follows. Two facing pages of the Record of Services hold about forty compressed biographies; the project used 85 volumes of the Colonial Office List, 1867–1966, and the India Office List. Then play the video.
+0–1. One simple point before the video: this pipeline turned thousands of printed pages like these into the animated atlas that follows. Two facing pages of the Record of Services hold about forty compressed biographies; the project OCR’d 85 volumes, 1867–1966 (Colonial Office Lists, with the 1935 Dominions Office List and the 1951–65 Commonwealth Relations Office Lists), plus the India Office List. The List was first published in 1862; the project’s run starts in 1867. Then play the video.
 :::
 
 ## {#mobility-video .video-slide background-color="#15161a"}
@@ -129,6 +129,7 @@ MOTION DRAFT, replacing the earlier single-clause version; compare with the stat
 - Administrative accounts of careers, offices and honours.
 - Person counts resolved within each List; their sum includes cross-service overlap.
 - Seats used for plotting; arcs connect postings, not observed journeys.
+- People are another matter: only 1,066 of 27,526 Colonial Office people (3.9%) link to a Wikidata person.
 
 **Whose careers does this source make easy to see? Whose does it leave out?**
 
@@ -167,7 +168,7 @@ MOTION DRAFT, replacing the earlier single-clause version; compare with the stat
 
 > BALMER, F. E.—Dep. chief acctnt., G.P.O., E. Africa Prot., Mar., 1919; ch. acctnt., G.P.O., Kenya, Oct., 1919; ch. acctnt., Kenya-Uganda-Tanganyika post and tel. service, 1933; senr. dep. P.M.G., <mark>do.</mark>, 1935.
 
-85 volumes OCR’d, **1867–1966**. The Record of Services appears from **1883**. The same person returns in many editions.
+85 volumes OCR’d, **1867–1966**, including later Dominions and Commonwealth Relations Office Lists. Services of principal officers from 1867; the full Record of Services from **1883**. The same person returns in many editions.
 
 ::: {.defs}
 ::: {.def}
