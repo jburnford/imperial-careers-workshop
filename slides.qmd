@@ -197,11 +197,11 @@ Three minutes, then compare:
 **Where should that decision be recorded?**
 :::
 ::: {.column width="30%"}
-![](images/qr-annotate.png){width="240" fig-alt="QR code for the mark-up exercise"}
+[![QR code for the mark-up exercise](images/qr-annotate.png){width="240"}](https://jimclifford.ca/imperial-careers-workshop/annotate/)
 :::
 ::::
 
-**jimclifford.ca/imperial-careers-workshop/annotate/**
+[**jimclifford.ca/imperial-careers-workshop/annotate/**](https://jimclifford.ca/imperial-careers-workshop/annotate/)
 
 ::: notes
 8–13. Three minutes marking, one minute comparing, one minute debrief. Ask one room participant and the chat monitor for a reason. Paper users circle the corresponding words. Protect this time. The remaining entries are take-home practice.
@@ -790,11 +790,11 @@ Decide. Give the evidence. Say what you would check next.
 **Six minutes working; four minutes discussing R8.**
 :::
 ::: {.column width="30%"}
-![](images/qr-review.png){width="240" fig-alt="QR code for the three-decision exercise"}
+[![QR code for the three-decision exercise](images/qr-review.png){width="240"}](https://jimclifford.ca/imperial-careers-workshop/review/)
 :::
 ::::
 
-**jimclifford.ca/imperial-careers-workshop/review/**
+[**jimclifford.ca/imperial-careers-workshop/review/**](https://jimclifford.ca/imperial-careers-workshop/review/)
 
 ::: notes
 46–56. Introduce these as saved proposals for practising decisions, not a live queue of atlas errors. The site displays the core cases first; the other five are further practice. Do not reveal the Harris answer until participants have decided. Zoom users select R8 and copy its decision and reason. Ask what supports the identity and what remains uncertain about the date. The matching biography supports joining the records despite a possible OCR error; preserve the disputed readings. Separate identity confidence from permission to change a source field. Printed handout page 2 has the same three decisions.
@@ -820,7 +820,7 @@ Structure · Clean · Ground
 
 Build. Extract. Visualise. See. Fix. Rerun.
 
-![](images/qr-site.png){height="180" fig-alt="QR code for the workshop site"}
+[![QR code for the workshop site](images/qr-site.png){height="180"}](https://jimclifford.ca/imperial-careers-workshop/)
 
-**jimclifford.ca/imperial-careers-workshop**\
+[**jimclifford.ca/imperial-careers-workshop**](https://jimclifford.ca/imperial-careers-workshop/)\
 Exercises, worked answers, prompt, replay and glossary.

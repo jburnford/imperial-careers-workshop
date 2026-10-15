@@ -30,7 +30,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-7260f078e1d42753ae114166b9aca975.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-0d5c40e41846f7568f1344a6c401cc6b.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -437,9 +437,14 @@ Jim Clifford, University of Saskatchewan
 <p><strong>What does “do.” inherit?</strong><br>
 <strong>Where should that decision be recorded?</strong></p>
 </div><div class="column" style="width:30%;">
-<p><img data-src="images/qr-annotate.png" alt="QR code for the mark-up exercise" width="240"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="https://jimclifford.ca/imperial-careers-workshop/annotate/"><img data-src="images/qr-annotate.png" width="240" alt="QR code for the mark-up exercise"></a></p>
+<figcaption>QR code for the mark-up exercise</figcaption>
+</figure>
+</div>
 </div></div>
-<p><strong>jimclifford.ca/imperial-careers-workshop/annotate/</strong></p>
+<p><a href="https://jimclifford.ca/imperial-careers-workshop/annotate/"><strong>jimclifford.ca/imperial-careers-workshop/annotate/</strong></a></p>
 <aside class="notes">
 <p>8–13. Three minutes marking, one minute comparing, one minute debrief. Ask one room participant and the chat monitor for a reason. Paper users circle the corresponding words. Protect this time. The remaining entries are take-home practice.</p>
 <style type="text/css">
@@ -1213,9 +1218,14 @@ Every shared person identifier asserts an identity.</p>
 <p>Decide. Give the evidence. Say what you would check next.</p>
 <p><strong>Six minutes working; four minutes discussing R8.</strong></p>
 </div><div class="column" style="width:30%;">
-<p><img data-src="images/qr-review.png" alt="QR code for the three-decision exercise" width="240"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="https://jimclifford.ca/imperial-careers-workshop/review/"><img data-src="images/qr-review.png" width="240" alt="QR code for the three-decision exercise"></a></p>
+<figcaption>QR code for the three-decision exercise</figcaption>
+</figure>
+</div>
 </div></div>
-<p><strong>jimclifford.ca/imperial-careers-workshop/review/</strong></p>
+<p><a href="https://jimclifford.ca/imperial-careers-workshop/review/"><strong>jimclifford.ca/imperial-careers-workshop/review/</strong></a></p>
 <aside class="notes">
 <p>46–56. Introduce these as saved proposals for practising decisions, not a live queue of atlas errors. The site displays the core cases first; the other five are further practice. Do not reveal the Harris answer until participants have decided. Zoom users select R8 and copy its decision and reason. Ask what supports the identity and what remains uncertain about the date. The matching biography supports joining the records despite a possible OCR error; preserve the disputed readings. Separate identity confidence from permission to change a source field. Printed handout page 2 has the same three decisions.</p>
 <style type="text/css">
@@ -1258,8 +1268,13 @@ Every shared person identifier asserts an identity.</p>
 <h2>Keep the decision with the evidence</h2>
 <p>Structure · Clean · Ground</p>
 <p>Build. Extract. Visualise. See. Fix. Rerun.</p>
-<p><img data-src="images/qr-site.png" alt="QR code for the workshop site" height="180"></p>
-<p><strong>jimclifford.ca/imperial-careers-workshop</strong><br>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="https://jimclifford.ca/imperial-careers-workshop/"><img data-src="images/qr-site.png" height="180" alt="QR code for the workshop site"></a></p>
+<figcaption>QR code for the workshop site</figcaption>
+</figure>
+</div>
+<p><a href="https://jimclifford.ca/imperial-careers-workshop/"><strong>jimclifford.ca/imperial-careers-workshop</strong></a><br>
 Exercises, worked answers, prompt, replay and glossary.</p>
 
 
@@ -1497,8 +1512,15 @@ Exercises, worked answers, prompt, replay and glossary.</p>
       img.src = 'images/qr-site.png';
       img.alt = 'QR code for jimclifford.ca/imperial-careers-workshop';
       img.className = 'workshop-title-qr';
-      img.style.cssText = 'position:absolute;right:0;bottom:40px;width:190px;height:190px;margin:0';
-      t.appendChild(img);
+      img.style.cssText = 'display:block;width:190px;height:190px;margin:0';
+      var link = document.createElement('a');
+      link.href = 'https://jimclifford.ca/imperial-careers-workshop/';
+      link.target = '_blank';
+      link.rel = 'noopener';
+      link.className = 'workshop-title-qr-link';
+      link.style.cssText = 'position:absolute;right:0;bottom:40px;z-index:20;display:block';
+      link.appendChild(img);
+      t.appendChild(link);
     })();
     </script>
     <script>
