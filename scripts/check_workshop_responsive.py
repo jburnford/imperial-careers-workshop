@@ -102,7 +102,7 @@ async def main():
                     checks += 1
                     if width in [390, 768] and route in ['index.html', 'slides.html', 'annotate/index.html', 'review/index.html']:
                         if route == 'slides.html':
-                            await page.locator('#live-three-searches').scroll_into_view_if_needed()
+                            await page.locator('#ground-three').scroll_into_view_if_needed()
                         else:
                             await page.evaluate('scrollTo(0,0)')
                         await page.screenshot(path=str(screenshots / f'{width}-{route.replace("/", "-")}.png'))
@@ -129,8 +129,8 @@ async def main():
             await page.wait_for_function('document.documentElement.classList.contains("workshop-reading")')
             await page.set_viewport_size({'width': 1440, 'height': 900})
             await page.wait_for_function('!document.documentElement.classList.contains("workshop-reading")')
-            await page.evaluate("Reveal.slide([...document.querySelectorAll('.reveal .slides > section')].findIndex(s => s.querySelector('h2')?.textContent === 'Live: three searches'))")
-            assert 'Read the whole biography' in await page.locator('.reveal section.present').inner_text()
+            await page.evaluate("Reveal.slide([...document.querySelectorAll('.reveal .slides > section')].findIndex(s => s.querySelector('h2')?.textContent === 'WikidataMCP: search by meaning, then read'))")
+            assert 'search_items' in await page.locator('.reveal section.present').inner_text()
             await assert_fits(page, 'desktop after resizing')
             assert not errors, errors
             await browser.close()
